@@ -4,7 +4,12 @@ module.exports = {
     node: true,
   },
   plugins: ['@typescript-eslint'],
-  extends: ['next/core-web-vitals', 'next', 'prettier'],
+  extends: [
+    'next/core-web-vitals',
+    'plugin:@next/next/recommended',
+    'next',
+    'prettier',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
