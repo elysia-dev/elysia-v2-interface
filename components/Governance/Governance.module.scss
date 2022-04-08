@@ -1,0 +1,518 @@
+.governance_top {
+  margin-top: 127px;
+  .governance_top_sub {
+    text-align: center;
+    color: #888888;
+    font-size: 1.4375rem;
+    font-family: 'Inter-Medium';
+    font-style: italic;
+  }
+  .governance_top_header {
+    text-align: center;
+    font-family: 'SpoqaHanSansNeo-Medium';
+    color: #333333;
+    font-size: 2.8125rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .governance_top_content {
+    background-image: url('../../assets/images/governance_top@2x.png');
+    background-size: contain;
+    width: 100%;
+    height: 558px;
+  }
+  .governance_top_content_header {
+    font-family: 'SpoqaHanSansNeo-Medium';
+    font-size: 1.25rem;
+    color: #ffffff;
+    width: 768px;
+    height: 59px;
+    padding-top: 94px;
+    margin: auto;
+    text-align: center;
+    line-height: 2.1rem;
+  }
+  .governance_top_content_wrapper {
+    font-family: 'SpoqaHanSansNeo-Medium';
+    margin-top: 120px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+      height: 260px;
+      width: 260px;
+      border: 1px solid #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0px 0px 6px #00000029;
+      border-radius: 260px;
+      font-size: 1.25rem;
+      line-height: 1.9rem;
+    }
+    .governance_top_content_circle:nth-child(1) {
+      margin-right: 98px;
+    }
+    .governance_top_content_circle:nth-child(2) {
+      margin-right: 98px;
+    }
+  }
+}
+
+.governance_center {
+  margin-top: 100px;
+  width: 100%;
+
+  .governance_center_header {
+    font-family: 'Montserrat-bold';
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333333;
+  }
+  .governance_center_content_wrapper {
+    display: flex;
+    width: 1136px;
+    margin: auto;
+    margin-top: 81px;
+    // align-items: center;
+    // justify-content: center;
+  }
+  .governance_center_content_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 358px;
+    margin-right: 116px;
+  }
+  .governance_center_content_description_first {
+    font-family: 'Montserrat-bold';
+    font-size: 1.25rem;
+    color: #3679b5;
+    margin-bottom: 10.5px;
+  }
+  .governance_center_content_description_second {
+    font-family: 'Montserrat-bold';
+    font-size: 1.875rem;
+    width: 591px;
+    color: #333333;
+    margin-bottom: 34px;
+  }
+  .governance_center_content_description_third {
+    font-family: 'Montserrat';
+    font-size: 1.0625rem;
+    color: #333333;
+    margin-bottom: 34px;
+  }
+  .governance_center_content_wrapper_button {
+    display: flex;
+  }
+  .governance_center_content_button {
+    font-family: 'Montserrat-Medium';
+    cursor: pointer;
+    width: 188px;
+    height: 45px;
+    font-size: 1.0625rem;
+    color: #ffffff;
+    background-color: #3679b5;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 3px 8px #00000052;
+  }
+  .governance_center_content_button:first-child {
+    margin-right: 25px;
+  }
+  .governance_center_info_header {
+    font-family: 'SpoqaHanSansNeo-Bold';
+    font-size: 1.25rem;
+    color: #262626;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 1136px;
+  }
+  .governance_center_info_box {
+    width: 1136px;
+    height: 155px;
+    background-color: #ffffff;
+    border: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .governance_center_info_content {
+    border: 2px solid #f0f0f1;
+    border-radius: 10px;
+    width: 250px;
+    height: 113px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    div:first-child {
+      font-family: 'Montserrat';
+      font-size: 1.0625rem;
+      color: #333333;
+      margin-bottom: 15px;
+    }
+    div:last-child {
+      font-family: 'Montserrat-bold';
+      font-size: 1.4375rem;
+      color: #333333;
+    }
+  }
+  .governance_center_info_content:nth-child(1) {
+    margin-right: 29px;
+  }
+  .governance_center_info_content:nth-child(2) {
+    margin-right: 29px;
+  }
+  .governance_center_info_content:nth-child(3) {
+    margin-right: 29px;
+  }
+}
+
+.governance_staking {
+  margin-top: 124px;
+  width: 100%;
+
+  .governance_staking_wrapper {
+    display: flex;
+    width: 1136px;
+    margin: auto;
+    margin-top: 81px;
+  }
+
+  .governance_staking_wrapper_content {
+    margin-right: 81px;
+  }
+
+  .governance_staking_header {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333333;
+  }
+
+  .governance_staking_content_wrapper {
+    display: flex;
+    width: 1136px;
+    margin: auto;
+    margin-top: 81px;
+    // align-items: center;
+    // justify-content: center;
+  }
+
+  .governance_staking_content_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 358px;
+    margin-right: 116px;
+  }
+
+  .governance_staking_content_description_first {
+    font-family: 'Montserrat-bold';
+    font-size: 1.25rem;
+    color: #3679b5;
+    margin-bottom: 10.5px;
+  }
+
+  .governance_staking_content_description_second {
+    font-family: 'Montserrat-bold';
+    font-size: 1.875rem;
+    color: #333333;
+    margin: 0px 0px 34px 0px;
+  }
+
+  .governance_staking_content_description_third {
+    font-family: 'Montserrat';
+    width: 562px;
+    font-size: 1.0625rem;
+    color: #333333;
+    line-height: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .governance_staking_content_button {
+    font-family: 'Montserrat-Medium';
+    cursor: pointer;
+    width: 188px;
+    height: 45px;
+    font-size: 1.0625rem;
+    color: #ffffff;
+    background-color: #3679b5;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 3px 8px #00000052;
+  }
+  .governance_staking_info {
+    position: relative;
+    text-align: center;
+    line-height: 1.8rem;
+    z-index: 0;
+  }
+  .governance_staking_total {
+    font-family: 'Inter-Bold';
+    position: absolute;
+    top: -40px;
+    width: 284px;
+    height: 284px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #3679b5;
+    border-radius: 284px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.875rem;
+    color: #3679b5;
+  }
+  .governance_staking_apr {
+    font-family: 'Inter-Bold';
+    position: absolute;
+    left: 214px;
+    top: 110px;
+    width: 222px;
+    height: 222px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #6e6e6e;
+    border-radius: 222px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.875rem;
+    color: #333333;
+  }
+  .governance_staking_total_name {
+    font-family: 'Montserrat';
+    font-size: 1.0625rem;
+  }
+  .staking_prev {
+    font-family: 'SpoqaHanSansNeo';
+    font-size: 1.0625rem;
+    color: #3679b5;
+    cursor: pointer;
+  }
+
+  .staking_wrapper {
+    margin-top: 100px;
+    width: 100%;
+  }
+  .staking_container {
+    width: 1136px;
+    margin: auto;
+  }
+  .staking_container_header {
+    font-family: 'SpoqaHanSansNeo-Bold';
+    font-size: 1.25rem;
+    margin-bottom: 21px;
+  }
+  .staking_header {
+    display: flex;
+  }
+
+  .staking_select_mainnet {
+    font-family: 'Montserrat-Medium';
+    display: flex;
+    margin-right: auto;
+    border-top: 2px solid #f0f0f1;
+    border-left: 2px solid #f0f0f1;
+    border-right: 2px solid #f0f0f1;
+    width: 300px;
+    background-color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1.0625rem;
+
+    div {
+      width: 50%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    div:first-child {
+      border-right: 1px solid #f0f0f1;
+    }
+    div:last-child {
+      color: #888888;
+    }
+  }
+  .staking_content {
+    border: 2px solid #f0f0f1;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 0px 10px 10px 10px;
+    padding: 8px 12px 8px 12px;
+
+    .staking_content_box:nth-child(1) {
+      border-right: 1px solid #f0f0f1;
+    }
+
+    .staking_content_box {
+      width: 50%;
+      padding: 14px;
+      border-bottom: 1px solid #f0f0f1;
+      border-top: 1px solid #f0f0f1;
+    }
+    .staking_content_box_amount {
+      text-align: right;
+      margin-top: 36px;
+
+      span:first-child {
+        font-family: 'SpoqaHanSansNeo-Bold';
+        font-size: 1.875rem;
+        color: #333333;
+        span {
+          color: #333333;
+        }
+      }
+      span:last-child {
+        font-family: 'SpoqaHanSansNeo-Bold';
+        font-size: 1.875rem;
+        color: #6e6e6e;
+      }
+    }
+    .staking_content_header {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      //   border-bottom: 1px solid black;
+      div:first-child {
+        font-family: 'SpoqaHanSansNeo-Bold';
+        font-size: 1.0625rem;
+      }
+      div:last-child {
+        font-family: 'SpoqaHanSansNeo';
+        cursor: pointer;
+        box-shadow: 0px 1px 6px #00000029;
+        border-radius: 5px;
+        width: 202px;
+        height: 37px;
+        font-size: 1.0625rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.governance_bottom {
+  margin-top: 166px;
+  margin-bottom: 222px;
+  width: 100%;
+
+  .governance_bottom_container {
+    width: 1136px;
+    margin: 0px auto;
+  }
+  .governance_bottom_first {
+    font-family: 'Montserrat-bold';
+    font-size: 1.25rem;
+    color: #3679b5;
+    margin-bottom: 10.5px;
+  }
+  .governance_bottom_second {
+    font-family: 'Montserrat-bold';
+    font-size: 1.875rem;
+    color: #333333;
+    margin: 0px 0px 25px 0px;
+  }
+  .governance_bottom_third {
+    font-family: 'Montserrat';
+    font-size: 1.0625rem;
+    color: #333333;
+    line-height: 1.6rem;
+    margin-bottom: 25px;
+  }
+  .governance_bottom_button_wrapper {
+    display: flex;
+    .governance_bottom_button {
+      font-family: 'Montserrat-Medium';
+      cursor: pointer;
+      width: 188px;
+      height: 45px;
+      font-size: 1.0625rem;
+      color: #ffffff;
+      background-color: #3679b5;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 1px 3px 8px #00000052;
+    }
+    .governance_bottom_button:first-child {
+      margin-right: 25.37px;
+    }
+
+    .governance_bottom_button:last-child {
+      margin-left: 25.37px;
+    }
+  }
+
+  .governance_bottom_content {
+    margin-top: 53px;
+  }
+  .governance_bottom_content_header {
+    font-family: 'SpoqaHanSansNeo-Bold';
+    font-size: 1.25rem;
+    color: #333333;
+    margin-bottom: 15px;
+  }
+  .governance_bottom_content_box {
+    display: flex;
+    justify-content: space-between;
+  }
+  .governance_bottom_content_list {
+    width: 50%;
+    border: 2px solid #f0f0f1;
+    border-radius: 10px;
+    background-color: #ffffff;
+    height: 273px;
+    padding: 27px 28px 48px 33px;
+
+    div:nth-child(1) {
+      width: 65px;
+      height: 65px;
+      margin-bottom: 15px;
+    }
+    div:nth-child(2) {
+      font-family: 'Montserrat-bold';
+      font-size: 1.0625rem;
+      color: #333333;
+      margin-bottom: 13px;
+    }
+    div:nth-child(3) {
+      font-family: 'Montserrat';
+      font-size: 0.9375rem;
+      color: #333333;
+    }
+  }
+  .governance_bottom_content_list:nth-child(1) {
+    margin-right: 16px;
+  }
+}
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border: 1.5px solid #ffffff;
+  border-radius: 19px;
+  transform: rotate(0.87turn);
+  margin-left: 7px;
+  svg {
+    fill: #ffffff;
+  }
+}
