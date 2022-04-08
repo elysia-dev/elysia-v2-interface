@@ -1,8 +1,28 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import 'i18n';
+
+import '../styles/globals.css';
+import '../styles/public.scss';
+import '../styles/style.scss';
+import '../styles/pc.scss';
+import type { AppProps } from 'next/app';
+import Layout from 'components/Layout';
+import LanguageProvider from 'provider/LanguageProvider';
+import { Web3ReactProvider } from '@web3-react/core';
+import getLibrary from 'utils/getLibrary';
+import TxProvider from 'provider/TxProvider';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <TxProvider>
+        <LanguageProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </LanguageProvider>
+      </TxProvider>
+    </Web3ReactProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
