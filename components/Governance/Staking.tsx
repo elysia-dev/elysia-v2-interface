@@ -8,6 +8,7 @@ import CountUp from 'react-countup';
 import { BigNumber } from 'ethers';
 import Arrow from './Arrow';
 import { useWeb3React } from '@web3-react/core';
+import { useRouter } from 'next/router';
 
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
@@ -21,13 +22,14 @@ type Props = {
 const Staking = (props: Props) => {
   const { setModalType, setModalVisible, reward } = props;
   const { account } = useWeb3React();
+  const router = useRouter();
   const userStakedInfo = useStakedInfo();
 
   const stakingInfo = useMemo(() => {
     return [
       {
         name: '스테이킹 수량',
-        value: `${formatComma(userStakedInfo.userPrincipal)}`,
+        value: `${account ? formatComma(userStakedInfo.userPrincipal) : 0}`,
         btnType: '스테이킹 / 언스테이킹',
         onClick: () => {
           setModalType(account ? ModalType.Staking : ModalType.NoAccount);
@@ -40,8 +42,8 @@ const Staking = (props: Props) => {
           <>
             <CountUp
               className="bold amounts"
-              start={parseFloat(formatEther(reward.before))}
-              end={parseFloat(formatEther(reward.after))}
+              start={account ? parseFloat(formatEther(reward.before)) : 0}
+              end={account ? parseFloat(formatEther(reward.after)) : 0}
               formattingFn={(number: any) => {
                 return formatSixFracionDigit(number);
               }}
@@ -116,7 +118,9 @@ const Staking = (props: Props) => {
               <div>Ethereum</div>
               <div>BSC</div>
             </div>
-            <div className={styles.staking_prev}>
+            <div
+              className={styles.staking_prev}
+              onClick={() => router.push(`/ko/Governance/prevstaking`)}>
               이전 스테이킹 프로그램 &gt;
             </div>
           </div>
