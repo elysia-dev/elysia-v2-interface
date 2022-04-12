@@ -1,5 +1,8 @@
 import Davatar from '@davatar/react';
 import { useWeb3React } from '@web3-react/core';
+import TxContext from 'contexts/TxContext';
+import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './Navigation.module.scss';
 
 type Props = {
@@ -8,11 +11,13 @@ type Props = {
 
 const ConnectWalletButton = (props: Props) => {
   const { account } = useWeb3React();
+  const { txStatus } = useContext(TxContext);
+  const { t } = useTranslation();
 
   return (
     <>
       <div
-        className={styles.wallet_button}
+        className={`wallet_wrapper ${account ? '' : 'disconnect'} ${txStatus}`}
         onClick={() => props.modalVisible()}>
         {account ? (
           <div className={styles.wallet_connect}>
@@ -27,7 +32,7 @@ const ConnectWalletButton = (props: Props) => {
             </div>
           </div>
         ) : (
-          'Connect Wallet'
+          <div>{t('navigation.wallet')}</div>
         )}
       </div>
     </>
