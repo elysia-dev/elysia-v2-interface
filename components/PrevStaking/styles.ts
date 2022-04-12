@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const PrevStakingWrapper = styled.div`
   margin-top: 127px;
-  /* height: 80vh; */
 `;
 
 export const HeaderWrapper = styled.div`
