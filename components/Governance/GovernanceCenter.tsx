@@ -1,33 +1,49 @@
-import styles from './Governance.module.scss';
 import TokenImg from 'assets/images/ELYSIA_DAO_TOKEN3@2x.png';
 import Image from 'next/image';
+import useSWR from 'swr';
+import envs from 'core/envs';
+import styles from './Governance.module.scss';
 import Arrow from './Arrow';
-// import Arrow from 'assets/images/arrow.svg';
+import { pricesFetcher } from 'clients/Coingecko';
+import priceMiddleware from 'middleware/priceMiddleware';
+import { Trans, useTranslation } from 'react-i18next';
+import Questionmark from './Questionmark';
+import { useState } from 'react';
 
 const GovernanceCenter = () => {
+  const { data } = useSWR(
+    envs.externalApiEndpoint.coingackoURL,
+    pricesFetcher,
+    {
+      use: [priceMiddleware],
+    },
+  );
+  const { t } = useTranslation();
+  const [guideType, setGuideType] = useState('');
+
   return (
     <div className={styles.governance_center}>
-      <div className={styles.governance_center_header}>How to Join</div>
+      <div className={styles.governance_center_header}>
+        {t('governance.section_second.0')}
+      </div>
       <div className={styles.governance_center_content_wrapper}>
         <div className={styles.governance_center_content_description}>
           <div className={styles.governance_center_content_description_first}>
             01
           </div>
           <div className={styles.governance_center_content_description_second}>
-            Get the EL Token
+            {t('governance.section_second.1')}
           </div>
           <div className={styles.governance_center_content_description_third}>
-            ELYSIA 토큰은 엘리시아 DAO 법인의 ownership을 나타내며, 엘리시아에
-            관심있는 <br /> 누구나 거버넌스에 참여할 수 있도록 EL 토큰이 많은
-            DEX와 CEX 에 상장되어 있습니다.
+            <Trans>{t('governance.section_second.2')}</Trans>
           </div>
           <div className={styles.governance_center_content_wrapper_button}>
             <div className={styles.governance_center_content_button}>
-              거래소 보기
+              {t('governance.section_second.3')}
               <Arrow />
             </div>
             <div className={styles.governance_center_content_button}>
-              토큰 이코노미
+              {t('governance.section_second.4')}
               <Arrow />
             </div>
           </div>
@@ -37,22 +53,48 @@ const GovernanceCenter = () => {
         </div>
       </div>
       <div className={styles.governance_center_info_wrapper}>
-        <div className={styles.governance_center_info_header}>EL 토큰정보</div>
+        <div className={styles.governance_center_info_header}>
+          {t('governance.section_second.5')}
+        </div>
         <div className={styles.governance_center_info_box}>
           <div className={styles.governance_center_info_content}>
-            <div>실시간 가격</div>
-            <div>$ 7.22</div>
+            <div>{t('governance.section_second.6')}</div>
+            <div>$ {data?.elPrice.toFixed(4)}</div>
           </div>
           <div className={styles.governance_center_info_content}>
-            <div>총 발행량</div>
+            <div>
+              {t('governance.section_second.7')}{' '}
+              <Questionmark
+                guideText={t('governance.section_second.8')}
+                visible={guideType === 'box1'}
+                mouseEnter={() => setGuideType('box1')}
+                mouseLeave={() => setGuideType('')}
+              />
+            </div>
             <div>7,000,000,000 EL</div>
           </div>
           <div className={styles.governance_center_info_content}>
-            <div>총 공급량</div>
+            <div>
+              {t('governance.section_second.9')}
+              <Questionmark
+                guideText={t('governance.section_second.10')}
+                visible={guideType === 'box2'}
+                mouseEnter={() => setGuideType('box2')}
+                mouseLeave={() => setGuideType('')}
+              />
+            </div>
             <div>6,570,000,000 EL</div>
           </div>
           <div className={styles.governance_center_info_content}>
-            <div>유통 공급량</div>
+            <div>
+              {t('governance.section_second.11')}
+              <Questionmark
+                guideText={t('governance.section_second.12')}
+                visible={guideType === 'box3'}
+                mouseEnter={() => setGuideType('box3')}
+                mouseLeave={() => setGuideType('')}
+              />
+            </div>
             <div>6,570,000,000 EL</div>
           </div>
         </div>
