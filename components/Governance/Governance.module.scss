@@ -152,13 +152,45 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    div:first-child {
+
+    .question {
+      margin-left: 7px;
+      border: 1px solid #888888;
+      width: 17px;
+      height: 17px;
+      border-radius: 13px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888888;
+      cursor: pointer;
+      position: relative;
+      > div {
+        width: 200px;
+        padding: 10px;
+        font-size: 1.0625rem;
+        cursor: auto;
+        box-shadow: 0px 1px 6px #00000029;
+        background-color: #ffffff;
+        border-radius: 5px;
+        position: absolute;
+        top: 17px;
+        left: 0px;
+        color: #333333;
+        font-family: 'SpoqaHanSansNeo-Bold';
+      }
+    }
+    > div:first-child {
       font-family: 'Montserrat';
       font-size: 1.0625rem;
       color: #333333;
       margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    div:last-child {
+    > div:last-child {
       font-family: 'Montserrat-bold';
       font-size: 1.4375rem;
       color: #333333;
@@ -338,6 +370,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
+      font-weight: bold;
     }
     div:first-child {
       border-right: 1px solid #f0f0f1;
@@ -403,6 +437,16 @@
         align-items: center;
         justify-content: center;
       }
+    }
+
+    .staking_comming_soon {
+      font-family: 'SpoqaHanSansNeo-Bold';
+      font-size: 1.875rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 153.5px;
     }
   }
 }
@@ -481,10 +525,26 @@
     height: 273px;
     padding: 27px 28px 48px 33px;
 
-    div:nth-child(1) {
-      width: 65px;
-      height: 65px;
+    > div:nth-child(1) {
+      // width: 65px;
+      // height: 65px;
       margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      > div:last-child {
+        font-family: 'Montserrat-Medium';
+        font-size: 1.0625rem;
+        width: 202px;
+        height: 37px;
+        background: #b7b7b7;
+        border-radius: 19px;
+        margin-left: auto;
+        margin-bottom: 0px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
     div:nth-child(2) {
       font-family: 'Montserrat-bold';
