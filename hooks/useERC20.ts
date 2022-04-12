@@ -6,7 +6,6 @@ import { providers } from 'ethers';
 
 const useERC20 = (address: string): ERC20 => {
   const { library } = useWeb3React();
-  // const currentChain = useCurrentChain();
 
   const contract = useMemo(() => {
     if (!library) {
