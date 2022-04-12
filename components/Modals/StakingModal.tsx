@@ -113,7 +113,7 @@ const StakingModal = (props: Props) => {
               isApproveLoading={!allowance.gt(balance)}
               button={loading ? t('modal.approve.4') : stakingInfo.type}
             />
-          ) : false ? (
+          ) : allowance.gt(balance) ? (
             <StakingBody
               stakingInfo={stakingInfo}
               setTransactionWait={setTransactionWait}
