@@ -26,8 +26,9 @@ const LanguageProvider: React.FC = (props) => {
   useEffect(() => {
     if ([LanguageType.EN, LanguageType.KO].includes(lng as LanguageType)) {
       i18n.changeLanguage(lng);
-    } else {
-      router.push(`/${getLocalLanguage()}`);
+    }
+    if (router.pathname === '/') {
+      router.push(`/${getLocalLanguage()}/Governance`);
     }
   }, [lng]);
 
