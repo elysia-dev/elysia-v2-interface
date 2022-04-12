@@ -3,11 +3,11 @@ export const setWalletConnect = (wallet: string): void => {
 };
 
 export const isWalletConnector = (): boolean => {
-  return window.sessionStorage.getItem('@connect') === 'walletConnect';
+  return window.sessionStorage.getItem('@connect') === 'WalletConnect';
 };
 
 export const isMetamask = (): boolean => {
-  return window.sessionStorage.getItem('@connect') === 'metamask';
+  return window.sessionStorage.getItem('@connect') === 'Metamask';
 };
 
 export const isMoblie = (): boolean =>
