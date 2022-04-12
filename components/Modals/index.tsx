@@ -6,6 +6,8 @@ import ClaimModal from './ClaimModal';
 import ConnectWalletGuide from './ConnectWalletGuide';
 import DisconnectModal from './DisconnectModal';
 import ModalLayout from './ModalLayout';
+import PrevClaimModal from './PrevClaimModal';
+import PrevUnstakeModal from './PrevUnstakeModal';
 import SelectWalletModal from './SelectWalletModal';
 import StakingModal from './StakingModal';
 import TransactionConfirmModal from './TransactionConfirmModal';
@@ -13,16 +15,26 @@ import TransactionConfirmModal from './TransactionConfirmModal';
 type Props = {
   visible: boolean;
   onClose: () => void;
+  setModalType: () => void;
   modalType?: ModalType;
   reward?: {
     before: BigNumber;
     after: BigNumber;
   };
-  setModalType: () => void;
+  round?: number;
+  prevAmount?: BigNumber;
 };
 
 const Modal = (props: Props) => {
-  const { onClose, visible, modalType, reward, setModalType } = props;
+  const {
+    onClose,
+    visible,
+    modalType,
+    reward,
+    setModalType,
+    round,
+    prevAmount,
+  } = props;
 
   const modalComponent = useMemo(() => {
     switch (modalType) {
@@ -43,6 +55,22 @@ const Modal = (props: Props) => {
         );
       case ModalType.ConfirmEnded:
         return <TransactionConfirmModal onClose={onClose} />;
+      case ModalType.PrevUnstake:
+        return (
+          <PrevUnstakeModal
+            onClose={onClose}
+            round={round}
+            prevAmount={prevAmount}
+          />
+        );
+      case ModalType.PrevReward:
+        return (
+          <PrevClaimModal
+            onClose={onClose}
+            reward={prevAmount}
+            round={round ?? 0}
+          />
+        );
       default:
         return <></>;
     }
