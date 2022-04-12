@@ -1,7 +1,7 @@
 import { useWeb3React } from '@web3-react/core';
 import Modal from 'components/Modals';
-import StakingModal from 'components/Modals/StakingModal';
 import TxContext from 'contexts/TxContext';
+import ChainType from 'enums/ChainType';
 import ModalType from 'enums/ModalType';
 import RecentActivityType from 'enums/RecentActivityType';
 import useReward from 'hooks/useReward';
@@ -14,8 +14,8 @@ import Staking from './Staking';
 const Governance = () => {
   const [modal, setModalType] = useState<ModalType>();
   const [modalVisible, setModalVisible] = useState(false);
+  const [currentChain, setCurrentChain] = useState(ChainType.Ethereum);
   const { txType } = useContext(TxContext);
-  const { account } = useWeb3React();
   const reward = useReward();
 
   useEffect(() => {
@@ -47,6 +47,8 @@ const Governance = () => {
           setModalType={setModalType}
           setModalVisible={() => setModalVisible(true)}
           reward={reward}
+          currentChain={currentChain}
+          setCurrentChain={setCurrentChain}
         />
         <GovernanceBottom />
       </div>
