@@ -12,6 +12,7 @@ import LoadingIndicator from './LoadingIndicator';
 import { useContext, useEffect, useState } from 'react';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   onClose: () => void;
@@ -23,6 +24,7 @@ type Props = {
 
 const ClaimModal = (props: Props) => {
   const { onClose, reward } = props;
+  const { t } = useTranslation();
   const { claim } = useStaking();
   const [transactionWait, setTransactionWait] = useState(false);
   const { txStatus } = useContext(TxContext);
@@ -61,7 +63,7 @@ const ClaimModal = (props: Props) => {
             <LoadingIndicator
               isTxActive={transactionWait}
               isApproveLoading={false}
-              button={'Claim'}
+              button={t('modal.reward.0')}
             />
           </>
         ) : (
@@ -89,7 +91,7 @@ const ClaimModal = (props: Props) => {
                 setTransactionWait(true);
                 claim();
               }}>
-              <p>Claim</p>
+              <p>{t('modal.reward.0')}</p>
             </div>
           </>
         )}

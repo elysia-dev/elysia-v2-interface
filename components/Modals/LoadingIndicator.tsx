@@ -29,9 +29,7 @@ const LoadingIndicator: React.FunctionComponent<{
         </div>
         {isTxActive && (
           <p>
-            {isApproveLoading
-              ? t('modal.indicator.loading_approve')
-              : t('modal.indicator.loading_metamask')}
+            {isApproveLoading ? t('modal.indicator.0') : t('modal.indicator.1')}
           </p>
         )}
       </div>

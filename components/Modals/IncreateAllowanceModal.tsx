@@ -55,18 +55,11 @@ const IncreateAllowanceModal: React.FunctionComponent<{
   return (
     <>
       <div className={styles.approve_wrapper}>
-        <div>
-          해당 머니풀에 예치하기 위해서는 연결된 지갑에 해당 앱이 접근할 수
-          있도록 접근 권한을 승인해야 합니다.
-        </div>
-        <div>
-          최초 예치 시에만 승인이 필요하며, 승인이 성공적으로 완료될 경우,
-          이후에는 권한 승인 없이 예치할 수 있습니다.
-        </div>
+        <div>{t('modal.approve.0')}</div>
+        <div>{t('modal.approve.1')}</div>
       </div>
       <div className={styles.approve_fee}>
-        * 접근 권한 승인 또한 네트워크를 이용한 트랜잭션이기 때문에 가스비가
-        발생합니다.
+        <Trans>{t('modal.approve.2')}</Trans>
       </div>
       <div className="wallet_select_modal__content__line" />
       <div
@@ -75,7 +68,7 @@ const IncreateAllowanceModal: React.FunctionComponent<{
           props.setTransactionWait(true);
           approve();
         }}>
-        <p>승인하기</p>
+        <p>{t('modal.approve.3')}</p>
       </div>
     </>
   );

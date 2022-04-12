@@ -1,7 +1,6 @@
 import useERC20Info from 'hooks/useERC20Info';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import envs from 'core/envs';
-import { formatComma } from 'utils/formatters';
 import useStakedInfo from 'hooks/useStakedInfo';
 import { utils } from 'ethers';
 import useStaking from 'hooks/useStaking';
@@ -29,46 +28,41 @@ const StakingModal = (props: Props) => {
   );
   const { t } = useTranslation();
   const userStakedInfo = useStakedInfo();
-  const { txStatus, txWaiting, txType } = useContext(TxContext);
+  const { txStatus } = useContext(TxContext);
   const { staking, withdraw } = useStaking();
   const [stakingType, setStakingType] = useState('staking');
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState('');
   const [transactionWait, setTransactionWait] = useState(false);
 
   const changeStakingType = useCallback((type: string) => {
     setStakingType(type);
   }, []);
 
-  const getType = useCallback(() => {
+  const isStakingMode = useCallback(() => {
     return stakingType === 'staking';
   }, [stakingType]);
 
   const stakingInfo = useMemo(() => {
-    const stakingMode = getType();
+    const stakingMode = isStakingMode();
+    const amount = parseFloat(
+      utils.formatEther(stakingMode ? balance : userStakedInfo.userPrincipal),
+    );
     return {
-      header: stakingMode ? '스테이킹 가능한 수량' : '언스테이킹 가능한 수량',
-      walletAmount: stakingMode ? '지갑잔액' : '스테이킹 수량',
+      header: stakingMode ? t('modal.staking.2') : t('modal.unstaking.2'),
+      walletAmount: stakingMode ? t('modal.staking.1') : t('modal.unstaking.1'),
       max: () => {
-        setValue(
-          parseFloat(
-            utils.formatEther(
-              stakingMode ? balance : userStakedInfo.userPrincipal,
-            ),
-          ),
-        );
+        setValue(String(amount));
       },
       value: value,
       setValue,
-      amount: `${formatComma(
-        stakingMode ? balance : userStakedInfo.userPrincipal,
-      )} EL`,
-      type: stakingMode ? '스테이킹' : '언스테이킹',
+      amount: stakingMode ? balance : userStakedInfo.userPrincipal,
+      type: stakingMode ? t('modal.staking.0') : t('modal.unstaking.0'),
       sendTx: stakingMode ? staking : withdraw,
     };
-  }, [balance, getType, staking, userStakedInfo, value, withdraw]);
+  }, [balance, isStakingMode, staking, userStakedInfo, value, withdraw]);
 
   useEffect(() => {
-    setValue(0);
+    setValue('');
   }, [stakingType]);
 
   useEffect(() => {
@@ -101,34 +95,30 @@ const StakingModal = (props: Props) => {
             <div
               onClick={() => changeStakingType('staking')}
               style={{
-                borderBottom: getType() ? '2px solid #3679b5' : 'none',
+                borderBottom: isStakingMode() ? '3px solid #3679b5' : 'none',
               }}>
-              Staking
+              {t('modal.staking.0')}
             </div>
             <div
               onClick={() => changeStakingType('unstaking')}
               style={{
-                borderBottom: getType() ? 'none' : '2px solid #3679b5',
+                borderBottom: isStakingMode() ? 'none' : '3px solid #3679b5',
               }}>
-              Unstaking
+              {t('modal.unstaking.0')}
             </div>
           </div>
           {loading || transactionWait ? (
             <LoadingIndicator
               isTxActive={transactionWait}
               isApproveLoading={!allowance.gt(balance)}
-              button={
-                loading
-                  ? t('modal.indicator.permission_check')
-                  : stakingInfo.type
-              }
+              button={loading ? t('modal.approve.4') : stakingInfo.type}
             />
-          ) : allowance.gt(balance) ? (
+          ) : false ? (
             <StakingBody
               stakingInfo={stakingInfo}
               setTransactionWait={setTransactionWait}
             />
-          ) : stakingInfo.type === '언스테이킹' ? (
+          ) : stakingInfo.type === t('modal.unstaking.0') ? (
             <StakingBody
               stakingInfo={stakingInfo}
               setTransactionWait={setTransactionWait}
