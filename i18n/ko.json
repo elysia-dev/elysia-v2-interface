@@ -1,550 +1,119 @@
 {
   "translation": {
-    "main": {
-      "landing": {
-        "header__title": "부동산 기반 NFT를 담보로<br /><strong>가상자산 대출이 이뤄지는 <i>디파이</i></strong>",
-        "header__content": "엘리파이는 부동산 자산을 토큰화하여 만들어진 NFT를 담보로\n가상자산 대출이 이뤄지는 랜딩 프로토콜입니다.",
-        "button__deposit": "예치하기",
-        "button__view-more": "자세히 알아보기"
-      },
-      "section": [
-        {
-          "header": "가상 자산을 예치하여 <strong>유동성을 공급하세요!</strong>",
-          "content": "가상자산을 예치하면 엘리파이 프로토콜 의사결정 권한을 얻을 수 있습니다.",
-          "button": "유동성 공급하기"
-        },
-        {
-          "header": "부동산 자산을 담보로 하기 때문에 <br/><strong>프로토콜이 안정적으로 운영됩니다!</strong>",
-          "content": "가치의 변동폭이 커서 청산 위험이 높은 가상자산이 아닌\n변동폭이 작은 부동산을 담보로 하는 시스템으로 프로토콜이 안정적으로 운영됩니다.",
-          "button": "담보물 확인하기"
-        },
-        {
-          "header": "프로토콜의 운영과 관련된 사항을<br/><strong>유저들이 직접 결정합니다!</strong>",
-          "content": "대출 실행 여부, 이자율 등 프로토콜의 운영과 관련된 사항이\n유저들의 투표를 통하여 결정되며, 그렇기 때문에 신뢰할 수 있습니다.",
-          "button": "거버넌스 확인하기"
-        }
-      ],
-      "advantages": {
-        "header": "왜 <i>ELYFI</i>를 써야하나요?",
-        "section": [
-          {
-            "header": "안정적인 이자",
-            "content": "부동산 기반 대출채권과 같은 실물자산을 담보로 대출이 발생하기 때문에 예치자들은 안정적인 수익을 얻을 수 있습니다."
-          },
-          {
-            "header": "의사결정에 직접 참여",
-            "content": "ELFI 토큰 홀더들은 직접 포럼에 참여하거나 투표를 통해 중요 안건에 대한 의사결정을 할 수 있습니다."
-          },
-          {
-            "header": "높은 기대수익",
-            "content": "프로토콜 수익과 거버넌스 토큰을 분배 받아 높은 수익을 얻을 수 있습니다."
-          },
-          {
-            "header": "제한없는 예치금",
-            "content": "예치 금액에 제한이 없으며, 소액으로도 엘리파이에 예치할 수 있습니다"
-          },
-          {
-            "header": "회원가입 필요 X",
-            "content": "가입 요건이 없어 전 세계 모든 사람이 사용 가능합니다"
-          },
-          {
-            "header": "투명한 대출과정",
-            "content": "담보물에 대한 정보와 가상자산 대출 과정이 투명하게 공개됩니다"
-          }
-        ]
-      },
-      "graph": {
-        "title": "<strong>ELYFI</strong> 서비스 이해하기",
-        "circle-content": [
-          "온라인 투자 연계 금융업자 등록업체",
-          "담보법인",
-          "엘리파이",
-          "부동산 소유주"
-        ],
-        "line-content": [
-          "투자",
-          "대출채권 토큰화 및 NFT 담보",
-          "가상자산 대출",
-          "대출계약",
-          "대출계약"
-        ],
-        "investment-linked-financial": "* 금융위원회에 등록된 온라인투자연계금융업을 영위하려는 회사",
-        "investment-linked-financial--button": "등록업체 리스트 확인하러 가기 >"
-      },
-      "partners": {
-        "title": "ELFI 토큰 컨트랙트 <strong>감사(Audit)</strong> 업체",
-        "lawfirm": "법률 지원"
-      },
-      "governance": {
-        "title": "<strong>ELYFI</strong> 거버넌스",
-        "data-verification": "데이터 검증",
-        "onchain-vote": "온체인 투표",
-        "table--title": "제 목",
-        "table--date": "일 자",
-        "view-more": "더 보기",
-        "view-more--disable": "접기"
-      },
-      "popup": {
-        "disable_popup": "오늘 그만보기"
-      },
-      "dao": {
-        "title": "ELYSIA DAO LLC\n<strong>Registered</strong> in Wyoming, US",
-        "content": [
-          "아시아 최초 DAO 법인",
-          "미국정부가 인정한\n세계 두 번째 DAO 법인",
-          "상장회사 중\n최초로 설립된 DAO 법인"
-        ]
-      }
-    },
-    "words": {
-      "MortgageLoans": "주택담보 대출",
-      "AuctionBalanceLoans": "경매잔금 대출",
-      "ShortTermLoansWithCharterReturns": "전세반환금 단기 대출",
-      "CommercialRealEstateLoan": "상가담보대출",
-      "Apartment": "아파트",
-      "CommercialProperty": "상가",
-      "ToBeRepayed": "상환 예정",
-      "RepaymentComplete": "상환 완료",
-      "LiquidationProgress": "ABToken 청산 진행중",
-      "Default": "-"
-    },
-    "navigation": {
-      "dashboard": "예치",
-      "governance": "거버넌스",
-      "staking": "스테이킹",
-      "docs": "문서",
-      "elyfi_docs": "엘리파이 백서",
-      "elyfi_guide": "ELYFI 가이드",
-      "governance_docs": "거버넌스 문서",
-      "guide": "가이드",
-      "uniswap_elfi": "Uniswap(ELFI)",
-
-      "connect_wallet": "지갑 연결하기",
-      "disconnect": "연결 끊기",
-      "install_metamask": "Install Metamask",
-
-      "deposit_withdraw": "예치/출금",
-      "ELStake": "EL 스테이킹",
-      "ELFIStake": "ELFI 스테이킹",
-      "LPStake": "LP 스테이킹",
-      "link": {
-        "docs": "https://docs.elyfi.world/",
-        "guide": "https://guide.elyfi.world/v/korean-2/",
-        "governance_docs": "https://elysia.gitbook.io/elyfi-user-guide/v/korean-2/governance"
-      }
-    },
-    "dashboard": {
-      "token_mining_apr": "ELFI 채굴 APR",
-      "total_deposit": "총 예치량",
-      "total_deposit--reward": "총 예치 수익률",
-      "total_deposit--yield": "총 예치 이자율",
-      "total_borrowed": "총 대출금",
-      "borrow_apy": "대출 APY",
-      "deposit_apy": "예치 APY",
-      "deposit_amount": "예치 수량",
-      "deposit_amount--button": "예치 | 출금",
-      "wallet_balance": "지갑 잔액",
-      "reward_amount": "보상 수량",
-      "claim_reward": "수령하기",
-      "recent_loan": "최근 대출",
-      "reward_plan": "보상 플랜",
-      "reward_plan--button": {
-        "deposit": "보상플랜 확인하기 >",
-        "staking": "스테이킹 플랜 확인하기 >"
-      },
-      "details": "유동성 상세 정보",
-      "total_depositor": "예치 건수",
-      "total_loans": "대출 건수",
-      "available_liquidity": "가용 유동성",
-      "utilization": "이용률",
-      "deposit": "예치",
-      "borrow": "대출",
-
-      "total_size": "총 마켓 규모",
-      "token--header": "토큰",
-      "asset": "자산",
-      "button": "예치 | 출금",
-      "coming_soon": "Coming Soon!",
-      "info": "상세보기",
-      "deposit_info": "예치 APY 와 채굴 APR 를 더한 값",
-      "mining_apr": "채굴 APR",
-      "depositors": "예치자 수",
-      "borrowers": "차입자 수",
-
-      "deposits--header": "예치한 토큰",
-      "deposit_balance": "예치 잔액",
-      "minted": "ELFI 토큰",
-      "minted_balance": "ELFI 잔액",
-      "withdraw": "출금",
-      "withdraw--button": "출금하기",
-      "max": "최대",
-      "deposit_available": "예치 가능한 양",
-      "total_deposit_yield": "총 예치 수익률",
-      "withdraw_availble": "출금 가능한 양",
-      "reserves_elyfi": "ELYFI 내 {{tokenName}} 보유량",
-      "yield": "발생 이자",
-      "yield_produced": "이전 출금 이후에 발생한 이자",
-      "accumulated": "누적 이자",
-      "loading": "트랜잭션이 진행중입니다",
-      "enter_amount": "금액을 입력하세요.",
-      "insufficient_balance": "출금하기에는 {{tokenName}} 잔액이 충분하지 않습니다",
-      "deposit--button": "예치하기",
-      "withdral--button": "출금하기",
-      "protocol_allow": "ELYFI에서 {{tokenName}}에 접근할 수 있게 허용해주세요",
-      "disable_content--1": "해당 페이지에 접근하기 위해 지갑을 연결해주세요.",
-      "elfi_reward": "ELFI 보상",
-      "wallet_connect_content": "지갑을 연결해주세요.",
-
-      "governance--header": "<strong>ELYFI 거버넌스</strong>에 참여하세요!",
-      "governance--content": "ELFI 홀더들은 보유한 ELFI를 스테이킹함으로써 탈중앙 거버넌스에 참여할 수 있습니다.",
-      "elyfi": "ELYFI",
-      "protocol_profit": "권한",
-      "participate_governance": "거버넌스 참여",
-      "elyfi_holder": "ELYFI Holder",
-      "title": "ELFI 채굴 플랜 & DAI 지급 플랜",
-      "elfi_title": "ELFI 채굴 플랜",
-      "current_mining--header": "현 채굴량",
-      "total_mining--header": "총 채굴량",
-      "token_deposit": "{{Token}} 예치",
-      "token_deposit_content": "{{Token}}를 예치할 경우 ELYFI에 유동성 공급에 대한 보상으로 ELFI 토큰이 채굴됩니다.",
-      "current_mining": "현 채굴량",
-      "total_mining": "총 채굴량",
-      "elfi_amount": "ELFI 가격: <strong>$ {{count}}</strong>",
-      "el_staking": "EL 스테이킹",
-      "el_staking_content": "EL 토큰을 스테이킹하면 ELFI 토큰이 채굴됩니다. 3차와 4차 스테이킹은 수수료 부담을 줄이기 위해 기간을 연장했습니다.",
-      "staking": "스테이킹",
-      "dai_title": "DAI 보상 플랜",
-      "current_reward": "현 지급량",
-      "total_reward": "총 지급량",
-      "elfi_staking": "ELFI 스테이킹",
-      "elfi_staking_content": "ELFI 토큰을 스테이킹하면 DAI 토큰이 채굴됩니다. 3차와 4차 스테이킹은 수수료 부담을 줄이기 위해 기간을 연장했습니다.",
-      "nth_current_reward": "{{nth}}차 현 지급량",
-      "nth_total_reward": "{{nth}}차 총 지급량",
-      "at_uniswap": "",
-      "buy_elfi": "에서 ELFI 구매하기",
-      "nth_staking": "{{nth}}차 스테이킹 APR",
-      "lp_token_staking_description": "Uniswap V3 에 있는 {{token0}}-{{token1}} 풀에 유동성을 제공하고 받은 {{token0}}-{{token1}} LP 토큰을 스테이킹하면 {{token0}} 과 {{token1}} 가 지급됩니다.",
-      "receive_lp_token": "{{token0}}-{{token1}} LP 토큰 받기",
-      "lp_token_reward_plan": "ETH, DAI, ELFI 보상 플랜",
-
-      "deposit_add_reward_event": "<strong>New</strong> 보상 수량",
-      "claim_before_withraw_guide": "예치/출금을 이용하기 위해 보상 토큰을 먼저 수령해주세요! 수령할 보상 토큰은 <strong>2021.7.15 ~ 2022.1.11 KST</strong> 에 쌓인 ELFI 보상 토큰입니다.",
-      "claim_question": "보상 토큰을 수령하시겠습니까?",
-
-      "target_running_strategy": "목표 운용전략 (목표 예치 APY: 10%)",
-      "real_estate_mortgage": "부동산 담보대출",
-      "auto_invest_defi__title": "디파이 자동투자",
-      "auto_invest_defi": ["앵커프로토콜"],
-      "event_title": "ELFI <strong>300%</strong> 보상 이벤트\nBUSD를 예치하고, ELFI 토큰을 받아가세요!"
-    },
-    "loan": {
-      "loan__title": "대출 리스트",
-      "loan__content": "거버넌스(DAO)의 결정에 따라 머니풀에서 실행된 대출입니다.",
-      "loan__number": "대출 번호",
-      "loan__status": "대출 상태",
-      "loan__info": "대출 정보",
-      "loan__interest_rate": "대출 APY",
-      "loan__date": "대출일",
-      "loan__borrowed": "대출금",
-      "borrower": "차입자",
-      "borrower__info": "차입자 정보",
-      "license_number": "사업자등록번호",
-      "wallet_address": "지갑주소",
-      "view-more": "더 보기",
-      "receiving_address": "대출금 수취 지갑주소",
-      "maturity_date": "만기일",
-      "collateral_nft": "담보 NFT",
-      "collateral_nft__details": "담보 NFT 정보",
-      "collateral_nft__type": "NFT 타입",
-      "collateral_nft__abtoken_id": "ABToken ID",
-      "collateral_nft__borrower": "대출자",
-      "collateral_nft__loan_product": "대출 상품",
-      "collateral_nft__overdue_interest_rate": "연체이자율",
-      "collateral_nft__maximum_amount": "채권최고액",
-      "collateral_nft__loan_type": "담보유형",
-      "collateral_nft__address": "담보물주소",
-      "collateral_nft__contract_image": "계약서 이미지",
-      "loan_list--null": "현재 실행된 대출이 없습니다"
-    },
     "governance": {
-      "status": "상태",
-      "title": "ELYFI 거버넌스",
-      "content": "엘리파이는 탈중앙 조직(DAO)에 의해 운영되는 디파이(DeFi) 프로토콜입니다.\nELFI 토큰을 보유한 홀더는 누구나 탈중앙 조직멤버로서 엘리파이 운영에 참여할 수 있습니다.",
-      "button--staking": "ELFI 스테이킹 하기",
-      "button--governance_faq": "거버넌스 FAQ",
-      "graph": ["ELYFI", "권한", "거버넌스 참여", "ELYFI Holder"],
-      "data_verification": "데이터 검증 투표 ({{ count }} 건)",
-      "data_verification_plural": "데이터 검증 투표 ({{ count }} 건)",
-      "data_verification_plural--mobile": "데이터 검증 투표 ({{ count }} 건)",
-      "data_verification__content": "오프체인 거버넌스(DAO)에서 투표가 진행중인 제안서 리스트입니다.",
-      "on_chain_voting": "의사결정 투표 ({{ count }} 건)",
-      "on_chain_voting_plural": "의사결정 투표 ({{ count }} 건)",
-      "on_chain_voting__content": {
-        "tally": "Tally에서 투표가 진행중인 제안서 리스트 입니다.",
-        "snapshot": "Snapshot에서 투표가 진행중인 제안서 리스트 입니다."
-      },
-      "loan_list": "대출리스트 ({{ count }} 건)",
-      "loan_list_plural": "대출리스트 ({{ count }} 건)",
-      "loan_list__content": "거버넌스(DAO)의 결정에 따라 머니풀에서 실행된 대출입니다.",
-      "onchain_list_zero": "현재 진행중인 의사결정 투표가 없습니다.",
-      "offchain_list_zero": "현재 진행중인 데이터 검증 투표가 없습니다.",
-      "forum_button": "ELYFI 포럼으로 이동하기",
-      "onChain_button": {
-        "tally": "Tally로 이동하기",
-        "snapshot": "Snapshot으로 이동하기"
-      },
-      "link": {
-        "tally": "https://www.tally.xyz/governance/eip155:1:0x0c54629266d7fa40B4BFaF1640ebC2Cd093866C3",
-        "snapshot": "https://snapshot.org/#/elyfi-bsc.eth"
-      }
-    },
-    "staking": {
-      "staking__token": "{{ token }} 스테이킹",
-      "staking__notice": {
-        "ELFI": "{{ stakedToken }} 스테이킹은 {{ rewardToken }} 채굴 플랜에 따라 7차례로 나눠서 진행됩니다.\n{{ stakedToken }} 토큰을 스테이킹하면 거버넌스 토큰 ({{ rewardToken }}) 을 리워드로 받게 되며, 스테이킹한 {{ stakedToken }} 토큰은 언제든지 언스테이킹이 가능합니다.\n\n* 이전 회차에 스테이킹한 {{ stakedToken }} 토큰과 보상 받은 {{ rewardToken }} 토큰은 다음 회차의 스테이킹 풀에 자동으로 전송되지 않습니다.",
-        "DAI": "{{ stakedToken }} 스테이킹은 {{ rewardToken }} 채굴 플랜에 따라 7차례로 나눠서 진행됩니다.\n{{ stakedToken }} 토큰을 스테이킹하면 {{ rewardToken }} 토큰을 리워드로 받게 되며, 스테이킹한 {{ stakedToken }} 토큰은 언제든지 언스테이킹이 가능합니다.\n\n* 이전 회차에 스테이킹한 {{ stakedToken }} 토큰과 보상 받은 {{ rewardToken }} 토큰은 다음 회차의 스테이킹 풀에 자동으로 전송되지 않습니다.",
-        "BUSD": "{{ stakedToken }} 스테이킹은 {{ rewardToken }} 채굴 플랜에 따라 2차례로 나눠서 진행됩니다.\n{{ stakedToken }} 토큰을 스테이킹하면 {{ rewardToken }} 토큰을 리워드로 받게 되며, 스테이킹한 {{ stakedToken }} 토큰은 언제든지 언스테이킹이 가능합니다.\n\n* 이전 회차에 스테이킹한 {{ stakedToken }} 토큰과 보상 받은 {{ rewardToken }} 토큰은 다음 회차의 스테이킹 풀에 자동으로 전송되지 않습니다."
-      },
-      "staking__nth": "{{ nth }}차 스테이킹",
-      "current_round_null": "현재 진행중인 회차가 없습니다.",
-      "staking__in_progress": "<strong>{{ nth }}차</strong> 스테이킹 진행 중",
-      "el": {
-        "staking__content": "EL 토큰을 스테이킹하고 보상 토큰 ELFI를 받아가세요!",
-        "staking__content--button": "EL 토큰 구매하러 가기"
-      },
-      "elfi": {
-        "staking__content": "ELFI 토큰을 스테이킹하고 투표권을 받아가세요!\nELFI 홀더들은 보유한 ELFI를 스테이킹함으로써 탈중앙 거버넌스에 참여할 수 있습니다.",
-        "staking__content--button": {
-          "uniswap": "유니스왑에서 ELFI 토큰 구매하기",
-          "pancakeswap": "팬케이크스왑에서 ELFI 토큰 구매하기",
-          "wormhole": "Wormhole 토큰 브릿지 이용하기"
-        }
-      },
-      "staking_amount": "스테이킹 수량",
-      "reward_amount": "보상 수량",
-
-      "nth_period": "{{nth}}차 기간",
-      "nth_ended": "{{nth}}차 완료",
-      "nth_progress": "{{nth}}차 진행중",
-      "nth": "{{nth}}차",
-      "nth--short": "{{nth}}차",
-      "nth_staking": "{{nth}}차 스테이킹 APR",
-      "nth_staking_amount": "{{nth}}차 스테이킹 수량",
-      "staking_btn": "스테이킹 | 언스테이킹",
-      "nth_reward_amount": "{{nth}}차 보상 수량",
-      "claim_reward": "수령하기",
-      "staking": "스테이킹",
-      "unstaking": "언스테이킹",
-      "max": "최대",
-      "available_staking_amount": "스테이킹 가능한 수량",
-      "wallet_balance": "지갑 잔액",
-      "insufficient_balance": "잔액이 부족합니다",
-      "nth_staking_round_ended": "{{nth}}차 스테이킹 기간이 종료되었습니다.\n스테이킹 페이지로 이동합니다.",
-      "ok": "확인",
-      "available_unstaking_amount": "언스테이킹 가능한 수량",
-      "available_claim_amount": "수령 가능한 수량",
-      "accumulated_reward_amount": "누적 보상 수량",
-      "unstaking_migration": "언스테이킹 | 마이그레이션",
-      "popup_button": [
-        "가스비 절감을 위해",
-        "ELFI 토큰도 같이 출금하기",
-        "ELFI 토큰은 나중에 수취하고",
-        "EL 토큰만 전송하기"
+      "section_first": [
+        "엘리시아는 EL token 스테이커들에 의해 소유되고 운영되는<br/>DAO 법인입니다.",
+        "엘리시아 DAO는 현실에 존재하는 실물자산이 디파이나 NFT 마켓플레이스 등 디지털자산 시장<br/>에서 활용될 수 있도록 토큰화 프로토콜을 개발합니다.",
+        "아시아 최초<br/>DAO 법인",
+        "미국 정부가 인정한<br/>세계 두 번째 DAO 법인",
+        "상장 회사 중<br/>최초로 설립된 DAO 법인"
       ],
-      "migration": "마이그레이션",
-      "migration--content": "’마이그레이션’은 스테이킹 수량 중 언스테이킹한 수량을 제외한 수량만큼 현재 진행중인 스테이킹 풀에 전송하여 자동으로 스테이킹 하는 기능입니다. 해당 기능을 사용하면 언스테이킹과 마이그레이션 그리고 보상 수령 기능을 동시에 진행하기 때문에 이더리움 네트워크 이용 수수료(가스비)를 아낄 수 있습니다.",
-      "migration_location": "마이그레이션 위치",
-      "available_amount": "입력 가능한 수량",
-      "reward_token_claim": "수취할 보상 토큰",
-      "elfi_token": "ELFI 토큰 수량",
-      "transfer": "전송하기",
-      "nth_ended_alert": "{{nth}}차 스테이킹 기간이 종료되어, 마이그레이션이 불가능합니다. 계속 진행하시겠습니까?",
-      "all_ended_alert": "현재 모든 회차의 스테이킹 기간이 종료되어 마이그레이션이 불가능합니다.",
-      "current_round": "현재 진행중인 회차",
-      "receive_reward": "보상 수령",
-      "loacation_staking": "스테이킹",
-      "transaction_failed": "트랜잭션 실패",
-      "error_description_one": "요청하신 트랜잭션이 실패했습니다. 아래 에러 코드/메시지를 복사하여 cs@elysia.land로 문의주세요.",
-      "error_description_two": "메타마스크에서 발생한 에러로 인해 요청하신 트랜잭션이 실패했습니다. \n 아래 에러 코드/메시지를 복사하여 cs@elysia.land로 문의주세요.",
-      "error_code": "에러 코드&메시지",
-      "error_code_copy": "복사하기"
-    },
-    "reward": {
-      "token_staking__reward_plan": "{{ token }} 스테이킹 플랜",
-      "staking__nth": "{{ token }} <strong>{{ nth }}차</strong> 스테이킹",
-      "staking__nth--apr": "{{nth}}차 스테이킹 APR",
-      "staking__nth--amount": "{{nth}}차 스테이킹 수량",
-      "nth_mining": "{{nth}}차 채굴",
-      "reward_term": "보상 기간",
-      "daily_reward": "1일 지급량",
-      "mining_term": "채굴 기간",
-      "nth_total_mining": "{{nth}}차 총 채굴량",
-      "daily_mining": "1일 채굴량",
-      "accumulated_reward": "누적 지급량",
-      "accumulated_mining": "누적 채굴량",
-      "mining_limit": "잔여 채굴량",
-      "reward_limit": "잔여 지급량",
-      "nth_reward": "{{nth}}차 보상",
-      "lp_token_staking": "{{token0}}-{{token1}} LP 토큰 스테이킹",
-      "apr": "APR",
-      "lp_token_total_liquidity": "총 유동성",
-
-      "reward_plan": "보상 플랜",
-      "deposit__reward_plan": "예치 보상 플랜",
-      "elfi_price": "ELFI 가격: <strong>$ {{count}}</strong>",
-
-      "deposit_add_reward_event": "추가 보상 이벤트"
-    },
-    "portfolio": {
-      "investment_status": "대출 현황",
-      "total_borrowed": "총 대출금",
-      "estimated_repayments": "상환 예정 금액",
-      "borrow_apy": "대출 APY",
-      "borrow_apy--loan": "대출 APY",
-      "accumulated_borrowed": "누적 대출금",
-      "accumulated_repayment": "누적 상환 완료 금액",
-      "accumulated_yield": "누적 수익",
-
-      "portfolio_asset": "현물 자산 구성",
-      "mortgage": "주택담보 대출",
-      "auction_balance": "경매잔금 대출",
-      "charter_returns": "전세반환금 단기 대출",
-
-      "portfolio_list": "대출 리스트",
-      "repaid": "상환 예정",
-      "in_progress": "ABToken 청산 진행중",
-      "complete": "상환 완료",
-      "loan_number": "대출 #{{nonce}}",
-
-      "asset_detail": "대출 상세",
-      "borrower": "대출자",
-      "service_provider_info": "담보법인 정보",
-      "loan_receiver": "대출금 수취인",
-      "collateral_infomation": "담보물 정보",
-      "service_provider": "담보법인",
-      "loan_name": "대출 상품명",
-      "loans": "대출금",
-      "borrower--loan": "차입자",
-      "abtoken_title": "ABToken이란?",
-      "abtoken_content": "ABToken 은 담보법인인 Elyloan Corp와 부동산 소유주 간의 대출 계약에서 형성된 대출 채권을 기반으로 발행된 대체 불가능한 토큰(NFT) 입니다.\nABToken 소유자는 해당 채권과 1대 1로 교환할 수 있으며, 엘리파이에서 해당 토큰을 담보로 가상자산을 대출할 수 있습니다.",
-      "abtoken_details": "ABToken 상세정보",
-      "infomation_popup": [
-        "엘리파이 머니풀에서 대출 발생 시 표기되는 번호를 의미합니다.",
-        "상환 예정",
-        "대출 후 상환 예정인 대출",
-        "청산 진행중",
-        "만기일 이후 유예기간(10일)까지 상환하지 못한 대출",
-        "상환 완료",
-        "상환 완료되어 대출 관계가 종료된 대출",
-        "엘리파이 머니풀에서 대출 받기 위해 담보 맡긴 대체 불가능한 토큰(NFT)을 의미합니다.",
-        "담보법인과 부동산 소유주간의 계약에서의 대출상품(주택담보대출 등)을 의미합니다.",
-        "담보법인과 부동산 소유주간의 대출 계약에서의 담보물(아파트 등)의 종류를 의미합니다."
+      "section_second": [
+        "거버넌스 참여 방법",
+        "EL 토큰을 획득해보세요!",
+        "ELYSIA 토큰은 엘리시아 DAO 법인의 ownership 을 나타내며, 엘리시아와 그 미래에 관심있는<br/>누구나 거버넌스에 참여할 수 있도록 EL 토큰이 많은 DEX 와 CEX에 상장되어 있습니다.",
+        "거래소 보기",
+        "토큰 이코노미",
+        "EL 토큰 정보",
+        "실시간 가격",
+        "총 발행량",
+        "발행된 EL 토큰의 총 수량을 나타냅니다.",
+        "총 공급량",
+        "총 발행량에서 소각된 수량을 뺀 수량을 나타냅니다.",
+        "유통 공급량",
+        "총 공급량 중에서 시중에 유통되고 있거나 개인 지갑에 보유하고 있어서 시장에서 바로 거래가 가능한 수량을 나타냅니다."
       ],
-      "Real_estate_registration_information": "주요 등기사항 요약",
-      "Certified_corporate_registration": "법인등기부등본"
-    },
-    "lpstaking": {
-      "lp_token_staking": "LP 토큰 스테이킹",
-      "lp_token_staking__content": "ELFI-ETH, ELFI-DAI 풀에 유동성을 공급하세요.",
-      "lp_token_staking_title": "{{token0}}-{{token1}} LP",
-      "lp_token_staking_modal": "{{token0}}-{{token1}} LP 토큰",
-      "lp_token_staked": "{{token0}}-{{token1}} LP Staked",
-      "lp_token_total_liquidity": "총 유동성",
-      "no_lp_token": "스테이킹 가능한 LP토큰이 없습니다.",
-      "receive_lp_token": "LP Token 받기",
-      "receive_lp_token_content": "Uniswap V3 에 있는 {{token0}}-{{token1}} 풀에 유동성을 제공함으로써 <strong>{{token0}}-{{token1}}</strong> LP 토큰을 받으실 수 있습니다!",
-      "staked_lp_token": "스테이킹된 LP",
-      "staked_lp_token_type": "LP 타입",
-      "liquidity": "유동성",
-      "expected_reward": "예상 보상",
-      "staked_total_liquidity": "유동성 합계",
-      "staked_total_expected_reward": "총 예상 보상",
-      "lp_staking_modal_default": "스테이킹할 LP토큰을 선택해주세요.",
-      "lp_tokens_held": "보유한 LP 토큰",
-      "receive_reward": "보상 수령",
-      "reward_amount": "보상 수량",
-      "round_staking": "{{round}}차 스테이킹"
-    },
-    "transaction": {
-      "account": "계정",
-      "confirm": "트랜잭션의 진행상황은 오른쪽 상단에서 확인하실 수 있습니다.",
-      "nth_close": "{{nth}}초 후에 닫힙니다.",
-      "nth_connect": "{{nth}}에 연결됨",
-      "copy_address": "주소 복사",
-      "on_etherscan": "Etherscan에서 보기",
-      "on_bscscan": "Bsc scan에서 보기",
-      "activity__title": "최근 활동",
-      "Idle": "최근 활동이 여기에 표시됩니다.",
-      "Approve": "승인",
-      "ELStake": "EL 스테이킹",
-      "ELStakingWithdraw": "EL 언스테이킹",
-      "ELClaim": "ELFI 수령",
-      "ELMigration": "EL 및 ELFI 전송",
-      "ELFIMigration": "ELFI 및 DAI 전송",
-      "ELFIStake": "ELFI 스테이킹",
-      "ELFIStakingWithdraw": "ELFI 언스테이킹",
-      "ELFIClaim": "수령",
-      "Deposit": "예치",
-      "Withdraw": "출금"
+      "section_third": [
+        "스테이킹을 통해 투표권(sEL) 획득해 보세요!",
+        "의사결정 과정에 참여하기 위해서는 투표권 (staked EL, sEL)이 있어야 합니다.<br/>EL 스테이킹 앱에 EL 토큰을 스테이킹함으로써 투표권을 얻을 수 있으며,<br/>보유한 수량만큼 투표권을 행사할 수 있습니다",
+        "스테이킹 기간은 <strong>ELYSIA 2.0</strong> 오픈 전까지이며, 언제든지 언스테이킹이 가능합니다",
+        "스테이킹 가이드",
+        "총 스테이킹 수량",
+        "EL 스테이킹",
+        "이전 스테이킹 프로그램",
+        "스테이킹 수량",
+        "보상 수량",
+        "스테이킹 | 언스테이킹",
+        "수령하기"
+      ],
+      "prev_staking": [
+        "이전 스테이킹 프로그램",
+        "이전 EL 스테이킹 프로그램은 <strong>2021.07.27 ~ 2022.04.17 KST</strong> 까지 7회차 동안 진행했습니다.<br/>이 기간동안 스테이킹한 물량이 남아있는 사용자만 확인할 수 있습니다.<br/>언스테이킹 및 보상 수령을 원하는 사용자는 지갑 연결을 해주세요.",
+        "1차 ~ 7차",
+        "지갑 연결이 필요합니다.",
+        "스테이킹한 EL 토큰 수량이 없습니다.",
+        "{{round}} 차",
+        "스테이킹 수량",
+        "보상 수량",
+        "언스테이킹",
+        "수령하기"
+      ],
+      "section_fourth": [
+        "의견을 공유하고, 토론하고, 제안하면서 함께 ELYSIA를 개발해요!",
+        "엘리시아 프로토콜에 공감하거나 엘리시아의 발전에 참여하고 싶은 분들은 누구나 거버넌스에 참여할 수 있습니다.<br/>참여자들은 ELYSIA 포럼에서 자유롭게 개선안을 제안하고, 스냅샷에서 의사결정 과정에 투표할 수 있습니다.",
+        "거번너스 FAQ",
+        "포럼 가이드",
+        "스냅샷 가이드",
+        "거버넌스 참여 공간",
+        "ELYSIA 포럼",
+        "엘리시아 포럼은 엘리시아 거버넌스 시스템의 중요한 부분이며, 엘리시아의 생태계를 육성하기 위한 것입니다. '오프체인 사이클'의 일환으로, 포럼은 참가자들이 자유롭게 이니셔티브를 제안하고 토론하며, 자원과 정보를 공유하는 곳입니다.",
+        "스냅샷",
+        "스냅샷은 오프체인 거버넌스를 완료하고 최종 의사결정이 필요한 안건에 대해 통과 여부를 결정하는 공간입니다. EL 을 스테이킹함으로써 얻은 sEL 토큰이 투표권 역할을 하며, 보유하고 있는 sEL 만큼 권리를 행사할 수 있습니다."
+      ]
     },
     "modal": {
-      "indicator": {
-        "permission_check": "접근 권한 확인 중..",
-        "pending_transaction": "트랜잭션 처리중..",
-        "loading_metamask": "지갑에서 해당 트랜잭션을 확인해주세요",
-        "loading_metamask__title": "확인 대기 중",
-        "loading_approve": "접근 권한 승인 트랜잭션이 처리중입니다."
-      },
-      "permission": {
-        "title": "접근 권한을 승인해주세요!",
-        "content--deposit": "해당 머니풀에 예치하기 위해서는 연결된 지갑에 해당 앱이 접근할 수 있도록 접근 권한을 승인해야 합니다.\n\n<strong>최초</strong> 예치 시에만 승인이 필요하며, 승인이 성공적으로 완료될 경우, 이후에는 권한 승인 없이 예치할 수 있습니다.",
-        "content--staking": "해당 머니풀에 스테이킹하기 위해서는 연결된 지갑에 해당 앱이 접근할 수 있도록 접근 권한을 승인해야 합니다.\n\n<strong>최초</strong> 스테이킹 시에만 승인이 필요하며 승인이 성공적으로 완료될 경우, 이후의 권한 승인 없이 스테이킹할 수 있습니다.",
-        "button": "승인하기",
-        "comment": "<strong>*</strong> 접근 권한 승인 또한 네트워크를 이용한 트랜잭션이기 때문에 가스비가 발생합니다."
-      },
-      "connect_wallet": {
-        "title": "엘리파이 시작하기",
-        "content": "엘리파이를 이용하기 위해서는 지갑 연결이 필요합니다.\n연결하시겠습니까?",
-        "button": "연결하기"
-      },
-      "connect_metamask": {
-        "title": "엘리파이 시작하기",
-        "content": "모바일 웹 페이지에서도 예치/출금, 스테이킹을 이용할 수 있도록 관련 기능이 곧 오픈될 예정입니다!",
-        "button": "Coming soon!"
-      },
-      "wrong_mainnet": {
-        "title": "잘못된 네트워크",
-        "content": "현재 연결한 지갑이 ELYFI 에서 제공하지 않는 네트워크로 연결돼 있습니다.\nEthereum 또는 BSC 네트워크로 변경해주세요!",
-        "button": "확인"
-      },
-      "network_change": {
-        "title": "네트워크 변경하기",
-        "content": "현재 연결한 지갑이 ELYFI에서 제공하지 않는 네트워크로 연결돼 있습니다.\n아래 네트워크 중 원하는 네트워크를 선택하여 변경해주세요!"
-      },
-      "claim_disable": {
-        "title": "버튼 비활성화",
-        "content": "현재 편의상 제공되던 마이그레이션 기능의 오류 문의로 인해 일시적으로 수령하기 기능이 비활성화 되었습니다.",
-        "button": "확인"
-      },
-      "migration_disable": {
-        "title": "마이그레이션 비활성화",
-        "content": "마이그레이션 기능이 비활성화 되었습니다.\n7차 스테이킹 참여 시, 언스테이킹 후 7차 풀에 스테이킹 부탁드립니다.",
-        "button": "확인"
-      },
-      "wallet_change_netwrok": {
-        "title": "네트워크 에러",
-        "content": "엘리파이에서 {{network}}를 이용하기 위해서\n지갑에서 해당 네트워크로 변경한 후에 지갑을 다시 연결해주세요!",
-        "subContent": "(연결한 지갑이 해당 네트워크를 지원하는 지갑인지확인해주세요.)",
-        "button": "지갑 다시 연결하기"
-      }
+      "connect_wallet": [
+        "엘리시아 시작하기",
+        "스테이킹을 하기 위해서는 지갑 연결이 필요합니다.<br/> 연결하시겠습니까?",
+        "연결하기"
+      ],
+      "amount_max": "최대",
+      "select_wallet": "지갑 연결하기",
+      "staking": ["스테이킹", "지갑잔액", "스테이킹 가능한 수량"],
+      "unstaking": ["언스테이킹", "스테이킹 수량", "언스테이킹 가능한 수량"],
+      "button": ["잔액이 부족합니다"],
+      "reward": ["수령하기"],
+      "prev_unstaking": "{{round}}차 스테이킹 수량",
+      "indicator": [
+        "접근 권한 승인 트랜잭션이 처리중입니다.",
+        "지갑에서 해당 트랜잭션을 확인해주세요"
+      ],
+      "transaction": [
+        "트랜잭션의 진행상황은 오른쪽 상단에서 확인하실 수 있습니다.",
+        "3초 후에 닫힙니다."
+      ],
+      "approve": [
+        "해당 머니풀에 예치하기 위해서는 연결된 지갑에 해당 앱이 접근할 수 있도록 접근 권한을 승인해야 합니다.",
+        "최초 예치 시에만 승인이 필요하며, 승인이 성공적으로 완료될 경우, 이후에는 권한 승인 없이 예치할 수 있습니다.",
+        "<strong>*</strong> 접근 권한 승인 또한 네트워크를 이용한 트랜잭션이기 때문에 가스비가 발생합니다",
+        "승인하기",
+        "접근 권한 확인 중.."
+      ],
+      "user_info": [
+        "계정",
+        "연결 끊기",
+        "주소 복사",
+        "Etherscan에서 보기",
+        "최근 활동",
+        "최근 활동이 여기에 표시됩니다."
+      ]
     },
-    "guide": {
-      "apr": "APR 은 Annual percentage rate의 약자로, 총 유동 성 대비 총 보상금액의 비율을 의미합니다.",
-      "total_liquidity": "총 유동성이란, 스테이킹된 LP 토큰의 정보 중에 ELFI-{{token}} 풀에 예치한 총 금액을 달러 가치로 표기한 것을 의미합니다.",
-      "create_liquidity": "ELFI-{{token}} LP 토큰은 Uniswap V3 에 조성한 ELFI-{{token}} 풀에 유동성을 제공하면 받게 되는 NFT 입니 다. 해당 LP Token 으로 LP 스테이킹을 할 수 있습니다.",
-      "staked_total_amount": "연결한 지갑으로 스테이킹한 LP 토큰의 유동성이 달러 가치로 표기됩니다.",
-      "staked_lp_token": "연결한 지갑으로 스테이킹한 LP 토큰 리스트입니다. 예상 보상은 각 LP 토큰을 스테 이킹함으로써 얻을 수 있는 보상 수량을 나타냅니다. 보상을 수령하려면 먼저 해당 LP 토큰을 언스테이킹해 야 합니다. 언스테이킹을 한 LP 토큰들에 대한 수령 가 능한 보상 토큰은 하단에 위치한 ‘보상 수령’ 영역에서 확인하실 수 있으며, ‘수령하기’ 버튼 클릭 후 이후 절차 를 진행하면 보상 수령이 완료됩니다.",
-      "receive_reward": "스테이킹한 LP 토큰을 언스테이킹하면 해당 LP 토큰에 대한 보상 토큰의 수량이 표기됩니다. '수령하기' 버튼을 클릭하여 보상 수령을 진행하시면 연결한 지갑으로 보상 토큰이 전송됩니다."
+    "footer": {
+      "logo_label": "ELYSIA PLATFORM PTE. LTD",
+      "contact": "CONTACT",
+      "email": "cs@elysia.land",
+      "whitepaper": "WhitePaper (old)",
+      "community": "COMMUNITY",
+      "copyright": "ELYSIA ⓒ 2018·2022. All rights reserved.",
+      "privacy_policy": "Privacy Policy",
+      "terms_service": "Terms of Service",
+      "language": "LANGUAGE",
+      "language_en": "English",
+      "language_ko": "한국어",
+      "language_zh·hans": "简体中文",
+      "contract": "CONTRACT",
+      "el": "Elysia (EL)",
+      "elfi": "Elyfi (ELFI)"
     }
   }
 }
