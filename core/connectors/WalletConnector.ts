@@ -4,6 +4,7 @@ import { ConnectorUpdate } from '@web3-react/types';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { setWalletConnect } from 'utils/connectWallet';
+import Wallet from 'enums/Wallet';
 
 export class UserRejectedRequestError extends Error {
   public constructor() {
@@ -106,7 +107,7 @@ export default class WalletConnectConnector extends AbstractConnector {
     const account = await this.walletConnectProvider
       .enable()
       .then((accounts: string[]): string => {
-        setWalletConnect('walletConnect');
+        setWalletConnect(Wallet.Walletconnect);
         return accounts[0];
       })
       .catch((error: Error): void => {
