@@ -1,5 +1,8 @@
 {
   "translation": {
+    "navigation": {
+      "wallet": "Connect Wallet"
+    },
     "governance": {
       "section_first": [
         "ELYSIA is a DAO LLC owned and operated <br/> by EL Token stakers.",
