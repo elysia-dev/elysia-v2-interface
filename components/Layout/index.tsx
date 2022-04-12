@@ -18,6 +18,7 @@ const Layout = (props: LayoutProps) => {
       <div
         style={{
           width: 1190,
+          paddingTop: 107,
           margin: 'auto',
         }}>
         {props.children}
