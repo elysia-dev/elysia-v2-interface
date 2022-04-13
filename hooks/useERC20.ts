@@ -8,14 +8,12 @@ const useERC20 = (address: string): ERC20 => {
   const { library } = useWeb3React();
 
   const contract = useMemo(() => {
-    if (!library) {
-      return ERC20__factory.connect(
-        address,
-        new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC) as any,
-      );
-    }
-    return ERC20__factory.connect(address, library.getSigner());
-  }, [library, address]);
+    return ERC20__factory.connect(
+      address,
+      new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC) as any,
+    );
+    // return ERC20__factory.connect(address, library.getSigner());
+  }, []);
 
   return contract;
 };
