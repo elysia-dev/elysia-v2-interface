@@ -11,7 +11,7 @@ const useERC20 = (address: string): ERC20 => {
     if (!library) {
       return ERC20__factory.connect(
         address,
-        new providers.JsonRpcProvider(process.env.REACT_APP_JSON_RPC) as any,
+        new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC) as any,
       );
     }
     return ERC20__factory.connect(address, library.getSigner());
