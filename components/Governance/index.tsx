@@ -1,4 +1,3 @@
-import { useWeb3React } from '@web3-react/core';
 import Modal from 'components/Modals';
 import TxContext from 'contexts/TxContext';
 import ChainType from 'enums/ChainType';
