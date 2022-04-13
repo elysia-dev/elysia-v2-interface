@@ -15,9 +15,13 @@ const useTotalStakedBalance = () => {
     if (!contract) return;
     (async () => {
       try {
-        setTotalBalance(
-          await contract.balanceOf(envs.staking.elStakingPoolAddress),
+        const v1Balance = await contract.balanceOf(
+          envs.staking.elStakingPoolAddress,
         );
+        const v2Balance = await contract.balanceOf(
+          envs.staking.elfyV2StakingPoolAddress,
+        );
+        setTotalBalance(v2Balance.add(v1Balance));
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
