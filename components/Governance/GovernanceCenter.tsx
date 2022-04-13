@@ -13,6 +13,7 @@ import {
   circulatingSupplyFetcher,
   totalSupplyFetcher,
 } from 'clients/TokenSupply';
+import { formatCommaSmallZeroDisits } from 'utils/formatters';
 
 const GovernanceCenter = () => {
   const { data } = useSWR(
@@ -94,7 +95,7 @@ const GovernanceCenter = () => {
                 mouseLeave={() => setGuideType('')}
               />
             </div>
-            <div>{totalSupply} EL</div>
+            <div>{formatCommaSmallZeroDisits(totalSupply)} EL</div>
           </div>
           <div>
             <div>
@@ -106,7 +107,7 @@ const GovernanceCenter = () => {
                 mouseLeave={() => setGuideType('')}
               />
             </div>
-            <div>{circulatingSupply} EL</div>
+            <div>{formatCommaSmallZeroDisits(circulatingSupply)} EL</div>
           </div>
         </div>
       </div>
