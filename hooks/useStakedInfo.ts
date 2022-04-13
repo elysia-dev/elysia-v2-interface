@@ -32,7 +32,13 @@ const useStakedInfo = () => {
           loadedAt: moment(),
         });
       } catch (error) {
-        console.error(error);
+        setUserStakedInfo({
+          userPrincipal: constants.Zero,
+          userReward: constants.Zero,
+          totalPrincipal: constants.Zero,
+          loadedAt: moment(),
+        });
+        // console.error(error);
       }
     },
     [],
