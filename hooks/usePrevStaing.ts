@@ -1,8 +1,6 @@
-import { BigNumber, constants } from 'ethers';
-import { useCallback, useContext, useState } from 'react';
+import { BigNumber } from 'ethers';
+import { useCallback, useContext } from 'react';
 import envs from 'core/envs';
-import useERC20 from './useERC20';
-import useStakingPool from './useStakingPool';
 import TxContext from 'contexts/TxContext';
 import buildEventEmitter from 'utils/buildEventEmitter';
 import TransactionType from 'enums/TransactionType';
@@ -10,9 +8,10 @@ import { useWeb3React } from '@web3-react/core';
 import ModalViewType from 'enums/ModalViewType';
 import RecentActivityType from 'enums/RecentActivityType';
 import useERC20Info from './useERC20Info';
+import useV1StakingPool from './useV1StakingPool';
 
 const usePrevStaking = () => {
-  const { contract } = useStakingPool();
+  const { contract } = useV1StakingPool();
   const { chainId, account } = useWeb3React();
   const { refetch } = useERC20Info(
     envs.token.elAddress,
