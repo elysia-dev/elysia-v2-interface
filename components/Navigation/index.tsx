@@ -1,7 +1,5 @@
 import { useWeb3React } from '@web3-react/core';
 import Modal from 'components/Modals';
-import DisconnectModal from 'components/Modals/DisconnectModal';
-import SelectWalletModal from 'components/Modals/SelectWalletModal';
 import ModalType from 'enums/ModalType';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -13,7 +11,7 @@ import Image from 'next/image';
 import { isMetamask, isWalletConnector } from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
 import injectedConnector from 'core/connectors/injectedConnector';
-import { useMediaQuery } from 'react-responsive';
+import useIsMobile from 'hooks/useIsMobile';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -21,9 +19,7 @@ const Navigation = () => {
   const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false);
   const { account, activate, deactivate } = useWeb3React();
-  const isMobile = useMediaQuery({
-    query: '(min-width:0px) and (max-width:768px)',
-  });
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (isWalletConnector()) {
