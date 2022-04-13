@@ -1,4 +1,4 @@
-import { StakingPool } from '@elysia-dev/contract-typechain';
+import { StakingPoolV2 } from '@elysia-dev/elyfi-v1-sdk';
 import { useWeb3React } from '@web3-react/core';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
@@ -19,16 +19,21 @@ const useStakedInfo = () => {
   });
 
   const getUserInfo = useCallback(
-    async (contract: StakingPool, account: string) => {
-      const data = await contract.getPoolData(7);
-      const userData = await contract.getUserData(7, account);
-      const userReward = await contract.getUserReward(account, 7);
-      setUserStakedInfo({
-        totalPrincipal: data.totalPrincipal,
-        userPrincipal: userData.userPrincipal,
-        userReward: userReward,
-        loadedAt: moment(),
-      });
+    async (contract: StakingPoolV2, account: string) => {
+      try {
+        const data = await contract.getPoolData();
+        const userReward = await contract.getUserReward(account);
+        const userData = await contract.getUserData(account);
+
+        setUserStakedInfo({
+          totalPrincipal: data.totalPrincipal,
+          userPrincipal: userData.userPrincipal,
+          userReward: userReward,
+          loadedAt: moment(),
+        });
+      } catch (error) {
+        console.error(error);
+      }
     },
     [],
   );
