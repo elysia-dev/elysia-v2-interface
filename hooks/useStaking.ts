@@ -16,9 +16,9 @@ const useStaking = () => {
   const { chainId, account } = useWeb3React();
   const { refetch } = useERC20Info(
     envs.token.elAddress,
-    envs.staking.elStakingPoolAddress,
+    envs.staking.elStakingV2PoolAddress,
   );
-  const { setTransaction } = useContext(TxContext);
+  const { setTransaction, failTransaction } = useContext(TxContext);
   const elTokenContract = useERC20(envs.token.elAddress);
 
   const approve = useCallback(() => {
@@ -49,8 +49,8 @@ const useStaking = () => {
           },
         );
       })
-      .catch(() => {
-        console.log('error');
+      .catch((error) => {
+        failTransaction(emitter, () => {}, error, TransactionType.Approve);
       });
   }, [account, chainId, contract, elTokenContract, refetch, setTransaction]);
 
@@ -83,8 +83,8 @@ const useStaking = () => {
             },
           );
         })
-        .catch(() => {
-          console.log('error');
+        .catch((error) => {
+          failTransaction(emitter, () => {}, error, TransactionType.Stake);
         });
     },
     [account, chainId, contract, refetch, setTransaction],
@@ -107,7 +107,7 @@ const useStaking = () => {
 
       if (!contract) return;
       contract
-        .withdraw(amount, 7)
+        .withdraw(amount)
         .then((tx) => {
           setTransaction(
             tx,
@@ -119,8 +119,8 @@ const useStaking = () => {
             },
           );
         })
-        .catch(() => {
-          console.log('error');
+        .catch((error) => {
+          failTransaction(emitter, () => {}, error, TransactionType.Unstake);
         });
     },
     [account, chainId, contract, refetch, setTransaction],
@@ -142,7 +142,7 @@ const useStaking = () => {
 
     if (!contract) return;
     contract
-      .claim(7)
+      .claim()
       .then((tx) => {
         setTransaction(
           tx,
@@ -154,8 +154,8 @@ const useStaking = () => {
           },
         );
       })
-      .catch(() => {
-        console.log('error');
+      .catch((error) => {
+        failTransaction(emitter, () => {}, error, TransactionType.Claim);
       });
   }, [account, chainId, contract, refetch, setTransaction]);
 
