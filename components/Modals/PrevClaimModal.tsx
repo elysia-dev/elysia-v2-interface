@@ -70,7 +70,9 @@ const PrevClaimModal = (props: Props) => {
             <div className={styles.modal_content_wrapper}>
               <div className={styles.modal_content}>
                 <span className={styles.reward}>
-                  {parseFloat(utils.formatEther(reward ?? constants.Zero))}
+                  {formatSixFracionDigit(
+                    parseFloat(utils.formatEther(reward ?? constants.Zero)),
+                  )}
                 </span>
                 <div>EL</div>
               </div>
@@ -81,7 +83,9 @@ const PrevClaimModal = (props: Props) => {
                 setTransactionWait(true);
                 claim(round);
               }}>
-              <p>{t('modal.reward.0')}</p>
+              <div>
+                <p>{t('modal.reward.0')}</p>
+              </div>
             </div>
           </>
         )}
