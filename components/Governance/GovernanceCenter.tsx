@@ -9,19 +9,26 @@ import priceMiddleware from 'middleware/priceMiddleware';
 import { Trans, useTranslation } from 'react-i18next';
 import Questionmark from './Questionmark';
 import { useState } from 'react';
+import {
+  circulatingSupplyFetcher,
+  totalSupplyFetcher,
+} from 'clients/TokenSupply';
 
-type Props = {
-  circulatingSupply: string;
-  totalSupply: string;
-};
-
-const GovernanceCenter = (props: Props) => {
+const GovernanceCenter = () => {
   const { data } = useSWR(
     envs.externalApiEndpoint.coingackoURL,
     pricesFetcher,
     {
       use: [priceMiddleware],
     },
+  );
+  const { data: totalSupply } = useSWR(
+    process.env.NEXT_PUBLIC_CIRCULATING_SUPPLY_API,
+    circulatingSupplyFetcher,
+  );
+  const { data: circulatingSupply } = useSWR(
+    process.env.NEXT_PUBLIC_TOTAL_SUPPLY_API,
+    totalSupplyFetcher,
   );
   const { t } = useTranslation();
   const [guideType, setGuideType] = useState('');
@@ -87,7 +94,7 @@ const GovernanceCenter = (props: Props) => {
                 mouseLeave={() => setGuideType('')}
               />
             </div>
-            <div>{props.totalSupply} EL</div>
+            <div>{totalSupply} EL</div>
           </div>
           <div>
             <div>
@@ -99,7 +106,7 @@ const GovernanceCenter = (props: Props) => {
                 mouseLeave={() => setGuideType('')}
               />
             </div>
-            <div>{props.circulatingSupply} EL</div>
+            <div>{circulatingSupply} EL</div>
           </div>
         </div>
       </div>
