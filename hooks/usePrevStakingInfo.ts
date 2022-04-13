@@ -1,15 +1,14 @@
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { StakingPool } from '@elysia-dev/contract-typechain';
 import { useWeb3React } from '@web3-react/core';
 import TxContext from 'contexts/TxContext';
-import TxStatus from 'enums/TxStatus';
-import { BigNumber, constants, utils } from 'ethers';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { BigNumber, constants } from 'ethers';
 import stakingRoundDate from 'utils/stakingRoundDate';
-import useStakingPool from './useStakingPool';
+import useV1StakingPool from './useV1StakingPool';
 
 const usePrevStakingInfo = () => {
   const { account } = useWeb3React();
-  const { contract } = useStakingPool();
+  const { contract } = useV1StakingPool();
   const { txStatus } = useContext(TxContext);
   const [userInfo, setUserInfo] = useState<
     { userReward: BigNumber; userPrincipal: BigNumber }[]
