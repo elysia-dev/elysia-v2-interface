@@ -48,7 +48,7 @@ const GovernanceCenter = () => {
             <div>
               <a
                 href="https://coinmarketcap.com/currencies/elysia/markets/"
-                rel="noopener noreferer"
+                rel="noopener noreferrer"
                 target="_blank">
                 {t('governance.section_second.3')}
                 <Arrow />
