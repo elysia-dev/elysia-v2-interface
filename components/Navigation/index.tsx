@@ -47,13 +47,15 @@ const Navigation = () => {
       <div className={styles.navigation}>
         <div className={styles.navigation_wrapper}>
           <div className={styles.navigation_logo}>
-            <Link href={`/${router.query.lng}/Governance`} passHref>
-              <Image
-                src={ElysiaLogo}
-                alt={'ElysiaLogo'}
-                width={isMobile ? 80 : 139}
-                height={isMobile ? 18 : 31}
-              />
+            <Link href={`/${router.query.lng}/Governance`}>
+              <>
+                <Image
+                  src={ElysiaLogo}
+                  alt={'ElysiaLogo'}
+                  width={isMobile ? 80 : 139}
+                  height={isMobile ? 18 : 31}
+                />
+              </>
             </Link>
           </div>
           <div>
