@@ -13,6 +13,7 @@ import Image from 'next/image';
 import { isMetamask, isWalletConnector } from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
 import injectedConnector from 'core/connectors/injectedConnector';
+import { useMediaQuery } from 'react-responsive';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -20,6 +21,9 @@ const Navigation = () => {
   const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false);
   const { account, activate, deactivate } = useWeb3React();
+  const isMobile = useMediaQuery({
+    query: '(min-width:0px) and (max-width:768px)',
+  });
 
   useEffect(() => {
     if (isWalletConnector()) {
@@ -51,8 +55,8 @@ const Navigation = () => {
               <Image
                 src={ElysiaLogo}
                 alt={'ElysiaLogo'}
-                width={139}
-                height={31}
+                width={isMobile ? 80 : 139}
+                height={isMobile ? 18 : 31}
               />
             </Link>
           </div>
