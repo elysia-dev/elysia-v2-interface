@@ -14,13 +14,13 @@ const GovernanceTop = () => {
           <Trans> {t('governance.section_first.1')}</Trans>
         </div>
         <div className={styles.governance_top_content_wrapper}>
-          <div className={styles.governance_top_content_circle}>
+          <div>
             <Trans>{t('governance.section_first.2')}</Trans>
           </div>
-          <div className={styles.governance_top_content_circle}>
+          <div>
             <Trans> {t('governance.section_first.3')}</Trans>
           </div>
-          <div className={styles.governance_top_content_circle}>
+          <div>
             <Trans>{t('governance.section_first.4')}</Trans>
           </div>
         </div>
