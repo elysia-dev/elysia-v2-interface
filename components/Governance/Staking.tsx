@@ -9,7 +9,7 @@ import {
 import useStakedInfo from 'hooks/useStakedInfo';
 import { formatEther } from 'ethers/lib/utils';
 import CountUp from 'react-countup';
-import { BigNumber } from 'ethers';
+import { BigNumber, constants } from 'ethers';
 import Arrow from './Arrow';
 import { useWeb3React } from '@web3-react/core';
 import { useRouter } from 'next/router';
@@ -18,6 +18,7 @@ import Skeleton from 'react-loading-skeleton';
 import ChainType from 'enums/ChainType';
 import { Trans, useTranslation } from 'react-i18next';
 import LanguageType from 'enums/LanguageType';
+import moment from 'moment';
 
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
@@ -40,7 +41,13 @@ const Staking = (props: Props) => {
   } = props;
   const { account } = useWeb3React();
   const router = useRouter();
-  const userStakedInfo = useStakedInfo();
+  // const userStakedInfo = useStakedInfo();
+  const userStakedInfo = {
+    userPrincipal: constants.Zero,
+    userReward: constants.Zero,
+    totalPrincipal: constants.Zero,
+    loadedAt: moment(),
+  };
   const { totalBalance, isLoading } = useTotalStakedBalance();
   const { t, i18n } = useTranslation();
 

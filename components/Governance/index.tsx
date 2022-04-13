@@ -3,6 +3,7 @@ import TxContext from 'contexts/TxContext';
 import ChainType from 'enums/ChainType';
 import ModalType from 'enums/ModalType';
 import RecentActivityType from 'enums/RecentActivityType';
+import { constants } from 'ethers';
 import useReward from 'hooks/useReward';
 import { useContext, useEffect, useState } from 'react';
 import GovernanceBottom from './GovernanceBottom';
@@ -15,7 +16,7 @@ const Governance = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [currentChain, setCurrentChain] = useState(ChainType.Ethereum);
   const { txType } = useContext(TxContext);
-  const reward = useReward();
+  // const reward = useReward();
 
   useEffect(() => {
     if (
@@ -33,7 +34,10 @@ const Governance = () => {
         visible={modalVisible}
         onClose={() => setModalVisible(false)}
         modalType={modal}
-        reward={reward}
+        reward={{
+          before: constants.Zero,
+          after: constants.Zero,
+        }}
         setModalType={() => setModalType(ModalType.Connect)}
       />
       <div
@@ -45,7 +49,10 @@ const Governance = () => {
         <Staking
           setModalType={setModalType}
           setModalVisible={() => setModalVisible(true)}
-          reward={reward}
+          reward={{
+            before: constants.Zero,
+            after: constants.Zero,
+          }}
           currentChain={currentChain}
           setCurrentChain={setCurrentChain}
         />
