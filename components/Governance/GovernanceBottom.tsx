@@ -20,13 +20,13 @@ const GovernanceBottom = () => {
             <Trans>{t('governance.section_fourth.1')}</Trans>
           </div>
           <div className={styles.governance_bottom_button_wrapper}>
-            <div className={styles.governance_bottom_button}>
+            <div>
               {t('governance.section_fourth.2')} <Arrow />
             </div>
-            <div className={styles.governance_bottom_button}>
+            <div>
               {t('governance.section_fourth.3')} <Arrow />
             </div>
-            <div className={styles.governance_bottom_button}>
+            <div>
               {t('governance.section_fourth.4')}
               <Arrow />
             </div>
@@ -50,7 +50,7 @@ const GovernanceBottom = () => {
             <div className={styles.governance_bottom_content_list}>
               <div>
                 <Image src={snapshot} alt={'snapshot'} height={65} width={65} />
-                <div>Comming Sonn</div>
+                <div>Comming Soon</div>
               </div>
               <div>{t('governance.section_fourth.8')}</div>
               <div>{t('governance.section_fourth.9')}</div>
