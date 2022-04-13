@@ -31,7 +31,9 @@ const ConnectWalletGuide = (props: Props) => {
             onClick={() => {
               setModalType();
             }}>
-            <p>{t('modal.connect_wallet.2')}</p>
+            <div>
+              <p>{t('modal.connect_wallet.2')}</p>
+            </div>
           </div>
         </>
       </div>

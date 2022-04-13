@@ -91,7 +91,9 @@ const ClaimModal = (props: Props) => {
                 setTransactionWait(true);
                 claim();
               }}>
-              <p>{t('modal.reward.0')}</p>
+              <div>
+                <p>{t('modal.reward.0')}</p>
+              </div>
             </div>
           </>
         )}

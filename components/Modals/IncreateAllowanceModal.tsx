@@ -68,7 +68,9 @@ const IncreateAllowanceModal: React.FunctionComponent<{
           props.setTransactionWait(true);
           approve();
         }}>
-        <p>{t('modal.approve.3')}</p>
+        <div>
+          <p>{t('modal.approve.3')}</p>
+        </div>
       </div>
     </>
   );

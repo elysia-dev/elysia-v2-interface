@@ -68,16 +68,18 @@ const StakingBody = (props: Props) => {
               utils.parseEther(String(stakingInfo.value)),
               stakingInfo.round,
             );
-          }}
-          style={{
-            backgroundColor: isDisabledBtn ? '#f0f0f1' : '#3679b5',
           }}>
-          <p
+          <div
             style={{
-              color: isDisabledBtn ? '#888888' : '#ffffff',
+              backgroundColor: isDisabledBtn ? '#f0f0f1' : '#3679b5',
             }}>
-            {isDisabledBtn ? t('modal.button.0') : stakingInfo.type}
-          </p>
+            <p
+              style={{
+                color: isDisabledBtn ? '#888888' : '#ffffff',
+              }}>
+              {isDisabledBtn ? t('modal.button.0') : stakingInfo.type}
+            </p>
+          </div>
         </div>
       </>
     </>

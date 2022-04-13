@@ -33,19 +33,20 @@ const LoadingIndicator: React.FunctionComponent<{
           </p>
         )}
       </div>
-      <div
-        className={styles.modal_button}
-        style={{
-          background: '#f0f0f1',
-          cursor: 'auto',
-        }}>
-        <p
+      <div className={styles.modal_button}>
+        <div
           style={{
-            color: '#888888',
+            background: '#f0f0f1',
             cursor: 'auto',
           }}>
-          {button}
-        </p>
+          <p
+            style={{
+              color: '#888888',
+              cursor: 'auto',
+            }}>
+            {button}
+          </p>
+        </div>
       </div>
     </>
   );
