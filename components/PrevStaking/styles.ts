@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const PrevStakingWrapper = styled.div`
   margin-top: 127px;
+  padding: 0px 10px;
 `;
 
 export const HeaderWrapper = styled.div`
@@ -26,7 +27,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const StakingSection = styled.section`
-  width: 1193px;
+  width: 100%;
   border: 1px solid #e6e6e6;
   border-radius: 10px;
   background: #ffffff;
@@ -71,6 +72,12 @@ export const RoundInfoWrapper = styled.div`
       text-align: center;
       color: #333333;
       font-size: 0.8125rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    > div {
+      border: none;
     }
   }
 `;
@@ -122,6 +129,23 @@ export const StakingInfoByRound = styled.div`
     align-items: center;
     margin-left: 20px;
     font-size: 0.84375rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    :first-child {
+      margin-bottom: 20px;
+    }
+
+    > div:nth-child(3) {
+      margin-top: 5px;
+      margin-left: auto;
+      width: 120px;
+      height: 30px;
+    }
   }
 `;
 
