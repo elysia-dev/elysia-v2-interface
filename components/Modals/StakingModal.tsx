@@ -24,7 +24,7 @@ const StakingModal = (props: Props) => {
   const { onClose } = props;
   const { balance, allowance, loading } = useERC20Info(
     envs.token.elAddress,
-    envs.staking.elStakingPoolAddress,
+    envs.staking.elStakingV2PoolAddress,
   );
   const { t } = useTranslation();
   const userStakedInfo = useStakedInfo();
