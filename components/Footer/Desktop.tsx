@@ -12,7 +12,6 @@ import { useTranslation } from 'react-i18next';
 import Frame from 'react-frame-component';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { useMediaQuery } from 'react-responsive';
 
 const Desktop: FunctionComponent = () => {
   const history = useRouter();
