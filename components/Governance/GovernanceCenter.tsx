@@ -10,7 +10,12 @@ import { Trans, useTranslation } from 'react-i18next';
 import Questionmark from './Questionmark';
 import { useState } from 'react';
 
-const GovernanceCenter = () => {
+type Props = {
+  circulatingSupply: string;
+  totalSupply: string;
+};
+
+const GovernanceCenter = (props: Props) => {
   const { data } = useSWR(
     envs.externalApiEndpoint.coingackoURL,
     pricesFetcher,
@@ -23,24 +28,23 @@ const GovernanceCenter = () => {
 
   return (
     <div className={styles.governance_center}>
-      <div className={styles.governance_center_header}>
-        {t('governance.section_second.0')}
-      </div>
+      <div>{t('governance.section_second.0')}</div>
       <div className={styles.governance_center_content_wrapper}>
         <div className={styles.governance_center_content_description}>
-          <div className={styles.governance_center_content_description_first}>
-            01
-          </div>
-          <div className={styles.governance_center_content_description_second}>
-            {t('governance.section_second.1')}
-          </div>
-          <div className={styles.governance_center_content_description_third}>
+          <div>01</div>
+          <div>{t('governance.section_second.1')}</div>
+          <div>
             <Trans>{t('governance.section_second.2')}</Trans>
           </div>
           <div className={styles.governance_center_content_wrapper_button}>
-            <div className={styles.governance_center_content_button}>
-              {t('governance.section_second.3')}
-              <Arrow />
+            <div>
+              <a
+                href="https://coinmarketcap.com/currencies/elysia/markets/"
+                rel="noopener noreferer"
+                target="_blank">
+                {t('governance.section_second.3')}
+                <Arrow />
+              </a>
             </div>
             <div className={styles.governance_center_content_button}>
               {t('governance.section_second.4')}
@@ -52,16 +56,16 @@ const GovernanceCenter = () => {
           <Image src={TokenImg} alt={'TokenImg'} width={358} height={358} />
         </div>
       </div>
-      <div className={styles.governance_center_info_wrapper}>
+      <div>
         <div className={styles.governance_center_info_header}>
           {t('governance.section_second.5')}
         </div>
         <div className={styles.governance_center_info_box}>
-          <div className={styles.governance_center_info_content}>
+          <div>
             <div>{t('governance.section_second.6')}</div>
             <div>$ {data?.elPrice.toFixed(4)}</div>
           </div>
-          <div className={styles.governance_center_info_content}>
+          <div>
             <div>
               {t('governance.section_second.7')}{' '}
               <Questionmark
@@ -73,7 +77,7 @@ const GovernanceCenter = () => {
             </div>
             <div>7,000,000,000 EL</div>
           </div>
-          <div className={styles.governance_center_info_content}>
+          <div>
             <div>
               {t('governance.section_second.9')}
               <Questionmark
@@ -83,9 +87,9 @@ const GovernanceCenter = () => {
                 mouseLeave={() => setGuideType('')}
               />
             </div>
-            <div>6,570,000,000 EL</div>
+            <div>{props.totalSupply} EL</div>
           </div>
-          <div className={styles.governance_center_info_content}>
+          <div>
             <div>
               {t('governance.section_second.11')}
               <Questionmark
@@ -95,7 +99,7 @@ const GovernanceCenter = () => {
                 mouseLeave={() => setGuideType('')}
               />
             </div>
-            <div>6,570,000,000 EL</div>
+            <div>{props.circulatingSupply} EL</div>
           </div>
         </div>
       </div>
