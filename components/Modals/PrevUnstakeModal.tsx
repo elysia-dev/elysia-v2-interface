@@ -27,22 +27,6 @@ const PrevUnstakeModal = (props: Props) => {
   const [value, setValue] = useState('');
   const [transactionWait, setTransactionWait] = useState(false);
 
-  const stakingInfo = useMemo(() => {
-    return {
-      header: t('modal.unstaking.2'),
-      walletAmount: t('modal.prev_unstaking', { round }),
-      max: () => {
-        setValue(utils.formatEther(prevAmount ?? constants.Zero));
-      },
-      value: value,
-      setValue,
-      amount: prevAmount ?? constants.Zero,
-      type: t('modal.unstaking.0'),
-      sendTx: withdraw,
-      round: round,
-    };
-  }, [value, withdraw]);
-
   useEffect(() => {
     if (txStatus !== TxStatus.PENDING) {
       setTransactionWait(false);
@@ -83,11 +67,21 @@ const PrevUnstakeModal = (props: Props) => {
             <LoadingIndicator
               isTxActive={transactionWait}
               isApproveLoading={false}
-              button={stakingInfo.type}
+              button={t('modal.unstaking.0')}
             />
           ) : (
             <StakingBody
-              stakingInfo={stakingInfo}
+              header={t('modal.unstaking.2')}
+              walletAmount={t('modal.prev_unstaking', { round })}
+              max={() => {
+                setValue(utils.formatEther(prevAmount ?? constants.Zero));
+              }}
+              value={value}
+              setValue={setValue}
+              amount={prevAmount ?? constants.Zero}
+              type={t('modal.unstaking.0')}
+              sendTx={withdraw}
+              round={round}
               setTransactionWait={setTransactionWait}
             />
           )}
