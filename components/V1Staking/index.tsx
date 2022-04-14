@@ -9,10 +9,10 @@ import RecentActivityType from 'enums/RecentActivityType';
 import TxContext from 'contexts/TxContext';
 import { Trans, useTranslation } from 'react-i18next';
 import ModalLayout from 'components/Modals/ModalLayout';
-import PrevUnstakeModal from 'components/Modals/PrevUnstakeModal';
-import PrevClaimModal from 'components/Modals/PrevClaimModal';
 import TransactionConfirmModal from 'components/Modals/TransactionConfirmModal';
 import TxStatus from 'enums/TxStatus';
+import V1UnstakeModal from 'components/Modals/V1UnstakeModal';
+import V1ClaimModal from 'components/Modals/V1ClaimModal';
 
 const V1Staking = () => {
   const { userInfo, isLoading } = usePrevStakingInfo();
@@ -44,13 +44,13 @@ const V1Staking = () => {
       {modalVisible && (
         <ModalLayout>
           {modal === ModalType.PrevUnstake ? (
-            <PrevUnstakeModal
+            <V1UnstakeModal
               onClose={() => setModalVisible(false)}
               round={round}
               prevAmount={amount}
             />
           ) : modal === ModalType.PrevReward ? (
-            <PrevClaimModal
+            <V1ClaimModal
               onClose={() => setModalVisible(false)}
               round={round}
               reward={amount}
