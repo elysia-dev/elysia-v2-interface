@@ -13,7 +13,6 @@ import LoadingIndicator from './LoadingIndicator';
 import IncreateAllowanceModal from './IncreateAllowanceModal';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
-import RecentActivityType from 'enums/RecentActivityType';
 import { useTranslation } from 'react-i18next';
 
 type Props = {
@@ -30,36 +29,14 @@ const StakingModal = (props: Props) => {
   const userStakedInfo = useStakedInfo();
   const { txStatus } = useContext(TxContext);
   const { staking, withdraw } = useStaking();
-  const [stakingType, setStakingType] = useState('staking');
+  const transText = t('modal.staking.0');
+  const [stakingType, setStakingType] = useState(transText);
   const [value, setValue] = useState('');
   const [transactionWait, setTransactionWait] = useState(false);
 
-  const changeStakingType = useCallback((type: string) => {
-    setStakingType(type);
-  }, []);
-
   const isStakingMode = useCallback(() => {
-    return stakingType === 'staking';
+    return stakingType === t('modal.staking.0');
   }, [stakingType]);
-
-  const stakingInfo = useMemo(() => {
-    const stakingMode = isStakingMode();
-    const amount = parseFloat(
-      utils.formatEther(stakingMode ? balance : userStakedInfo.userPrincipal),
-    );
-    return {
-      header: stakingMode ? t('modal.staking.2') : t('modal.unstaking.2'),
-      walletAmount: stakingMode ? t('modal.staking.1') : t('modal.unstaking.1'),
-      max: () => {
-        setValue(String(amount));
-      },
-      value: value,
-      setValue,
-      amount: stakingMode ? balance : userStakedInfo.userPrincipal,
-      type: stakingMode ? t('modal.staking.0') : t('modal.unstaking.0'),
-      sendTx: stakingMode ? staking : withdraw,
-    };
-  }, [balance, isStakingMode, staking, userStakedInfo, value, withdraw]);
 
   useEffect(() => {
     setValue('');
@@ -93,14 +70,14 @@ const StakingModal = (props: Props) => {
           </div>
           <div className={styles.staking_type}>
             <div
-              onClick={() => changeStakingType('staking')}
+              onClick={() => setStakingType(t('modal.staking.0'))}
               style={{
                 borderBottom: isStakingMode() ? '3px solid #3679b5' : 'none',
               }}>
               {t('modal.staking.0')}
             </div>
             <div
-              onClick={() => changeStakingType('unstaking')}
+              onClick={() => setStakingType(t('modal.unstaking.0'))}
               style={{
                 borderBottom: isStakingMode() ? 'none' : '3px solid #3679b5',
               }}>
@@ -111,16 +88,39 @@ const StakingModal = (props: Props) => {
             <LoadingIndicator
               isTxActive={transactionWait}
               isApproveLoading={!allowance.gt(balance)}
-              button={loading ? t('modal.approve.4') : stakingInfo.type}
+              button={
+                loading
+                  ? t('modal.approve.4')
+                  : stakingType
+                  ? t('modal.staking.0')
+                  : t('modal.unstaking.0')
+              }
             />
-          ) : allowance.gt(balance) ? (
+          ) : allowance.gt(balance) ||
+            stakingType === t('modal.unstaking.0') ? (
             <StakingBody
-              stakingInfo={stakingInfo}
-              setTransactionWait={setTransactionWait}
-            />
-          ) : stakingInfo.type === t('modal.unstaking.0') ? (
-            <StakingBody
-              stakingInfo={stakingInfo}
+              header={
+                isStakingMode() ? t('modal.staking.2') : t('modal.unstaking.2')
+              }
+              walletAmount={
+                isStakingMode() ? t('modal.staking.1') : t('modal.unstaking.1')
+              }
+              max={() => {
+                setValue(
+                  String(
+                    utils.formatEther(
+                      isStakingMode() ? balance : userStakedInfo.userPrincipal,
+                    ),
+                  ),
+                );
+              }}
+              value={value}
+              setValue={setValue}
+              amount={isStakingMode() ? balance : userStakedInfo.userPrincipal}
+              type={
+                isStakingMode() ? t('modal.staking.0') : t('modal.unstaking.0')
+              }
+              sendTx={isStakingMode() ? staking : withdraw}
               setTransactionWait={setTransactionWait}
             />
           ) : (
