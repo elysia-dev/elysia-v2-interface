@@ -15,7 +15,10 @@ const useReward = () => {
     const interval = setInterval(() => {
       setReward({
         before: reward.after,
-        after: calcExpectedReward(userStakedInfo, utils.parseEther('25000')),
+        after: calcExpectedReward(
+          userStakedInfo,
+          utils.parseEther('330731.57142857'),
+        ),
       });
     }, 3000);
 
