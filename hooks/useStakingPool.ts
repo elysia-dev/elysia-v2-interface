@@ -3,17 +3,27 @@ import { useMemo } from 'react';
 import envs from 'core/envs';
 
 import { StakingPoolV2, StakingPoolV2factory } from '@elysia-dev/elyfi-v1-sdk';
+import { providers } from 'ethers';
 
 const useStakingPool = (): {
   contract: StakingPoolV2 | undefined;
 } => {
   const { library } = useWeb3React();
   const contract = useMemo(() => {
-    if (!library) return;
-    return StakingPoolV2factory.connect(
-      envs.staking.elStakingV2PoolAddress,
-      library.getSigner(),
-    );
+    try {
+      if (!library) {
+        return StakingPoolV2factory.connect(
+          envs.staking.elStakingV2PoolAddress,
+          new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC),
+        );
+      }
+      return StakingPoolV2factory.connect(
+        envs.staking.elStakingV2PoolAddress,
+        library.getSigner(),
+      );
+    } catch (error) {
+      console.log(error);
+    }
   }, [library]);
 
   return { contract };
