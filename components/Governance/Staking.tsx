@@ -42,7 +42,7 @@ const Staking = (props: Props) => {
   const { account } = useWeb3React();
   const router = useRouter();
   const userStakedInfo = useStakedInfo();
-  const { totalBalance, isLoading } = useTotalStakedBalance();
+  const { totalBalance, isLoading, apr } = useTotalStakedBalance();
   const { t, i18n } = useTranslation();
 
   const stakingInfo = useMemo(() => {
@@ -136,7 +136,7 @@ const Staking = (props: Props) => {
             </div>
           </div>
           <div className={styles.governance_staking_apr}>
-            <div> {currentChain === ChainType.Ethereum ? 'xx.xx %' : '-'}</div>
+            <div> {currentChain === ChainType.Ethereum ? apr : '-'}</div>
             <div className={styles.governance_staking_total_name}>APR</div>
           </div>
         </div>
