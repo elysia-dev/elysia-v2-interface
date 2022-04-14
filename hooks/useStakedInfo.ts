@@ -23,14 +23,14 @@ const useStakedInfo = () => {
       try {
         const data = await contract.getPoolData();
         const userReward = await contract.getUserReward(account);
-        const userData = await contract.getUserData(account);
+        // const userData = await contract.getUserData(account);
 
-        setUserStakedInfo({
-          totalPrincipal: data.totalPrincipal,
-          userPrincipal: userData.userPrincipal,
-          userReward: userReward,
-          loadedAt: moment(),
-        });
+        // setUserStakedInfo({
+        //   totalPrincipal: data.totalPrincipal,
+        //   userPrincipal: userData.userPrincipal,
+        //   userReward: userReward,
+        //   loadedAt: moment(),
+        // });
       } catch (error) {
         setUserStakedInfo({
           userPrincipal: constants.Zero,
