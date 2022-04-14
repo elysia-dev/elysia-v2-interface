@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next';
 
 type Props = {
   onClose: () => void;
-  reward?: {
+  reward: {
     before: BigNumber;
     after: BigNumber;
   };
@@ -55,7 +55,6 @@ const ClaimModal = (props: Props) => {
             </div>
             <CloseButton onClose={() => onClose()} />
           </div>
-          {/* <div className={styles.staking_type}></div> */}
         </div>
         {transactionWait ? (
           <>
