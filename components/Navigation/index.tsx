@@ -1,9 +1,7 @@
 import { useWeb3React } from '@web3-react/core';
-import Modal from 'components/Modals';
-import ModalType from 'enums/ModalType';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ConnectWalletButton from './ConnectWalletButton';
 import styles from './Navigation.module.scss';
 import ElysiaLogo from 'assets/images/elysia_logo@2x.png';
@@ -12,6 +10,12 @@ import { isMetamask, isWalletConnector } from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
 import injectedConnector from 'core/connectors/injectedConnector';
 import useIsMobile from 'hooks/useIsMobile';
+import TxContext from 'contexts/TxContext';
+import DisconnectModal from 'components/Modals/DisconnectModal';
+import ModalLayout from 'components/Modals/ModalLayout';
+import SelectWalletModal from 'components/Modals/SelectWalletModal';
+import ErrorModal from 'components/Modals/ErrorModal';
+import TxStatus from 'enums/TxStatus';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -19,6 +23,7 @@ const Navigation = () => {
   const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false);
   const { account, activate, deactivate } = useWeb3React();
+  const { txStatus, error } = useContext(TxContext);
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -36,14 +41,29 @@ const Navigation = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (txStatus === TxStatus.FAIL) {
+      setModalVisible(false);
+    }
+  }, [txStatus]);
+
   return (
     <>
-      <Modal
-        visible={modalVisible}
-        onClose={() => setModalVisible(false)}
-        modalType={account ? ModalType.Disconnect : ModalType.Connect}
-        setModalType={() => {}}
-      />
+      {modalVisible && (
+        <ModalLayout>
+          {account ? (
+            <DisconnectModal onClose={() => setModalVisible(false)} />
+          ) : (
+            <SelectWalletModal onClose={() => setModalVisible(false)} />
+          )}
+        </ModalLayout>
+      )}
+      {txStatus === TxStatus.FAIL &&
+        error &&
+        error !==
+          'MetaMask Tx Signature: User denied transaction signature.' && (
+          <ErrorModal error={error} />
+        )}
       <div className={styles.navigation}>
         <div className={styles.navigation_wrapper}>
           <div className={styles.navigation_logo}>
