@@ -33,16 +33,16 @@ const useTotalStakedBalance = () => {
           envs.staking.elStakingPoolAddress,
         );
         const v2Balance = await v2Contract.getPoolData();
-
+        const calculatorAPR = calcAPR(
+          v2Balance.totalPrincipal,
+          data?.elPrice,
+          utils.parseEther('330731.57142857'),
+          data?.elPrice,
+        );
         setApr(
-          toPercent(
-            calcAPR(
-              v2Balance.totalPrincipal,
-              data?.elPrice,
-              utils.parseEther('330731.57142857'),
-              data?.elPrice,
-            ),
-          ),
+          calculatorAPR.eq(constants.MaxUint256)
+            ? '-'
+            : toPercent(calculatorAPR),
         ),
           setTotalBalance(v2Balance.totalPrincipal.add(v1Balance));
         setIsLoading(false);
