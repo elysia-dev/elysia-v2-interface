@@ -5,10 +5,10 @@ import TxStatus from 'enums/TxStatus';
 import { constants } from 'ethers';
 import moment from 'moment';
 import { useCallback, useContext, useEffect, useState } from 'react';
-import useStakingPool from './useStakingPool';
+import useV2StakingPool from './useV2StakingPool';
 
 const useStakedInfo = () => {
-  const { contract } = useStakingPool();
+  const { contract } = useV2StakingPool();
   const { account } = useWeb3React();
   const { txStatus } = useContext(TxContext);
   const [userStakedInfo, setUserStakedInfo] = useState({
