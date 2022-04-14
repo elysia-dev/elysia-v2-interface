@@ -1,8 +1,7 @@
 import { useWeb3React } from '@web3-react/core';
 import LanguageType from 'enums/LanguageType';
 import ModalType from 'enums/ModalType';
-import { BigNumber, constants, utils } from 'ethers';
-import usePrevStaking from 'hooks/usePrevStaing';
+import { BigNumber, constants } from 'ethers';
 import moment from 'moment';
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
