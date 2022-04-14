@@ -1,9 +1,8 @@
 import useERC20Info from 'hooks/useERC20Info';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import envs from 'core/envs';
-import useStakedInfo from 'hooks/useStakedInfo';
 import { utils } from 'ethers';
-import useStaking from 'hooks/useStaking';
+import useStaking from 'hooks/useV2Staking';
 import ElysiaToken from 'assets/images/elysia_token.png';
 import CloseButton from './CloseButton';
 import styles from './Modal.module.scss';
@@ -14,6 +13,7 @@ import IncreateAllowanceModal from './IncreateAllowanceModal';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
 import { useTranslation } from 'react-i18next';
+import useV2StakedInfo from 'hooks/useV2StakedInfo';
 
 type Props = {
   onClose: () => void;
@@ -26,7 +26,7 @@ const StakingModal = (props: Props) => {
     envs.staking.elStakingV2PoolAddress,
   );
   const { t } = useTranslation();
-  const userStakedInfo = useStakedInfo();
+  const userStakedInfo = useV2StakedInfo();
   const { txStatus } = useContext(TxContext);
   const { staking, withdraw } = useStaking();
   const transText = t('modal.staking.0');

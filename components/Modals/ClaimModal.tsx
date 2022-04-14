@@ -1,7 +1,5 @@
 import { BigNumber, constants } from 'ethers';
 import { formatEther } from 'ethers/lib/utils';
-import useReward from 'hooks/useReward';
-import useStaking from 'hooks/useStaking';
 import ElysiaToken from 'assets/images/elysia_token.png';
 import CountUp from 'react-countup';
 import { formatSixFracionDigit } from 'utils/formatters';
@@ -13,6 +11,7 @@ import { useContext, useEffect, useState } from 'react';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
 import { useTranslation } from 'react-i18next';
+import useV2Staking from 'hooks/useV2Staking';
 
 type Props = {
   onClose: () => void;
@@ -25,7 +24,7 @@ type Props = {
 const ClaimModal = (props: Props) => {
   const { onClose, reward } = props;
   const { t } = useTranslation();
-  const { claim } = useStaking();
+  const { claim } = useV2Staking();
   const [transactionWait, setTransactionWait] = useState(false);
   const { txStatus } = useContext(TxContext);
 

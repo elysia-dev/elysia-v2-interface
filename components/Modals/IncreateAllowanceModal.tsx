@@ -1,12 +1,6 @@
 import { useWeb3React } from '@web3-react/core';
-import useStaking from 'hooks/useStaking';
-import {
-  Dispatch,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import useV2Staking from 'hooks/useV2Staking';
+import { Dispatch, SetStateAction } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import styles from './Modal.module.scss';
 
@@ -24,7 +18,7 @@ const IncreateAllowanceModal: React.FunctionComponent<{
   const connected = window.sessionStorage.getItem('@connect');
   const txHash = window.localStorage.getItem('@permissionTxHash');
   const { t } = useTranslation();
-  const { approve } = useStaking();
+  const { approve } = useV2Staking();
 
   // useEffect(() => {
   //   if (library && connected !== 'false' && txHash) {

@@ -1,9 +1,5 @@
 import { BigNumber, constants, utils } from 'ethers';
-import { formatEther } from 'ethers/lib/utils';
-import useReward from 'hooks/useReward';
-import useStaking from 'hooks/useStaking';
 import ElysiaToken from 'assets/images/elysia_token.png';
-import CountUp from 'react-countup';
 import { formatSixFracionDigit } from 'utils/formatters';
 import CloseButton from './CloseButton';
 import styles from './Modal.module.scss';
@@ -12,8 +8,8 @@ import LoadingIndicator from './LoadingIndicator';
 import { useContext, useEffect, useState } from 'react';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
-import usePrevStaking from 'hooks/usePrevStaing';
 import { useTranslation } from 'react-i18next';
+import useV1Staking from 'hooks/useV1Staking';
 
 type Props = {
   onClose: () => void;
@@ -24,7 +20,7 @@ type Props = {
 const PrevClaimModal = (props: Props) => {
   const { onClose, reward, round } = props;
   const { t } = useTranslation();
-  const { claim } = usePrevStaking();
+  const { claim } = useV1Staking();
   const [transactionWait, setTransactionWait] = useState(false);
   const { txStatus } = useContext(TxContext);
 

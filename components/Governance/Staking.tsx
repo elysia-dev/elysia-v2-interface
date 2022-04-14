@@ -6,7 +6,6 @@ import {
   formatSixFracionDigit,
   toCompactForBignumber,
 } from 'utils/formatters';
-import useStakedInfo from 'hooks/useStakedInfo';
 import { formatEther } from 'ethers/lib/utils';
 import CountUp from 'react-countup';
 import { BigNumber, constants } from 'ethers';
@@ -18,7 +17,7 @@ import Skeleton from 'react-loading-skeleton';
 import ChainType from 'enums/ChainType';
 import { Trans, useTranslation } from 'react-i18next';
 import LanguageType from 'enums/LanguageType';
-import moment from 'moment';
+import useV2StakedInfo from 'hooks/useV2StakedInfo';
 
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
@@ -41,7 +40,7 @@ const Staking = (props: Props) => {
   } = props;
   const { account } = useWeb3React();
   const router = useRouter();
-  const userStakedInfo = useStakedInfo();
+  const userStakedInfo = useV2StakedInfo();
   const { totalBalance, isLoading, apr } = useTotalStakedBalance();
   const { t, i18n } = useTranslation();
 
@@ -172,7 +171,7 @@ const Staking = (props: Props) => {
             </div>
             <div
               className={styles.staking_prev}
-              onClick={() => router.push(`/ko/Governance/prevstaking`)}>
+              onClick={() => router.push(`/ko/Governance/V1Staking`)}>
               {t('governance.section_third.6')} &gt;
             </div>
           </div>
