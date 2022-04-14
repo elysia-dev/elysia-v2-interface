@@ -97,17 +97,12 @@ const Staking = (props: Props) => {
           <p className={styles.governance_staking_content_description_second}>
             {t('governance.section_third.0')}
           </p>
-          {/* <div
-            className={
-              styles.governance_staking_content_description_wrapper_third
-            }> */}
           <p className={styles.governance_staking_content_description_third}>
             <Trans>{t('governance.section_third.1')}</Trans>
           </p>
           <p className={styles.governance_staking_content_description_third}>
             <Trans> {t('governance.section_third.2')}</Trans>
           </p>
-          {/* </div> */}
           <div
             className={styles.governance_staking_content_button}
             style={{
