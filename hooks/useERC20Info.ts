@@ -1,4 +1,4 @@
-import { ERC20 } from '@elysia-dev/contract-typechain';
+import { ERC20 } from '@elysia-dev/elyfi-v1-sdk';
 import { useWeb3React } from '@web3-react/core';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
