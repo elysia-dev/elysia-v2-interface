@@ -5,54 +5,63 @@ import { formatComma } from 'utils/formatters';
 import styles from './Modal.module.scss';
 
 type Props = {
-  stakingInfo: {
-    header: string;
-    walletAmount: string;
-    max: () => void;
-    value: string;
-    setValue: Dispatch<SetStateAction<string>>;
-    amount: BigNumber;
-    type: string;
-    sendTx: (amount: BigNumber, round?: number) => void;
-    round?: number;
-  };
+  header: string;
+  walletAmount: string;
+  max: () => void;
+  value: string;
+  setValue: Dispatch<SetStateAction<string>>;
+  amount: BigNumber;
+  type: string;
+  sendTx: (amount: BigNumber, round?: number) => void;
+  round?: number;
   setTransactionWait: Dispatch<SetStateAction<boolean>>;
 };
 
 const StakingBody = (props: Props) => {
-  const { stakingInfo, setTransactionWait } = props;
+  const {
+    header,
+    walletAmount,
+    max,
+    value,
+    setValue,
+    amount,
+    type,
+    sendTx,
+    round,
+    setTransactionWait,
+  } = props;
   const { t } = useTranslation();
   const isDisabledBtn = useMemo(() => {
     return (
-      parseFloat(utils.formatUnits(stakingInfo.amount)) <
-        Number(stakingInfo.value) || Number(stakingInfo.value) === 0
+      parseFloat(utils.formatUnits(amount)) < Number(value) ||
+      Number(value) === 0
     );
-  }, [stakingInfo.value, stakingInfo.amount]);
+  }, [value, amount]);
 
   return (
     <>
       <>
         <div className={styles.amount_input}>
-          <div onClick={() => stakingInfo.max()}>{t('modal.amount_max')}</div>
+          <div onClick={() => max()}>{t('modal.amount_max')}</div>
           <input
             className="amount"
             type="number"
             placeholder="0"
-            value={stakingInfo.value}
+            value={value}
             onChange={(e: any) => {
               if (e.target.value[0] === '.') {
-                stakingInfo.setValue(0.0 + e.target.value);
+                setValue(0.0 + e.target.value);
                 return;
               }
-              stakingInfo.setValue(e.target.value);
+              setValue(e.target.value);
             }}
           />
         </div>
         <div className={styles.balance_wrapper}>
-          <div className={styles.balance_header}>{stakingInfo.header}</div>
+          <div className={styles.balance_header}>{header}</div>
           <div className={styles.balance_content}>
-            <div>{stakingInfo.walletAmount}</div>
-            <div>{formatComma(stakingInfo.amount)} EL</div>
+            <div>{walletAmount}</div>
+            <div>{formatComma(amount)} EL</div>
           </div>
         </div>
         <div className="wallet_select_modal__content__line" />
@@ -64,10 +73,7 @@ const StakingBody = (props: Props) => {
             }
 
             setTransactionWait(true);
-            stakingInfo.sendTx(
-              utils.parseEther(String(stakingInfo.value)),
-              stakingInfo.round,
-            );
+            sendTx(utils.parseEther(String(value)), round);
           }}>
           <div
             style={{
@@ -77,7 +83,7 @@ const StakingBody = (props: Props) => {
               style={{
                 color: isDisabledBtn ? '#888888' : '#ffffff',
               }}>
-              {isDisabledBtn ? t('modal.button.0') : stakingInfo.type}
+              {isDisabledBtn ? t('modal.button.0') : type}
             </p>
           </div>
         </div>
