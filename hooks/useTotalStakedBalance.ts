@@ -1,9 +1,10 @@
 import { useWeb3React } from '@web3-react/core';
 import { pricesFetcher } from 'clients/Coingecko';
+import TxContext from 'contexts/TxContext';
 import envs from 'core/envs';
 import { constants, utils } from 'ethers';
 import priceMiddleware from 'middleware/priceMiddleware';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import useSWR from 'swr';
 import calcAPR from 'utils/calcAPR';
 import { toPercent } from 'utils/formatters';
@@ -14,6 +15,7 @@ const useTotalStakedBalance = () => {
   const { account } = useWeb3React();
   const [totalBalance, setTotalBalance] = useState(constants.Zero);
   const [apr, setApr] = useState('-');
+  const { txStatus } = useContext(TxContext);
   const [isLoading, setIsLoading] = useState(true);
   const contract = useERC20(envs.token.elAddress);
   const { contract: v2Contract } = useV2StakingPool();
@@ -51,7 +53,7 @@ const useTotalStakedBalance = () => {
         setIsLoading(false);
       }
     })();
-  }, [contract, account, v2Contract, data]);
+  }, [contract, account, v2Contract, data, txStatus]);
 
   return { totalBalance, apr, isLoading };
 };
