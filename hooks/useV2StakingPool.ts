@@ -3,13 +3,19 @@ import { useMemo } from 'react';
 import envs from 'core/envs';
 
 import { StakingPoolV2, StakingPoolV2factory } from '@elysia-dev/elyfi-v1-sdk';
+import { providers } from 'ethers';
 
-const useStakingPool = (): {
+const useV2StakingPool = (): {
   contract: StakingPoolV2 | undefined;
 } => {
   const { library } = useWeb3React();
   const contract = useMemo(() => {
-    if (!library) return;
+    if (!library) {
+      return StakingPoolV2factory.connect(
+        envs.staking.elStakingV2PoolAddress,
+        new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC),
+      );
+    }
     return StakingPoolV2factory.connect(
       envs.staking.elStakingV2PoolAddress,
       library.getSigner(),
@@ -19,4 +25,4 @@ const useStakingPool = (): {
   return { contract };
 };
 
-export default useStakingPool;
+export default useV2StakingPool;
