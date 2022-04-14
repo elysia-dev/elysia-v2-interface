@@ -404,6 +404,54 @@
       }
     }
   }
+
+  .modal_error {
+    background-color: #ffffff;
+    border-radius: 10px;
+
+    .modal_container {
+      width: 500px;
+      height: auto;
+    }
+    .modal_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 20px 5px 20px;
+      h2 {
+        font-size: 1.0625rem;
+        margin-left: 10px;
+      }
+    }
+    .error_inquiry {
+      font-family: 'Montserrat-Medium', 'SpoqaHanSansNeo-Medium';
+      text-align: center;
+      padding: 40px 70px 30px 70px;
+    }
+    .error_description {
+      width: 452px;
+      margin: auto;
+
+      > div:first-child {
+        font-family: 'SpoqaHanSansNeo-Bold', 'Montserrat-bold';
+        margin-bottom: 10px;
+      }
+      > div:last-child {
+        > div {
+          width: 100%;
+          > textarea {
+            resize: none;
+            width: 100%;
+            height: 88px;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
 }
 @media screen and (max-width: 768px) {
   .modal {
@@ -809,6 +857,54 @@
 
       p {
         margin: 70px 0px 25px 0px;
+      }
+    }
+  }
+
+  .modal_error {
+    background-color: #ffffff;
+    border-radius: 10px;
+
+    .modal_container {
+      width: 310px;
+      height: auto;
+    }
+    .modal_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 20px 5px 20px;
+      h2 {
+        font-size: 1.0625rem;
+        margin-left: 10px;
+      }
+    }
+    .error_inquiry {
+      font-family: 'Montserrat-Medium', 'SpoqaHanSansNeo-Medium';
+      text-align: center;
+      padding: 40px 50px 30px 50px;
+    }
+    .error_description {
+      width: 260px;
+      margin: auto;
+
+      > div:first-child {
+        font-family: 'SpoqaHanSansNeo-Bold', 'Montserrat-bold';
+        margin-bottom: 10px;
+      }
+      > div:last-child {
+        > div {
+          width: 100%;
+          > textarea {
+            resize: none;
+            width: 100%;
+            height: 72px;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+          }
+        }
       }
     }
   }
