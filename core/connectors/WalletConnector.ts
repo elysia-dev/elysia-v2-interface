@@ -107,7 +107,7 @@ export default class WalletConnectConnector extends AbstractConnector {
     const account = await this.walletConnectProvider
       .enable()
       .then((accounts: string[]): string => {
-        setWalletConnect(Wallet.Walletconnect);
+        setWalletConnect(Wallet.WalletConnect);
         return accounts[0];
       })
       .catch((error: Error): void => {
