@@ -26,7 +26,6 @@ const usePrevStakingInfo = () => {
             return { userReward, userPrincipal: userData.userPrincipal };
           }),
         );
-
         return result;
       } catch (error) {
         console.log(error);
@@ -38,18 +37,21 @@ const usePrevStakingInfo = () => {
   useEffect(() => {
     if (contract && account) {
       (async () => {
-        const res = await getDatas(contract, account);
-        const resFilter = res?.filter((value) => {
-          return (
-            value.userReward.gt(constants.Zero) ||
-            value.userPrincipal.gt(constants.Zero)
-          );
-        });
+        try {
+          const res = await getDatas(contract, account);
+          const resFilter = res?.filter((value) => {
+            return (
+              value.userReward.gt(constants.Zero) ||
+              value.userPrincipal.gt(constants.Zero)
+            );
+          });
 
-        setUserInfo(resFilter?.length === 0 ? [] : res || []);
+          setUserInfo(resFilter?.length === 0 ? [] : res || []);
+        } catch (error) {
+          setIsLoading(false);
+        }
       })();
     }
-    setIsLoading(false);
   }, [contract, account, txStatus]);
 
   useEffect(() => {
