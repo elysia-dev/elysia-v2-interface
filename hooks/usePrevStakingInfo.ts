@@ -45,8 +45,8 @@ const usePrevStakingInfo = () => {
               value.userPrincipal.gt(constants.Zero)
             );
           });
-
           setUserInfo(resFilter?.length === 0 ? [] : res || []);
+          setIsLoading(false);
         } catch (error) {
           setIsLoading(false);
         }
