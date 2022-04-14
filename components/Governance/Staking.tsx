@@ -136,7 +136,18 @@ const Staking = (props: Props) => {
             </div>
           </div>
           <div className={styles.governance_staking_apr}>
-            <div> {currentChain === ChainType.Ethereum ? apr : '-'}</div>
+            <div>
+              {' '}
+              {currentChain === ChainType.Ethereum ? (
+                isLoading ? (
+                  <Skeleton width={130} height={35} />
+                ) : (
+                  apr
+                )
+              ) : (
+                '-'
+              )}
+            </div>
             <div className={styles.governance_staking_total_name}>APR</div>
           </div>
         </div>
@@ -180,7 +191,6 @@ const Staking = (props: Props) => {
                       onClick={() => {
                         info.onClick();
                       }}>
-                      {' '}
                       {info.btnType}
                     </div>
                   </div>
