@@ -41,13 +41,7 @@ const Staking = (props: Props) => {
   } = props;
   const { account } = useWeb3React();
   const router = useRouter();
-  // const userStakedInfo = useStakedInfo();
-  const userStakedInfo = {
-    userPrincipal: constants.Zero,
-    userReward: constants.Zero,
-    totalPrincipal: constants.Zero,
-    loadedAt: moment(),
-  };
+  const userStakedInfo = useStakedInfo();
   const { totalBalance, isLoading } = useTotalStakedBalance();
   const { t, i18n } = useTranslation();
 
