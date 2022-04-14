@@ -1,10 +1,10 @@
 import { constants, utils } from 'ethers';
 import { useEffect, useState } from 'react';
 import calcExpectedReward from 'utils/calcExpectedReward';
-import useStakedInfo from './useStakedInfo';
+import useV2StakedInfo from './useV2StakedInfo';
 
 const useReward = () => {
-  const userStakedInfo = useStakedInfo();
+  const userStakedInfo = useV2StakedInfo();
   const [reward, setReward] = useState({
     before: constants.Zero,
     after: constants.Zero,
