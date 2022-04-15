@@ -8,7 +8,7 @@ import {
 } from 'utils/formatters';
 import { formatEther } from 'ethers/lib/utils';
 import CountUp from 'react-countup';
-import { BigNumber, constants } from 'ethers';
+import { BigNumber } from 'ethers';
 import Arrow from './Arrow';
 import { useWeb3React } from '@web3-react/core';
 import { useRouter } from 'next/router';
@@ -38,7 +38,7 @@ const Staking = (props: Props) => {
     currentChain,
     setCurrentChain,
   } = props;
-  const { account } = useWeb3React();
+  const { account, chainId } = useWeb3React();
   const router = useRouter();
   const userStakedInfo = useV2StakedInfo();
   const { totalBalance, isLoading, apr } = useTotalStakedBalance();
@@ -131,7 +131,6 @@ const Staking = (props: Props) => {
           </div>
           <div className={styles.governance_staking_apr}>
             <div>
-              {' '}
               {currentChain === ChainType.Ethereum ? (
                 isLoading ? (
                   <Skeleton width={130} height={35} />
@@ -177,25 +176,33 @@ const Staking = (props: Props) => {
           </div>
           <div className={styles.staking_content}>
             {currentChain === ChainType.Ethereum ? (
-              stakingInfo.map((info, idx) => (
-                <div key={`info_${idx}`} className={styles.staking_content_box}>
-                  <div className={styles.staking_content_header}>
-                    <div>{info.name}</div>
-                    <div
-                      onClick={() => {
-                        info.onClick();
-                      }}>
-                      <p>{info.btnType}</p>
+              !chainId || chainId === 1 ? (
+                stakingInfo.map((info, idx) => (
+                  <div
+                    key={`info_${idx}`}
+                    className={styles.staking_content_box}>
+                    <div className={styles.staking_content_header}>
+                      <div>{info.name}</div>
+                      <div
+                        onClick={() => {
+                          info.onClick();
+                        }}>
+                        <p>{info.btnType}</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div className={styles.staking_content_box_amount}>
+                        <span>{info.value}</span>
+                        <span>EL</span>
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <div className={styles.staking_content_box_amount}>
-                      <span>{info.value}</span>
-                      <span>EL</span>
-                    </div>
-                  </div>
+                ))
+              ) : (
+                <div className={styles.staking_network}>
+                  {t('governance.section_third.11')}
                 </div>
-              ))
+              )
             ) : (
               <div className={styles.staking_comming_soon}>Comming soon!</div>
             )}
