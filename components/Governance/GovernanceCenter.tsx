@@ -14,6 +14,7 @@ import {
   totalSupplyFetcher,
 } from 'clients/TokenSupply';
 import { formatCommaSmallZeroDisits } from 'utils/formatters';
+import LanguageType from 'enums/LanguageType';
 
 const GovernanceCenter = () => {
   const { data } = useSWR(
@@ -31,7 +32,7 @@ const GovernanceCenter = () => {
     process.env.NEXT_PUBLIC_TOTAL_SUPPLY_API,
     totalSupplyFetcher,
   );
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [guideType, setGuideType] = useState('');
 
   return (
@@ -49,7 +50,11 @@ const GovernanceCenter = () => {
               <a
                 href="https://coinmarketcap.com/currencies/elysia/markets/"
                 rel="noopener noreferrer"
-                target="_blank">
+                target="_blank"
+                style={{
+                  fontSize:
+                    i18n.language === LanguageType.EN ? '0.98rem' : undefined,
+                }}>
                 {t('governance.section_second.3')}
                 <Arrow />
               </a>
