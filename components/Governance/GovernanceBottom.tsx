@@ -19,7 +19,7 @@ const GovernanceBottom = () => {
           <div className={styles.governance_bottom_third}>
             <Trans>{t('governance.section_fourth.1')}</Trans>
           </div>
-          <div className={styles.governance_bottom_button_wrapper}>
+          {/* <div className={styles.governance_bottom_button_wrapper}>
             <div>
               {t('governance.section_fourth.2')} <Arrow />
             </div>
@@ -30,7 +30,7 @@ const GovernanceBottom = () => {
               {t('governance.section_fourth.4')}
               <Arrow />
             </div>
-          </div>
+          </div> */}
         </div>
         <div className={styles.governance_bottom_content}>
           <div className={styles.governance_bottom_content_header}>
