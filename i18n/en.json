@@ -37,7 +37,8 @@
         "Staked amount",
         "Amount of rewards",
         "Stake | Unstaked",
-        "Claim rewards"
+        "Claim rewards",
+        "For EL staking, change the network of the connected wallet to ‘Ethereum Mainnet’."
       ],
       "prev_staking": [
         "Previous Staking Program",
