@@ -1,3 +1,32 @@
+@mixin hover__box-shadow {
+  box-shadow: 0px 1px 6px #00000029;
+  transition: all 0.2s ease;
+  > p {
+    border-bottom: 0px;
+    background: linear-gradient(to right, #3679b5, #3679b5 50%, #333333 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+  &:hover {
+    box-shadow: 0px 0px 15px #3679b5;
+    transition: all 0.2s ease;
+    > p {
+      transition: all 0.4s ease;
+      background-position: 0 100%;
+    }
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0px 0px 5px #3679b5;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .governance_top {
     margin-top: 127px;
@@ -429,21 +458,25 @@
         align-items: center;
         justify-content: space-between;
         //   border-bottom: 1px solid black;
-        div:first-child {
+        > div:first-child {
           font-family: 'SpoqaHanSansNeo-Bold';
           font-size: 1.0625rem;
         }
-        div:last-child {
+        > div:last-child {
           font-family: 'SpoqaHanSansNeo';
           cursor: pointer;
           box-shadow: 0px 1px 6px #00000029;
-          border-radius: 5px;
+          border-radius: 15px;
           width: 202px;
           height: 37px;
           font-size: 1.0625rem;
           display: flex;
           align-items: center;
           justify-content: center;
+          @include hover__box-shadow;
+          > p {
+            cursor: pointer;
+          }
         }
       }
 
@@ -1016,21 +1049,25 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        div:first-child {
+        > div:first-child {
           font-family: 'SpoqaHanSansNeo-Bold';
           font-size: 1.0625rem;
         }
-        div:last-child {
+        > div:last-child {
           font-family: 'SpoqaHanSansNeo';
           cursor: pointer;
           box-shadow: 0px 1px 6px #00000029;
-          border-radius: 5px;
+          border-radius: 15px;
           width: 190px;
           height: 30px;
           font-size: 1.0625rem;
           display: flex;
           align-items: center;
           justify-content: center;
+          @include hover__box-shadow;
+          > p {
+            cursor: pointer;
+          }
         }
       }
 

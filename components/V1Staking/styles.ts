@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { constants } from 'ethers';
+import styled, { css } from 'styled-components';
 
 export const PrevStakingWrapper = styled.div`
   margin-top: 127px;
@@ -92,6 +93,35 @@ export const StakingInfoWrapper = styled.div`
   width: 79%;
 `;
 
+const hoverBoxShadow = css`
+  box-shadow: 0px 1px 6px #00000029;
+  transition: all 0.2s ease;
+  > p {
+    border-bottom: 0px;
+    background: linear-gradient(to right, #3679b5, #3679b5 50%, #333333 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+  &:hover {
+    box-shadow: 0px 0px 15px #3679b5;
+    transition: all 0.2s ease;
+    > p {
+      transition: all 0.4s ease;
+      background-position: 0 100%;
+    }
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0px 0px 5px #3679b5;
+  }
+`;
+
 export const StakingInfoByRound = styled.div`
   display: flex;
   align-items: center;
@@ -129,6 +159,10 @@ export const StakingInfoByRound = styled.div`
     align-items: center;
     margin-left: 20px;
     font-size: 0.84375rem;
+    ${(props: any) => (props.theme.lte(constants.Zero) ? null : hoverBoxShadow)}
+    > p {
+      cursor: pointer;
+    }
   }
 
   @media screen and (max-width: 768px) {
