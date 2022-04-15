@@ -32,10 +32,7 @@ const StakingBody = (props: Props) => {
   } = props;
   const { t } = useTranslation();
   const isDisabledBtn = useMemo(() => {
-    return (
-      parseFloat(utils.formatUnits(amount)) < Number(value) ||
-      Number(value) === 0
-    );
+    return parseFloat(utils.formatUnits(amount)) < Number(value);
   }, [value, amount]);
 
   return (
@@ -68,7 +65,7 @@ const StakingBody = (props: Props) => {
         <div
           className={styles.modal_button}
           onClick={() => {
-            if (isDisabledBtn) {
+            if (isDisabledBtn || Number(value) === 0) {
               return;
             }
 
@@ -77,11 +74,19 @@ const StakingBody = (props: Props) => {
           }}>
           <div
             style={{
-              backgroundColor: isDisabledBtn ? '#f0f0f1' : '#3679b5',
+              backgroundColor: isDisabledBtn
+                ? '#f0f0f1'
+                : Number(value) === 0
+                ? '#f0f0f1'
+                : '#3679b5',
             }}>
             <p
               style={{
-                color: isDisabledBtn ? '#888888' : '#ffffff',
+                color: isDisabledBtn
+                  ? '#888888'
+                  : Number(value) === 0
+                  ? '#888888'
+                  : '#ffffff',
               }}>
               {isDisabledBtn ? t('modal.button.0') : type}
             </p>
