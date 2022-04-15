@@ -22,7 +22,7 @@ const walletConnectProvider = walletConnectConnector();
 const Navigation = () => {
   const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false);
-  const { account, activate, deactivate } = useWeb3React();
+  const { account, activate, deactivate, library, chainId } = useWeb3React();
   const { txStatus, error } = useContext(TxContext);
   const isMobile = useIsMobile();
 
@@ -46,6 +46,23 @@ const Navigation = () => {
       setModalVisible(false);
     }
   }, [txStatus]);
+
+  useEffect(() => {
+    if (!library || chainId === 1 || !chainId) return;
+    library.provider
+      .request({
+        method: 'wallet_switchEthereumChain',
+        params: [
+          {
+            chainId: '0x1',
+          },
+        ],
+      })
+      .then((v: any) => {})
+      .catch((error: any) => {
+        console.error(error);
+      });
+  }, [chainId, library]);
 
   return (
     <>
@@ -78,19 +95,21 @@ const Navigation = () => {
               </>
             </Link>
           </div>
-          <div>
-            <Link href={`/${router.query.lng}/Governance`}>
-              <span
-                style={{
-                  cursor: 'pointer',
-                  fontWeight: router.pathname.includes('Governance')
-                    ? 'bold'
-                    : 'normal',
-                }}>
-                Governance
-              </span>
-            </Link>
-          </div>
+          {!isMobile && (
+            <div>
+              <Link href={`/${router.query.lng}/Governance`}>
+                <span
+                  style={{
+                    cursor: 'pointer',
+                    fontWeight: router.pathname.includes('Governance')
+                      ? 'bold'
+                      : 'normal',
+                  }}>
+                  Governance
+                </span>
+              </Link>
+            </div>
+          )}
           <ConnectWalletButton modalVisible={() => setModalVisible(true)} />
         </div>
       </div>
