@@ -9,9 +9,7 @@ import { setWalletConnect } from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
 import metamask from 'assets/images/metamask@2x.png';
 import walletconnect from 'assets/images/walletconnect@2x.png';
-import browserWallet from 'assets/images/browserWallet@2x.png';
 import CloseButton from './CloseButton';
-import styles from './Modal.module.scss';
 import Image from 'next/image';
 
 type Props = {
