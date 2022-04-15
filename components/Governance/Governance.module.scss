@@ -55,7 +55,7 @@
       height: 558px;
     }
     .governance_top_content_header {
-      font-family: 'SpoqaHanSansNeo-Medium';
+      font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
       font-size: 1.24rem;
       color: #ffffff;
       // width: 48rem;
@@ -66,7 +66,7 @@
       line-height: 2.1rem;
     }
     .governance_top_content_wrapper {
-      font-family: 'SpoqaHanSansNeo-Medium';
+      font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
       margin-top: 120px;
       color: #ffffff;
       display: flex;
@@ -135,6 +135,7 @@
       > div:nth-child(3) {
         font-family: 'Montserrat';
         font-size: 1.0625rem;
+        width: 570px;
         color: #333333;
         margin-bottom: 34px;
       }
@@ -147,15 +148,14 @@
         height: 45px;
         background-color: #3679b5;
         font-family: 'Montserrat-Medium';
-        font-size: 1.0625rem;
         color: #ffffff;
         border-radius: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
         box-shadow: 1px 3px 8px #00000052;
-
         > a {
+          font-size: 1.0625rem;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -222,8 +222,8 @@
             position: absolute;
             top: 17px;
             left: 0px;
-            color: #333333;
-            font-family: 'SpoqaHanSansNeo-Bold';
+            color: #888888;
+            font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
           }
         }
         > div:first-child {
@@ -647,7 +647,7 @@
       height: 400px;
     }
     .governance_top_content_header {
-      font-family: 'SpoqaHanSansNeo-Medium';
+      font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
       font-size: 1.24rem;
       color: #ffffff;
       height: 59px;
@@ -657,7 +657,7 @@
       line-height: 2.1rem;
     }
     .governance_top_content_wrapper {
-      font-family: 'SpoqaHanSansNeo-Medium';
+      font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
       margin-top: 120px;
       color: #ffffff;
       display: flex;
@@ -665,20 +665,20 @@
       align-items: center;
 
       > div {
-        height: 120px;
-        width: 120px;
+        height: 100px;
+        width: 100px;
         border: 1px solid #ffffff;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         box-shadow: 0px 0px 6px #00000029;
-        border-radius: 120px;
-        font-size: 1rem;
-        line-height: 1.9rem;
+        border-radius: 100px;
+        font-size: 0.5rem;
+        line-height: 1.2rem;
       }
       > div:not(div:last-child) {
-        margin-right: 2rem;
+        margin-right: 1rem;
       }
     }
   }
@@ -739,7 +739,7 @@
       > div {
         font-family: 'Montserrat-Medium';
         cursor: pointer;
-        width: 168px;
+        width: 138px;
         height: 40px;
         font-size: 1.0625rem;
         color: #ffffff;
@@ -749,6 +749,10 @@
         justify-content: center;
         align-items: center;
         box-shadow: 1px 3px 8px #00000052;
+
+        > a {
+          color: #ffffff;
+        }
       }
 
       > div:first-child {
@@ -952,8 +956,9 @@
       font-size: 1.0625rem;
     }
     .staking_prev {
+      text-align: center;
       font-family: 'SpoqaHanSansNeo';
-      font-size: 1.0625rem;
+      font-size: 1rem;
       color: #3679b5;
       cursor: pointer;
     }
@@ -1148,16 +1153,19 @@
       text-align: center;
     }
     .governance_bottom_content_box {
+      width: 310px;
+      margin: auto;
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
     .governance_bottom_content_list {
-      width: 50%;
+      width: 47%;
       border: 2px solid #f0f0f1;
       border-radius: 10px;
       background-color: #ffffff;
       height: auto;
-      padding: 27px 28px 48px 33px;
+      padding: 27px 10px 48px 10px;
 
       > div:nth-child(1) {
         // width: 65px;
@@ -1166,10 +1174,11 @@
         display: flex;
         align-items: center;
         > div:last-child {
+          text-align: center;
           font-family: 'Montserrat-Medium';
-          font-size: 1rem;
+          font-size: 0.3rem;
           width: 202px;
-          height: 37px;
+          height: 27px;
           background: #b7b7b7;
           border-radius: 19px;
           margin-left: auto;
@@ -1197,7 +1206,7 @@
     }
   }
   .arrow {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: 19px;

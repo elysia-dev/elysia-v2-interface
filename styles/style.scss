@@ -103,17 +103,39 @@
       text-align: right;
     }
     &__container--right {
-      float: right;
+      // float: right;
       flex: 1;
       margin-top: 40px;
       text-align: right;
+      // display: flex;
+      > p {
+        margin-bottom: 10px;
+      }
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        > div {
+          width: 21%;
+        }
+        > div:nth-child(5),
+        div:nth-child(6),
+        div:nth-child(7),
+        div:nth-child(8),
+        div:last-child {
+          margin-top: 15px;
+        }
+      }
+      > a:not(a:nth-child(5), a:nth-child(10)) {
+        margin-right: 20px;
+      }
     }
-    &__icon {
-      margin: 6px 0px 20px 26px;
-      cursor: pointer;
-      width: 36px;
-      height: 36px;
-    }
+    // &__icon {
+    //   margin: 6px 0px 50px 26px;
+    //   cursor: pointer;
+    //   width: 36px;
+    //   height: 36px;
+    // }
     &__lower {
       max-width: 1190px;
       margin: 0px auto;
