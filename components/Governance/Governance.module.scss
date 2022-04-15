@@ -489,6 +489,17 @@
         align-items: center;
         height: 153.5px;
       }
+      .staking_network {
+        font-family: 'SpoqaHanSansNeo-Bold';
+        font-size: 1.5rem;
+        width: 70%;
+        text-align: center;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 153.5px;
+      }
     }
   }
 
@@ -588,7 +599,7 @@
         }
       }
       div:nth-child(2) {
-        font-family: 'Montserrat-bold';
+        font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
         font-size: 1.0625rem;
         color: #333333;
         margin-bottom: 13px;
@@ -658,7 +669,7 @@
     }
     .governance_top_content_wrapper {
       font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
-      margin-top: 120px;
+      margin-top: 140px;
       color: #ffffff;
       display: flex;
       justify-content: center;
@@ -674,8 +685,8 @@
         text-align: center;
         box-shadow: 0px 0px 6px #00000029;
         border-radius: 100px;
-        font-size: 0.5rem;
-        line-height: 1.2rem;
+        font-size: 0.6rem;
+        line-height: 1rem;
       }
       > div:not(div:last-child) {
         margin-right: 1rem;
@@ -886,7 +897,7 @@
     }
 
     .governance_staking_content_description_second {
-      font-family: 'Montserrat-bold';
+      font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
       font-size: 1.875rem;
       color: #333333;
       margin: 0px 0px 34px 0px;
@@ -1085,6 +1096,17 @@
         align-items: center;
         height: 153.5px;
       }
+      .staking_network {
+        font-family: 'SpoqaHanSansNeo-Bold';
+        font-size: 1.5rem;
+        width: 70%;
+        text-align: center;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 153.5px;
+      }
     }
   }
 
@@ -1107,7 +1129,7 @@
       margin-bottom: 10.5px;
     }
     .governance_bottom_second {
-      font-family: 'Montserrat-bold';
+      font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
       font-size: 1.875rem;
       color: #333333;
       margin: 0px 0px 25px 0px;
@@ -1190,7 +1212,7 @@
         }
       }
       div:nth-child(2) {
-        font-family: 'Montserrat-bold';
+        font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
         font-size: 1.0625rem;
         color: #333333;
         margin-bottom: 13px;
