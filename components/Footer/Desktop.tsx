@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import Frame from 'react-frame-component';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Desktop: FunctionComponent = () => {
   const history = useRouter();
@@ -70,6 +71,7 @@ const Desktop: FunctionComponent = () => {
                   className="footer__text"
                   onClick={() => {
                     i18n.changeLanguage('en');
+                    history.push(`/en/Governance`);
                   }}>
                   English
                 </p>
@@ -80,6 +82,7 @@ const Desktop: FunctionComponent = () => {
                   className="footer__text"
                   onClick={() => {
                     i18n.changeLanguage('ko');
+                    history.push(`/ko/Governance`);
                   }}>
                   한국어
                 </p>
@@ -87,31 +90,97 @@ const Desktop: FunctionComponent = () => {
             </div>
             <div className="footer__container--right">
               <p className="footer__header-text">{t('footer.community')}</p>
-              <a href="https://twitter.com/Elysia_HQ">
-                <Image src={Twitter} className="footer__icon" alt="Elysia" />
-              </a>
-              <a href="https://open.kakao.com/o/gUpSOwkb">
-                <Image src={Kakaotalk} className="footer__icon" alt="Elysia" />
-              </a>
-              <a href="https://t.me/elysia_official">
-                <Image src={Telegram} className="footer__icon" alt="Elysia" />
-              </a>
-              <a href="https://github.com/elysia-dev">
-                <Image src={Github} className="footer__icon" alt="Elysia" />
-              </a>
-              <br />
-              <a href="https://www.facebook.com/ElysiaHQ">
-                <Image src={Fackbook} className="footer__icon" alt="Elysia" />
-              </a>
-              <a href="https://www.weibo.com/u/7449962304">
-                <Image src={Weibo} className="footer__icon" alt="Elysia" />
-              </a>
-              <a href="https://medium.com/@ELYSIA_HQ">
-                <Image src={Medium} className="footer__icon" alt="Elysia" />
-              </a>
-              <a href="https://blog.naver.com/elysia_platform">
-                <Image src={Blog} className="footer__icon" alt="Elysia" />
-              </a>
+              <div>
+                <div>
+                  <Link href="https://twitter.com/Elysia_HQ">
+                    <Image
+                      src={Twitter}
+                      className="footer__icon"
+                      alt="Elysia"
+                      width={36}
+                      height={36}
+                    />
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://open.kakao.com/o/gUpSOwkb">
+                    <Image
+                      src={Kakaotalk}
+                      className="footer__icon"
+                      alt="Elysia"
+                      width={36}
+                      height={36}
+                    />
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://t.me/elysia_official">
+                    <Image
+                      src={Telegram}
+                      className="footer__icon"
+                      alt="Elysia"
+                      width={36}
+                      height={36}
+                    />
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://github.com/elysia-dev">
+                    <Image
+                      src={Github}
+                      className="footer__icon"
+                      alt="Elysia"
+                      width={36}
+                      height={36}
+                    />
+                  </Link>
+                </div>
+                <br />
+                <div>
+                  <Link href="https://www.facebook.com/ElysiaHQ">
+                    <Image
+                      src={Fackbook}
+                      className="footer__icon"
+                      alt="Elysia"
+                      width={36}
+                      height={36}
+                    />
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://www.weibo.com/u/7449962304">
+                    <Image
+                      src={Weibo}
+                      className="footer__icon"
+                      alt="Elysia"
+                      width={36}
+                      height={36}
+                    />
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://medium.com/@ELYSIA_HQ">
+                    <Image
+                      src={Medium}
+                      className="footer__icon"
+                      alt="Elysia"
+                      width={36}
+                      height={36}
+                    />
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://blog.naver.com/elysia_platform">
+                    <Image
+                      src={Blog}
+                      className="footer__icon"
+                      alt="Elysia"
+                      width={36}
+                      height={36}
+                    />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -123,16 +192,6 @@ const Desktop: FunctionComponent = () => {
               window.location.replace('https://elysia-docs.elysia.land/');
             }}>
             Whitepaper
-          </p>
-          <p
-            className="footer__text--privacy-policy"
-            onClick={() => history.push('/privacyPolicy')}>
-            Privacy Policy
-          </p>
-          <p
-            className="footer__text--terms-fo-service"
-            onClick={() => history.push('/disclaimer')}>
-            Disclaimer
           </p>
         </div>
       </footer>
