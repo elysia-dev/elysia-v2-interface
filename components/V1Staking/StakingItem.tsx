@@ -76,7 +76,7 @@ const StakingItem = (props: Props) => {
         <StakingInfoWrapper>
           {userInfo ? (
             <>
-              <StakingInfoByRound>
+              <StakingInfoByRound theme={userInfo.userPrincipal}>
                 <div>{t('governance.prev_staking.6')}</div>
                 <div>
                   {formatComma(userInfo.userPrincipal)} <span>EL</span>
@@ -95,12 +95,11 @@ const StakingItem = (props: Props) => {
                     backgroundColor: userInfo.userPrincipal.lte(constants.Zero)
                       ? '#f0f0f1'
                       : '#ffffff',
-                    boxShadow: '0px 1px 6px rgb(0 0 0 / 16%)',
                   }}>
-                  {t('governance.prev_staking.8')}
+                  <p>{t('governance.prev_staking.8')}</p>
                 </div>
               </StakingInfoByRound>
-              <StakingInfoByRound>
+              <StakingInfoByRound theme={userInfo.userReward}>
                 <div>{t('governance.prev_staking.7')}</div>
                 <div>
                   {formatComma(userInfo.userReward)} <span>EL</span>
@@ -119,9 +118,8 @@ const StakingItem = (props: Props) => {
                     backgroundColor: userInfo.userReward.lte(constants.Zero)
                       ? '#f0f0f1'
                       : '#ffffff',
-                    boxShadow: '0px 1px 6px rgb(0 0 0 / 16%)',
                   }}>
-                  {t('governance.prev_staking.9')}
+                  <p>{t('governance.prev_staking.9')}</p>
                 </div>
               </StakingInfoByRound>
             </>

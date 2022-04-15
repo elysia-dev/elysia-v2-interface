@@ -185,7 +185,7 @@ const Staking = (props: Props) => {
                       onClick={() => {
                         info.onClick();
                       }}>
-                      {info.btnType}
+                      <p>{info.btnType}</p>
                     </div>
                   </div>
                   <div>
