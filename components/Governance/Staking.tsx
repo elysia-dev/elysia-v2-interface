@@ -106,7 +106,7 @@ const Staking = (props: Props) => {
             className={styles.governance_staking_content_button}
             style={{
               fontSize:
-                i18n.language === LanguageType.EN ? '0.94rem' : undefined,
+                i18n.language === LanguageType.EN ? '0.9rem' : undefined,
             }}>
             {t('governance.section_third.3')}
             <Arrow />
