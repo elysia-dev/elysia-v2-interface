@@ -13,6 +13,7 @@ import Frame from 'react-frame-component';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
+import LanguageType from 'enums/LanguageType';
 
 const Desktop: FunctionComponent = () => {
   const history = useRouter();
@@ -70,6 +71,7 @@ const Desktop: FunctionComponent = () => {
                 <p
                   className="footer__text"
                   onClick={() => {
+                    window.localStorage.setItem('@language', LanguageType.EN);
                     i18n.changeLanguage('en');
                     history.push(`/en/Governance`);
                   }}>
@@ -81,6 +83,7 @@ const Desktop: FunctionComponent = () => {
                 <p
                   className="footer__text"
                   onClick={() => {
+                    window.localStorage.setItem('@language', LanguageType.KO);
                     i18n.changeLanguage('ko');
                     history.push(`/ko/Governance`);
                   }}>
@@ -92,7 +95,7 @@ const Desktop: FunctionComponent = () => {
               <p className="footer__header-text">{t('footer.community')}</p>
               <div>
                 <div>
-                  <Link href="https://twitter.com/Elysia_HQ">
+                  <Link href="https://twitter.com/Elysia_HQ" passHref>
                     <Image
                       src={Twitter}
                       className="footer__icon"
@@ -103,7 +106,7 @@ const Desktop: FunctionComponent = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link href="https://open.kakao.com/o/gUpSOwkb">
+                  <Link href="https://open.kakao.com/o/gUpSOwkb" passHref>
                     <Image
                       src={Kakaotalk}
                       className="footer__icon"
@@ -114,7 +117,7 @@ const Desktop: FunctionComponent = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link href="https://t.me/elysia_official">
+                  <Link href="https://t.me/elysia_official" passHref>
                     <Image
                       src={Telegram}
                       className="footer__icon"
@@ -125,7 +128,7 @@ const Desktop: FunctionComponent = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link href="https://github.com/elysia-dev">
+                  <Link href="https://github.com/elysia-dev" passHref>
                     <Image
                       src={Github}
                       className="footer__icon"
@@ -137,7 +140,7 @@ const Desktop: FunctionComponent = () => {
                 </div>
                 <br />
                 <div>
-                  <Link href="https://www.facebook.com/ElysiaHQ">
+                  <Link href="https://www.facebook.com/ElysiaHQ" passHref>
                     <Image
                       src={Fackbook}
                       className="footer__icon"
@@ -148,7 +151,7 @@ const Desktop: FunctionComponent = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link href="https://www.weibo.com/u/7449962304">
+                  <Link href="https://www.weibo.com/u/7449962304" passHref>
                     <Image
                       src={Weibo}
                       className="footer__icon"
@@ -159,7 +162,7 @@ const Desktop: FunctionComponent = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link href="https://medium.com/@ELYSIA_HQ">
+                  <Link href="https://medium.com/@ELYSIA_HQ" passHref>
                     <Image
                       src={Medium}
                       className="footer__icon"
@@ -170,7 +173,7 @@ const Desktop: FunctionComponent = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link href="https://blog.naver.com/elysia_platform">
+                  <Link href="https://blog.naver.com/elysia_platform" passHref>
                     <Image
                       src={Blog}
                       className="footer__icon"

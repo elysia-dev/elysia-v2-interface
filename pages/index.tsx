@@ -1,3 +1,4 @@
+import Governance from 'components/Governance';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -8,9 +9,9 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     router.push(`/${getLocalLanguage()}/Governance`);
-  }, []);
+  }, [router]);
 
-  return <></>;
+  return <Governance />;
 };
 
 export default Home;
