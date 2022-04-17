@@ -24,22 +24,28 @@ const Navigation = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const { account, activate, deactivate, library, chainId } = useWeb3React();
   const { txStatus, error } = useContext(TxContext);
+  const [isConnectWalletLoading, setIsConnectWalletLoading] = useState(true);
   const isMobile = useIsMobile();
 
   useEffect(() => {
     if (isWalletConnector()) {
-      activate(walletConnectProvider);
+      activate(walletConnectProvider).catch(() => {
+        setIsConnectWalletLoading(false);
+      });
       return;
     }
     if (isMetamask()) {
       activate(injectedConnector).then(() => {
-        activate(injectedConnector);
+        activate(injectedConnector).then(() => {
+          setIsConnectWalletLoading(false);
+        });
       });
     } else {
       deactivate();
       window.sessionStorage.removeItem('@network');
+      setIsConnectWalletLoading(false);
     }
-  }, []);
+  }, [activate, deactivate]);
 
   useEffect(() => {
     if (txStatus === TxStatus.FAIL) {
@@ -84,7 +90,7 @@ const Navigation = () => {
       <div className={styles.navigation}>
         <div className={styles.navigation_wrapper}>
           <div className={styles.navigation_logo}>
-            <Link href={`/${router.query.lng}/Governance`}>
+            <Link href={`/${router.query.lng}/Governance`} passHref>
               <Image
                 src={ElysiaLogo}
                 alt={'ElysiaLogo'}
@@ -95,7 +101,7 @@ const Navigation = () => {
           </div>
           {!isMobile && (
             <div>
-              <Link href={`/${router.query.lng}/Governance`}>
+              <Link href={`/${router.query.lng}/Governance`} passHref>
                 <span
                   style={{
                     cursor: 'pointer',
@@ -108,7 +114,10 @@ const Navigation = () => {
               </Link>
             </div>
           )}
-          <ConnectWalletButton modalVisible={() => setModalVisible(true)} />
+          <ConnectWalletButton
+            modalVisible={() => setModalVisible(true)}
+            isConnectWalletLoading={isConnectWalletLoading}
+          />
         </div>
       </div>
     </>
