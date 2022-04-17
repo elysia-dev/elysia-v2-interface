@@ -24,7 +24,12 @@ const LanguageProvider: React.FC = (props) => {
   };
 
   useEffect(() => {
+    i18n.changeLanguage(getLocalLanguage());
+  }, []);
+
+  useEffect(() => {
     if ([LanguageType.EN, LanguageType.KO].includes(lng as LanguageType)) {
+      window.localStorage.setItem('@language', lng);
       i18n.changeLanguage(lng);
     }
     if (router.pathname === '/') {
