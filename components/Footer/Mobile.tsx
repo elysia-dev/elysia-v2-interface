@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import Frame from 'react-frame-component';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import LanguageType from 'enums/LanguageType';
 
 const Mobile = () => {
   const history = useRouter();
@@ -46,7 +47,9 @@ const Mobile = () => {
               <p
                 className="mobile-footer-text"
                 onClick={() => {
+                  window.localStorage.setItem('@language', LanguageType.KO);
                   i18n.changeLanguage('en');
+                  history.push(`/en/Governance`);
                 }}>
                 English
               </p>
@@ -56,7 +59,9 @@ const Mobile = () => {
               <p
                 className="mobile-footer-text"
                 onClick={() => {
+                  window.localStorage.setItem('@language', LanguageType.KO);
                   i18n.changeLanguage('ko');
+                  history.push(`/ko/Governance`);
                 }}>
                 한국어
               </p>
