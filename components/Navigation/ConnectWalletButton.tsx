@@ -4,9 +4,12 @@ import TxContext from 'contexts/TxContext';
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './Navigation.module.scss';
+import Skeleton from 'react-loading-skeleton';
+import useIsMobile from 'hooks/useIsMobile';
 
 type Props = {
   modalVisible: () => void;
+  isConnectWalletLoading: boolean;
 };
 
 const ConnectWalletButton = (props: Props) => {
@@ -17,9 +20,13 @@ const ConnectWalletButton = (props: Props) => {
   return (
     <>
       <div
-        className={`wallet_wrapper ${account ? '' : 'disconnect'} ${txStatus}`}
+        className={`wallet_wrapper ${
+          account || props.isConnectWalletLoading ? '' : 'disconnect'
+        } ${txStatus}`}
         onClick={() => props.modalVisible()}>
-        {account ? (
+        {props.isConnectWalletLoading ? (
+          <Skeleton width={170} height={48} />
+        ) : account ? (
           <div className={styles.wallet_connect}>
             <Davatar
               size={25}
