@@ -55,7 +55,7 @@
       height: 558px;
     }
     .governance_top_content_header {
-      font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
+      font-family: 'SpoqaHanSansNeo', 'Montserrat-Medium';
       font-size: 1.24rem;
       color: #ffffff;
       // width: 48rem;
@@ -66,7 +66,7 @@
       line-height: 2.1rem;
     }
     .governance_top_content_wrapper {
-      font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
+      font-family: 'SpoqaHanSansNeo', 'Montserrat-Medium';
       margin-top: 120px;
       color: #ffffff;
       display: flex;
@@ -223,7 +223,7 @@
             top: 17px;
             left: 0px;
             color: #888888;
-            font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
+            font-family: 'SpoqaHanSansNeo', 'Montserrat-Medium';
           }
         }
         > div:first-child {
@@ -306,7 +306,7 @@
     }
 
     .governance_staking_content_button {
-      font-family: 'Montserrat-Medium';
+      font-family: 'SpoqaHanSansNeo';
       cursor: pointer;
       width: 188px;
       height: 45px;
@@ -642,7 +642,7 @@
     }
     .governance_top_header {
       text-align: center;
-      font-family: 'SpoqaHanSansNeo-Medium';
+      font-family: 'SpoqaHanSansNeo';
       color: #333333;
       font-size: 2.8125rem;
       margin-top: 20px;
@@ -658,7 +658,7 @@
       height: 400px;
     }
     .governance_top_content_header {
-      font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
+      font-family: 'SpoqaHanSansNeo', 'Montserrat-Medium';
       font-size: 1.24rem;
       color: #ffffff;
       height: 59px;
@@ -668,7 +668,7 @@
       line-height: 2.1rem;
     }
     .governance_top_content_wrapper {
-      font-family: 'SpoqaHanSansNeo-Medium', 'Montserrat-Medium';
+      font-family: 'SpoqaHanSansNeo', 'Montserrat-Medium';
       margin-top: 140px;
       color: #ffffff;
       display: flex;
@@ -738,6 +738,7 @@
       }
 
       > div:nth-child(3) {
+        padding: 0px 10px;
         font-family: 'Montserrat';
         font-size: 1.0625rem;
         color: #333333;
@@ -899,6 +900,7 @@
     .governance_staking_content_description_second {
       font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
       font-size: 1.875rem;
+      padding: 0px 10px;
       color: #333333;
       margin: 0px 0px 34px 0px;
     }
@@ -909,6 +911,7 @@
       color: #333333;
       line-height: 1.6rem;
       margin-bottom: 20px;
+      padding: 0px 10px;
     }
 
     .governance_staking_content_button {
@@ -1132,6 +1135,7 @@
       font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
       font-size: 1.875rem;
       color: #333333;
+      padding: 0px 10px;
       margin: 0px 0px 25px 0px;
     }
     .governance_bottom_third {
@@ -1175,10 +1179,10 @@
       text-align: center;
     }
     .governance_bottom_content_box {
-      width: 310px;
+      width: 100%;
       margin: auto;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
     }
     .governance_bottom_content_list {
@@ -1194,17 +1198,17 @@
         // height: 65px;
         margin-bottom: 15px;
         display: flex;
+        flex-direction: column;
         align-items: center;
         > div:last-child {
           text-align: center;
           font-family: 'Montserrat-Medium';
-          font-size: 0.3rem;
-          width: 202px;
+          font-size: 1rem;
+          width: 130px;
           height: 27px;
           background: #b7b7b7;
           border-radius: 19px;
-          margin-left: auto;
-          margin-bottom: 0px;
+          margin: 8px 0px 0px 0px;
           color: #ffffff;
           display: flex;
           align-items: center;
@@ -1222,9 +1226,6 @@
         font-size: 0.9375rem;
         color: #333333;
       }
-    }
-    .governance_bottom_content_list:nth-child(1) {
-      margin-right: 16px;
     }
   }
   .arrow {
