@@ -45,7 +45,7 @@ const SelectWalletModal = (props: Props) => {
 
   const connectWallet = (wallet: string) => {
     let connector;
-    if (wallet === Wallet.Metamask) {
+    if (wallet === (isMobile ? Wallet.BrowserWallet : Wallet.Metamask)) {
       connector = injectedConnector;
     } else {
       connector = walletConnectProvider;
