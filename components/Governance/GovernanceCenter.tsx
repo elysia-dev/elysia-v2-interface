@@ -59,10 +59,10 @@ const GovernanceCenter = () => {
                 <Arrow />
               </a>
             </div>
-            <div className={styles.governance_center_content_button}>
+            {/* <div className={styles.governance_center_content_button}>
               {t('governance.section_second.4')}
               <Arrow />
-            </div>
+            </div> */}
           </div>
         </div>
         <div>
