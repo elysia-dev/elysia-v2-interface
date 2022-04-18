@@ -189,7 +189,7 @@ const Staking = (props: Props) => {
           </div>
           <div className={styles.staking_content}>
             {currentChain === ChainType.Ethereum ? (
-              !chainId || (chainId && isChainId(chainId)) ? (
+              !chainId || (chainId && [1, 1337].includes(chainId)) ? (
                 stakingInfo.map((info, idx) => (
                   <div
                     key={`info_${idx}`}
