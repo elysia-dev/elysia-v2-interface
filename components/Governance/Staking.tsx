@@ -9,7 +9,8 @@ import {
 import { formatEther } from 'ethers/lib/utils';
 import CountUp from 'react-countup';
 import { BigNumber } from 'ethers';
-import Arrow from './Arrow';
+import moment from 'moment';
+import 'moment-timezone';
 import { useWeb3React } from '@web3-react/core';
 import { useRouter } from 'next/router';
 import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
@@ -18,6 +19,8 @@ import ChainType from 'enums/ChainType';
 import { Trans, useTranslation } from 'react-i18next';
 import LanguageType from 'enums/LanguageType';
 import useV2StakedInfo from 'hooks/useV2StakedInfo';
+import Arrow from './Arrow';
+import getLocalLanguage from 'utils/getLocalLanguage';
 
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
@@ -43,6 +46,12 @@ const Staking = (props: Props) => {
   const userStakedInfo = useV2StakedInfo();
   const { totalBalance, isLoading, apr } = useTotalStakedBalance();
   const { t, i18n } = useTranslation();
+  const startDate = useMemo(() => {
+    return moment('2022.04.18 14:00:00 +9:00', 'YYYY.MM.DD hh:mm:ss Z').tz(
+      'Asia/Seoul',
+      true,
+    );
+  }, []);
 
   const stakingInfo = useMemo(() => {
     return [
@@ -79,11 +88,12 @@ const Staking = (props: Props) => {
       },
     ];
   }, [
+    t,
+    account,
     userStakedInfo.userPrincipal,
     reward.before,
     reward.after,
     setModalType,
-    account,
     setModalVisible,
   ]);
   return (
@@ -170,13 +180,15 @@ const Staking = (props: Props) => {
             </div>
             <div
               className={styles.staking_prev}
-              onClick={() => router.push(`/ko/Governance/V1Staking`)}>
+              onClick={() =>
+                router.push(`/${getLocalLanguage()}/Governance/V1Staking`)
+              }>
               {t('governance.section_third.6')} &gt;
             </div>
           </div>
           <div className={styles.staking_content}>
             {currentChain === ChainType.Ethereum ? (
-              !chainId || chainId === 1 ? (
+              !chainId || (chainId && [1, 1337].includes(chainId)) ? (
                 stakingInfo.map((info, idx) => (
                   <div
                     key={`info_${idx}`}
@@ -184,10 +196,30 @@ const Staking = (props: Props) => {
                     <div className={styles.staking_content_header}>
                       <div>{info.name}</div>
                       <div
+                        className={
+                          moment().diff(startDate) >= 0
+                            ? styles.staking_active
+                            : styles.staking_deactive
+                        }
                         onClick={() => {
+                          if (moment().diff(startDate) < 0) return;
                           info.onClick();
+                        }}
+                        style={{
+                          backgroundColor:
+                            moment().diff(startDate) >= 0
+                              ? undefined
+                              : 'rgb(240, 240, 241)',
                         }}>
-                        <p>{info.btnType}</p>
+                        <p
+                          style={{
+                            color:
+                              moment().diff(startDate) >= 0
+                                ? undefined
+                                : '#888888',
+                          }}>
+                          {info.btnType}
+                        </p>
                       </div>
                     </div>
                     <div>
