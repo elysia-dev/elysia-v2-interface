@@ -6,7 +6,7 @@ const walletConnectConnector = (): WalletConnectConnector => {
       1:
         process.env.NODE_ENV === 'development'
           ? 'https://elyfi-test.elyfi.world:8545'
-          : process.env.REACT_APP_JSON_RPC || '',
+          : process.env.NEXT_PUBLIC_JSON_RPC || '',
       56: 'https://bsc-dataseed.binance.org/',
       97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
     },
@@ -14,7 +14,7 @@ const walletConnectConnector = (): WalletConnectConnector => {
     qrcode: true,
     pollingInterval: 1200,
     preferredNetworkId: 1337,
-    infuraId: process.env.REACT_APP_INFURA_ADDRESS,
+    infuraId: process.env.NEXT_PUBLIC_INFURA_ADDRESS,
     qrcodeModalOptions: {
       mobileLinks: [
         'rainbow',
