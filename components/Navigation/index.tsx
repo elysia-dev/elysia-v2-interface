@@ -34,9 +34,12 @@ const Navigation = () => {
       console.log('walletconnect');
       activate(walletConnectProvider)
         .then(() => {
-          setIsConnectWalletLoading(false);
+          activate(walletConnectProvider).then(() => {
+            setIsConnectWalletLoading(false);
+          });
         })
         .catch((e: any) => {
+          console.log('error');
           console.log(e);
         });
       return;
