@@ -7,6 +7,7 @@ import styles from './Navigation.module.scss';
 import Skeleton from 'react-loading-skeleton';
 import NetworkError from 'assets/images/network_error.png';
 import Image from 'next/image';
+import { isChainId } from 'utils/isChainId';
 
 type Props = {
   modalVisible: () => void;
@@ -28,7 +29,7 @@ const ConnectWalletButton = (props: Props) => {
         {props.isConnectWalletLoading ? (
           <Skeleton width={170} height={48} />
         ) : account ? (
-          chainId && [1, 1337].includes(chainId) ? (
+          chainId && isChainId(chainId) ? (
             <div className={styles.wallet_connect}>
               <Davatar
                 size={25}
