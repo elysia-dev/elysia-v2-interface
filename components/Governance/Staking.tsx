@@ -48,7 +48,7 @@ const Staking = (props: Props) => {
   const { totalBalance, isLoading, apr } = useTotalStakedBalance();
   const { t, i18n } = useTranslation();
   const startDate = useMemo(() => {
-    return moment('2022.04.18 15:00:00 +9:00', 'YYYY.MM.DD hh:mm:ss Z').tz(
+    return moment('2022.04.18 19:00:00 +9:00', 'YYYY.MM.DD hh:mm:ss Z').tz(
       'Asia/Seoul',
       true,
     );
