@@ -1,6 +1,5 @@
 import { useWeb3React } from '@web3-react/core';
 import { useMemo } from 'react';
-import envs from 'core/envs';
 import { providers } from 'ethers';
 import { ERC20, ERC20Factory } from '@elysia-dev/elyfi-v1-sdk';
 
@@ -15,7 +14,7 @@ const useERC20 = (address: string): ERC20 => {
       );
     }
     return ERC20Factory.connect(address, library.getSigner());
-  }, []);
+  }, [address, library]);
 
   return contract;
 };
