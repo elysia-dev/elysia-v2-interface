@@ -1,7 +1,5 @@
 import { BigNumber, constants } from 'ethers';
 import { formatEther } from 'ethers/lib/utils';
-import useReward from 'hooks/useReward';
-import useStaking from 'hooks/useStaking';
 import ElysiaToken from 'assets/images/elysia_token.png';
 import CountUp from 'react-countup';
 import { formatSixFracionDigit } from 'utils/formatters';
@@ -12,10 +10,12 @@ import LoadingIndicator from './LoadingIndicator';
 import { useContext, useEffect, useState } from 'react';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
+import { useTranslation } from 'react-i18next';
+import useV2Staking from 'hooks/useV2Staking';
 
 type Props = {
   onClose: () => void;
-  reward?: {
+  reward: {
     before: BigNumber;
     after: BigNumber;
   };
@@ -23,7 +23,8 @@ type Props = {
 
 const ClaimModal = (props: Props) => {
   const { onClose, reward } = props;
-  const { claim } = useStaking();
+  const { t } = useTranslation();
+  const { claim } = useV2Staking();
   const [transactionWait, setTransactionWait] = useState(false);
   const { txStatus } = useContext(TxContext);
 
@@ -53,7 +54,6 @@ const ClaimModal = (props: Props) => {
             </div>
             <CloseButton onClose={() => onClose()} />
           </div>
-          {/* <div className={styles.staking_type}></div> */}
         </div>
         {transactionWait ? (
           <>
@@ -61,7 +61,7 @@ const ClaimModal = (props: Props) => {
             <LoadingIndicator
               isTxActive={transactionWait}
               isApproveLoading={false}
-              button={'Claim'}
+              button={t('modal.reward.0')}
             />
           </>
         ) : (
@@ -89,7 +89,9 @@ const ClaimModal = (props: Props) => {
                 setTransactionWait(true);
                 claim();
               }}>
-              <p>Claim</p>
+              <div>
+                <p>{t('modal.reward.0')}</p>
+              </div>
             </div>
           </>
         )}

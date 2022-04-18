@@ -47,10 +47,8 @@ const TransactionConfirmModal: React.FunctionComponent<{
             alt={'TransactinConfirm'}
           />
           <div className={styles.modal_text}>
-            <h2>{t('transaction.confirm')}</h2>
-            <p>
-              {t('transaction.nth_close', { nth: Math.floor(Time / 1000) })}
-            </p>
+            <h2>{t('modal.transaction.0')}</h2>
+            <p>{t('modal.transaction.1')}</p>
           </div>
         </div>
       </div>

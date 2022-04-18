@@ -12,6 +12,7 @@
   },
   "staking": {
     "elStakingPoolAddress": "0xd804e198d25a1920522ca0094a670184a9c972d7",
+    "elStakingV2PoolAddress": "0x3f0c3e32bb166901acd0abc9452a3f0c5b8b2c9d",
     "elfyStakingPoolAddress": "0xb41bcd480fbd986331eeed516c52e447b50dacb4",
     "elfyV2StakingPoolAddress": "0xCD668B44C7Cf3B63722D5cE5F655De68dD8f2750",
     "elfyV2StakingPoolRewardAddress": "0xc3e45e479078ce78aba08beafd0f57460a96f494",

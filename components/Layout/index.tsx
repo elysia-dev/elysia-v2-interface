@@ -17,7 +17,9 @@ const Layout = (props: LayoutProps) => {
       <Navigation />
       <div
         style={{
-          width: 1190,
+          maxWidth: 1190,
+          width: '100%',
+          paddingTop: 107,
           margin: 'auto',
         }}>
         {props.children}

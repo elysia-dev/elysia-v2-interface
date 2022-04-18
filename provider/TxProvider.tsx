@@ -96,7 +96,7 @@ const TxProvider: React.FunctionComponent = (props) => {
     window.localStorage.setItem('@txNonce', tx.nonce.toString());
     window.localStorage.setItem('@txType', type);
     window.localStorage.setItem('@txStatus', TxStatus.PENDING);
-    console.log(type);
+
     setState({
       ...state,
       txStatus: TxStatus.PENDING,

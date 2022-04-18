@@ -17,6 +17,7 @@ interface EnvironmentVariables {
   };
   staking: {
     elStakingPoolAddress: string;
+    elStakingV2PoolAddress: string;
     elfyStakingPoolAddress: string;
     elfyV2StakingPoolAddress: string;
     elfyV2StakingPoolRewardAddress: string;

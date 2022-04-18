@@ -1,10 +1,8 @@
 import useERC20Info from 'hooks/useERC20Info';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import envs from 'core/envs';
-import { formatComma } from 'utils/formatters';
-import useStakedInfo from 'hooks/useStakedInfo';
 import { utils } from 'ethers';
-import useStaking from 'hooks/useStaking';
+import useStaking from 'hooks/useV2Staking';
 import ElysiaToken from 'assets/images/elysia_token.png';
 import CloseButton from './CloseButton';
 import styles from './Modal.module.scss';
@@ -14,8 +12,8 @@ import LoadingIndicator from './LoadingIndicator';
 import IncreateAllowanceModal from './IncreateAllowanceModal';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
-import RecentActivityType from 'enums/RecentActivityType';
 import { useTranslation } from 'react-i18next';
+import useV2StakedInfo from 'hooks/useV2StakedInfo';
 
 type Props = {
   onClose: () => void;
@@ -25,50 +23,23 @@ const StakingModal = (props: Props) => {
   const { onClose } = props;
   const { balance, allowance, loading } = useERC20Info(
     envs.token.elAddress,
-    envs.staking.elStakingPoolAddress,
+    envs.staking.elStakingV2PoolAddress,
   );
   const { t } = useTranslation();
-  const userStakedInfo = useStakedInfo();
-  const { txStatus, txWaiting, txType } = useContext(TxContext);
+  const userStakedInfo = useV2StakedInfo();
+  const { txStatus } = useContext(TxContext);
   const { staking, withdraw } = useStaking();
-  const [stakingType, setStakingType] = useState('staking');
-  const [value, setValue] = useState(0);
+  const transText = t('modal.staking.0');
+  const [stakingType, setStakingType] = useState(transText);
+  const [value, setValue] = useState('');
   const [transactionWait, setTransactionWait] = useState(false);
 
-  const changeStakingType = useCallback((type: string) => {
-    setStakingType(type);
-  }, []);
-
-  const getType = useCallback(() => {
-    return stakingType === 'staking';
+  const isStakingMode = useCallback(() => {
+    return stakingType === t('modal.staking.0');
   }, [stakingType]);
 
-  const stakingInfo = useMemo(() => {
-    const stakingMode = getType();
-    return {
-      header: stakingMode ? '스테이킹 가능한 수량' : '언스테이킹 가능한 수량',
-      walletAmount: stakingMode ? '지갑잔액' : '스테이킹 수량',
-      max: () => {
-        setValue(
-          parseFloat(
-            utils.formatEther(
-              stakingMode ? balance : userStakedInfo.userPrincipal,
-            ),
-          ),
-        );
-      },
-      value: value,
-      setValue,
-      amount: `${formatComma(
-        stakingMode ? balance : userStakedInfo.userPrincipal,
-      )} EL`,
-      type: stakingMode ? '스테이킹' : '언스테이킹',
-      sendTx: stakingMode ? staking : withdraw,
-    };
-  }, [balance, getType, staking, userStakedInfo, value, withdraw]);
-
   useEffect(() => {
-    setValue(0);
+    setValue('');
   }, [stakingType]);
 
   useEffect(() => {
@@ -99,18 +70,18 @@ const StakingModal = (props: Props) => {
           </div>
           <div className={styles.staking_type}>
             <div
-              onClick={() => changeStakingType('staking')}
+              onClick={() => setStakingType(t('modal.staking.0'))}
               style={{
-                borderBottom: getType() ? '2px solid #3679b5' : 'none',
+                borderBottom: isStakingMode() ? '3px solid #3679b5' : 'none',
               }}>
-              Staking
+              {t('modal.staking.0')}
             </div>
             <div
-              onClick={() => changeStakingType('unstaking')}
+              onClick={() => setStakingType(t('modal.unstaking.0'))}
               style={{
-                borderBottom: getType() ? 'none' : '2px solid #3679b5',
+                borderBottom: isStakingMode() ? 'none' : '3px solid #3679b5',
               }}>
-              Unstaking
+              {t('modal.unstaking.0')}
             </div>
           </div>
           {loading || transactionWait ? (
@@ -119,18 +90,37 @@ const StakingModal = (props: Props) => {
               isApproveLoading={!allowance.gt(balance)}
               button={
                 loading
-                  ? t('modal.indicator.permission_check')
-                  : stakingInfo.type
+                  ? t('modal.approve.4')
+                  : stakingType
+                  ? t('modal.staking.0')
+                  : t('modal.unstaking.0')
               }
             />
-          ) : allowance.gt(balance) ? (
+          ) : allowance.gt(balance) ||
+            stakingType === t('modal.unstaking.0') ? (
             <StakingBody
-              stakingInfo={stakingInfo}
-              setTransactionWait={setTransactionWait}
-            />
-          ) : stakingInfo.type === '언스테이킹' ? (
-            <StakingBody
-              stakingInfo={stakingInfo}
+              header={
+                isStakingMode() ? t('modal.staking.2') : t('modal.unstaking.2')
+              }
+              walletAmount={
+                isStakingMode() ? t('modal.staking.1') : t('modal.unstaking.1')
+              }
+              max={() => {
+                setValue(
+                  String(
+                    utils.formatEther(
+                      isStakingMode() ? balance : userStakedInfo.userPrincipal,
+                    ),
+                  ),
+                );
+              }}
+              value={value}
+              setValue={setValue}
+              amount={isStakingMode() ? balance : userStakedInfo.userPrincipal}
+              type={
+                isStakingMode() ? t('modal.staking.0') : t('modal.unstaking.0')
+              }
+              sendTx={isStakingMode() ? staking : withdraw}
               setTransactionWait={setTransactionWait}
             />
           ) : (

@@ -1,52 +1,96 @@
 import { BigNumber, utils } from 'ethers';
-import { Dispatch, SetStateAction } from 'react';
-import IncreateAllowanceModal from './IncreateAllowanceModal';
-import LoadingIndicator from './LoadingIndicator';
+import { Dispatch, SetStateAction, useEffect, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { formatComma } from 'utils/formatters';
 import styles from './Modal.module.scss';
 
 type Props = {
-  stakingInfo: {
-    header: string;
-    walletAmount: string;
-    max: () => void;
-    value: number;
-    setValue: Dispatch<SetStateAction<number>>;
-    amount: string;
-    type: string;
-    sendTx: (amount: BigNumber) => void;
-  };
+  header: string;
+  walletAmount: string;
+  max: () => void;
+  value: string;
+  setValue: Dispatch<SetStateAction<string>>;
+  amount: BigNumber;
+  type: string;
+  sendTx: (amount: BigNumber, round?: number) => void;
+  round?: number;
   setTransactionWait: Dispatch<SetStateAction<boolean>>;
 };
 
 const StakingBody = (props: Props) => {
-  const { stakingInfo, setTransactionWait } = props;
+  const {
+    header,
+    walletAmount,
+    max,
+    value,
+    setValue,
+    amount,
+    type,
+    sendTx,
+    round,
+    setTransactionWait,
+  } = props;
+  const { t } = useTranslation();
+  const isDisabledBtn = useMemo(() => {
+    return parseFloat(utils.formatUnits(amount)) < Number(value);
+  }, [value, amount]);
 
   return (
     <>
       <>
         <div className={styles.amount_input}>
-          <div onClick={() => stakingInfo.max()}>최대</div>
+          <div onClick={() => max()}>{t('modal.amount_max')}</div>
           <input
+            className="amount"
+            type="number"
             placeholder="0"
-            value={stakingInfo.value}
-            onChange={(e: any) => stakingInfo.setValue(e.target.value)}
+            value={value}
+            onChange={(e: any) => {
+              if (e.target.value[0] === '.') {
+                setValue(0.0 + e.target.value);
+                return;
+              }
+              setValue(e.target.value);
+            }}
           />
         </div>
         <div className={styles.balance_wrapper}>
-          <div className={styles.balance_header}>{stakingInfo.header}</div>
+          <div className={styles.balance_header}>{header}</div>
           <div className={styles.balance_content}>
-            <div>{stakingInfo.walletAmount}</div>
-            <div>{stakingInfo.amount}</div>
+            <div>{walletAmount}</div>
+            <div>{formatComma(amount)} EL</div>
           </div>
         </div>
         <div className="wallet_select_modal__content__line" />
         <div
           className={styles.modal_button}
           onClick={() => {
+            if (isDisabledBtn || Number(value) === 0) {
+              return;
+            }
+
             setTransactionWait(true);
-            stakingInfo.sendTx(utils.parseEther(String(stakingInfo.value)));
+            sendTx(utils.parseEther(String(value)), round);
           }}>
-          <p>{stakingInfo.type}</p>
+          <div
+            style={{
+              backgroundColor: isDisabledBtn
+                ? '#f0f0f1'
+                : Number(value) === 0
+                ? '#f0f0f1'
+                : '#3679b5',
+            }}>
+            <p
+              style={{
+                color: isDisabledBtn
+                  ? '#888888'
+                  : Number(value) === 0
+                  ? '#888888'
+                  : '#ffffff',
+              }}>
+              {isDisabledBtn ? t('modal.button.0') : type}
+            </p>
+          </div>
         </div>
       </>
     </>

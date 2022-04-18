@@ -11,8 +11,8 @@ import metamask from 'assets/images/metamask@2x.png';
 import walletconnect from 'assets/images/walletconnect@2x.png';
 import browserWallet from 'assets/images/browserWallet@2x.png';
 import CloseButton from './CloseButton';
-import styles from './Modal.module.scss';
 import Image from 'next/image';
+import useIsMobile from 'hooks/useIsMobile';
 
 type Props = {
   onClose: () => void;
@@ -28,11 +28,14 @@ const SelectWalletModal = (props: Props) => {
   const { activate } = useWeb3React();
   const [global, setGlobal] = useState<WindowWithEthereum>();
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
 
   const wallets = useMemo(() => {
     if (global?.ethereum) {
       return [
-        { name: 'Metamask', image: metamask },
+        isMobile
+          ? { name: 'Browser Wallet', image: browserWallet }
+          : { name: 'Metamask', image: metamask },
         { name: 'WalletConnect', image: walletconnect },
       ];
     } else {
@@ -42,7 +45,7 @@ const SelectWalletModal = (props: Props) => {
 
   const connectWallet = (wallet: string) => {
     let connector;
-    if (wallet === Wallet.Metamask) {
+    if (wallet === (isMobile ? Wallet.BrowserWallet : Wallet.Metamask)) {
       connector = injectedConnector;
     } else {
       connector = walletConnectProvider;
@@ -64,7 +67,7 @@ const SelectWalletModal = (props: Props) => {
       <div className="wallet_select_modal">
         <div className="wallet_select_modal__content">
           <div className="wallet_select_modal__content__header">
-            <div>{t('navigation.connect_wallet')}</div>
+            <div>{t('modal.select_wallet')}</div>
             <CloseButton onClose={() => onClose()} />
           </div>
           <div className="wallet_select_modal__content__line" />

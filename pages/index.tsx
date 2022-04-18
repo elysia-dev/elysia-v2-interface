@@ -1,19 +1,17 @@
-import Navigation from 'components/Navigation';
+import Governance from 'components/Governance';
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import styles from '../styles/Home.module.css';
+import getLocalLanguage from 'utils/getLocalLanguage';
 
 const Home: NextPage = () => {
   const router = useRouter();
-  console.log(router);
 
-  // useEffect(() => {
-  //   router.push('/ko');
-  // }, [router]);
-  return <></>;
+  useEffect(() => {
+    router.push(`/${getLocalLanguage()}/Governance`);
+  }, [router]);
+
+  return <Governance />;
 };
 
 export default Home;

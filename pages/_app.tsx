@@ -1,9 +1,8 @@
 import 'i18n';
 
 import '../styles/globals.css';
-import '../styles/public.scss';
 import '../styles/style.scss';
-import '../styles/pc.scss';
+import 'react-loading-skeleton/dist/skeleton.css';
 import type { AppProps } from 'next/app';
 import Layout from 'components/Layout';
 import LanguageProvider from 'provider/LanguageProvider';
