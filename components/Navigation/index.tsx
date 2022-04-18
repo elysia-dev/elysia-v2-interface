@@ -30,9 +30,11 @@ const Navigation = () => {
 
   useEffect(() => {
     if (isWalletConnector()) {
-      activate(walletConnectProvider).catch(() => {
+      const connect = async () => {
+        await activate(walletConnectProvider);
         setIsConnectWalletLoading(false);
-      });
+      };
+      connect();
       return;
     }
     if (isMetamask()) {
