@@ -30,11 +30,13 @@ const Navigation = () => {
 
   useEffect(() => {
     if (isWalletConnector()) {
-      const connect = async () => {
-        await activate(walletConnectProvider);
-        setIsConnectWalletLoading(false);
-      };
-      connect();
+      activate(walletConnectProvider)
+        .then(() => {
+          setIsConnectWalletLoading(false);
+        })
+        .catch((e: any) => {
+          console.log(e);
+        });
       return;
     }
     if (isMetamask()) {
@@ -48,7 +50,7 @@ const Navigation = () => {
       window.sessionStorage.removeItem('@network');
       setIsConnectWalletLoading(false);
     }
-  }, [activate, deactivate]);
+  }, []);
 
   useEffect(() => {
     if (txStatus === TxStatus.FAIL) {
