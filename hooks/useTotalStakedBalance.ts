@@ -39,7 +39,6 @@ const useTotalStakedBalance = () => {
           v2Balance.totalPrincipal,
           data?.elPrice,
           utils.parseEther('330731.57142857'),
-          data?.elPrice,
         );
         setApr(
           calculatorAPR.eq(constants.MaxUint256)
