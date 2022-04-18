@@ -137,13 +137,11 @@ export const StakingInfoByRound = styled.div`
   }
 
   > div:nth-child(2) {
-    font-family: 'Inter-Bold', 'SpoqaHanSansNeo-Bold', 'Montserrat-bold',
-      'Inter-Bold';
+    font-family: 'SpoqaHanSansNeo-Bold', 'Montserrat-bold';
     margin-left: auto;
     font-size: 1.25rem;
     > span {
-      font-family: 'Inter-Bold', 'SpoqaHanSansNeo-Bold', 'Montserrat-bold',
-        'Inter-Bold';
+      font-family: 'SpoqaHanSansNeo-Bold', 'Montserrat-bold';
       color: #646464;
     }
   }
@@ -174,16 +172,26 @@ export const StakingInfoByRound = styled.div`
       margin-bottom: 20px;
     }
 
+    > div:first-child,
+    div:nth-child(2) {
+      width: 50%;
+    }
+    > div:nth-child(2) {
+      text-align: right;
+      margin-bottom: 6px;
+    }
+
     > div:nth-child(3) {
       margin-top: 5px;
       margin-left: auto;
       width: 120px;
-      height: 30px;
+      height: 25px;
     }
   }
 `;
 
 export const WalletText = styled.div`
+  font-size: 1.065rem;
   text-align: center;
   font-family: 'Inter-Bold', 'SpoqaHanSansNeo-Bold';
 `;
