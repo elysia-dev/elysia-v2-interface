@@ -29,19 +29,9 @@ const Navigation = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    console.log('isisisis', isWalletConnector());
     if (isWalletConnector()) {
-      console.log('walletconnect');
-      activate(walletConnectProvider)
-        .then(() => {
-          activate(walletConnectProvider).then(() => {
-            setIsConnectWalletLoading(false);
-          });
-        })
-        .catch((e: any) => {
-          console.log('error');
-          console.log(e);
-        });
+      activate(walletConnectProvider).then(() => {});
+      setIsConnectWalletLoading(false);
       return;
     }
     if (isMetamask()) {
@@ -51,7 +41,6 @@ const Navigation = () => {
         });
       });
     } else {
-      console.log('no account');
       deactivate();
       window.sessionStorage.removeItem('@network');
       setIsConnectWalletLoading(false);
