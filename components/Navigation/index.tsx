@@ -54,7 +54,7 @@ const Navigation = () => {
   }, [txStatus]);
 
   useEffect(() => {
-    if (!library || chainId === 1 || !chainId) return;
+    if (!library || (chainId && [1, 1337].includes(chainId))) return;
     library.provider
       .request({
         method: 'wallet_switchEthereumChain',
@@ -91,26 +91,30 @@ const Navigation = () => {
         <div className={styles.navigation_wrapper}>
           <div className={styles.navigation_logo}>
             <Link href={`/${router.query.lng}/Governance`} passHref>
-              <Image
-                src={ElysiaLogo}
-                alt={'ElysiaLogo'}
-                width={isMobile ? 80 : 139}
-                height={isMobile ? 18 : 31}
-              />
+              <a>
+                <Image
+                  src={ElysiaLogo}
+                  alt={'ElysiaLogo'}
+                  width={isMobile ? 80 : 139}
+                  height={isMobile ? 18 : 31}
+                />
+              </a>
             </Link>
           </div>
           {!isMobile && (
             <div>
               <Link href={`/${router.query.lng}/Governance`} passHref>
-                <span
-                  style={{
-                    cursor: 'pointer',
-                    fontWeight: router.pathname.includes('Governance')
-                      ? 'bold'
-                      : 'normal',
-                  }}>
-                  Governance
-                </span>
+                <a>
+                  <span
+                    style={{
+                      cursor: 'pointer',
+                      fontWeight: router.pathname.includes('Governance')
+                        ? 'bold'
+                        : 'normal',
+                    }}>
+                    Governance
+                  </span>
+                </a>
               </Link>
             </div>
           )}
