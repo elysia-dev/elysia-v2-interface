@@ -18,6 +18,7 @@ import LanguageType from 'enums/LanguageType';
 const Desktop: FunctionComponent = () => {
   const history = useRouter();
   const { i18n, t } = useTranslation();
+  const router = useRouter();
 
   return (
     <>
@@ -73,7 +74,7 @@ const Desktop: FunctionComponent = () => {
                   onClick={() => {
                     window.localStorage.setItem('@language', LanguageType.EN);
                     i18n.changeLanguage('en');
-                    history.push(`/en/Governance`);
+                    history.push(`/en${router.asPath.substring(3)}`);
                   }}>
                   English
                 </p>
@@ -85,7 +86,7 @@ const Desktop: FunctionComponent = () => {
                   onClick={() => {
                     window.localStorage.setItem('@language', LanguageType.KO);
                     i18n.changeLanguage('ko');
-                    history.push(`/ko/Governance`);
+                    history.push(`/ko${router.asPath.substring(3)}`);
                   }}>
                   한국어
                 </p>
@@ -96,91 +97,107 @@ const Desktop: FunctionComponent = () => {
               <div>
                 <div>
                   <Link href="https://twitter.com/Elysia_HQ" passHref>
-                    <Image
-                      src={Twitter}
-                      className="footer__icon"
-                      alt="Elysia"
-                      width={36}
-                      height={36}
-                    />
+                    <a>
+                      <Image
+                        src={Twitter}
+                        className="footer__icon"
+                        alt="Elysia"
+                        width={36}
+                        height={36}
+                      />
+                    </a>
                   </Link>
                 </div>
                 <div>
                   <Link href="https://open.kakao.com/o/gUpSOwkb" passHref>
-                    <Image
-                      src={Kakaotalk}
-                      className="footer__icon"
-                      alt="Elysia"
-                      width={36}
-                      height={36}
-                    />
+                    <a>
+                      <Image
+                        src={Kakaotalk}
+                        className="footer__icon"
+                        alt="Elysia"
+                        width={36}
+                        height={36}
+                      />
+                    </a>
                   </Link>
                 </div>
                 <div>
                   <Link href="https://t.me/elysia_official" passHref>
-                    <Image
-                      src={Telegram}
-                      className="footer__icon"
-                      alt="Elysia"
-                      width={36}
-                      height={36}
-                    />
+                    <a>
+                      <Image
+                        src={Telegram}
+                        className="footer__icon"
+                        alt="Elysia"
+                        width={36}
+                        height={36}
+                      />
+                    </a>
                   </Link>
                 </div>
                 <div>
                   <Link href="https://github.com/elysia-dev" passHref>
-                    <Image
-                      src={Github}
-                      className="footer__icon"
-                      alt="Elysia"
-                      width={36}
-                      height={36}
-                    />
+                    <a>
+                      <Image
+                        src={Github}
+                        className="footer__icon"
+                        alt="Elysia"
+                        width={36}
+                        height={36}
+                      />
+                    </a>
                   </Link>
                 </div>
                 <br />
                 <div>
                   <Link href="https://www.facebook.com/ElysiaHQ" passHref>
-                    <Image
-                      src={Fackbook}
-                      className="footer__icon"
-                      alt="Elysia"
-                      width={36}
-                      height={36}
-                    />
+                    <a>
+                      <Image
+                        src={Fackbook}
+                        className="footer__icon"
+                        alt="Elysia"
+                        width={36}
+                        height={36}
+                      />
+                    </a>
                   </Link>
                 </div>
                 <div>
                   <Link href="https://www.weibo.com/u/7449962304" passHref>
-                    <Image
-                      src={Weibo}
-                      className="footer__icon"
-                      alt="Elysia"
-                      width={36}
-                      height={36}
-                    />
+                    <a>
+                      <Image
+                        src={Weibo}
+                        className="footer__icon"
+                        alt="Elysia"
+                        width={36}
+                        height={36}
+                      />
+                    </a>
                   </Link>
                 </div>
                 <div>
                   <Link href="https://medium.com/@ELYSIA_HQ" passHref>
-                    <Image
-                      src={Medium}
-                      className="footer__icon"
-                      alt="Elysia"
-                      width={36}
-                      height={36}
-                    />
+                    <a>
+                      <Image
+                        src={Medium}
+                        className="footer__icon"
+                        alt="Elysia"
+                        width={36}
+                        height={36}
+                      />
+                    </a>
                   </Link>
                 </div>
                 <div>
                   <Link href="https://blog.naver.com/elysia_platform" passHref>
-                    <Image
-                      src={Blog}
-                      className="footer__icon"
-                      alt="Elysia"
-                      width={36}
-                      height={36}
-                    />
+                    <a>
+                      <Image
+                        src={Blog}
+                        className="footer__icon"
+                        alt="Elysia"
+                        width={36}
+                        height={36}
+                      />
+                    </a>
                   </Link>
                 </div>
               </div>

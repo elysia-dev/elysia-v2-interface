@@ -16,6 +16,7 @@ import LanguageType from 'enums/LanguageType';
 const Mobile = () => {
   const history = useRouter();
   const { t, i18n } = useTranslation();
+  const router = useRouter();
 
   return (
     <footer className="mobile-footer">
@@ -49,7 +50,7 @@ const Mobile = () => {
                 onClick={() => {
                   window.localStorage.setItem('@language', LanguageType.KO);
                   i18n.changeLanguage('en');
-                  history.push(`/en/Governance`);
+                  history.push(`/en${router.asPath.substring(3)}`);
                 }}>
                 English
               </p>
@@ -61,7 +62,7 @@ const Mobile = () => {
                 onClick={() => {
                   window.localStorage.setItem('@language', LanguageType.KO);
                   i18n.changeLanguage('ko');
-                  history.push(`/ko/Governance`);
+                  history.push(`/ko${router.asPath.substring(3)}`);
                 }}>
                 한국어
               </p>
