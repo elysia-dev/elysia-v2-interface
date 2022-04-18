@@ -21,6 +21,7 @@ import LanguageType from 'enums/LanguageType';
 import useV2StakedInfo from 'hooks/useV2StakedInfo';
 import Arrow from './Arrow';
 import getLocalLanguage from 'utils/getLocalLanguage';
+import { isChainId } from 'utils/isChainId';
 
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
@@ -47,7 +48,7 @@ const Staking = (props: Props) => {
   const { totalBalance, isLoading, apr } = useTotalStakedBalance();
   const { t, i18n } = useTranslation();
   const startDate = useMemo(() => {
-    return moment('2022.04.18 14:00:00 +9:00', 'YYYY.MM.DD hh:mm:ss Z').tz(
+    return moment('2022.04.18 15:00:00 +9:00', 'YYYY.MM.DD hh:mm:ss Z').tz(
       'Asia/Seoul',
       true,
     );
@@ -188,7 +189,7 @@ const Staking = (props: Props) => {
           </div>
           <div className={styles.staking_content}>
             {currentChain === ChainType.Ethereum ? (
-              !chainId || (chainId && [1, 1337].includes(chainId)) ? (
+              !chainId || (chainId && isChainId(chainId)) ? (
                 stakingInfo.map((info, idx) => (
                   <div
                     key={`info_${idx}`}
@@ -236,7 +237,7 @@ const Staking = (props: Props) => {
                 </div>
               )
             ) : (
-              <div className={styles.staking_comming_soon}>Comming soon!</div>
+              <div className={styles.staking_comming_soon}>Coming soon!</div>
             )}
           </div>
         </div>

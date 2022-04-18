@@ -40,7 +40,7 @@ const GovernanceBottom = () => {
             <div className={styles.governance_bottom_content_list}>
               <div>
                 <Image src={forum} alt={'forum'} height={65} width={65} />
-                <div>Comming Soon</div>
+                <div>Coming Soon</div>
               </div>
               <div>{t('governance.section_fourth.6')}</div>
               <div>
@@ -50,7 +50,7 @@ const GovernanceBottom = () => {
             <div className={styles.governance_bottom_content_list}>
               <div>
                 <Image src={snapshot} alt={'snapshot'} height={65} width={65} />
-                <div>Comming Soon</div>
+                <div>Coming Soon</div>
               </div>
               <div>{t('governance.section_fourth.8')}</div>
               <div>{t('governance.section_fourth.9')}</div>
