@@ -120,7 +120,11 @@ const Staking = (props: Props) => {
                 i18n.language === LanguageType.EN ? '0.9rem' : undefined,
             }}>
             <a
-              href="https://elysia.gitbook.io/elysia-user-guide/v/english-1/"
+              href={
+                i18n.language === LanguageType.KO
+                  ? 'https://elysia.gitbook.io/elysia-user-guide/v/korean-3/el-staking'
+                  : 'https://elysia.gitbook.io/elysia-user-guide/'
+              }
               target="_blank"
               rel="noopener noreferrer"
               style={{
