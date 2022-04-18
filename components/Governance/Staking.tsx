@@ -119,8 +119,20 @@ const Staking = (props: Props) => {
               fontSize:
                 i18n.language === LanguageType.EN ? '0.9rem' : undefined,
             }}>
-            {t('governance.section_third.3')}
-            <Arrow />
+            <a
+              href="https://elysia.gitbook.io/elysia-user-guide/v/english-1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              {t('governance.section_third.3')}
+              <Arrow />
+            </a>
           </div>
         </div>
         <div className={styles.governance_staking_info}>
