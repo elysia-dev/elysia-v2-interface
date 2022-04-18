@@ -54,6 +54,11 @@ const GovernanceCenter = () => {
                 style={{
                   fontSize:
                     i18n.language === LanguageType.EN ? '0.98rem' : undefined,
+                  width: '100%',
+                  height: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}>
                 {t('governance.section_second.3')}
                 <Arrow />
