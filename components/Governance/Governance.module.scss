@@ -46,7 +46,7 @@
       margin-bottom: 40px;
     }
     .governance_top_content {
-      background-image: url('../../assets/images/governance_top@2x.png');
+      background-image: url('../../assets/images/governance_top.png');
       background-repeat: no-repeat;
       background-position-x: center;
       background-position-y: center;
@@ -469,11 +469,21 @@
           border-radius: 15px;
           width: 202px;
           height: 37px;
-          font-size: 1.0625rem;
+          font-size: 1rem;
           display: flex;
           align-items: center;
           justify-content: center;
+          > p {
+            cursor: pointer;
+          }
+        }
+
+        .staking_active {
           @include hover__box-shadow;
+        }
+
+        .staking_deactive {
+          // @include hover__box-shadow;
           > p {
             cursor: pointer;
           }
@@ -644,12 +654,13 @@
       text-align: center;
       font-family: 'SpoqaHanSansNeo';
       color: #333333;
-      font-size: 2.8125rem;
+      font-size: 2.5125rem;
+      padding: 0px 7px;
       margin-top: 20px;
       margin-bottom: 40px;
     }
     .governance_top_content {
-      background-image: url('../../assets/images/governance_top@2x.png');
+      background-image: url('../../assets/images/governance_top.png');
       background-repeat: no-repeat;
       background-position-x: center;
       background-position-y: center;
@@ -676,20 +687,21 @@
       align-items: center;
 
       > div {
-        height: 100px;
-        width: 100px;
+        height: 105px;
+        width: 105px;
         border: 1px solid #ffffff;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         box-shadow: 0px 0px 6px #00000029;
-        border-radius: 100px;
-        font-size: 0.6rem;
+        border-radius: 105px;
+        font-size: 0.7rem;
+        letter-spacing: -0.02rem;
         line-height: 1rem;
       }
       > div:not(div:last-child) {
-        margin-right: 1rem;
+        margin-right: 0.85rem;
       }
     }
   }
@@ -824,16 +836,16 @@
           cursor: pointer;
           position: relative;
           > div {
-            width: 170px;
+            width: 147px;
             padding: 10px;
-            font-size: 1.0625rem;
+            font-size: 0.985rem;
             cursor: auto;
             box-shadow: 0px 1px 6px #00000029;
             background-color: #ffffff;
             border-radius: 5px;
             position: absolute;
             top: 17px;
-            right: -30px;
+            right: -10px;
             color: #333333;
             font-family: 'SpoqaHanSansNeo-Bold';
           }
@@ -849,7 +861,7 @@
         }
         > div:last-child {
           font-family: 'Montserrat-bold';
-          font-size: 1.4375rem;
+          font-size: 1.065rem;
           color: #333333;
         }
       }
@@ -972,9 +984,10 @@
     .staking_prev {
       text-align: center;
       font-family: 'SpoqaHanSansNeo';
-      font-size: 1rem;
+      font-size: 0.8rem;
       color: #3679b5;
       cursor: pointer;
+      margin-right: 10px;
     }
 
     .staking_wrapper {
@@ -993,21 +1006,20 @@
     .staking_header {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
     }
 
     .staking_select_mainnet {
       font-family: 'Montserrat-Medium';
       display: flex;
-      margin-right: auto;
       border-top: 2px solid #f0f0f1;
       border-left: 2px solid #f0f0f1;
       border-right: 2px solid #f0f0f1;
-      width: 220px;
+      width: 180px;
       background-color: #ffffff;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
-      font-size: 1.0625rem;
+      font-size: 1rem;
 
       div {
         width: 50%;
@@ -1072,7 +1084,7 @@
           font-family: 'SpoqaHanSansNeo-Bold';
           font-size: 1.0625rem;
         }
-        > div:last-child {
+        .staking_active {
           font-family: 'SpoqaHanSansNeo';
           cursor: pointer;
           box-shadow: 0px 1px 6px #00000029;
@@ -1084,6 +1096,23 @@
           align-items: center;
           justify-content: center;
           @include hover__box-shadow;
+          > p {
+            cursor: pointer;
+          }
+        }
+
+        .staking_deactive {
+          font-family: 'SpoqaHanSansNeo';
+          cursor: pointer;
+          box-shadow: 0px 1px 6px #00000029;
+          border-radius: 15px;
+          width: 202px;
+          height: 37px;
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          // @include hover__box-shadow;
           > p {
             cursor: pointer;
           }
@@ -1101,7 +1130,8 @@
       }
       .staking_network {
         font-family: 'SpoqaHanSansNeo-Bold';
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
         width: 70%;
         text-align: center;
         margin: auto;

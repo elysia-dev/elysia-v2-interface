@@ -50,6 +50,18 @@
         }
       }
     }
+
+    .wrong_network {
+      font-family: 'SpoqaHanSansNeo-Bold';
+      width: 100%;
+      height: 100%;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: wheat;
+      background-color: #d84d4d;
+    }
   }
 }
 
@@ -104,6 +116,18 @@
           margin-left: 7px;
         }
       }
+    }
+
+    .wrong_network {
+      font-family: 'SpoqaHanSansNeo-Bold';
+      width: 100%;
+      height: 100%;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: wheat;
+      background-color: #d84d4d;
     }
   }
 }
