@@ -16,6 +16,7 @@ import ModalLayout from 'components/Modals/ModalLayout';
 import SelectWalletModal from 'components/Modals/SelectWalletModal';
 import ErrorModal from 'components/Modals/ErrorModal';
 import TxStatus from 'enums/TxStatus';
+import { isChainId } from 'utils/isChainId';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -54,7 +55,7 @@ const Navigation = () => {
   }, [txStatus]);
 
   useEffect(() => {
-    if (!library || (chainId && [1, 1337].includes(chainId))) return;
+    if (!library || (chainId && isChainId(chainId))) return;
     library.provider
       .request({
         method: 'wallet_switchEthereumChain',
@@ -95,8 +96,8 @@ const Navigation = () => {
                 <Image
                   src={ElysiaLogo}
                   alt={'ElysiaLogo'}
-                  width={isMobile ? 80 : 139}
-                  height={isMobile ? 18 : 31}
+                  width={isMobile ? 100 : 139}
+                  height={isMobile ? 21 : 31}
                 />
               </a>
             </Link>
