@@ -102,7 +102,7 @@ const StakingItem = (props: Props) => {
               <StakingInfoByRound theme={userInfo.userReward}>
                 <div>{t('governance.prev_staking.7')}</div>
                 <div>
-                  {formatComma(userInfo.userReward)} <span>EL</span>
+                  {formatComma(userInfo.userReward)} <span>ELFI</span>
                 </div>
                 <div
                   onClick={() => {
