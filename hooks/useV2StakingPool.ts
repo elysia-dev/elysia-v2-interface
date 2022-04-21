@@ -10,15 +10,11 @@ const useV2StakingPool = (): {
 } => {
   const { library } = useWeb3React();
   const contract = useMemo(() => {
-    if (!library) {
-      return StakingPoolV2factory.connect(
-        envs.staking.elStakingV2PoolAddress,
-        new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC),
-      );
-    }
     return StakingPoolV2factory.connect(
       envs.staking.elStakingV2PoolAddress,
-      library.getSigner(),
+      library
+        ? library.getSigner()
+        : new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC),
     );
   }, [library]);
 
