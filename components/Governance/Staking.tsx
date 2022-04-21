@@ -21,7 +21,6 @@ import LanguageType from 'enums/LanguageType';
 import useV2StakedInfo from 'hooks/useV2StakedInfo';
 import Arrow from './Arrow';
 import getLocalLanguage from 'utils/getLocalLanguage';
-import { isChainId } from 'utils/isChainId';
 
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
