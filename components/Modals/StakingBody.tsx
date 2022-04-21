@@ -12,8 +12,7 @@ type Props = {
   setValue: Dispatch<SetStateAction<string>>;
   amount: BigNumber;
   type: string;
-  sendTx: (amount: BigNumber, round?: number) => void;
-  round?: number;
+  sendTx: () => void;
   setTransactionWait: Dispatch<SetStateAction<boolean>>;
 };
 
@@ -27,7 +26,6 @@ const StakingBody = (props: Props) => {
     amount,
     type,
     sendTx,
-    round,
     setTransactionWait,
   } = props;
   const { t } = useTranslation();
@@ -70,7 +68,7 @@ const StakingBody = (props: Props) => {
             }
 
             setTransactionWait(true);
-            sendTx(utils.parseEther(String(value)), round);
+            sendTx();
           }}>
           <div
             style={{
