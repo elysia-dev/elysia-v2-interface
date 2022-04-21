@@ -39,7 +39,7 @@ const useTotalStakedBalance = () => {
         const calculatorAPR = calcAPR(
           v2Balance.totalPrincipal,
           data?.elPrice,
-          utils.parseEther(elRewardPerDay),
+          v2Balance.rewardPerSecond,
         );
         setApr(
           calculatorAPR.eq(constants.MaxUint256)
