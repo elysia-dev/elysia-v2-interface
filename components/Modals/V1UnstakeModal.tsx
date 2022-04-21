@@ -78,8 +78,7 @@ const V1UnstakeModal = (props: Props) => {
               setValue={setValue}
               amount={prevAmount ?? constants.Zero}
               type={t('modal.unstaking.0')}
-              sendTx={withdraw}
-              round={round}
+              sendTx={() => withdraw(utils.parseEther(value), round)}
               setTransactionWait={setTransactionWait}
             />
           )}
