@@ -1,10 +1,12 @@
-import { StakingPoolV2 } from '@elysia-dev/elyfi-v1-sdk';
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useWeb3React } from '@web3-react/core';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
 import { constants } from 'ethers';
 import moment from 'moment';
 import { useCallback, useContext, useEffect, useState } from 'react';
+import useSWR from 'swr';
+import { StakingInfoFetcher } from 'clients/StakingFetcher';
 import useV2StakingPool from './useV2StakingPool';
 
 const useV2StakedInfo = () => {
@@ -18,42 +20,40 @@ const useV2StakedInfo = () => {
     loadedAt: moment(),
   });
 
-  const getUserInfo = useCallback(
-    async (contract: StakingPoolV2, account: string) => {
-      try {
-        const data = await contract.getPoolData();
-        const userReward = await contract.getUserReward(account);
-        const userData = await contract.getUserData(account);
-
-        setUserStakedInfo({
-          totalPrincipal: data.totalPrincipal,
-          userPrincipal: userData.userPrincipal,
-          userReward: userReward,
-          loadedAt: moment(),
-        });
-      } catch (error) {
-        setUserStakedInfo({
-          userPrincipal: constants.Zero,
-          userReward: constants.Zero,
-          totalPrincipal: constants.Zero,
-          loadedAt: moment(),
-        });
-        // console.error(error);
-      }
+  const { data: stakingInfo, mutate } = useSWR(
+    [contract, account, 'v2ContractPool'],
+    {
+      fetcher: StakingInfoFetcher(),
     },
-    [],
   );
-  useEffect(() => {
-    if (contract && account) {
-      getUserInfo(contract, account);
+
+  const getUserInfo = useCallback(async () => {
+    if (!account || !contract || !stakingInfo) return;
+    try {
+      setUserStakedInfo({
+        totalPrincipal: stakingInfo[0].totalPrincipal,
+        userPrincipal: stakingInfo[2].userPrincipal,
+        userReward: stakingInfo[1],
+        loadedAt: moment(),
+      });
+    } catch (error) {
+      setUserStakedInfo({
+        userPrincipal: constants.Zero,
+        userReward: constants.Zero,
+        totalPrincipal: constants.Zero,
+        loadedAt: moment(),
+      });
     }
-  }, [account, contract]);
+  }, [stakingInfo, contract, account]);
+  useEffect(() => {
+    getUserInfo();
+  }, [account, contract, stakingInfo]);
 
   useEffect(() => {
     if (contract && account && txStatus === TxStatus.CONFIRM) {
-      getUserInfo(contract, account);
+      mutate();
     }
-  }, [account, contract, txStatus]);
+  }, [account, contract, txStatus, stakingInfo]);
 
   return userStakedInfo;
 };
