@@ -1,5 +1,5 @@
 import useERC20Info from 'hooks/useERC20Info';
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import envs from 'core/envs';
 import { utils } from 'ethers';
 import useStaking from 'hooks/useV2Staking';
@@ -10,10 +10,9 @@ import StakingBody from './StakingBody';
 import Image from 'next/image';
 import LoadingIndicator from './LoadingIndicator';
 import IncreateAllowanceModal from './IncreateAllowanceModal';
-import TxContext from 'contexts/TxContext';
-import TxStatus from 'enums/TxStatus';
 import { useTranslation } from 'react-i18next';
 import useV2StakedInfo from 'hooks/useV2StakedInfo';
+import useIsPendingTx from 'hooks/useIsPendingTx';
 
 type Props = {
   onClose: () => void;
@@ -27,30 +26,19 @@ const StakingModal = (props: Props) => {
   );
   const { t } = useTranslation();
   const userStakedInfo = useV2StakedInfo();
-  const { txStatus } = useContext(TxContext);
   const { staking, withdraw } = useStaking();
   const transText = t('modal.staking.0');
   const [stakingType, setStakingType] = useState(transText);
   const [value, setValue] = useState('');
-  const [transactionWait, setTransactionWait] = useState(false);
+  const { transactionWait, setTransactionWait } = useIsPendingTx();
 
   const isStakingMode = useCallback(() => {
     return stakingType === t('modal.staking.0');
-  }, [stakingType]);
+  }, [stakingType, t]);
 
   useEffect(() => {
     setValue('');
   }, [stakingType]);
-
-  useEffect(() => {
-    if (txStatus !== TxStatus.PENDING) {
-      setTransactionWait(false);
-      return;
-    }
-    if (txStatus === TxStatus.PENDING) {
-      setTransactionWait(true);
-    }
-  }, [txStatus]);
 
   return (
     <>

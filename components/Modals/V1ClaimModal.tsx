@@ -5,11 +5,9 @@ import CloseButton from './CloseButton';
 import styles from './Modal.module.scss';
 import Image from 'next/image';
 import LoadingIndicator from './LoadingIndicator';
-import { useContext, useEffect, useState } from 'react';
-import TxContext from 'contexts/TxContext';
-import TxStatus from 'enums/TxStatus';
 import { useTranslation } from 'react-i18next';
 import useV1Staking from 'hooks/useV1Staking';
+import useIsPendingTx from 'hooks/useIsPendingTx';
 
 type Props = {
   onClose: () => void;
@@ -21,18 +19,7 @@ const V1ClaimModal = (props: Props) => {
   const { onClose, reward, round } = props;
   const { t } = useTranslation();
   const { claim } = useV1Staking();
-  const [transactionWait, setTransactionWait] = useState(false);
-  const { txStatus } = useContext(TxContext);
-
-  useEffect(() => {
-    if (txStatus !== TxStatus.PENDING) {
-      setTransactionWait(false);
-      return;
-    }
-    if (txStatus === TxStatus.PENDING) {
-      setTransactionWait(true);
-    }
-  }, [txStatus]);
+  const { transactionWait, setTransactionWait } = useIsPendingTx();
 
   return (
     <>
