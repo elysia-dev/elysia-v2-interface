@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import calcExpectedReward from 'utils/calcExpectedReward';
 import useV2StakedInfo from './useV2StakedInfo';
 
+const elRewardPerDay = '330731.57142857';
+
 const useReward = () => {
   const userStakedInfo = useV2StakedInfo();
   const [reward, setReward] = useState({
@@ -17,7 +19,7 @@ const useReward = () => {
         before: reward.after,
         after: calcExpectedReward(
           userStakedInfo,
-          utils.parseEther('330731.57142857'),
+          utils.parseEther(elRewardPerDay),
         ),
       });
     }, 3000);
