@@ -120,7 +120,11 @@ const StakingModal = (props: Props) => {
               type={
                 isStakingMode() ? t('modal.staking.0') : t('modal.unstaking.0')
               }
-              sendTx={isStakingMode() ? staking : withdraw}
+              sendTx={() =>
+                isStakingMode()
+                  ? staking(utils.parseEther(value))
+                  : withdraw(utils.parseEther(value))
+              }
               setTransactionWait={setTransactionWait}
             />
           ) : (
