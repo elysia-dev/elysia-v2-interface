@@ -8,10 +8,10 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push(`/${getLocalLanguage()}/Governance`);
+    router.push(`/${getLocalLanguage()}`);
   }, [router]);
 
-  return <Governance />;
+  return <></>;
 };
 
 export default Home;
