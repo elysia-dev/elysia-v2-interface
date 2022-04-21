@@ -1,6 +1,7 @@
 import { useWeb3React } from '@web3-react/core';
 import { pricesFetcher } from 'clients/Coingecko';
 import TxContext from 'contexts/TxContext';
+import { elRewardPerDay } from 'core/data/StakingReward';
 import envs from 'core/envs';
 import { constants, utils } from 'ethers';
 import priceMiddleware from 'middleware/priceMiddleware';
@@ -38,7 +39,7 @@ const useTotalStakedBalance = () => {
         const calculatorAPR = calcAPR(
           v2Balance.totalPrincipal,
           data?.elPrice,
-          utils.parseEther('330731.57142857'),
+          utils.parseEther(elRewardPerDay),
         );
         setApr(
           calculatorAPR.eq(constants.MaxUint256)

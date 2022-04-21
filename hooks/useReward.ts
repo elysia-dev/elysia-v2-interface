@@ -1,9 +1,8 @@
+import { elRewardPerDay } from 'core/data/StakingReward';
 import { constants, utils } from 'ethers';
 import { useEffect, useState } from 'react';
 import calcExpectedReward from 'utils/calcExpectedReward';
 import useV2StakedInfo from './useV2StakedInfo';
-
-const elRewardPerDay = '330731.57142857';
 
 const useReward = () => {
   const userStakedInfo = useV2StakedInfo();
