@@ -11,6 +11,7 @@ import RecentActivityType from 'enums/RecentActivityType';
 import TxStatus from 'enums/TxStatus';
 import useReward from 'hooks/useReward';
 import { useCallback, useContext, useEffect, useState } from 'react';
+import styles from './Governance.module.scss';
 import GovernanceBottom from './GovernanceBottom';
 import GovernanceCenter from './GovernanceCenter';
 import GovernanceTop from './GovernanceTop';
@@ -69,6 +70,7 @@ const Governance = () => {
     <>
       {modalVisible && <ModalLayout>{modalComponent()}</ModalLayout>}
       <div
+        className={styles.governance_wrapper}
         style={{
           marginTop: 100,
         }}>
