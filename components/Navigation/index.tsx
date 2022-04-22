@@ -93,7 +93,7 @@ const Navigation = () => {
       <div className={styles.navigation}>
         <div className={styles.navigation_wrapper}>
           <div className={styles.navigation_logo}>
-            <Link href={`/${router.query.lng}/Governance`} passHref>
+            <Link href={`/${router.query.lng}`} passHref>
               <a>
                 <Image
                   src={ElysiaLogo}
@@ -106,6 +106,19 @@ const Navigation = () => {
           </div>
           {!isMobile && (
             <div>
+              <Link href={`/${router.query.lng}`} passHref>
+                <a>
+                  <span
+                    style={{
+                      cursor: 'pointer',
+                      fontWeight: router.pathname.includes('')
+                        ? 'bold'
+                        : 'normal',
+                    }}>
+                    EL Bridge
+                  </span>
+                </a>
+              </Link>
               <Link href={`/${router.query.lng}/Governance`} passHref>
                 <a>
                   <span

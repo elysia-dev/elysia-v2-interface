@@ -28,6 +28,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .governance_wrapper {
+    max-width: 1190px;
+    margin: auto;
+  }
   .governance_top {
     margin-top: 127px;
     .governance_top_sub {
