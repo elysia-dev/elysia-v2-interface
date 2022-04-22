@@ -132,6 +132,19 @@ const Navigation = () => {
                   </span>
                 </a>
               </Link>
+              <Link href={`/${router.query.lng}/Ecosystem`} passHref>
+                <a>
+                  <span
+                    style={{
+                      cursor: 'pointer',
+                      fontWeight: router.pathname.includes('Ecosystem')
+                        ? 'bold'
+                        : 'normal',
+                    }}>
+                    Ecosystem
+                  </span>
+                </a>
+              </Link>
               <Link href={`/${router.query.lng}/Community`} passHref>
                 <a>
                   <span
