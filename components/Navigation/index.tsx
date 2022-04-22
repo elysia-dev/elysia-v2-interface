@@ -119,6 +119,19 @@ const Navigation = () => {
                   </span>
                 </a>
               </Link>
+              <Link href={`/${router.query.lng}/Community`} passHref>
+                <a>
+                  <span
+                    style={{
+                      cursor: 'pointer',
+                      fontWeight: router.pathname.includes('Community')
+                        ? 'bold'
+                        : 'normal',
+                    }}>
+                    Community
+                  </span>
+                </a>
+              </Link>
             </div>
           )}
           <ConnectWalletButton
