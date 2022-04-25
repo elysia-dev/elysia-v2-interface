@@ -29,22 +29,23 @@ const Navigation = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    if (isWalletConnector()) {
-      activate(walletConnectProvider).then(() => {});
-      setIsConnectWalletLoading(false);
-      return;
-    }
-    if (isMetamask()) {
-      activate(injectedConnector).then(() => {
+    const set = setTimeout(() => {
+      if (isWalletConnector()) {
+        activate(walletConnectProvider).then(() => {
+          setIsConnectWalletLoading(false);
+        });
+        return;
+      }
+      if (isMetamask()) {
         activate(injectedConnector).then(() => {
           setIsConnectWalletLoading(false);
         });
-      });
-    } else {
-      deactivate();
-      window.sessionStorage.removeItem('@network');
-      setIsConnectWalletLoading(false);
-    }
+      } else {
+        deactivate();
+        window.sessionStorage.removeItem('@network');
+        setIsConnectWalletLoading(false);
+      }
+    }, 500);
   }, []);
 
   useEffect(() => {
