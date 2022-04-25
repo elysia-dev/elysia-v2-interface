@@ -24,6 +24,8 @@ export const MainTopWrapper = styled.div`
     > div:nth-child(1) {
       display: inline-block;
     }
+
+    /* Link */
     > div:nth-child(2) {
       display: flex;
       margin-top: 10px;
@@ -31,13 +33,19 @@ export const MainTopWrapper = styled.div`
         margin-right: 20px;
       }
       > div {
-        ${center}
         width: 70px;
         height: 70px;
         border: ${defaultBorder};
         text-align: center;
+        > a {
+          width: 100%;
+          height: 100%;
+          ${center}
+        }
       }
     }
+
+    /* icon */
     > div:nth-child(3) {
       width: 100%;
       height: 120px;
@@ -51,6 +59,7 @@ export const MainTopWrapper = styled.div`
         ${center}
         flex-direction: column;
         > div:first-child {
+          cursor: pointer;
           width: 50px;
           height: 50px;
           border: ${defaultBorder};
