@@ -1,6 +1,15 @@
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+import CountUp from 'react-countup';
 import { MainTopWrapper } from './styles';
+import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
+import { formatCommaSmallZeroDisits } from 'utils/formatters';
+import { formatEther } from 'ethers/lib/utils';
 
 const Top = () => {
+  const { i18n } = useTranslation();
+  const { totalBalance } = useTotalStakedBalance();
+
   return (
     <MainTopWrapper>
       <div>
@@ -14,40 +23,82 @@ const Top = () => {
           활동할 수 있습니다.
         </div>
         <div>
-          <div>Twitter icon1</div>
-          <div>Telegram icon1</div>
-          <div>Discord icon12</div>
-          <div>Github icon 13</div>
+          <div>
+            <Link href="https://twitter.com/Elysia_HQ" passHref>
+              <a rel="noopener noreferrer" target="_blank">
+                Twitter icon1
+              </a>
+            </Link>
+          </div>
+          <div>
+            <Link href="https://t.me/elysia_official" passHref>
+              <a rel="noopener noreferrer" target="_blank">
+                Telegram icon1
+              </a>
+            </Link>
+          </div>
+          <div>
+            <Link href="https://discord.com/invite/JjjYrE5Ww8" passHref>
+              <a rel="noopener noreferrer" target="_blank">
+                Discord icon12
+              </a>
+            </Link>
+          </div>
+          <div>
+            <Link href="https://github.com/elysia-dev" passHref>
+              <a rel="noopener noreferrer" target="_blank">
+                Github icon 13
+              </a>
+            </Link>
+          </div>
         </div>
         <div>
           <div>
             <div>icon</div>
             <div>
-              <span>20+</span>
+              <CountUp start={0} end={20} duration={1} />
+              <span>+</span>
               <br />
               Changed Real Estate
             </div>
           </div>
           <div>
-            <div>icon</div>
+            <Link href={`${i18n.language}/Governance`} passHref>
+              <div>icon</div>
+            </Link>
             <div>
-              <span>2,000+</span>
+              <CountUp start={0} end={2000} duration={1} />
+              <span>+</span>
               <br />
               Community Delegates
             </div>
           </div>
           <div>
-            <div>icon</div>
+            <Link href={`${i18n.language}/Ecosystem`} passHref>
+              <div>icon</div>
+            </Link>
             <div>
-              <span>$ 5M+</span>
+              $
+              <CountUp
+                start={0}
+                end={parseInt(formatEther(totalBalance))}
+                formattingFn={(number: any) => {
+                  return formatCommaSmallZeroDisits(number);
+                }}
+                duration={1}
+              />
+              <span>+</span>
               <br />
               Total Value Locked
             </div>
           </div>
           <div>
-            <div>icon</div>
+            <Link href={`${i18n.language}/Developers`} passHref>
+              <div>icon</div>
+            </Link>
             <div>
-              <span>3000+</span>
+              <CountUp start={0} end={3000} duration={1} />
+              <span>+</span>
               <br />
               Github commit
             </div>
