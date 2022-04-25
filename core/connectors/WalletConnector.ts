@@ -90,9 +90,9 @@ export default class WalletConnectConnector extends AbstractConnector {
 
   public async activate(): Promise<ConnectorUpdate> {
     if (!this.walletConnectProvider) {
-      //   const WalletConnectProvider = await import(
-      //     '@walletconnect/web3-provider'
-      //   ).then((m) => m?.default ?? m);
+      const WalletConnectProvider = await import(
+        '@walletconnect/web3-provider'
+      ).then((m) => m?.default ?? m);
       this.walletConnectProvider = new WalletConnectProvider({
         bridge: this.bridge,
         rpc: this.rpc,
