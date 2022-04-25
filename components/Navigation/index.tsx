@@ -111,9 +111,8 @@ const Navigation = () => {
                   <span
                     style={{
                       cursor: 'pointer',
-                      fontWeight: router.pathname.includes('')
-                        ? 'bold'
-                        : 'normal',
+                      fontWeight:
+                        router.pathname.length <= 6 ? 'bold' : 'normal',
                     }}>
                     EL Bridge
                   </span>
