@@ -9,9 +9,7 @@ const AssetItem: React.FC<Props> = ({ image }) => {
     <div>
       <div>
         <Image
-          src={
-            'https://elysia-public.s3.ap-northeast-2.amazonaws.com/elyfi/borrow01.png'
-          }
+          src={image}
           //   src={image}
           alt={'assetBonds'}
           width={400}
