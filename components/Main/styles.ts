@@ -80,18 +80,18 @@ export const MainPortFolioWrapper = styled.div`
   > div:nth-child(2) {
     margin-top: 25px;
     width: 100%;
-    height: 280px;
-    border: ${defaultBorder};
+    /* height: 400px; */
+    /* border: ${defaultBorder}; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     > div {
-      width: 32%;
+      /* width: 400px; */
       border: ${defaultBorder};
-      height: 100%;
+      /* height: 280px; */
       > div:nth-child(1) {
         width: 100%;
-        height: 240px;
+        /* height: 400px; */
         border: ${defaultBorder};
       }
       > div:nth-child(2) {

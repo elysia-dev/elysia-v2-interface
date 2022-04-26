@@ -1,16 +1,18 @@
+import { useTranslation } from 'react-i18next';
 import { MainTeamWrapper } from './styles';
 
 const Team = () => {
+  const { t } = useTranslation();
+
   return (
     <MainTeamWrapper>
       <div>
         <div>
-          <span>ELYSIA DAO LLC. CONTRIBUTERS</span>
+          <span>{t('main.developers.0')}</span>
           <br />
-          <span>Registered in the state of Wyoming, USA.</span>
+          <span>{t('main.developers.1')}</span>
           <br />
-          ELYSIA DAO LLC.의 모든 결정은 자동화되고 분산되며 오픈 소스 코드를
-          기반으로 합니다.
+          {t('main.developers.2')}
         </div>
         <div>
           <div>이미지</div>
@@ -24,11 +26,11 @@ const Team = () => {
       </div>
       <div>
         <div>
-          <span>PRESS</span>
+          <span>{t('main.press.0')}</span>
           <br />
-          <span>News & Updates about ELYSIA Protocol.</span>
+          <span>{t('main.press.1')}</span>
           <br />
-          해외 및 국내 ELYSIA 프로토콜 관련 소식.
+          {t('main.press.2')}
         </div>
         <div>
           <div>
@@ -37,17 +39,8 @@ const Team = () => {
               <div>이미지</div>
             </div>
             <div>
-              <div>
-                ELYSIA to Be the First in Asia That Obtains Approval as a DAO
-                LLC in Wyoming, USA
-              </div>
-              <div>
-                SINGAPORE, February 07, 2022--(BUSINESS WIRE)-- ELYSIA, a
-                blockchain project specializing in real estate tokenization and
-                securitization, will be the first organization in Asia to be
-                registered as a DAO LLC (Limited Liability Company) in Wyoming,
-                USA
-              </div>
+              <div>{t('main.press.3')}</div>
+              <div>{t('main.press.4')}</div>
             </div>
           </div>
           <div>
@@ -56,17 +49,8 @@ const Team = () => {
               <div>이미지</div>
             </div>
             <div>
-              <div>
-                ELYSIA to Be the First in Asia That Obtains Approval as a DAO
-                LLC in Wyoming, USA
-              </div>
-              <div>
-                SINGAPORE, February 07, 2022--(BUSINESS WIRE)-- ELYSIA, a
-                blockchain project specializing in real estate tokenization and
-                securitization, will be the first organization in Asia to be
-                registered as a DAO LLC (Limited Liability Company) in Wyoming,
-                USA
-              </div>
+              <div>{t('main.press.5')}</div>
+              <div>{t('main.press.6')}</div>
             </div>
           </div>
           <div>
@@ -75,17 +59,8 @@ const Team = () => {
               <div>이미지</div>
             </div>
             <div>
-              <div>
-                ELYSIA to Be the First in Asia That Obtains Approval as a DAO
-                LLC in Wyoming, USA
-              </div>
-              <div>
-                SINGAPORE, February 07, 2022--(BUSINESS WIRE)-- ELYSIA, a
-                blockchain project specializing in real estate tokenization and
-                securitization, will be the first organization in Asia to be
-                registered as a DAO LLC (Limited Liability Company) in Wyoming,
-                USA
-              </div>
+              <div>{t('main.press.7')}</div>
+              <div>{t('main.press.8')}</div>
             </div>
           </div>
         </div>

@@ -1,65 +1,63 @@
+import { Trans, useTranslation } from 'react-i18next';
 import { SectionWrapper } from './styles';
 
 const Section = () => {
+  const { t } = useTranslation();
   return (
     <SectionWrapper>
       <div>
         <div>
-          <span>Developers</span>
+          <span>{t('developers.0')}</span>
           <br />
-          <span>Give powers for contributing developers.</span>
+          <span>{t('developers.1')}</span>
           <br />
-          사용자들은 자유롭게 ELYSIA 시스템을 구성하는 코드를 확인하고,
-          <br /> 자신만의 방법으로 contribute하고 보상을 획득할 수 있습니다.
+          <Trans>{t('developers.2')}</Trans>
         </div>
       </div>
       <div>
         <div>
           <div>
-            <div>What is ELYSIA?</div>
+            <div>{t('developers.3')}</div>
             <div>화살표</div>
           </div>
           <div>
             <div>
-              DAO for the digital transformation
-              <br /> of real estate assets.
+              <Trans>{t('developers.4')}</Trans>
             </div>
             <div>아이콘</div>
           </div>
         </div>
         <div>
           <div>
-            <div>What is ELYSIA?</div>
+            <div>{t('developers.5')}</div>
             <div>화살표</div>
           </div>
           <div>
             <div>
-              DAO for the digital transformation
-              <br /> of real estate assets.
+              <Trans>{t('developers.6')}</Trans>
             </div>
             <div>아이콘</div>
           </div>
         </div>
         <div>
           <div>
-            <div>What is ELYSIA?</div>
+            <div>{t('developers.7')}</div>
             <div>화살표</div>
           </div>
           <div>
             <div>
-              DAO for the digital transformation
-              <br /> of real estate assets.
+              <Trans>{t('developers.8')}</Trans>
             </div>
             <div>아이콘</div>
           </div>
         </div>
         <div>
           <div>
-            <div>ELYSIA v1 Documentation</div>
+            <div>{t('developers.9')}</div>
             <div>아이콘</div>
           </div>
           <div>
-            <div>Github</div>
+            <div>{t('developers.10')}</div>
             <div>아이콘</div>
           </div>
         </div>

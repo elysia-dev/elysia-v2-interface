@@ -1,22 +1,24 @@
+import { t } from 'i18next';
+import Link from 'next/link';
+import { Trans, useTranslation } from 'react-i18next';
 import { MainSectionWrapper } from './styles';
 
 const Section = () => {
+  const { i18n } = useTranslation();
+
   return (
     <MainSectionWrapper>
       <div>
         <div>
           <div>
-            <span>EL Bridge (On-boarding) -&gt;</span>
+            <span>{t('main.section_el_bridge.0')} -&gt;</span>
             <br />
-            <span>Real world asset into digital NFT.</span>
+            <span>{t('main.section_el_bridge.1')}</span>
             <br />
-            실제 부동산을 NFT로 만드는 과정.
+            {t('main.section_el_bridge.2')}
           </div>
           <p>
-            사용자들은 DAO를 통해 실제 부동산이 NFT로 만들어지는 과정에
-            참여하고,
-            <br />
-            제대로 변환이 이루어지는지 감시할 수 있습니다.
+            <Trans>{t('main.section_el_bridge.3')}</Trans>
           </p>
         </div>
         <div>이미지</div>
@@ -25,34 +27,30 @@ const Section = () => {
         <div>이미지</div>
         <div>
           <div>
-            <span>&lt;- EL Bridge (On-boarding)</span>
+            <Link href={`${i18n.language}/Governance`} passHref>
+              <span>&lt;- {t('main.section_governance.0')}</span>
+            </Link>
             <br />
-            <span>Real world asset into digital NFT.</span>
-            <br />
-            실제 부동산을 NFT로 만드는 과정.
+            <span>{t('main.section_governance.1')}</span>
           </div>
           <p>
-            사용자들은 DAO를 통해 실제 부동산이 NFT로 만들어지는 과정에
-            참여하고,
-            <br />
-            제대로 변환이 이루어지는지 감시할 수 있습니다.
+            <Trans>{t('main.section_governance.2')}</Trans>
           </p>
         </div>
       </div>
       <div>
         <div>
           <div>
-            <span>EL Bridge (On-boarding) -&gt;</span>
+            <Link href={`${i18n.language}/Ecosystem`} passHref>
+              <span>{t('main.section_ecosystem.0')} -&gt;</span>
+            </Link>
             <br />
-            <span>Real world asset into digital NFT.</span>
+            <span>{t('main.section_ecosystem.1')}</span>
             <br />
-            실제 부동산을 NFT로 만드는 과정.
+            {t('main.section_ecosystem.2')}
           </div>
           <p>
-            사용자들은 DAO를 통해 실제 부동산이 NFT로 만들어지는 과정에
-            참여하고,
-            <br />
-            제대로 변환이 이루어지는지 감시할 수 있습니다.
+            <Trans>{t('main.section_ecosystem.3')}</Trans>
           </p>
         </div>
         <div>이미지</div>
@@ -61,34 +59,32 @@ const Section = () => {
         <div>이미지</div>
         <div>
           <div>
-            <span>&lt;- EL Bridge (On-boarding)</span>
+            <Link href={`${i18n.language}/Community`} passHref>
+              <span>&lt;- {t('main.section_community.0')}</span>
+            </Link>
             <br />
-            <span>Real world asset into digital NFT.</span>
+            <span>{t('main.section_community.1')}</span>
             <br />
-            실제 부동산을 NFT로 만드는 과정.
+            {t('main.section_community.2')}
           </div>
           <p>
-            사용자들은 DAO를 통해 실제 부동산이 NFT로 만들어지는 과정에
-            참여하고,
-            <br />
-            제대로 변환이 이루어지는지 감시할 수 있습니다.
+            <Trans>{t('main.section_community.3')}</Trans>
           </p>
         </div>
       </div>
       <div>
         <div>
           <div>
-            <span>EL Bridge (On-boarding) -&gt;</span>
+            <Link href={`${i18n.language}/Developers`} passHref>
+              <span>{t('main.section_developers.0')} -&gt;</span>
+            </Link>
             <br />
-            <span>Real world asset into digital NFT.</span>
+            <span>{t('main.section_developers.1')}</span>
             <br />
-            실제 부동산을 NFT로 만드는 과정.
+            {t('main.section_developers.2')}
           </div>
           <p>
-            사용자들은 DAO를 통해 실제 부동산이 NFT로 만들어지는 과정에
-            참여하고,
-            <br />
-            제대로 변환이 이루어지는지 감시할 수 있습니다.
+            <Trans>{t('main.section_developers.3')}</Trans>
           </p>
         </div>
         <div>이미지</div>
@@ -97,17 +93,16 @@ const Section = () => {
         <div>이미지</div>
         <div>
           <div>
-            <span> &lt;- EL Bridge (On-boarding)</span>
+            <Link href={`${i18n.language}/Documents`} passHref>
+              <span> &lt;- {t('main.section_documents.0')}</span>
+            </Link>
             <br />
-            <span>Real world asset into digital NFT.</span>
+            <span>{t('main.section_documents.1')}</span>
             <br />
-            실제 부동산을 NFT로 만드는 과정.
+            {t('main.section_documents.2')}
           </div>
           <p>
-            사용자들은 DAO를 통해 실제 부동산이 NFT로 만들어지는 과정에
-            참여하고,
-            <br />
-            제대로 변환이 이루어지는지 감시할 수 있습니다.
+            <Trans>{t('main.section_documents.3')}</Trans>
           </p>
         </div>
       </div>

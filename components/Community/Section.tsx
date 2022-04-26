@@ -1,22 +1,23 @@
+import { Trans, useTranslation } from 'react-i18next';
 import { CommunityWrapper, SectionWrapper } from './styles';
 
 const Section = () => {
+  const { t } = useTranslation();
+
   return (
     <SectionWrapper>
       <div>
         <div>
-          <span>ELYSIA COMMUNITY</span>
+          <span>{t('community.0')}</span>
           <br />
-          <span>User-centered community channels.</span>
+          <span>{t('community.1')}</span>
           <br />
-          사용자들은 여러 커뮤니티 채널을 통해 ELYSIA protocol에 참여하는 다른
-          사람들과
-          <br /> 서로 의견을 나누고, 의사결정을 할 수 있습니다.
+          <Trans>{t('community.2')}</Trans>
         </div>
       </div>
       <div>
         <div>
-          <div>궁금한 내용을 질문하고 ELYSIA 커뮤니티에 참여하세요!</div>
+          <div>{t('community.3')}</div>
           <div>
             <div>
               <div>아이콘</div>
@@ -43,7 +44,7 @@ const Section = () => {
       </div>
       <div>
         <div>
-          <div>궁금한 내용을 질문하고 ELYSIA 커뮤니티에 참여하세요!</div>
+          <div>{t('community.4')}</div>
           <div>
             <div>
               <div>아이콘</div>
@@ -65,7 +66,7 @@ const Section = () => {
       </div>
       <div>
         <div>
-          <div>궁금한 내용을 질문하고 ELYSIA 커뮤니티에 참여하세요!</div>
+          <div>{t('community.5')}</div>
           <div>
             <div>
               <div>아이콘</div>
@@ -82,7 +83,7 @@ const Section = () => {
       </div>
       <div>
         <div>
-          <div>궁금한 내용을 질문하고 ELYSIA 커뮤니티에 참여하세요!</div>
+          <div>{t('community.6')}</div>
           <div>
             <div>
               <div>아이콘</div>
