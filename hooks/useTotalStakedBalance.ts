@@ -1,24 +1,22 @@
 import { useWeb3React } from '@web3-react/core';
 import { pricesFetcher } from 'clients/Coingecko';
+import { StakingInfoFetcher, tvlFetcher } from 'clients/StakingFetcher';
 import TxContext from 'contexts/TxContext';
-import { elRewardPerDay } from 'core/data/StakingReward';
 import envs from 'core/envs';
-import { constants, utils } from 'ethers';
+import { constants } from 'ethers';
 import priceMiddleware from 'middleware/priceMiddleware';
 import { useContext, useEffect, useState } from 'react';
 import useSWR from 'swr';
 import calcAPR from 'utils/calcAPR';
 import { toPercent } from 'utils/formatters';
-import useERC20 from './useERC20';
 import useV2StakingPool from './useV2StakingPool';
 
 const useTotalStakedBalance = () => {
   const { account } = useWeb3React();
-  const [totalBalance, setTotalBalance] = useState(constants.Zero);
+  const [totalBalance, setTotalBalance] = useState(0);
   const [apr, setApr] = useState('-');
   const { txStatus } = useContext(TxContext);
   const [isLoading, setIsLoading] = useState(true);
-  const contract = useERC20(envs.token.elAddress);
   const { contract: v2Contract } = useV2StakingPool();
   const { data } = useSWR(
     envs.externalApiEndpoint.coingackoURL,
@@ -28,32 +26,34 @@ const useTotalStakedBalance = () => {
     },
   );
 
+  const { data: v2PoolData } = useSWR([v2Contract, account, 'v2ContractPool'], {
+    fetcher: StakingInfoFetcher(),
+  });
+
+  const { data: tvl } = useSWR(process.env.NEXT_PUBLIC_TVL_URL, tvlFetcher);
+
   useEffect(() => {
-    if (!contract || !v2Contract || !data) return;
+    if (!data || !v2PoolData || !tvl) return;
     (async () => {
       try {
-        const v1Balance = await contract.balanceOf(
-          envs.staking.elStakingPoolAddress,
-        );
-        const v2Balance = await v2Contract.getPoolData();
         const calculatorAPR = calcAPR(
-          v2Balance.totalPrincipal,
+          v2PoolData.poolData.totalPrincipal,
           data?.elPrice,
-          v2Balance.rewardPerSecond,
+          v2PoolData.poolData.rewardPerSecond,
         );
         setApr(
           calculatorAPR.eq(constants.MaxUint256)
             ? '-'
             : toPercent(calculatorAPR),
         ),
-          setTotalBalance(v2Balance.totalPrincipal.add(v1Balance));
+          setTotalBalance(tvl.elTvl);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
         setIsLoading(false);
       }
     })();
-  }, [contract, account, v2Contract, data, txStatus]);
+  }, [account, data, txStatus, v2PoolData, tvl]);
 
   return { totalBalance, apr, isLoading };
 };
