@@ -12,12 +12,14 @@ export const StakingInfoFetcher =
   (): any =>
   async (...args: [StakingPoolV2, string]) => {
     const [...params] = args;
-    if (!params[0] || !params[1]) return undefined;
+    if (!params[0]) return undefined;
 
     return {
       poolData: await params[0].getPoolData(),
-      userReward: await params[0].getUserReward(params[1]),
-      userData: await params[0].getUserData(params[1]),
+      userReward: !params[1]
+        ? undefined
+        : await params[0].getUserReward(params[1]),
+      userData: !params[1] ? undefined : await params[0].getUserData(params[1]),
     };
   };
 
