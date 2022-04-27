@@ -92,6 +92,13 @@ export const toCompactForBignumber = (
     compactDisplay: 'short',
   }).format(parseFloat(utils.formatUnits(value, decimals || 18)));
 
+export const toCompactForNumber = (value: number, decimals?: number): string =>
+  new Intl.NumberFormat('en-US', {
+    maximumFractionDigits: 2,
+    notation: 'compact',
+    compactDisplay: 'short',
+  }).format(value);
+
 export const toUsd = (value: BigNumber, decimals?: number): string =>
   new Intl.NumberFormat('en', { style: 'currency', currency: 'USD' }).format(
     parseFloat(utils.formatUnits(value, decimals || 18)),
