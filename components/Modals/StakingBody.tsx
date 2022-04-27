@@ -66,7 +66,6 @@ const StakingBody = (props: Props) => {
             if (isDisabledBtn || Number(value) === 0) {
               return;
             }
-
             setTransactionWait(true);
             sendTx();
           }}>

@@ -12,7 +12,7 @@ import LoadingIndicator from './LoadingIndicator';
 import IncreateAllowanceModal from './IncreateAllowanceModal';
 import { useTranslation } from 'react-i18next';
 import useV2StakedInfo from 'hooks/useV2StakedInfo';
-import useIsPendingTx from 'hooks/useIsPendingTx';
+import useSendingTransaction from 'hooks/useSendingTransaction';
 
 type Props = {
   onClose: () => void;
@@ -30,11 +30,11 @@ const StakingModal = (props: Props) => {
   const transText = t('modal.staking.0');
   const [stakingType, setStakingType] = useState(transText);
   const [value, setValue] = useState('');
-  const { transactionWait, setTransactionWait } = useIsPendingTx();
+  const { transactionWait, setTransactionWait } = useSendingTransaction();
 
   const isStakingMode = useCallback(() => {
     return stakingType === t('modal.staking.0');
-  }, [stakingType, t]);
+  }, [stakingType]);
 
   useEffect(() => {
     setValue('');

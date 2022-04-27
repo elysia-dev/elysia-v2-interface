@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import LoadingIndicator from './LoadingIndicator';
 import useV1Staking from 'hooks/useV1Staking';
-import useIsPendingTx from 'hooks/useIsPendingTx';
+import useSendingTransaction from 'hooks/useSendingTransaction';
 
 type Props = {
   onClose: () => void;
@@ -21,7 +21,7 @@ const V1UnstakeModal = (props: Props) => {
   const { withdraw } = useV1Staking();
   const { t } = useTranslation();
   const [value, setValue] = useState('');
-  const { transactionWait, setTransactionWait } = useIsPendingTx();
+  const { transactionWait, setTransactionWait } = useSendingTransaction();
 
   return (
     <>

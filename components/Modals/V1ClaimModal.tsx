@@ -7,7 +7,7 @@ import Image from 'next/image';
 import LoadingIndicator from './LoadingIndicator';
 import { useTranslation } from 'react-i18next';
 import useV1Staking from 'hooks/useV1Staking';
-import useIsPendingTx from 'hooks/useIsPendingTx';
+import useSendingTransaction from 'hooks/useSendingTransaction';
 
 type Props = {
   onClose: () => void;
@@ -19,7 +19,7 @@ const V1ClaimModal = (props: Props) => {
   const { onClose, reward, round } = props;
   const { t } = useTranslation();
   const { claim } = useV1Staking();
-  const { transactionWait, setTransactionWait } = useIsPendingTx();
+  const { transactionWait, setTransactionWait } = useSendingTransaction();
 
   return (
     <>
