@@ -4,7 +4,7 @@ import styles from './Governance.module.scss';
 import {
   formatComma,
   formatSixFracionDigit,
-  toCompactForBignumber,
+  toCompactForNumber,
 } from 'utils/formatters';
 import { formatEther } from 'ethers/lib/utils';
 import CountUp from 'react-countup';
@@ -144,7 +144,7 @@ const Staking = (props: Props) => {
                 isLoading ? (
                   <Skeleton width={130} height={35} />
                 ) : (
-                  toCompactForBignumber(totalBalance)
+                  toCompactForNumber(totalBalance)
                 )
               ) : (
                 '-'
