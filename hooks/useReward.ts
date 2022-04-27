@@ -1,24 +1,34 @@
-import { elRewardPerDay } from 'core/data/StakingReward';
-import { constants, utils } from 'ethers';
+import { useWeb3React } from '@web3-react/core';
+import { StakingInfoFetcher } from 'clients/StakingFetcher';
+import { constants } from 'ethers';
 import { useEffect, useState } from 'react';
+import useSWR from 'swr';
 import calcExpectedReward from 'utils/calcExpectedReward';
 import useV2StakedInfo from './useV2StakedInfo';
+import useV2StakingPool from './useV2StakingPool';
 
 const useReward = () => {
   const userStakedInfo = useV2StakedInfo();
+  const { account } = useWeb3React();
+  const { contract: v2Contract } = useV2StakingPool();
   const [reward, setReward] = useState({
     before: constants.Zero,
     after: constants.Zero,
   });
 
+  const { data } = useSWR([v2Contract, account, 'v2ContractPool'], {
+    fetcher: StakingInfoFetcher(),
+  });
+
   useEffect(() => {
-    if (userStakedInfo.userPrincipal.eq(constants.Zero)) return;
+    if (userStakedInfo.userPrincipal.eq(constants.Zero) || !data) return;
+
     const interval = setInterval(() => {
       setReward({
         before: reward.after,
         after: calcExpectedReward(
           userStakedInfo,
-          utils.parseEther(elRewardPerDay),
+          data.poolData.rewardPerSecond,
         ),
       });
     }, 3000);
@@ -26,7 +36,7 @@ const useReward = () => {
     return () => {
       clearInterval(interval);
     };
-  }, [reward.after, userStakedInfo]);
+  }, [reward.after, userStakedInfo, data]);
 
   useEffect(() => {
     setReward({
