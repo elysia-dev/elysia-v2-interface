@@ -91,8 +91,7 @@ const Staking = (props: Props) => {
     t,
     account,
     userStakedInfo.userPrincipal,
-    reward.before,
-    reward.after,
+    reward,
     setModalType,
     setModalVisible,
   ]);
