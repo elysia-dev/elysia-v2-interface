@@ -2,7 +2,7 @@ import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
 import { useContext, useEffect, useState } from 'react';
 
-const useIsPendingTx = () => {
+const useSendingTransaction = () => {
   const { txStatus } = useContext(TxContext);
   const [transactionWait, setTransactionWait] = useState(false);
 
@@ -19,4 +19,4 @@ const useIsPendingTx = () => {
   return { transactionWait, setTransactionWait };
 };
 
-export default useIsPendingTx;
+export default useSendingTransaction;
