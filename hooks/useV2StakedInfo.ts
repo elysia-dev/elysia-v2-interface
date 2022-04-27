@@ -29,11 +29,12 @@ const useV2StakedInfo = () => {
 
   const getUserInfo = useCallback(async () => {
     if (!account || !contract || !stakingInfo) return;
+
     try {
       setUserStakedInfo({
-        totalPrincipal: stakingInfo[0].totalPrincipal,
-        userPrincipal: stakingInfo[2].userPrincipal,
-        userReward: stakingInfo[1],
+        totalPrincipal: stakingInfo.poolData.totalPrincipal,
+        userPrincipal: stakingInfo.userData.userPrincipal,
+        userReward: stakingInfo.userReward,
         loadedAt: moment(),
       });
     } catch (error) {
