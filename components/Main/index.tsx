@@ -1,4 +1,5 @@
-import { MainWrapper } from './styles';
+import MainTopImg from 'assets/images/mainTop@2x.png';
+import { MainWrapper, TopPortfolioWrapper } from './styles';
 import PortFolio from './PortFolio';
 import Top from './Top';
 import Section from './Section';
@@ -8,8 +9,10 @@ import Team from './Team';
 const Main = () => {
   return (
     <MainWrapper>
-      <Top />
-      <PortFolio />
+      <TopPortfolioWrapper>
+        <Top />
+        <PortFolio />
+      </TopPortfolioWrapper>
       <Section />
       <Partners />
       <Team />
