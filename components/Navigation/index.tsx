@@ -48,7 +48,7 @@ const Navigation = () => {
       window.sessionStorage.removeItem('@network');
       setIsConnectWalletLoading(false);
     }
-  }, [activate, deactivate]);
+  }, []);
 
   useEffect(() => {
     if (txStatus === TxStatus.FAIL) {
