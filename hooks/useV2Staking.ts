@@ -14,10 +14,6 @@ import useV2StakingPool from './useV2StakingPool';
 const useV2Staking = () => {
   const { contract } = useV2StakingPool();
   const { chainId, account } = useWeb3React();
-  const { refetch } = useERC20Info(
-    envs.token.elAddress,
-    envs.staking.elStakingV2PoolAddress,
-  );
   const { setTransaction, failTransaction } = useContext(TxContext);
   const elTokenContract = useERC20(envs.token.elAddress);
 
@@ -44,15 +40,13 @@ const useV2Staking = () => {
           emitter,
           RecentActivityType.Approve,
           () => {},
-          () => {
-            refetch();
-          },
+          () => {},
         );
       })
       .catch((error) => {
         failTransaction(emitter, () => {}, error, TransactionType.Approve);
       });
-  }, [account, chainId, contract, elTokenContract, refetch, setTransaction]);
+  }, [account, chainId, contract, elTokenContract, setTransaction]);
 
   const staking = useCallback(
     (amount: BigNumber) => {
@@ -78,16 +72,14 @@ const useV2Staking = () => {
             emitter,
             RecentActivityType.ELStake,
             () => {},
-            () => {
-              refetch();
-            },
+            () => {},
           );
         })
         .catch((error) => {
           failTransaction(emitter, () => {}, error, TransactionType.Stake);
         });
     },
-    [account, chainId, contract, refetch, setTransaction],
+    [account, chainId, contract, setTransaction],
   );
 
   const withdraw = useCallback(
@@ -114,16 +106,14 @@ const useV2Staking = () => {
             emitter,
             RecentActivityType.ELStakingWithdraw,
             () => {},
-            () => {
-              refetch();
-            },
+            () => {},
           );
         })
         .catch((error) => {
           failTransaction(emitter, () => {}, error, TransactionType.Unstake);
         });
     },
-    [account, chainId, contract, refetch, setTransaction],
+    [account, chainId, contract, setTransaction],
   );
 
   const claim = useCallback(() => {
@@ -149,15 +139,13 @@ const useV2Staking = () => {
           emitter,
           RecentActivityType.ELClaim,
           () => {},
-          () => {
-            refetch();
-          },
+          () => {},
         );
       })
       .catch((error) => {
         failTransaction(emitter, () => {}, error, TransactionType.Claim);
       });
-  }, [account, chainId, contract, refetch, setTransaction]);
+  }, [account, chainId, contract, setTransaction]);
 
   return { approve, staking, withdraw, claim };
 };

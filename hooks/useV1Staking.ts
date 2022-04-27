@@ -7,16 +7,11 @@ import TransactionType from 'enums/TransactionType';
 import { useWeb3React } from '@web3-react/core';
 import ModalViewType from 'enums/ModalViewType';
 import RecentActivityType from 'enums/RecentActivityType';
-import useERC20Info from './useERC20Info';
 import useV1StakingPool from './useV1StakingPool';
 
 const useV1Staking = () => {
   const { contract } = useV1StakingPool();
   const { chainId, account } = useWeb3React();
-  const { refetch } = useERC20Info(
-    envs.token.elAddress,
-    envs.staking.elStakingPoolAddress,
-  );
   const { setTransaction } = useContext(TxContext);
 
   const withdraw = useCallback(
@@ -43,16 +38,14 @@ const useV1Staking = () => {
             emitter,
             RecentActivityType.ELStakingWithdraw,
             () => {},
-            () => {
-              refetch();
-            },
+            () => {},
           );
         })
         .catch(() => {
           console.log('error');
         });
     },
-    [account, chainId, contract, refetch, setTransaction],
+    [account, chainId, contract, setTransaction],
   );
 
   const claim = useCallback(
@@ -79,16 +72,14 @@ const useV1Staking = () => {
             emitter,
             RecentActivityType.ELClaim,
             () => {},
-            () => {
-              refetch();
-            },
+            () => {},
           );
         })
         .catch(() => {
           console.log('error');
         });
     },
-    [account, chainId, contract, refetch, setTransaction],
+    [account, chainId, contract, setTransaction],
   );
 
   return { withdraw, claim };
