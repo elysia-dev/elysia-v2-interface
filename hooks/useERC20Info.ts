@@ -13,7 +13,6 @@ interface IERC20Info {
   allowance: BigNumber;
   loading: boolean;
   error: string | null;
-  refetch: () => void;
   contract: ERC20;
 }
 
@@ -41,33 +40,6 @@ const useERC20Info = (
     fetcher: tokenInfoFetcher(),
   });
 
-  const load = useCallback(async () => {
-    try {
-      if (!data) return;
-
-      setState({
-        ...state,
-        loading: true,
-      });
-      const balance = data[0];
-      const allowance = data[1];
-      setState({
-        ...state,
-        allowance,
-        balance,
-        loading: false,
-      });
-    } catch (error) {
-      setState({
-        ...state,
-        allowance: constants.Zero,
-        balance: constants.Zero,
-        loading: false,
-        error: null,
-      });
-    }
-  }, [contract, state, data]);
-
   useEffect(() => {
     if (txStatus === TxStatus.CONFIRM && account) {
       mutate();
@@ -76,7 +48,19 @@ const useERC20Info = (
 
   useEffect(() => {
     if (account) {
-      load();
+      if (!data) return;
+      setState({
+        ...state,
+        loading: true,
+      });
+      const balance = data.balance;
+      const allowance = data.allowance;
+      setState({
+        ...state,
+        allowance,
+        balance,
+        loading: false,
+      });
     } else {
       setState({
         ...state,
@@ -90,9 +74,6 @@ const useERC20Info = (
 
   return {
     ...state,
-    refetch: () => {
-      account && load();
-    },
     contract,
   };
 };
