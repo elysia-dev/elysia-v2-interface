@@ -1,4 +1,12 @@
 import { ERC20, StakingPoolV2 } from '@elysia-dev/elyfi-v1-sdk';
+import axios from 'axios';
+
+export const tvlFetcher = (
+  url: string,
+): Promise<{
+  tvlExceptElTvl: number;
+  elTvl: number;
+}> => axios.get(url).then((res) => res.data);
 
 export const StakingInfoFetcher =
   (): any =>
