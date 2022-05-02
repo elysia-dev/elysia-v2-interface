@@ -3,8 +3,13 @@ import { Trans, useTranslation } from 'react-i18next';
 import CountUp from 'react-countup';
 import { MainTopWrapper } from './styles';
 import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
-import { formatCommaSmallZeroDisits } from 'utils/formatters';
+import { formatCommaSmallZeroDisits, toCompact } from 'utils/formatters';
 import { formatEther } from 'ethers/lib/utils';
+import Image from 'next/image';
+import Discord from 'assets/images/main/discord_white@2x.png';
+import Github from 'assets/images/main/github_white@2x.png';
+import Telegram from 'assets/images/main/telegram_white@2x.png';
+import Twitter from 'assets/images/main/twitter_white@2x.png';
 
 const Top = () => {
   const { t, i18n } = useTranslation();
@@ -16,85 +21,92 @@ const Top = () => {
         <div>
           <div>{t(`main.top.0`)}</div>
           <div>{t(`main.top.1`)}</div>
-          <Trans>{t(`main.top.2`)}</Trans>
+          {/* <Trans>{t(`main.top.2`)}</Trans> */}
         </div>
         <div>
           <div>
             <Link href="https://twitter.com/Elysia_HQ" passHref>
               <a rel="noopener noreferrer" target="_blank">
-                Twitter icon1
+                <Image src={Twitter} alt={'twitter'} />
               </a>
             </Link>
           </div>
           <div>
             <Link href="https://t.me/elysia_official" passHref>
               <a rel="noopener noreferrer" target="_blank">
-                Telegram icon1
+                <Image src={Telegram} alt={'Telegram'} />
               </a>
             </Link>
           </div>
           <div>
             <Link href="https://discord.com/invite/JjjYrE5Ww8" passHref>
               <a rel="noopener noreferrer" target="_blank">
-                Discord icon12
+                <Image src={Discord} alt={'Discord'} />
               </a>
             </Link>
           </div>
           <div>
             <Link href="https://github.com/elysia-dev" passHref>
               <a rel="noopener noreferrer" target="_blank">
-                Github icon 13
+                <Image src={Github} alt={'Github'} />
               </a>
             </Link>
           </div>
         </div>
         <div>
           <div>
-            <div>icon</div>
+            {/* <div>icon</div> */}
             <div>
-              <CountUp start={0} end={20} duration={1} />
-              <span>+</span>
+              <span>
+                <CountUp start={0} end={20} duration={1} />+
+              </span>
               <br />
               {t(`main.top_icon.0`)}
             </div>
           </div>
           <div>
-            <Link href={`${i18n.language}/Governance`} passHref>
+            {/* <Link href={`${i18n.language}/Governance`} passHref>
               <div>icon</div>
-            </Link>
+            </Link> */}
             <div>
-              <CountUp start={0} end={2000} duration={1} />
-              <span>+</span>
+              <span>
+                <CountUp start={0} end={2000} duration={1} />+
+              </span>
               <br />
               {t(`main.top_icon.1`)}
             </div>
           </div>
           <div>
-            <Link href={`${i18n.language}/Ecosystem`} passHref>
+            {/* <Link href={`${i18n.language}/Ecosystem`} passHref>
               <div>icon</div>
-            </Link>
+            </Link> */}
             <div>
-              $
-              <CountUp
-                start={0}
-                end={parseInt(formatEther(totalBalance))}
-                formattingFn={(number: any) => {
-                  return formatCommaSmallZeroDisits(number);
-                }}
-                duration={1}
-              />
+              <span>
+                $
+                {/* <CountUp
+                  start={0}
+                  end={parseInt(formatEther(totalBalance))}
+                  formattingFn={(number: any) => {
+                    return formatCommaSmallZeroDisits(number);
+                  }}
+                  duration={1}
+                /> */}
+                {toCompact(parseInt(formatEther(totalBalance)))}+
+              </span>
               {/* <span>+</span> */}
               <br />
               {t(`main.top_icon.2`)}
             </div>
           </div>
           <div>
-            <Link href={`${i18n.language}/Developers`} passHref>
+            {/* <Link href={`${i18n.language}/Developers`} passHref>
               <div>icon</div>
-            </Link>
+            </Link> */}
             <div>
-              <CountUp start={0} end={3000} duration={1} />
-              <span>+</span>
+              <span>
+                <CountUp start={0} end={3000} duration={1} />
+                <span>+</span>
+              </span>
               <br />
               {t(`main.top_icon.3`)}
             </div>
