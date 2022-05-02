@@ -1,5 +1,36 @@
+body {
+  // background: linear-gradient(100deg, black 10%, #4785ff 70%, transparent);
+  // &::before,
+  // &::after {
+  //   position: fixed;
+  //   inset: 0;
+  //   z-index: -1;
+  //   // --grad: radial-gradient(
+  //   //   at 25% 5% red,
+  //   //   #{rgba(red, 0.2)} 50% transparent 70%
+  //   // );
+  //   // --mask: var(--grad), var(--grad);
+  //   // mask: var(--mask);
+  //   mask-composite: intersect;
+  //   mix-blend-mode: color;
+  //   content: '';
+  // }
+
+  // &::before {
+  //   background: #000;
+  //   filter: url(#f);
+  // }
+
+  // &::after {
+  //   background: linear-gradient(100deg, black 40%, blue 60%, transparent 100%);
+  // }
+}
+
 /* footer */
 @media screen and (min-width: 769px) {
+  // .topPortfolioWrapper {
+  //   background-image: url('../assets/images/mainTop@2x.png');
+  // }
   .footer {
     min-width: 1190px;
     color: #fff !important;
@@ -501,15 +532,19 @@ button.button__contact {
 }
 
 .wallet_wrapper {
-  width: 170px;
-  height: 48px;
+  font-family: 'Gilroy-Light';
+  width: 171px;
+  height: 46px;
   margin-left: 30px;
   display: flex;
   justify-items: center;
   align-items: center;
-  border: 2px solid #f5f5f5;
-  border-radius: 10px;
+  border: 2px solid #000000;
+  background: #000000;
+  border-radius: 23px;
   cursor: pointer;
+  font-size: 1rem;
+  color: #ffffff;
 
   > div:first-child {
     display: flex;
