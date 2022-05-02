@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 import ConnectWalletButton from './ConnectWalletButton';
 import styles from './Navigation.module.scss';
-import ElysiaLogo from 'assets/images/elysia_logo@2x.png';
+import ElysiaLogo from 'assets/images/Elysia_Logo_White@2x.png';
 import Image from 'next/image';
 import { isMetamask, isWalletConnector } from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
