@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import CountUp from 'react-countup';
 import { MainTopWrapper } from './styles';
 import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
-import { formatCommaSmallZeroDisits, toCompact } from 'utils/formatters';
+import { toCompact } from 'utils/formatters';
 import { formatEther } from 'ethers/lib/utils';
 import Image from 'next/image';
 import Discord from 'assets/images/main/discord_white@2x.png';
