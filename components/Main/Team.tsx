@@ -23,11 +23,6 @@ const Team = () => {
         position: 'relative',
         overflow: 'hidden',
       }}>
-      <NoiseSvg>
-        <filter id="a">
-          <feTurbulence type="fractalNoise" baseFrequency="0.6" />
-        </filter>
-      </NoiseSvg>
       <MainTeamWrapper>
         <div>
           <div>
