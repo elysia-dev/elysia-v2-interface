@@ -157,9 +157,6 @@ export const NoiseSvg = styled.svg`
 
 export const MainSectionWrapper = styled.div`
   padding: 100px 140px;
-  /* background: linear-gradient(to bottom, #000000 30%, transparent),
-    linear-gradient(to right, #000000 20%, #1a1a42 40%, #47c2ff);
-  backdrop-filter: url(#f); */
   &::before,
   &::after {
     position: absolute;
@@ -173,7 +170,7 @@ export const MainSectionWrapper = styled.div`
   }
 
   &::before {
-    filter: url(#f);
+    filter: url(#noise);
   }
 
   &::after {
@@ -285,7 +282,7 @@ export const PartnersWrapper = styled.div`
   }
 
   &::before {
-    filter: url(#f);
+    filter: url(#noise);
   }
 
   &::after {
@@ -460,7 +457,7 @@ export const MainTeamWrapper = styled.div`
   }
 
   &::before {
-    filter: url(#f);
+    filter: url(#noise);
   }
 
   &::after {
