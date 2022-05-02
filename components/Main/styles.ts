@@ -464,8 +464,8 @@ export const MainTeamWrapper = styled.div`
   }
 
   &::after {
-    background: radial-gradient(circle at 5%, transparent, #000000 24%),
-      radial-gradient(circle at 0%, #4785ff, #000000);
+    background: radial-gradient(circle at 3%, transparent, #000000 450px),
+      radial-gradient(circle at 10%, #4785ff 60%, #000000);
   }
 
   padding: 0px 140px;
