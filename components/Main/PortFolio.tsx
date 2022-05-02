@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AssetItem from './AssetItem';
-import { MainPortFolioWrapper } from './styles';
+import { MainPortFolioWrapper, RightArrowIcon } from './styles';
 
 const PortFolio = () => {
   const { reserveState, getAssetBondsByNetwork } = useReserveData();
@@ -18,7 +18,7 @@ const PortFolio = () => {
   const fetchImage = useCallback(async () => {
     const images: any = [];
     Promise.all(
-      Array(3)
+      Array(4)
         .fill(0)
         .map(async (_, idx) => {
           if (
@@ -53,11 +53,11 @@ const PortFolio = () => {
       <div>
         <div>{t(`main.portfolio.0`)}</div>
         <div>{t(`main.portfolio.1`)}</div>
-        {t(`main.portfolio.2`)}
+        {/* {t(`main.portfolio.2`)} */}
       </div>
       <div>
         {image.length > 0 &&
-          Array(3)
+          Array(4)
             .fill(0)
             .map((_, idx) => {
               return <AssetItem key={`item_${idx}`} image={image[idx]} />;
@@ -65,7 +65,10 @@ const PortFolio = () => {
       </div>
       <div>
         <Link href={`${i18n.language}/Ecosystem`} passHref>
-          <span> &gt;&gt; {t(`main.portfolio.3`)}</span>
+          <span>
+            {t(`main.portfolio.3`)}
+            <RightArrowIcon />
+          </span>
         </Link>
       </div>
     </MainPortFolioWrapper>
