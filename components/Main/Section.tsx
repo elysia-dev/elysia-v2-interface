@@ -17,7 +17,7 @@ const Section = () => {
           overflow: 'hidden',
         }}>
         <NoiseSvg>
-          <filter id="f">
+          <filter id="noise">
             <feTurbulence type="fractalNoise" baseFrequency="5.6" />
           </filter>
         </NoiseSvg>
