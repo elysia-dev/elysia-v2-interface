@@ -22,7 +22,7 @@ const Layout = (props: LayoutProps) => {
         }}>
         {props.children}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
