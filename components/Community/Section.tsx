@@ -42,11 +42,21 @@ const Section = () => {
             <div>
               <div>
                 <div>
-                  <Image src={Discord} alt={'Discord'} width={30} height={30} />
+                  <Image
+                    src={Discord}
+                    alt={'Discord'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
                 <div>Discode</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 26}
+                    height={isDesktop ? 20 : 26}
+                  />
                 </div>
               </div>
               <div>
@@ -54,31 +64,56 @@ const Section = () => {
                   <Image
                     src={Telegram}
                     alt={'Telegram'}
-                    width={31}
-                    height={31}
+                    width={isDesktop ? 21 : 31}
+                    height={isDesktop ? 21 : 31}
                   />
                 </div>
                 <div>Telegram</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
               <div>
                 <div>
-                  <Image src={Kakao} alt={'Kakao'} width={29} height={29} />
+                  <Image
+                    src={Kakao}
+                    alt={'Kakao'}
+                    width={isDesktop ? 19 : 29}
+                    height={isDesktop ? 19 : 29}
+                  />
                 </div>
                 <div>Kakaotalk</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
               <div>
                 <div>
-                  <Image src={We_chat} alt={'Wechat'} width={30} height={30} />
+                  <Image
+                    src={We_chat}
+                    alt={'Wechat'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
                 <div>WeChat</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
             </div>
@@ -93,22 +128,37 @@ const Section = () => {
                   <Image
                     src={Elysia}
                     alt={'Elysia'}
-                    width={27}
-                    height={29.72}
+                    width={isDesktop ? 17 : 27}
+                    height={isDesktop ? 19.72 : 29.72}
                   />
                 </div>
                 <div>Forum</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
               <div>
                 <div>
-                  <Image src={Tally} alt={'Tally'} width={20} height={28} />
+                  <Image
+                    src={Tally}
+                    alt={'Tally'}
+                    width={isDesktop ? 10 : 20}
+                    height={isDesktop ? 18 : 28}
+                  />
                 </div>
                 <div>Tally</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
               <div>
@@ -116,13 +166,18 @@ const Section = () => {
                   <Image
                     src={Snapshot}
                     alt={'Snapshot'}
-                    width={23}
-                    height={27}
+                    width={isDesktop ? 13 : 23}
+                    height={isDesktop ? 17 : 27}
                   />
                 </div>
                 <div>Snapshot</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
               <div></div>
@@ -135,20 +190,40 @@ const Section = () => {
             <div>
               <div>
                 <div>
-                  <Image src={Git} alt={'Git'} width={34.42} height={34.42} />
+                  <Image
+                    src={Git}
+                    alt={'Git'}
+                    width={isDesktop ? 24.42 : 34.42}
+                    height={isDesktop ? 24.42 : 34.42}
+                  />
                 </div>
                 <div>Github</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
               <div>
                 <div>
-                  <Image src={Medium} alt={'Medium'} width={38} height={21} />
+                  <Image
+                    src={Medium}
+                    alt={'Medium'}
+                    width={isDesktop ? 28 : 38}
+                    height={isDesktop ? 11 : 21}
+                  />
                 </div>
                 <div>Medium</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
               <div></div>
@@ -162,11 +237,21 @@ const Section = () => {
             <div>
               <div>
                 <div>
-                  <Image src={Twitter} alt={'Twitter'} width={31} height={31} />
+                  <Image
+                    src={Twitter}
+                    alt={'Twitter'}
+                    width={isDesktop ? 21 : 31}
+                    height={isDesktop ? 21 : 31}
+                  />
                 </div>
                 <div>Twitter</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
               <div>
@@ -174,31 +259,56 @@ const Section = () => {
                   <Image
                     src={Facebook}
                     alt={'Facebook'}
-                    width={33.52}
-                    height={33.52}
+                    width={isDesktop ? 23.52 : 33.52}
+                    height={isDesktop ? 23.52 : 33.52}
                   />
                 </div>
                 <div>Facebook</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
               <div>
                 <div>
-                  <Image src={Medium} alt={'Medium'} width={38} height={21} />
+                  <Image
+                    src={Medium}
+                    alt={'Medium'}
+                    width={isDesktop ? 28 : 38}
+                    height={isDesktop ? 11 : 21}
+                  />
                 </div>
                 <div>Medium</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
               <div>
                 <div>
-                  <Image src={Wechat} alt={'Wechat'} width={32} height={26} />
+                  <Image
+                    src={Wechat}
+                    alt={'Wechat'}
+                    width={isDesktop ? 22 : 32}
+                    height={isDesktop ? 16 : 26}
+                  />
                 </div>
                 <div>WeChat</div>
                 <div>
-                  <Image src={Arrow} alt={'Arrow'} width={26} height={26} />
+                  <Image
+                    src={Arrow}
+                    alt={'Arrow'}
+                    width={isDesktop ? 20 : 30}
+                    height={isDesktop ? 20 : 30}
+                  />
                 </div>
               </div>
             </div>
