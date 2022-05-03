@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 import ConnectWalletButton from './ConnectWalletButton';
 import styles from './Navigation.module.scss';
-import ElysiaLogo from 'assets/images/elysia_logo@2x.png';
+import ElysiaLogo from 'assets/images/Elysia_Logo_White@2x.png';
 import Image from 'next/image';
 import { isMetamask, isWalletConnector } from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
@@ -26,7 +26,7 @@ const Navigation = () => {
   const { account, activate, deactivate, library, chainId } = useWeb3React();
   const { txStatus, error } = useContext(TxContext);
   const [isConnectWalletLoading, setIsConnectWalletLoading] = useState(true);
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
 
   useEffect(() => {
     if (isWalletConnector()) {
@@ -93,7 +93,7 @@ const Navigation = () => {
       <div className={styles.navigation}>
         <div className={styles.navigation_wrapper}>
           <div className={styles.navigation_logo}>
-            <Link href={`/${router.query.lng}/Governance`} passHref>
+            <Link href={`/${router.query.lng}`} passHref>
               <a>
                 <Image
                   src={ElysiaLogo}
@@ -106,6 +106,18 @@ const Navigation = () => {
           </div>
           {!isMobile && (
             <div>
+              <Link href={`/${router.query.lng}`} passHref>
+                <a>
+                  <span
+                    style={{
+                      cursor: 'pointer',
+                      fontWeight:
+                        router.pathname.length <= 6 ? 'bold' : 'normal',
+                    }}>
+                    EL Bridge
+                  </span>
+                </a>
+              </Link>
               <Link href={`/${router.query.lng}/Governance`} passHref>
                 <a>
                   <span
@@ -116,6 +128,58 @@ const Navigation = () => {
                         : 'normal',
                     }}>
                     Governance
+                  </span>
+                </a>
+              </Link>
+              <Link href={`/${router.query.lng}/Ecosystem`} passHref>
+                <a>
+                  <span
+                    style={{
+                      cursor: 'pointer',
+                      fontWeight: router.pathname.includes('Ecosystem')
+                        ? 'bold'
+                        : 'normal',
+                    }}>
+                    Ecosystem
+                  </span>
+                </a>
+              </Link>
+              <Link href={`/${router.query.lng}/Community`} passHref>
+                <a>
+                  <span
+                    style={{
+                      cursor: 'pointer',
+                      fontWeight: router.pathname.includes('Community')
+                        ? 'bold'
+                        : 'normal',
+                    }}>
+                    Community
+                  </span>
+                </a>
+              </Link>
+              <Link href={`/${router.query.lng}/Developers`} passHref>
+                <a>
+                  <span
+                    style={{
+                      cursor: 'pointer',
+                      fontWeight: router.pathname.includes('Developers')
+                        ? 'bold'
+                        : 'normal',
+                    }}>
+                    Developers
+                  </span>
+                </a>
+              </Link>
+              <Link href={`/${router.query.lng}/Documents`} passHref>
+                <a>
+                  <span
+                    style={{
+                      cursor: 'pointer',
+                      fontWeight: router.pathname.includes('Documents')
+                        ? 'bold'
+                        : 'normal',
+                    }}>
+                    Documents
                   </span>
                 </a>
               </Link>

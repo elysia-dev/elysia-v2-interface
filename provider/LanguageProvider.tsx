@@ -33,7 +33,7 @@ const LanguageProvider: React.FC = (props) => {
       i18n.changeLanguage(lng);
     }
     if (router.pathname === '/') {
-      router.push(`/${getLocalLanguage()}/Governance`);
+      router.push(`/${getLocalLanguage()}`);
     }
   }, [lng]);
 

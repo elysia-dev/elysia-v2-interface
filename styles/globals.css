@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Inter';
   src: url('../assets/fonts/Inter-VariableFont_slnt,wght.ttf')
     format('truetype');
@@ -50,11 +50,26 @@
   src: url('../assets/fonts/Montserrat-Bold.ttf') format('truetype');
   unicode-range: U+0020-007E, U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3,
     U+D7B0-D7FF;
+} */
+
+@font-face {
+  font-family: 'Gilroy-Light';
+  font-display: swap;
+  src: url('../assets/fonts/Gilroy-Light.otf') format('opentype');
+  unicode-range: U+0020-007E, U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3,
+    U+D7B0-D7FF;
+}
+
+@font-face {
+  font-family: 'Gilroy-ExtraBold';
+  font-display: swap;
+  src: url('../assets/fonts/Gilroy-ExtraBold.otf') format('opentype');
+  unicode-range: U+0020-007E, U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3,
+    U+D7B0-D7FF;
 }
 
 html,
 body {
-  background-color: #f5f5f5;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -70,8 +85,14 @@ a {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 0px) and (max-width: 768px) {
   html {
-    font-size: 12px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1400px) {
+  html {
+    font-size: 10px;
   }
 }
