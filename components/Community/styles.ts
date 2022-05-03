@@ -44,13 +44,12 @@ export const SectionWrapper = styled.div`
     z-index: -1;
     top: 0;
     left: 0;
-    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;
     content: '';
   }
 
   &::before {
     filter: url(#noise);
-    -webkit-filter: url(#noise);
   }
 
   &::after {
