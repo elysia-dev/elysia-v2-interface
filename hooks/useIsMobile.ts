@@ -8,7 +8,7 @@ const useIsMobile = () => {
     query: '(min-width:0px) and (max-width:768px)',
   });
   const desktop = useMediaQuery({
-    query: '(min-width:769px) and (max-width:1490px)',
+    query: '(min-width:769px) and (max-width:1299px)',
   });
 
   useEffect(() => {
