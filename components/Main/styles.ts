@@ -165,7 +165,7 @@ export const MainSectionWrapper = styled.div`
     z-index: -1;
     top: 0;
     left: 0;
-    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;
     content: '';
   }
 
@@ -277,7 +277,7 @@ export const PartnersWrapper = styled.div`
     z-index: -1;
     top: 0;
     left: 0;
-    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;
     content: '';
   }
 
@@ -452,7 +452,7 @@ export const MainTeamWrapper = styled.div`
     z-index: -1;
     top: 0;
     left: 0;
-    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;
     content: '';
   }
 
