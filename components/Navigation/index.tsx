@@ -17,6 +17,7 @@ import SelectWalletModal from 'components/Modals/SelectWalletModal';
 import ErrorModal from 'components/Modals/ErrorModal';
 import TxStatus from 'enums/TxStatus';
 import { isChainId } from 'utils/isChainId';
+import { NavigationWrapper } from './styles';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -27,6 +28,7 @@ const Navigation = () => {
   const { txStatus, error } = useContext(TxContext);
   const [isConnectWalletLoading, setIsConnectWalletLoading] = useState(true);
   const { isMobile } = useIsMobile();
+  const [isScroll, setIsScroll] = useState(false);
 
   useEffect(() => {
     if (isWalletConnector()) {
@@ -73,6 +75,19 @@ const Navigation = () => {
       });
   }, [chainId, library]);
 
+  useEffect(() => {
+    if (typeof window === undefined) return;
+    document.addEventListener('scroll', (e: any) => {
+      setIsScroll(5 < window.scrollY);
+    });
+
+    return () => {
+      document.removeEventListener('scroll', (e: any) => {
+        setIsScroll(5 < window.scrollX);
+      });
+    };
+  }, []);
+
   return (
     <>
       {modalVisible && (
@@ -90,9 +105,9 @@ const Navigation = () => {
           'MetaMask Tx Signature: User denied transaction signature.' && (
           <ErrorModal error={error} />
         )}
-      <div className={styles.navigation}>
-        <div className={styles.navigation_wrapper}>
-          <div className={styles.navigation_logo}>
+      <NavigationWrapper theme={isScroll}>
+        <div>
+          <div>
             <Link href={`/${router.query.lng}`} passHref>
               <a>
                 <Image
@@ -190,7 +205,7 @@ const Navigation = () => {
             isConnectWalletLoading={isConnectWalletLoading}
           />
         </div>
-      </div>
+      </NavigationWrapper>
     </>
   );
 };
