@@ -50,6 +50,7 @@ export const SectionWrapper = styled.div`
 
   &::before {
     filter: url(#noise);
+    -webkit-filter: url(#noise);
   }
 
   &::after {
