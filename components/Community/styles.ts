@@ -59,19 +59,19 @@ export const SectionWrapper = styled.div`
 
   > div:nth-child(1) {
     padding-top: 634px;
-
     margin-bottom: 30px;
-    /* padding: 400px 45px 50px 45px; */
     > div:first-child {
-      /* width: 50%; */
       color: #cbcbcb;
       font-size: 1.375rem;
       > div:first-child {
+        color: #ffffff;
         font-family: Gilroy-ExtraBold;
         font-size: 2rem;
+        margin-bottom: 5px;
       }
       > div:nth-child(2) {
         color: #33a5ff;
+        margin-bottom: 14px;
       }
     }
   }
@@ -84,6 +84,10 @@ export const SectionWrapper = styled.div`
     ${glassBox}
     > div:first-child {
       padding: 10px;
+      > div:first-child {
+        font-size: 1.25rem;
+        margin-bottom: 25px;
+      }
       > div:last-child {
         margin-top: 13px;
         display: flex;
@@ -110,6 +114,10 @@ export const SectionWrapper = styled.div`
     ${glassBox}
     > div:first-child {
       padding: 10px;
+      > div:first-child {
+        font-size: 1.25rem;
+        margin-bottom: 25px;
+      }
       > div:last-child {
         margin-top: 13px;
         display: flex;
@@ -128,6 +136,7 @@ export const SectionWrapper = styled.div`
         }
         > div:last-child {
           width: 310px;
+          padding: 0px 25px 0px 29.5px;
         }
         > div:not(div:nth-child(4)) {
           margin-right: 104px;
@@ -139,6 +148,10 @@ export const SectionWrapper = styled.div`
     ${glassBox}
     > div:first-child {
       padding: 10px;
+      > div:first-child {
+        font-size: 1.25rem;
+        margin-bottom: 25px;
+      }
       > div:last-child {
         margin-top: 13px;
         display: flex;
@@ -158,6 +171,7 @@ export const SectionWrapper = styled.div`
         > div:nth-child(3),
         > div:nth-child(4) {
           width: 310px;
+          padding: 0px 25px 0px 29.5px;
         }
         > div:not(div:nth-child(4)) {
           margin-right: 104px;
@@ -169,6 +183,10 @@ export const SectionWrapper = styled.div`
     ${glassBox}
     > div:first-child {
       padding: 10px;
+      > div:first-child {
+        font-size: 1.25rem;
+        margin-bottom: 25px;
+      }
       > div:last-child {
         margin-top: 13px;
         display: flex;
@@ -182,6 +200,7 @@ export const SectionWrapper = styled.div`
           }
           > div:nth-child(3) {
             margin-left: auto;
+            ${center}
           }
         }
         > div:not(div:nth-child(4)) {
@@ -210,13 +229,14 @@ export const SectionWrapper = styled.div`
     > div:nth-child(3) {
       > div:first-child {
         > div:last-child {
-          > div {
-            padding: 0px 14px 0px 14.5px;
-          }
           > div:not(div:last-child) {
+            padding: 0px 14px 0px 14.5px;
             > div:nth-child(1) {
               margin-right: 12px;
             }
+          }
+          > div:last-child {
+            padding: 0px 14px 0px 14.5px;
           }
           > div:not(div:nth-child(4)) {
             margin-right: 30px;
@@ -227,13 +247,15 @@ export const SectionWrapper = styled.div`
     > div:nth-child(4) {
       > div:first-child {
         > div:last-child {
-          > div {
-            padding: 0px 14px 0px 14.5px;
-          }
           > div:not(div:nth-child(3), div:nth-child(4)) {
+            padding: 0px 14px 0px 14.5px;
             > div:nth-child(1) {
               margin-right: 12px;
             }
+          }
+          > div:nth-child(3),
+          > div:nth-child(4) {
+            padding: 0px 14px 0px 14.5px;
           }
           > div:not(div:nth-child(4)) {
             margin-right: 30px;
