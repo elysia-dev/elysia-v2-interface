@@ -1,11 +1,28 @@
 import styled from 'styled-components';
 
-const defaultBorder = '1px solid #333333';
-
 export const center = {
   display: 'flex',
   'align-items': 'center',
   'justify-content': 'center',
+};
+
+const glassBox = {
+  background: 'rgba(255, 255, 255, 0.1)',
+  'box-shadow': '0px 0px 6px #00000029',
+  'border-radius': '20px',
+  'backdrop-filter': 'blur(18px)',
+  padding: '45px 41px',
+};
+
+const contentInBox = {
+  'font-family': 'Gilroy-ExtraBold',
+  'font-size': '1.375rem',
+  width: '310px',
+  height: '46px',
+  'box-shadow': '0px 0px 6px #00000029',
+  'background-color': '#000000',
+  'border-radius': '23px',
+  padding: '0px 25px 0px 29.5px',
 };
 
 export const CommunityWrapper = styled.div`
@@ -14,8 +31,9 @@ export const CommunityWrapper = styled.div`
 `;
 
 export const SectionWrapper = styled.div`
-  width: 100%;
-  padding: 0px 141px 100px 141px;
+  max-width: 1639px;
+  margin: auto;
+  padding: 0px 20px 100px 20px;
   color: #ffffff;
   font-family: Gilroy-Light;
   &::before,
@@ -45,7 +63,7 @@ export const SectionWrapper = styled.div`
     margin-bottom: 30px;
     /* padding: 400px 45px 50px 45px; */
     > div:first-child {
-      width: 50%;
+      /* width: 50%; */
       color: #cbcbcb;
       font-size: 1.375rem;
       > div:first-child {
@@ -63,11 +81,7 @@ export const SectionWrapper = styled.div`
     margin-bottom: 25px;
   }
   > div:nth-child(2) {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0px 0px 6px #00000029;
-    border-radius: 20px;
-    backdrop-filter: blur(18px);
-    padding: 45px 41px;
+    ${glassBox}
     > div:first-child {
       padding: 10px;
       > div:last-child {
@@ -75,35 +89,25 @@ export const SectionWrapper = styled.div`
         display: flex;
         justify-content: space-between;
         > div {
-          font-family: Gilroy-ExtraBold;
-          font-size: 1.375rem;
-          width: 310px;
-          height: 46px;
-          box-shadow: 0px 0px 6px #00000029;
-          background-color: #000000;
-          border-radius: 23px;
+          ${contentInBox}
           ${center}
-          padding: 0px 25px 0px 29.5px;
           > div:nth-child(1) {
             margin-right: 15px;
             ${center}
           }
           > div:nth-child(3) {
             margin-left: auto;
+            ${center}
           }
         }
-        /* > div:not(div:nth-child(4)) {
+        > div:not(div:nth-child(4)) {
           margin-right: 104px;
-        } */
+        }
       }
     }
   }
   > div:nth-child(3) {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0px 0px 6px #00000029;
-    border-radius: 20px;
-    backdrop-filter: blur(18px);
-    padding: 45px 41px;
+    ${glassBox}
     > div:first-child {
       padding: 10px;
       > div:last-child {
@@ -111,35 +115,28 @@ export const SectionWrapper = styled.div`
         display: flex;
         justify-content: space-between;
         > div:not(div:last-child) {
-          font-family: Gilroy-ExtraBold;
-          font-size: 1.375rem;
-          width: 310px;
-          height: 46px;
-          box-shadow: 0px 0px 6px #00000029;
-          background-color: #000000;
-          border-radius: 23px;
+          ${contentInBox}
           ${center}
-          padding: 0px 25px 0px 29.5px;
           > div:nth-child(1) {
             margin-right: 15px;
             ${center}
           }
           > div:nth-child(3) {
             margin-left: auto;
+            ${center}
           }
         }
         > div:last-child {
           width: 310px;
         }
+        > div:not(div:nth-child(4)) {
+          margin-right: 104px;
+        }
       }
     }
   }
   > div:nth-child(4) {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0px 0px 6px #00000029;
-    border-radius: 20px;
-    backdrop-filter: blur(18px);
-    padding: 45px 41px;
+    ${glassBox}
     > div:first-child {
       padding: 10px;
       > div:last-child {
@@ -147,39 +144,29 @@ export const SectionWrapper = styled.div`
         display: flex;
         justify-content: space-between;
         > div:not(div:nth-child(3), div:nth-child(4)) {
-          font-family: Gilroy-ExtraBold;
-          font-size: 1.375rem;
-          width: 310px;
-          height: 46px;
-          box-shadow: 0px 0px 6px #00000029;
-          background-color: #000000;
-          border-radius: 23px;
+          ${contentInBox}
           ${center}
-          padding: 0px 25px 0px 29.5px;
           > div:nth-child(1) {
             margin-right: 15px;
             ${center}
           }
           > div:nth-child(3) {
             margin-left: auto;
+            ${center}
           }
         }
-        /* > div:not(div:nth-child(4)) {
-          margin-right: 104px;
-        } */
         > div:nth-child(3),
         > div:nth-child(4) {
           width: 310px;
+        }
+        > div:not(div:nth-child(4)) {
+          margin-right: 104px;
         }
       }
     }
   }
   > div:nth-child(5) {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0px 0px 6px #00000029;
-    border-radius: 20px;
-    backdrop-filter: blur(18px);
-    padding: 45px 41px;
+    ${glassBox}
     > div:first-child {
       padding: 10px;
       > div:last-child {
@@ -187,15 +174,8 @@ export const SectionWrapper = styled.div`
         display: flex;
         justify-content: space-between;
         > div {
-          font-family: Gilroy-ExtraBold;
-          font-size: 1.375rem;
-          width: 310px;
-          height: 46px;
-          box-shadow: 0px 0px 6px #00000029;
-          background-color: #000000;
-          border-radius: 23px;
+          ${contentInBox}
           ${center}
-          padding: 0px 25px 0px 29.5px;
           > div:nth-child(1) {
             margin-right: 15px;
             ${center}
@@ -204,9 +184,76 @@ export const SectionWrapper = styled.div`
             margin-left: auto;
           }
         }
-        /* > div:not(div:nth-child(4)) {
+        > div:not(div:nth-child(4)) {
           margin-right: 104px;
-        } */
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1299px) {
+    > div:nth-child(2) {
+      > div:first-child {
+        > div:last-child {
+          > div {
+            padding: 0px 14px 0px 14.5px;
+            > div:nth-child(1) {
+              margin-right: 12px;
+            }
+          }
+          > div:not(div:nth-child(4)) {
+            margin-right: 30px;
+          }
+        }
+      }
+    }
+    > div:nth-child(3) {
+      > div:first-child {
+        > div:last-child {
+          > div {
+            padding: 0px 14px 0px 14.5px;
+          }
+          > div:not(div:last-child) {
+            > div:nth-child(1) {
+              margin-right: 12px;
+            }
+          }
+          > div:not(div:nth-child(4)) {
+            margin-right: 30px;
+          }
+        }
+      }
+    }
+    > div:nth-child(4) {
+      > div:first-child {
+        > div:last-child {
+          > div {
+            padding: 0px 14px 0px 14.5px;
+          }
+          > div:not(div:nth-child(3), div:nth-child(4)) {
+            > div:nth-child(1) {
+              margin-right: 12px;
+            }
+          }
+          > div:not(div:nth-child(4)) {
+            margin-right: 30px;
+          }
+        }
+      }
+    }
+    > div:nth-child(5) {
+      > div:first-child {
+        > div:last-child {
+          > div {
+            padding: 0px 14px 0px 14.5px;
+            > div:nth-child(1) {
+              margin-right: 12px;
+            }
+          }
+          > div:not(div:nth-child(4)) {
+            margin-right: 30px;
+          }
+        }
       }
     }
   }
