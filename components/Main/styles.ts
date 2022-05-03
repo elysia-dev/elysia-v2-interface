@@ -287,7 +287,7 @@ export const PartnersWrapper = styled.div`
     background: linear-gradient(to top, #000000 30%, transparent),
       linear-gradient(to right, #000000 20%, #4785ff);
   }
-  padding-top: 200px;
+  padding: 200px 20px 0px 20px;
   font-family: Gilroy-Light;
   font-size: 1.25rem;
   color: #ffffff;
