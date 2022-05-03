@@ -19,8 +19,7 @@ import useIsMobile from 'hooks/useIsMobile';
 
 const Section = () => {
   const { t } = useTranslation();
-  const { isDesktop } = useIsMobile();
-
+  const { isDesktop, isTablet } = useIsMobile();
   return (
     <>
       <NoiseSvg>
@@ -51,12 +50,14 @@ const Section = () => {
                 </div>
                 <div>Discode</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 26}
-                    height={isDesktop ? 20 : 26}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div>
@@ -70,12 +71,14 @@ const Section = () => {
                 </div>
                 <div>Telegram</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div>
@@ -89,12 +92,14 @@ const Section = () => {
                 </div>
                 <div>Kakaotalk</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div>
@@ -108,12 +113,14 @@ const Section = () => {
                 </div>
                 <div>WeChat</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -134,12 +141,14 @@ const Section = () => {
                 </div>
                 <div>Forum</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div>
@@ -153,12 +162,14 @@ const Section = () => {
                 </div>
                 <div>Tally</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div>
@@ -172,12 +183,14 @@ const Section = () => {
                 </div>
                 <div>Snapshot</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div></div>
@@ -199,12 +212,14 @@ const Section = () => {
                 </div>
                 <div>Github</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div>
@@ -218,12 +233,14 @@ const Section = () => {
                 </div>
                 <div>Medium</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div></div>
@@ -246,12 +263,14 @@ const Section = () => {
                 </div>
                 <div>Twitter</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div>
@@ -265,12 +284,14 @@ const Section = () => {
                 </div>
                 <div>Facebook</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div>
@@ -284,12 +305,14 @@ const Section = () => {
                 </div>
                 <div>Medium</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
               <div>
@@ -303,12 +326,14 @@ const Section = () => {
                 </div>
                 <div>WeChat</div>
                 <div>
-                  <Image
-                    src={Arrow}
-                    alt={'Arrow'}
-                    width={isDesktop ? 20 : 30}
-                    height={isDesktop ? 20 : 30}
-                  />
+                  {!isTablet && (
+                    <Image
+                      src={Arrow}
+                      alt={'Arrow'}
+                      width={isDesktop ? 20 : 26}
+                      height={isDesktop ? 20 : 26}
+                    />
+                  )}
                 </div>
               </div>
             </div>
