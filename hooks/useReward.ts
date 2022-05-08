@@ -4,7 +4,7 @@ import calcExpectedReward from 'utils/calcExpectedReward';
 import useV2StakedInfo from './useV2StakedInfo';
 
 const useReward = () => {
-  const userStakedInfo = useV2StakedInfo();
+  const { userStakedInfo } = useV2StakedInfo();
   const [reward, setReward] = useState({
     before: constants.Zero,
     after: constants.Zero,
