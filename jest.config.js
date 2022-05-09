@@ -27,6 +27,7 @@ module.exports = {
     '^components/(.*)$': '<rootDir>/components/$1',
     '^assets/(.*)$': '<rootDir>/assets/$1',
   },
+  globalSetup: '<rootDir>/setupEnv.js',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
