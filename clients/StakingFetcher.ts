@@ -25,12 +25,19 @@ export const StakingInfoFetcher =
 
 export const tokenInfoFetcher =
   (): any =>
-  async (...args: [ERC20, string, string]) => {
-    const [...params] = args;
-    if (!params[0] || !params[1]) return undefined;
+  async (args: {
+    contract: ERC20;
+    account: string;
+    targetAddress: string;
+    key: string;
+  }) => {
+    if (!args.contract || !args.account) return undefined;
 
     return {
-      balance: await params[0].balanceOf(params[1]),
-      allowance: await params[0].allowance(params[1], params[2]),
+      balance: await args.contract.balanceOf(args.account),
+      allowance: await args.contract.allowance(
+        args.account,
+        args.targetAddress,
+      ),
     };
   };
