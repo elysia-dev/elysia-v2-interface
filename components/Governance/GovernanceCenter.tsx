@@ -25,11 +25,11 @@ const GovernanceCenter = () => {
     },
   );
   const { data: totalSupply } = useSWR(
-    process.env.NEXT_PUBLIC_CIRCULATING_SUPPLY_API,
+    'https://api.elysia.land/q/elTotalSupply',
     circulatingSupplyFetcher,
   );
   const { data: circulatingSupply } = useSWR(
-    process.env.NEXT_PUBLIC_TOTAL_SUPPLY_API,
+    'https://api.elysia.land/q/elTotalCoins',
     totalSupplyFetcher,
   );
   const { t, i18n } = useTranslation();

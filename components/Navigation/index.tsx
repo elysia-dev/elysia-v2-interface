@@ -29,7 +29,7 @@ const Navigation = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    const set = setTimeout(() => {
+    setTimeout(() => {
       if (isWalletConnector()) {
         activate(walletConnectProvider).then(() => {
           setIsConnectWalletLoading(false);
