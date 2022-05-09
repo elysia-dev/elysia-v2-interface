@@ -10,9 +10,7 @@ jest.mock('hooks/useV2StakingPool', () => {
   return () =>
     StakingPoolV2factory.connect(
       '0x3f0c3e32bb166901acd0abc9452a3f0c5b8b2c9d',
-      new providers.JsonRpcProvider(
-        'https://eth-mainnet.alchemyapi.io/v2/aqm3Z2P6_2fctCSsHEBqo9Csz-ydQH_0',
-      ) as any,
+      new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC) as any,
     );
 });
 
@@ -21,7 +19,7 @@ jest.mock('@web3-react/core', () => {
     ...jest.requireActual('@web3-react/core'),
     useWeb3React: () => {
       return {
-        account: '0x189027e3C77b3a92fd01bF7CC4E6a86E77F5034E',
+        account: '0xB0B02B984083dFF47A6CFD86Bc7E6DbeA2005dab',
       };
     },
   };
@@ -36,9 +34,7 @@ describe('useV2StakedInfo', () => {
     await act(async () => {
       const contract = StakingPoolV2factory.connect(
         '0x3f0c3e32bb166901acd0abc9452a3f0c5b8b2c9d',
-        new providers.JsonRpcProvider(
-          'https://eth-mainnet.alchemyapi.io/v2/aqm3Z2P6_2fctCSsHEBqo9Csz-ydQH_0',
-        ) as any,
+        new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC) as any,
       );
       await result.current.getUserInfo(
         contract,

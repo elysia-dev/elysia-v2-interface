@@ -3,21 +3,18 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import useERC20 from 'hooks/useERC20';
 import { ERC20Factory } from '@elysia-dev/elyfi-v1-sdk';
 import { providers } from 'ethers';
+import envs from 'core/envs';
 
 describe('useERC20', () => {
   it('contract address test and check network', async () => {
     React.useMemo = jest.fn().mockImplementationOnce(() => {
       return ERC20Factory.connect(
-        '0x4da34f8264cb33a5c9f17081b9ef5ff6091116f4',
-        new providers.JsonRpcProvider(
-          'https://eth-mainnet.alchemyapi.io/v2/aqm3Z2P6_2fctCSsHEBqo9Csz-ydQH_0',
-        ) as any,
+        envs.token.elAddress,
+        new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC) as any,
       );
     });
 
-    const { result } = renderHook(() =>
-      useERC20('0x4da34f8264cb33a5c9f17081b9ef5ff6091116f4'),
-    );
+    const { result } = renderHook(() => useERC20(envs.token.elAddress));
 
     let chainId = 0;
 
@@ -26,9 +23,7 @@ describe('useERC20', () => {
       chainId = network.chainId;
     });
 
-    expect(chainId).toEqual(1);
-    expect(result.current.address).toEqual(
-      '0x4da34f8264cb33a5c9f17081b9ef5ff6091116f4',
-    );
+    expect(chainId).toEqual(1337);
+    expect(result.current.address).toEqual(envs.token.elAddress);
   });
 });

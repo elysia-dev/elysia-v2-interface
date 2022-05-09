@@ -10,9 +10,7 @@ describe('useV2StakingPool', () => {
     React.useMemo = jest.fn().mockImplementationOnce(() => {
       return ERC20Factory.connect(
         envs.staking.elStakingV2PoolAddress,
-        new providers.JsonRpcProvider(
-          'https://eth-mainnet.alchemyapi.io/v2/aqm3Z2P6_2fctCSsHEBqo9Csz-ydQH_0',
-        ) as any,
+        new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC) as any,
       );
     });
 

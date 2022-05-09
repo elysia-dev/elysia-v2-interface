@@ -1,29 +1,41 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import '@testing-library/jest-dom';
+import envs from 'core/envs';
 import useERC20Info from 'hooks/useERC20Info';
+
+const account = '0xB0B02B984083dFF47A6CFD86Bc7E6DbeA2005dab';
 
 jest.mock('hooks/useERC20', () => {
   const { ERC20Factory } = require('@elysia-dev/elyfi-v1-sdk');
   const { providers } = require('ethers');
-  const React = require('react');
   return () =>
     ERC20Factory.connect(
       '0x2781246fe707bb15cee3e5ea354e2154a2877b16',
-      new providers.JsonRpcProvider(
-        'https://eth-mainnet.alchemyapi.io/v2/aqm3Z2P6_2fctCSsHEBqo9Csz-ydQH_0',
-      ) as any,
+      new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC) as any,
     );
+});
+
+jest.mock('@web3-react/core', () => {
+  return {
+    ...jest.requireActual('@web3-react/core'),
+    useWeb3React: () => {
+      return {
+        account,
+      };
+    },
+  };
 });
 
 describe('useERC20Info', () => {
   it('check balanceOf and network', async () => {
     let chainId = 0;
     let balalnce;
+    let allowance;
 
     const { result } = renderHook(() =>
       useERC20Info(
-        '0x2781246fe707bb15cee3e5ea354e2154a2877b16',
-        '0x3f0c3e32bb166901acd0abc9452a3f0c5b8b2c9d',
+        envs.token.elAddress,
+        envs.staking.elStakingV2PoolAddress,
         false,
       ),
     );
@@ -31,18 +43,16 @@ describe('useERC20Info', () => {
     await act(async () => {
       const network = await result.current.contract.provider.getNetwork();
       chainId = network.chainId;
-      balalnce = (
-        await result.current.contract.balanceOf(
-          '0x3f0c3e32bb166901acd0abc9452a3f0c5b8b2c9d',
-        )
-      )._isBigNumber;
-      result.current.refetch();
+      balalnce = await result.current.contract.balanceOf(account);
+      allowance = await result.current.contract.allowance(
+        account,
+        envs.staking.elStakingV2PoolAddress,
+      );
+      result.current.load(account);
     });
 
-    expect(result.current.contract.address).toEqual(
-      '0x2781246fe707bb15cee3e5ea354e2154a2877b16',
-    );
-    expect(chainId).toEqual(1);
-    expect(balalnce).toEqual(true);
+    expect(chainId).toEqual(1337);
+    expect(result.current.balance).toEqual(balalnce);
+    expect(result.current.allowance).toEqual(allowance);
   });
 });
