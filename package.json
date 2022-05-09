@@ -14,6 +14,7 @@
   "dependencies": {
     "@davatar/react": "^1.9.0",
     "@elysia-dev/elyfi-v1-sdk": "^1.0.0-alpha.1",
+    "@next/env": "^12.1.6",
     "@walletconnect/web3-provider": "^1.7.7",
     "@web3-react/core": "^6.1.9",
     "@web3-react/injected-connector": "^6.0.7",
