@@ -10,7 +10,7 @@ jest.mock('hooks/useERC20', () => {
   const { providers } = require('ethers');
   return () =>
     ERC20Factory.connect(
-      '0x2781246fe707bb15cee3e5ea354e2154a2877b16',
+      envs.token.elAddress,
       new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC) as any,
     );
 });
