@@ -4,7 +4,7 @@ import { tokenInfoFetcher } from 'clients/StakingFetcher';
 import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
 import { BigNumber, constants } from 'ethers';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import useSWR from 'swr';
 import useERC20 from './useERC20';
 
@@ -36,9 +36,17 @@ const useERC20Info = (
     error: null,
   });
 
-  const { data, mutate } = useSWR([contract, account, targetAddress, 'erc20'], {
-    fetcher: tokenInfoFetcher(),
-  });
+  const { data, mutate } = useSWR(
+    {
+      contract,
+      account,
+      targetAddress,
+      key: 'erc20',
+    },
+    {
+      fetcher: tokenInfoFetcher(),
+    },
+  );
 
   useEffect(() => {
     if (txStatus === TxStatus.CONFIRM && account) {
@@ -49,10 +57,6 @@ const useERC20Info = (
   useEffect(() => {
     if (account) {
       if (!data) return;
-      setState({
-        ...state,
-        loading: true,
-      });
       const balance = data.balance;
       const allowance = data.allowance;
       setState({
