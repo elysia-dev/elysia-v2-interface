@@ -27,25 +27,17 @@ const useV2StakedInfo = () => {
     },
   );
 
-  const getUserInfo = useCallback(async () => {
+  const getUserInfo = useCallback(() => {
     if (!account || !contract || !stakingInfo) return;
 
-    try {
-      setUserStakedInfo({
-        totalPrincipal: stakingInfo.poolData.totalPrincipal,
-        userPrincipal: stakingInfo.userData.userPrincipal,
-        userReward: stakingInfo.userReward,
-        loadedAt: moment(),
-      });
-    } catch (error) {
-      setUserStakedInfo({
-        userPrincipal: constants.Zero,
-        userReward: constants.Zero,
-        totalPrincipal: constants.Zero,
-        loadedAt: moment(),
-      });
-    }
+    setUserStakedInfo({
+      totalPrincipal: stakingInfo.poolData.totalPrincipal,
+      userPrincipal: stakingInfo.userData.userPrincipal,
+      userReward: stakingInfo.userReward,
+      loadedAt: moment(),
+    });
   }, [stakingInfo, contract, account]);
+
   useEffect(() => {
     getUserInfo();
   }, [account, contract, stakingInfo]);
