@@ -16,15 +16,15 @@ const glassBox = {
 };
 
 export const DevelopersWrapper = styled.div`
-  /* padding: 0px 45px 50px 45px; */
-  /* background: #dfd9d9; */
+  display: flex;
+  justify-content: center;
 `;
 
 export const SectionWrapper = styled.div`
-  /* height: 95vh; */
-  max-width: 1639px;
-  margin: auto;
-  padding: 0px 20px 0px 20px;
+  height: 100vh;
+  width: 1639px;
+  /* margin: auto; */
+  /* padding: 0px 20px 0px 20px; */
   color: #ffffff;
   font-family: Gilroy-Light;
 
@@ -76,7 +76,7 @@ export const SectionWrapper = styled.div`
       ${glassBox}
     }
     > div {
-      width: 22%;
+      width: 24.5%;
     }
     > div:not(div:last-child) {
       > div:first-child {
@@ -84,6 +84,11 @@ export const SectionWrapper = styled.div`
         align-items: center;
         font-family: Gilroy-ExtraBold;
         font-size: 1.25rem;
+        > div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
         > div:first-child {
           margin-right: 10px;
         }
@@ -116,6 +121,9 @@ export const SectionWrapper = styled.div`
         padding: 29px 25px 24px 27px;
         width: 100%;
         ${center}
+        >div {
+          ${center}
+        }
         > div:first-child {
           margin-right: 10px;
         }
