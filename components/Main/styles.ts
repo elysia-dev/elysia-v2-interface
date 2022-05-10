@@ -22,7 +22,6 @@ export const TopPortfolioWrapper = styled.div`
 
 export const MainTopWrapper = styled.div`
   max-width: 1639px;
-  height: 95vh;
   margin: auto;
   padding: 742px 20px 0px 20px;
 
@@ -90,9 +89,7 @@ export const MainTopWrapper = styled.div`
 
 export const MainPortFolioWrapper = styled.div`
   max-width: 1639px;
-  margin: 340px auto 0px auto;
   padding: 170px 20px 100px 20px;
-  /* padding-bottom: 100px; */
   > div:nth-child(1) {
     > div:first-child {
       font-family: Gilroy-ExtraBold;
