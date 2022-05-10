@@ -7,7 +7,6 @@ const Ecosystem = () => {
   return (
     <EcosystemWrapper>
       <Top />
-      <Project />
       <PortFolio />
     </EcosystemWrapper>
   );
