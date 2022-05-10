@@ -15,10 +15,9 @@ export const DocumentsWrapper = styled.div`
 `;
 
 export const SectionWrapper = styled.div`
-  height: 100vh;
   max-width: 1639px;
   margin: auto;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 20px 200px 20px;
   color: #ffffff;
   font-family: Gilroy-Light;
 
@@ -26,7 +25,8 @@ export const SectionWrapper = styled.div`
   &::after {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: ${(props) =>
+      typeof props.theme === 'object' ? '100%' : props.theme + 'px'};
     z-index: -1;
     top: 0;
     left: 0;
