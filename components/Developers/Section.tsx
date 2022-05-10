@@ -22,7 +22,6 @@ const Section = () => {
       setBrowserHeight(document.body.clientHeight + sub);
       return;
     }
-    console.log(document.body.clientHeight);
     setBrowserHeight(document.body.clientHeight);
   }, []);
 
