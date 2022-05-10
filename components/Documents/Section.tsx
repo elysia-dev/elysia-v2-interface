@@ -7,10 +7,22 @@ import Arrow from 'assets/images/developers/arrow.svg';
 import Elyfi from 'assets/images/developers/elyfi.svg';
 import Guide from 'assets/images/developers/guide.svg';
 import useIsMobile from 'hooks/useIsMobile';
+import { useEffect, useState } from 'react';
 
 const Section = () => {
   const { t } = useTranslation();
   const { isTablet } = useIsMobile();
+  const [browserHeight, setBrowserHeight] = useState(0);
+
+  useEffect(() => {
+    if (typeof document === undefined || typeof window === undefined) return;
+    if (window.innerHeight > document.body.clientHeight) {
+      const sub = window.innerHeight - document.body.clientHeight;
+      setBrowserHeight(document.body.clientHeight + sub);
+      return;
+    }
+    setBrowserHeight(document.body.clientHeight);
+  }, []);
 
   return (
     <>
@@ -19,7 +31,7 @@ const Section = () => {
           <feTurbulence type="fractalNoise" baseFrequency="5.6" />
         </filter>
       </NoiseSvg>
-      <SectionWrapper>
+      <SectionWrapper theme={browserHeight}>
         <div>
           <div>
             <div>{t('documents.0')}</div>

@@ -8,13 +8,27 @@ import PaperFile from 'assets/images/developers/paperFile.svg';
 import Elysia from 'assets/images/developers/elysia.svg';
 import Git from 'assets/images/developers/git.svg';
 import Arrow from 'assets/images/developers/arrow.svg';
+import { useEffect, useState } from 'react';
 
 const Section = () => {
   const { t } = useTranslation();
   const { isTablet } = useIsMobile();
+  const [browserHeight, setBrowserHeight] = useState(0);
+
+  useEffect(() => {
+    if (typeof document === undefined || typeof window === undefined) return;
+    if (window.innerHeight > document.body.clientHeight) {
+      const sub = window.innerHeight - document.body.clientHeight;
+      setBrowserHeight(document.body.clientHeight + sub);
+      return;
+    }
+    console.log(document.body.clientHeight);
+    setBrowserHeight(document.body.clientHeight);
+  }, []);
+
   return (
     <>
-      <NoiseSvg>
+      <NoiseSvg theme={browserHeight}>
         <filter id="noise">
           <feTurbulence type="fractalNoise" baseFrequency="5.6" />
         </filter>
