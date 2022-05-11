@@ -5,9 +5,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Gradient from 'utils/gradient';
 import { parseTokenId } from 'utils/parseTokenId';
 import PortFolio from './PortFolio';
-import Project from './Project';
-import { EcosystemWrapper } from './styles';
 import Top from './Top';
+import { EcosystemWrapper } from './styles';
 
 const Ecosystem = () => {
   const [browserHeight, setBrowserHeight] = useState(0);
