@@ -16,10 +16,23 @@ import Twitter from 'assets/images/community/twitter@2x.png';
 import We_chat from 'assets/images/community/wechat_@2x.png';
 import Wechat from 'assets/images/community/wechat@2x.png';
 import useIsMobile from 'hooks/useIsMobile';
+import { useEffect, useState } from 'react';
 
 const Section = () => {
   const { t } = useTranslation();
   const { isDesktop, isTablet } = useIsMobile();
+  const [browserHeight, setBrowserHeight] = useState(0);
+
+  useEffect(() => {
+    if (typeof document === undefined || typeof window === undefined) return;
+    if (window.innerHeight > document.body.clientHeight) {
+      const sub = window.innerHeight - document.body.clientHeight;
+      setBrowserHeight(document.body.clientHeight + sub);
+      return;
+    }
+    setBrowserHeight(document.body.clientHeight);
+  }, []);
+
   return (
     <>
       <NoiseSvg>
@@ -27,7 +40,7 @@ const Section = () => {
           <feTurbulence type="fractalNoise" baseFrequency="5.6" />
         </filter>
       </NoiseSvg>
-      <SectionWrapper>
+      <SectionWrapper theme={browserHeight}>
         <div>
           <div>
             <div>{t('community.0')}</div>

@@ -55,7 +55,10 @@ const PortFolio = () => {
         <div>{t(`main.portfolio.1`)}</div>
         {/* {t(`main.portfolio.2`)} */}
       </div>
-      <div>
+      <div
+        style={{
+          height: image.length > 0 ? undefined : '410px',
+        }}>
         {image.length > 0 &&
           Array(4)
             .fill(0)

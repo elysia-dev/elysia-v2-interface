@@ -1,61 +1,77 @@
+import { IAssetBond } from 'core/types/reserveSubgraph';
+import LoanProduct from 'enums/LoanProduct';
+import { formatUnits } from 'ethers/lib/utils';
+import { Dispatch, SetStateAction, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { toCompact } from 'utils/formatters';
+import { parseTokenId } from 'utils/parseTokenId';
+import reserves from 'utils/reserves';
+import AssetItem from './AssetItem';
 import { PortFolioWrapper } from './styles';
 
-const PortFolio = () => {
+const PortFolio: React.FC<{
+  assetBondTokens: IAssetBond[];
+  pageNum: number;
+  setPageNum: Dispatch<SetStateAction<number>>;
+}> = ({ assetBondTokens, pageNum, setPageNum }) => {
   const { t } = useTranslation();
 
+  const totalPrincipal = useMemo(() => {
+    let total = 0;
+    assetBondTokens.map((abToken) => {
+      const tokenInfo = reserves.find(
+        (reserve) => reserve.address === abToken?.reserve.id,
+      );
+      total += parseFloat(formatUnits(abToken.principal, tokenInfo?.decimals));
+    }, []);
+    return toCompact(total);
+  }, [assetBondTokens]);
+
   return (
-    <PortFolioWrapper>
-      <div>
-        <div>{t('ecosystem.portfolio.0')}</div>
-        <div>{t('ecosystem.portfolio.1')}</div>
-      </div>
-      <div>
+    <div>
+      <PortFolioWrapper>
         <div>
-          <div>
-            <div>{t('ecosystem.portfolio.2')}</div>
-            <div>{'{ 총 자산 토큰 수 }'}</div>
-          </div>
-          <div>
-            <div>{t('ecosystem.portfolio.3')}</div>
-            <div>{'{ 총 자산 토큰 가치 }'}</div>
-          </div>
+          <div>{t('ecosystem.portfolio.0')}</div>
+          <div>{t('ecosystem.portfolio.1')}</div>
         </div>
         <div>
           <div>
-            <div>이미지</div>
-            <div>{'{프로젝트 명}'}</div>
-            <div>{'{달러 가치}'}</div>
+            <div>
+              <div>{t('ecosystem.portfolio.2')}</div>
+              <div>{assetBondTokens.length}</div>
+            </div>
+            <div>
+              <div>{t('ecosystem.portfolio.3')}</div>
+              <div>{totalPrincipal}</div>
+            </div>
           </div>
           <div>
-            <div>이미지</div>
-            <div>{'{프로젝트 명}'}</div>
-            <div>{'{달러 가치}'}</div>
+            {assetBondTokens &&
+              assetBondTokens
+                .filter((data) => {
+                  const tokenId = parseTokenId(data.id);
+                  return LoanProduct[tokenId.productNumber] !== 'Others';
+                })
+                .slice(0, 6 * pageNum)
+                .map((abToken, index) => {
+                  const tokenInfo = reserves.find(
+                    (reserve) => reserve.address === abToken?.reserve.id,
+                  );
+                  return (
+                    <AssetItem
+                      key={index}
+                      tokenInfo={tokenInfo}
+                      abToken={abToken}
+                    />
+                  );
+                })}
           </div>
-          <div>
-            <div>이미지</div>
-            <div>{'{프로젝트 명}'}</div>
-            <div>{'{달러 가치}'}</div>
-          </div>
-          <div>
-            <div>이미지</div>
-            <div>{'{프로젝트 명}'}</div>
-            <div>{'{달러 가치}'}</div>
-          </div>
-          <div>
-            <div>이미지</div>
-            <div>{'{프로젝트 명}'}</div>
-            <div>{'{달러 가치}'}</div>
-          </div>
-          <div>
-            <div>이미지</div>
-            <div>{'{프로젝트 명}'}</div>
-            <div>{'{달러 가치}'}</div>
+          <div onClick={() => setPageNum((prev) => prev + 1)}>
+            {t('ecosystem.portfolio.4')}
           </div>
         </div>
-        <div>{t('ecosystem.portfolio.4')}</div>
-      </div>
-    </PortFolioWrapper>
+      </PortFolioWrapper>
+    </div>
   );
 };
 
