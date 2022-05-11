@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import ElyfiProjectImg from 'assets/images/ecosystem/elyfiproject.png';
 import Moblieapp from 'assets/images/ecosystem/moblieapp.png';
 import Dao from 'assets/images/ecosystem/dao.png';
+import ecosystemImage from 'assets/images/main/ecosystem_image.png';
 
 const defaultBorder = '1px solid #333333';
 
@@ -20,16 +21,13 @@ const center = {
 };
 
 export const EcosystemWrapper = styled.div`
-  /* background: #dfd9d9; */
-`;
-
-export const ContentWrapper = styled.div`
   color: #ffffff;
   &::before,
   &::after {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: ${(props) =>
+      typeof props.theme === 'object' ? '100%' : props.theme + 'px'};
     z-index: -1;
     top: 0;
     left: 0;
@@ -42,8 +40,16 @@ export const ContentWrapper = styled.div`
   }
 
   &::after {
-    background: linear-gradient(to right, #000000, transparent),
-      linear-gradient(to top, #000000, #4785ff 40%);
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 2, 1) 2%,
+        rgba(3, 41, 123, 0.5),
+        rgba(54, 121, 181, 0.5)
+      ),
+      linear-gradient(to top, rgba(54, 121, 181, 0.4), transparent),
+      url(${ecosystemImage.src});
+    background-repeat: no-repeat;
+    background-position-x: right;
   }
 `;
 
@@ -249,11 +255,6 @@ export const PortFolioWrapper = styled.div`
         padding: 18px 20px 0px 20px;
         margin: 10px 0px;
         > div:first-child {
-          background-image: url(${Dao.src});
-          background-repeat: no-repeat;
-          background-position-x: center;
-          background-position-y: center;
-          background-size: cover;
           width: 100%;
           height: 300px;
           margin-bottom: 23.5px;
@@ -273,6 +274,8 @@ export const PortFolioWrapper = styled.div`
       }
     }
     > div:last-child {
+      cursor: pointer;
+      background: #000000;
       width: 100%;
       height: 83px;
       border-radius: 42px;
