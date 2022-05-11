@@ -1,9 +1,38 @@
 import styled from 'styled-components';
-import MainTopImg from 'assets/images/main/mainTop@2x.png';
+import mainImage from 'assets/images/main/main_image.png';
 
 export const MainWrapper = styled.div`
   /* width: 1639px; */
   /* margin: auto; */
+  &::before,
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: ${(props) => {
+      return typeof props.theme === 'object' ? '100%' : props.theme + 'px';
+    }};
+    z-index: -1;
+    top: 0;
+    left: 0;
+    mix-blend-mode: hard-light;
+    content: '';
+  }
+
+  &::before {
+    filter: url(#noise);
+  }
+
+  &::after {
+    background: 
+    /* linear-gradient(to, #000000 30%, transparent), */ linear-gradient(
+        to right,
+        rgba(0, 0, 2, 0.8) 3%,
+        rgba(54, 121, 181, 0.5)
+      ),
+      url(${mainImage.src});
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 `;
 
 export const center = {
@@ -11,14 +40,6 @@ export const center = {
   'align-items': 'center',
   'justify-content': 'center',
 };
-
-export const TopPortfolioWrapper = styled.div`
-  background-image: url(${MainTopImg.src});
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: cover;
-`;
 
 export const MainTopWrapper = styled.div`
   max-width: 1639px;
@@ -149,26 +170,6 @@ export const MainSectionWrapper = styled.div`
   padding: 100px 20px 100px 20px;
   max-width: 1639px;
   margin: auto;
-  &::before,
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    mix-blend-mode: hard-light;
-    content: '';
-  }
-
-  &::before {
-    filter: url(#noise);
-  }
-
-  &::after {
-    background: linear-gradient(to bottom, #000000 30%, transparent),
-      linear-gradient(to right, #000000 20%, #4785ff);
-  }
   > div:nth-child(1),
   div:nth-child(3),
   div:nth-child(5) {
@@ -264,26 +265,6 @@ export const MainSectionWrapper = styled.div`
 export const PartnersWrapper = styled.div`
   max-width: 1639px;
   margin: auto;
-  &::before,
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    mix-blend-mode: hard-light;
-    content: '';
-  }
-
-  &::before {
-    filter: url(#noise);
-  }
-
-  &::after {
-    background: linear-gradient(to top, #000000 30%, transparent),
-      linear-gradient(to right, #000000 20%, #4785ff);
-  }
   padding: 200px 20px 0px 20px;
   font-family: Gilroy-Light;
   font-size: 1.25rem;
@@ -446,27 +427,6 @@ export const MainTeamWrapper = styled.div`
   margin: auto;
   padding: 0px 20px;
   padding-top: 100px;
-  &::before,
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    mix-blend-mode: hard-light;
-    content: '';
-  }
-
-  &::before {
-    filter: url(#noise);
-  }
-
-  &::after {
-    background: radial-gradient(circle at 3%, transparent, #000000 450px),
-      radial-gradient(circle at 10%, #4785ff 60%, #000000);
-  }
-
   > div:first-child {
     > div:first-child {
       font-family: Gilroy-Light;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import documentImage from 'assets/images/main/document_image.png';
 
 const defaultBorder = '1px solid #333333';
 
@@ -39,8 +40,17 @@ export const SectionWrapper = styled.div`
   }
 
   &::after {
-    background: linear-gradient(to right, #000000, transparent),
-      linear-gradient(to top, #000000, #4785ff 40%);
+    /* background: linear-gradient(to right, #000000, transparent),
+      linear-gradient(to top, #000000, #4785ff 40%); */
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 2, 0.7) 2%,
+        rgba(3, 41, 123, 0.5),
+        rgba(54, 121, 181, 0.5)
+      ),
+      linear-gradient(to top, rgba(54, 121, 181, 0.4), transparent),
+      url(${documentImage.src});
+    background-repeat: no-repeat;
   }
 
   > div:nth-child(1) {
