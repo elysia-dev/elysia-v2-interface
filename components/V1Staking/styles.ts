@@ -2,77 +2,82 @@ import { constants } from 'ethers';
 import styled, { css } from 'styled-components';
 
 export const PrevStakingWrapper = styled.div`
-  margin-top: 127px;
+  margin-top: calc(50vh - 100px);
   padding: 0px 10px;
+  padding-bottom: 100px;
 `;
 
 export const HeaderWrapper = styled.div`
   width: 100%;
-  text-align: center;
-  margin-bottom: 61.13px;
+  margin-bottom: 67px;
 
-  div:first-child {
-    font-family: 'Montserrat-bold';
+  h2 {
+    font-family: Gilroy-ExtraBold;
     font-size: 1.875rem;
-    margin-bottom: 23.13px;
+    margin-bottom: 20px;
+    color: #fff;
   }
-  div:last-child {
-    font-family: 'Montserrat';
+  p {
+    font-family: Gilroy-Light;
     font-size: 1.25rem;
-    line-height: 2.1rem;
-
-    span {
-      font-family: 'Montserrat-bold';
-    }
+    line-height: 1.8rem;
+    color: #fff;
   }
 `;
 
 export const StakingSection = styled.section`
   width: 100%;
-  border: 1px solid #e6e6e6;
-  border-radius: 10px;
-  background: #ffffff;
-  margin-bottom: 127px;
-
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0px 0px 6px #00000029;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 22px;
+  margin-bottom: 15px;
+  /* 
   > div:not(:last-of-type) {
     border-bottom: 1px solid #e6e6e6;
-  }
+  } */
 `;
 
 export const ItemWrapper = styled.div`
   display: flex;
-  height: 174px;
-  /* padding: 20px 0px 20px 0px; */
+  flex-direction: row;
+  height: 189px;
 `;
 
 export const RoundInfoWrapper = styled.div`
-  border-right: 1px solid #e6e6e6;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 21%;
-
   > div {
-    border: 1px solid #e6e6e6;
-    border-radius: 10px;
-    width: 208px;
-    height: 141px;
+    width: 216px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0px 0px 6px #00000029;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    margin-right: 30px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    > div:first-child {
-      font-family: 'SpoqaHanSansNeo-Bold';
+    > h2 {
+      font-family: Gilroy-ExtraBold;
       font-size: 1.0625rem;
       margin-bottom: 23px;
+      color: #fff;
     }
 
-    > div:last-child {
-      font-family: 'SpoqaHanSansNeo';
+    > p {
+      font-family: Gilroy-Light;
       text-align: center;
-      color: #333333;
       font-size: 0.8125rem;
+      color: #fff;
     }
   }
 
@@ -87,13 +92,12 @@ export const StakingInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
-  /* font-family: 'SpoqaHanSansNeo-Bold'; */
   font-size: 1.25rem;
-  width: 79%;
+  width: 100%;
 `;
 
 const hoverBoxShadow = css`
+  cursor: pointer;
   box-shadow: 0px 1px 6px #00000029;
   transition: all 0.2s ease;
   > p {
@@ -101,7 +105,7 @@ const hoverBoxShadow = css`
     background: linear-gradient(to right, #3679b5, #3679b5 50%, #333333 50%);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* -webkit-text-fill-color: transparent; */
     background-size: 200% 100%;
     background-position: 100%;
     transition: background-position 275ms ease;
@@ -125,41 +129,58 @@ const hoverBoxShadow = css`
 export const StakingInfoByRound = styled.div`
   display: flex;
   align-items: center;
-  padding: 0px 40px;
-
-  :first-child {
-    margin-bottom: 40px;
+  margin: 0px 60px;
+  flex: 1;
+  &:first-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
-  > div:first-child {
-    color: #333333;
-    font-family: 'Inter', 'SpoqaHanSansNeo';
-    font-size: 0.9375rem;
+  > h2 {
+    font-family: Gilroy-ExtraBold;
+    font-size: 1.4rem;
+    margin: 0;
+    color: #fff;
   }
-
-  > div:nth-child(2) {
-    font-family: 'SpoqaHanSansNeo-Bold', 'Montserrat-bold';
+  > section {
     margin-left: auto;
-    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    > h2 {
+      font-family: Gilroy-ExtraBold;
+      font-size: 1.8rem;
+      margin: 0;
+      color: #fff;
+    }
     > span {
-      font-family: 'SpoqaHanSansNeo-Bold', 'Montserrat-bold';
-      color: #646464;
+      font-family: Gilroy-ExtraBold;
+      font-size: 1.7rem;
+      margin: 0 5px 0 5px;
+      color: #838383;
+      width: 50px;
+      text-align: right;
     }
   }
+
   > div:nth-child(3) {
-    cursor: pointer;
-    width: 210px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: #f0f0f1;
-    color: #888888;
+    width: 249px;
+    height: 46px;
+    border-radius: 23px;
+    background-color: #000000;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 20px;
-    font-size: 0.84375rem;
     ${(props: any) => (props.theme.lte(constants.Zero) ? null : hoverBoxShadow)}
     > p {
-      cursor: pointer;
+      font-size: 1.2rem;
+      ${(props: any) =>
+        props.theme.lte(constants.Zero)
+          ? null
+          : css`
+              cursor: pointer;
+            `}
+      margin: 0;
+      font-family: Gilroy-Light;
     }
   }
 
@@ -191,11 +212,13 @@ export const StakingInfoByRound = styled.div`
 `;
 
 export const WalletText = styled.div`
-  font-size: 1.065rem;
+  font-size: 1.25rem;
   text-align: center;
-  font-family: 'Inter-Bold', 'SpoqaHanSansNeo-Bold';
+  font-family: Gilroy-ExtraBold;
+  color: #fff;
+  letter-spacing: 1.4px;
 `;
 
 export const SkeletonWrapper = styled.div`
-  padding: 0 40px;
+  padding: 0;
 `;

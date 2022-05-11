@@ -62,37 +62,35 @@ const V1Staking = () => {
       )}
       <PrevStakingWrapper>
         <HeaderWrapper>
-          <div>{t('governance.prev_staking.0')}</div>
-          <div>
-            <Trans>{t('governance.prev_staking.1')}</Trans>
-          </div>
+          <h2>{t('governance.prev_staking.0')}</h2>
+          <p>{t('governance.prev_staking.1')}</p>
         </HeaderWrapper>
-        <div>
+        {userInfo.length > 1 ? (
+          stakingRoundDate.map((date, idx) => {
+            return (
+              <StakingSection>
+                <StakingItem
+                  key={`staking_item_${idx}`}
+                  date={date}
+                  round={idx + 1}
+                  userInfo={userInfo[idx]}
+                  setModalType={setModalType}
+                  setModalVisible={() => setModalVisible(true)}
+                  setAmount={setAmount}
+                  setRound={() => setRound(idx + 1)}
+                />
+              </StakingSection>
+            );
+          })
+        ) : (
           <StakingSection>
-            {userInfo.length > 1 ? (
-              stakingRoundDate.map((date, idx) => {
-                return (
-                  <StakingItem
-                    key={`staking_item_${idx}`}
-                    date={date}
-                    round={idx + 1}
-                    userInfo={userInfo[idx]}
-                    setModalType={setModalType}
-                    setModalVisible={() => setModalVisible(true)}
-                    setAmount={setAmount}
-                    setRound={() => setRound(idx + 1)}
-                  />
-                );
-              })
-            ) : (
-              <StakingItem
-                isLoading={isLoading}
-                setModalType={setModalType}
-                setModalVisible={() => {}}
-              />
-            )}
+            <StakingItem
+              isLoading={isLoading}
+              setModalType={setModalType}
+              setModalVisible={() => {}}
+            />
           </StakingSection>
-        </div>
+        )}
       </PrevStakingWrapper>
     </>
   );

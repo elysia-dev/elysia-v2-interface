@@ -45,98 +45,96 @@ const StakingItem = (props: Props) => {
     setRound,
   } = props;
 
-  return (
-    <>
-      <ItemWrapper>
-        <RoundInfoWrapper>
-          <div>
-            {isLoading && account ? (
-              <Skeleton height={141} width={208} />
-            ) : (
-              <>
-                <div>
-                  {round
-                    ? i18n.language === LanguageType.EN
-                      ? t(`governance.prev_staking.5.${round}`)
-                      : t('governance.prev_staking.5', { round })
-                    : t('governance.prev_staking.2')}
-                </div>
-                <div>
-                  {moment(date?.startedAt || '2021.07.27').format('YYYY.MM.DD')}{' '}
-                  ~ <br />
-                  {moment(date?.endedAt || '2022.04.17').format(
-                    'YYYY.MM.DD',
-                  )}{' '}
-                  (KST)
-                </div>
-              </>
-            )}
-          </div>
-        </RoundInfoWrapper>
-        <StakingInfoWrapper>
-          {userInfo ? (
-            <>
-              <StakingInfoByRound theme={userInfo.userPrincipal}>
-                <div>{t('governance.prev_staking.6')}</div>
-                <div>
-                  {formatComma(userInfo.userPrincipal)} <span>EL</span>
-                </div>
-                <div
-                  onClick={() => {
-                    if (userInfo.userPrincipal.lte(constants.Zero)) {
-                      return;
-                    }
-                    setModalVisible?.();
-                    setModalType?.(ModalType.PrevUnstake);
-                    setRound?.();
-                    setAmount?.(userInfo.userPrincipal);
-                  }}
-                  style={{
-                    backgroundColor: userInfo.userPrincipal.lte(constants.Zero)
-                      ? '#f0f0f1'
-                      : '#ffffff',
-                  }}>
-                  <p>{t('governance.prev_staking.8')}</p>
-                </div>
-              </StakingInfoByRound>
-              <StakingInfoByRound theme={userInfo.userReward}>
-                <div>{t('governance.prev_staking.7')}</div>
-                <div>
-                  {formatComma(userInfo.userReward)} <span>ELFI</span>
-                </div>
-                <div
-                  onClick={() => {
-                    if (userInfo.userReward.lte(constants.Zero)) {
-                      return;
-                    }
-                    setModalVisible?.();
-                    setRound?.();
-                    setAmount?.(userInfo.userReward);
-                    setModalType?.(ModalType.PrevReward);
-                  }}
-                  style={{
-                    backgroundColor: userInfo.userReward.lte(constants.Zero)
-                      ? '#f0f0f1'
-                      : '#ffffff',
-                  }}>
-                  <p>{t('governance.prev_staking.9')}</p>
-                </div>
-              </StakingInfoByRound>
-            </>
-          ) : isLoading && account ? (
-            <SkeletonWrapper>
-              <Skeleton height={140} width={'100%'} />
-            </SkeletonWrapper>
+  return userInfo ? (
+    <ItemWrapper>
+      <RoundInfoWrapper>
+        <div className="round-box">
+          {isLoading && account ? (
+            <Skeleton height={141} width={208} />
           ) : (
-            <WalletText>
-              {account
-                ? t('governance.prev_staking.4')
-                : t('governance.prev_staking.3')}
-            </WalletText>
+            <>
+              <h2>
+                {round
+                  ? i18n.language === LanguageType.EN
+                    ? t(`governance.prev_staking.5.${round}`)
+                    : t('governance.prev_staking.5', { round })
+                  : t('governance.prev_staking.2')}
+              </h2>
+              <p>
+                {moment(date?.startedAt || '2021.07.27').format('YYYY.MM.DD')} ~{' '}
+                <br />
+                {moment(date?.endedAt || '2022.04.17').format(
+                  'YYYY.MM.DD',
+                )}{' '}
+                (KST)
+              </p>
+            </>
           )}
-        </StakingInfoWrapper>
-      </ItemWrapper>
-    </>
+        </div>
+      </RoundInfoWrapper>
+      <StakingInfoWrapper>
+        <StakingInfoByRound theme={userInfo.userPrincipal}>
+          <h2>{t('governance.prev_staking.6')}</h2>
+          <section>
+            <h2>{formatComma(userInfo.userPrincipal)}</h2>&nbsp;<span>EL</span>
+          </section>
+          <div
+            onClick={() => {
+              if (userInfo.userPrincipal.lte(constants.Zero)) {
+                return;
+              }
+              setModalVisible?.();
+              setModalType?.(ModalType.PrevUnstake);
+              setRound?.();
+              setAmount?.(userInfo.userPrincipal);
+            }}
+            style={{
+              backgroundColor: userInfo.userPrincipal.lte(constants.Zero)
+                ? '#838383'
+                : '#000000',
+            }}>
+            <p>{t('governance.prev_staking.8')}</p>
+          </div>
+        </StakingInfoByRound>
+        <StakingInfoByRound theme={userInfo.userReward}>
+          <h2>{t('governance.prev_staking.7')}</h2>
+          <section>
+            <h2>{formatComma(userInfo.userReward)}</h2>&nbsp;<span>ELFI</span>
+          </section>
+          <div
+            onClick={() => {
+              if (userInfo.userReward.lte(constants.Zero)) {
+                return;
+              }
+              setModalVisible?.();
+              setRound?.();
+              setAmount?.(userInfo.userReward);
+              setModalType?.(ModalType.PrevReward);
+            }}
+            style={{
+              backgroundColor: userInfo.userReward.lte(constants.Zero)
+                ? '#838383'
+                : '#000000',
+            }}>
+            <p>{t('governance.prev_staking.9')}</p>
+          </div>
+        </StakingInfoByRound>
+      </StakingInfoWrapper>
+    </ItemWrapper>
+  ) : isLoading && account ? (
+    <SkeletonWrapper>
+      <Skeleton height={140} width={'100%'} />
+    </SkeletonWrapper>
+  ) : (
+    <ItemWrapper>
+      <StakingInfoWrapper>
+        <WalletText>
+          {account
+            ? t('governance.prev_staking.4')
+            : t('governance.prev_staking.3')}
+        </WalletText>
+      </StakingInfoWrapper>
+    </ItemWrapper>
   );
 };
 
