@@ -16,6 +16,7 @@ import GovernanceBottom from './GovernanceBottom';
 import GovernanceCenter from './GovernanceCenter';
 import GovernanceTop from './GovernanceTop';
 import Staking from './Staking';
+import { NoiseSvg, MainSectionWrapper } from 'components/Main/styles';
 
 const Governance = () => {
   const [modal, setModalType] = useState<ModalType>();
@@ -68,22 +69,36 @@ const Governance = () => {
 
   return (
     <>
-      {modalVisible && <ModalLayout>{modalComponent()}</ModalLayout>}
       <div
-        className={styles.governance_wrapper}
         style={{
-          marginTop: 100,
+          position: 'relative',
+          overflow: 'hidden',
         }}>
-        <GovernanceTop />
-        <GovernanceCenter />
-        <Staking
-          setModalType={setModalType}
-          setModalVisible={() => setModalVisible(true)}
-          reward={reward}
-          currentChain={currentChain}
-          setCurrentChain={setCurrentChain}
-        />
-        <GovernanceBottom />
+        {modalVisible && <ModalLayout>{modalComponent()}</ModalLayout>}
+
+        <NoiseSvg>
+          <filter id="noise">
+            <feTurbulence type="fractalNoise" baseFrequency="5.6" />
+          </filter>
+        </NoiseSvg>
+        <div
+          className={styles.governance_wrapper}
+          style={{
+            marginTop: 100,
+          }}>
+          <GovernanceTop />
+          <section className={styles.governance_left_line_container}>
+            <GovernanceCenter />
+            <Staking
+              setModalType={setModalType}
+              setModalVisible={() => setModalVisible(true)}
+              reward={reward}
+              currentChain={currentChain}
+              setCurrentChain={setCurrentChain}
+            />
+          </section>
+          <GovernanceBottom />
+        </div>
       </div>
     </>
   );

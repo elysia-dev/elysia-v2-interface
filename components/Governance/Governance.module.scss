@@ -1,1273 +1,523 @@
-@mixin hover__box-shadow {
-  box-shadow: 0px 1px 6px #00000029;
-  transition: all 0.2s ease;
-  > p {
-    border-bottom: 0px;
-    background: linear-gradient(to right, #3679b5, #3679b5 50%, #333333 50%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    background-position: 100%;
-    transition: background-position 275ms ease;
-    text-decoration: none;
-    transition: all 0.4s ease;
-  }
-  &:hover {
-    box-shadow: 0px 0px 15px #3679b5;
-    transition: all 0.2s ease;
-    > p {
-      transition: all 0.4s ease;
-      background-position: 0 100%;
-    }
-  }
-  &:active {
-    transform: translateY(-1px);
-    box-shadow: 0px 0px 5px #3679b5;
-  }
-}
+$elysia-color: #33a5ff;
+$bold: Gilroy-ExtraBold;
+$light: Gilroy-Light;
 
 @media screen and (min-width: 768px) {
   .governance_wrapper {
-    max-width: 1190px;
+    max-width: 1639px;
     margin: auto;
+    padding: 0px 20px 0px 20px;
+    &::before,
+    &::after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      mix-blend-mode: hard-light;
+      content: '';
+    }
+
+    &::before {
+      filter: url(#noise);
+    }
+
+    &::after {
+      background: linear-gradient(to right, #000000, transparent),
+        linear-gradient(to top, #000000, #4785ff 40%);
+    }
   }
   .governance_top {
-    margin-top: 127px;
+    margin-top: calc(50vh - 100px);
+    padding-bottom: 70px;
+    border-bottom: 1px solid $elysia-color;
     .governance_top_sub {
-      text-align: center;
-      color: #888888;
-      font-size: 1.4375rem;
+      text-align: left;
+      color: #fff;
+      font-size: 2rem;
       font-family: 'Inter-Medium';
-      font-style: italic;
+      font-weight: bold;
     }
     .governance_top_header {
-      text-align: center;
+      text-align: left;
       font-family: 'SpoqaHanSansNeo-Bold';
-      color: #333333;
-      font-size: 2.8125rem;
-      margin-top: 20px;
-      margin-bottom: 40px;
-    }
-    .governance_top_content {
-      background-image: url('../../assets/images/governance_top.png');
-      background-repeat: no-repeat;
-      background-position-x: center;
-      background-position-y: center;
-      background-size: cover;
-      width: 100%;
-      height: 558px;
-    }
-    .governance_top_content_header {
-      font-family: 'SpoqaHanSansNeo', 'Montserrat-Medium';
-      font-size: 1.24rem;
-      color: #ffffff;
-      // width: 48rem;
-      height: 59px;
-      padding-top: 94px;
-      margin: auto;
-      text-align: center;
-      line-height: 2.1rem;
-    }
-    .governance_top_content_wrapper {
-      font-family: 'SpoqaHanSansNeo', 'Montserrat-Medium';
-      margin-top: 120px;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      > div {
-        height: 260px;
-        width: 260px;
-        border: 1px solid #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        box-shadow: 0px 0px 6px #00000029;
-        border-radius: 260px;
-        font-size: 1.25rem;
-        line-height: 1.9rem;
-      }
-      > div:not(div:last-child) {
-        margin-right: 98px;
-      }
-    }
-  }
-
-  .governance_center {
-    margin-top: 100px;
-    width: 100%;
-
-    > div:first-child {
-      font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
-      text-align: center;
-      font-size: 2.5rem;
-      color: #333333;
-    }
-    .governance_center_content_wrapper {
-      display: flex;
-      width: 1136px;
-      margin: auto;
-      margin-top: 81px;
-      // align-items: center;
-      // justify-content: center;
-    }
-    .governance_center_content_description {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 358px;
-      margin-right: 116px;
-
-      > div:first-child {
-        font-family: 'Montserrat-bold';
-        font-size: 1.25rem;
-        color: #3679b5;
-        margin-bottom: 10.5px;
-      }
-
-      > div:nth-child(2) {
-        font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
-        font-size: 1.875rem;
-        width: 591px;
-        color: #333333;
-        margin-bottom: 34px;
-      }
-
-      > div:nth-child(3) {
-        font-family: 'Montserrat';
-        font-size: 1.0625rem;
-        width: 570px;
-        color: #333333;
-        margin-bottom: 34px;
-      }
-    }
-    .governance_center_content_wrapper_button {
-      display: flex;
-      > div {
-        cursor: pointer;
-        width: 188px;
-        height: 45px;
-        background-color: #3679b5;
-        font-family: 'Montserrat-Medium';
-        color: #ffffff;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 1px 3px 8px #00000052;
-        > a {
-          font-size: 1.0625rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      }
-
-      > div:first-child {
-        margin-right: 25px;
-      }
-    }
-    .governance_center_info_header {
-      font-family: 'SpoqaHanSansNeo-Bold';
-      font-size: 1.25rem;
-      color: #262626;
-      margin: auto;
-      margin-bottom: 15px;
-      width: 1136px;
-    }
-    .governance_center_info_box {
-      width: 1136px;
-      height: 155px;
-      background-color: #ffffff;
-      border: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: auto;
-
-      > div:not(div:last-child) {
-        margin-right: 29px;
-      }
-
-      > div {
-        border: 2px solid #f0f0f1;
-        border-radius: 10px;
-        width: 250px;
-        height: 113px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        .question {
-          margin-left: 7px;
-          border: 1px solid #888888;
-          width: 17px;
-          height: 17px;
-          border-radius: 13px;
-          font-size: 0.9rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #888888;
-          cursor: pointer;
-          position: relative;
-          > div {
-            width: 200px;
-            padding: 10px;
-            font-size: 1.0625rem;
-            cursor: auto;
-            box-shadow: 0px 1px 6px #00000029;
-            background-color: #ffffff;
-            border-radius: 5px;
-            position: absolute;
-            top: 17px;
-            left: -100px;
-            color: #888888;
-            font-family: 'SpoqaHanSansNeo', 'Montserrat-Medium';
-          }
-        }
-        > div:first-child {
-          font-family: 'Montserrat', 'SpoqaHanSansNeo';
-          font-size: 1.0625rem;
-          color: #333333;
-          margin-bottom: 15px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        > div:last-child {
-          font-family: 'Montserrat-bold';
-          font-size: 1.4375rem;
-          color: #333333;
-        }
-      }
-    }
-  }
-
-  .governance_staking {
-    margin-top: 124px;
-    width: 100%;
-
-    .governance_staking_wrapper {
-      display: flex;
-      width: 1136px;
-      margin: auto;
-      margin-top: 81px;
-    }
-
-    .governance_staking_wrapper_content {
-      margin-right: 81px;
-    }
-
-    .governance_staking_header {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #333333;
-    }
-
-    .governance_staking_content_wrapper {
-      display: flex;
-      width: 1136px;
-      margin: auto;
-      margin-top: 81px;
-      // align-items: center;
-      // justify-content: center;
-    }
-
-    .governance_staking_content_description {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 358px;
-      margin-right: 116px;
-    }
-
-    .governance_staking_content_description_first {
-      font-family: 'Montserrat-bold';
-      font-size: 1.25rem;
-      color: #3679b5;
-      margin-bottom: 10.5px;
-    }
-
-    .governance_staking_content_description_second {
-      font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
-      font-size: 1.875rem;
-      color: #333333;
-      margin: 0px 0px 34px 0px;
-    }
-
-    .governance_staking_content_description_third {
-      font-family: 'Montserrat';
-      width: 562px;
-      font-size: 1.0625rem;
-      color: #333333;
-      line-height: 1.6rem;
-      margin-bottom: 20px;
-    }
-
-    .governance_staking_content_button {
-      font-family: 'SpoqaHanSansNeo';
-      cursor: pointer;
-      width: 188px;
-      height: 45px;
-      font-size: 1.0625rem;
-      color: #ffffff;
-      background-color: #3679b5;
-      border-radius: 5px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 1px 3px 8px #00000052;
-    }
-    .governance_staking_info {
-      position: relative;
-      text-align: center;
-      line-height: 1.8rem;
-      z-index: 0;
-    }
-    .governance_staking_total {
-      font-family: 'Inter-Bold';
-      position: absolute;
-      top: -40px;
-      width: 284px;
-      height: 284px;
-      background-color: #ffffff;
-      box-shadow: 0px 3px 6px #00000029;
-      border: 1px solid #3679b5;
-      border-radius: 284px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.875rem;
-      color: #3679b5;
-    }
-    .governance_staking_apr {
-      font-family: 'Inter-Bold';
-      position: absolute;
-      left: 214px;
-      top: 110px;
-      width: 222px;
-      height: 222px;
-      background-color: #ffffff;
-      box-shadow: 0px 3px 6px #00000029;
-      border: 1px solid #6e6e6e;
-      border-radius: 222px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.875rem;
-      color: #333333;
-    }
-    .governance_staking_total_name {
-      font-family: 'Montserrat';
-      font-size: 1.0625rem;
-    }
-    .staking_prev {
-      font-family: 'SpoqaHanSansNeo';
-      font-size: 1.0625rem;
-      color: #3679b5;
-      cursor: pointer;
-    }
-
-    .staking_wrapper {
-      margin-top: 100px;
-      width: 100%;
-    }
-    .staking_container {
-      width: 1136px;
-      margin: auto;
-    }
-    .staking_container_header {
-      font-family: 'SpoqaHanSansNeo-Bold';
-      font-size: 1.25rem;
-      margin-bottom: 21px;
-    }
-    .staking_header {
-      display: flex;
-    }
-
-    .staking_select_mainnet {
-      font-family: 'Montserrat-Medium';
-      display: flex;
-      margin-right: auto;
-      border-top: 2px solid #f0f0f1;
-      border-left: 2px solid #f0f0f1;
-      border-right: 2px solid #f0f0f1;
-      width: 300px;
-      background-color: #ffffff;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      font-size: 1.0625rem;
-
-      div {
-        width: 50%;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        font-weight: bold;
-      }
-      div:first-child {
-        border-right: 1px solid #f0f0f1;
-      }
-      div:last-child {
-        color: #888888;
-      }
-    }
-    .staking_content {
-      border: 2px solid #f0f0f1;
-      display: flex;
-      background-color: #ffffff;
-      border-radius: 0px 10px 10px 10px;
-      padding: 8px 12px 8px 12px;
-
-      .staking_content_box:nth-child(1) {
-        border-right: 1px solid #f0f0f1;
-      }
-
-      .staking_content_box {
-        width: 50%;
-        padding: 14px;
-        border-bottom: 1px solid #f0f0f1;
-        border-top: 1px solid #f0f0f1;
-      }
-      .staking_content_box_amount {
-        text-align: right;
-        margin-top: 36px;
-
-        span:first-child {
-          font-family: 'SpoqaHanSansNeo-Bold';
-          font-size: 1.875rem;
-          color: #333333;
-          span {
-            color: #333333;
-          }
-        }
-        span:last-child {
-          font-family: 'SpoqaHanSansNeo-Bold';
-          font-size: 1.875rem;
-          color: #6e6e6e;
-        }
-      }
-      .staking_content_header {
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        //   border-bottom: 1px solid black;
-        > div:first-child {
-          font-family: 'SpoqaHanSansNeo-Bold';
-          font-size: 1.0625rem;
-        }
-        > div:last-child {
-          font-family: 'SpoqaHanSansNeo';
-          cursor: pointer;
-          box-shadow: 0px 1px 6px #00000029;
-          border-radius: 15px;
-          width: 202px;
-          height: 37px;
-          font-size: 1rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          > p {
-            cursor: pointer;
-          }
-        }
-
-        .staking_active {
-          @include hover__box-shadow;
-        }
-
-        .staking_deactive {
-          // @include hover__box-shadow;
-          > p {
-            cursor: pointer;
-          }
-        }
-      }
-
-      .staking_comming_soon {
-        font-family: 'SpoqaHanSansNeo-Bold';
-        font-size: 1.875rem;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 153.5px;
-      }
-      .staking_network {
-        font-family: 'SpoqaHanSansNeo-Bold';
-        font-size: 1.5rem;
-        width: 70%;
-        text-align: center;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 153.5px;
-      }
-    }
-  }
-
-  .governance_bottom {
-    margin-top: 166px;
-    margin-bottom: 222px;
-    width: 100%;
-
-    .governance_bottom_container {
-      width: 1136px;
-      margin: 0px auto;
-    }
-    .governance_bottom_first {
-      font-family: 'Montserrat-bold';
-      font-size: 1.25rem;
-      color: #3679b5;
-      margin-bottom: 10.5px;
-    }
-    .governance_bottom_second {
-      font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
-      font-size: 1.875rem;
-      color: #333333;
-      margin: 0px 0px 25px 0px;
-    }
-    .governance_bottom_third {
-      font-family: 'Montserrat';
-      font-size: 1.0625rem;
-      color: #333333;
-      line-height: 1.6rem;
-      margin-bottom: 25px;
-    }
-    .governance_bottom_button_wrapper {
-      display: flex;
-      > div {
-        font-family: 'Montserrat-Medium';
-        cursor: pointer;
-        width: 188px;
-        height: 45px;
-        font-size: 1.0625rem;
-        color: #ffffff;
-        background-color: #3679b5;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 1px 3px 8px #00000052;
-      }
-      > div:first-child {
-        margin-right: 25.37px;
-      }
-
-      > div:last-child {
-        margin-left: 25.37px;
-      }
-    }
-
-    .governance_bottom_content {
-      margin-top: 53px;
-    }
-    .governance_bottom_content_header {
-      font-family: 'SpoqaHanSansNeo-Bold';
-      font-size: 1.25rem;
-      color: #333333;
-      margin-bottom: 15px;
-    }
-    .governance_bottom_content_box {
-      display: flex;
-      justify-content: space-between;
-    }
-    .governance_bottom_content_list {
-      width: 50%;
-      border: 2px solid #f0f0f1;
-      border-radius: 10px;
-      background-color: #ffffff;
-      height: 273px;
-      padding: 27px 28px 48px 33px;
-
-      > div:nth-child(1) {
-        // width: 65px;
-        // height: 65px;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        > div:last-child {
-          font-family: 'Montserrat-Medium';
-          font-size: 1.0625rem;
-          width: 202px;
-          height: 37px;
-          background: #b7b7b7;
-          border-radius: 19px;
-          margin-left: auto;
-          margin-bottom: 0px;
-          color: #ffffff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
-      div:nth-child(2) {
-        font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
-        font-size: 1.0625rem;
-        color: #333333;
-        margin-bottom: 13px;
-      }
-      div:nth-child(3) {
-        font-family: 'Montserrat';
-        font-size: 0.9375rem;
-        color: #333333;
-      }
-    }
-    .governance_bottom_content_list:nth-child(1) {
-      margin-right: 16px;
-    }
-  }
-  .arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 19px;
-    height: 19px;
-    border: 1.5px solid #ffffff;
-    border-radius: 19px;
-    transform: rotate(0.87turn);
-    margin-left: 7px;
-    svg {
-      fill: #ffffff;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .governance_top {
-    margin-top: 97px;
-    .governance_top_sub {
-      text-align: center;
-      color: #888888;
-      font-size: 1.4375rem;
-      font-family: 'Inter-Medium';
-      font-style: italic;
-    }
-    .governance_top_header {
-      text-align: center;
-      font-family: 'SpoqaHanSansNeo';
-      color: #333333;
-      font-size: 2.5125rem;
-      padding: 0px 7px;
-      margin-top: 20px;
-      margin-bottom: 40px;
-    }
-    .governance_top_content {
-      background-image: url('../../assets/images/governance_top.png');
-      background-repeat: no-repeat;
-      background-position-x: center;
-      background-position-y: center;
-      background-size: cover;
-      width: 100%;
-      height: 400px;
-    }
-    .governance_top_content_header {
-      font-family: 'SpoqaHanSansNeo', 'Montserrat-Medium';
-      font-size: 1.24rem;
-      color: #ffffff;
-      height: 59px;
-      padding: 94px 20px 0px 20px;
-      margin: auto;
-      text-align: center;
-      line-height: 2.1rem;
-    }
-    .governance_top_content_wrapper {
-      font-family: 'SpoqaHanSansNeo', 'Montserrat-Medium';
-      margin-top: 140px;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      > div {
-        height: 105px;
-        width: 105px;
-        border: 1px solid #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        box-shadow: 0px 0px 6px #00000029;
-        border-radius: 105px;
-        font-size: 0.7rem;
-        letter-spacing: -0.02rem;
-        line-height: 1rem;
-      }
-      > div:not(div:last-child) {
-        margin-right: 0.85rem;
-      }
-    }
-  }
-
-  .governance_center {
-    margin-top: 100px;
-    width: 100%;
-
-    > div:first-child {
-      font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
-      text-align: center;
-      font-size: 2.5rem;
-      color: #333333;
-    }
-    .governance_center_content_wrapper {
-      display: flex;
-      // width: 100%;
-      margin: auto;
+      color: #fff;
+      font-size: 1.475rem;
       margin-top: 10px;
-      > div:last-child {
-        display: none;
-      }
+      margin-bottom: 40px;
     }
-    .governance_center_content_description {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 358px;
-      margin: auto;
-      text-align: center;
-
-      > div:first-child {
-        font-family: 'Montserrat-bold';
-        font-size: 1.25rem;
-        color: #3679b5;
-        margin-bottom: 10.5px;
-      }
-
-      > div:nth-child(2) {
-        font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
-        font-size: 1.875rem;
-        // width: 591px;
-        color: #333333;
-        margin-bottom: 34px;
-      }
-
-      > div:nth-child(3) {
-        padding: 0px 10px;
-        font-family: 'Montserrat';
-        font-size: 1.0625rem;
-        color: #333333;
-        margin-bottom: 34px;
-      }
-    }
-    .governance_center_content_wrapper_button {
-      display: flex;
-
-      > div {
-        font-family: 'Montserrat-Medium';
-        cursor: pointer;
-        width: 138px;
-        height: 40px;
-        font-size: 1.0625rem;
-        color: #ffffff;
-        background-color: #3679b5;
-        border-radius: 5px;
+    &_content {
+      &_wrapper {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 1px 3px 8px #00000052;
-
-        > a {
-          color: #ffffff;
-        }
-      }
-
-      > div:first-child {
-        margin-right: 10px;
-      }
-    }
-    .governance_center_info_header {
-      font-family: 'SpoqaHanSansNeo-Bold';
-      font-size: 1.25rem;
-      color: #262626;
-      margin: auto;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-    .governance_center_info_box {
-      height: auto;
-      background-color: #ffffff;
-      border: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      margin: auto;
-      padding: 10px;
-
-      > div:nth-child(1),
-      > div:nth-child(3) {
-        margin-right: 5px;
-      }
-
-      > div:nth-child(1),
-      > div:nth-child(2) {
-        margin-bottom: 5px;
-      }
-
-      > div {
-        border: 2px solid #f0f0f1;
-        border-radius: 10px;
-        width: 49%;
-        height: 113px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        .question {
-          margin-left: 7px;
-          border: 1px solid #888888;
-          width: 17px;
-          height: 17px;
-          border-radius: 13px;
-          font-size: 0.9rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #888888;
-          cursor: pointer;
-          position: relative;
-          > div {
-            width: 147px;
-            padding: 10px;
-            font-size: 0.985rem;
-            cursor: auto;
-            box-shadow: 0px 1px 6px #00000029;
-            background-color: #ffffff;
-            border-radius: 5px;
-            position: absolute;
-            top: 17px;
-            right: -10px;
-            color: #333333;
-            // font-family: 'SpoqaHanSansNeo-Bold';
+        flex-direction: row;
+        color: #fff;
+        > div {
+          flex: 1;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 20px;
+          box-shadow: 0px 0px 6px #00000029;
+          backdrop-filter: blur(18px);
+          -webkit-backdrop-filter: blur(18px);
+          padding: 30px;
+          &:not(:last-child) {
+            margin-right: 20px;
           }
-        }
-        > div:first-child {
-          font-family: 'Montserrat', 'SpoqaHanSansNeo';
-          font-size: 1.0625rem;
-          color: #333333;
-          margin-bottom: 15px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        > div:last-child {
-          font-family: 'Montserrat-bold';
-          font-size: 1.065rem;
-          color: #333333;
-        }
-      }
-    }
-  }
-
-  .governance_staking {
-    margin-top: 124px;
-    width: 100%;
-
-    .governance_staking_wrapper {
-      margin: auto;
-    }
-
-    .governance_staking_wrapper_content {
-      text-align: center;
-    }
-
-    .governance_staking_header {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #333333;
-    }
-
-    .governance_staking_content_wrapper {
-      display: flex;
-      margin: auto;
-      margin-top: 81px;
-      // align-items: center;
-      // justify-content: center;
-    }
-
-    .governance_staking_content_description {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 358px;
-      margin-right: 116px;
-    }
-
-    .governance_staking_content_description_first {
-      font-family: 'Montserrat-bold';
-      font-size: 1.25rem;
-      color: #3679b5;
-      margin-bottom: 10.5px;
-    }
-
-    .governance_staking_content_description_second {
-      font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
-      font-size: 1.875rem;
-      padding: 0px 10px;
-      color: #333333;
-      margin: 0px 0px 34px 0px;
-    }
-
-    .governance_staking_content_description_third {
-      font-family: 'Montserrat';
-      font-size: 1.0625rem;
-      color: #333333;
-      line-height: 1.6rem;
-      margin-bottom: 20px;
-      padding: 0px 10px;
-    }
-
-    .governance_staking_content_button {
-      margin: auto;
-      font-family: 'Montserrat-Medium';
-      cursor: pointer;
-      width: 168px;
-      height: 40px;
-      font-size: 1.0625rem;
-      color: #ffffff;
-      background-color: #3679b5;
-      border-radius: 5px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 1px 3px 8px #00000052;
-    }
-    .governance_staking_info {
-      text-align: center;
-      line-height: 1.8rem;
-      z-index: 0;
-      display: flex;
-      margin: 10px;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .governance_staking_total {
-      font-family: 'Inter-Bold';
-      width: 50%;
-      height: 150px;
-      background-color: #ffffff;
-      box-shadow: 0px 3px 6px #00000029;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.875rem;
-      color: #3679b5;
-    }
-    .governance_staking_apr {
-      font-family: 'Inter-Bold';
-
-      width: 50%;
-      height: 150px;
-      background-color: #ffffff;
-      box-shadow: 0px 3px 6px #00000029;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.875rem;
-      color: #333333;
-    }
-    .governance_staking_total_name {
-      font-family: 'Montserrat';
-      font-size: 1.0625rem;
-    }
-    .staking_prev {
-      text-align: center;
-      font-family: 'SpoqaHanSansNeo';
-      font-size: 0.8rem;
-      color: #3679b5;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-
-    .staking_wrapper {
-      margin-top: 100px;
-      width: 100%;
-    }
-    .staking_container {
-      margin: auto;
-    }
-    .staking_container_header {
-      font-family: 'SpoqaHanSansNeo-Bold';
-      font-size: 1.25rem;
-      margin-bottom: 21px;
-      text-align: center;
-    }
-    .staking_header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .staking_select_mainnet {
-      font-family: 'Montserrat-Medium';
-      display: flex;
-      border-top: 2px solid #f0f0f1;
-      border-left: 2px solid #f0f0f1;
-      border-right: 2px solid #f0f0f1;
-      width: 180px;
-      background-color: #ffffff;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      font-size: 1rem;
-
-      div {
-        width: 50%;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        font-weight: bold;
-      }
-      div:first-child {
-        border-right: 1px solid #f0f0f1;
-      }
-      div:last-child {
-        color: #888888;
-      }
-    }
-    .staking_content {
-      border: 2px solid #f0f0f1;
-      display: flex;
-      flex-wrap: wrap;
-      background-color: #ffffff;
-      border-radius: 0px 10px 10px 10px;
-      padding: 8px 0px;
-
-      .staking_content_box:nth-child(1) {
-        border-top: 1px solid #f0f0f1;
-      }
-      .staking_content_box:nth-child(2) {
-        border-top: 1px solid #f0f0f1;
-        border-bottom: 1px solid #f0f0f1;
-      }
-
-      .staking_content_box {
-        width: 100%;
-        padding: 14px;
-      }
-      .staking_content_box_amount {
-        text-align: right;
-        margin-top: 36px;
-
-        span:first-child {
-          font-family: 'SpoqaHanSansNeo-Bold';
-          font-size: 1.875rem;
-          color: #333333;
-          span {
-            color: #333333;
+          > h2 {
+            color: #00bfff;
+            margin: 0;
+            font-size: 1.3rem;
+            line-height: 30px;
           }
-        }
-        span:last-child {
-          font-family: 'SpoqaHanSansNeo-Bold';
-          font-size: 1.875rem;
-          color: #6e6e6e;
-        }
-      }
-      .staking_content_header {
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        > div:first-child {
-          font-family: 'SpoqaHanSansNeo-Bold';
-          font-size: 1.0625rem;
-        }
-
-        > div:last-child {
-          font-family: 'SpoqaHanSansNeo';
-          cursor: pointer;
-          box-shadow: 0px 1px 6px #00000029;
-          border-radius: 15px;
-          width: 145px;
-          height: 30px;
-          font-size: 1rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .staking_active {
-          @include hover__box-shadow;
           > p {
-            cursor: pointer;
+            margin: 20px 0 0;
+            font-size: 1.375rem;
+            line-height: 30px;
           }
         }
-
-        .staking_deactive {
+      }
+      &_right {
+        display: flex;
+        flex-direction: row;
+        > div {
+          margin-left: 27px;
+          padding-left: 55px;
+          border-left: 1px solid #33a5ff;
           > p {
-            cursor: pointer;
+            margin: 0;
+            font-size: 1.375rem;
+            line-height: 40px;
           }
         }
       }
-
-      .staking_comming_soon {
-        font-family: 'SpoqaHanSansNeo-Bold';
-        font-size: 1.875rem;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 153.5px;
-      }
-      .staking_network {
-        font-family: 'SpoqaHanSansNeo-Bold';
-        font-size: 1.2rem;
-        line-height: 1.8rem;
-        width: 70%;
-        text-align: center;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 153.5px;
-      }
     }
   }
+  $first-circle-height: 60px;
 
-  .governance_bottom {
-    margin-top: 166px;
-    margin-bottom: 222px;
-    width: 100%;
-
-    .governance_bottom_container {
-      // width: 1136px;
-      margin: 0px auto;
-      > div:first-child {
-        text-align: center;
-      }
+  .governance_left_line {
+    &_container {
+      margin-top: calc(70px + (#{$first-circle-height} / 2));
+      border-left: 1px solid $elysia-color;
     }
-    .governance_bottom_first {
-      font-family: 'Montserrat-bold';
-      font-size: 1.25rem;
-      color: #3679b5;
-      margin-bottom: 10.5px;
-    }
-    .governance_bottom_second {
-      font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
-      font-size: 1.875rem;
-      color: #333333;
-      padding: 0px 10px;
-      margin: 0px 0px 25px 0px;
-    }
-    .governance_bottom_third {
-      font-family: 'Montserrat';
-      font-size: 1.0625rem;
-      color: #333333;
-      line-height: 1.6rem;
-      margin-bottom: 25px;
-      padding: 0px 10px;
-    }
-    .governance_bottom_button_wrapper {
-      display: flex;
-      padding: 0px 10px;
-      > div {
-        font-family: 'Montserrat-Medium';
-        cursor: pointer;
-        width: 168px;
-        height: 40px;
-        font-size: 0.925rem;
-        color: #ffffff;
-        background-color: #3679b5;
-        border-radius: 5px;
+    $circle-diameter: 33px;
+    &_counter {
+      &_container {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 1px 3px 8px #00000052;
+        flex-direction: row;
+        padding-top: 220px;
       }
-      > div:not(div:last-child) {
-        margin-right: 25.37px;
+      &_wrapper {
+        width: $circle-diameter;
+        height: $circle-diameter;
+        border-bottom: 1px solid $elysia-color;
+        position: relative;
       }
-    }
-
-    .governance_bottom_content {
-      margin-top: 53px;
-    }
-    .governance_bottom_content_header {
-      font-family: 'SpoqaHanSansNeo-Bold';
-      font-size: 1.25rem;
-      color: #333333;
-      margin-bottom: 15px;
+      color: #fff;
+      background-color: $elysia-color;
+      width: $circle-diameter;
+      height: $circle-diameter;
       text-align: center;
+      line-height: $circle-diameter;
+      border-radius: 100%;
+      position: absolute;
+      top: calc(#{$circle-diameter} / 2);
+      left: $circle-diameter;
+      font-family: Gilroy-ExtraBold;
+      font-size: 22px;
     }
-    .governance_bottom_content_box {
-      width: 100%;
-      margin: auto;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-    .governance_bottom_content_list {
-      width: 47%;
-      height: 405px;
-      border: 2px solid #f0f0f1;
-      border-radius: 10px;
-      background-color: #ffffff;
-      // height: auto;
-      padding: 27px 10px 48px 10px;
-
-      > div:nth-child(1) {
-        // width: 65px;
-        // height: 65px;
-        margin-bottom: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        > div:last-child {
-          text-align: center;
-          font-family: 'Montserrat-Medium';
-          font-size: 1rem;
-          width: 130px;
-          height: 27px;
-          background: #b7b7b7;
-          border-radius: 19px;
-          margin: 8px 0px 0px 0px;
-          color: #ffffff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
-      div:nth-child(2) {
-        font-family: 'Montserrat-bold', 'SpoqaHanSansNeo-Bold';
-        font-size: 1.0625rem;
-        color: #333333;
-        margin-bottom: 13px;
-      }
-      div:nth-child(3) {
-        font-family: 'Montserrat';
-        font-size: 0.9375rem;
-        color: #333333;
-      }
+    &_content {
+      margin-left: calc(#{$circle-diameter} + 30px);
+      color: #fff;
+      flex: 1;
     }
   }
-  .arrow {
-    display: none;
+  .governance_button {
+    width: 250px;
+    height: 46px;
+    background-color: #000000;
+    box-shadow: 0px 0px 6px #00000029;
+    border-radius: 23px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    font-size: 1.375rem;
+    font-family: Gilroy-Light;
     align-items: center;
-    justify-content: center;
-    width: 19px;
-    height: 19px;
-    border: 1.5px solid #ffffff;
-    border-radius: 19px;
-    transform: rotate(0.87turn);
-    margin-left: 7px;
-    svg {
-      fill: #ffffff;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 35px;
+    }
+  }
+
+  .center {
+    &_circle {
+      border-radius: 30px;
+      width: 276px;
+      height: 60px;
+      border: 1px solid $elysia-color;
+      position: relative;
+      bottom: calc(#{$first-circle-height / 2});
+      left: -1px;
+      > h2 {
+        font-size: 28px;
+        color: $elysia-color;
+        text-align: center;
+        line-height: 60px;
+        margin: 0;
+        font-family: Gilroy-ExtraBold;
+        letter-spacing: 2px;
+      }
+    }
+    &_section {
+      &_01 {
+        &_header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          > .el_token {
+            // flex: 1;
+            width: 302px;
+            height: 302px;
+          }
+          > div {
+            flex: 1;
+            margin-left: 40px;
+            > h2 {
+              font-family: Gilroy-ExtraBold;
+              font-size: 2.2rem;
+              margin: 0 0 25px;
+            }
+            > p {
+              font-size: 1.375rem;
+              font-family: Gilroy-Light;
+              line-height: 30px;
+              margin-bottom: 30px;
+            }
+            > div {
+              display: flex;
+            }
+          }
+        }
+        &_body {
+          &_box {
+            height: 170px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0px 0px 6px #00000029;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            padding: 30px;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            margin-top: 56px;
+            align-items: center;
+            > div {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              &:not(:last-child) {
+                border-right: 1px solid $elysia-color;
+                height: 100%;
+              }
+              > p {
+                font-size: 1.275rem;
+                margin: 0;
+                font-family: $light;
+              }
+              > h2 {
+                font-size: 1.625rem;
+                margin: 15px 0 0;
+                font-family: $bold;
+              }
+            }
+          }
+          > p {
+            margin: 10px 30px 0;
+            font-size: 0.975rem;
+            font-family: $light;
+          }
+        }
+      }
+      &_02 {
+        &_header {
+          display: flex;
+          height: 100%;
+          > div {
+            &:not(:first-child) {
+              flex: 1;
+              margin-left: 54px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              > h2 {
+                font-family: Gilroy-ExtraBold;
+                font-size: 2.2rem;
+                margin: 0 0 25px;
+              }
+              > p {
+                font-size: 1.375rem;
+                font-family: Gilroy-Light;
+                line-height: 30px;
+                margin-bottom: 30px;
+              }
+            }
+          }
+        }
+        &_image {
+          &_container {
+            height: 364px;
+            position: relative;
+            .amount {
+              position: absolute;
+              width: 273px;
+              height: 273px;
+              top: 0;
+              align-items: center;
+              justify-content: center;
+              display: flex;
+              flex-direction: column;
+              > p {
+                font-size: 20px;
+                margin: 0;
+                font-family: $light;
+              }
+              > h2 {
+                font-size: 28px;
+                margin: 10px 0 0;
+                font-family: $bold;
+              }
+            }
+            .apr {
+              bottom: 0px;
+              left: 200px;
+              align-items: center;
+              justify-content: center;
+              display: flex;
+              flex-direction: column;
+              width: 225px;
+              height: 225px;
+              position: absolute;
+              > p {
+                font-size: 20px;
+                margin: 0;
+                font-family: $light;
+              }
+              > h2 {
+                font-size: 28px;
+                margin: 10px 0 0;
+                font-family: $bold;
+              }
+            }
+            > span {
+              position: absolute;
+              width: 427px;
+              height: 364px;
+            }
+          }
+        }
+        &_body {
+          margin-top: 60px;
+          .staking_prev {
+            text-align: right;
+            font-family: $light;
+            font-size: 1.375rem;
+            font-family: Gilroy-Light;
+            color: $elysia-color;
+          }
+          .staking {
+            &_container {
+              height: 170px;
+              background-color: rgba(255, 255, 255, 0.1);
+              border-radius: 20px;
+              box-shadow: 0px 0px 6px #00000029;
+              backdrop-filter: blur(18px);
+              -webkit-backdrop-filter: blur(18px);
+              padding: 15px 25px;
+              display: flex;
+              flex-direction: row;
+              text-align: center;
+              margin-top: 18px;
+              align-items: center;
+            }
+            &_select_mainnet {
+              display: flex;
+              width: 135px;
+              height: 100%;
+              border-radius: 20px;
+              background-color: #232431;
+              position: relative;
+              &_current {
+                width: 63px;
+                height: 132px;
+                border-radius: 20px;
+                top: 4px;
+                background-color: #343545;
+                position: absolute;
+                transition: all 0.3s ease;
+                z-index: 1;
+              }
+              > div {
+                z-index: 2;
+                flex: 1;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                > p {
+                  margin: 14px 0 0;
+                }
+              }
+            }
+            &_content {
+              display: flex;
+              flex-direction: column;
+              flex: 1;
+              height: 140px;
+              &_box {
+                display: flex;
+                justify-content: space-between;
+                margin-left: 25px;
+                flex: 1;
+                align-items: center;
+                &:not(:last-child) {
+                  border-bottom: 1px solid #505050;
+                }
+              }
+              &_header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex: 1;
+                margin-right: 62px;
+                > p {
+                  font-family: Gilroy-Light;
+                  font-size: 1.8rem;
+                  margin: 0;
+                }
+                > div {
+                  display: flex;
+                  align-items: center;
+                  > h2 {
+                    font-family: Gilroy-ExtraBold;
+                    font-size: 2.2rem;
+                    margin: 0;
+                  }
+                  > span {
+                    color: #838383;
+                    font-size: 2.2rem;
+                    font-family: Gilroy-ExtraBold;
+                    margin: 0 5px 0;
+                  }
+                }
+              }
+              .staking_active,
+              .staking_deactive {
+                width: 249px;
+                height: 46px;
+                background: #000000;
+                box-shadow: 0px 0px 6px #00000029;
+                border-radius: 23px;
+                > p {
+                  margin: 0;
+                  font-size: 1.6rem;
+                  line-height: 46px;
+                  font-family: Gilroy-ExtraBold;
+                }
+              }
+            }
+          }
+          .staking_network,
+          .staking_comming_soon {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            line-height: 46px;
+            font-family: Gilroy-ExtraBold;
+          }
+        }
+      }
+    }
+  }
+  .governance_bottom {
+    color: #fff;
+    &_header {
+      padding-top: 220px;
+      display: flex;
+      border-left: 1px solid $elysia-color;
+      > h2 {
+        font-family: Gilroy-ExtraBold;
+        font-size: 28px;
+        position: absolute;
+        margin: 16px 0px 0 80px;
+        white-space: nowrap;
+      }
+      margin-bottom: 50px;
+    }
+    &_container {
+      margin-left: 80px;
+      > p {
+        margin: 20px 0 25px;
+        font-size: 1.4rem;
+      }
+      > div {
+        display: flex;
+        margin-bottom: 66px;
+      }
+    }
+    &_content_box {
+      &_wrapper {
+        display: flex;
+      }
+      flex: 1;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0px 0px 6px #00000029;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 30px;
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+      &_header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        > div {
+          width: 249px;
+          height: 46px;
+          background: #505050;
+          border-radius: 23px;
+          color: #ffffff;
+          > p {
+            font-size: 1.25rem;
+            margin: 0;
+            text-align: center;
+            line-height: 46px;
+            font-family: $light;
+          }
+        }
+      }
+      &_title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 10px 0 25px;
+        > h2 {
+          font-family: Gilroy-ExtraBold;
+          font-size: 1.5rem;
+          margin: 0;
+          margin-right: 8px;
+        }
+      }
     }
   }
 }

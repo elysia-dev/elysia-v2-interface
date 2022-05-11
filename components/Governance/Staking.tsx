@@ -22,6 +22,14 @@ import useV2StakedInfo from 'hooks/useV2StakedInfo';
 import Arrow from './Arrow';
 import getLocalLanguage from 'utils/getLocalLanguage';
 import { isChainId } from 'utils/isChainId';
+import GovernanceLineCounter from './GovernanceLineCounter';
+import RoundWrapper from 'assets/images/governance/round-wrapper.png';
+import Image from 'next/image';
+import ButtonArrow from 'assets/images/governance/button-arrow.png';
+import EthOn from 'assets/images/governance/eth-on.png';
+import EthOff from 'assets/images/governance/eth-off.png';
+import BscOn from 'assets/images/governance/bsc-on.png';
+import BscOff from 'assets/images/governance/bsc-off.png';
 
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
@@ -98,103 +106,70 @@ const Staking = (props: Props) => {
     setModalVisible,
   ]);
   return (
-    <div className={styles.governance_staking}>
-      <div className={styles.governance_staking_wrapper}>
-        <div className={styles.governance_staking_wrapper_content}>
-          <div className={styles.governance_staking_content_description_first}>
-            02
-          </div>
-          <p className={styles.governance_staking_content_description_second}>
-            {t('governance.section_third.0')}
-          </p>
-          <p className={styles.governance_staking_content_description_third}>
-            <Trans>{t('governance.section_third.1')}</Trans>
-          </p>
-          <p className={styles.governance_staking_content_description_third}>
-            <Trans> {t('governance.section_third.2')}</Trans>
-          </p>
-          <div
-            className={styles.governance_staking_content_button}
-            style={{
-              fontSize:
-                i18n.language === LanguageType.EN ? '0.9rem' : undefined,
-            }}>
-            <a
-              href={
-                i18n.language === LanguageType.KO
-                  ? 'https://elysia.gitbook.io/elysia-user-guide/v/korean-3/el-staking'
-                  : 'https://elysia.gitbook.io/elysia-user-guide/'
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-              {t('governance.section_third.3')}
-              <Arrow />
-            </a>
-          </div>
-        </div>
-        <div className={styles.governance_staking_info}>
-          <div className={styles.governance_staking_total}>
-            <div>
-              {currentChain === ChainType.Ethereum ? (
-                isLoading ? (
-                  <Skeleton width={130} height={35} />
-                ) : (
-                  toCompactForBignumber(totalBalance)
-                )
-              ) : (
-                '-'
-              )}
-            </div>
-            <div className={styles.governance_staking_total_name}>
-              {t('governance.section_third.4')}
-            </div>
-          </div>
-          <div className={styles.governance_staking_apr}>
-            <div>
-              {currentChain === ChainType.Ethereum ? (
-                isLoading ? (
-                  <Skeleton width={130} height={35} />
-                ) : (
-                  apr
-                )
-              ) : (
-                '-'
-              )}
-            </div>
-            <div className={styles.governance_staking_total_name}>APR</div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.staking_wrapper}>
-        <div className={styles.staking_container}>
-          <div className={styles.staking_container_header}>
-            {t('governance.section_third.5')}
-          </div>
-          <div className={styles.staking_header}>
-            <div className={styles.staking_select_mainnet}>
-              <div
-                onClick={() => setCurrentChain(ChainType.Ethereum)}
-                style={{
-                  color:
-                    currentChain === ChainType.Ethereum ? '#333333' : '#888888',
-                }}>
-                Ethereum
+    <section>
+      <GovernanceLineCounter counter={2}>
+        <div className={styles.center_section_02}>
+          <section className={styles.center_section_02_header}>
+            <div className={styles.center_section_02_image_container}>
+              <Image
+                src={RoundWrapper}
+                alt="Token-data"
+                className={styles.center_section_02_image}
+              />
+              <div className={styles.amount}>
+                <p>{t('governance.section_third.4')}</p>
+                <h2>
+                  {' '}
+                  {currentChain === ChainType.Ethereum ? (
+                    isLoading ? (
+                      <Skeleton width={130} height={35} />
+                    ) : (
+                      toCompactForBignumber(totalBalance)
+                    )
+                  ) : (
+                    '-'
+                  )}
+                </h2>
               </div>
-              <div
-                onClick={() => setCurrentChain(ChainType.BSC)}
-                style={{
-                  color: currentChain === ChainType.BSC ? '#333333' : '#888888',
-                }}>
-                BSC
+              <div className={styles.apr}>
+                <p>APR</p>
+                <h2>
+                  {currentChain === ChainType.Ethereum ? (
+                    isLoading ? (
+                      <Skeleton width={130} height={35} />
+                    ) : (
+                      apr
+                    )
+                  ) : (
+                    '-'
+                  )}
+                </h2>
               </div>
             </div>
+            <div>
+              <h2>Get sEL tokens by staking EL tokens</h2>
+              <p>
+                의사결정 과정에 참여하기 위해서는 투표권(staked EL, sEL)이
+                있어야 합니다. EL 스테이킹 앱에 EL 토큰을 스테이킹함으로써
+                투표권을 얻을 수 있으며, 보유한 수량만큼 투표권을 행사할 수
+                있습니다.
+                <br />
+                <br />
+                스테이킹 기간은 ELYSIA 2.0 오픈 전까지이며, 언제든지
+                언스테이킹이 가능합니다.
+              </p>
+              <div className={styles.governance_button}>
+                스테이킹 가이드
+                <Image
+                  src={ButtonArrow}
+                  alt={'Button Arrow'}
+                  width={18}
+                  height={12}
+                />
+              </div>
+            </div>
+          </section>
+          <section className={styles.center_section_02_body}>
             <div
               className={styles.staking_prev}
               onClick={() =>
@@ -202,63 +177,97 @@ const Staking = (props: Props) => {
               }>
               {t('governance.section_third.6')} &gt;
             </div>
-          </div>
-          <div className={styles.staking_content}>
-            {currentChain === ChainType.Ethereum ? (
-              !chainId || (chainId && [1, 1337].includes(chainId)) ? (
-                stakingInfo.map((info, idx) => (
-                  <div
-                    key={`info_${idx}`}
-                    className={styles.staking_content_box}>
-                    <div className={styles.staking_content_header}>
-                      <div>{info.name}</div>
-                      <div
-                        className={
-                          moment().diff(startDate) >= 0
-                            ? styles.staking_active
-                            : styles.staking_deactive
-                        }
-                        onClick={() => {
-                          if (moment().diff(startDate) < 0) return;
-                          info.onClick();
-                        }}
-                        style={{
-                          backgroundColor:
+            <div className={styles.staking_container}>
+              <div className={styles.staking_select_mainnet}>
+                <section
+                  className={styles.staking_select_mainnet_current}
+                  style={{
+                    left: currentChain === ChainType.Ethereum ? 4 : 67,
+                  }}
+                />
+                <div
+                  onClick={() => setCurrentChain(ChainType.Ethereum)}
+                  style={{
+                    color:
+                      currentChain === ChainType.Ethereum
+                        ? '#FFFFFF'
+                        : '#888888',
+                  }}>
+                  <Image
+                    src={currentChain === ChainType.Ethereum ? EthOn : EthOff}
+                  />
+                  <p>ETH</p>
+                </div>
+                <div
+                  onClick={() => setCurrentChain(ChainType.BSC)}
+                  style={{
+                    color:
+                      currentChain === ChainType.BSC ? '#FFFFFF' : '#888888',
+                  }}>
+                  <Image
+                    src={currentChain === ChainType.BSC ? BscOn : BscOff}
+                  />
+                  <p>BSC</p>
+                </div>
+              </div>
+              <div className={styles.staking_content}>
+                {currentChain === ChainType.Ethereum ? (
+                  !chainId || (chainId && [1, 1337].includes(chainId)) ? (
+                    stakingInfo.map((info, idx) => (
+                      <section
+                        key={`info_${idx}`}
+                        className={styles.staking_content_box}>
+                        <div className={styles.staking_content_header}>
+                          <p>{info.name}</p>
+                          <div>
+                            <h2>{info.value}</h2>
+                            <span>EL</span>
+                          </div>
+                        </div>
+                        <div
+                          className={
                             moment().diff(startDate) >= 0
-                              ? undefined
-                              : 'rgb(240, 240, 241)',
-                        }}>
-                        <p
+                              ? styles.staking_active
+                              : styles.staking_deactive
+                          }
+                          onClick={() => {
+                            if (moment().diff(startDate) < 0) return;
+                            info.onClick();
+                          }}
                           style={{
-                            color:
+                            backgroundColor:
                               moment().diff(startDate) >= 0
                                 ? undefined
-                                : '#888888',
+                                : 'rgb(240, 240, 241)',
                           }}>
-                          {info.btnType}
-                        </p>
-                      </div>
+                          <p
+                            style={{
+                              color:
+                                moment().diff(startDate) >= 0
+                                  ? undefined
+                                  : '#888888',
+                            }}>
+                            {info.btnType}
+                          </p>
+                        </div>
+                      </section>
+                    ))
+                  ) : (
+                    <div className={styles.staking_network}>
+                      {t('governance.section_third.11')}
                     </div>
-                    <div>
-                      <div className={styles.staking_content_box_amount}>
-                        <span>{info.value}</span>
-                        <span>EL</span>
-                      </div>
-                    </div>
+                  )
+                ) : (
+                  <div className={styles.staking_comming_soon}>
+                    Coming soon!
                   </div>
-                ))
-              ) : (
-                <div className={styles.staking_network}>
-                  {t('governance.section_third.11')}
-                </div>
-              )
-            ) : (
-              <div className={styles.staking_comming_soon}>Coming soon!</div>
-            )}
-          </div>
+                )}
+              </div>
+            </div>
+          </section>
         </div>
-      </div>
-    </div>
+      </GovernanceLineCounter>
+    </section>
   );
 };
 
