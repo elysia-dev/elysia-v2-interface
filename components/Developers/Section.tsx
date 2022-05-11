@@ -27,12 +27,12 @@ const Section = () => {
 
   return (
     <>
-      <NoiseSvg theme={browserHeight}>
+      <NoiseSvg>
         <filter id="noise">
           <feTurbulence type="fractalNoise" baseFrequency="5.6" />
         </filter>
       </NoiseSvg>
-      <SectionWrapper>
+      <SectionWrapper theme={browserHeight}>
         <div>
           <div>
             <div>{t('developers.0')}</div>
