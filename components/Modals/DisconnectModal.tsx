@@ -87,7 +87,7 @@ const DisconnectModal = (props: Props) => {
                     rx="2"
                     transform="translate(6 6)"
                     fill="none"
-                    stroke="#6e6e6e"
+                    stroke="#fff"
                   />
                   <path
                     id="패스_2091"
@@ -95,12 +95,60 @@ const DisconnectModal = (props: Props) => {
                     d="M13,7V5.5A1.5,1.5,0,0,0,11.5,4h-6A1.5,1.5,0,0,0,4,5.5v6A1.5,1.5,0,0,0,5.5,13H7"
                     transform="translate(-1 -1)"
                     fill="none"
-                    stroke="#6e6e6e"
+                    stroke="#fff"
                   />
                 </svg>
                 {t('modal.user_info.2')}
               </div>
               <div>
+                <svg
+                  id="그룹_2391"
+                  data-name="그룹 2391"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18.235"
+                  height="18.235"
+                  viewBox="0 0 18.235 18.235">
+                  <path
+                    id="패스_2086"
+                    data-name="패스 2086"
+                    d="M0,0H18.235V18.235H0Z"
+                    fill="none"
+                  />
+                  <circle
+                    id="타원_499"
+                    data-name="타원 499"
+                    cx="7.048"
+                    cy="7.048"
+                    r="7.048"
+                    transform="translate(2.014 2.126)"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1"
+                  />
+                  <path
+                    id="패스_2088"
+                    data-name="패스 2088"
+                    d="M4.033,0-.841,5.127"
+                    transform="translate(7.36 6.717)"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-width="1"
+                  />
+                  <path
+                    id="패스_2087"
+                    data-name="패스 2087"
+                    d="M13.559,13.559V9H9"
+                    transform="translate(-1.844 -2.605)"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1"
+                  />
+                </svg>
                 <a
                   href={`${envs.externalApiEndpoint.etherscanURI}/address/${account}`}
                   rel="noopener noreferrer"

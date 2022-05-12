@@ -71,24 +71,26 @@ const SelectWalletModal = (props: Props) => {
             <CloseButton onClose={() => onClose()} />
           </div>
           <div className="wallet_select_modal__content__line" />
-          {wallets.map((wallet, idx) => {
-            return (
-              <div
-                className={`wallet_select_modal__content__wallet_btn ${wallet.name}`}
-                key={idx}
-                onClick={() => {
-                  connectWallet(wallet.name);
-                }}>
-                <Image
-                  src={wallet.image}
-                  alt={wallet.name}
-                  width={28}
-                  height={27}
-                />
-                <div>{wallet.name}</div>
-              </div>
-            );
-          })}
+          <section className="wallet_select_modal__content__container">
+            {wallets.map((wallet, idx) => {
+              return (
+                <div
+                  className={`wallet_select_modal__content__wallet_btn ${wallet.name}`}
+                  key={idx}
+                  onClick={() => {
+                    connectWallet(wallet.name);
+                  }}>
+                  <Image
+                    src={wallet.image}
+                    alt={wallet.name}
+                    width={28}
+                    height={27}
+                  />
+                  <div>{wallet.name}</div>
+                </div>
+              );
+            })}
+          </section>
         </div>
       </div>
     </>

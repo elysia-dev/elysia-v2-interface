@@ -69,20 +69,28 @@ const StakingModal = (props: Props) => {
             <CloseButton onClose={() => onClose()} />
           </div>
           <div className={styles.staking_type}>
-            <div
-              onClick={() => setStakingType(t('modal.staking.0'))}
-              style={{
-                borderBottom: isStakingMode() ? '3px solid #3679b5' : 'none',
-              }}>
-              {t('modal.staking.0')}
-            </div>
-            <div
-              onClick={() => setStakingType(t('modal.unstaking.0'))}
-              style={{
-                borderBottom: isStakingMode() ? 'none' : '3px solid #3679b5',
-              }}>
-              {t('modal.unstaking.0')}
-            </div>
+            <section className={styles.staking_type_wrapper}>
+              <section
+                className={styles.staking_type_slide}
+                style={{
+                  left: isStakingMode() ? 4 : 244,
+                }}
+              />
+              <div
+                onClick={() => setStakingType(t('modal.staking.0'))}
+                style={{
+                  fontWeight: isStakingMode() ? 800 : 400,
+                }}>
+                {t('modal.staking.0')}
+              </div>
+              <div
+                onClick={() => setStakingType(t('modal.unstaking.0'))}
+                style={{
+                  fontWeight: isStakingMode() ? 400 : 800,
+                }}>
+                {t('modal.unstaking.0')}
+              </div>
+            </section>
           </div>
           {loading || transactionWait ? (
             <LoadingIndicator

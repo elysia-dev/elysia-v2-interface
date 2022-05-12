@@ -121,42 +121,55 @@
 }
 
 .wallet_select_modal {
-  background-color: #ffffff;
+  background-color: #3e3e3e;
   border-radius: 10px;
+  border: 1px solid #707070;
   &__content {
-    width: 500px;
+    width: 514px;
 
     &__header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 24.5px 23px 22.5px 25px;
+      padding: 25px;
       div:first-child {
-        font-size: 1.0625rem;
-        font-family: 'Montserrat-bold';
+        margin: 0;
+        font-size: 1.2rem;
+        color: #fff;
+        font-family: Montserrat-bold;
+        letter-spacing: 1.2px;
       }
     }
 
     &__line {
       width: 100%;
       height: 1;
-      border-top: 1px solid #f0f0f1;
+      border-top: 1px solid #505050;
     }
 
     &__wallet_btn {
       cursor: pointer;
-      margin: 25px auto 23px auto;
-      width: 467px;
+      width: 100%;
       height: 55px;
-      border-radius: 5px;
-      padding: 15px 0px 13px 36.5px;
+      border-radius: 55px;
+      box-sizing: border-box;
+      padding: 30px;
       display: flex;
       align-items: center;
       // justify-content: center;
-      border: 1px solid #e6e6e6;
+      background-color: #000;
 
       div:last-child {
         padding-left: 10px;
+        color: #fff;
+        font-family: Montserrat;
+        line-height: 55px;
+      }
+    }
+    &__container {
+      padding: 25px;
+      > div:first-child {
+        margin-bottom: 25px;
       }
     }
   }
@@ -1039,7 +1052,6 @@ button.button__contact {
     border-radius: 10px;
     &__content {
       width: 310px;
-
       &__header {
         display: flex;
         align-items: center;
