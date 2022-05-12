@@ -85,14 +85,14 @@ a {
   box-sizing: border-box;
 }
 
-@media screen and (min-width: 0px) and (max-width: 768px) {
+@media screen and (min-width: 0px) and (max-width: 839px) {
   html {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1299px) {
+@media screen and (min-width: 839px) and (max-width: 1189px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
