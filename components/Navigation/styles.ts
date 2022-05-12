@@ -26,7 +26,7 @@ export const NavigationWrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 2;
-  padding: 0px 40px;
+  padding: 0px 3vw;
 
   animation: ${(props) =>
     !(typeof props.theme === 'object') &&
@@ -43,6 +43,14 @@ export const NavigationWrapper = styled.div`
         }
       : ''}
 
+  ${(props) =>
+    props.theme === 'overflow' && {
+      height: '100% !important',
+      background: 'rgba(125,125,125,0.5)  !important',
+      backdropFilter: 'blur(18px)  !important',
+      animation: 'none !important',
+    }}
+
   > div {
     height: 107px;
     margin: auto;
@@ -50,6 +58,10 @@ export const NavigationWrapper = styled.div`
     justify-content: center;
     align-items: center;
 
+    > div:first-child {
+      margin-right: auto;
+      cursor: pointer;
+    }
     > div:nth-child(2) {
       > a > span {
         font-family: 'Gilroy-Light';
@@ -57,15 +69,22 @@ export const NavigationWrapper = styled.div`
         color: #ffffff;
       }
       > a {
-        margin-right: 57px;
+        margin-right: 2rem;
+        @media (max-width: 1189px) {
+          width: 100%;
+          > span {
+            font-size: 1rem;
+          }
+        }
+        @media (max-width: 1024px) {
+          > span {
+            font-size: 0.8rem;
+          }
+        }
       }
       > a:last-child {
-        margin-right: 48px;
+        margin-right: 0;
       }
-    }
-    > div:first-child {
-      margin-right: auto;
-      cursor: pointer;
     }
   }
 `;

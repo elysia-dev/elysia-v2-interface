@@ -77,6 +77,86 @@
   }
 }
 
+.navigation__hamburger {
+  &__button {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    i {
+      border-radius: 2px;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+    }
+    i:nth-child(1) {
+      -webkit-animation: outT 0.8s backwards;
+      animation: outT 0.8s backwards;
+      -webkit-animation-direction: reverse;
+      animation-direction: reverse;
+    }
+    i:nth-child(2) {
+      margin: 5px 0;
+      -webkit-animation: outM 0.8s backwards;
+      animation: outM 0.8s backwards;
+      -webkit-animation-direction: reverse;
+      animation-direction: reverse;
+    }
+    i:nth-child(3) {
+      -webkit-animation: outBtm 0.8s backwards;
+      animation: outBtm 0.8s backwards;
+      -webkit-animation-direction: reverse;
+      animation-direction: reverse;
+    }
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    > section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding-top: 50px;
+      border-top: 1px solid #ffffff66;
+      > a {
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.5rem;
+        margin: 10px 0;
+        color: #fff;
+      }
+      margin-bottom: 100px;
+    }
+    > div {
+      width: 100%;
+      height: 50px;
+      > div {
+        font-size: 20px;
+        letter-spacing: 0.8px;
+        color: #fff;
+      }
+    }
+  }
+}
+.active {
+  i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+  }
+  i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+  }
+  i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .navigation {
     a,
@@ -141,5 +221,133 @@
       color: wheat;
       background-color: #d84d4d;
     }
+  }
+}
+
+/* hamburger bar */
+
+@-webkit-keyframes inM {
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+  }
+}
+@keyframes inM {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes outM {
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+  }
+}
+@keyframes outM {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes inT {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateY(5px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(5px) rotate(135deg);
+  }
+}
+@keyframes inT {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(7px) rotate(135deg);
+  }
+}
+
+@-webkit-keyframes outT {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateY(5px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(5px) rotate(135deg);
+  }
+}
+@keyframes outT {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(7px) rotate(135deg);
+  }
+}
+
+@-webkit-keyframes inBtm {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-7px) rotate(135deg);
+  }
+}
+@keyframes inBtm {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-7px) rotate(135deg);
+  }
+}
+
+@-webkit-keyframes outBtm {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateY(-7px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(-7px) rotate(135deg);
+  }
+}
+@keyframes outBtm {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-7px) rotate(135deg);
   }
 }

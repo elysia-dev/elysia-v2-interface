@@ -18,6 +18,7 @@ import ErrorModal from 'components/Modals/ErrorModal';
 import TxStatus from 'enums/TxStatus';
 import { isChainId } from 'utils/isChainId';
 import { NavigationWrapper } from './styles';
+import MobileMenu from './MobileMenu';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -29,6 +30,7 @@ const Navigation = () => {
   const [isConnectWalletLoading, setIsConnectWalletLoading] = useState(true);
   const { isMobile } = useIsMobile();
   const [isScroll, setIsScroll] = useState(false);
+  const [isMobileMenu, setMobileMenu] = useState(false);
 
   useEffect(() => {
     if (isWalletConnector()) {
@@ -88,6 +90,11 @@ const Navigation = () => {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflowY =
+      isMobile && isMobileMenu ? 'hidden' : 'initial';
+  }, [isMobile, isMobileMenu]);
+
   return (
     <>
       {modalVisible && (
@@ -105,7 +112,8 @@ const Navigation = () => {
           'MetaMask Tx Signature: User denied transaction signature.' && (
           <ErrorModal error={error} />
         )}
-      <NavigationWrapper theme={isScroll}>
+      <NavigationWrapper
+        theme={isMobile && isMobileMenu ? 'overflow' : isScroll}>
         <div>
           <div>
             <Link href={`/${router.query.lng}`} passHref>
@@ -119,92 +127,115 @@ const Navigation = () => {
               </a>
             </Link>
           </div>
-          {!isMobile && (
+          {isMobile ? (
             <div>
-              <Link href={`/${router.query.lng}`} passHref>
-                <a>
-                  <span
-                    style={{
-                      cursor: 'pointer',
-                      fontWeight:
-                        router.pathname.length <= 6 ? 'bold' : 'normal',
-                    }}>
-                    EL Bridge
-                  </span>
-                </a>
-              </Link>
-              <Link href={`/${router.query.lng}/Governance`} passHref>
-                <a>
-                  <span
-                    style={{
-                      cursor: 'pointer',
-                      fontWeight: router.pathname.includes('Governance')
-                        ? 'bold'
-                        : 'normal',
-                    }}>
-                    Governance
-                  </span>
-                </a>
-              </Link>
-              <Link href={`/${router.query.lng}/Ecosystem`} passHref>
-                <a>
-                  <span
-                    style={{
-                      cursor: 'pointer',
-                      fontWeight: router.pathname.includes('Ecosystem')
-                        ? 'bold'
-                        : 'normal',
-                    }}>
-                    Ecosystem
-                  </span>
-                </a>
-              </Link>
-              <Link href={`/${router.query.lng}/Community`} passHref>
-                <a>
-                  <span
-                    style={{
-                      cursor: 'pointer',
-                      fontWeight: router.pathname.includes('Community')
-                        ? 'bold'
-                        : 'normal',
-                    }}>
-                    Community
-                  </span>
-                </a>
-              </Link>
-              <Link href={`/${router.query.lng}/Developers`} passHref>
-                <a>
-                  <span
-                    style={{
-                      cursor: 'pointer',
-                      fontWeight: router.pathname.includes('Developers')
-                        ? 'bold'
-                        : 'normal',
-                    }}>
-                    Developers
-                  </span>
-                </a>
-              </Link>
-              <Link href={`/${router.query.lng}/Documents`} passHref>
-                <a>
-                  <span
-                    style={{
-                      cursor: 'pointer',
-                      fontWeight: router.pathname.includes('Documents')
-                        ? 'bold'
-                        : 'normal',
-                    }}>
-                    Documents
-                  </span>
-                </a>
-              </Link>
+              <div
+                className={`${styles.navigation__hamburger__button} ${
+                  isMobileMenu && styles.active
+                }`}
+                onClick={() => {
+                  setMobileMenu(!isMobileMenu);
+                }}>
+                <i />
+                <i />
+                <i />
+              </div>
             </div>
+          ) : (
+            <>
+              <div>
+                <Link href={`/${router.query.lng}`} passHref>
+                  <a>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        fontWeight:
+                          router.pathname.length <= 6 ? 'bold' : 'normal',
+                      }}>
+                      EL Bridge
+                    </span>
+                  </a>
+                </Link>
+                <Link href={`/${router.query.lng}/Governance`} passHref>
+                  <a>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        fontWeight: router.pathname.includes('Governance')
+                          ? 'bold'
+                          : 'normal',
+                      }}>
+                      Governance
+                    </span>
+                  </a>
+                </Link>
+                <Link href={`/${router.query.lng}/Ecosystem`} passHref>
+                  <a>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        fontWeight: router.pathname.includes('Ecosystem')
+                          ? 'bold'
+                          : 'normal',
+                      }}>
+                      Ecosystem
+                    </span>
+                  </a>
+                </Link>
+                <Link href={`/${router.query.lng}/Community`} passHref>
+                  <a>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        fontWeight: router.pathname.includes('Community')
+                          ? 'bold'
+                          : 'normal',
+                      }}>
+                      Community
+                    </span>
+                  </a>
+                </Link>
+                <Link href={`/${router.query.lng}/Developers`} passHref>
+                  <a>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        fontWeight: router.pathname.includes('Developers')
+                          ? 'bold'
+                          : 'normal',
+                      }}>
+                      Developers
+                    </span>
+                  </a>
+                </Link>
+                <Link href={`/${router.query.lng}/Documents`} passHref>
+                  <a>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        fontWeight: router.pathname.includes('Documents')
+                          ? 'bold'
+                          : 'normal',
+                      }}>
+                      Documents
+                    </span>
+                  </a>
+                </Link>
+              </div>
+              <ConnectWalletButton
+                modalVisible={() => setModalVisible(true)}
+                isConnectWalletLoading={isConnectWalletLoading}
+              />
+            </>
           )}
-          <ConnectWalletButton
+        </div>
+        {isMobile && isMobileMenu && (
+          <MobileMenu
             modalVisible={() => setModalVisible(true)}
             isConnectWalletLoading={isConnectWalletLoading}
+            onButtonClick={() => setMobileMenu(false)}
           />
-        </div>
+        )}
       </NavigationWrapper>
     </>
   );
