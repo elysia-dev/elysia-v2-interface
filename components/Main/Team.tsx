@@ -1,17 +1,17 @@
 import { Trans, useTranslation } from 'react-i18next';
 import { MainTeamWrapper, NoiseSvg } from './styles';
-import member1 from 'assets/images/main/ELY_서동욱@2x.png';
-import member2 from 'assets/images/main/ELY_이재복@2x.png';
-import member3 from 'assets/images/main/ELY_이종현@2x.png';
-import member4 from 'assets/images/main/ELY_이현민@2x.png';
-import member5 from 'assets/images/main/ELY_임정건@2x.png';
-import member6 from 'assets/images/main/ELY_차원준@2x.png';
-import usa from 'assets/images/main/usa@2x.png';
-import ko from 'assets/images/main/ko@2x.png';
-import cn from 'assets/images/main/cn@2x.png';
-import yahoo from 'assets/images/main/Yahoo_Finance_2021@2x.png';
-import decenter from 'assets/images/main/decenter@2x.png';
-import xinhua from 'assets/images/main/xinhua-logo-feature_0@2x.png';
+import member1 from 'assets/images/main/ELY_서동욱@2x.webp';
+import member2 from 'assets/images/main/ELY_이재복@2x.webp';
+import member3 from 'assets/images/main/ELY_이종현@2x.webp';
+import member4 from 'assets/images/main/ELY_이현민@2x.webp';
+import member5 from 'assets/images/main/ELY_임정건@2x.webp';
+import member6 from 'assets/images/main/ELY_차원준@2x.webp';
+import usa from 'assets/images/main/usa@2x.webp';
+import ko from 'assets/images/main/ko@2x.webp';
+import cn from 'assets/images/main/cn@2x.webp';
+import yahoo from 'assets/images/main/Yahoo_Finance_2021@2x.webp';
+import decenter from 'assets/images/main/decenter@2x.webp';
+import xinhua from 'assets/images/main/xinhua-logo-feature_0@2x.webp';
 import Image from 'next/image';
 
 const Team = () => {
