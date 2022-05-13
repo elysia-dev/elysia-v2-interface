@@ -7,9 +7,10 @@ import { parseTokenId } from 'utils/parseTokenId';
 import PortFolio from './PortFolio';
 import Top from './Top';
 import { EcosystemWrapper } from './styles';
+import useResizeBrowser from 'hooks/useResizeBrowser';
 
 const Ecosystem = () => {
-  const [browserHeight, setBrowserHeight] = useState(0);
+  const { browserHeight, setResize } = useResizeBrowser();
   const { reserveState, getAssetBondsByNetwork } = useReserveData();
   const [pageNum, setPageNum] = useState(1);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -48,15 +49,8 @@ const Ecosystem = () => {
   }, [assetBonds]);
 
   useEffect(() => {
-    if (typeof document === undefined || typeof window === undefined) return;
-    if (window.innerHeight > document.body.clientHeight) {
-      console.log(document.body.clientHeight);
-      const sub = window.innerHeight - document.body.clientHeight;
-      setBrowserHeight(document.body.clientHeight + sub);
-      return;
-    }
-    setBrowserHeight(document.body.clientHeight);
-  }, [assetBondTokensBackedByEstate, pageNum]);
+    setResize(pageNum, assetBondTokensBackedByEstate);
+  }, [pageNum, assetBondTokensBackedByEstate, setResize]);
 
   useEffect(() => {
     drawCanvas();
