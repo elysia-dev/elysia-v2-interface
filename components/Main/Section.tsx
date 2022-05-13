@@ -1,10 +1,7 @@
 import { t } from 'i18next';
-import Link from 'next/link';
-import { Trans, useTranslation } from 'react-i18next';
-import RightArrow from 'assets/images/main/rightarrow@2x.png';
-import LeftArrow from 'assets/images/main/leftarrow@2x.png';
+import { useTranslation } from 'react-i18next';
 import { MainSectionWrapper, NoiseSvg } from './styles';
-import Image from 'next/image';
+import SectionItem from './SectionItem';
 
 const Section = () => {
   const { i18n } = useTranslation();
@@ -22,130 +19,60 @@ const Section = () => {
           </filter>
         </NoiseSvg>
         <MainSectionWrapper>
-          <div>
-            <div>
-              <div>
-                <span>
-                  <span> {t('main.section_el_bridge.0')}</span>
-                  <Image
-                    src={RightArrow}
-                    alt={'RightArrow'}
-                    width={35.08}
-                    height={35.08}
-                  />
-                </span>
-                <p>{t('main.section_el_bridge.1')}</p>
-              </div>
-              <p>
-                <Trans>{t('main.section_el_bridge.3')}</Trans>
-              </p>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div>
-                <Link href={`${i18n.language}/Governance`} passHref>
-                  <span>
-                    <Image
-                      src={LeftArrow}
-                      alt={'LeftArrow'}
-                      width={35.08}
-                      height={35.08}
-                    />
-                    <span> {t('main.section_governance.0')}</span>
-                  </span>
-                </Link>
-                <p>{t('main.section_governance.1')}</p>
-              </div>
-              <p>
-                <Trans>{t('main.section_governance.2')}</Trans>
-              </p>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div>
-                <Link href={`${i18n.language}/Ecosystem`} passHref>
-                  <span>
-                    <span> {t('main.section_ecosystem.0')}</span>
-                    <Image
-                      src={RightArrow}
-                      alt={'RightArrow'}
-                      width={35.08}
-                      height={35.08}
-                    />
-                  </span>
-                </Link>
-                <p>{t('main.section_ecosystem.1')}</p>
-              </div>
-              <p>
-                <Trans>{t('main.section_ecosystem.3')}</Trans>
-              </p>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div>
-                <Link href={`${i18n.language}/Community`} passHref>
-                  <span>
-                    <Image
-                      src={LeftArrow}
-                      alt={'LeftArrow'}
-                      width={35.08}
-                      height={35.08}
-                    />
-                    <span> {t('main.section_community.0')}</span>
-                  </span>
-                </Link>
-                <p>{t('main.section_community.1')}</p>
-              </div>
-              <p>
-                <Trans>{t('main.section_community.3')}</Trans>
-              </p>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div>
-                <Link href={`${i18n.language}/Developers`} passHref>
-                  <span>
-                    <span> {t('main.section_developers.0')}</span>
-                    <Image
-                      src={RightArrow}
-                      alt={'RightArrow'}
-                      width={35.08}
-                      height={35.08}
-                    />
-                  </span>
-                </Link>
-                <p>{t('main.section_developers.1')}</p>
-              </div>
-              <p>
-                <Trans>{t('main.section_developers.3')}</Trans>
-              </p>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div>
-                <Link href={`${i18n.language}/Documents`} passHref>
-                  <span>
-                    <Image
-                      src={LeftArrow}
-                      alt={'LeftArrow'}
-                      width={35.08}
-                      height={35.08}
-                    />
-                    <span> {t('main.section_documents.0')}</span>
-                  </span>
-                </Link>
-                <p>{t('main.section_documents.1')}</p>
-              </div>
-              <p>
-                <Trans>{t('main.section_documents.3')}</Trans>
-              </p>
-            </div>
-          </div>
+          <SectionItem
+            section={[
+              t('main.section_el_bridge.0'),
+              t('main.section_el_bridge.1'),
+              t('main.section_el_bridge.3'),
+            ]}
+            isLeftArrow={false}
+            link={''}
+          />
+          <SectionItem
+            section={[
+              t('main.section_governance.0'),
+              t('main.section_governance.1'),
+              t('main.section_governance.2'),
+            ]}
+            isLeftArrow={true}
+            link={`${i18n.language}/Governance`}
+          />
+          <SectionItem
+            section={[
+              t('main.section_ecosystem.0'),
+              t('main.section_ecosystem.1'),
+              t('main.section_ecosystem.3'),
+            ]}
+            isLeftArrow={false}
+            link={`${i18n.language}/Ecosystem`}
+          />
+          <SectionItem
+            section={[
+              t('main.section_community.0'),
+              t('main.section_community.1'),
+              t('main.section_community.3'),
+            ]}
+            isLeftArrow={true}
+            link={`${i18n.language}/Community`}
+          />
+          <SectionItem
+            section={[
+              t('main.section_developers.0'),
+              t('main.section_developers.1'),
+              t('main.section_developers.3'),
+            ]}
+            isLeftArrow={false}
+            link={`${i18n.language}/Developers`}
+          />
+          <SectionItem
+            section={[
+              t('main.section_documents.0'),
+              t('main.section_documents.1'),
+              t('main.section_documents.3'),
+            ]}
+            isLeftArrow={true}
+            link={`${i18n.language}/Documents`}
+          />
         </MainSectionWrapper>
       </div>
     </>
