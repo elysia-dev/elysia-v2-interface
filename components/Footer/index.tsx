@@ -1,10 +1,10 @@
 import ElysiaLogo from 'assets/images/Elysia_Logo_White@2x.png';
 import Image from 'next/image';
 import { FooterWrapper } from './styles';
-import Discord from 'assets/images/main/discord_white@2x.png';
-import Github from 'assets/images/main/github_white@2x.png';
-import Telegram from 'assets/images/main/telegram_white@2x.png';
-import Twitter from 'assets/images/main/twitter_white@2x.png';
+import Discord from 'assets/images/main/discord_white@2x.webp';
+import Github from 'assets/images/main/github_white@2x.webp';
+import Telegram from 'assets/images/main/telegram_white@2x.webp';
+import Twitter from 'assets/images/main/twitter_white@2x.webp';
 import Link from 'next/link';
 
 const Footer = () => {
