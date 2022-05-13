@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import communityImage from 'assets/images/main/community_image.png';
+import communityImage from 'assets/images/main/community_image.webp';
 
 export const center = {
   display: 'flex',
@@ -18,7 +18,6 @@ const glassBox = {
 const contentInBox = {
   'font-family': 'Gilroy-ExtraBold',
   'font-size': '1.375rem',
-  width: '310px',
   height: '46px',
   'box-shadow': '0px 0px 6px #00000029',
   'background-color': '#000000',
@@ -56,8 +55,6 @@ export const SectionWrapper = styled.div`
   }
 
   &::after {
-    /* background: linear-gradient(to right, #000000, transparent),
-      linear-gradient(to top, #000000, #4785ff 40%), url(${communityImage.src}); */
     background: linear-gradient(
         to right,
         rgba(0, 0, 2, 0.7) 2%,
@@ -104,20 +101,20 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
-        > div {
-          ${contentInBox}
-          ${center}
-          > div:nth-child(1) {
-            margin-right: 15px;
+        > a {
+          width: 310px;
+          > div {
+            ${contentInBox}
             ${center}
+            > div:nth-child(1) {
+              margin-right: 15px;
+              ${center}
+            }
+            > div:nth-child(3) {
+              margin-left: auto;
+              ${center}
+            }
           }
-          > div:nth-child(3) {
-            margin-left: auto;
-            ${center}
-          }
-        }
-        > div:not(div:nth-child(4)) {
-          margin-right: 104px;
         }
       }
     }
@@ -134,24 +131,25 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
-        > div:not(div:last-child) {
-          ${contentInBox}
-          ${center}
-          > div:nth-child(1) {
-            margin-right: 15px;
+        > a {
+          flex-basis: 310px;
+          /* width: 310px; */
+          > div {
+            ${contentInBox}
             ${center}
-          }
-          > div:nth-child(3) {
-            margin-left: auto;
-            ${center}
+              > div:nth-child(1) {
+              margin-right: 15px;
+              ${center}
+            }
+            > div:nth-child(3) {
+              margin-left: auto;
+              ${center}
+            }
           }
         }
         > div:last-child {
-          width: 310px;
+          flex-basis: 310px;
           padding: 0px 25px 0px 29.5px;
-        }
-        > div:not(div:nth-child(4)) {
-          margin-right: 104px;
         }
       }
     }
@@ -168,25 +166,25 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
-        > div:not(div:nth-child(3), div:nth-child(4)) {
-          ${contentInBox}
-          ${center}
-          > div:nth-child(1) {
-            margin-right: 15px;
+        > a {
+          width: 310px;
+          > div {
+            ${contentInBox}
             ${center}
-          }
-          > div:nth-child(3) {
-            margin-left: auto;
-            ${center}
+            > div:nth-child(1) {
+              margin-right: 15px;
+              ${center}
+            }
+            > div:nth-child(3) {
+              margin-left: auto;
+              ${center}
+            }
           }
         }
         > div:nth-child(3),
         > div:nth-child(4) {
           width: 310px;
           padding: 0px 25px 0px 29.5px;
-        }
-        > div:not(div:nth-child(4)) {
-          margin-right: 104px;
         }
       }
     }
@@ -203,20 +201,20 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
-        > div {
-          ${contentInBox}
-          ${center}
-          > div:nth-child(1) {
-            margin-right: 15px;
+        > a {
+          width: 310px;
+          > div {
+            ${contentInBox}
             ${center}
+            > div:nth-child(1) {
+              margin-right: 15px;
+              ${center}
+            }
+            > div:nth-child(3) {
+              margin-left: auto;
+              ${center}
+            }
           }
-          > div:nth-child(3) {
-            margin-left: auto;
-            ${center}
-          }
-        }
-        > div:not(div:nth-child(4)) {
-          margin-right: 104px;
         }
       }
     }
@@ -226,13 +224,15 @@ export const SectionWrapper = styled.div`
     > div:nth-child(2) {
       > div:first-child {
         > div:last-child {
-          > div {
-            padding: 0px 14px 0px 14.5px;
-            > div:nth-child(1) {
-              margin-right: 12px;
+          > a {
+            > div {
+              padding: 0px 14px 0px 14.5px;
+              > div:nth-child(1) {
+                margin-right: 12px;
+              }
             }
           }
-          > div:not(div:nth-child(4)) {
+          > a:not(a:last-child) {
             margin-right: 30px;
           }
         }
@@ -241,17 +241,19 @@ export const SectionWrapper = styled.div`
     > div:nth-child(3) {
       > div:first-child {
         > div:last-child {
-          > div:not(div:last-child) {
-            padding: 0px 14px 0px 14.5px;
-            > div:nth-child(1) {
-              margin-right: 12px;
+          > a {
+            > div {
+              padding: 0px 14px 0px 14.5px;
+              > div:nth-child(1) {
+                margin-right: 12px;
+              }
             }
           }
-          > div:last-child {
-            padding: 0px 14px 0px 14.5px;
-          }
-          > div:not(div:nth-child(4)) {
+          > a:not(a:last-child) {
             margin-right: 30px;
+          }
+          > div:last-child {
+            padding: 0px;
           }
         }
       }
@@ -259,17 +261,20 @@ export const SectionWrapper = styled.div`
     > div:nth-child(4) {
       > div:first-child {
         > div:last-child {
-          > div:not(div:nth-child(3), div:nth-child(4)) {
-            padding: 0px 14px 0px 14.5px;
-            > div:nth-child(1) {
-              margin-right: 12px;
+          > a {
+            margin-right: 30px;
+            > div {
+              padding: 0px 14px 0px 14.5px;
+              > div:nth-child(1) {
+                margin-right: 12px;
+              }
             }
           }
           > div:nth-child(3),
           > div:nth-child(4) {
-            padding: 0px 14px 0px 14.5px;
+            padding: 0px;
           }
-          > div:not(div:nth-child(4)) {
+          > div:nth-child(3) {
             margin-right: 30px;
           }
         }
@@ -278,13 +283,15 @@ export const SectionWrapper = styled.div`
     > div:nth-child(5) {
       > div:first-child {
         > div:last-child {
-          > div {
-            padding: 0px 14px 0px 14.5px;
-            > div:nth-child(1) {
-              margin-right: 12px;
+          > a {
+            > div {
+              padding: 0px 14px 0px 14.5px;
+              > div:nth-child(1) {
+                margin-right: 12px;
+              }
             }
           }
-          > div:not(div:nth-child(4)) {
+          > a:not(a:last-child) {
             margin-right: 30px;
           }
         }

@@ -2,9 +2,7 @@ import styled from 'styled-components';
 import ElyfiProjectImg from 'assets/images/ecosystem/elyfiproject.png';
 import Moblieapp from 'assets/images/ecosystem/moblieapp.png';
 import Dao from 'assets/images/ecosystem/dao.png';
-import ecosystemImage from 'assets/images/main/ecosystem_image.png';
-
-const defaultBorder = '1px solid #333333';
+import ecosystemImage from 'assets/images/main/ecosystem_image.webp';
 
 const glassBox = {
   background: 'rgba(255, 255, 255, 0.1)',

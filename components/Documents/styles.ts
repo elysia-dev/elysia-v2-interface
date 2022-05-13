@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import documentImage from 'assets/images/main/document_image.png';
+import documentImage from 'assets/images/main/document_image.webp';
 
 const defaultBorder = '1px solid #333333';
 
@@ -78,21 +78,23 @@ export const SectionWrapper = styled.div`
       width: 24.5%;
       ${glassBox}
       padding: 38.22px 25px 38px 25px;
-      > div:first-child {
-        display: flex;
-        align-items: center;
-        font-family: Gilroy-ExtraBold;
-        font-size: 1.25rem;
-        > div {
+      > a {
+        > div:first-child {
           display: flex;
           align-items: center;
-          justify-content: center;
-        }
-        > div:first-child {
-          margin-right: 10px;
-        }
-        > div:nth-child(2) {
-          margin-right: auto;
+          font-family: Gilroy-ExtraBold;
+          font-size: 1.25rem;
+          > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          > div:first-child {
+            margin-right: 10px;
+          }
+          > div:nth-child(2) {
+            margin-right: auto;
+          }
         }
       }
       > div:last-child {

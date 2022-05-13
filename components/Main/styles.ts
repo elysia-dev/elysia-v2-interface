@@ -1,5 +1,46 @@
 import styled from 'styled-components';
-import mainImage from 'assets/images/main/main_image.png';
+import mainImage from 'assets/images/main/main_image.webp';
+import elbridge from 'assets/images/main/elbridge_image.webp';
+import ecosystem from 'assets/images/main/ecosystem_image.webp';
+import developers from 'assets/images/main/developers_image.webp';
+import governance from 'assets/images/main/governance_image.webp';
+import community from 'assets/images/main/community_image.webp';
+import document from 'assets/images/main/document_image.webp';
+
+const setRightBackground = (image: string) => {
+  return {
+    background: `url(${image}), rgba(255, 255, 255, 0.1)`,
+    'background-repeat': 'no-repeat',
+    'background-position-x': 'right',
+    'background-position-y': '-50px',
+    'background-size': '800px',
+  };
+};
+const setLeftBackground = (image: string) => {
+  return {
+    background: `url(${image}), rgba(255, 255, 255, 0.1)`,
+    'background-repeat': 'no-repeat',
+    'background-position-x': 'left',
+    'background-position-y': '-50px',
+    'background-size': '800px',
+  };
+};
+
+const sectionBorder = (padding: string) => ({
+  'box-shadow': '0px 0px 6px #00000029',
+  'border-radius': '20px',
+  'backdrop-filter': 'blur(18px)',
+  padding,
+  'margin-bottom': '30px',
+});
+
+const partnerBorder = (padding?: string) => ({
+  background: 'rgba(255, 255, 255, 0.1)',
+  'box-shadow': '0px 0px 6px #00000029',
+  'border-radius': '20px',
+  'backdrop-filter': 'blur(18px)',
+  padding,
+});
 
 export const MainWrapper = styled.div`
   /* width: 1639px; */
@@ -23,8 +64,7 @@ export const MainWrapper = styled.div`
   }
 
   &::after {
-    background: 
-    /* linear-gradient(to, #000000 30%, transparent), */ linear-gradient(
+    background: linear-gradient(
         to right,
         rgba(0, 0, 2, 0.8) 3%,
         rgba(54, 121, 181, 0.5)
@@ -85,10 +125,7 @@ export const MainTopWrapper = styled.div`
       max-width: 100%;
       height: 230px;
       margin-top: 252.79px;
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0px 0px 6px #00000029;
-      border-radius: 20px;
-      backdrop-filter: blur(18px);
+      ${partnerBorder()}
       ${center}
       > div {
         width: 25%;
@@ -110,6 +147,7 @@ export const MainTopWrapper = styled.div`
 
 export const MainPortFolioWrapper = styled.div`
   max-width: 1639px;
+  margin: auto;
   padding: 170px 20px 100px 20px;
   > div:nth-child(1) {
     > div:first-child {
@@ -170,17 +208,32 @@ export const MainSectionWrapper = styled.div`
   padding: 100px 20px 100px 20px;
   max-width: 1639px;
   margin: auto;
+  font-family: Gilroy-Light;
+  > div:nth-child(1) {
+    ${setRightBackground(elbridge.src)}
+  }
+  > div:nth-child(3) {
+    ${setRightBackground(ecosystem.src)}
+  }
+  > div:nth-child(5) {
+    ${setRightBackground(developers.src)}
+  }
+
+  > div:nth-child(2) {
+    ${setLeftBackground(governance.src)}
+  }
+  > div:nth-child(4) {
+    ${setLeftBackground(community.src)}
+  }
+  > div:nth-child(6) {
+    ${setLeftBackground(document.src)}
+  }
   > div:nth-child(1),
   div:nth-child(3),
   div:nth-child(5) {
     width: 100%;
     height: 280px;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0px 0px 6px #00000029;
-    border-radius: 20px;
-    backdrop-filter: blur(18px);
-    padding: 64px 0px 49px 50px;
-    margin-bottom: 30px;
+    ${sectionBorder('64px 0px 49px 50px')}
     > div:first-child {
       > div:first-child {
         > span:nth-child(1) {
@@ -195,14 +248,12 @@ export const MainSectionWrapper = styled.div`
           }
         }
         > p {
-          font-family: Gilroy-Light;
           font-size: 1.375rem;
           color: #ffffff;
           margin-top: 10px;
         }
       }
       > p {
-        font-family: Gilroy-Light;
         color: #838383;
         margin-top: 35px;
         font-size: 1.375rem;
@@ -218,12 +269,7 @@ export const MainSectionWrapper = styled.div`
     justify-content: center;
     width: 100%;
     height: 280px;
-    margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0px 0px 6px #00000029;
-    border-radius: 20px;
-    backdrop-filter: blur(18px);
-    padding: 64px 50px 49px 0px;
+    ${sectionBorder('64px 50px 49px 0px')}
     > div:first-child {
       > div:first-child {
         > span:nth-child(1) {
@@ -239,14 +285,12 @@ export const MainSectionWrapper = styled.div`
           }
         }
         > p {
-          font-family: Gilroy-Light;
           font-size: 1.375rem;
           color: #ffffff;
           margin-top: 10px;
         }
       }
       > p {
-        font-family: Gilroy-Light;
         color: #838383;
         margin-top: 35px;
         font-size: 1.375rem;
@@ -270,7 +314,6 @@ export const PartnersWrapper = styled.div`
   font-size: 1.25rem;
   color: #ffffff;
   > div:nth-child(1) {
-    font-family: Gilroy-Light;
     color: #33a5ff;
     font-size: 1.375rem;
     > span:first-child {
@@ -293,16 +336,10 @@ export const PartnersWrapper = styled.div`
     > div:nth-child(2) {
       > div:last-child {
         margin-top: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        ${center}
         max-width: 1160px;
         height: 94px;
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 6px #00000029;
-        border-radius: 20px;
-        backdrop-filter: blur(18px);
-        padding: 0px 30px;
+        ${partnerBorder('0px 30px')}
         > div:nth-child(1) {
           margin-right: 46px;
         }
@@ -332,16 +369,10 @@ export const PartnersWrapper = styled.div`
     > div:nth-child(2) {
       > div:last-child {
         margin-top: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        ${center}
         max-width: 627px;
         height: 94px;
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 6px #00000029;
-        border-radius: 20px;
-        backdrop-filter: blur(18px);
-        padding: 0px 30px;
+        ${partnerBorder('0px 30px')}
         > div:nth-child(1) {
           margin-right: 44px;
         }
@@ -359,16 +390,10 @@ export const PartnersWrapper = styled.div`
       margin-right: 23px;
       > div:last-child {
         margin-top: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        ${center}
         width: 25.25rem;
         height: 94px;
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 6px #00000029;
-        border-radius: 20px;
-        backdrop-filter: blur(18px);
-        padding: 0px 30px;
+        ${partnerBorder('0px 30px')}
       }
     }
   }
@@ -381,11 +406,7 @@ export const PartnersWrapper = styled.div`
       align-items: center;
       flex: 1;
       width: 100%;
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0px 0px 6px #00000029;
-      border-radius: 20px;
-      backdrop-filter: blur(18px);
-      padding: 35px 0px;
+      ${partnerBorder('35px 0px')}
       > div {
         ${center};
         margin: 10px 40px;
