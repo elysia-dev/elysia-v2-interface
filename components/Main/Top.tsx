@@ -6,10 +6,10 @@ import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
 import { toCompact } from 'utils/formatters';
 import { formatEther } from 'ethers/lib/utils';
 import Image from 'next/image';
-import Discord from 'assets/images/main/discord_white@2x.png';
-import Github from 'assets/images/main/github_white@2x.png';
-import Telegram from 'assets/images/main/telegram_white@2x.png';
-import Twitter from 'assets/images/main/twitter_white@2x.png';
+import Discord from 'assets/images/main/discord_white@2x.webp';
+import Github from 'assets/images/main/github_white@2x.webp';
+import Telegram from 'assets/images/main/telegram_white@2x.webp';
+import Twitter from 'assets/images/main/twitter_white@2x.webp';
 
 const Top = () => {
   const { t, i18n } = useTranslation();
@@ -55,7 +55,6 @@ const Top = () => {
         </div>
         <div>
           <div>
-            {/* <div>icon</div> */}
             <div>
               <span>
                 <CountUp start={0} end={20} duration={1} />+
@@ -65,9 +64,6 @@ const Top = () => {
             </div>
           </div>
           <div>
-            {/* <Link href={`${i18n.language}/Governance`} passHref>
-              <div>icon</div>
-            </Link> */}
             <div>
               <span>
                 <CountUp start={0} end={2000} duration={1} />+
@@ -77,22 +73,8 @@ const Top = () => {
             </div>
           </div>
           <div>
-            {/* <Link href={`${i18n.language}/Ecosystem`} passHref>
-              <div>icon</div>
-            </Link> */}
             <div>
-              <span>
-                $
-                {/* <CountUp
-                  start={0}
-                  end={parseInt(formatEther(totalBalance))}
-                  formattingFn={(number: any) => {
-                    return formatCommaSmallZeroDisits(number);
-                  }}
-                  duration={1}
-                /> */}
-                {toCompact(parseInt(formatEther(totalBalance)))}+
-              </span>
+              <span>${toCompact(parseInt(formatEther(totalBalance)))}+</span>
               {/* <span>+</span> */}
               <br />
               {t(`main.top_icon.2`)}
