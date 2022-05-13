@@ -1,14 +1,16 @@
 import { NoiseSvg } from 'components/Main/styles';
 import useIsMobile from 'hooks/useIsMobile';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { SectionWrapper } from './styles';
 import Smart from 'assets/images/developers/smart.svg';
 import Bug from 'assets/images/developers/bug.svg';
 import PaperFile from 'assets/images/developers/paperFile.svg';
 import Elysia from 'assets/images/developers/elysia.svg';
 import Git from 'assets/images/developers/git.svg';
-import Arrow from 'assets/images/developers/arrow.svg';
 import { useEffect, useState } from 'react';
+import ContentItem from '../Common/ContentItem';
+import ContentDescription from 'components/Common/ContentDescription';
+import PageHeader from 'components/Common/PageHeader';
 
 const Section = () => {
   const { t } = useTranslation();
@@ -33,71 +35,45 @@ const Section = () => {
         </filter>
       </NoiseSvg>
       <SectionWrapper theme={browserHeight}>
+        <PageHeader
+          headers={[t('developers.0'), t('developers.1'), t('developers.2')]}
+        />
         <div>
           <div>
-            <div>{t('developers.0')}</div>
-            <div>{t('developers.1')}</div>
-            <Trans>{t('developers.2')}</Trans>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              <div>
-                <Elysia />
-              </div>
-              <div>{t('developers.3')}</div>
-              <div> {!isTablet && <Arrow />}</div>
-            </div>
-            <div>
-              <div>
-                <Trans>{t('developers.4')}</Trans>
-              </div>
-            </div>
+            <ContentItem
+              Icon={<Elysia />}
+              contentName={t('developers.3')}
+              link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+            />
+            <ContentDescription description={t('developers.4')} />
           </div>
           <div>
-            <div>
-              <div>
-                <Smart />
-              </div>
-              <div>{t('developers.5')}</div>
-              <div>{!isTablet && <Arrow />}</div>
-            </div>
-            <div>
-              <div>
-                <Trans>{t('developers.6')}</Trans>
-              </div>
-            </div>
+            <ContentItem
+              Icon={<Smart />}
+              contentName={t('developers.5')}
+              link={'https://docs.elyfi.world/v/eng/services/service-overview'}
+            />
+            <ContentDescription description={t('developers.6')} />
           </div>
           <div>
-            <div>
-              <div>
-                <Bug />
-              </div>
-              <div>{t('developers.7')}</div>
-              <div>{!isTablet && <Arrow />}</div>
-            </div>
-            <div>
-              <div>
-                <Trans>{t('developers.8')}</Trans>
-              </div>
-            </div>
+            <ContentItem
+              Icon={<Bug />}
+              contentName={t('developers.7')}
+              link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+            />
+            <ContentDescription description={t('developers.8')} />
           </div>
           <div>
-            <div>
-              <div>
-                <PaperFile />
-              </div>
-              <div>{t('developers.9')}</div>
-              <div>{!isTablet && <Arrow />}</div>
-            </div>
-            <div>
-              <div>
-                <Git />
-              </div>
-              <div>{t('developers.10')}</div>
-              <div>{!isTablet && <Arrow />}</div>
-            </div>
+            <ContentItem
+              Icon={<PaperFile />}
+              contentName={t('developers.9')}
+              link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+            />
+            <ContentItem
+              Icon={<Git />}
+              contentName={t('developers.10')}
+              link={'https://github.com/elysia-dev'}
+            />
           </div>
         </div>
       </SectionWrapper>

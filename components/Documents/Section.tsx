@@ -3,15 +3,15 @@ import { Trans, useTranslation } from 'react-i18next';
 import { SectionWrapper } from './styles';
 import Elysia from 'assets/images/developers/elysia.svg';
 import Git from 'assets/images/developers/git.svg';
-import Arrow from 'assets/images/developers/arrow.svg';
 import Elyfi from 'assets/images/developers/elyfi.svg';
 import Guide from 'assets/images/developers/guide.svg';
-import useIsMobile from 'hooks/useIsMobile';
 import { useEffect, useState } from 'react';
+import ContentItem from 'components/Common/ContentItem';
+import ContentDescription from 'components/Common/ContentDescription';
+import PageHeader from 'components/Common/PageHeader';
 
 const Section = () => {
   const { t } = useTranslation();
-  const { isTablet } = useIsMobile();
   const [browserHeight, setBrowserHeight] = useState(0);
 
   useEffect(() => {
@@ -32,69 +32,41 @@ const Section = () => {
         </filter>
       </NoiseSvg>
       <SectionWrapper theme={browserHeight}>
+        <PageHeader
+          headers={[t('documents.0'), t('documents.1'), t('documents.2')]}
+        />
         <div>
           <div>
-            <div>{t('documents.0')}</div>
-            <div>{t('documents.1')}</div>
-            <Trans>{t('documents.2')}</Trans>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              <div>
-                <Elysia />
-              </div>
-              <div>{t('documents.3')}</div>
-              <div>{!isTablet && <Arrow />}</div>
-            </div>
-            <div>
-              <div>
-                <Trans> {t('documents.4')}</Trans>
-              </div>
-            </div>
+            <ContentItem
+              Icon={<Elysia />}
+              contentName={t('documents.3')}
+              link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+            />
+            <ContentDescription description={t('documents.4')} />
           </div>
           <div>
-            <div>
-              <div>
-                <Elyfi />
-              </div>
-              <div>{t('documents.5')}</div>
-              <div>{!isTablet && <Arrow />}</div>
-            </div>
-            <div>
-              <div>
-                <Trans>{t('documents.6')}</Trans>
-              </div>
-            </div>
+            <ContentItem
+              Icon={<Elyfi />}
+              contentName={t('documents.5')}
+              link={'https://docs.elyfi.world/v/eng/'}
+            />
+            <ContentDescription description={t('documents.6')} />
           </div>
           <div>
-            <div>
-              <div>
-                <Guide />
-              </div>
-              <div>{t('documents.7')}</div>
-              <div>{!isTablet && <Arrow />}</div>
-            </div>
-            <div>
-              <div>
-                <Trans>{t('documents.8')}</Trans>
-              </div>
-            </div>
+            <ContentItem
+              Icon={<Guide />}
+              contentName={t('documents.7')}
+              link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+            />
+            <ContentDescription description={t('documents.8')} />
           </div>
           <div>
-            <div>
-              <div>
-                <Git />
-              </div>
-              <div>{t('documents.9')}</div>
-              <div>{!isTablet && <Arrow />}</div>
-            </div>
-            <div>
-              <div>
-                <Trans>{t('documents.10')}</Trans>
-              </div>
-            </div>
+            <ContentItem
+              Icon={<Git />}
+              contentName={t('documents.9')}
+              link={'https://github.com/elysia-dev'}
+            />
+            <ContentDescription description={t('documents.10')} />
           </div>
         </div>
       </SectionWrapper>
