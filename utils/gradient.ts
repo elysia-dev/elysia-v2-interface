@@ -106,7 +106,6 @@ class Gradient {
     this.stageWidth = width;
     this.stageHeight = height;
 
-    window.addEventListener('resize', this.resize.bind(this), false);
     this.resize();
     window.requestAnimationFrame(this.animate.bind(this));
   }
