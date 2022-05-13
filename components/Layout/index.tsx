@@ -2,6 +2,7 @@ import Footer from 'components/Footer';
 import Navigation from 'components/Navigation';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import path from 'path';
 import { useCallback, useEffect, useRef } from 'react';
 import Gradient from 'utils/gradient';
 
@@ -33,7 +34,20 @@ const Layout = (props: LayoutProps) => {
   useEffect(() => {
     if (pathname.includes('Ecosystem')) return;
     drawCanvas();
-  }, [pathname]);
+  }, [drawCanvas, pathname]);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      console.log('Asdada');
+      drawCanvas();
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        drawCanvas();
+      });
+    };
+  }, []);
 
   return (
     <>
