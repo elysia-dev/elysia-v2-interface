@@ -42,6 +42,16 @@ const partnerBorder = (padding?: string) => ({
   padding,
 });
 
+export const GradientCanvas = styled.canvas`
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 2);
+  /* mix-blend-mode: hard-light; */
+`;
+
 export const MainWrapper = styled.div`
   /* width: 1639px; */
   /* margin: auto; */
@@ -64,9 +74,16 @@ export const MainWrapper = styled.div`
   }
 
   &::after {
+    /* background: rgba(3, 41, 123, 0.6), url(${mainImage.src}); */
+    /* background: linear-gradient(
+        to bottom,
+        rgba(3, 41, 123, 0.2),
+        rgba(3, 41, 123, 0)
+      ),
+      url(${mainImage.src}); */
     background: linear-gradient(
         to right,
-        rgba(0, 0, 2, 0.8) 3%,
+        rgba(3, 41, 123, 0.3),
         rgba(54, 121, 181, 0.5)
       ),
       url(${mainImage.src});
