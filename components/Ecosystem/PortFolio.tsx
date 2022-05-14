@@ -1,7 +1,7 @@
 import { IAssetBond } from 'core/types/reserveSubgraph';
 import LoanProduct from 'enums/LoanProduct';
 import { formatUnits } from 'ethers/lib/utils';
-import { Dispatch, SetStateAction, useMemo, useState } from 'react';
+import { Dispatch, SetStateAction, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Skeleton from 'react-loading-skeleton';
 import { toCompact } from 'utils/formatters';
