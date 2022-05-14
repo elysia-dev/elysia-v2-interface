@@ -4,18 +4,15 @@ import { useCallback, useEffect, useState } from 'react';
 const useResizeBrowser = () => {
   const [browserHeight, setBrowserHeight] = useState(0);
 
-  const setResize = useCallback(
-    (pageNum?: number, assetBond?: IAssetBond[]) => {
-      if (typeof document === undefined || typeof window === undefined) return;
-      if (window.innerHeight > document.body.clientHeight) {
-        const sub = window.innerHeight - document.body.clientHeight;
-        setBrowserHeight(document.body.clientHeight + sub);
-        return;
-      }
-      setBrowserHeight(document.body.clientHeight);
-    },
-    [],
-  );
+  const setResize = useCallback(() => {
+    if (typeof document === undefined || typeof window === undefined) return;
+    if (window.innerHeight > document.body.clientHeight) {
+      const sub = window.innerHeight - document.body.clientHeight;
+      setBrowserHeight(document.body.clientHeight + sub);
+      return;
+    }
+    setBrowserHeight(document.body.clientHeight);
+  }, []);
 
   useEffect(() => {
     setResize();
