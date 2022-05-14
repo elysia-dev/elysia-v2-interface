@@ -1,10 +1,10 @@
 import Footer from 'components/Footer';
-import { GradientCanvas, NoiseSvg } from 'components/Main/styles';
 import Navigation from 'components/Navigation';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useRef } from 'react';
 import Gradient from 'utils/gradient';
+import { GradientCanvas, LayoutNoise, NoiseSvg } from './styles';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -23,8 +23,8 @@ const Layout = (props: LayoutProps) => {
     if (window.innerHeight > document.body.clientHeight) {
       sub = window.innerHeight - document.body.clientHeight;
     }
-    canvas.width = document.body.clientWidth * dpr;
-    canvas.height = (document.body.clientHeight + sub) * dpr;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
     const ctx = canvas.getContext('2d');
 
     if (!ctx) return;
@@ -32,9 +32,8 @@ const Layout = (props: LayoutProps) => {
   }, [pathname]);
 
   useEffect(() => {
-    if (pathname.includes('Ecosystem')) return;
     drawCanvas();
-  }, [drawCanvas, pathname]);
+  }, [drawCanvas]);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -56,6 +55,7 @@ const Layout = (props: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GradientCanvas ref={canvasRef} />
+      <LayoutNoise />
       <NoiseSvg>
         <filter id="noise">
           <feTurbulence type="fractalNoise" baseFrequency="4.6" />
