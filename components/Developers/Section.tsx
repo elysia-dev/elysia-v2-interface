@@ -11,21 +11,11 @@ import { useEffect, useState } from 'react';
 import ContentItem from '../Common/ContentItem';
 import ContentDescription from 'components/Common/ContentDescription';
 import PageHeader from 'components/Common/PageHeader';
+import useResizeBrowser from 'hooks/useResizeBrowser';
 
 const Section = () => {
   const { t } = useTranslation();
-  const { isTablet } = useIsMobile();
-  const [browserHeight, setBrowserHeight] = useState(0);
-
-  useEffect(() => {
-    if (typeof document === undefined || typeof window === undefined) return;
-    if (window.innerHeight > document.body.clientHeight) {
-      const sub = window.innerHeight - document.body.clientHeight;
-      setBrowserHeight(document.body.clientHeight + sub);
-      return;
-    }
-    setBrowserHeight(document.body.clientHeight);
-  }, []);
+  const { browserHeight } = useResizeBrowser();
 
   return (
     <>

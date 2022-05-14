@@ -17,21 +17,12 @@ import Wechat from 'assets/images/community/wechat@2x.webp';
 import useIsMobile from 'hooks/useIsMobile';
 import { useEffect, useState } from 'react';
 import ContentItem from 'components/Common/ContentItem';
+import useResizeBrowser from 'hooks/useResizeBrowser';
 
 const Section = () => {
   const { t } = useTranslation();
   const { isDesktop } = useIsMobile();
-  const [browserHeight, setBrowserHeight] = useState(0);
-
-  useEffect(() => {
-    if (typeof document === undefined || typeof window === undefined) return;
-    if (window.innerHeight > document.body.clientHeight) {
-      const sub = window.innerHeight - document.body.clientHeight;
-      setBrowserHeight(document.body.clientHeight + sub);
-      return;
-    }
-    setBrowserHeight(document.body.clientHeight);
-  }, []);
+  const { browserHeight } = useResizeBrowser();
 
   return (
     <>
