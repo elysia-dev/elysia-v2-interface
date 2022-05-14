@@ -1,4 +1,16 @@
-const COLORS = [{ r: 3, g: 41, b: 123 }];
+const COLORS = [
+  //   { r: 0, g: 0, b: 2 },
+  //   { r: 0, g: 0, b: 2 },
+  { r: 0, g: 0, b: 2 },
+  { r: 3, g: 41, b: 123 },
+  //   { r: 3, g: 41, b: 123 },
+  //   { r: 3, g: 41, b: 123 },
+  { r: 54, g: 121, b: 181 },
+  //   { r: 54, g: 121, b: 181 },
+  //   { r: 54, g: 121, b: 181 },
+  //   { r: 241, g: 251, b: 253 },
+  { r: 241, g: 251, b: 253 },
+];
 
 const PI2 = Math.PI * 2;
 
@@ -57,21 +69,18 @@ class GlowParticle {
     ctx.beginPath();
     const g = ctx.createRadialGradient(
       this.x,
-      this.y + 300,
+      this.y,
       this.radius * 0.01,
       this.x,
-      this.y + 300,
+      this.y,
       this.radius,
     );
-    g.addColorStop(
-      0.3,
-      `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 0.4)`,
-    );
-    g.addColorStop(0.5, `rgba(${3}, ${41}, ${123}, 0.4)`);
-    g.addColorStop(0.7, `rgba(${54}, ${121}, ${181}, 1)`);
-    g.addColorStop(1, `rgba(${245}, ${251}, ${253}, 0)`);
+    g.addColorStop(0, `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 1)`);
+    g.addColorStop(1, `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 0)`);
+    // g.addColorStop(0.7, `rgba(${54}, ${121}, ${181}, 1)`);
+    // g.addColorStop(1, `rgba(${245}, ${251}, ${253}, 0)`);
     ctx.fillStyle = g;
-    ctx.arc(this.x, this.y + 300, this.radius, 0, PI2, false);
+    ctx.arc(this.x, this.y, this.radius, 0, PI2, false);
     ctx.fill();
   }
 }
@@ -97,20 +106,24 @@ class Gradient {
     this.ctx = ctx;
     this.pathName = pathName;
 
-    this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
+    this.pixelRatio = window.devicePixelRatio;
 
-    this.totalParticles = 15;
+    this.totalParticles = 12;
     this.particles = [];
-    this.maxRadius = pathName.substring(0, 7) === '/[lng]' ? 4000 : 3000;
-    this.minRadius = pathName.substring(0, 7) === '/[lng]' ? 2700 : 2400;
+    // this.maxRadius = pathName.substring(0, 7) === '/[lng]' ? 1000 : 1000;
+    // this.minRadius = pathName.substring(0, 7) === '/[lng]' ? 800 : 800;
+    this.maxRadius = 1000;
+    this.minRadius = 800;
     this.stageWidth = width;
     this.stageHeight = height;
 
     this.resize();
-    window.requestAnimationFrame(this.animate.bind(this));
+    this.animate();
   }
 
   resize() {
+    this.ctx.scale(this.pixelRatio, this.pixelRatio);
+    this.ctx.globalCompositeOperation = 'saturation';
     this.createParticles();
   }
 
@@ -139,7 +152,7 @@ class Gradient {
       const item = this.particles[i];
       item.animate(this.ctx, this.stageWidth, this.stageHeight);
     }
-    window.requestAnimationFrame(this.animate.bind(this));
+    requestAnimationFrame(this.animate.bind(this));
   }
 }
 
