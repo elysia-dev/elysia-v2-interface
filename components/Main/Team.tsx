@@ -29,8 +29,6 @@ const Team = () => {
             <span>{t('main.developers.0')}</span>
             <br />
             <span>{t('main.developers.1')}</span>
-            {/* <br /> */}
-            {/* {t('main.developers.2')} */}
           </div>
           <div>
             <div>
