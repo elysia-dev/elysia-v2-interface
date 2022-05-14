@@ -47,11 +47,6 @@ const Partners = () => {
         position: 'relative',
         overflow: 'hidden',
       }}>
-      {/* <NoiseSvg>
-        <filter id="c">
-          <feTurbulence type="fractalNoise" baseFrequency=".6" />
-        </filter>
-      </NoiseSvg> */}
       <PartnersWrapper>
         <div>
           <span>{t('main.partners.0')}</span>
