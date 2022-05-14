@@ -21,43 +21,23 @@ export const DevelopersWrapper = styled.div`
   justify-content: center;
 `;
 
+export const DevelopersImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  background: url(${developersImage.src});
+  background-repeat: no-repeat;
+  background-size: 100%;
+`;
+
 export const SectionWrapper = styled.div`
   width: 1639px;
   padding-bottom: 200px;
   color: #ffffff;
   font-family: Gilroy-Light;
-
-  &::before,
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: ${(props) => {
-      return typeof props.theme === 'object' ? '100%' : props.theme + 'px';
-    }};
-    z-index: -1;
-    top: 0;
-    left: 0;
-    mix-blend-mode: hard-light;
-    content: '';
-  }
-
-  &::before {
-    filter: url(#noise);
-  }
-
-  &::after {
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 2, 0.7) 2%,
-        rgba(3, 41, 123, 0.5),
-        rgba(54, 121, 181, 0.5)
-      ),
-      linear-gradient(to top, rgba(54, 121, 181, 0.4), transparent),
-      url(${developersImage.src});
-
-    background-repeat: no-repeat;
-    background-position-x: right;
-  }
 
   > div:nth-child(1) {
     padding-top: 634px;

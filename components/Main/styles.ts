@@ -42,54 +42,16 @@ const partnerBorder = (padding?: string) => ({
   padding,
 });
 
-export const GradientCanvas = styled.canvas`
+export const MainImage = styled.div`
   position: absolute;
-  width: 100%;
   top: 0;
-  left: 0;
-  z-index: -1;
-  background-color: rgba(0, 0, 2);
-  /* mix-blend-mode: hard-light; */
-`;
-
-export const MainWrapper = styled.div`
-  /* width: 1639px; */
-  /* margin: auto; */
-  &::before,
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: ${(props) => {
-      return typeof props.theme === 'object' ? '100%' : props.theme + 'px';
-    }};
-    z-index: -1;
-    top: 0;
-    left: 0;
-    mix-blend-mode: hard-light;
-    content: '';
-  }
-
-  &::before {
-    filter: url(#noise);
-  }
-
-  &::after {
-    /* background: rgba(3, 41, 123, 0.6), url(${mainImage.src}); */
-    /* background: linear-gradient(
-        to bottom,
-        rgba(3, 41, 123, 0.2),
-        rgba(3, 41, 123, 0)
-      ),
-      url(${mainImage.src}); */
-    background: linear-gradient(
-        to right,
-        rgba(3, 41, 123, 0.3),
-        rgba(54, 121, 181, 0.5)
-      ),
-      url(${mainImage.src});
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
+  right: 0;
+  width: 100%;
+  height: 150vh;
+  z-index: -2;
+  background-image: url(${mainImage.src});
+  background-repeat: no-repeat;
+  background-size: 100%;
 `;
 
 export const center = {
@@ -99,6 +61,7 @@ export const center = {
 };
 
 export const MainTopWrapper = styled.div`
+  z-index: 1;
   max-width: 1639px;
   margin: auto;
   padding: 742px 20px 0px 20px;
@@ -212,13 +175,6 @@ export const RightArrowIcon = styled.i`
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   margin-left: 15px;
-`;
-
-export const NoiseSvg = styled.svg`
-  /* margin-top: 40px; */
-  position: absolute;
-  top: 0;
-  left: 0;
 `;
 
 export const MainSectionWrapper = styled.div`

@@ -18,43 +18,23 @@ const center = {
   'justify-content': 'center',
 };
 
-export const EcosystemWrapper = styled.div`
-  color: #ffffff;
-  &::before,
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: ${(props) =>
-      typeof props.theme === 'object' ? '100%' : props.theme + 'px'};
-    z-index: -1;
-    top: 0;
-    left: 0;
-    mix-blend-mode: hard-light;
-    content: '';
-  }
-
-  &::before {
-    filter: url(#noise);
-  }
-
-  &::after {
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 2, 1) 2%,
-        rgba(3, 41, 123, 0.5),
-        rgba(54, 121, 181, 0.5)
-      ),
-      linear-gradient(to top, rgba(54, 121, 181, 0.4), transparent),
-      url(${ecosystemImage.src});
-    background-repeat: no-repeat;
-    background-position-x: right;
-  }
+export const EcosystemImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 150vh;
+  z-index: -2;
+  background: url(${ecosystemImage.src});
+  background-repeat: no-repeat;
+  background-size: 100%;
 `;
 
 export const TopWrapper = styled.div`
   padding-top: 634px;
   max-width: 1639px;
   margin: auto;
+  color: #ffffff;
   font-family: Gilroy-Light;
   > div:first-child {
     font-family: Gilroy-ExtraBold;
@@ -73,6 +53,7 @@ export const ProjectWrapper = styled.div`
   margin: auto;
   max-width: 1639px;
   margin-top: 100px;
+  color: #ffffff;
   > div:first-child {
     margin-bottom: 88px;
     > div:first-child {

@@ -26,8 +26,20 @@ const contentInBox = {
 };
 
 export const CommunityWrapper = styled.div`
-  position: relative;
-  overflow: 'hidden';
+  /* position: relative; */
+  /* overflow: 'hidden'; */
+`;
+
+export const EcosystemImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  background: url(${communityImage.src});
+  background-repeat: no-repeat;
+  background-size: 100%;
 `;
 
 export const SectionWrapper = styled.div`
@@ -36,35 +48,6 @@ export const SectionWrapper = styled.div`
   padding: 0px 20px 100px 20px;
   color: #ffffff;
   font-family: Gilroy-Light;
-  &::before,
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: ${(props) => {
-      return typeof props.theme === 'object' ? '100%' : props.theme + 'px';
-    }};
-    z-index: -1;
-    top: 0;
-    left: 0;
-    mix-blend-mode: hard-light;
-    content: '';
-  }
-
-  &::before {
-    filter: url(#noise);
-  }
-
-  &::after {
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 2, 0.7) 2%,
-        rgba(3, 41, 123, 0.5),
-        rgba(54, 121, 181, 0.5)
-      ),
-      linear-gradient(to top, rgba(54, 121, 181, 0.4), transparent),
-      url(${communityImage.src});
-    background-repeat: no-repeat;
-  }
 
   > div:nth-child(1) {
     padding-top: 634px;
