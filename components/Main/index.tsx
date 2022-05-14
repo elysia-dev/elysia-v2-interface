@@ -1,4 +1,4 @@
-import { MainWrapper } from './styles';
+import { MainImage } from './styles';
 import PortFolio from './PortFolio';
 import Top from './Top';
 import Section from './Section';
@@ -10,13 +10,14 @@ const Main = () => {
   const { browserHeight } = useResizeBrowser();
 
   return (
-    <MainWrapper theme={browserHeight}>
+    <>
+      <MainImage />
       <Top />
       <PortFolio />
       <Section />
       <Partners />
       <Team />
-    </MainWrapper>
+    </>
   );
 };
 
