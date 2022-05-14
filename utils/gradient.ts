@@ -1,14 +1,7 @@
 const COLORS = [
-  //   { r: 0, g: 0, b: 2 },
-  //   { r: 0, g: 0, b: 2 },
   { r: 0, g: 0, b: 2 },
   { r: 3, g: 41, b: 123 },
-  //   { r: 3, g: 41, b: 123 },
-  //   { r: 3, g: 41, b: 123 },
   { r: 54, g: 121, b: 181 },
-  //   { r: 54, g: 121, b: 181 },
-  //   { r: 54, g: 121, b: 181 },
-  //   { r: 241, g: 251, b: 253 },
   { r: 241, g: 251, b: 253 },
 ];
 
@@ -53,7 +46,7 @@ class GlowParticle {
     if (this.x < 0) {
       this.vx *= -1;
       this.x += 10;
-    } else if (this.x > stageWidth) {
+    } else if (this.x > stageWidth / 2.5) {
       this.vx *= -1;
       this.x -= 10;
     }
@@ -61,7 +54,7 @@ class GlowParticle {
     if (this.y < 0) {
       this.vy *= -1;
       this.y += 10;
-    } else if (this.y > stageHeight) {
+    } else if (this.y > stageHeight / 2.5) {
       this.vy *= -1;
       this.y -= 10;
     }
@@ -75,7 +68,7 @@ class GlowParticle {
       this.y,
       this.radius,
     );
-    g.addColorStop(0, `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 1)`);
+    g.addColorStop(0, `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 0.5)`);
     g.addColorStop(1, `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 0)`);
     // g.addColorStop(0.7, `rgba(${54}, ${121}, ${181}, 1)`);
     // g.addColorStop(1, `rgba(${245}, ${251}, ${253}, 0)`);
@@ -108,12 +101,10 @@ class Gradient {
 
     this.pixelRatio = window.devicePixelRatio;
 
-    this.totalParticles = 12;
+    this.totalParticles = 15;
     this.particles = [];
-    // this.maxRadius = pathName.substring(0, 7) === '/[lng]' ? 1000 : 1000;
-    // this.minRadius = pathName.substring(0, 7) === '/[lng]' ? 800 : 800;
     this.maxRadius = 1000;
-    this.minRadius = 800;
+    this.minRadius = 500;
     this.stageWidth = width;
     this.stageHeight = height;
 
