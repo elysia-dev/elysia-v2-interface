@@ -21,7 +21,6 @@ const Top = () => {
         <div>
           <div>{t(`main.top.0`)}</div>
           <div>{t(`main.top.1`)}</div>
-          {/* <Trans>{t(`main.top.2`)}</Trans> */}
         </div>
         <div>
           <div>
