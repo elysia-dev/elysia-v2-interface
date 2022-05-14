@@ -1,4 +1,3 @@
-import { NoiseSvg } from 'components/Main/styles';
 import { Trans, useTranslation } from 'react-i18next';
 import { SectionWrapper } from './styles';
 import Image from 'next/image';
@@ -15,7 +14,6 @@ import Twitter from 'assets/images/community/twitter@2x.webp';
 import We_chat from 'assets/images/community/wechat_@2x.webp';
 import Wechat from 'assets/images/community/wechat@2x.webp';
 import useIsMobile from 'hooks/useIsMobile';
-import { useEffect, useState } from 'react';
 import ContentItem from 'components/Common/ContentItem';
 import useResizeBrowser from 'hooks/useResizeBrowser';
 
@@ -26,11 +24,6 @@ const Section = () => {
 
   return (
     <>
-      <NoiseSvg>
-        <filter id="noise">
-          <feTurbulence type="fractalNoise" baseFrequency="5.6" />
-        </filter>
-      </NoiseSvg>
       <SectionWrapper theme={browserHeight}>
         <div>
           <div>

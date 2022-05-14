@@ -1,6 +1,6 @@
 import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
-import { MainSectionWrapper, NoiseSvg } from './styles';
+import { MainSectionWrapper } from './styles';
 import SectionItem from './SectionItem';
 
 const Section = () => {
@@ -13,11 +13,6 @@ const Section = () => {
           position: 'relative',
           overflow: 'hidden',
         }}>
-        <NoiseSvg>
-          <filter id="noise">
-            <feTurbulence type="fractalNoise" baseFrequency="5.6" />
-          </filter>
-        </NoiseSvg>
         <MainSectionWrapper>
           <SectionItem
             section={[

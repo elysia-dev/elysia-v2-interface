@@ -1,5 +1,3 @@
-import { NoiseSvg } from 'components/Main/styles';
-import useIsMobile from 'hooks/useIsMobile';
 import { useTranslation } from 'react-i18next';
 import { SectionWrapper } from './styles';
 import Smart from 'assets/images/developers/smart.svg';
@@ -7,24 +5,16 @@ import Bug from 'assets/images/developers/bug.svg';
 import PaperFile from 'assets/images/developers/paperFile.svg';
 import Elysia from 'assets/images/developers/elysia.svg';
 import Git from 'assets/images/developers/git.svg';
-import { useEffect, useState } from 'react';
 import ContentItem from '../Common/ContentItem';
 import ContentDescription from 'components/Common/ContentDescription';
 import PageHeader from 'components/Common/PageHeader';
-import useResizeBrowser from 'hooks/useResizeBrowser';
 
 const Section = () => {
   const { t } = useTranslation();
-  const { browserHeight } = useResizeBrowser();
 
   return (
     <>
-      <NoiseSvg>
-        <filter id="noise">
-          <feTurbulence type="fractalNoise" baseFrequency="5.6" />
-        </filter>
-      </NoiseSvg>
-      <SectionWrapper theme={browserHeight}>
+      <SectionWrapper>
         <PageHeader
           headers={[t('developers.0'), t('developers.1'), t('developers.2')]}
         />

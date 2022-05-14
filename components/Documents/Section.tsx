@@ -1,5 +1,4 @@
-import { NoiseSvg } from 'components/Main/styles';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { SectionWrapper } from './styles';
 import Elysia from 'assets/images/developers/elysia.svg';
 import Git from 'assets/images/developers/git.svg';
@@ -17,12 +16,7 @@ const Section = () => {
 
   return (
     <>
-      <NoiseSvg>
-        <filter id="noise">
-          <feTurbulence type="fractalNoise" baseFrequency="5.6" />
-        </filter>
-      </NoiseSvg>
-      <SectionWrapper theme={browserHeight}>
+      <SectionWrapper>
         <PageHeader
           headers={[t('documents.0'), t('documents.1'), t('documents.2')]}
         />
