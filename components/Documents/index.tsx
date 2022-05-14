@@ -1,11 +1,12 @@
 import Section from './Section';
-import { DocumentsWrapper } from './styles';
+import { DocumentsImage } from './styles';
 
 const Documents = () => {
   return (
-    <DocumentsWrapper>
+    <>
+      <DocumentsImage />
       <Section />
-    </DocumentsWrapper>
+    </>
   );
 };
 

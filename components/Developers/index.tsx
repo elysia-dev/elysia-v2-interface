@@ -1,9 +1,10 @@
 import Section from './Section';
-import { DevelopersWrapper } from './styles';
+import { DevelopersImage, DevelopersWrapper } from './styles';
 
 const Developers = () => {
   return (
     <DevelopersWrapper>
+      <DevelopersImage />
       <Section />
     </DevelopersWrapper>
   );
