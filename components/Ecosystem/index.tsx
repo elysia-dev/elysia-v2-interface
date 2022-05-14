@@ -49,12 +49,9 @@ const Ecosystem = () => {
   }, [assetBonds]);
 
   useEffect(() => {
-    setResize(pageNum, assetBondTokensBackedByEstate);
-  }, [pageNum, assetBondTokensBackedByEstate, setResize]);
-
-  useEffect(() => {
+    setResize();
     drawCanvas();
-  }, [pathname, pageNum, assetBondTokensBackedByEstate]);
+  }, [pageNum, assetBondTokensBackedByEstate, drawCanvas]);
 
   return (
     <EcosystemWrapper theme={browserHeight}>
