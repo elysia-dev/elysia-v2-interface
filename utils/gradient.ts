@@ -68,10 +68,8 @@ class GlowParticle {
       this.y,
       this.radius,
     );
-    g.addColorStop(0, `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 0.5)`);
+    g.addColorStop(0, `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 0.8)`);
     g.addColorStop(1, `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 0)`);
-    // g.addColorStop(0.7, `rgba(${54}, ${121}, ${181}, 1)`);
-    // g.addColorStop(1, `rgba(${245}, ${251}, ${253}, 0)`);
     ctx.fillStyle = g;
     ctx.arc(this.x, this.y, this.radius, 0, PI2, false);
     ctx.fill();
@@ -88,22 +86,15 @@ class Gradient {
   minRadius: number;
   stageWidth: number;
   stageHeight: number;
-  pathName: string;
 
-  constructor(
-    ctx: CanvasRenderingContext2D,
-    width: number,
-    height: number,
-    pathName: string,
-  ) {
+  constructor(ctx: CanvasRenderingContext2D, width: number, height: number) {
     this.ctx = ctx;
-    this.pathName = pathName;
 
     this.pixelRatio = window.devicePixelRatio;
 
-    this.totalParticles = 15;
+    this.totalParticles = 4;
     this.particles = [];
-    this.maxRadius = 1000;
+    this.maxRadius = 1300;
     this.minRadius = 500;
     this.stageWidth = width;
     this.stageHeight = height;
