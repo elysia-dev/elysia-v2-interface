@@ -121,7 +121,7 @@ const Navigation = () => {
           </div>
           {!isMobile && (
             <div>
-              <Link href={`/${router.query.lng}`} passHref>
+              <Link href={`/${router.query.lng}/ELBridge`} passHref>
                 <a>
                   <span
                     style={{
