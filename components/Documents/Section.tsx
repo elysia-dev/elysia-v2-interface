@@ -4,7 +4,6 @@ import Elysia from 'assets/images/developers/elysia.svg';
 import Git from 'assets/images/developers/git.svg';
 import Elyfi from 'assets/images/developers/elyfi.svg';
 import Guide from 'assets/images/developers/guide.svg';
-import { useEffect, useState } from 'react';
 import ContentItem from 'components/Common/ContentItem';
 import ContentDescription from 'components/Common/ContentDescription';
 import PageHeader from 'components/Common/PageHeader';
