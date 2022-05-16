@@ -28,8 +28,8 @@ const Layout = (props: LayoutProps) => {
     const ctx = canvas.getContext('2d');
 
     if (!ctx) return;
-    new Gradient(ctx, canvas.width, canvas.height, pathname);
-  }, [pathname]);
+    new Gradient(ctx, canvas.width, canvas.height);
+  }, []);
 
   useEffect(() => {
     drawCanvas();
