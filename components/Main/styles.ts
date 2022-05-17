@@ -62,9 +62,7 @@ export const center = {
 
 export const MainTopWrapper = styled.div`
   z-index: 1;
-  max-width: 1639px;
-  margin: auto;
-  padding: 742px 20px 0px 20px;
+  padding-top: 742px;
 
   > div {
     > div:nth-child(1) {
@@ -126,9 +124,7 @@ export const MainTopWrapper = styled.div`
 `;
 
 export const MainPortFolioWrapper = styled.div`
-  max-width: 1639px;
-  margin: auto;
-  padding: 170px 20px 100px 20px;
+  padding: 170px 0px 100px 0px;
   > div:nth-child(1) {
     > div:first-child {
       font-family: Gilroy-ExtraBold;
@@ -178,9 +174,7 @@ export const RightArrowIcon = styled.i`
 `;
 
 export const MainSectionWrapper = styled.div`
-  padding: 100px 20px 100px 20px;
-  max-width: 1639px;
-  margin: auto;
+  padding: 100px 0px 100px 0px;
   font-family: Gilroy-Light;
   > div:nth-child(1) {
     ${setRightBackground(elbridge.src)}
@@ -280,9 +274,7 @@ export const MainSectionWrapper = styled.div`
 `;
 
 export const PartnersWrapper = styled.div`
-  max-width: 1639px;
-  margin: auto;
-  padding: 200px 20px 0px 20px;
+  padding: 200px 0px 0px 0px;
   font-family: Gilroy-Light;
   font-size: 1.25rem;
   color: #ffffff;
@@ -417,9 +409,6 @@ export const PartnersWrapper = styled.div`
 `;
 
 export const MainTeamWrapper = styled.div`
-  max-width: 1639px;
-  margin: auto;
-  padding: 0px 20px;
   padding-top: 100px;
   > div:first-child {
     > div:first-child {
