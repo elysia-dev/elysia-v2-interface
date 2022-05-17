@@ -22,6 +22,7 @@ const center = {
 
 export const EcosystemWrapper = styled.div`
   color: #ffffff;
+  margin: 0 5vw;
   &::before,
   &::after {
     position: absolute;
@@ -54,7 +55,7 @@ export const EcosystemWrapper = styled.div`
 `;
 
 export const TopWrapper = styled.div`
-  padding-top: 634px;
+  padding-top: 60vh;
   max-width: 1639px;
   margin: auto;
   font-family: Gilroy-Light;
@@ -62,11 +63,17 @@ export const TopWrapper = styled.div`
     font-family: Gilroy-ExtraBold;
     font-size: 2rem;
     margin-bottom: 5px;
+    @media (max-width: 460px) {
+      font-size: 1.5rem;
+    }
     > div:first-child {
       margin-bottom: 20px;
     }
     > div:last-child {
       font-size: 1.375rem;
+      @media (max-width: 460px) {
+        font-size: 1rem;
+      }
     }
   }
 `;
@@ -81,14 +88,30 @@ export const ProjectWrapper = styled.div`
       font-family: Gilroy-ExtraBold;
       font-size: 2rem;
       margin-bottom: 20px;
+      @media (max-width: 460px) {
+        font-size: 1.5rem;
+      }
     }
   }
   > div:last-child {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 920px) {
+      flex-direction: column;
+    }
     > div {
       width: 30%;
       ${glassBox}
+      @media (max-width: 1190px) {
+        width: 32%;
+      }
+      @media (max-width: 920px) {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+      @media (max-width: 64px) {
+        margin-bottom: 25px;
+      }
     }
     > div:nth-child(1) {
       > div:first-child {
@@ -105,18 +128,31 @@ export const ProjectWrapper = styled.div`
       > div:nth-child(2) {
         display: flex;
         margin-bottom: 40px;
+        @media (max-width: 460px) {
+          margin-bottom: 25px;
+        }
         > div {
           ${center}
         }
         > div:first-child {
           font-family: Gilroy-ExtraBold;
           margin-right: 10px;
-          height: 38px;
+          font-size: 1.5rem;
+          @media (max-width: 460px) {
+            font-size: 1.475rem;
+          }
         }
       }
       > div:last-child {
         font-size: 1rem;
         color: #cbcbcb;
+        @media (max-width: 920px) {
+          font-size: 1rem;
+          > br {
+            display: none;
+          }
+          margin-bottom: 25px;
+        }
       }
     }
     > div:nth-child(2) {
@@ -152,6 +188,10 @@ export const ProjectWrapper = styled.div`
         margin-bottom: 40px;
         > div:first-child {
           margin-right: auto;
+          font-size: 1.5rem;
+          @media (max-width: 460px) {
+            font-size: 1.475rem;
+          }
         }
         > div:nth-child(2) {
           margin-right: 11px;
@@ -160,6 +200,13 @@ export const ProjectWrapper = styled.div`
       > div:last-child {
         font-size: 1rem;
         color: #cbcbcb;
+        @media (max-width: 920px) {
+          font-size: 1rem;
+          > br {
+            display: none;
+          }
+          margin-bottom: 25px;
+        }
       }
     }
     > div:nth-child(3) {
@@ -192,10 +239,21 @@ export const ProjectWrapper = styled.div`
         display: flex;
         align-items: center;
         margin-bottom: 40px;
+        font-size: 1.5rem;
+        @media (max-width: 460px) {
+          font-size: 1.475rem;
+        }
       }
       > div:last-child {
         font-size: 1rem;
         color: #cbcbcb;
+        @media (max-width: 920px) {
+          font-size: 1rem;
+          > br {
+            display: none;
+          }
+          margin-bottom: 25px;
+        }
       }
     }
   }
@@ -213,9 +271,15 @@ export const PortFolioWrapper = styled.div`
       font-family: Gilroy-ExtraBold;
       font-size: 2rem;
       margin-bottom: 10px;
+      @media (max-width: 460px) {
+        font-size: 1.5rem;
+      }
     }
     > div:last-child {
-      font-size: 1.25rem;
+      font-size: 1.375rem;
+      @media (max-width: 460px) {
+        font-size: 1rem;
+      }
     }
   }
   > div:nth-child(2) {
@@ -226,22 +290,43 @@ export const PortFolioWrapper = styled.div`
       height: 83px;
       padding: 0px 70px;
       margin-bottom: 37px;
+      @media (max-width: 640px) {
+        height: initial;
+        flex-direction: column;
+        padding: 10px 25px;
+        width: 100%;
+      }
       > div {
         width: 50%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 52px;
+        font-size: 1.2rem;
+        @media (max-width: 640px) {
+          width: 100%;
+          height: 50px;
+          &:not(:last-child) {
+            border-bottom: 1px solid #33a5ff;
+          }
+        }
       }
       > div:nth-child(1) {
         > div:last-child {
           border-right: 1px solid #33a5ff;
           padding-right: 70.5px;
+          @media (max-width: 640px) {
+            border: none;
+            padding: 0;
+          }
         }
       }
       > div:nth-child(2) {
         > div:first-child {
           padding-left: 70.5px;
+          @media (max-width: 640px) {
+            padding: 0;
+          }
         }
       }
     }
@@ -249,15 +334,39 @@ export const PortFolioWrapper = styled.div`
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      @media (max-width: 840px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        grid-gap: 25px;
+        gap: 25px;
+      }
+      @media (max-width: 460px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        grid-gap: 25px;
+        gap: 25px;
+      }
       > div {
         width: 33%;
         ${glassBox}
         padding: 18px 20px 0px 20px;
         margin: 10px 0px;
+        @media (max-width: 840px) {
+          width: 100%;
+          margin: 0;
+          padding: 10px 15px;
+          border-radius: 5px;
+        }
         > div:first-child {
           width: 100%;
-          height: 300px;
+          height: inherit;
+          padding-bottom: 100%;
           margin-bottom: 23.5px;
+          > span > img {
+            border-radius: 5px;
+          }
         }
         > div:last-child {
           display: flex;
@@ -269,6 +378,9 @@ export const PortFolioWrapper = styled.div`
           > div:last-child {
             font-family: Gilroy-ExtraBold;
             font-size: 1.25rem;
+            @media (max-width: 460px) {
+              font-size: 1rem;
+            }
           }
         }
       }
@@ -281,7 +393,13 @@ export const PortFolioWrapper = styled.div`
       border-radius: 42px;
       text-align: center;
       margin-top: 15px;
+      margin: 30px 0;
       ${center}
+      font-size: 1.2rem;
+      @media (max-width: 640px) {
+        height: 50px;
+        margin: 30px 0;
+      }
     }
   }
 `;

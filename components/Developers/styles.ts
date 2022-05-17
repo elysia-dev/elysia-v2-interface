@@ -19,6 +19,7 @@ const glassBox = {
 export const DevelopersWrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin: 0 5vw;
 `;
 
 export const SectionWrapper = styled.div`
@@ -60,16 +61,22 @@ export const SectionWrapper = styled.div`
   }
 
   > div:nth-child(1) {
-    padding-top: 634px;
+    padding-top: 60vh;
     margin-bottom: 30px;
     > div:first-child {
       color: #cbcbcb;
       font-size: 1.375rem;
+      @media (max-width: 460px) {
+        font-size: 1rem;
+      }
       > div:first-child {
         color: #ffffff;
         font-family: Gilroy-ExtraBold;
         font-size: 2rem;
         margin-bottom: 5px;
+        @media (max-width: 460px) {
+          font-size: 1.5rem;
+        }
       }
       > div:nth-child(2) {
         color: #33a5ff;
@@ -81,12 +88,29 @@ export const SectionWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    @media (max-width: 920px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px;
+      gap: 15px;
+    }
+    @media (max-width: 460px) {
+      display: flex;
+      flex-direction: column;
+    }
     > div:not(div:last-child) {
       padding: 38.22px 25px 38px 25px;
       ${glassBox}
+      @media (max-width: 460px) {
+        padding: 20px 25px;
+      }
     }
     > div {
       width: 24.5%;
+      @media (max-width: 920px) {
+        width: 100%;
+        margin-top: 25px;
+      }
     }
     > div:not(div:last-child) {
       > div:first-child {
@@ -123,6 +147,9 @@ export const SectionWrapper = styled.div`
       justify-content: space-between;
       > div:first-child {
         margin-bottom: 11px;
+        @media (max-width: 460px) {
+          margin-bottom: 25px;
+        }
       }
       > div {
         font-family: Gilroy-ExtraBold;
@@ -131,7 +158,10 @@ export const SectionWrapper = styled.div`
         padding: 29px 25px 24px 27px;
         width: 100%;
         ${center}
-        >div {
+        @media (max-width: 460px) {
+          padding: 20px 25px;
+        }
+        > div {
           ${center}
         }
         > div:first-child {

@@ -44,7 +44,7 @@ export const center = {
 export const MainTopWrapper = styled.div`
   max-width: 1639px;
   margin: auto;
-  padding: 742px 20px 0px 20px;
+  padding: 60vh 5vw 0px 5vw;
 
   > div {
     > div:nth-child(1) {
@@ -54,11 +54,23 @@ export const MainTopWrapper = styled.div`
         font-family: Gilroy-ExtraBold;
         font-size: 3.75rem;
         letter-spacing: 0.3rem;
+        @media (max-width: 640px) {
+          font-size: 3rem;
+        }
+        @media (max-width: 460px) {
+          font-size: 2.2rem;
+        }
       }
       > div:nth-child(2) {
         font-family: Gilroy-Light;
         font-size: 1.875rem;
         color: #33a5ff;
+        @media (max-width: 640px) {
+          font-size: 1.5rem;
+        }
+        @media (max-width: 460px) {
+          font-size: 1.2rem;
+        }
       }
     }
 
@@ -66,12 +78,35 @@ export const MainTopWrapper = styled.div`
     > div:nth-child(2) {
       display: flex;
       margin-top: 30.79px;
+      @media (max-width: 920px) {
+        margin-top: 30px;
+      }
+      @media (max-width: 640px) {
+        margin-top: 20px;
+      }
+      @media (max-width: 460px) {
+        margin-top: 15px;
+      }
       > div:not(div:last-child) {
         margin-right: 24.79px;
+        @media (max-width: 640px) {
+          margin-right: 18px;
+        }
+        @media (max-width: 460px) {
+          margin-right: 15px;
+        }
       }
       > div {
         width: 35.21px;
         height: 35.21px;
+        @media (max-width: 920px) {
+          width: 30px;
+          height: 30px;
+        }
+        @media (max-width: 460px) {
+          width: 25px;
+          height: 25px;
+        }
         > a {
           width: 100%;
           height: 100%;
@@ -84,12 +119,19 @@ export const MainTopWrapper = styled.div`
     > div:nth-child(3) {
       max-width: 100%;
       height: 230px;
-      margin-top: 252.79px;
+      margin-top: 25vh;
       background: rgba(255, 255, 255, 0.1);
       box-shadow: 0px 0px 6px #00000029;
       border-radius: 20px;
       backdrop-filter: blur(18px);
       ${center}
+      @media (max-width: 960px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        grid-gap: 15px;
+        gap: 15px;
+      }
       > div {
         width: 25%;
         ${center}
@@ -97,11 +139,26 @@ export const MainTopWrapper = styled.div`
         color: #ffffff;
         text-align: center;
         font-size: 1.375rem;
+        @media (max-width: 640px) {
+          font-size: 1.2rem;
+        }
+        @media (max-width: 460px) {
+          font-size: 1rem;
+        }
         > div {
           > span {
             font-family: Gilroy-ExtraBold;
             font-size: 3.125rem;
+            @media (max-width: 640px) {
+              font-size: 2.7rem;
+            }
+            @media (max-width: 460px) {
+              font-size: 2.2rem;
+            }
           }
+        }
+        @media (max-width: 960px) {
+          width: 100%;
         }
       }
     }
@@ -110,7 +167,8 @@ export const MainTopWrapper = styled.div`
 
 export const MainPortFolioWrapper = styled.div`
   max-width: 1639px;
-  padding: 170px 20px 100px 20px;
+  padding: 170px 5vw 100px 5vw;
+  margin: 0 auto;
   > div:nth-child(1) {
     > div:first-child {
       font-family: Gilroy-ExtraBold;
@@ -130,11 +188,21 @@ export const MainPortFolioWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 640px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+    }
     > div {
       > div:nth-child(1) {
         width: 100%;
         img {
           filter: grayscale(100%);
+          transition: all 0.5s ease;
+          &:hover {
+            filter: grayscale(0%);
+            transition: all 0.5s ease;
+          }
         }
       }
     }
@@ -144,6 +212,7 @@ export const MainPortFolioWrapper = styled.div`
     color: #ffffff;
     text-align: right;
     margin-top: 16px;
+    font-size: 1.125rem;
     > span {
       cursor: pointer;
     }
@@ -167,7 +236,7 @@ export const NoiseSvg = styled.svg`
 `;
 
 export const MainSectionWrapper = styled.div`
-  padding: 100px 20px 100px 20px;
+  padding: 25vh 20px;
   max-width: 1639px;
   margin: auto;
   > div:nth-child(1),
@@ -207,6 +276,20 @@ export const MainSectionWrapper = styled.div`
         margin-top: 35px;
         font-size: 1.375rem;
       }
+    }
+    @media (max-width: 920px) {
+      padding: 25px 35px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media (max-width: 460px) {
+      padding: 15px 25px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 
@@ -248,6 +331,7 @@ export const MainSectionWrapper = styled.div`
       > p {
         font-family: Gilroy-Light;
         color: #838383;
+        margin: 0;
         margin-top: 35px;
         font-size: 1.375rem;
       }
@@ -255,6 +339,20 @@ export const MainSectionWrapper = styled.div`
     > div:last-child {
       text-align: right;
       margin-left: auto;
+    }
+    @media (max-width: 920px) {
+      padding: 25px 35px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media (max-width: 460px) {
+      padding: 15px 25px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
   > div:nth-child(6) {
@@ -265,7 +363,7 @@ export const MainSectionWrapper = styled.div`
 export const PartnersWrapper = styled.div`
   max-width: 1639px;
   margin: auto;
-  padding: 200px 20px 0px 20px;
+  padding: 25vh 20px 0px 20px;
   font-family: Gilroy-Light;
   font-size: 1.25rem;
   color: #ffffff;
@@ -283,6 +381,33 @@ export const PartnersWrapper = styled.div`
   }
 
   > div:nth-child(2) {
+    @media (max-width: 1190px) {
+      display: flex;
+      flex-direction: column;
+      > div {
+        margin-right: 0 !important;
+        > div {
+          &:nth-child(2) {
+            width: 100% !important;
+            height: auto !important;
+            padding: 35px 0 !important;
+            margin-bottom: 30px;
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: space-between;
+            gap: 35px 15px;
+            > div {
+              margin: 0 auto !important;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 640px) {
+      > div > div {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
     > div:nth-child(1) {
       > div:last-child {
         > div:first-child {
@@ -322,6 +447,34 @@ export const PartnersWrapper = styled.div`
     }
   }
   > div:nth-child(3) {
+    @media (max-width: 1190px) {
+      display: flex;
+      flex-direction: column;
+      > div {
+        margin-right: 0 !important;
+        > div {
+          &:nth-child(2) {
+            max-width: none !important;
+            width: 100% !important;
+            height: auto !important;
+            padding: 35px 0 !important;
+            margin-bottom: 30px;
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: space-between;
+            gap: 35px 15px;
+            > div {
+              margin: 0 auto !important;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 640px) {
+      > div > div {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
     > div:nth-child(1) {
       > div:last-child {
         > div:first-child {
@@ -390,6 +543,22 @@ export const PartnersWrapper = styled.div`
         ${center};
         margin: 10px 40px;
       }
+      @media (max-width: 1190px) {
+        width: 100% !important;
+        height: auto !important;
+        padding: 35px 0 !important;
+        margin-bottom: 30px;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        gap: 35px 15px;
+        > div {
+          margin: 0 auto !important;
+        }
+      }
+      @media (max-width: 640px) {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
     }
   }
 
@@ -445,6 +614,20 @@ export const MainTeamWrapper = styled.div`
       > div {
         margin-right: 20px;
       }
+      @media (max-width: 920px) {
+        display: grid;
+        margin-top: 35px;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        gap: 35px 15px;
+        > div {
+          margin: 0;
+        }
+      }
+      @media (max-width: 460px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 15px;
+      }
     }
   }
   > div:last-child {
@@ -465,6 +648,7 @@ export const MainTeamWrapper = styled.div`
       justify-content: space-between;
       margin-top: 48px;
       width: 100%;
+
       > div {
         width: 33%;
         height: 389px;
@@ -475,7 +659,7 @@ export const MainTeamWrapper = styled.div`
         /* padding: 20px; */
         > div:first-child {
           display: flex;
-          border-bottom: 1.5px solid #333333;
+          border-bottom: 1.5px solid #33333377;
           padding: 23px 25px;
           > div:first-child {
             margin-right: auto;
@@ -513,6 +697,41 @@ export const MainTeamWrapper = styled.div`
         > div:last-child {
           > div:last-child {
             margin-top: 45px;
+          }
+        }
+      }
+      @media (max-width: 1024px) {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 35px 15px;
+        > div {
+          width: 100%;
+          text-align: left;
+          height: initial !important;
+          > div {
+            &:first-child {
+              padding: 20px;
+            }
+            &:last-child {
+              text-align: left;
+              margin: 0;
+              padding: 30px;
+              > div {
+                padding: 0 !important;
+              }
+            }
+          }
+        }
+      }
+      @media (max-width: 460px) {
+        > div {
+          > div {
+            &:first-child {
+              padding: 15px 20px;
+            }
+            &:last-child {
+              padding: 25px 20px 30px;
+            }
           }
         }
       }

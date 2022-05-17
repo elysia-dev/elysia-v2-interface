@@ -70,16 +70,22 @@ export const SectionWrapper = styled.div`
   }
 
   > div:nth-child(1) {
-    padding-top: 634px;
+    padding-top: 60vh;
     margin-bottom: 30px;
     > div:first-child {
       color: #cbcbcb;
       font-size: 1.375rem;
+      @media (max-width: 640px) {
+        font-size: 1rem;
+      }
       > div:first-child {
         color: #ffffff;
         font-family: Gilroy-ExtraBold;
         font-size: 2rem;
         margin-bottom: 5px;
+        @media (max-width: 640px) {
+          font-size: 1.5rem;
+        }
       }
       > div:nth-child(2) {
         color: #33a5ff;
@@ -94,8 +100,14 @@ export const SectionWrapper = styled.div`
   }
   > div:nth-child(2) {
     ${glassBox}
+    @media (max-width: 920px) {
+      padding: 22px 25px 15px;
+    }
     > div:first-child {
       padding: 10px;
+      @media (max-width: 640px) {
+        padding: 0;
+      }
       > div:first-child {
         font-size: 1.25rem;
         margin-bottom: 25px;
@@ -104,9 +116,26 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
+        @media (max-width: 920px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: space-between;
+          grid-gap: 15px;
+          gap: 15px;
+        }
         > div {
           ${contentInBox}
           ${center}
+        @media (max-width: 920px) {
+            width: 100%;
+            padding: 5px 10px;
+            font-size: 1rem;
+            height: 35px;
+            border-radius: 15px;
+            > div > span {
+              width: 20px !important;
+            }
+          }
           > div:nth-child(1) {
             margin-right: 15px;
             ${center}
@@ -118,14 +147,23 @@ export const SectionWrapper = styled.div`
         }
         > div:not(div:nth-child(4)) {
           margin-right: 104px;
+          @media (max-width: 920px) {
+            margin: 0;
+          }
         }
       }
     }
   }
   > div:nth-child(3) {
     ${glassBox}
+    @media (max-width: 920px) {
+      padding: 22px 25px 15px;
+    }
     > div:first-child {
       padding: 10px;
+      @media (max-width: 640px) {
+        padding: 0;
+      }
       > div:first-child {
         font-size: 1.25rem;
         margin-bottom: 25px;
@@ -134,9 +172,26 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
+        @media (max-width: 920px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: space-between;
+          grid-gap: 15px;
+          gap: 15px;
+        }
         > div:not(div:last-child) {
           ${contentInBox}
           ${center}
+        @media (max-width: 920px) {
+            width: 100%;
+            padding: 5px 10px;
+            font-size: 1rem;
+            height: 35px;
+            border-radius: 15px;
+            > div > span {
+              width: 20px !important;
+            }
+          }
           > div:nth-child(1) {
             margin-right: 15px;
             ${center}
@@ -149,17 +204,29 @@ export const SectionWrapper = styled.div`
         > div:last-child {
           width: 310px;
           padding: 0px 25px 0px 29.5px;
+          @media (max-width: 920px) {
+            width: 100%;
+          }
         }
         > div:not(div:nth-child(4)) {
           margin-right: 104px;
+          @media (max-width: 920px) {
+            margin: 0;
+          }
         }
       }
     }
   }
   > div:nth-child(4) {
     ${glassBox}
+    @media (max-width: 920px) {
+      padding: 22px 25px 15px;
+    }
     > div:first-child {
       padding: 10px;
+      @media (max-width: 640px) {
+        padding: 0;
+      }
       > div:first-child {
         font-size: 1.25rem;
         margin-bottom: 25px;
@@ -168,9 +235,26 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
+        @media (max-width: 920px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: space-between;
+          grid-gap: 15px;
+          gap: 15px;
+        }
         > div:not(div:nth-child(3), div:nth-child(4)) {
           ${contentInBox}
           ${center}
+        @media (max-width: 920px) {
+            width: 100%;
+            padding: 5px 10px;
+            font-size: 1rem;
+            height: 35px;
+            border-radius: 15px;
+            > div > span {
+              width: 20px !important;
+            }
+          }
           > div:nth-child(1) {
             margin-right: 15px;
             ${center}
@@ -184,17 +268,29 @@ export const SectionWrapper = styled.div`
         > div:nth-child(4) {
           width: 310px;
           padding: 0px 25px 0px 29.5px;
+          @media (max-width: 920px) {
+            display: none;
+          }
         }
         > div:not(div:nth-child(4)) {
           margin-right: 104px;
+          @media (max-width: 920px) {
+            margin: 0;
+          }
         }
       }
     }
   }
   > div:nth-child(5) {
     ${glassBox}
+    @media (max-width: 920px) {
+      padding: 22px 25px 15px;
+    }
     > div:first-child {
       padding: 10px;
+      @media (max-width: 640px) {
+        padding: 0;
+      }
       > div:first-child {
         font-size: 1.25rem;
         margin-bottom: 25px;
@@ -203,9 +299,26 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
+        @media (max-width: 920px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: space-between;
+          grid-gap: 15px;
+          gap: 15px;
+        }
         > div {
           ${contentInBox}
           ${center}
+        @media (max-width: 920px) {
+            width: 100%;
+            padding: 5px 10px;
+            font-size: 1rem;
+            height: 35px;
+            border-radius: 15px;
+            > div > span {
+              width: 20px !important;
+            }
+          }
           > div:nth-child(1) {
             margin-right: 15px;
             ${center}
@@ -217,6 +330,9 @@ export const SectionWrapper = styled.div`
         }
         > div:not(div:nth-child(4)) {
           margin-right: 104px;
+          @media (max-width: 920px) {
+            margin: 0;
+          }
         }
       }
     }

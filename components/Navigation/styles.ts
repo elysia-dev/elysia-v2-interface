@@ -25,7 +25,7 @@ export const NavigationWrapper = styled.div`
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   padding: 0px 3vw;
 
   animation: ${(props) =>

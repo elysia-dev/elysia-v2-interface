@@ -54,7 +54,7 @@ export const SectionWrapper = styled.div`
   }
 
   > div:nth-child(1) {
-    padding-top: 634px;
+    padding-top: 60vh;
     margin-bottom: 30px;
     > div:first-child {
       color: #cbcbcb;
@@ -74,10 +74,25 @@ export const SectionWrapper = styled.div`
   > div:nth-child(2) {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 920px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px;
+      gap: 15px;
+    }
+    @media (max-width: 640px) {
+      display: flex;
+      flex-direction: column;
+    }
     > div {
       width: 24.5%;
       ${glassBox}
       padding: 38.22px 25px 38px 25px;
+      @media (max-width: 920px) {
+        width: 100%;
+        padding: 20px 25px;
+        margin-top: 25px;
+      }
       > div:first-child {
         display: flex;
         align-items: center;
