@@ -16,7 +16,7 @@ import GovernanceBottom from './GovernanceBottom';
 import GovernanceCenter from './GovernanceCenter';
 import GovernanceTop from './GovernanceTop';
 import Staking from './Staking';
-import { NoiseSvg, MainSectionWrapper } from 'components/Main/styles';
+import { NoiseSvg } from 'components/Layout/styles';
 
 const Governance = () => {
   const [modal, setModalType] = useState<ModalType>();

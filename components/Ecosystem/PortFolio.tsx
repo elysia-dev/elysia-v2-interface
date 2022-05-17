@@ -1,8 +1,9 @@
 import { IAssetBond } from 'core/types/reserveSubgraph';
 import LoanProduct from 'enums/LoanProduct';
 import { formatUnits } from 'ethers/lib/utils';
-import { Dispatch, SetStateAction, useMemo, useState } from 'react';
+import { Dispatch, SetStateAction, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import Skeleton from 'react-loading-skeleton';
 import { toCompact } from 'utils/formatters';
 import { parseTokenId } from 'utils/parseTokenId';
 import reserves from 'utils/reserves';
@@ -38,11 +39,23 @@ const PortFolio: React.FC<{
           <div>
             <div>
               <div>{t('ecosystem.portfolio.2')}</div>
-              <div>{assetBondTokens.length}</div>
+              <div>
+                {assetBondTokens.length === 0 ? (
+                  <Skeleton width={30} height={20} />
+                ) : (
+                  assetBondTokens.length
+                )}
+              </div>
             </div>
             <div>
               <div>{t('ecosystem.portfolio.3')}</div>
-              <div>{totalPrincipal}</div>
+              <div>
+                {totalPrincipal === '0' ? (
+                  <Skeleton width={50} height={20} />
+                ) : (
+                  totalPrincipal
+                )}
+              </div>
             </div>
           </div>
           <div>

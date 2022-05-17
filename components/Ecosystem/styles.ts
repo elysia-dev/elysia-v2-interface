@@ -2,9 +2,7 @@ import styled from 'styled-components';
 import ElyfiProjectImg from 'assets/images/ecosystem/elyfiproject.png';
 import Moblieapp from 'assets/images/ecosystem/moblieapp.png';
 import Dao from 'assets/images/ecosystem/dao.png';
-import ecosystemImage from 'assets/images/main/ecosystem_image.png';
-
-const defaultBorder = '1px solid #333333';
+import ecosystemImage from 'assets/images/main/ecosystem_image.webp';
 
 const glassBox = {
   background: 'rgba(255, 255, 255, 0.1)',
@@ -54,10 +52,23 @@ export const EcosystemWrapper = styled.div`
   }
 `;
 
+export const EcosystemImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 150vh;
+  z-index: -2;
+  background: url(${ecosystemImage.src});
+  background-repeat: no-repeat;
+  background-size: 100%;
+`;
+
 export const TopWrapper = styled.div`
   padding-top: 60vh;
   max-width: 1639px;
   margin: auto;
+  color: #ffffff;
   font-family: Gilroy-Light;
   > div:first-child {
     font-family: Gilroy-ExtraBold;
@@ -82,6 +93,7 @@ export const ProjectWrapper = styled.div`
   margin: auto;
   max-width: 1639px;
   margin-top: 100px;
+  color: #ffffff;
   > div:first-child {
     margin-bottom: 88px;
     > div:first-child {

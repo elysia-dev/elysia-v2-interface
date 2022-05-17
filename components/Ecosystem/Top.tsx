@@ -1,4 +1,3 @@
-import { NoiseSvg } from 'components/Main/styles';
 import { Trans, useTranslation } from 'react-i18next';
 import { ProjectWrapper, TopWrapper } from './styles';
 import Arrow from 'assets/images/developers/arrow.svg';
@@ -13,11 +12,6 @@ const Top = () => {
 
   return (
     <>
-      <NoiseSvg>
-        <filter id="noise">
-          <feTurbulence type="fractalNoise" baseFrequency="5.6" />
-        </filter>
-      </NoiseSvg>
       <TopWrapper>
         <div>
           <div>{t('ecosystem.top.0')}</div>

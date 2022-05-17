@@ -5,7 +5,7 @@ import Arrow from './Arrow';
 import Image from 'next/image';
 import { Trans, useTranslation } from 'react-i18next';
 import ButtonArrow from 'assets/images/governance/button-arrow.png';
-import ArrowImage from 'assets/images/community/arrow.png';
+import ArrowImage from 'assets/images/community/arrow.svg';
 
 const GovernanceBottom = () => {
   const { t } = useTranslation();
@@ -70,7 +70,8 @@ const GovernanceBottom = () => {
             </div>
             <div className={styles.governance_bottom_content_box_title}>
               <h2>{t('governance.section_fourth.6')}</h2>
-              <Image src={ArrowImage} />
+              {/* <Image src={ArrowImage} /> */}
+              <ArrowImage />
             </div>
             <p>{t('governance.section_fourth.7')}</p>
           </div>
@@ -83,7 +84,8 @@ const GovernanceBottom = () => {
             </div>
             <div className={styles.governance_bottom_content_box_title}>
               <h2>{t('governance.section_fourth.8')}</h2>
-              <Image src={ArrowImage} />
+              {/* <Image src={ArrowImage} /> */}
+              <ArrowImage />
             </div>
             <p>{t('governance.section_fourth.9')}</p>
           </div>

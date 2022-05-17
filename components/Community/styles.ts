@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import communityImage from 'assets/images/main/community_image.png';
+import communityImage from 'assets/images/main/community_image.webp';
 
 export const center = {
   display: 'flex',
@@ -18,7 +18,6 @@ const glassBox = {
 const contentInBox = {
   'font-family': 'Gilroy-ExtraBold',
   'font-size': '1.375rem',
-  width: '310px',
   height: '46px',
   'box-shadow': '0px 0px 6px #00000029',
   'background-color': '#000000',
@@ -27,8 +26,20 @@ const contentInBox = {
 };
 
 export const CommunityWrapper = styled.div`
-  position: relative;
-  overflow: 'hidden';
+  /* position: relative; */
+  /* overflow: 'hidden'; */
+`;
+
+export const EcosystemImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  background: url(${communityImage.src});
+  background-repeat: no-repeat;
+  background-size: 100%;
 `;
 
 export const SectionWrapper = styled.div`
@@ -37,37 +48,6 @@ export const SectionWrapper = styled.div`
   padding: 0px 20px 100px 20px;
   color: #ffffff;
   font-family: Gilroy-Light;
-  &::before,
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: ${(props) => {
-      return typeof props.theme === 'object' ? '100%' : props.theme + 'px';
-    }};
-    z-index: -1;
-    top: 0;
-    left: 0;
-    mix-blend-mode: hard-light;
-    content: '';
-  }
-
-  &::before {
-    filter: url(#noise);
-  }
-
-  &::after {
-    /* background: linear-gradient(to right, #000000, transparent),
-      linear-gradient(to top, #000000, #4785ff 40%), url(${communityImage.src}); */
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 2, 0.7) 2%,
-        rgba(3, 41, 123, 0.5),
-        rgba(54, 121, 181, 0.5)
-      ),
-      linear-gradient(to top, rgba(54, 121, 181, 0.4), transparent),
-      url(${communityImage.src});
-    background-repeat: no-repeat;
-  }
 
   > div:nth-child(1) {
     padding-top: 60vh;
@@ -123,26 +103,29 @@ export const SectionWrapper = styled.div`
           grid-gap: 15px;
           gap: 15px;
         }
-        > div {
-          ${contentInBox}
-          ${center}
-        @media (max-width: 920px) {
-            width: 100%;
-            padding: 5px 10px;
-            font-size: 1rem;
-            height: 35px;
-            border-radius: 15px;
-            > div > span {
-              width: 20px !important;
+        > a {
+          width: 310px;
+          > div {
+            ${contentInBox}
+            ${center}
+            @media (max-width: 920px) {
+              width: 100%;
+              padding: 5px 10px;
+              font-size: 1rem;
+              height: 35px;
+              border-radius: 15px;
+              > div > span {
+                width: 20px !important;
+              }
             }
-          }
-          > div:nth-child(1) {
-            margin-right: 15px;
-            ${center}
-          }
-          > div:nth-child(3) {
-            margin-left: auto;
-            ${center}
+            > div:nth-child(1) {
+              margin-right: 15px;
+              ${center}
+            }
+            > div:nth-child(3) {
+              margin-left: auto;
+              ${center}
+            }
           }
         }
         > div:not(div:nth-child(4)) {
@@ -179,30 +162,34 @@ export const SectionWrapper = styled.div`
           grid-gap: 15px;
           gap: 15px;
         }
-        > div:not(div:last-child) {
-          ${contentInBox}
-          ${center}
-        @media (max-width: 920px) {
-            width: 100%;
-            padding: 5px 10px;
-            font-size: 1rem;
-            height: 35px;
-            border-radius: 15px;
-            > div > span {
-              width: 20px !important;
+        > a {
+          flex-basis: 310px;
+          /* width: 310px; */
+          > div {
+            ${contentInBox}
+            ${center}
+            @media (max-width: 920px) {
+              width: 100%;
+              padding: 5px 10px;
+              font-size: 1rem;
+              height: 35px;
+              border-radius: 15px;
+              > div > span {
+                width: 20px !important;
+              }
             }
-          }
-          > div:nth-child(1) {
-            margin-right: 15px;
-            ${center}
-          }
-          > div:nth-child(3) {
-            margin-left: auto;
-            ${center}
+            > div:nth-child(1) {
+              margin-right: 15px;
+              ${center}
+            }
+            > div:nth-child(3) {
+              margin-left: auto;
+              ${center}
+            }
           }
         }
         > div:last-child {
-          width: 310px;
+          flex-basis: 310px;
           padding: 0px 25px 0px 29.5px;
           @media (max-width: 920px) {
             width: 100%;
@@ -242,26 +229,29 @@ export const SectionWrapper = styled.div`
           grid-gap: 15px;
           gap: 15px;
         }
-        > div:not(div:nth-child(3), div:nth-child(4)) {
-          ${contentInBox}
-          ${center}
+        > a {
+          width: 310px;
+          > div {
+            ${contentInBox}
+            ${center}
         @media (max-width: 920px) {
-            width: 100%;
-            padding: 5px 10px;
-            font-size: 1rem;
-            height: 35px;
-            border-radius: 15px;
-            > div > span {
-              width: 20px !important;
+              width: 100%;
+              padding: 5px 10px;
+              font-size: 1rem;
+              height: 35px;
+              border-radius: 15px;
+              > div > span {
+                width: 20px !important;
+              }
             }
-          }
-          > div:nth-child(1) {
-            margin-right: 15px;
-            ${center}
-          }
-          > div:nth-child(3) {
-            margin-left: auto;
-            ${center}
+            > div:nth-child(1) {
+              margin-right: 15px;
+              ${center}
+            }
+            > div:nth-child(3) {
+              margin-left: auto;
+              ${center}
+            }
           }
         }
         > div:nth-child(3),
@@ -306,26 +296,29 @@ export const SectionWrapper = styled.div`
           grid-gap: 15px;
           gap: 15px;
         }
-        > div {
-          ${contentInBox}
-          ${center}
-        @media (max-width: 920px) {
-            width: 100%;
-            padding: 5px 10px;
-            font-size: 1rem;
-            height: 35px;
-            border-radius: 15px;
-            > div > span {
-              width: 20px !important;
+        > a {
+          width: 310px;
+          > div {
+            ${contentInBox}
+            ${center}
+            @media (max-width: 920px) {
+              width: 100%;
+              padding: 5px 10px;
+              font-size: 1rem;
+              height: 35px;
+              border-radius: 15px;
+              > div > span {
+                width: 20px !important;
+              }
             }
-          }
-          > div:nth-child(1) {
-            margin-right: 15px;
-            ${center}
-          }
-          > div:nth-child(3) {
-            margin-left: auto;
-            ${center}
+            > div:nth-child(1) {
+              margin-right: 15px;
+              ${center}
+            }
+            > div:nth-child(3) {
+              margin-left: auto;
+              ${center}
+            }
           }
         }
         > div:not(div:nth-child(4)) {
@@ -342,13 +335,15 @@ export const SectionWrapper = styled.div`
     > div:nth-child(2) {
       > div:first-child {
         > div:last-child {
-          > div {
-            padding: 0px 14px 0px 14.5px;
-            > div:nth-child(1) {
-              margin-right: 12px;
+          > a {
+            > div {
+              padding: 0px 14px 0px 14.5px;
+              > div:nth-child(1) {
+                margin-right: 12px;
+              }
             }
           }
-          > div:not(div:nth-child(4)) {
+          > a:not(a:last-child) {
             margin-right: 30px;
           }
         }
@@ -357,17 +352,19 @@ export const SectionWrapper = styled.div`
     > div:nth-child(3) {
       > div:first-child {
         > div:last-child {
-          > div:not(div:last-child) {
-            padding: 0px 14px 0px 14.5px;
-            > div:nth-child(1) {
-              margin-right: 12px;
+          > a {
+            > div {
+              padding: 0px 14px 0px 14.5px;
+              > div:nth-child(1) {
+                margin-right: 12px;
+              }
             }
           }
-          > div:last-child {
-            padding: 0px 14px 0px 14.5px;
-          }
-          > div:not(div:nth-child(4)) {
+          > a:not(a:last-child) {
             margin-right: 30px;
+          }
+          > div:last-child {
+            padding: 0px;
           }
         }
       }
@@ -375,17 +372,20 @@ export const SectionWrapper = styled.div`
     > div:nth-child(4) {
       > div:first-child {
         > div:last-child {
-          > div:not(div:nth-child(3), div:nth-child(4)) {
-            padding: 0px 14px 0px 14.5px;
-            > div:nth-child(1) {
-              margin-right: 12px;
+          > a {
+            margin-right: 30px;
+            > div {
+              padding: 0px 14px 0px 14.5px;
+              > div:nth-child(1) {
+                margin-right: 12px;
+              }
             }
           }
           > div:nth-child(3),
           > div:nth-child(4) {
-            padding: 0px 14px 0px 14.5px;
+            padding: 0px;
           }
-          > div:not(div:nth-child(4)) {
+          > div:nth-child(3) {
             margin-right: 30px;
           }
         }
@@ -394,13 +394,15 @@ export const SectionWrapper = styled.div`
     > div:nth-child(5) {
       > div:first-child {
         > div:last-child {
-          > div {
-            padding: 0px 14px 0px 14.5px;
-            > div:nth-child(1) {
-              margin-right: 12px;
+          > a {
+            > div {
+              padding: 0px 14px 0px 14.5px;
+              > div:nth-child(1) {
+                margin-right: 12px;
+              }
             }
           }
-          > div:not(div:nth-child(4)) {
+          > a:not(a:last-child) {
             margin-right: 30px;
           }
         }

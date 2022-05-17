@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import developersImage from 'assets/images/main/developers_image.png';
+import developersImage from 'assets/images/main/developers_image.webp';
 
 const defaultBorder = '1px solid #333333';
 
@@ -22,43 +22,23 @@ export const DevelopersWrapper = styled.div`
   margin: 0 5vw;
 `;
 
+export const DevelopersImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  background: url(${developersImage.src});
+  background-repeat: no-repeat;
+  background-size: 100%;
+`;
+
 export const SectionWrapper = styled.div`
   width: 1639px;
   padding-bottom: 200px;
   color: #ffffff;
   font-family: Gilroy-Light;
-
-  &::before,
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: ${(props) => {
-      return typeof props.theme === 'object' ? '100%' : props.theme + 'px';
-    }};
-    z-index: -1;
-    top: 0;
-    left: 0;
-    mix-blend-mode: hard-light;
-    content: '';
-  }
-
-  &::before {
-    filter: url(#noise);
-  }
-
-  &::after {
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 2, 0.7) 2%,
-        rgba(3, 41, 123, 0.5),
-        rgba(54, 121, 181, 0.5)
-      ),
-      linear-gradient(to top, rgba(54, 121, 181, 0.4), transparent),
-      url(${developersImage.src});
-
-    background-repeat: no-repeat;
-    background-position-x: right;
-  }
 
   > div:nth-child(1) {
     padding-top: 60vh;
@@ -113,23 +93,25 @@ export const SectionWrapper = styled.div`
       }
     }
     > div:not(div:last-child) {
-      > div:first-child {
-        display: flex;
-        align-items: center;
-        font-family: Gilroy-ExtraBold;
-        font-size: 1.25rem;
-        > div {
+      > a {
+        > div:first-child {
           display: flex;
           align-items: center;
-          justify-content: center;
+          font-family: Gilroy-ExtraBold;
+          font-size: 1.25rem;
+          > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          > div:first-child {
+            margin-right: 10px;
+          }
+          > div:last-child {
+            margin-left: auto;
+          }
+          margin-bottom: 20px;
         }
-        > div:first-child {
-          margin-right: 10px;
-        }
-        > div:last-child {
-          margin-left: auto;
-        }
-        margin-bottom: 20px;
       }
       > div:last-child {
         font-size: 1rem;
@@ -151,24 +133,26 @@ export const SectionWrapper = styled.div`
           margin-bottom: 25px;
         }
       }
-      > div {
-        font-family: Gilroy-ExtraBold;
-        font-size: 1.25rem;
-        ${glassBox}
-        padding: 29px 25px 24px 27px;
-        width: 100%;
-        ${center}
-        @media (max-width: 460px) {
-          padding: 20px 25px;
-        }
+      > a {
         > div {
+          font-family: Gilroy-ExtraBold;
+          font-size: 1.25rem;
+          ${glassBox}
+          padding: 29px 25px 24px 27px;
+          width: 100%;
           ${center}
-        }
-        > div:first-child {
-          margin-right: 10px;
-        }
-        > div:nth-child(2) {
-          margin-right: auto;
+          @media (max-width: 460px) {
+            padding: 20px 25px;
+          }
+          > div {
+            ${center}
+          }
+          > div:first-child {
+            margin-right: 10px;
+          }
+          > div:nth-child(2) {
+            margin-right: auto;
+          }
         }
       }
     }

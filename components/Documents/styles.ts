@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import documentImage from 'assets/images/main/document_image.png';
+import documentImage from 'assets/images/main/document_image.webp';
 
 const defaultBorder = '1px solid #333333';
 
@@ -10,9 +10,16 @@ const glassBox = {
   'backdrop-filter': 'blur(18px)',
 };
 
-export const DocumentsWrapper = styled.div`
-  /* padding: 0px 45px 50px 45px; */
-  /* background: #dfd9d9; */
+export const DocumentsImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  background: url(${documentImage.src});
+  background-repeat: no-repeat;
+  background-size: 100%;
 `;
 
 export const SectionWrapper = styled.div`
@@ -21,37 +28,6 @@ export const SectionWrapper = styled.div`
   padding: 0px 20px 200px 20px;
   color: #ffffff;
   font-family: Gilroy-Light;
-
-  &::before,
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: ${(props) =>
-      typeof props.theme === 'object' ? '100%' : props.theme + 'px'};
-    z-index: -1;
-    top: 0;
-    left: 0;
-    mix-blend-mode: hard-light;
-    content: '';
-  }
-
-  &::before {
-    filter: url(#noise);
-  }
-
-  &::after {
-    /* background: linear-gradient(to right, #000000, transparent),
-      linear-gradient(to top, #000000, #4785ff 40%); */
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 2, 0.7) 2%,
-        rgba(3, 41, 123, 0.5),
-        rgba(54, 121, 181, 0.5)
-      ),
-      linear-gradient(to top, rgba(54, 121, 181, 0.4), transparent),
-      url(${documentImage.src});
-    background-repeat: no-repeat;
-  }
 
   > div:nth-child(1) {
     padding-top: 60vh;
@@ -88,26 +64,28 @@ export const SectionWrapper = styled.div`
       width: 24.5%;
       ${glassBox}
       padding: 38.22px 25px 38px 25px;
-      @media (max-width: 920px) {
-        width: 100%;
-        padding: 20px 25px;
-        margin-top: 25px;
-      }
-      > div:first-child {
-        display: flex;
-        align-items: center;
-        font-family: Gilroy-ExtraBold;
-        font-size: 1.25rem;
-        > div {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+      > a {
+        @media (max-width: 920px) {
+          width: 100%;
+          padding: 20px 25px;
+          margin-top: 25px;
         }
         > div:first-child {
-          margin-right: 10px;
-        }
-        > div:nth-child(2) {
-          margin-right: auto;
+          display: flex;
+          align-items: center;
+          font-family: Gilroy-ExtraBold;
+          font-size: 1.25rem;
+          > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          > div:first-child {
+            margin-right: 10px;
+          }
+          > div:nth-child(2) {
+            margin-right: auto;
+          }
         }
       }
       > div:last-child {

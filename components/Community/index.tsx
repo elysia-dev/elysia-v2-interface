@@ -1,9 +1,10 @@
 import Section from './Section';
-import { CommunityWrapper } from './styles';
+import { CommunityWrapper, EcosystemImage } from './styles';
 
 const Community = () => {
   return (
     <CommunityWrapper>
+      <EcosystemImage />
       <Section />
     </CommunityWrapper>
   );
