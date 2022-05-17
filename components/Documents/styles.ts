@@ -23,9 +23,7 @@ export const DocumentsImage = styled.div`
 `;
 
 export const SectionWrapper = styled.div`
-  max-width: 1639px;
-  margin: auto;
-  padding: 0px 20px 200px 20px;
+  padding: 0px 0px 200px 0px;
   color: #ffffff;
   font-family: Gilroy-Light;
 

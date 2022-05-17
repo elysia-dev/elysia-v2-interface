@@ -32,8 +32,6 @@ export const EcosystemImage = styled.div`
 
 export const TopWrapper = styled.div`
   padding-top: 634px;
-  max-width: 1639px;
-  margin: auto;
   color: #ffffff;
   font-family: Gilroy-Light;
   > div:first-child {
@@ -50,8 +48,6 @@ export const TopWrapper = styled.div`
 `;
 
 export const ProjectWrapper = styled.div`
-  margin: auto;
-  max-width: 1639px;
   margin-top: 100px;
   color: #ffffff;
   > div:first-child {
@@ -181,8 +177,6 @@ export const ProjectWrapper = styled.div`
 `;
 
 export const PortFolioWrapper = styled.div`
-  max-width: 1639px;
-  margin: auto;
   padding-top: 100px;
   font-family: Gilroy-Light;
   color: #ffffff;

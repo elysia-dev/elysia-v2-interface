@@ -16,11 +16,6 @@ const glassBox = {
   'backdrop-filter': 'blur(18px)',
 };
 
-export const DevelopersWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
 export const DevelopersImage = styled.div`
   position: absolute;
   top: 0;
@@ -34,7 +29,6 @@ export const DevelopersImage = styled.div`
 `;
 
 export const SectionWrapper = styled.div`
-  width: 1639px;
   padding-bottom: 200px;
   color: #ffffff;
   font-family: Gilroy-Light;

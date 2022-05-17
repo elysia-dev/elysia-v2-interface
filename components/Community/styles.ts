@@ -25,11 +25,6 @@ const contentInBox = {
   padding: '0px 25px 0px 29.5px',
 };
 
-export const CommunityWrapper = styled.div`
-  /* position: relative; */
-  /* overflow: 'hidden'; */
-`;
-
 export const EcosystemImage = styled.div`
   position: absolute;
   top: 0;
@@ -43,9 +38,7 @@ export const EcosystemImage = styled.div`
 `;
 
 export const SectionWrapper = styled.div`
-  max-width: 1639px;
-  margin: auto;
-  padding: 0px 20px 100px 20px;
+  padding: 0px 0px 100px 0px;
   color: #ffffff;
   font-family: Gilroy-Light;
 
