@@ -33,7 +33,7 @@ import Xangle from 'assets/images/main/xangle@2x.webp';
 import XTcom from 'assets/images/main/xtcom@2x.webp';
 import Haechilabs from 'assets/images/main/haechilabs@2x.webp';
 
-import { NoiseSvg, PartnersWrapper } from './styles';
+import { PartnersWrapper } from './styles';
 import useIsMobile from 'hooks/useIsMobile';
 import Link from 'next/link';
 
