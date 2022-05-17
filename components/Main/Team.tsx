@@ -1,5 +1,5 @@
 import { Trans, useTranslation } from 'react-i18next';
-import { MainTeamWrapper, NoiseSvg } from './styles';
+import { MainTeamWrapper } from './styles';
 import member1 from 'assets/images/main/ELY_서동욱@2x.webp';
 import member2 from 'assets/images/main/ELY_이재복@2x.webp';
 import member3 from 'assets/images/main/ELY_이종현@2x.webp';
