@@ -65,7 +65,7 @@ export const MainTopWrapper = styled.div`
   z-index: 1;
   max-width: 1639px;
   margin: auto;
-  padding: 60vh 5vw 0px 5vw;
+  padding: 60vh 0px 0px;
 
   > div {
     > div:nth-child(1) {
@@ -189,7 +189,7 @@ export const MainTopWrapper = styled.div`
 
 export const MainPortFolioWrapper = styled.div`
   max-width: 1639px;
-  padding: 170px 5vw 100px 5vw;
+  padding: 170px 0px 100px 0px;
   margin: 0 auto;
   > div:nth-child(1) {
     > div:first-child {
@@ -251,7 +251,7 @@ export const RightArrowIcon = styled.i`
 `;
 
 export const MainSectionWrapper = styled.div`
-  padding: 25vh 20px;
+  padding: 25vh 0px;
   max-width: 1639px;
   margin: auto;
   font-family: Gilroy-Light;
@@ -384,7 +384,7 @@ export const MainSectionWrapper = styled.div`
 export const PartnersWrapper = styled.div`
   max-width: 1639px;
   margin: auto;
-  padding: 25vh 20px 0px 20px;
+  padding: 25vh 0px 0px;
   font-family: Gilroy-Light;
   font-size: 1.25rem;
   color: #ffffff;

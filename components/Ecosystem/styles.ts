@@ -20,7 +20,7 @@ const center = {
 
 export const EcosystemWrapper = styled.div`
   color: #ffffff;
-  margin: 0 5vw;
+  margin: 0 0px;
   &::before,
   &::after {
     position: absolute;

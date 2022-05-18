@@ -19,7 +19,7 @@ const glassBox = {
 export const DevelopersWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 5vw;
+  margin: 0 0px;
 `;
 
 export const DevelopersImage = styled.div`
