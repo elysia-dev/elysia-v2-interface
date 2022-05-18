@@ -1,10 +1,10 @@
 import Section from './Section';
-import { EcosystemImage } from './styles';
+import { CommunityImage } from './styles';
 
 const Community = () => {
   return (
     <>
-      <EcosystemImage />
+      <CommunityImage />
       <Section />
     </>
   );
