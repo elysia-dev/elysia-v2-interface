@@ -1,5 +1,6 @@
 import OnBoardingStep from 'enums/OnBoardingStep';
 import styled, { css, keyframes } from 'styled-components';
+import elbridge from 'assets/images/main/elbridge_image.webp';
 
 const center = {
   display: 'flex',
@@ -33,7 +34,7 @@ const boxDeactive = keyframes`
 
 const setp1Active = keyframes`
   0% {
-    height: 80px;
+    height: 5rem;
   }
   100% {
     height: auto;
@@ -44,8 +45,21 @@ const step1Deactive = keyframes`
     height: 510px;
   }
   100% {
-    height: 80px;
+    height: 5rem;
   }
+`;
+
+export const ELbridgeImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 150vh;
+  z-index: -1;
+  opacity: 0.5;
+  background-image: url(${elbridge.src});
+  background-repeat: no-repeat;
+  background-size: 100%;
 `;
 
 export const SectionWrapper = styled.div`
@@ -225,17 +239,17 @@ export const StepOne = styled.div<{ active: string }>`
   ${glassBox}
   width: 100%;
   height: ${(props) =>
-    props.active === OnBoardingStep.RealEstateType ? 'auto' : '80px'};
-  padding: 26px 51px 0px 51px;
+    props.active === OnBoardingStep.RealEstateType ? 'auto' : '5rem'};
+  padding: 1.625rem 51px 0px 51px;
   margin-bottom: 25px;
   overflow: hidden;
   animation: ${(props) =>
     props.active === OnBoardingStep.RealEstateType
       ? css`
-          ${setp1Active} 500ms ease-in
+          ${setp1Active} 200ms ease-in
         `
       : css`
-          ${step1Deactive} 500ms ease-in
+          ${step1Deactive} 200ms ease-in
         `};
   > div:first-child {
     font-size: 1.375rem;
@@ -255,7 +269,7 @@ export const StepOne = styled.div<{ active: string }>`
       > div {
         cursor: pointer;
         ${center}
-        width: 580px;
+        width: 48%;
         height: 80px;
         border: 1px solid #838383;
         border-radius: 20px;
@@ -280,46 +294,189 @@ export const StepTwo = styled.div<{ active: string }>`
   ${glassBox}
   width: 100%;
   height: ${(props) =>
-    props.active === OnBoardingStep.NFTApplication ? '510px' : '80px'};
-  padding: 26px 0px 0px 51px;
+    props.active === OnBoardingStep.NFTApplication ? 'auto' : '5rem'};
+  padding: 1.625rem 0px 0px 51px;
   margin-bottom: 25px;
-`;
-export const StepThree = styled.div`
-  ${glassBox}
-  width: 100%;
-  height: 80px;
-  padding: 26px 0px 0px 51px;
-  margin-bottom: 25px;
-`;
-
-export const StepFour = styled.div`
-  ${glassBox}
-  width: 100%;
-  height: 80px;
-  padding: 26px 0px 0px 51px;
-  margin-bottom: 25px;
-`;
-
-export const StepFive = styled.div`
-  ${glassBox}
-  width: 100%;
-  height: 80px;
-  padding: 26px 0px 0px 51px;
-`;
-
-export const StepSix = styled.div`
-  border: 1px solid black;
+  overflow: hidden;
+  animation: ${(props) =>
+    props.active === OnBoardingStep.NFTApplication
+      ? css`
+          ${setp1Active} 200ms ease-in
+        `
+      : css`
+          ${step1Deactive} 200ms ease-in
+        `};
+  > div:first-child {
+    font-size: 1.375rem;
+    margin-bottom: 28px;
+  }
   > div:last-child {
-    display: flex;
-    > div:last-child {
-      > div:first-child {
-        border: 1px solid black;
-        width: 100px;
-        height: 100px;
+    font-size: 1.25rem;
+    max-width: 1187px;
+    margin: 0px auto 57px auto;
+    > div:first-child {
+      margin-bottom: 35px;
+    }
+    > div:nth-child(2) {
+      display: flex;
+      justify-content: space-between;
+      > div {
+        cursor: pointer;
+        ${center}
+        width: 32%;
+        height: 80px;
+        border: 1px solid #838383;
+        border-radius: 20px;
+        text-align: center;
       }
+      > div:first-child {
+        margin-bottom: 15px;
+      }
+    }
+    > div:last-child {
+      ${center}
+      margin-top: 60px;
+      height: 60px;
+      background: #000000;
+      border-radius: 40px;
+      cursor: pointer;
     }
   }
 `;
+export const StepThree = styled.div<{ active: string }>`
+  ${glassBox}
+  width: 100%;
+  height: ${(props) =>
+    props.active === OnBoardingStep.RealEstateAddress ? 'auto' : '5rem'};
+  padding: 1.625rem 51px 0px 51px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  animation: ${(props) =>
+    props.active === OnBoardingStep.RealEstateAddress
+      ? css`
+          ${setp1Active} 200ms ease-in
+        `
+      : css`
+          ${step1Deactive} 200ms ease-in
+        `};
+  > div:first-child {
+    font-size: 1.375rem;
+    margin-bottom: 28px;
+  }
+  > div:last-child {
+    font-size: 1.25rem;
+    max-width: 1187px;
+    margin: 0px auto 57px auto;
+    > div:first-child {
+      margin-bottom: 35px;
+    }
+    > div:nth-child(2) {
+      > input {
+        width: 100%;
+        height: 50px;
+        background: none;
+      }
+    }
+    > div:last-child {
+      ${center}
+      margin-top: 60px;
+      height: 60px;
+      background: #000000;
+      border-radius: 40px;
+      cursor: pointer;
+    }
+  }
+`;
+
+export const StepFour = styled.div<{ active: string }>`
+  ${glassBox}
+  width: 100%;
+  height: ${(props) =>
+    props.active === OnBoardingStep.RealEstateAddress ? 'auto' : '5rem'};
+  padding: 1.625rem 51px 0px 51px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  animation: ${(props) =>
+    props.active === OnBoardingStep.RealEstateAddress
+      ? css`
+          ${setp1Active} 200ms ease-in
+        `
+      : css`
+          ${step1Deactive} 200ms ease-in
+        `};
+  > div:first-child {
+    font-size: 1.375rem;
+    margin-bottom: 28px;
+  }
+  > div:last-child {
+    font-size: 1.25rem;
+    max-width: 1187px;
+    margin: 0px auto 57px auto;
+    > div:first-child {
+      margin-bottom: 35px;
+    }
+    > div:nth-child(2) {
+      > input {
+        width: 100%;
+        height: 50px;
+        background: none;
+      }
+    }
+    > div:last-child {
+      ${center}
+      margin-top: 60px;
+      height: 60px;
+      background: #000000;
+      border-radius: 40px;
+      cursor: pointer;
+    }
+  }
+`;
+
+export const StepFive = styled.div<{ active: string }>`
+  ${glassBox}
+  width: 100%;
+  height: ${(props) =>
+    props.active === OnBoardingStep.RealEstateAddress ? 'auto' : '5rem'};
+  padding: 1.625rem 51px 0px 51px;
+  overflow: hidden;
+  animation: ${(props) =>
+    props.active === OnBoardingStep.RealEstateAddress
+      ? css`
+          ${setp1Active} 200ms ease-in
+        `
+      : css`
+          ${step1Deactive} 200ms ease-in
+        `};
+  > div:first-child {
+    font-size: 1.375rem;
+    margin-bottom: 28px;
+  }
+  > div:last-child {
+    font-size: 1.25rem;
+    max-width: 1187px;
+    margin: 0px auto 57px auto;
+    > div:first-child {
+      margin-bottom: 35px;
+    }
+    > div:nth-child(2) {
+      > input:nth-child(1) {
+        width: 100%;
+        height: 50px;
+        background: none;
+      }
+    }
+    > div:last-child {
+      ${center}
+      margin-top: 60px;
+      height: 60px;
+      background: #000000;
+      border-radius: 40px;
+      cursor: pointer;
+    }
+  }
+`;
+
 export const ElysiaWhitePaper = styled.div`
   ${glassBox}
   display: flex;
