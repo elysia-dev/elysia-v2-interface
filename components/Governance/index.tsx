@@ -17,6 +17,21 @@ import GovernanceCenter from './GovernanceCenter';
 import GovernanceTop from './GovernanceTop';
 import Staking from './Staking';
 import { NoiseSvg } from 'components/Layout/styles';
+import styled from 'styled-components';
+import documentImage from 'assets/images/main/document_image.webp';
+
+export const DocumentsImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.5;
+  background: url(${documentImage.src});
+  background-repeat: no-repeat;
+  background-size: 100%;
+`;
 
 const Governance = () => {
   const [modal, setModalType] = useState<ModalType>();
@@ -69,23 +84,10 @@ const Governance = () => {
 
   return (
     <>
-      <div
-        style={{
-          position: 'relative',
-          overflow: 'hidden',
-        }}>
+      <div>
         {modalVisible && <ModalLayout>{modalComponent()}</ModalLayout>}
-
-        <NoiseSvg>
-          <filter id="noise">
-            <feTurbulence type="fractalNoise" baseFrequency="5.6" />
-          </filter>
-        </NoiseSvg>
-        <div
-          className={styles.governance_wrapper}
-          style={{
-            marginTop: 100,
-          }}>
+        <DocumentsImage />
+        <div>
           <GovernanceTop />
           <section className={styles.governance_left_line_container}>
             <GovernanceCenter />

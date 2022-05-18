@@ -64,12 +64,13 @@ export const SectionWrapper = styled.div`
       width: 24.5%;
       ${glassBox}
       padding: 38.22px 25px 38px 25px;
+      cursor: pointer;
+      @media (max-width: 920px) {
+        width: 100%;
+        padding: 20px 25px;
+        margin-top: 25px;
+      }
       > a {
-        @media (max-width: 920px) {
-          width: 100%;
-          padding: 20px 25px;
-          margin-top: 25px;
-        }
         > div:first-child {
           display: flex;
           align-items: center;

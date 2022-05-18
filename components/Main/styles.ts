@@ -75,6 +75,7 @@ export const MainTopWrapper = styled.div`
         font-family: Gilroy-ExtraBold;
         font-size: 3.75rem;
         letter-spacing: 0.3rem;
+        user-select: none;
         @media (max-width: 640px) {
           font-size: 3rem;
         }
@@ -86,6 +87,7 @@ export const MainTopWrapper = styled.div`
         font-family: Gilroy-Light;
         font-size: 1.875rem;
         color: #33a5ff;
+        user-select: none;
         @media (max-width: 640px) {
           font-size: 1.5rem;
         }
@@ -132,6 +134,14 @@ export const MainTopWrapper = styled.div`
           width: 100%;
           height: 100%;
           ${center}
+          transition: all 0.2s ease;
+          top: 0;
+          &:hover {
+            filter: drop-shadow(0px 5px 6px #333333);
+            transition: all 0.2s ease;
+            position: relative;
+            top: -3px;
+          }
         }
       }
     }
@@ -147,6 +157,35 @@ export const MainTopWrapper = styled.div`
       backdrop-filter: blur(18px);
       ${partnerBorder()}
       ${center}
+      user-select: none;
+      transition: all 0.3s ease;
+      .glow-wrapper {
+        overflow: hidden;
+        position: absolute;
+        width: 100% !important;
+        height: 100%;
+        top: 0;
+      }
+      .glow {
+        display: block;
+        position: absolute;
+        width: 600%;
+        height: 800%;
+        background: rgba(255, 255, 255, 0.1);
+        top: 0;
+        filter: blur(5px);
+        transform: rotate(60deg) translate(-100%, 0);
+        transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      &:hover {
+        transition: all 1.5s ease;
+        backdrop-filter: blur(3px);
+
+        .glow {
+          transform: rotate(60deg) translate(100%, 0);
+          transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+      }
       @media (max-width: 960px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -235,8 +274,16 @@ export const MainPortFolioWrapper = styled.div`
     text-align: right;
     margin-top: 16px;
     font-size: 1.125rem;
+    left: 0px;
+    transition: all 0.3s ease;
+    position: relative;
     > span {
       cursor: pointer;
+    }
+    &:hover {
+      position: relative;
+      left: -4px;
+      transition: all 0.3s ease;
     }
   }
 `;
@@ -280,6 +327,26 @@ export const MainSectionWrapper = styled.div`
     width: 100%;
     height: 280px;
     ${sectionBorder('64px 0px 49px 50px')}
+    cursor: pointer;
+    transition: all 1s ease;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: 'blur(18px)';
+      transition: all 1s ease;
+      > div > div > span > span:last-child {
+        animation: arrowRight 1.8s linear infinite alternate;
+      }
+      @keyframes arrowRight {
+        from,
+        to {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.2;
+          transform: translateX(15px);
+        }
+      }
+    }
     > div:first-child {
       > div:first-child {
         > span:nth-child(1) {
@@ -330,6 +397,26 @@ export const MainSectionWrapper = styled.div`
     width: 100%;
     height: 280px;
     ${sectionBorder('64px 50px 49px 0px')}
+    cursor: pointer;
+    transition: all 1s ease;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: 'blur(18px)';
+      transition: all 1s ease;
+      > div > div > span > span:first-child {
+        animation: arrowLeft 1.8s linear infinite alternate;
+      }
+      @keyframes arrowLeft {
+        from,
+        to {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.2;
+          transform: translateX(-15px);
+        }
+      }
+    }
     > div:first-child {
       > div:first-child {
         > span:nth-child(1) {

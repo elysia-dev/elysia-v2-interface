@@ -57,7 +57,13 @@ const GovernanceCenter = () => {
                 많은 DEX와 CEX에 상장되어 있습니다.
               </p>
               <div>
-                <div className={styles.governance_button}>
+                <div
+                  className={styles.governance_button}
+                  onClick={() => {
+                    window.open(
+                      'https://coinmarketcap.com/currencies/elysia/markets/',
+                    );
+                  }}>
                   거래소 보기
                   <Image
                     src={ButtonArrow}
@@ -66,7 +72,13 @@ const GovernanceCenter = () => {
                     height={12}
                   />
                 </div>
-                <div className={styles.governance_button}>
+                <div
+                  className={styles.governance_button}
+                  onClick={() => {
+                    window.open(
+                      'https://coinmarketcap.com/currencies/elysia/markets/',
+                    );
+                  }}>
                   토큰 이코노미
                   <Image
                     src={ButtonArrow}

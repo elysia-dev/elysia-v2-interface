@@ -22,7 +22,7 @@ const Footer = () => {
       </div>
       <div>
         <section>
-          <div>Wrapper</div>
+          <div>White Paper</div>
           <div>Privacy Policy</div>
           <div>Disclaimer</div>
         </section>

@@ -18,6 +18,7 @@ export const FooterWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    letter-spacing: -0.3px;
     > div:not(div:last-child) {
       margin-bottom: 8px;
     }
@@ -32,21 +33,38 @@ export const FooterWrapper = styled.div`
     /* > div:not(div:last-child) {
       margin-right: 40px;
     } */
+    letter-spacing: -0.4px;
     > section {
       display: flex;
       align-items: flex-end;
       > div:nth-child(1),
       div:nth-child(2) {
-        margin-right: 20px;
+        margin-right: 0.8rem;
+        cursor: pointer;
       }
       > div:nth-child(3) {
-        margin-right: 40px;
+        margin-right: 1.2rem;
+        cursor: pointer;
       }
       > div:nth-child(4),
       div:nth-child(5),
       div:nth-child(6),
       div:nth-child(7) {
         margin-right: 25px;
+      }
+      &:last-child {
+        > div {
+          margin: 0;
+          margin-left: 1.3rem;
+          transition: all 0.2s ease;
+          top: 0;
+          &:hover {
+            filter: drop-shadow(0px 5px 6px #333333);
+            transition: all 0.2s ease;
+            position: relative;
+            top: -3px;
+          }
+        }
       }
     }
   }
@@ -61,7 +79,7 @@ export const FooterWrapper = styled.div`
       align-items: flex-end;
       height: initial;
       > section {
-        width: 100%;
+        width: 40%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -92,6 +110,7 @@ export const FooterWrapper = styled.div`
   @media (max-width: 840px) {
     > div:last-child {
       > section {
+        width: 100%;
         &:first-child {
           flex-direction: column;
           > div {

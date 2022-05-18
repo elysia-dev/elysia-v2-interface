@@ -37,7 +37,7 @@ export const DevelopersImage = styled.div`
 
 export const SectionWrapper = styled.div`
   padding-bottom: 150px;
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: Gilroy-Light;
   /* height: 100vh; */
 
@@ -81,8 +81,9 @@ export const SectionWrapper = styled.div`
     }
     > div:not(div:last-child) {
       padding: 38.22px 25px 38px 25px;
+      cursor: pointer;
       ${glassBox}
-      @media (max-width: 460px) {
+      @media (max-width: 920px) {
         padding: 20px 25px;
       }
     }
@@ -135,6 +136,12 @@ export const SectionWrapper = styled.div`
         }
       }
       > a {
+        @media (max-width: 960px) {
+          &:first-child {
+            margin-bottom: 25px;
+          }
+        }
+
         > div {
           font-family: Gilroy-ExtraBold;
           font-size: 1.25rem;
@@ -142,7 +149,7 @@ export const SectionWrapper = styled.div`
           padding: 29px 25px 24px 27px;
           width: 100%;
           ${center}
-          @media (max-width: 460px) {
+          @media (max-width: 960px) {
             padding: 20px 25px;
           }
           > div {

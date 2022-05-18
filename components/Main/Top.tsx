@@ -53,6 +53,9 @@ const Top = () => {
           </div>
         </div>
         <div>
+          <div className="glow-wrapper">
+            <i className="glow"></i>
+          </div>
           <div>
             <div>
               <span>

@@ -10,10 +10,10 @@ const SectionItem: React.FC<{
   link: string;
 }> = ({ section, isLeftArrow, link }) => {
   return (
-    <div>
+    <Link href={link} passHref>
       <div>
         <div>
-          <Link href={link} passHref>
+          <div>
             {isLeftArrow ? (
               <span>
                 <Image
@@ -35,14 +35,14 @@ const SectionItem: React.FC<{
                 />
               </span>
             )}
-          </Link>
-          <p>{section[1]}</p>
+            <p>{section[1]}</p>
+          </div>
+          <p>
+            <Trans>{section[2]}</Trans>
+          </p>
         </div>
-        <p>
-          <Trans>{section[2]}</Trans>
-        </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

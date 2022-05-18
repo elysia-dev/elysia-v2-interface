@@ -45,6 +45,19 @@ export const ItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
   height: 189px;
+  @media (max-width: 840px) {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  @media (max-width: 640px) {
+    height: initial;
+    > section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 15px;
+    }
+  }
 `;
 
 export const RoundInfoWrapper = styled.div`
@@ -52,6 +65,9 @@ export const RoundInfoWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 840px) {
+    border: 0;
+  }
   > div {
     width: 216px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -65,12 +81,28 @@ export const RoundInfoWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    @media (max-width: 1024px) {
+      width: 150px;
+    }
+    @media (max-width: 840px) {
+      width: 100%;
+      margin: 0;
+      flex-direction: row;
+      height: 45px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
     > h2 {
       font-family: Gilroy-ExtraBold;
       font-size: 1.0625rem;
       margin-bottom: 23px;
       color: #fff;
+      @media (max-width: 840px) {
+        margin: 0;
+        font-size: 1.7rem;
+      }
     }
 
     > p {
@@ -78,6 +110,13 @@ export const RoundInfoWrapper = styled.div`
       text-align: center;
       font-size: 0.8125rem;
       color: #fff;
+      @media (max-width: 840px) {
+        margin: 0;
+        font-size: 1.2rem;
+        > br {
+          display: none;
+        }
+      }
     }
   }
 
@@ -129,8 +168,15 @@ const hoverBoxShadow = css`
 export const StakingInfoByRound = styled.div`
   display: flex;
   align-items: center;
-  margin: 0px 60px;
+  margin: 0px 30px;
   flex: 1;
+  @media (max-width: 1024px) {
+    margin: 0px 15px;
+  }
+  @media (max-width: 840px) {
+    margin: 15px 0;
+    border-bottom: 0 !important;
+  }
   &:first-child {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
@@ -153,14 +199,17 @@ export const StakingInfoByRound = styled.div`
     > span {
       font-family: Gilroy-ExtraBold;
       font-size: 1.7rem;
-      margin: 0 5px 0 5px;
+      margin: 0;
       color: #838383;
       width: 50px;
       text-align: right;
+      @media (max-width: 640px) {
+        width: 40px;
+      }
     }
   }
 
-  > div:nth-child(3) {
+  > div {
     width: 249px;
     height: 46px;
     border-radius: 23px;
@@ -171,6 +220,15 @@ export const StakingInfoByRound = styled.div`
     align-items: center;
     margin-left: 20px;
     ${(props: any) => (props.theme.lte(constants.Zero) ? null : hoverBoxShadow)}
+    @media (max-width: 1024px) {
+      width: 200px;
+      height: 40px;
+    }
+    @media (max-width: 640px) {
+      width: 100%;
+      height: 40px;
+      margin: 0;
+    }
     > p {
       font-size: 1.2rem;
       ${(props: any) =>
@@ -181,32 +239,6 @@ export const StakingInfoByRound = styled.div`
             `}
       margin: 0;
       font-family: Gilroy-Light;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 0px 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    :first-child {
-      margin-bottom: 20px;
-    }
-
-    > div:first-child,
-    div:nth-child(2) {
-      width: 50%;
-    }
-    > div:nth-child(2) {
-      text-align: right;
-      margin-bottom: 6px;
-    }
-
-    > div:nth-child(3) {
-      margin-top: 5px;
-      margin-left: auto;
-      width: 120px;
-      height: 25px;
     }
   }
 `;

@@ -3,7 +3,7 @@ import LanguageType from 'enums/LanguageType';
 import ModalType from 'enums/ModalType';
 import { BigNumber, constants } from 'ethers';
 import moment from 'moment';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Skeleton from 'react-loading-skeleton';
 import { formatComma } from 'utils/formatters';
@@ -16,6 +16,7 @@ import {
   StakingInfoWrapper,
   WalletText,
 } from './styles';
+import { useMediaQuery } from 'react-responsive';
 
 type Props = {
   setModalType?: Dispatch<SetStateAction<ModalType | undefined>>;
@@ -44,6 +45,14 @@ const StakingItem = (props: Props) => {
     setAmount,
     setRound,
   } = props;
+  const [isMobile, setMobile] = useState(false);
+  const mobile = useMediaQuery({
+    query: '(max-width: 640px)',
+  });
+
+  useEffect(() => {
+    if (mobile) setMobile(mobile);
+  }, [mobile, window.innerWidth]);
 
   return userInfo ? (
     <ItemWrapper>
@@ -78,48 +87,100 @@ const StakingItem = (props: Props) => {
           <section>
             <h2>{formatComma(userInfo.userPrincipal)}</h2>&nbsp;<span>EL</span>
           </section>
-          <div
-            onClick={() => {
-              if (userInfo.userPrincipal.lte(constants.Zero)) {
-                return;
-              }
-              setModalVisible?.();
-              setModalType?.(ModalType.PrevUnstake);
-              setRound?.();
-              setAmount?.(userInfo.userPrincipal);
-            }}
-            style={{
-              backgroundColor: userInfo.userPrincipal.lte(constants.Zero)
-                ? '#838383'
-                : '#000000',
-            }}>
-            <p>{t('governance.prev_staking.8')}</p>
-          </div>
+          {!isMobile ? (
+            <div
+              onClick={() => {
+                if (userInfo.userPrincipal.lte(constants.Zero)) {
+                  return;
+                }
+                setModalVisible?.();
+                setModalType?.(ModalType.PrevUnstake);
+                setRound?.();
+                setAmount?.(userInfo.userPrincipal);
+              }}
+              style={{
+                backgroundColor: userInfo.userPrincipal.lte(constants.Zero)
+                  ? '#838383'
+                  : '#000000',
+              }}>
+              <p>{t('governance.prev_staking.8')}</p>
+            </div>
+          ) : (
+            <></>
+          )}
         </StakingInfoByRound>
         <StakingInfoByRound theme={userInfo.userReward}>
           <h2>{t('governance.prev_staking.7')}</h2>
           <section>
             <h2>{formatComma(userInfo.userReward)}</h2>&nbsp;<span>ELFI</span>
           </section>
-          <div
-            onClick={() => {
-              if (userInfo.userReward.lte(constants.Zero)) {
-                return;
-              }
-              setModalVisible?.();
-              setRound?.();
-              setAmount?.(userInfo.userReward);
-              setModalType?.(ModalType.PrevReward);
-            }}
-            style={{
-              backgroundColor: userInfo.userReward.lte(constants.Zero)
-                ? '#838383'
-                : '#000000',
-            }}>
-            <p>{t('governance.prev_staking.9')}</p>
-          </div>
+          {!isMobile ? (
+            <div
+              onClick={() => {
+                if (userInfo.userReward.lte(constants.Zero)) {
+                  return;
+                }
+                setModalVisible?.();
+                setRound?.();
+                setAmount?.(userInfo.userReward);
+                setModalType?.(ModalType.PrevReward);
+              }}
+              style={{
+                backgroundColor: userInfo.userReward.lte(constants.Zero)
+                  ? '#838383'
+                  : '#000000',
+              }}>
+              <p>{t('governance.prev_staking.9')}</p>
+            </div>
+          ) : (
+            <></>
+          )}
         </StakingInfoByRound>
       </StakingInfoWrapper>
+      {isMobile ? (
+        <section>
+          <StakingInfoByRound theme={userInfo.userPrincipal}>
+            <div
+              onClick={() => {
+                if (userInfo.userPrincipal.lte(constants.Zero)) {
+                  return;
+                }
+                setModalVisible?.();
+                setModalType?.(ModalType.PrevUnstake);
+                setRound?.();
+                setAmount?.(userInfo.userPrincipal);
+              }}
+              style={{
+                backgroundColor: userInfo.userPrincipal.lte(constants.Zero)
+                  ? '#838383'
+                  : '#000000',
+              }}>
+              <p>{t('governance.prev_staking.8')}</p>
+            </div>
+          </StakingInfoByRound>
+          <StakingInfoByRound theme={userInfo.userReward}>
+            <div
+              onClick={() => {
+                if (userInfo.userReward.lte(constants.Zero)) {
+                  return;
+                }
+                setModalVisible?.();
+                setRound?.();
+                setAmount?.(userInfo.userReward);
+                setModalType?.(ModalType.PrevReward);
+              }}
+              style={{
+                backgroundColor: userInfo.userReward.lte(constants.Zero)
+                  ? '#838383'
+                  : '#000000',
+              }}>
+              <p>{t('governance.prev_staking.9')}</p>
+            </div>
+          </StakingInfoByRound>
+        </section>
+      ) : (
+        <></>
+      )}
     </ItemWrapper>
   ) : isLoading && account ? (
     <SkeletonWrapper>

@@ -75,17 +75,17 @@ const StakingBody = (props: Props) => {
           <div
             style={{
               backgroundColor: isDisabledBtn
-                ? '#f0f0f1'
+                ? '#aaaaaa'
                 : Number(value) === 0
-                ? '#f0f0f1'
+                ? '#aaaaaa'
                 : '#3679b5',
             }}>
             <p
               style={{
                 color: isDisabledBtn
-                  ? '#888888'
+                  ? '#ffffff'
                   : Number(value) === 0
-                  ? '#888888'
+                  ? '#ffffff'
                   : '#ffffff',
               }}>
               {isDisabledBtn ? t('modal.button.0') : type}

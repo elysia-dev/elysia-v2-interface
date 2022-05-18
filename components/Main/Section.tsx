@@ -21,7 +21,7 @@ const Section = () => {
               t('main.section_el_bridge.3'),
             ]}
             isLeftArrow={false}
-            link={''}
+            link={`${i18n.language}/ELBridge`}
           />
           <SectionItem
             section={[
