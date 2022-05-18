@@ -25,16 +25,18 @@ const contentInBox = {
   padding: '0px 25px 0px 29.5px',
 };
 
-export const EcosystemImage = styled.div`
+export const CommunityImage = styled.div`
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100vh;
-  z-index: -2;
-  background: url(${communityImage.src});
+  z-index: -1;
+  opacity: 0.5;
+  /* background: url(${communityImage.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
+  background-position-y: -120px;
 `;
 
 export const SectionWrapper = styled.div`

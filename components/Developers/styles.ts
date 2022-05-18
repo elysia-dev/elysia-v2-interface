@@ -22,16 +22,18 @@ export const DevelopersImage = styled.div`
   right: 0;
   width: 100%;
   height: 100vh;
-  z-index: -2;
+  z-index: -1;
+  opacity: 0.5;
   background: url(${developersImage.src});
   background-repeat: no-repeat;
   background-size: 100%;
 `;
 
 export const SectionWrapper = styled.div`
-  padding-bottom: 200px;
+  padding-bottom: 150px;
   color: #ffffff;
   font-family: Gilroy-Light;
+  /* height: 100vh; */
 
   > div:nth-child(1) {
     padding-top: 634px;

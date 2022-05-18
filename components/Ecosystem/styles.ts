@@ -24,7 +24,8 @@ export const EcosystemImage = styled.div`
   right: 0;
   width: 100%;
   height: 150vh;
-  z-index: -2;
+  z-index: -1;
+  opacity: 0.5;
   background: url(${ecosystemImage.src});
   background-repeat: no-repeat;
   background-size: 100%;
@@ -79,7 +80,7 @@ export const ProjectWrapper = styled.div`
       }
       > div:nth-child(2) {
         display: flex;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         > div {
           ${center}
         }
@@ -124,7 +125,7 @@ export const ProjectWrapper = styled.div`
         font-family: Gilroy-ExtraBold;
         display: flex;
         align-items: center;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         > div:first-child {
           margin-right: auto;
         }
@@ -166,11 +167,12 @@ export const ProjectWrapper = styled.div`
         font-family: Gilroy-ExtraBold;
         display: flex;
         align-items: center;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
       }
       > div:last-child {
         font-size: 1rem;
         color: #cbcbcb;
+        margin-bottom: 20px;
       }
     }
   }
@@ -236,8 +238,10 @@ export const PortFolioWrapper = styled.div`
           display: flex;
           justify-content: space-between;
           align-items: center;
+          margin-bottom: 15px;
           > div:first-child {
             color: #cbcbcb;
+            font-size: 1.25rem;
           }
           > div:last-child {
             font-family: Gilroy-ExtraBold;
@@ -246,15 +250,16 @@ export const PortFolioWrapper = styled.div`
         }
       }
     }
-    > div:last-child {
-      cursor: pointer;
-      background: #000000;
-      width: 100%;
-      height: 83px;
-      border-radius: 42px;
-      text-align: center;
-      margin-top: 15px;
-      ${center}
-    }
   }
+`;
+
+export const ViewMoreButton = styled.div`
+  cursor: pointer;
+  background: #000000;
+  width: 100%;
+  height: 83px;
+  border-radius: 42px;
+  text-align: center;
+  margin-top: 15px;
+  ${center}
 `;

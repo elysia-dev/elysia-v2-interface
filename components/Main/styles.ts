@@ -48,7 +48,8 @@ export const MainImage = styled.div`
   right: 0;
   width: 100%;
   height: 150vh;
-  z-index: -2;
+  z-index: -1;
+  opacity: 0.5;
   background-image: url(${mainImage.src});
   background-repeat: no-repeat;
   background-size: 100%;
