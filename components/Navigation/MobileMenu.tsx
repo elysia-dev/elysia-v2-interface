@@ -13,7 +13,7 @@ const MobileMenu: React.FC<{
   return (
     <article className={styles.navigation__hamburger__menu}>
       <section>
-        <Link href={`/${router.query.lng}`} passHref>
+        <Link href={`/${router.query.lng}/ELBridge`} passHref>
           <a onClick={onButtonClick}>
             <span
               style={{
