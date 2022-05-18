@@ -48,7 +48,8 @@ export const MainImage = styled.div`
   right: 0;
   width: 100%;
   height: 150vh;
-  z-index: -2;
+  z-index: -1;
+  opacity: 0.5;
   background-image: url(${mainImage.src});
   background-repeat: no-repeat;
   background-size: 100%;
@@ -589,9 +590,6 @@ export const PartnersWrapper = styled.div`
 `;
 
 export const MainTeamWrapper = styled.div`
-  max-width: 1639px;
-  margin: auto;
-  padding: 0px 20px;
   padding-top: 100px;
   > div:first-child {
     > div:first-child {

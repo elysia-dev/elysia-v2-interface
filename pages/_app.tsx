@@ -9,8 +9,23 @@ import LanguageProvider from 'provider/LanguageProvider';
 import { Web3ReactProvider } from '@web3-react/core';
 import getLibrary from 'utils/getLibrary';
 import TxProvider from 'provider/TxProvider';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import * as gtag from '../lib/gtag';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
       <TxProvider>

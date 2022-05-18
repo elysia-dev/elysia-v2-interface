@@ -2,13 +2,13 @@ import { IAssetBond } from 'core/types/reserveSubgraph';
 import LoanProduct from 'enums/LoanProduct';
 import { formatUnits } from 'ethers/lib/utils';
 import { Dispatch, SetStateAction, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import Skeleton from 'react-loading-skeleton';
 import { toCompact } from 'utils/formatters';
 import { parseTokenId } from 'utils/parseTokenId';
 import reserves from 'utils/reserves';
 import AssetItem from './AssetItem';
-import { PortFolioWrapper } from './styles';
+import { PortFolioWrapper, ViewMoreButton } from './styles';
 
 const PortFolio: React.FC<{
   assetBondTokens: IAssetBond[];
@@ -33,7 +33,9 @@ const PortFolio: React.FC<{
       <PortFolioWrapper>
         <div>
           <div>{t('ecosystem.portfolio.0')}</div>
-          <div>{t('ecosystem.portfolio.1')}</div>
+          <div>
+            <Trans>{t('ecosystem.portfolio.1')}</Trans>
+          </div>
         </div>
         <div>
           <div>
@@ -79,9 +81,11 @@ const PortFolio: React.FC<{
                   );
                 })}
           </div>
-          <div onClick={() => setPageNum((prev) => prev + 1)}>
-            {t('ecosystem.portfolio.4')}
-          </div>
+          {assetBondTokens.length / (6 * pageNum) >= 1 && (
+            <ViewMoreButton onClick={() => setPageNum((prev) => prev + 1)}>
+              {t('ecosystem.portfolio.4')}
+            </ViewMoreButton>
+          )}
         </div>
       </PortFolioWrapper>
     </div>

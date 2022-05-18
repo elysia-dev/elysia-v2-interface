@@ -1,8 +1,9 @@
 import Footer from 'components/Footer';
 import Navigation from 'components/Navigation';
+import ReactGA from 'react-ga';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Gradient from 'utils/gradient';
 import { GradientCanvas, LayoutNoise, NoiseSvg } from './styles';
 
@@ -12,7 +13,7 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { pathname } = useRouter();
+  const { pathname, query } = useRouter();
 
   const drawCanvas = useCallback(() => {
     const dpr = window.devicePixelRatio;
@@ -67,7 +68,19 @@ const Layout = (props: LayoutProps) => {
           width: '100%',
           margin: 'auto',
         }}>
-        {props.children}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}>
+          <div
+            style={{
+              width: '90%',
+              maxWidth: '1639px',
+            }}>
+            {props.children}
+          </div>
+        </div>
       </div>
       <Footer />
     </>

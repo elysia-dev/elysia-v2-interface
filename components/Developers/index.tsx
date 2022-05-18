@@ -1,12 +1,12 @@
 import Section from './Section';
-import { DevelopersImage, DevelopersWrapper } from './styles';
+import { DevelopersImage } from './styles';
 
 const Developers = () => {
   return (
-    <DevelopersWrapper>
+    <>
       <DevelopersImage />
       <Section />
-    </DevelopersWrapper>
+    </>
   );
 };
 

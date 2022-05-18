@@ -7,6 +7,7 @@ import Document, {
   DocumentContext,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { GA_TRACKING_ID } from 'lib/gtag';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -40,6 +41,21 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <style />
+          {/* <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'G-8TTVPVJ59G');
+          `,
+            }}
+          /> */}
         </Head>
         <body>
           <Main />

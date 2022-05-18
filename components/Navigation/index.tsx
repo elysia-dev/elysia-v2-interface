@@ -19,6 +19,7 @@ import TxStatus from 'enums/TxStatus';
 import { isChainId } from 'utils/isChainId';
 import { NavigationWrapper } from './styles';
 import MobileMenu from './MobileMenu';
+import * as gtag from 'lib/gtag';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -115,7 +116,18 @@ const Navigation = () => {
       <NavigationWrapper
         theme={isMobile && isMobileMenu ? 'overflow' : isScroll}>
         <div>
-          <div>
+          <div
+            onClick={() => {
+              const handleRouteChange = () => {
+                console.log('route eventt');
+                gtag.event({
+                  action: 'click',
+                  category: 'logo',
+                  label: 'label',
+                });
+              };
+              handleRouteChange();
+            }}>
             <Link href={`/${router.query.lng}`} passHref>
               <a>
                 <Image

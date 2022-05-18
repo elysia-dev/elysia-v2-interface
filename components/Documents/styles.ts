@@ -16,18 +16,18 @@ export const DocumentsImage = styled.div`
   right: 0;
   width: 100%;
   height: 100vh;
-  z-index: -2;
+  z-index: -1;
+  opacity: 0.5;
   background: url(${documentImage.src});
   background-repeat: no-repeat;
   background-size: 100%;
 `;
 
 export const SectionWrapper = styled.div`
-  max-width: 1639px;
-  margin: auto;
-  padding: 0px 20px 200px 20px;
+  padding-bottom: 150px;
   color: #ffffff;
   font-family: Gilroy-Light;
+  /* height: 100vh; */
 
   > div:nth-child(1) {
     padding-top: 60vh;

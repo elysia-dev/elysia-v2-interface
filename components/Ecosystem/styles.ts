@@ -58,7 +58,8 @@ export const EcosystemImage = styled.div`
   right: 0;
   width: 100%;
   height: 150vh;
-  z-index: -2;
+  z-index: -1;
+  opacity: 0.5;
   background: url(${ecosystemImage.src});
   background-repeat: no-repeat;
   background-size: 100%;
@@ -90,8 +91,6 @@ export const TopWrapper = styled.div`
 `;
 
 export const ProjectWrapper = styled.div`
-  margin: auto;
-  max-width: 1639px;
   margin-top: 100px;
   color: #ffffff;
   > div:first-child {
@@ -197,7 +196,7 @@ export const ProjectWrapper = styled.div`
         font-family: Gilroy-ExtraBold;
         display: flex;
         align-items: center;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         > div:first-child {
           margin-right: auto;
           font-size: 1.5rem;
@@ -272,8 +271,6 @@ export const ProjectWrapper = styled.div`
 `;
 
 export const PortFolioWrapper = styled.div`
-  max-width: 1639px;
-  margin: auto;
   padding-top: 100px;
   font-family: Gilroy-Light;
   color: #ffffff;
@@ -384,8 +381,10 @@ export const PortFolioWrapper = styled.div`
           display: flex;
           justify-content: space-between;
           align-items: center;
+          margin-bottom: 15px;
           > div:first-child {
             color: #cbcbcb;
+            font-size: 1.25rem;
           }
           > div:last-child {
             font-family: Gilroy-ExtraBold;
@@ -397,21 +396,20 @@ export const PortFolioWrapper = styled.div`
         }
       }
     }
-    > div:last-child {
-      cursor: pointer;
-      background: #000000;
-      width: 100%;
-      height: 83px;
-      border-radius: 42px;
-      text-align: center;
-      margin-top: 15px;
-      margin: 30px 0;
-      ${center}
-      font-size: 1.2rem;
-      @media (max-width: 640px) {
-        height: 50px;
-        margin: 30px 0;
-      }
-    }
+  }
+`;
+
+export const ViewMoreButton = styled.div`
+  cursor: pointer;
+  background: #000000;
+  width: 100%;
+  height: 83px;
+  border-radius: 42px;
+  text-align: center;
+  margin-top: 15px;
+  ${center}
+  @media (max-width: 640px) {
+    height: 50px;
+    margin: 30px 0;
   }
 `;
