@@ -1,4 +1,4 @@
-import { MainImage, MainWrapper } from './styles';
+import { MainImage } from './styles';
 import PortFolio from './PortFolio';
 import Top from './Top';
 import Section from './Section';
