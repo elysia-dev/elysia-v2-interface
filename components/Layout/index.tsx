@@ -48,12 +48,6 @@ const Layout = (props: LayoutProps) => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (initialized) {
-  //     ReactGA.pageview(location.pathname + location.search);
-  //   }
-  // }, [initialized, location]);
-
   return (
     <>
       <Head>
