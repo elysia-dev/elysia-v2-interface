@@ -20,12 +20,12 @@ const boxActive = keyframes`
     height: 100px;
   }
   100% {
-    height: 286px;
+    height: 100%;
   }
 `;
 const boxDeactive = keyframes`
   0% {
-    height: 286px;
+    height: 100%;
   }
   100% {
     height: 100px;
@@ -36,12 +36,12 @@ const boxActiveMoblie = keyframes`
     height: 100px;
   }
   100% {
-    height: 339px;
+    height:  100%;
   }
 `;
 const boxDeactiveMolie = keyframes`
   0% {
-    height: 339px;
+    height: 100%;
   }
   100% {
     height: 100px;
@@ -52,12 +52,12 @@ const boxActive2 = keyframes`
     height: 100px;
   }
   100% {
-    height: 586px
+    height: 100%;
   }
 `;
 const boxDeactive2 = keyframes`
   0% {
-    height: 586px
+    height: 100%;
   }
   100% {
     height: 100px;
@@ -68,12 +68,12 @@ const boxActive2Moblie = keyframes`
     height: 100px;
   }
   100% {
-    height: 807px
+    height: 100%
   }
 `;
 const boxDeactive2Moblie = keyframes`
   0% {
-    height: 807px
+    height: 100%;
   }
   100% {
     height: 100px;
@@ -85,12 +85,12 @@ const setp1Active = keyframes`
     height: 5rem;
   }
   100% {
-    height: 527.5px;
+    height: 100%;
   }
 `;
 const step1Deactive = keyframes`
   0% {
-    height: 527.5px;
+    height: 100%;
   }
   100% {
     height: 5rem;
@@ -102,12 +102,12 @@ const setp2Active = keyframes`
     height: 5rem;
   }
   100% {
-    height: 447.5px;
+    height: 100%;
   }
 `;
 const step2Deactive = keyframes`
   0% {
-    height: 447.5px;
+    height: 100%;
   }
   100% {
     height: 5rem;
@@ -118,12 +118,12 @@ const setp3Active = keyframes`
     height: 5rem;
   }
   100% {
-    height: 397px;
+    height: 100%;
   }
 `;
 const step3Deactive = keyframes`
   0% {
-    height: 397px;
+    height: 100%;
   }
   100% {
     height: 5rem;
@@ -134,12 +134,12 @@ const setp4Active = keyframes`
     height: 5rem;
   }
   100% {
-    height: 397px;
+    height: 100%;
   }
 `;
 const step4Deactive = keyframes`
   0% {
-    height: 397px;
+    height: 100%;
   }
   100% {
     height: 5rem;
@@ -150,12 +150,12 @@ const setp5Active = keyframes`
     height: 5rem;
   }
   100% {
-    height: 541px;
+    height: 100%;
   }
 `;
 const step5Deactive = keyframes`
   0% {
-    height: 541px;
+    height:  100%;
   }
   100% {
     height: 5rem;
@@ -198,16 +198,22 @@ export const SectionWrapper = styled.div`
   font-family: Gilroy-Light;
 
   > div:nth-child(1) {
-    padding-top: 634px;
+    padding-top: 60vh;
     margin-bottom: 30px;
     > div:first-child {
       color: #cbcbcb;
       font-size: 1.375rem;
+      @media (max-width: 460px) {
+        font-size: 1rem;
+      }
       > div:first-child {
         color: #ffffff;
         font-family: Gilroy-ExtraBold;
         font-size: 2rem;
         margin-bottom: 5px;
+        @media (max-width: 460px) {
+          font-size: 1.5rem;
+        }
       }
       > div:nth-child(2) {
         color: #33a5ff;
@@ -222,7 +228,7 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
   width: 100%;
   /* padding: 33px 71px 0px 90px; */
   margin-bottom: 20px;
-  height: ${(props) => (props.active ? '286px' : '100px')};
+  max-height: ${(props) => (props.active ? '1000vh' : '100px')};
   animation: ${(props) => {
     if (typeof props.active === 'undefined') return;
     return props.active
@@ -234,8 +240,9 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
         `;
   }};
   overflow: hidden;
-  @media (max-width: 460px) {
-    height: ${(props) => (props.active ? '339px' : '100px')};
+  @media (max-width: 640px) {
+    max-height: ${(props) => (props.active ? '1000vh' : '100px')};
+    transition: max-height 1s ease;
     animation: ${(props) => {
       if (typeof props.active === 'undefined') return;
       return props.active
@@ -253,7 +260,7 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
     ${center}
     padding: 33px 71px 35.5px 71px;
     border-bottom: 1px solid #acdaff;
-    @media (max-width: 460px) {
+    @media (max-width: 640px) {
       padding: 33px 21px 35.5px 21px;
     }
     > div:first-child {
@@ -289,8 +296,8 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
     }
   }
   > div:last-child {
-    padding: 44.5px 0px 51px 71px;
-    @media (max-width: 460px) {
+    padding: 44.5px 71px 51px 71px;
+    @media (max-width: 640px) {
       padding: 33px 21px 35.5px 21px;
     }
     font-size: 1.1875rem;
@@ -303,7 +310,8 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
   width: 100%;
   /* padding: 33px 71px 0px 90px; */
   margin-bottom: 20px;
-  height: ${(props) => (props.active ? '586px' : '100px')};
+  max-height: ${(props) => (props.active ? '1000vh' : '100px')};
+  transition: max-height 1s ease;
   animation: ${(props) => {
     if (typeof props.active === 'undefined') return;
     return props.active
@@ -315,8 +323,8 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
         `;
   }};
   overflow: hidden;
-  @media (max-width: 460px) {
-    height: ${(props) => (props.active ? '807px' : '100px')};
+  @media (max-width: 640px) {
+    max-height: ${(props) => (props.active ? '1000vh' : '100px')};
     animation: ${(props) => {
       if (typeof props.active === 'undefined') return;
       return props.active
@@ -334,7 +342,7 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
     ${center}
     padding: 33px 71px 35.5px 71px;
     border-bottom: 1px solid #acdaff;
-    @media (max-width: 460px) {
+    @media (max-width: 640px) {
       padding: 33px 21px 35.5px 21px;
     }
     > div:first-child {
@@ -372,7 +380,7 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
   > div:last-child {
     padding: 44.5px 71px 51px 71px;
     font-size: 1.1875rem;
-    @media (max-width: 460px) {
+    @media (max-width: 640px) {
       padding: 33px 21px 35.5px 21px;
     }
     > div {
@@ -409,8 +417,12 @@ export const StepOne = styled.div<{
   ${glassBox}
   background-color: ${(props) => props.isFinished && '#343F57'};
   width: 100%;
-  height: ${(props) => (props.selected ? '527.5px' : '5rem')};
+  max-height: ${(props) => (props.selected ? '1000vh' : '5rem')};
+  transition: max-height 1s ease;
   padding: 1.625rem 51px 0px 51px;
+  @media (max-width: 640px) {
+    padding: 1.625rem 20px 0px 20px;
+  }
   margin-bottom: 25px;
   overflow: hidden;
   animation: ${(props) =>
@@ -437,17 +449,25 @@ export const StepOne = styled.div<{
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      @media (max-width: 640px) {
+        flex-direction: column;
+      }
       > div {
         cursor: pointer;
         ${center}
         width: 48%;
         height: 80px;
-        border: 1px solid #838383;
+        border: 1px solid #acacac;
         border-radius: 20px;
         text-align: center;
+        @media (max-width: 640px) {
+          width: 100%;
+          margin-bottom: 15px;
+          height: 50px;
+        }
       }
       > div:hover {
-        background: rgb(52, 63, 87);
+        background: rgba(52, 63, 87, 0.3);
       }
       > div:first-child {
         margin-bottom: 15px;
@@ -464,6 +484,16 @@ export const StepOne = styled.div<{
       background: #000000;
       border-radius: 40px;
       cursor: pointer;
+      @media (max-width: 640px) {
+        margin-top: 50px;
+        height: 40px;
+        background: #000000;
+        border-radius: 20px;
+      }
+      @media (max-width: 460px) {
+        margin-top: 40px;
+        height: 35px;
+      }
     }
   }
 `;
@@ -476,8 +506,12 @@ export const StepTwo = styled.div<{
   ${glassBox}
   background-color: ${(props) => props.isFinished && '#343F57'};
   width: 100%;
-  height: ${(props) => (props.selected ? '447.5px' : '5rem')};
+  max-height: ${(props) => (props.selected ? '1000vh' : '5rem')};
+  transition: max-height 1s ease;
   padding: 1.625rem 51px 0px 51px;
+  @media (max-width: 640px) {
+    padding: 1.625rem 20px 0px 20px;
+  }
   margin-bottom: 25px;
   overflow: hidden;
   animation: ${(props) =>
@@ -503,17 +537,25 @@ export const StepTwo = styled.div<{
     > div:nth-child(2) {
       display: flex;
       justify-content: space-between;
+      @media (max-width: 640px) {
+        flex-direction: column;
+      }
       > div {
         cursor: pointer;
         ${center}
         width: 32%;
         height: 80px;
-        border: 1px solid #838383;
+        border: 1px solid #acacac;
         border-radius: 20px;
         text-align: center;
+        @media (max-width: 640px) {
+          width: 100%;
+          margin-bottom: 15px;
+          height: 50px;
+        }
       }
       > div:hover {
-        background: rgb(52, 63, 87);
+        background: rgba(52, 63, 87, 0.3);
       }
       > div:first-child {
         margin-bottom: 15px;
@@ -530,6 +572,16 @@ export const StepTwo = styled.div<{
       background: #000000;
       border-radius: 40px;
       cursor: pointer;
+      @media (max-width: 640px) {
+        margin-top: 50px;
+        height: 40px;
+        background: #000000;
+        border-radius: 20px;
+      }
+      @media (max-width: 460px) {
+        margin-top: 40px;
+        height: 35px;
+      }
     }
   }
 `;
@@ -541,8 +593,12 @@ export const StepThree = styled.div<{
   ${glassBox}
   width: 100%;
   background-color: ${(props) => props.isFinished && '#343F57'};
-  height: ${(props) => (props.selected ? '397px' : '5rem')};
+  max-height: ${(props) => (props.selected ? '1000vh' : '5rem')};
+  transition: max-height 1s ease;
   padding: 1.625rem 51px 0px 51px;
+  @media (max-width: 640px) {
+    padding: 1.625rem 20px 0px 20px;
+  }
   margin-bottom: 25px;
   overflow: hidden;
   animation: ${(props) =>
@@ -575,6 +631,17 @@ export const StepThree = styled.div<{
         border-radius: 20px;
         padding: 0px 40px;
         font-size: 1.75rem;
+        @media (max-width: 640px) {
+          padding: 0px 20px;
+          font-size: 1.2rem;
+          height: 60px;
+        }
+        @media (max-width: 460px) {
+          padding: 0px 10px;
+          font-size: 1.2rem;
+          height: 40px;
+          border-radius: 10px;
+        }
       }
       > input:focus {
         border: 1px solid #ffffff;
@@ -587,6 +654,16 @@ export const StepThree = styled.div<{
       height: 60px;
       border-radius: 40px;
       cursor: pointer;
+      @media (max-width: 640px) {
+        margin-top: 50px;
+        height: 40px;
+        background: #000000;
+        border-radius: 20px;
+      }
+      @media (max-width: 460px) {
+        margin-top: 40px;
+        height: 35px;
+      }
     }
   }
 `;
@@ -599,8 +676,12 @@ export const StepFour = styled.div<{
   ${glassBox}
   width: 100%;
   background-color: ${(props) => props.isFinished && '#343F57'};
-  height: ${(props) => (props.selected ? '397px' : '5rem')};
+  max-height: ${(props) => (props.selected ? '1000vh' : '5rem')};
+  transition: max-height 1s ease;
   padding: 1.625rem 51px 0px 51px;
+  @media (max-width: 640px) {
+    padding: 1.625rem 20px 0px 20px;
+  }
   margin-bottom: 25px;
   overflow: hidden;
   animation: ${(props) =>
@@ -633,6 +714,17 @@ export const StepFour = styled.div<{
         border-radius: 20px;
         padding: 0px 40px;
         font-size: 1.75rem;
+        @media (max-width: 640px) {
+          padding: 0px 20px;
+          font-size: 1.2rem;
+          height: 60px;
+        }
+        @media (max-width: 460px) {
+          padding: 0px 10px;
+          font-size: 1.2rem;
+          height: 40px;
+          border-radius: 10px;
+        }
       }
       > input:focus {
         border: 1px solid #ffffff;
@@ -646,6 +738,16 @@ export const StepFour = styled.div<{
       background: #000000;
       border-radius: 40px;
       cursor: pointer;
+      @media (max-width: 640px) {
+        margin-top: 50px;
+        height: 40px;
+        background: #000000;
+        border-radius: 20px;
+      }
+      @media (max-width: 460px) {
+        margin-top: 40px;
+        height: 35px;
+      }
     }
   }
 `;
@@ -658,8 +760,12 @@ export const StepFive = styled.div<{
   ${glassBox}
   width: 100%;
   background-color: ${(props) => props.isFinished && '#343F57'};
-  height: ${(props) => (props.selected ? '541px' : '5rem')};
+  max-height: ${(props) => (props.selected ? '1000vh' : '5rem')};
+  transition: max-height 1s ease;
   padding: 1.625rem 51px 0px 51px;
+  @media (max-width: 640px) {
+    padding: 1.625rem 20px 0px 20px;
+  }
   overflow: hidden;
   animation: ${(props) =>
     props.selected
@@ -691,6 +797,17 @@ export const StepFive = styled.div<{
         border-radius: 20px;
         padding: 0px 40px;
         font-size: 1.75rem;
+        @media (max-width: 640px) {
+          padding: 0px 20px;
+          font-size: 1.2rem;
+          height: 60px;
+        }
+        @media (max-width: 460px) {
+          padding: 0px 10px;
+          font-size: 1.2rem;
+          height: 40px;
+          border-radius: 10px;
+        }
       }
       > input:focus {
         border: 1px solid #ffffff;
@@ -735,6 +852,16 @@ export const StepFive = styled.div<{
       background: #000000;
       border-radius: 40px;
       cursor: pointer;
+      @media (max-width: 640px) {
+        margin-top: 50px;
+        height: 40px;
+        background: #000000;
+        border-radius: 20px;
+      }
+      @media (max-width: 460px) {
+        margin-top: 40px;
+        height: 35px;
+      }
     }
   }
 `;
@@ -744,7 +871,7 @@ export const ElysiaWhitePaper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 49px 67px 49px 90px;
+  padding: 45px 60px 45px 50px;
   margin-bottom: 80px;
   > div:first-child {
     font-size: 1.25rem;
@@ -760,6 +887,18 @@ export const ElysiaWhitePaper = styled.div`
     width: 310px;
     height: 46px;
     ${center}
+  }
+  @media (max-width: 920px) {
+    flex-direction: column;
+    align-items: flex-start;
+    > div {
+      &:first-child {
+        margin-bottom: 30px;
+      }
+      &:last-child {
+        width: 100%;
+      }
+    }
   }
 `;
 
