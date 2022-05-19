@@ -21,7 +21,7 @@ export const useENS = (address: string | null | undefined): ReturnType => {
           const getEnsName = await provider.lookupAddress(address);
           if (getEnsName) setENSName(getEnsName);
         }
-      } catch (e) {
+      } catch (e: any) {
         if (e.code === 'UNSUPPORTED_OPERATION') {
           return;
         }
