@@ -46,7 +46,7 @@ const Section = () => {
                   />
                 }
                 contentName={'Discord'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                link={'https://discord.com/invite/JjjYrE5Ww8'}
               />
               <ContentItem
                 Icon={
@@ -58,7 +58,7 @@ const Section = () => {
                   />
                 }
                 contentName={'Telegram'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                link={'https://t.me/elysia_official'}
               />
               <ContentItem
                 Icon={
@@ -70,7 +70,7 @@ const Section = () => {
                   />
                 }
                 contentName={'Kakaotalk'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                link={'https://open.kakao.com/o/gUpSOwkb'}
               />
               <ContentItem
                 Icon={
@@ -82,7 +82,7 @@ const Section = () => {
                   />
                 }
                 contentName={'Wechat'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                link={''}
               />
             </div>
           </div>
@@ -95,25 +95,13 @@ const Section = () => {
                 Icon={
                   <Image
                     src={Elysia}
-                    alt={'Elysia'}
+                    alt={'Forum'}
                     width={isDesktop ? 17 : 27}
                     height={isDesktop ? 19.72 : 29.72}
                   />
                 }
-                contentName={'Elysia'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
-              />
-              <ContentItem
-                Icon={
-                  <Image
-                    src={Tally}
-                    alt={'Tally'}
-                    width={isDesktop ? 10 : 20}
-                    height={isDesktop ? 18 : 28}
-                  />
-                }
-                contentName={'Tally'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                contentName={'Forum'}
+                link={''}
               />
               <ContentItem
                 Icon={
@@ -125,8 +113,9 @@ const Section = () => {
                   />
                 }
                 contentName={'Snapshot'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                link={''}
               />
+              <div></div>
               <div></div>
             </div>
           </div>
@@ -145,19 +134,19 @@ const Section = () => {
                   />
                 }
                 contentName={'Github'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                link={'https://github.com/elysia-dev'}
               />
               <ContentItem
                 Icon={
                   <Image
                     src={Medium}
-                    alt={'Medium'}
+                    alt={'Tech Blog'}
                     width={isDesktop ? 28 : 38}
                     height={isDesktop ? 11 : 21}
                   />
                 }
-                contentName={'Medium'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                contentName={'Tech Blog'}
+                link={'https://tech.elysia.land/'}
               />
               <div></div>
               <div></div>
@@ -178,7 +167,7 @@ const Section = () => {
                   />
                 }
                 contentName={'Twitter'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                link={'https://twitter.com/Elysia_HQ'}
               />
               <ContentItem
                 Icon={
@@ -190,7 +179,7 @@ const Section = () => {
                   />
                 }
                 contentName={'Facebook'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                link={'https://www.facebook.com/ElysiaHQ'}
               />
               <ContentItem
                 Icon={
@@ -202,19 +191,19 @@ const Section = () => {
                   />
                 }
                 contentName={'Medium'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                link={'https://medium.com/elysia-magazine'}
               />
               <ContentItem
                 Icon={
                   <Image
                     src={Wechat}
-                    alt={'Wechat'}
+                    alt={'Weibo'}
                     width={isDesktop ? 22 : 32}
                     height={isDesktop ? 16 : 26}
                   />
                 }
-                contentName={'Wechat'}
-                link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+                contentName={'Weibo'}
+                link={'https://weibo.com/u/7449962304'}
               />
             </div>
           </div>
