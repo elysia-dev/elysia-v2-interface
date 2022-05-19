@@ -36,7 +36,13 @@ const AssetItem = (props: Props) => {
   }, [fetchImage]);
 
   return (
-    <div>
+    <div
+      onClick={() => {
+        window.open(
+          `https://www.elyfi.world/en/portfolio/${abToken.id}`,
+          '_blank',
+        );
+      }}>
       <div
         style={{
           position: 'relative',
@@ -44,7 +50,7 @@ const AssetItem = (props: Props) => {
         {image && <Image src={image} alt={'building'} layout={'fill'} />}
       </div>
       <div>
-        <div>{`project`}</div>
+        <div>{`ELYFI`}</div>
         <div>
           {'$ ' +
             toCompactForBignumber(
