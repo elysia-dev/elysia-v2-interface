@@ -32,21 +32,21 @@ const Layout = (props: LayoutProps) => {
     new Gradient(ctx, canvas.width, canvas.height);
   }, []);
 
-  // useEffect(() => {
-  //   drawCanvas();
-  // }, [drawCanvas]);
+  useEffect(() => {
+    drawCanvas();
+  }, [drawCanvas]);
 
-  // useEffect(() => {
-  //   window.addEventListener('resize', () => {
-  //     drawCanvas();
-  //   });
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      drawCanvas();
+    });
 
-  //   return () => {
-  //     window.removeEventListener('resize', () => {
-  //       drawCanvas();
-  //     });
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener('resize', () => {
+        drawCanvas();
+      });
+    };
+  }, []);
 
   return (
     <>
