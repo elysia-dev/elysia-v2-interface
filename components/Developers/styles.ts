@@ -30,7 +30,7 @@ export const DevelopersImage = styled.div`
   height: 100vh;
   z-index: -1;
   opacity: 0.5;
-  background: url(${developersImage.src});
+  /* background: url(${developersImage.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
 `;

@@ -45,8 +45,7 @@ export const EcosystemWrapper = styled.div`
         rgba(3, 41, 123, 0.5),
         rgba(54, 121, 181, 0.5)
       ),
-      linear-gradient(to top, rgba(54, 121, 181, 0.4), transparent),
-      url(${ecosystemImage.src});
+      linear-gradient(to top, rgba(54, 121, 181, 0.4), transparent);
     background-repeat: no-repeat;
     background-position-x: right;
   }
@@ -60,7 +59,7 @@ export const EcosystemImage = styled.div`
   height: 150vh;
   z-index: -1;
   opacity: 0.5;
-  background: url(${ecosystemImage.src});
+  /* background: url(${ecosystemImage.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
 `;
