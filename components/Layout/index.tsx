@@ -57,11 +57,11 @@ const Layout = (props: LayoutProps) => {
       </Head>
       <GradientCanvas ref={canvasRef} />
       <LayoutNoise />
-      <NoiseSvg>
+      {/* <NoiseSvg>
         <filter id="noise">
           <feTurbulence type="fractalNoise" baseFrequency="4.6" />
         </filter>
-      </NoiseSvg>
+      </NoiseSvg> */}
       <Navigation />
       <div
         style={{
