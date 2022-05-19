@@ -166,7 +166,6 @@ export const SectionWrapper = styled.div`
         }
         > a {
           width: 310px;
-          /* width: 310px; */
           @media (max-width: 1024px) {
             width: 100%;
           }
@@ -193,15 +192,16 @@ export const SectionWrapper = styled.div`
             }
           }
         }
-        > div:last-child {
+        > div:nth-child(3),
+        > div:nth-child(4) {
           width: 310px;
           padding: 0px 25px 0px 29.5px;
           @media (max-width: 1024px) {
-            width: 100%;
+            display: none;
           }
         }
         > div:not(div:nth-child(4)) {
-          margin-right: 104px;
+          /* margin-right: 104px; */
           @media (max-width: 1024px) {
             margin: 0;
           }
