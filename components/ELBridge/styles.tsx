@@ -187,7 +187,7 @@ export const ELbridgeImage = styled.div`
   height: 150vh;
   z-index: -1;
   opacity: 0.5;
-  background-image: url(${elbridge.src});
+  /* background-image: url(${elbridge.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
 `;
