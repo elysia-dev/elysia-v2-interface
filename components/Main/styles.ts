@@ -72,7 +72,7 @@ export const MainTopWrapper = styled.div`
       color: #ffffff;
       display: inline-block;
       > div:nth-child(1) {
-        font-family: Gilroy-ExtraBold;
+        font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
         font-size: 3.75rem;
         letter-spacing: 0.3rem;
         user-select: none;
@@ -84,7 +84,7 @@ export const MainTopWrapper = styled.div`
         }
       }
       > div:nth-child(2) {
-        font-family: Gilroy-Light;
+        font-family: Gilroy-Light, SpoqaHanSansNeo;
         font-size: 1.875rem;
         color: #33a5ff;
         user-select: none;
@@ -194,9 +194,9 @@ export const MainTopWrapper = styled.div`
         gap: 15px;
       }
       > div {
-        width: 25%;
+        width: 33%;
         ${center}
-        font-family: Gilroy-Light;
+        font-family: Gilroy-Light, SpoqaHanSansNeo;
         color: #ffffff;
         text-align: center;
         font-size: 1.375rem;
@@ -208,7 +208,7 @@ export const MainTopWrapper = styled.div`
         }
         > div {
           > span {
-            font-family: Gilroy-ExtraBold;
+            font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
             font-size: 3.125rem;
             @media (max-width: 640px) {
               font-size: 2.7rem;
@@ -232,12 +232,12 @@ export const MainPortFolioWrapper = styled.div`
   margin: 0 auto;
   > div:nth-child(1) {
     > div:first-child {
-      font-family: Gilroy-ExtraBold;
+      font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
       font-size: 2rem;
       color: #ffffff;
     }
     > div:last-child {
-      font-family: Gilroy-Light;
+      font-family: Gilroy-Light, SpoqaHanSansNeo;
       color: #33a5ff;
       font-size: 1.375rem;
       margin-top: 5px;
@@ -269,7 +269,7 @@ export const MainPortFolioWrapper = styled.div`
     }
   }
   > div:nth-child(3) {
-    font-family: Gilroy-Light;
+    font-family: Gilroy-Light, SpoqaHanSansNeo;
     color: #ffffff;
     text-align: right;
     margin-top: 16px;
@@ -301,7 +301,7 @@ export const MainSectionWrapper = styled.div`
   padding: 25vh 0px;
   max-width: 1639px;
   margin: auto;
-  font-family: Gilroy-Light;
+  font-family: Gilroy-Light, SpoqaHanSansNeo;
   /* > div:nth-child(1) {
     ${setRightBackground(elbridge.src)}
   }
@@ -350,7 +350,7 @@ export const MainSectionWrapper = styled.div`
     > div:first-child {
       > div:first-child {
         > span:nth-child(1) {
-          font-family: Gilroy-ExtraBold;
+          font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
           font-size: 2rem;
           color: #ffffff;
           display: flex;
@@ -420,7 +420,7 @@ export const MainSectionWrapper = styled.div`
     > div:first-child {
       > div:first-child {
         > span:nth-child(1) {
-          font-family: Gilroy-ExtraBold;
+          font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
           font-size: 2rem;
           color: #ffffff;
           display: flex;
@@ -472,14 +472,14 @@ export const PartnersWrapper = styled.div`
   max-width: 1639px;
   margin: auto;
   padding: 25vh 0px 0px;
-  font-family: Gilroy-Light;
+  font-family: Gilroy-Light, SpoqaHanSansNeo;
   font-size: 1.25rem;
   color: #ffffff;
   > div:nth-child(1) {
     color: #33a5ff;
     font-size: 1.375rem;
     > span:first-child {
-      font-family: Gilroy-ExtraBold;
+      font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
       font-size: 2rem;
       color: #ffffff;
     }
@@ -680,11 +680,11 @@ export const MainTeamWrapper = styled.div`
   padding-top: 100px;
   > div:first-child {
     > div:first-child {
-      font-family: Gilroy-Light;
+      font-family: Gilroy-Light, SpoqaHanSansNeo;
       color: #33a5ff;
       font-size: 1.375rem;
       > span:first-child {
-        font-family: Gilroy-ExtraBold;
+        font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
         font-size: 2rem;
         color: #ffffff;
       }
@@ -715,11 +715,11 @@ export const MainTeamWrapper = styled.div`
   > div:last-child {
     margin-top: 67px;
     > div:first-child {
-      font-family: Gilroy-Light;
+      font-family: Gilroy-Light, SpoqaHanSansNeo;
       color: #33a5ff;
       font-size: 1.375rem;
       > span:first-child {
-        font-family: Gilroy-ExtraBold;
+        font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
         font-size: 2rem;
         color: #ffffff;
       }
@@ -755,8 +755,9 @@ export const MainTeamWrapper = styled.div`
           align-items: center;
           justify-content: center;
           > div:first-child {
+            cursor: pointer;
             width: 100%;
-            font-family: Gilroy-ExtraBold;
+            font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
             color: #ffffff;
             font-size: 1.125rem;
             text-align: center;
@@ -765,10 +766,13 @@ export const MainTeamWrapper = styled.div`
             letter-spacing: 0.08rem;
             ${center}
           }
+          > div:first-child:hover {
+            text-shadow: 3px 2px 2px #000000;
+          }
           > div:last-child {
             padding: 0px 15px;
-            font-family: Gilroy-Light;
-            color: #838383;
+            font-family: Gilroy-Light, SpoqaHanSansNeo;
+            color: #b7b7b7;
             font-size: 1rem;
             line-height: 1.5rem;
             margin-top: 20px;
