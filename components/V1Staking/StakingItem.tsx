@@ -52,7 +52,7 @@ const StakingItem = (props: Props) => {
 
   useEffect(() => {
     if (mobile) setMobile(mobile);
-  }, [mobile, window.innerWidth]);
+  }, [mobile]);
 
   return userInfo ? (
     <ItemWrapper>

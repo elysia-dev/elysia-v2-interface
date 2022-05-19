@@ -75,7 +75,7 @@ export const SectionWrapper = styled.div`
   }
   > div:nth-child(2) {
     ${glassBox}
-    @media (max-width: 920px) {
+    @media (max-width: 1024px) {
       padding: 22px 25px 15px;
     }
     > div:first-child {
@@ -91,7 +91,9 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
-        @media (max-width: 920px) {
+        grid-gap: 15px;
+        gap: 15px;
+        @media (max-width: 1024px) {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           justify-content: space-between;
@@ -100,10 +102,13 @@ export const SectionWrapper = styled.div`
         }
         > a {
           width: 310px;
+          @media (max-width: 1024px) {
+            width: 100%;
+          }
           > div {
             ${contentInBox}
             ${center}
-            @media (max-width: 920px) {
+            @media (max-width: 1024px) {
               width: 100%;
               padding: 5px 10px;
               font-size: 1rem;
@@ -125,7 +130,7 @@ export const SectionWrapper = styled.div`
         }
         > div:not(div:nth-child(4)) {
           margin-right: 104px;
-          @media (max-width: 920px) {
+          @media (max-width: 1024px) {
             margin: 0;
           }
         }
@@ -134,7 +139,7 @@ export const SectionWrapper = styled.div`
   }
   > div:nth-child(3) {
     ${glassBox}
-    @media (max-width: 920px) {
+    @media (max-width: 1024px) {
       padding: 22px 25px 15px;
     }
     > div:first-child {
@@ -150,7 +155,9 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
-        @media (max-width: 920px) {
+        grid-gap: 15px;
+        gap: 15px;
+        @media (max-width: 1024px) {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           justify-content: space-between;
@@ -158,12 +165,15 @@ export const SectionWrapper = styled.div`
           gap: 15px;
         }
         > a {
-          flex-basis: 310px;
+          width: 310px;
           /* width: 310px; */
+          @media (max-width: 1024px) {
+            width: 100%;
+          }
           > div {
             ${contentInBox}
             ${center}
-            @media (max-width: 920px) {
+            @media (max-width: 1024px) {
               width: 100%;
               padding: 5px 10px;
               font-size: 1rem;
@@ -184,15 +194,15 @@ export const SectionWrapper = styled.div`
           }
         }
         > div:last-child {
-          flex-basis: 310px;
+          width: 310px;
           padding: 0px 25px 0px 29.5px;
-          @media (max-width: 920px) {
+          @media (max-width: 1024px) {
             width: 100%;
           }
         }
         > div:not(div:nth-child(4)) {
           margin-right: 104px;
-          @media (max-width: 920px) {
+          @media (max-width: 1024px) {
             margin: 0;
           }
         }
@@ -201,7 +211,7 @@ export const SectionWrapper = styled.div`
   }
   > div:nth-child(4) {
     ${glassBox}
-    @media (max-width: 920px) {
+    @media (max-width: 1024px) {
       padding: 22px 25px 15px;
     }
     > div:first-child {
@@ -217,7 +227,9 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
-        @media (max-width: 920px) {
+        grid-gap: 15px;
+        gap: 15px;
+        @media (max-width: 1024px) {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           justify-content: space-between;
@@ -226,10 +238,13 @@ export const SectionWrapper = styled.div`
         }
         > a {
           width: 310px;
+          @media (max-width: 1024px) {
+            width: 100%;
+          }
           > div {
             ${contentInBox}
             ${center}
-        @media (max-width: 920px) {
+            @media (max-width: 1024px) {
               width: 100%;
               padding: 5px 10px;
               font-size: 1rem;
@@ -253,13 +268,13 @@ export const SectionWrapper = styled.div`
         > div:nth-child(4) {
           width: 310px;
           padding: 0px 25px 0px 29.5px;
-          @media (max-width: 920px) {
+          @media (max-width: 1024px) {
             display: none;
           }
         }
         > div:not(div:nth-child(4)) {
-          margin-right: 104px;
-          @media (max-width: 920px) {
+          /* margin-right: 104px; */
+          @media (max-width: 1024px) {
             margin: 0;
           }
         }
@@ -268,7 +283,7 @@ export const SectionWrapper = styled.div`
   }
   > div:nth-child(5) {
     ${glassBox}
-    @media (max-width: 920px) {
+    @media (max-width: 1024px) {
       padding: 22px 25px 15px;
     }
     > div:first-child {
@@ -284,7 +299,9 @@ export const SectionWrapper = styled.div`
         margin-top: 13px;
         display: flex;
         justify-content: space-between;
-        @media (max-width: 920px) {
+        grid-gap: 15px;
+        gap: 15px;
+        @media (max-width: 1024px) {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           justify-content: space-between;
@@ -293,10 +310,13 @@ export const SectionWrapper = styled.div`
         }
         > a {
           width: 310px;
+          @media (max-width: 1024px) {
+            width: 100%;
+          }
           > div {
             ${contentInBox}
             ${center}
-            @media (max-width: 920px) {
+            @media (max-width: 1024px) {
               width: 100%;
               padding: 5px 10px;
               font-size: 1rem;
@@ -318,7 +338,7 @@ export const SectionWrapper = styled.div`
         }
         > div:not(div:nth-child(4)) {
           margin-right: 104px;
-          @media (max-width: 920px) {
+          @media (max-width: 1024px) {
             margin: 0;
           }
         }
