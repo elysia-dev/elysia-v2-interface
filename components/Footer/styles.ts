@@ -124,8 +124,8 @@ export const FooterWrapper = styled.div`
           max-width: 300px;
           margin-left: 25px;
           > div {
-            width: 30px;
-            margin-left: 20px;
+            width: 25px;
+            margin-left: 10px;
           }
         }
       }

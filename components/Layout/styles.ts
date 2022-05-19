@@ -11,6 +11,7 @@ export const GradientCanvas = styled.canvas`
 `;
 
 export const NoiseSvg = styled.svg`
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
