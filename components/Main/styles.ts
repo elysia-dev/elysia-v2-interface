@@ -302,7 +302,7 @@ export const MainSectionWrapper = styled.div`
   max-width: 1639px;
   margin: auto;
   font-family: Gilroy-Light;
-  > div:nth-child(1) {
+  /* > div:nth-child(1) {
     ${setRightBackground(elbridge.src)}
   }
   > div:nth-child(3) {
@@ -320,7 +320,7 @@ export const MainSectionWrapper = styled.div`
   }
   > div:nth-child(6) {
     ${setLeftBackground(document.src)}
-  }
+  } */
   > div:nth-child(1),
   div:nth-child(3),
   div:nth-child(5) {
@@ -367,7 +367,7 @@ export const MainSectionWrapper = styled.div`
         }
       }
       > p {
-        color: #838383;
+        color: #b7b7b7;
         margin-top: 35px;
         font-size: 1.375rem;
       }
@@ -438,7 +438,7 @@ export const MainSectionWrapper = styled.div`
         }
       }
       > p {
-        color: #838383;
+        color: #b7b7b7;
         margin: 0;
         margin-top: 35px;
         font-size: 1.375rem;
