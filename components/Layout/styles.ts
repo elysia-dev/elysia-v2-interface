@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import noise from 'assets/images/main/noise.png';
 
 export const GradientCanvas = styled.canvas`
   position: fixed;
@@ -7,7 +8,6 @@ export const GradientCanvas = styled.canvas`
   top: 0;
   left: 0;
   z-index: -1;
-  background-color: #000000;
 `;
 
 export const NoiseSvg = styled.svg`
@@ -17,7 +17,13 @@ export const NoiseSvg = styled.svg`
 `;
 
 export const LayoutNoise = styled.div`
-  &::before,
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: url(${noise.src});
+  background-size: auto;
+  /* &::before,
   &::after {
     position: fixed;
     width: 100%;
@@ -40,5 +46,5 @@ export const LayoutNoise = styled.div`
       rgba(54, 121, 181, 0.5),
       transparent
     );
-  }
+  } */
 `;
