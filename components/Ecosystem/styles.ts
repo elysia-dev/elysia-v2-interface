@@ -124,6 +124,7 @@ export const ProjectWrapper = styled.div`
       }
     }
     > div:nth-child(1) {
+      cursor: pointer;
       > div:first-child {
         background-image: url(${ElyfiProjectImg.src});
         background-repeat: no-repeat;
@@ -360,6 +361,7 @@ export const PortFolioWrapper = styled.div`
         gap: 25px;
       }
       > div {
+        cursor: pointer;
         width: 100%;
         ${glassBox}
         padding: 18px 20px 0px 20px;
