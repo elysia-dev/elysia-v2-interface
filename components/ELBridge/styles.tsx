@@ -20,12 +20,60 @@ const boxActive = keyframes`
     height: 100px;
   }
   100% {
-    height: 400px;
+    height: 286px;
   }
 `;
 const boxDeactive = keyframes`
   0% {
-    height: 400px;
+    height: 286px;
+  }
+  100% {
+    height: 100px;
+  }
+`;
+const boxActiveMoblie = keyframes`
+  0% {
+    height: 100px;
+  }
+  100% {
+    height: 339px;
+  }
+`;
+const boxDeactiveMolie = keyframes`
+  0% {
+    height: 339px;
+  }
+  100% {
+    height: 100px;
+  }
+`;
+const boxActive2 = keyframes`
+  0% {
+    height: 100px;
+  }
+  100% {
+    height: 586px
+  }
+`;
+const boxDeactive2 = keyframes`
+  0% {
+    height: 586px
+  }
+  100% {
+    height: 100px;
+  }
+`;
+const boxActive2Moblie = keyframes`
+  0% {
+    height: 100px;
+  }
+  100% {
+    height: 807px
+  }
+`;
+const boxDeactive2Moblie = keyframes`
+  0% {
+    height: 807px
   }
   100% {
     height: 100px;
@@ -37,18 +85,100 @@ const setp1Active = keyframes`
     height: 5rem;
   }
   100% {
-    height: auto;
+    height: 527.5px;
   }
 `;
 const step1Deactive = keyframes`
   0% {
-    height: 510px;
+    height: 527.5px;
   }
   100% {
     height: 5rem;
   }
 `;
 
+const setp2Active = keyframes`
+  0% {
+    height: 5rem;
+  }
+  100% {
+    height: 447.5px;
+  }
+`;
+const step2Deactive = keyframes`
+  0% {
+    height: 447.5px;
+  }
+  100% {
+    height: 5rem;
+  }
+`;
+const setp3Active = keyframes`
+  0% {
+    height: 5rem;
+  }
+  100% {
+    height: 397px;
+  }
+`;
+const step3Deactive = keyframes`
+  0% {
+    height: 397px;
+  }
+  100% {
+    height: 5rem;
+  }
+`;
+const setp4Active = keyframes`
+  0% {
+    height: 5rem;
+  }
+  100% {
+    height: 397px;
+  }
+`;
+const step4Deactive = keyframes`
+  0% {
+    height: 397px;
+  }
+  100% {
+    height: 5rem;
+  }
+`;
+const setp5Active = keyframes`
+  0% {
+    height: 5rem;
+  }
+  100% {
+    height: 541px;
+  }
+`;
+const step5Deactive = keyframes`
+  0% {
+    height: 541px;
+  }
+  100% {
+    height: 5rem;
+  }
+`;
+
+const arrowUpAni = keyframes`
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(180deg);
+  }
+`;
+
+const arrowDownAni = keyframes`
+  0%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+`;
 export const ELbridgeImage = styled.div`
   position: absolute;
   top: 0;
@@ -63,12 +193,6 @@ export const ELbridgeImage = styled.div`
 `;
 
 export const SectionWrapper = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  width: 90%;
-  max-width: 1639px;
   padding-bottom: 200px;
   color: #ffffff;
   font-family: Gilroy-Light;
@@ -96,9 +220,9 @@ export const SectionWrapper = styled.div`
 export const NFTDescription = styled.div<{ active?: boolean }>`
   ${glassBox}
   width: 100%;
-  padding: 33px 71px 0px 90px;
+  /* padding: 33px 71px 0px 90px; */
   margin-bottom: 20px;
-  height: ${(props) => (props.active ? '400px' : '100px')};
+  height: ${(props) => (props.active ? '286px' : '100px')};
   animation: ${(props) => {
     if (typeof props.active === 'undefined') return;
     return props.active
@@ -109,9 +233,29 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
           ${boxDeactive} 500ms ease-in
         `;
   }};
+  overflow: hidden;
+  @media (max-width: 460px) {
+    height: ${(props) => (props.active ? '339px' : '100px')};
+    animation: ${(props) => {
+      if (typeof props.active === 'undefined') return;
+      return props.active
+        ? css`
+            ${boxActiveMoblie} 500ms ease-in
+          `
+        : css`
+            ${boxDeactiveMolie} 500ms ease-in
+          `;
+    }};
+  }
   > div:first-child {
+    cursor: pointer;
     font-family: Gilroy-ExtraBold;
     ${center}
+    padding: 33px 71px 35.5px 71px;
+    border-bottom: 1px solid #acdaff;
+    @media (max-width: 460px) {
+      padding: 33px 21px 35.5px 21px;
+    }
     > div:first-child {
       font-size: 1.375rem;
       margin-right: 25px;
@@ -126,34 +270,73 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
       font-size: 1.375rem;
     }
     > div:last-child {
-      cursor: pointer;
       margin-left: auto;
       border-right: 12px solid transparent;
       border-left: 12px solid transparent;
       border-top: 12px solid #33a5ff;
+      transform: ${(props) =>
+        props.active ? 'rotate(180deg)' : 'rotate(0deg)'};
+      animation: ${(props) => {
+        if (typeof props.active === 'undefined') return;
+        return props.active
+          ? css`
+              ${arrowUpAni} 500ms ease-in
+            `
+          : css`
+              ${arrowDownAni} 500ms ease-in
+            `;
+      }};
     }
+  }
+  > div:last-child {
+    padding: 44.5px 0px 51px 71px;
+    @media (max-width: 460px) {
+      padding: 33px 21px 35.5px 21px;
+    }
+    font-size: 1.1875rem;
+    line-height: 2rem;
   }
 `;
 
 export const AssetNFTDescription = styled.div<{ active?: boolean }>`
   ${glassBox}
   width: 100%;
-  padding: 33px 71px 0px 90px;
+  /* padding: 33px 71px 0px 90px; */
   margin-bottom: 20px;
-  height: ${(props) => (props.active ? '400px' : '100px')};
+  height: ${(props) => (props.active ? '586px' : '100px')};
   animation: ${(props) => {
     if (typeof props.active === 'undefined') return;
     return props.active
       ? css`
-          ${boxActive} 500ms ease-in
+          ${boxActive2} 500ms ease-in
         `
       : css`
-          ${boxDeactive} 500ms ease-in
+          ${boxDeactive2} 500ms ease-in
         `;
   }};
+  overflow: hidden;
+  @media (max-width: 460px) {
+    height: ${(props) => (props.active ? '807px' : '100px')};
+    animation: ${(props) => {
+      if (typeof props.active === 'undefined') return;
+      return props.active
+        ? css`
+            ${boxActive2Moblie} 500ms ease-in
+          `
+        : css`
+            ${boxDeactive2Moblie} 500ms ease-in
+          `;
+    }};
+  }
   > div:first-child {
+    cursor: pointer;
     font-family: Gilroy-ExtraBold;
     ${center}
+    padding: 33px 71px 35.5px 71px;
+    border-bottom: 1px solid #acdaff;
+    @media (max-width: 460px) {
+      padding: 33px 21px 35.5px 21px;
+    }
     > div:first-child {
       font-size: 1.375rem;
       margin-right: 25px;
@@ -168,52 +351,35 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
       font-size: 1.375rem;
     }
     > div:last-child {
-      cursor: pointer;
       margin-left: auto;
       border-right: 12px solid transparent;
       border-left: 12px solid transparent;
       border-top: 12px solid #33a5ff;
+      transform: ${(props) =>
+        props.active ? 'rotate(180deg)' : 'rotate(0deg)'};
+      animation: ${(props) => {
+        if (typeof props.active === 'undefined') return;
+        return props.active
+          ? css`
+              ${arrowUpAni} 500ms ease-in
+            `
+          : css`
+              ${arrowDownAni} 500ms ease-in
+            `;
+      }};
     }
   }
-`;
-
-export const LegalIssuesDescription = styled.div<{ active?: boolean }>`
-  ${glassBox}
-  width: 100%;
-  padding: 33px 71px 0px 90px;
-  height: ${(props) => (props.active ? '400px' : '100px')};
-  animation: ${(props) => {
-    if (typeof props.active === 'undefined') return;
-    return props.active
-      ? css`
-          ${boxActive} 500ms ease-in
-        `
-      : css`
-          ${boxDeactive} 500ms ease-in
-        `;
-  }};
-  > div:first-child {
-    font-family: Gilroy-ExtraBold;
-    ${center}
-    > div:first-child {
-      font-size: 1.375rem;
-      margin-right: 25px;
-      width: 33px;
-      height: 33px;
-      background: #33a5ff;
-      border: 1px solid #33a5ff;
-      border-radius: 33px;
-      ${center}
+  > div:last-child {
+    padding: 44.5px 71px 51px 71px;
+    font-size: 1.1875rem;
+    @media (max-width: 460px) {
+      padding: 33px 21px 35.5px 21px;
     }
-    > div:nth-child(2) {
-      font-size: 1.375rem;
+    > div {
+      line-height: 2rem;
     }
-    > div:last-child {
-      cursor: pointer;
-      margin-left: auto;
-      border-right: 12px solid transparent;
-      border-left: 12px solid transparent;
-      border-top: 12px solid #33a5ff;
+    > div:not(div:last-child) {
+      margin-bottom: 18px;
     }
   }
 `;
@@ -235,16 +401,20 @@ export const CreatedNFTCount = styled.div`
   }
 `;
 
-export const StepOne = styled.div<{ active: string }>`
+export const StepOne = styled.div<{
+  active: string;
+  isFinished: boolean;
+  selected: boolean;
+}>`
   ${glassBox}
+  background-color: ${(props) => props.isFinished && '#343F57'};
   width: 100%;
-  height: ${(props) =>
-    props.active === OnBoardingStep.RealEstateType ? 'auto' : '5rem'};
+  height: ${(props) => (props.selected ? '527.5px' : '5rem')};
   padding: 1.625rem 51px 0px 51px;
   margin-bottom: 25px;
   overflow: hidden;
   animation: ${(props) =>
-    props.active === OnBoardingStep.RealEstateType
+    props.selected
       ? css`
           ${setp1Active} 200ms ease-in
         `
@@ -252,6 +422,7 @@ export const StepOne = styled.div<{ active: string }>`
           ${step1Deactive} 200ms ease-in
         `};
   > div:first-child {
+    cursor: pointer;
     font-size: 1.375rem;
     margin-bottom: 28px;
   }
@@ -275,9 +446,16 @@ export const StepOne = styled.div<{ active: string }>`
         border-radius: 20px;
         text-align: center;
       }
+      > div:hover {
+        background: rgb(52, 63, 87);
+      }
       > div:first-child {
         margin-bottom: 15px;
       }
+    }
+    > div:nth-child(3) {
+      margin-top: 15px;
+      font-size: 1.0625rem;
     }
     > div:last-child {
       ${center}
@@ -290,23 +468,28 @@ export const StepOne = styled.div<{ active: string }>`
   }
 `;
 
-export const StepTwo = styled.div<{ active: string }>`
+export const StepTwo = styled.div<{
+  active: string;
+  isFinished: boolean;
+  selected: boolean;
+}>`
   ${glassBox}
+  background-color: ${(props) => props.isFinished && '#343F57'};
   width: 100%;
-  height: ${(props) =>
-    props.active === OnBoardingStep.NFTApplication ? 'auto' : '5rem'};
-  padding: 1.625rem 0px 0px 51px;
+  height: ${(props) => (props.selected ? '447.5px' : '5rem')};
+  padding: 1.625rem 51px 0px 51px;
   margin-bottom: 25px;
   overflow: hidden;
   animation: ${(props) =>
-    props.active === OnBoardingStep.NFTApplication
+    props.selected
       ? css`
-          ${setp1Active} 200ms ease-in
+          ${setp2Active} 200ms ease-in
         `
       : css`
-          ${step1Deactive} 200ms ease-in
+          ${step2Deactive} 200ms ease-in
         `};
   > div:first-child {
+    cursor: pointer;
     font-size: 1.375rem;
     margin-bottom: 28px;
   }
@@ -329,10 +512,17 @@ export const StepTwo = styled.div<{ active: string }>`
         border-radius: 20px;
         text-align: center;
       }
+      > div:hover {
+        background: rgb(52, 63, 87);
+      }
       > div:first-child {
         margin-bottom: 15px;
       }
     }
+    > div:nth-child(3) {
+      margin-top: 15px;
+      font-size: 1.0625rem;
+    }
     > div:last-child {
       ${center}
       margin-top: 60px;
@@ -343,23 +533,28 @@ export const StepTwo = styled.div<{ active: string }>`
     }
   }
 `;
-export const StepThree = styled.div<{ active: string }>`
+export const StepThree = styled.div<{
+  active: string;
+  isFinished: boolean;
+  selected: boolean;
+}>`
   ${glassBox}
   width: 100%;
-  height: ${(props) =>
-    props.active === OnBoardingStep.RealEstateAddress ? 'auto' : '5rem'};
+  background-color: ${(props) => props.isFinished && '#343F57'};
+  height: ${(props) => (props.selected ? '397px' : '5rem')};
   padding: 1.625rem 51px 0px 51px;
   margin-bottom: 25px;
   overflow: hidden;
   animation: ${(props) =>
-    props.active === OnBoardingStep.RealEstateAddress
+    props.selected
       ? css`
-          ${setp1Active} 200ms ease-in
+          ${setp3Active} 200ms ease-in
         `
       : css`
-          ${step1Deactive} 200ms ease-in
+          ${step3Deactive} 200ms ease-in
         `};
   > div:first-child {
+    cursor: pointer;
     font-size: 1.375rem;
     margin-bottom: 28px;
   }
@@ -372,9 +567,76 @@ export const StepThree = styled.div<{ active: string }>`
     }
     > div:nth-child(2) {
       > input {
+        color: #ffffff;
         width: 100%;
-        height: 50px;
+        height: 80px;
         background: none;
+        border: 1px solid #cbcbcb;
+        border-radius: 20px;
+        padding: 0px 40px;
+        font-size: 1.75rem;
+      }
+      > input:focus {
+        border: 1px solid #ffffff;
+        outline: none;
+      }
+    }
+    > div:last-child {
+      ${center}
+      margin-top: 60px;
+      height: 60px;
+      border-radius: 40px;
+      cursor: pointer;
+    }
+  }
+`;
+
+export const StepFour = styled.div<{
+  active: string;
+  isFinished: boolean;
+  selected: boolean;
+}>`
+  ${glassBox}
+  width: 100%;
+  background-color: ${(props) => props.isFinished && '#343F57'};
+  height: ${(props) => (props.selected ? '397px' : '5rem')};
+  padding: 1.625rem 51px 0px 51px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  animation: ${(props) =>
+    props.selected
+      ? css`
+          ${setp4Active} 200ms ease-in
+        `
+      : css`
+          ${step4Deactive} 200ms ease-in
+        `};
+  > div:first-child {
+    cursor: pointer;
+    font-size: 1.375rem;
+    margin-bottom: 28px;
+  }
+  > div:last-child {
+    font-size: 1.25rem;
+    max-width: 1187px;
+    margin: 0px auto 57px auto;
+    > div:first-child {
+      margin-bottom: 35px;
+    }
+    > div:nth-child(2) {
+      > input {
+        color: #ffffff;
+        width: 100%;
+        height: 80px;
+        background: none;
+        border: 1px solid #cbcbcb;
+        border-radius: 20px;
+        padding: 0px 40px;
+        font-size: 1.75rem;
+      }
+      > input:focus {
+        border: 1px solid #ffffff;
+        outline: none;
       }
     }
     > div:last-child {
@@ -388,67 +650,27 @@ export const StepThree = styled.div<{ active: string }>`
   }
 `;
 
-export const StepFour = styled.div<{ active: string }>`
+export const StepFive = styled.div<{
+  active: string;
+  isFinished: boolean;
+  selected: boolean;
+}>`
   ${glassBox}
   width: 100%;
-  height: ${(props) =>
-    props.active === OnBoardingStep.RealEstateAddress ? 'auto' : '5rem'};
-  padding: 1.625rem 51px 0px 51px;
-  margin-bottom: 25px;
-  overflow: hidden;
-  animation: ${(props) =>
-    props.active === OnBoardingStep.RealEstateAddress
-      ? css`
-          ${setp1Active} 200ms ease-in
-        `
-      : css`
-          ${step1Deactive} 200ms ease-in
-        `};
-  > div:first-child {
-    font-size: 1.375rem;
-    margin-bottom: 28px;
-  }
-  > div:last-child {
-    font-size: 1.25rem;
-    max-width: 1187px;
-    margin: 0px auto 57px auto;
-    > div:first-child {
-      margin-bottom: 35px;
-    }
-    > div:nth-child(2) {
-      > input {
-        width: 100%;
-        height: 50px;
-        background: none;
-      }
-    }
-    > div:last-child {
-      ${center}
-      margin-top: 60px;
-      height: 60px;
-      background: #000000;
-      border-radius: 40px;
-      cursor: pointer;
-    }
-  }
-`;
-
-export const StepFive = styled.div<{ active: string }>`
-  ${glassBox}
-  width: 100%;
-  height: ${(props) =>
-    props.active === OnBoardingStep.RealEstateAddress ? 'auto' : '5rem'};
+  background-color: ${(props) => props.isFinished && '#343F57'};
+  height: ${(props) => (props.selected ? '541px' : '5rem')};
   padding: 1.625rem 51px 0px 51px;
   overflow: hidden;
   animation: ${(props) =>
-    props.active === OnBoardingStep.RealEstateAddress
+    props.selected
       ? css`
-          ${setp1Active} 200ms ease-in
+          ${setp5Active} 200ms ease-in
         `
       : css`
-          ${step1Deactive} 200ms ease-in
+          ${step5Deactive} 200ms ease-in
         `};
   > div:first-child {
+    cursor: pointer;
     font-size: 1.375rem;
     margin-bottom: 28px;
   }
@@ -461,9 +683,49 @@ export const StepFive = styled.div<{ active: string }>`
     }
     > div:nth-child(2) {
       > input:nth-child(1) {
+        color: #ffffff;
         width: 100%;
-        height: 50px;
+        height: 80px;
         background: none;
+        border: 1px solid #cbcbcb;
+        border-radius: 20px;
+        padding: 0px 40px;
+        font-size: 1.75rem;
+      }
+      > input:focus {
+        border: 1px solid #ffffff;
+        outline: none;
+      }
+      input[type='checkbox'] {
+        display: none;
+      }
+      input[type='checkbox'] + label {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ffffff;
+        position: relative;
+        margin-right: 10px;
+      }
+      input[type='checkbox']:checked + label::after {
+        content: '✔';
+        font-size: 15px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      > div:nth-child(2) {
+        display: flex;
+        margin-top: 15px;
+        > div:last-child {
+          font-size: 0.9375rem;
+        }
+      }
+      > div:nth-child(3) {
+        margin-top: 15px;
       }
     }
     > div:last-child {
@@ -489,6 +751,7 @@ export const ElysiaWhitePaper = styled.div`
     line-height: 30px;
   }
   > div:last-child {
+    cursor: pointer;
     font-family: Gilroy-ExtraBold;
     font-size: 1.375rem;
     background-color: #000000;
