@@ -68,7 +68,15 @@ const Team = () => {
                 </div>
               </div>
               <div>
-                <div>{t('main.press.3')}</div>
+                <div
+                  onClick={() => {
+                    window.open(
+                      'https://finance.yahoo.com/news/elysia-first-asia-obtains-approval-140000251.html?guccounter=2&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAIbW0698fC2KnO771rsi89QhICI2s8b-egkyVs02mzNRM-Bhxnrvux1Tjyz8BcEo5rRruAn_XbdofYeXz9hTIKcDqFCKHmbZe1G5SK9c8eqfEzEKMNz_-tq9P2dadujlBGC8NdrdUe0d99qFtgSKiwbPpQJ34dPkSFneqn5_k1F0',
+                      '_blank',
+                    );
+                  }}>
+                  {t('main.press.3')}
+                </div>
                 <div>
                   <Trans>{t('main.press.4')}</Trans>
                 </div>
@@ -89,7 +97,15 @@ const Team = () => {
                 </div>
               </div>
               <div>
-                <div>{t('main.press.5')}</div>
+                <div
+                  onClick={() => {
+                    window.open(
+                      'https://decenter.kr/NewsView/2621R4BTIW/GZ03',
+                      '_blank',
+                    );
+                  }}>
+                  {t('main.press.5')}
+                </div>
                 <div>{t('main.press.6')}</div>
               </div>
             </div>
@@ -103,7 +119,15 @@ const Team = () => {
                 </div>
               </div>
               <div>
-                <div>{t('main.press.7')}</div>
+                <div
+                  onClick={() => {
+                    window.open(
+                      'http://www.xinhuanet.com/money/2020-09/04/c_1126453754.htm',
+                      '_blank',
+                    );
+                  }}>
+                  {t('main.press.7')}
+                </div>
                 <div>{t('main.press.8')}</div>
               </div>
             </div>
