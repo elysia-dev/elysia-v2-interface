@@ -123,9 +123,9 @@ const DisconnectModal = (props: Props) => {
                     transform="translate(2.014 2.126)"
                     fill="none"
                     stroke="#fff"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1"
                   />
                   <path
                     id="패스_2088"
@@ -134,8 +134,8 @@ const DisconnectModal = (props: Props) => {
                     transform="translate(7.36 6.717)"
                     fill="none"
                     stroke="#fff"
-                    stroke-linecap="round"
-                    stroke-width="1"
+                    strokeLinecap="round"
+                    strokeWidth="1"
                   />
                   <path
                     id="패스_2087"
@@ -144,9 +144,9 @@ const DisconnectModal = (props: Props) => {
                     transform="translate(-1.844 -2.605)"
                     fill="none"
                     stroke="#fff"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1"
                   />
                 </svg>
                 <a

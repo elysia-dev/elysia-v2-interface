@@ -68,7 +68,7 @@ const V1Staking = () => {
         {userInfo.length > 1 ? (
           stakingRoundDate.map((date, idx) => {
             return (
-              <StakingSection>
+              <StakingSection key={idx}>
                 <StakingItem
                   key={`staking_item_${idx}`}
                   date={date}
