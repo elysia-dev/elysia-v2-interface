@@ -6,8 +6,11 @@ import Github from 'assets/images/main/github_white@2x.webp';
 import Telegram from 'assets/images/main/telegram_white@2x.webp';
 import Twitter from 'assets/images/main/twitter_white@2x.webp';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { i18n } = useTranslation();
+
   return (
     <FooterWrapper>
       <div>
@@ -22,9 +25,23 @@ const Footer = () => {
       </div>
       <div>
         <section>
-          <div>White Paper</div>
-          <div>Privacy Policy</div>
-          <div>Disclaimer</div>
+          <Link
+            href={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
+            passHref>
+            <a target="_blank" rel="noopener noreferrer">
+              <div>White Paper</div>
+            </a>
+          </Link>
+          <Link href={`/${i18n.language}/Policy`} passHref>
+            <a>
+              <div>Privacy Policy</div>
+            </a>
+          </Link>
+          <Link href={`/${i18n.language}/Disclaimer`} passHref>
+            <a>
+              <div>Disclaimer</div>
+            </a>
+          </Link>
         </section>
         <section>
           <div>

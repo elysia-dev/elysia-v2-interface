@@ -37,12 +37,12 @@ export const FooterWrapper = styled.div`
     > section {
       display: flex;
       align-items: flex-end;
-      > div:nth-child(1),
-      div:nth-child(2) {
+      > a:nth-child(1),
+      a:nth-child(2) {
         margin-right: 0.8rem;
         cursor: pointer;
       }
-      > div:nth-child(3) {
+      > a:nth-child(3) {
         margin-right: 1.2rem;
         cursor: pointer;
       }
