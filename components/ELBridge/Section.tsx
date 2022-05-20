@@ -67,19 +67,6 @@ const Section = () => {
   });
 
   const sendContact = () => {
-    // setState({ ...state, fieldNull: false });
-    // if (contactState.email === "") {
-    //   setState({ ...state, fieldNull: true });
-    //   return;
-    // }
-    // if (contactState.name === "") {
-    //   setState({ ...state, fieldNull: true });
-    //   return;
-    // }
-    // if (contactState.content === "") {
-    //   setState({ ...state, fieldNull: true });
-    //   return;
-    // }
     axios
       .post('https://api.elysia.land/land/contact', {
         email: userEmailAddress,
@@ -97,14 +84,6 @@ const Section = () => {
       })
       .then(() => {
         alert(t('contact.success'));
-        // setContactState({
-        //   ...contactState,
-        //   name: "",
-        //   phone: "",
-        //   email: "",
-        //   company: "",
-        //   content: ""
-        // });
       })
       .catch(() => {
         alert(t('contact.fail'));
@@ -131,7 +110,9 @@ const Section = () => {
           <Link
             href={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
             passHref>
-            <div>ELYSIA 백서 바로가기</div>
+            <a target="_blank">
+              <div>ELYSIA 백서 바로가기</div>
+            </a>
           </Link>
         </ElysiaWhitePaper>
         <Line />

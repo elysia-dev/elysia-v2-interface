@@ -750,7 +750,7 @@ export const ElysiaWhitePaper = styled.div`
     font-size: 1.25rem;
     line-height: 30px;
   }
-  > div:last-child {
+  > a:last-child {
     cursor: pointer;
     font-family: Gilroy-ExtraBold;
     font-size: 1.375rem;
