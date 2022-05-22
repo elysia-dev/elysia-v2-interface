@@ -253,6 +253,64 @@
         "Recent activity is displayed here"
       ]
     },
+    "elbridge": {
+      "top": [
+        "ELYSIA ON-BOARDING [EL BRIDGE]",
+        "Move Real world asset into the digital world",
+        "사용자들은 DAO를 통해 실제 부동산이 NFT로 만들어지는 과정에 참여하고,<br/> 제대로 변환이 이루어지는지 감시할 수 있습니다."
+      ],
+      "whitepaper": [
+        "현재 변환과정을 실제 스마트 컨트랙트 상에서 체험해볼 수 있는 기능을 개발중입니다. <br /> The detailed tokenization process can be found in the ELYSIA whitepaper.",
+        "ELYSIA whitepaper"
+      ],
+      "nft_description": [
+        "Frequently Asked Questions",
+        "What is NFT?",
+        "NFT stands for “non-fungible token”.",
+        "In a financial system using blockchain technology, a digital original that matches assets in the real world 1:1 is required,",
+        "digital original is made in the form of an NFT and can be used as a certificate in transactions on the blockchain."
+      ],
+      "asset_nft_description": [
+        "Why Real estate NFT is needed?",
+        "Recently, many real world assets (art works, copyrighted creations, etc.) have been made with NFTs and are being actively traded on the blockchain. These NFTs can be used in various financial systems without fear of forgery because transaction details are securely recorded on the blockchain.",
+        "Despite the convenience of such transactions and the liquidity of the inflow of funds, there has not been a case of converting real world estate into NFT and incorporating it into the existing blockchain financial system. This is because the barriers to entry are high in the real estate market, even in the traditional financial market, where complex documents are required and large amounts of money are exchanged. ELYSIA DAO LLC. intends to create the world's first real estate NFT-based economic system based on its experience of trading multiple real estate and operating a separate blockchain technology team.",
+        "Real world asset-based NFTs may have the following uses.<br/> 1. Real world asset-based NFT collateralized loan on DeFi<br/> 2. Swap between real estate NFT and virtual currency<br/> 3. Raising investment using DAO"
+      ],
+      "inquiry_nft": [
+        "Inquiry for real estate NFT",
+        "Please feel free to contact us regarding real estate NFT issuance through the form below. (*Terminology related to the EL bridge may change later.)"
+      ],
+      "step1": [
+        "1. Real Estate Type",
+        "Please select the type of real estate you want to create (to tokenize) with NFT!",
+        "Real Estate<br/>(Real estate Token)",
+        "Loan receivable<br/>(ABToken - a type)",
+        "Principal and interest receivables<br/>(ABToken - b type)",
+        "Project Financing<br/>(PF Token)",
+        "* If you do not find the type of real asset you want among the options above, please enter it in '5. Others'."
+      ],
+      "step2": [
+        "2. NFT use cases",
+        "Please choose where you would like to use your NFT!",
+        "매매",
+        "투자",
+        "대출",
+        "* If you do not find the NFT application you want among the options above, please enter it in '5. Others'."
+      ],
+      "step3": [
+        "3. Real estate address",
+        "Please enter the address of the real estate you want to make into NFT (to be tokenized).",
+        "ex) 29, Nambusunhwan-ro 200ga-gil, Gwanak-gu, Seoul, Republic of Korea"
+      ],
+      "step4": ["4. Email address", "Please enter the email address."],
+      "step5": [
+        "5. Others",
+        "Please leave any other inquiries.",
+        "I consent to ELYSIA PLATFORM PTE. LTD processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of ELYSIA PLATFORM PTE. LTD's business, such processing may take place outside of my home jurisdiction.",
+        "Submit"
+      ],
+      "next_button": "NEXT"
+    },
     "footer": {
       "logo_label": "ELYSIA PLATFORM PTE. LTD",
       "contact": "CONTACT",
