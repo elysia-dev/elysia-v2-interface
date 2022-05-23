@@ -1,6 +1,8 @@
-import OnBoardingStep from 'enums/OnBoardingStep';
 import styled, { css, keyframes } from 'styled-components';
 import elbridge from 'assets/images/main/elbridge_image.webp';
+
+const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
+const $light = 'Gilroy-Light, SpoqaHanSansNeo';
 
 const center = {
   display: 'flex',
@@ -195,7 +197,7 @@ export const ELbridgeImage = styled.div`
 export const SectionWrapper = styled.div`
   padding-bottom: 200px;
   color: #ffffff;
-  font-family: Gilroy-Light;
+  font-family: ${$light};
 
   > div:nth-child(1) {
     padding-top: 60vh;
@@ -208,7 +210,7 @@ export const SectionWrapper = styled.div`
       }
       > div:first-child {
         color: #ffffff;
-        font-family: Gilroy-ExtraBold;
+        font-family: ${$bold};
         font-size: 2rem;
         margin-bottom: 5px;
         @media (max-width: 460px) {
@@ -256,7 +258,7 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
   }
   > div:first-child {
     cursor: pointer;
-    font-family: Gilroy-ExtraBold;
+    font-family: ${$bold};
     ${center}
     padding: 33px 71px 35.5px 71px;
     border-bottom: 1px solid #acdaff;
@@ -338,7 +340,7 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
   }
   > div:first-child {
     cursor: pointer;
-    font-family: Gilroy-ExtraBold;
+    font-family: ${$bold};
     ${center}
     padding: 33px 71px 35.5px 71px;
     border-bottom: 1px solid #acdaff;
@@ -397,7 +399,7 @@ export const CreateNFTWrapper = styled.div`
   margin: 90px auto;
   font-size: 1.75rem;
   > div:first-child {
-    font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
+    font-family: ${$bold};
     margin-bottom: 10px;
   }
   > div:nth-child(2) {
@@ -409,7 +411,7 @@ export const CreateNFTWrapper = styled.div`
 export const CreatedNFTCount = styled.div`
   width: 100%;
   height: 70px;
-  font-family: Gilroy-ExtraBold;
+  font-family: ${$bold};
   line-height: 2.5rem;
   margin-bottom: 35px;
   > span {
@@ -920,7 +922,7 @@ export const ElysiaWhitePaper = styled.div`
   }
   > a:last-child {
     cursor: pointer;
-    font-family: Gilroy-ExtraBold;
+    font-family: ${$bold};
     font-size: 1.375rem;
     background-color: #000000;
     box-shadow: 0px 0px 6px #00000029;
@@ -953,7 +955,7 @@ export const QuestionWrapper = styled.div`
   margin-top: 41px;
   margin-bottom: 50px;
   > div:first-child {
-    font-family: Gilroy-ExtraBold;
+    font-family: ${$bold};
     font-size: 1.75rem;
     margin-bottom: 27px;
   }

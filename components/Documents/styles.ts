@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import documentImage from 'assets/images/main/document_image.webp';
 
-const defaultBorder = '1px solid #333333';
+const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
+const $light = 'Gilroy-Light, SpoqaHanSansNeo';
 
 const glassBox = {
   background: 'rgba(255, 255, 255, 0.1)',
@@ -26,7 +27,7 @@ export const DocumentsImage = styled.div`
 export const SectionWrapper = styled.div`
   padding-bottom: 150px;
   color: #ffffff;
-  font-family: Gilroy-Light;
+  font-family: ${$light};
   /* height: 100vh; */
 
   > div:nth-child(1) {
@@ -37,7 +38,7 @@ export const SectionWrapper = styled.div`
       font-size: 1.375rem;
       > div:first-child {
         color: #ffffff;
-        font-family: Gilroy-ExtraBold;
+        font-family: ${$bold};
         font-size: 2rem;
         margin-bottom: 5px;
       }
@@ -74,7 +75,7 @@ export const SectionWrapper = styled.div`
         > div:first-child {
           display: flex;
           align-items: center;
-          font-family: Gilroy-ExtraBold;
+          font-family: ${$bold};
           font-size: 1.25rem;
           > div {
             display: flex;

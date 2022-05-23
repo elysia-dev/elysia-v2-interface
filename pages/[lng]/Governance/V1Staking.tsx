@@ -1,4 +1,13 @@
-import V1Staking from 'components/V1Staking';
+import dynamic from 'next/dynamic';
+
+const V1Staking = dynamic(() => import('components/V1Staking'), {
+  loading: () => (
+    <div
+      style={{
+        height: '100vh',
+      }}></div>
+  ),
+});
 
 const V1StakingInfo = () => {
   return <V1Staking />;

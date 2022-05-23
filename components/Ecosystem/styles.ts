@@ -4,6 +4,9 @@ import Moblieapp from 'assets/images/ecosystem/moblieapp.png';
 import Dao from 'assets/images/ecosystem/dao.png';
 import ecosystemImage from 'assets/images/main/ecosystem_image.webp';
 
+const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
+const $light = 'Gilroy-Light, SpoqaHanSansNeo';
+
 const glassBox = {
   background: 'rgba(255, 255, 255, 0.1)',
   'box-shadow': '0px 0px 6px #00000029',
@@ -69,9 +72,9 @@ export const TopWrapper = styled.div`
   max-width: 1639px;
   margin: auto;
   color: #ffffff;
-  font-family: Gilroy-Light;
+  font-family: ${$light};
   > div:first-child {
-    font-family: Gilroy-ExtraBold;
+    font-family: ${$bold};
     font-size: 2rem;
     margin-bottom: 5px;
     @media (max-width: 460px) {
@@ -95,7 +98,7 @@ export const ProjectWrapper = styled.div`
   > div:first-child {
     margin-bottom: 88px;
     > div:first-child {
-      font-family: Gilroy-ExtraBold;
+      font-family: ${$bold};
       font-size: 2rem;
       margin-bottom: 20px;
       @media (max-width: 460px) {
@@ -146,7 +149,7 @@ export const ProjectWrapper = styled.div`
           ${center}
         }
         > div:first-child {
-          font-family: Gilroy-ExtraBold;
+          font-family: ${$bold};
           margin-right: 10px;
           font-size: 1.5rem;
           @media (max-width: 460px) {
@@ -193,7 +196,7 @@ export const ProjectWrapper = styled.div`
       }
       > div:nth-child(2) {
         height: 38px;
-        font-family: Gilroy-ExtraBold;
+        font-family: ${$bold};
         display: flex;
         align-items: center;
         margin-bottom: 20px;
@@ -246,7 +249,7 @@ export const ProjectWrapper = styled.div`
       }
       > div:nth-child(2) {
         height: 38px;
-        font-family: Gilroy-ExtraBold;
+        font-family: ${$bold};
         display: flex;
         align-items: center;
         margin-bottom: 20px;
@@ -273,12 +276,12 @@ export const ProjectWrapper = styled.div`
 
 export const PortFolioWrapper = styled.div`
   padding-top: 100px;
-  font-family: Gilroy-Light;
+  font-family: ${$light};
   color: #ffffff;
   > div:first-child {
     margin-bottom: 65px;
     > div:first-child {
-      font-family: Gilroy-ExtraBold;
+      font-family: ${$bold};
       font-size: 2rem;
       margin-bottom: 10px;
       @media (max-width: 460px) {
@@ -391,7 +394,7 @@ export const PortFolioWrapper = styled.div`
             font-size: 1.25rem;
           }
           > div:last-child {
-            font-family: Gilroy-ExtraBold;
+            font-family: ${$bold};
             font-size: 1.25rem;
             @media (max-width: 460px) {
               font-size: 1rem;

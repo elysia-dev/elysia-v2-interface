@@ -1,4 +1,3 @@
-import Footer from 'components/Footer';
 import Navigation from 'components/Navigation';
 import ReactGA from 'react-ga';
 import Head from 'next/head';
@@ -6,6 +5,9 @@ import { useRouter } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Gradient from 'utils/gradient';
 import { GradientCanvas, LayoutNoise, NoiseSvg } from './styles';
+import dynamic from 'next/dynamic';
+
+const Footer = dynamic(() => import('components/Footer'));
 
 interface LayoutProps {
   children: React.ReactNode;
