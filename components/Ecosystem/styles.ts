@@ -9,7 +9,7 @@ const glassBox = {
   'box-shadow': '0px 0px 6px #00000029',
   'border-radius': '20px',
   'backdrop-filter': 'blur(18px)',
-  padding: '18px 20px 0px 20px',
+  padding: '18px 20px 15px 20px',
 };
 
 const center = {
@@ -364,7 +364,7 @@ export const PortFolioWrapper = styled.div`
         cursor: pointer;
         width: 100%;
         ${glassBox}
-        padding: 18px 20px 0px 20px;
+        padding: 18px 20px 18px 20px;
         margin: 10px 0px;
         @media (max-width: 840px) {
           width: 100%;
