@@ -105,7 +105,6 @@ class Gradient {
   }
 
   resize() {
-    this.ctx.scale(this.pixelRatio, this.pixelRatio);
     this.ctx.globalCompositeOperation = 'saturation';
     this.createParticles();
   }

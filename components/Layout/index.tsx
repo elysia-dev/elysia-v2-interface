@@ -1,10 +1,8 @@
 import Navigation from 'components/Navigation';
-import ReactGA from 'react-ga';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import Gradient from 'utils/gradient';
-import { GradientCanvas, LayoutNoise, NoiseSvg } from './styles';
+import { GradientCanvas, LayoutNoise } from './styles';
 import dynamic from 'next/dynamic';
 
 const Footer = dynamic(() => import('components/Footer'));
@@ -15,7 +13,6 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { pathname, query } = useRouter();
 
   const drawCanvas = useCallback(() => {
     const dpr = window.devicePixelRatio;
@@ -31,6 +28,7 @@ const Layout = (props: LayoutProps) => {
     const ctx = canvas.getContext('2d');
 
     if (!ctx) return;
+    ctx.scale(2.5, 2.5);
     new Gradient(ctx, canvas.width, canvas.height);
   }, []);
 
@@ -59,11 +57,6 @@ const Layout = (props: LayoutProps) => {
       </Head>
       <GradientCanvas ref={canvasRef} />
       <LayoutNoise />
-      {/* <NoiseSvg>
-        <filter id="noise">
-          <feTurbulence type="fractalNoise" baseFrequency="4.6" />
-        </filter>
-      </NoiseSvg> */}
       <Navigation />
       <div
         style={{
