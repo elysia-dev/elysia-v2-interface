@@ -17,153 +17,6 @@ const glassBox = {
   'backdrop-filter': 'blur(18px)',
 };
 
-const boxActive = keyframes`
-  0% {
-    height: 100px;
-  }
-  100% {
-    height: 100%;
-  }
-`;
-const boxDeactive = keyframes`
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 100px;
-  }
-`;
-const boxActiveMoblie = keyframes`
-  0% {
-    height: 100px;
-  }
-  100% {
-    height:  100%;
-  }
-`;
-const boxDeactiveMolie = keyframes`
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 100px;
-  }
-`;
-const boxActive2 = keyframes`
-  0% {
-    height: 100px;
-  }
-  100% {
-    height: 100%;
-  }
-`;
-const boxDeactive2 = keyframes`
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 100px;
-  }
-`;
-const boxActive2Moblie = keyframes`
-  0% {
-    height: 100px;
-  }
-  100% {
-    height: 100%
-  }
-`;
-const boxDeactive2Moblie = keyframes`
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 100px;
-  }
-`;
-
-const setp1Active = keyframes`
-  0% {
-    height: 5rem;
-  }
-  100% {
-    height: 100%;
-  }
-`;
-const step1Deactive = keyframes`
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 5rem;
-  }
-`;
-
-const setp2Active = keyframes`
-  0% {
-    height: 5rem;
-  }
-  100% {
-    height: 100%;
-  }
-`;
-const step2Deactive = keyframes`
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 5rem;
-  }
-`;
-const setp3Active = keyframes`
-  0% {
-    height: 5rem;
-  }
-  100% {
-    height: 100%;
-  }
-`;
-const step3Deactive = keyframes`
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 5rem;
-  }
-`;
-const setp4Active = keyframes`
-  0% {
-    height: 5rem;
-  }
-  100% {
-    height: 100%;
-  }
-`;
-const step4Deactive = keyframes`
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 5rem;
-  }
-`;
-const setp5Active = keyframes`
-  0% {
-    height: 5rem;
-  }
-  100% {
-    height: 100%;
-  }
-`;
-const step5Deactive = keyframes`
-  0% {
-    height:  100%;
-  }
-  100% {
-    height: 5rem;
-  }
-`;
-
 const arrowUpAni = keyframes`
   0%{
     transform: rotate(0deg);
@@ -230,31 +83,11 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
   width: 100%;
   /* padding: 33px 71px 0px 90px; */
   margin-bottom: 20px;
-  max-height: ${(props) => (props.active ? '1000vh' : '100px')};
-  animation: ${(props) => {
-    if (typeof props.active === 'undefined') return;
-    return props.active
-      ? css`
-          ${boxActive} 500ms ease-in
-        `
-      : css`
-          ${boxDeactive} 500ms ease-in
-        `;
-  }};
+  max-height: ${(props) => (props.active ? '75vh' : '100px')};
+  transition: max-height 0.5s ease;
   overflow: hidden;
   @media (max-width: 640px) {
-    max-height: ${(props) => (props.active ? '1000vh' : '100px')};
-    transition: max-height 1s ease;
-    animation: ${(props) => {
-      if (typeof props.active === 'undefined') return;
-      return props.active
-        ? css`
-            ${boxActiveMoblie} 500ms ease-in
-          `
-        : css`
-            ${boxDeactiveMolie} 500ms ease-in
-          `;
-    }};
+    max-height: ${(props) => (props.active ? '150vh' : '100px')};
   }
   > div:first-child {
     cursor: pointer;
@@ -312,31 +145,11 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
   width: 100%;
   /* padding: 33px 71px 0px 90px; */
   margin-bottom: 20px;
-  max-height: ${(props) => (props.active ? '1000vh' : '100px')};
+  max-height: ${(props) => (props.active ? '100vh' : '100px')};
   transition: max-height 1s ease;
-  animation: ${(props) => {
-    if (typeof props.active === 'undefined') return;
-    return props.active
-      ? css`
-          ${boxActive2} 500ms ease-in
-        `
-      : css`
-          ${boxDeactive2} 500ms ease-in
-        `;
-  }};
   overflow: hidden;
   @media (max-width: 640px) {
-    max-height: ${(props) => (props.active ? '1000vh' : '100px')};
-    animation: ${(props) => {
-      if (typeof props.active === 'undefined') return;
-      return props.active
-        ? css`
-            ${boxActive2Moblie} 500ms ease-in
-          `
-        : css`
-            ${boxDeactive2Moblie} 500ms ease-in
-          `;
-    }};
+    max-height: ${(props) => (props.active ? '150vh' : '100px')};
   }
   > div:first-child {
     cursor: pointer;
@@ -427,22 +240,15 @@ export const StepOne = styled.div<{
   ${glassBox}
   background-color: ${(props) => props.isFinished && '#343F57'};
   width: 100%;
-  max-height: ${(props) => (props.selected ? '1000vh' : '5rem')};
-  transition: max-height 1s ease;
+  max-height: ${(props) => (props.selected ? '75vh' : '5rem')};
+  transition: max-height 0.5s ease;
   padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
+    max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
     padding: 1.625rem 20px 0px 20px;
   }
   margin-bottom: 25px;
   overflow: hidden;
-  animation: ${(props) =>
-    props.selected
-      ? css`
-          ${setp1Active} 200ms ease-in
-        `
-      : css`
-          ${step1Deactive} 200ms ease-in
-        `};
   > div:first-child {
     cursor: pointer;
     font-size: 1.375rem;
@@ -516,22 +322,16 @@ export const StepTwo = styled.div<{
   ${glassBox}
   background-color: ${(props) => props.isFinished && '#343F57'};
   width: 100%;
-  max-height: ${(props) => (props.selected ? '1000vh' : '5rem')};
-  transition: max-height 1s ease;
+  max-height: ${(props) => (props.selected ? '75vh' : '5rem')};
+  transition: max-height 0.5s ease;
   padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
+    max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
     padding: 1.625rem 20px 0px 20px;
   }
   margin-bottom: 25px;
   overflow: hidden;
-  animation: ${(props) =>
-    props.selected
-      ? css`
-          ${setp2Active} 200ms ease-in
-        `
-      : css`
-          ${step2Deactive} 200ms ease-in
-        `};
+
   > div:first-child {
     cursor: pointer;
     font-size: 1.375rem;
@@ -603,22 +403,15 @@ export const StepThree = styled.div<{
   ${glassBox}
   width: 100%;
   background-color: ${(props) => props.isFinished && '#343F57'};
-  max-height: ${(props) => (props.selected ? '1000vh' : '5rem')};
-  transition: max-height 1s ease;
+  max-height: ${(props) => (props.selected ? '75vh' : '5rem')};
+  transition: max-height 0.5s ease;
   padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
+    max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
     padding: 1.625rem 20px 0px 20px;
   }
   margin-bottom: 25px;
   overflow: hidden;
-  animation: ${(props) =>
-    props.selected
-      ? css`
-          ${setp3Active} 200ms ease-in
-        `
-      : css`
-          ${step3Deactive} 200ms ease-in
-        `};
   > div:first-child {
     cursor: pointer;
     font-size: 1.375rem;
@@ -690,22 +483,15 @@ export const StepFour = styled.div<{
   ${glassBox}
   width: 100%;
   background-color: ${(props) => props.isFinished && '#343F57'};
-  max-height: ${(props) => (props.selected ? '1000vh' : '5rem')};
-  transition: max-height 1s ease;
+  max-height: ${(props) => (props.selected ? '75vh' : '5rem')};
+  transition: max-height 0.5s ease;
   padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
+    max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
     padding: 1.625rem 20px 0px 20px;
   }
   margin-bottom: 25px;
   overflow: hidden;
-  animation: ${(props) =>
-    props.selected
-      ? css`
-          ${setp4Active} 200ms ease-in
-        `
-      : css`
-          ${step4Deactive} 200ms ease-in
-        `};
   > div:first-child {
     cursor: pointer;
     font-size: 1.375rem;
@@ -778,21 +564,14 @@ export const StepFive = styled.div<{
   ${glassBox}
   width: 100%;
   background-color: ${(props) => props.isFinished && '#343F57'};
-  max-height: ${(props) => (props.selected ? '1000vh' : '5rem')};
-  transition: max-height 1s ease;
+  max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
+  transition: max-height 0.5s ease;
   padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
+    max-height: ${(props) => (props.selected ? '200vh' : '5rem')};
     padding: 1.625rem 20px 0px 20px;
   }
   overflow: hidden;
-  animation: ${(props) =>
-    props.selected
-      ? css`
-          ${setp5Active} 200ms ease-in
-        `
-      : css`
-          ${step5Deactive} 200ms ease-in
-        `};
   > div:first-child {
     cursor: pointer;
     font-size: 1.375rem;
