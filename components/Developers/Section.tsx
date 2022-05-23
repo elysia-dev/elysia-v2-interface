@@ -36,11 +36,7 @@ const Section = () => {
             <ContentDescription description={t('developers.6')} />
           </div>
           <div>
-            <ContentItem
-              Icon={<Bug />}
-              contentName={t('developers.7')}
-              link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
-            />
+            <ContentItem Icon={<Bug />} contentName={t('developers.7')} />
             <ContentDescription description={t('developers.8')} />
           </div>
           <div>

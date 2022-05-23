@@ -21,6 +21,14 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  async rewrites() {
+    return [
+      {
+        destination: 'https://forum.elyfi.world/:path*',
+        source: '/proxy/:path*',
+      },
+    ];
+  },
 };
 
 // const withBundleAnalyzer = require('@next/bundle-analyzer')({

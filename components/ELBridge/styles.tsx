@@ -396,6 +396,14 @@ export const CreateNFTWrapper = styled.div`
   max-width: 1333px;
   margin: 90px auto;
   font-size: 1.75rem;
+  > div:first-child {
+    font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
+    margin-bottom: 10px;
+  }
+  > div:nth-child(2) {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
 `;
 
 export const CreatedNFTCount = styled.div`
@@ -877,7 +885,7 @@ export const ElysiaWhitePaper = styled.div`
     font-size: 1.25rem;
     line-height: 30px;
   }
-  > div:last-child {
+  > a:last-child {
     cursor: pointer;
     font-family: Gilroy-ExtraBold;
     font-size: 1.375rem;
