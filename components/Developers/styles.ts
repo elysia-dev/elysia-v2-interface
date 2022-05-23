@@ -35,6 +35,13 @@ export const DevelopersImage = styled.div`
   background-size: 100%;
 `;
 
+export const DisabledSection = styled.div`
+  &:hover {
+    cursor: not-allowed;
+    background: rgba(255, 50, 50, 0.3) !important;
+  }
+`;
+
 export const SectionWrapper = styled.div`
   padding-bottom: 150px;
   color: #ffffff !important;
@@ -83,6 +90,11 @@ export const SectionWrapper = styled.div`
       padding: 38.22px 25px 38px 25px;
       cursor: pointer;
       ${glassBox}
+      transition: all 1s ease;
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transition: all 1s ease;
+      }
       @media (max-width: 920px) {
         padding: 20px 25px;
       }
@@ -129,6 +141,7 @@ export const SectionWrapper = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 10px;
       > div:first-child {
         margin-bottom: 11px;
         @media (max-width: 460px) {
@@ -149,6 +162,10 @@ export const SectionWrapper = styled.div`
           padding: 29px 25px 24px 27px;
           width: 100%;
           ${center}
+          &:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 1s ease;
+          }
           @media (max-width: 960px) {
             padding: 20px 25px;
           }

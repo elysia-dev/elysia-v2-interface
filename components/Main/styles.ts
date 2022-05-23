@@ -27,6 +27,7 @@ const setLeftBackground = (image: string) => {
 };
 
 const sectionBorder = (padding: string) => ({
+  background: 'rgba(255, 255, 255, 0.1)',
   'box-shadow': '0px 0px 6px #00000029',
   'border-radius': '20px',
   'backdrop-filter': 'blur(18px)',
@@ -158,33 +159,11 @@ export const MainTopWrapper = styled.div`
       ${partnerBorder()}
       ${center}
       user-select: none;
-      transition: all 0.3s ease;
-      .glow-wrapper {
-        overflow: hidden;
-        position: absolute;
-        width: 100% !important;
-        height: 100%;
-        top: 0;
-      }
-      .glow {
-        display: block;
-        position: absolute;
-        width: 600%;
-        height: 800%;
-        background: rgba(255, 255, 255, 0.1);
-        top: 0;
-        filter: blur(5px);
-        transform: rotate(60deg) translate(-100%, 0);
-        transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-      }
+      transition: all 1s ease;
       &:hover {
-        transition: all 1.5s ease;
+        transition: all 1s ease;
+        background: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(3px);
-
-        .glow {
-          transform: rotate(60deg) translate(100%, 0);
-          transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
       }
       @media (max-width: 960px) {
         display: grid;
@@ -469,6 +448,9 @@ export const MainSectionWrapper = styled.div`
 `;
 
 export const PartnersWrapper = styled.div`
+  * img {
+    object-fit: contain;
+  }
   max-width: 1639px;
   margin: auto;
   padding: 25vh 0px 0px;
@@ -497,7 +479,7 @@ export const PartnersWrapper = styled.div`
           &:nth-child(2) {
             width: 100% !important;
             height: auto !important;
-            padding: 35px 0 !important;
+            padding: 35px 15px !important;
             margin-bottom: 30px;
             display: grid !important;
             grid-template-columns: repeat(3, 1fr);
@@ -558,7 +540,7 @@ export const PartnersWrapper = styled.div`
             max-width: none !important;
             width: 100% !important;
             height: auto !important;
-            padding: 35px 0 !important;
+            padding: 35px 15px !important;
             margin-bottom: 30px;
             display: grid !important;
             grid-template-columns: repeat(3, 1fr);
@@ -631,7 +613,7 @@ export const PartnersWrapper = styled.div`
       @media (max-width: 1190px) {
         width: 100% !important;
         height: auto !important;
-        padding: 35px 0 !important;
+        padding: 35px 15px !important;
         margin-bottom: 30px;
         display: grid !important;
         grid-template-columns: repeat(3, 1fr);
@@ -703,12 +685,15 @@ export const MainTeamWrapper = styled.div`
         justify-content: space-between;
         gap: 35px 15px;
         > div {
-          margin: 0;
+          margin: 0 auto;
         }
       }
       @media (max-width: 460px) {
         grid-template-columns: repeat(2, 1fr);
         gap: 35px 15px;
+        > div {
+          margin: 0 auto;
+        }
       }
     }
   }
