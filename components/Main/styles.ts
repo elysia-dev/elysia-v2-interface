@@ -609,6 +609,7 @@ export const PartnersWrapper = styled.div`
       flex: 1;
       width: 100%;
       ${partnerBorder('35px 0px')}
+      margin-top: 10px;
       > div {
         ${center};
         margin: 10px 40px;
@@ -727,6 +728,11 @@ export const MainTeamWrapper = styled.div`
         border-radius: 20px;
         backdrop-filter: blur(18px);
         /* padding: 20px; */
+        transition: all 1s ease;
+        cursor: pointer;
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
         > div:first-child {
           display: flex;
           border-bottom: 1.5px solid #33333377;
