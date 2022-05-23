@@ -5,11 +5,19 @@ $line-color: #505050;
   border-radius: 10px;
   border: 1px solid #707070;
   color: #fff;
+
+  @media (max-width: 514px) {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 @mixin modal-headers {
   .modal_container {
     width: 514px;
     height: auto;
+    @media (max-width: 514px) {
+      width: 100%;
+    }
   }
   .modal_header {
     display: flex;
@@ -61,7 +69,7 @@ $line-color: #505050;
   @include modal-headers;
 
   .modal_content {
-    width: 452px;
+    width: 100%;
     padding: 31px 0px 31px 0px;
     text-align: center;
     margin: auto;
@@ -70,7 +78,7 @@ $line-color: #505050;
 .modal_button {
   > div {
     cursor: pointer;
-    width: 452px;
+    width: 90%;
     height: 47px;
     margin: 25px auto;
     display: flex;
@@ -202,6 +210,9 @@ $line-color: #505050;
   .modal_container {
     width: 500px;
     height: auto;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
   .modal_header {
     display: flex;
@@ -243,6 +254,9 @@ $line-color: #505050;
       transition: all 0.4s ease;
       mix-blend-mode: darken;
       z-index: 1;
+      @media (max-width: 500px) {
+        width: 40vw;
+      }
     }
     div {
       cursor: pointer;
@@ -280,6 +294,9 @@ $line-color: #505050;
   .approve_fee {
     font-family: 'SpoqaHanSansNeo-Medium';
     width: 465px;
+    @media (max-width: 500px) {
+      width: 90%;
+    }
     margin: auto;
     color: #ffffff;
     font-size: 1rem;
@@ -298,6 +315,10 @@ $line-color: #505050;
     height: 145px;
     padding: 0px 30px;
     font-family: 'SpoqaHanSansNeo-Bold';
+    @media (max-width: 500px) {
+      padding: 0px 15px;
+      height: 110px;
+    }
     div {
       cursor: pointer;
       color: #b7b7b7;
@@ -330,7 +351,7 @@ $line-color: #505050;
     }
   }
   .balance_wrapper {
-    width: 456px;
+    width: 90%;
     margin: auto;
     margin-top: 28px;
     margin-bottom: 15px;
@@ -347,7 +368,7 @@ $line-color: #505050;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 15px;
+      font-size: 1.1rem;
     }
   }
 }
@@ -382,6 +403,10 @@ $line-color: #505050;
     margin: 10px;
     font-size: 1.875rem;
     border-radius: 10px;
+    @media (max-width: 500px) {
+      padding: 0px 15px;
+      height: 110px;
+    }
     .modal_content {
       font-family: 'SpoqaHanSansNeo-Bold';
       display: flex;
@@ -405,6 +430,10 @@ $line-color: #505050;
 
   .modal_container {
     width: 500px;
+    @media (max-width: 500px) {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 
   .modal_header {
@@ -427,6 +456,10 @@ $line-color: #505050;
   .modal_confirm {
     text-align: center;
     margin-top: 30px;
+    @media (max-width: 500px) {
+      width: 90%;
+      margin: 20px auto 0;
+    }
   }
   .modal_text {
     h2 {
@@ -463,7 +496,7 @@ $line-color: #505050;
     padding: 40px 70px 30px 70px;
   }
   .error_description {
-    width: 452px;
+    width: 100%;
     margin: auto;
 
     > div:first-child {

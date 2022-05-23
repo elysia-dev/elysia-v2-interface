@@ -73,7 +73,7 @@ const StakingModal = (props: Props) => {
               <section
                 className={styles.staking_type_slide}
                 style={{
-                  left: isStakingMode() ? 4 : 244,
+                  left: isStakingMode() ? 4 : 'calc(50% + 4px)',
                 }}
               />
               <div
