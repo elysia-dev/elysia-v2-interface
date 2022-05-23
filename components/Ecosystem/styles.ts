@@ -173,7 +173,6 @@ export const ProjectWrapper = styled.div`
       > div:first-child {
         width: 100%;
         height: 233.5px;
-        background-color: #ffffff;
         display: flex;
         flex-direction: column;
         background-image: url(${Moblieapp.src});
@@ -189,7 +188,7 @@ export const ProjectWrapper = styled.div`
           height: 36px;
           border-radius: 23px;
           margin-left: auto;
-          margin-top: 6px;
+          margin-top: 15px;
           margin-right: 12px;
           ${center}
         }
@@ -242,7 +241,7 @@ export const ProjectWrapper = styled.div`
           height: 36px;
           border-radius: 23px;
           margin-left: auto;
-          margin-top: 6px;
+          margin-top: 15px;
           margin-right: 12px;
           ${center}
         }
