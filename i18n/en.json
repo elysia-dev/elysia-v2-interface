@@ -256,12 +256,12 @@
     },
     "elbridge": {
       "top": [
-        "ELYSIA ON-BOARDING [EL BRIDGE]",
+        "EL BRIDGE",
         "Move Real world asset into the digital world",
-        "사용자들은 DAO를 통해 실제 부동산이 NFT로 만들어지는 과정에 참여하고,<br/> 제대로 변환이 이루어지는지 감시할 수 있습니다."
+        "EL Bridge provides a real asset tokenization function so that users can utilize real assets in the blockchain financial ecosystem."
       ],
       "whitepaper": [
-        "현재 변환과정을 실제 스마트 컨트랙트 상에서 체험해볼 수 있는 기능을 개발중입니다. <br /> The detailed tokenization process can be found in the ELYSIA whitepaper.",
+        "The detailed tokenization process can be found in the ELYSIA whitepaper.",
         "ELYSIA whitepaper"
       ],
       "nft_description": [
