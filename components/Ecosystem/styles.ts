@@ -68,7 +68,7 @@ export const EcosystemImage = styled.div`
 `;
 
 export const TopWrapper = styled.div`
-  padding-top: 60vh;
+  padding-top: 45vh;
   max-width: 1639px;
   margin: auto;
   color: #ffffff;

@@ -21,7 +21,7 @@ const GovernanceBottom = () => {
       <div className={styles.governance_bottom_container}>
         <p>{t('governance.section_fourth.1')}</p>
         <div>
-          <div className={styles.governance_button}>
+          {/* <div className={styles.governance_button}>
             {t('governance.section_fourth.2')}
             <Image
               src={ButtonArrow}
@@ -47,7 +47,7 @@ const GovernanceBottom = () => {
               width={18}
               height={12}
             />
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={styles.governance_bottom_container}>

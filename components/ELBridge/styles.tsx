@@ -53,7 +53,7 @@ export const SectionWrapper = styled.div`
   font-family: ${$light};
 
   > div:nth-child(1) {
-    padding-top: 60vh;
+    padding-top: 45vh;
     margin-bottom: 30px;
     > div:first-child {
       color: #cbcbcb;
@@ -331,7 +331,6 @@ export const StepTwo = styled.div<{
   }
   margin-bottom: 25px;
   overflow: hidden;
-
   > div:first-child {
     cursor: pointer;
     font-size: 1.375rem;
@@ -713,6 +712,9 @@ export const ElysiaWhitePaper = styled.div`
   @media (max-width: 920px) {
     flex-direction: column;
     align-items: flex-start;
+    > a {
+      width: 100% !important;
+    }
     > div {
       &:first-child {
         margin-bottom: 30px;
@@ -721,6 +723,9 @@ export const ElysiaWhitePaper = styled.div`
         width: 100%;
       }
     }
+  }
+  @media (max-width: 460px) {
+    padding: 25px 30px;
   }
 `;
 

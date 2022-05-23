@@ -29,28 +29,16 @@ const Section = () => {
           </div>
           <div>
             <ContentItem
-              Icon={<Smart />}
-              contentName={t('developers.5')}
-              link={'https://docs.elyfi.world/v/eng/services/service-overview'}
+              Icon={<Git />}
+              contentName={t('developers.10')}
+              link={'https://github.com/elysia-dev'}
             />
-            <ContentDescription description={t('developers.6')} />
+            {/* <ContentDescription description={t('developers.6')} /> */}
           </div>
           <DisabledSection>
             <ContentItem Icon={<Bug />} contentName={t('developers.7')} />
             <ContentDescription description={t('developers.8')} />
           </DisabledSection>
-          <div>
-            <ContentItem
-              Icon={<PaperFile />}
-              contentName={t('developers.9')}
-              link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
-            />
-            <ContentItem
-              Icon={<Git />}
-              contentName={t('developers.10')}
-              link={'https://github.com/elysia-dev'}
-            />
-          </div>
         </div>
       </SectionWrapper>
     </>

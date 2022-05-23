@@ -4,6 +4,7 @@
   src: url('../assets/fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
   unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF,
     U+0030-0039, U+0020-007E;
+  size-adjust: 90%;
 }
 @font-face {
   font-family: 'SpoqaHanSansNeo-Bold';
@@ -11,6 +12,7 @@
   src: url('../assets/fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
   unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF,
     U+0030-0039, U+0020-007E;
+  size-adjust: 90%;
 }
 
 @font-face {
@@ -44,6 +46,7 @@ a {
 
 * {
   box-sizing: border-box;
+  white-space: pre-line;
 }
 
 @media screen and (min-width: 0px) and (max-width: 839px) {

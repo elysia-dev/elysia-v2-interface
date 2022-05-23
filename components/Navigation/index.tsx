@@ -20,6 +20,7 @@ import { isChainId } from 'utils/isChainId';
 import { NavigationWrapper } from './styles';
 import MobileMenu from './MobileMenu';
 import * as gtag from 'lib/gtag';
+import LanguageConverter from './LanguageConverter';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -239,6 +240,7 @@ const Navigation = () => {
                 modalVisible={() => setModalVisible(true)}
                 isConnectWalletLoading={isConnectWalletLoading}
               />
+              <LanguageConverter />
             </>
           )}
         </div>

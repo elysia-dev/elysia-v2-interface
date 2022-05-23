@@ -152,9 +152,13 @@ const Staking = (props: Props) => {
                 {t('governance.section_third.1')}
                 <br />
                 <br />
-                {t('governance.section_third.2')}
+                <Trans>{t('governance.section_third.2')}</Trans>
               </p>
-              <div className={styles.governance_button}>
+              <div
+                className={styles.governance_button}
+                onClick={() =>
+                  window.open('https://elysia.gitbook.io/elysia-user-guide/')
+                }>
                 {t('governance.section_third.3')}
                 <Image
                   src={ButtonArrow}

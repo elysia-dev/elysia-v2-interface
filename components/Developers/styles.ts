@@ -50,7 +50,7 @@ export const SectionWrapper = styled.div`
   /* height: 100vh; */
 
   > div:nth-child(1) {
-    padding-top: 60vh;
+    padding-top: 45vh;
     margin-bottom: 30px;
     > div:first-child {
       color: #cbcbcb;
@@ -87,7 +87,7 @@ export const SectionWrapper = styled.div`
       display: flex;
       flex-direction: column;
     }
-    > div:not(div:last-child) {
+    > div {
       padding: 38.22px 25px 38px 25px;
       cursor: pointer;
       ${glassBox}
@@ -101,13 +101,13 @@ export const SectionWrapper = styled.div`
       }
     }
     > div {
-      width: 24.5%;
+      width: 30%;
       @media (max-width: 920px) {
         width: 100%;
         margin-top: 25px;
       }
     }
-    > div:not(div:last-child) {
+    > div {
       > a {
         > div:first-child {
           display: flex;
@@ -138,7 +138,7 @@ export const SectionWrapper = styled.div`
         }
       }
     }
-    > div:last-child {
+    /* > div:last-child {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -181,6 +181,6 @@ export const SectionWrapper = styled.div`
           }
         }
       }
-    }
+    } */
   }
 `;

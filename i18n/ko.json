@@ -101,7 +101,7 @@
         "엘리시아 프로토콜을 이용하여 발행한 자산 토큰 정보입니다",
         "총 자산 토큰 수",
         "총 자산 토큰 가치",
-        "더보기"
+        "더 보기"
       ]
     },
     "community": [
@@ -117,12 +117,12 @@
       "Developers",
       "Give powers for contributing developers.",
       "사용자들은 자유롭게 ELYSIA 시스템을 구성하는 코드를 확인하고,<br /> 자신만의 방법으로 contribute하고 보상을 획득할 수 있습니다.",
-      "What is ELYSIA?",
-      "DAO for the digital transformation<br /> of real estate assets.",
+      "엘리시아란?",
+      "실물자산의 디지털포메이션을 위한 DAO이다.",
       "Smart Contract Overview",
       "How smart contract is made<br /> In real world asset based token",
       "Bug Bounty",
-      "To be continued...<br /> Happy hacking!",
+      "Coming Soon!",
       "ELYSIA v1 Documentation",
       "Github"
     ],
@@ -262,9 +262,7 @@
       "nft_description": [
         "자주 묻는 질문",
         "NFT란 무엇인가요?",
-        "NFT (Non-Fungible Token)는 \"대체 불가능한 토큰\"이라는 뜻입니다.",
-        "블록체인 기술을 이용한 금융 시스템에서는 현실세계에서 존재하는 자산을 1:1로 매칭시켜주는 디지털 원본이 필요하고,",
-        "이 디지털 원본을 NFT라는 형태로 만들어서 블록체인상의 거래에서 하나의 증명서처럼 활용할 수 있습니다."
+        "NFT (Non-Fungible Token)는 “대체 불가능한 토큰” 을 의미합니다.\nNFT는 각각이 서로를 대체할 수 없다는 특성으로, 최근 미술품, 저작권을 가진 창작물 등 여러 실물자산이 NFT로 만들어져 블록체인에서 활발하게 거래되고 있습니다."
       ],
       "asset_nft_description": [
         "왜 부동산 NFT가 필요한가요?",

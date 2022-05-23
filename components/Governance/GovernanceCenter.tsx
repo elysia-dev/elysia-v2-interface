@@ -18,6 +18,7 @@ import LanguageType from 'enums/LanguageType';
 import ELtoken from 'assets/images/governance/el.png';
 import ButtonArrow from 'assets/images/governance/button-arrow.png';
 import GovernanceLineCounter from './GovernanceLineCounter';
+import { useRouter } from 'next/router';
 
 const GovernanceCenter = () => {
   const { data } = useSWR(
@@ -37,6 +38,8 @@ const GovernanceCenter = () => {
   );
   const { t, i18n } = useTranslation();
   const [guideType, setGuideType] = useState('');
+  const router = useRouter();
+  const lng = router.asPath.substring(1, 3);
 
   return (
     <section>
@@ -72,7 +75,9 @@ const GovernanceCenter = () => {
                   className={styles.governance_button}
                   onClick={() => {
                     window.open(
-                      'https://coinmarketcap.com/currencies/elysia/markets/',
+                      lng === LanguageType.KO
+                        ? 'https://elysia.gitbook.io/elysia-whitepaper-v2-0/v/korean/token-economy/minting-fee'
+                        : 'https://elysia.gitbook.io/elysia-whitepaper-v2-0/token-economy/minting-fee',
                     );
                   }}>
                   {t('governance.section_second.4')}

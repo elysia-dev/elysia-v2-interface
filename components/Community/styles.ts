@@ -48,7 +48,7 @@ export const SectionWrapper = styled.div`
   font-family: ${$light};
 
   > div:nth-child(1) {
-    padding-top: 60vh;
+    padding-top: 45vh;
     margin-bottom: 30px;
     > div:first-child {
       color: #cbcbcb;
