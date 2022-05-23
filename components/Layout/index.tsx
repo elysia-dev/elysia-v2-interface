@@ -28,7 +28,7 @@ const Layout = (props: LayoutProps) => {
     const ctx = canvas.getContext('2d');
 
     if (!ctx) return;
-    ctx.scale(2.5, 2.5);
+    ctx.scale(2, 2);
     new Gradient(ctx, canvas.width, canvas.height);
   }, []);
 
