@@ -93,7 +93,7 @@ const Top = () => {
           <div>
             <div>
               <span>
-                <CountUp start={0} end={2000} duration={1} />+
+                <CountUp start={0} end={83385} duration={1} />+
               </span>
               <br />
               {t(`main.top_icon.1`)}
@@ -102,7 +102,6 @@ const Top = () => {
           <div>
             <div>
               <span>${toCompact(parseInt(formatEther(totalBalance)))}+</span>
-              {/* <span>+</span> */}
               <br />
               {t(`main.top_icon.2`)}
             </div>
