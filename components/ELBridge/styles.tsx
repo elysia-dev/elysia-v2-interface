@@ -639,6 +639,10 @@ export const StepThree = styled.div<{
         border-radius: 20px;
         padding: 0px 40px;
         font-size: 1.75rem;
+        &::placeholder {
+          color: #bcbcbc;
+          font-size: 1.5rem;
+        }
         @media (max-width: 640px) {
           padding: 0px 20px;
           font-size: 1.2rem;
@@ -722,6 +726,10 @@ export const StepFour = styled.div<{
         border-radius: 20px;
         padding: 0px 40px;
         font-size: 1.75rem;
+        &::placeholder {
+          color: #bcbcbc;
+          font-size: 1.5rem;
+        }
         @media (max-width: 640px) {
           padding: 0px 20px;
           font-size: 1.2rem;
@@ -796,15 +804,40 @@ export const StepFive = styled.div<{
       margin-bottom: 35px;
     }
     > div:nth-child(2) {
-      > input:nth-child(1) {
+      > textarea:nth-child(1) {
         color: #ffffff;
         width: 100%;
-        height: 80px;
+        height: 500px;
         background: none;
         border: 1px solid #cbcbcb;
         border-radius: 20px;
-        padding: 0px 40px;
+        padding: 20px 40px;
         font-size: 1.75rem;
+        resize: none;
+        &::placeholder {
+          color: #bcbcbc;
+          font-size: 1.5rem;
+        }
+
+        &::-webkit-scrollbar {
+          background: transparent;
+          height: 100%;
+          margin-left: -10px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #3679b5;
+          border-radius: 100px;
+          border: 6px solid transparent;
+          border-radius: 15px;
+          background-clip: content-box;
+        }
+        &::-webkit-scrollbar-track {
+          background: transparent;
+          height: 30%;
+        }
+        /* : 스크롤바 전체
+::-webkit-scrollbar-thumb : 스크롤 막대
+::-webkit-scrollbar-track :  */
         @media (max-width: 640px) {
           padding: 0px 20px;
           font-size: 1.2rem;

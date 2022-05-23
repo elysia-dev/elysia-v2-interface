@@ -468,7 +468,10 @@ const Section = () => {
             <div>
               <div>{t('elbridge.step5.1')}</div>
               <div>
-                <input value={etc} onChange={(e) => setEtc(e.target.value)} />
+                <textarea
+                  value={etc}
+                  onChange={(e) => setEtc(e.target.value)}
+                />
                 <div>
                   <div>
                     <input
