@@ -7,8 +7,8 @@
         "ELYSIA is a protocol to tokenize real-world asset like real estate,<br />and liquidate it using DAO (Decentralized Autonomous Organization).<br/>Users can play in various blockchain ecosystems like Defi with this token."
       ],
       "top_icon": [
-        "Changed Real Estate",
-        "Community Delegates",
+        "Changed real world assets",
+        "Community members",
         "Total Value Locked",
         "Github commit"
       ],
@@ -19,20 +19,20 @@
         "More portfolio"
       ],
       "section_el_bridge": [
-        "EL Bridge (On-boarding)",
+        "EL Bridge",
         "Real world asset into digital NFT.",
         "How to make NFT based on real estate?",
-        "Users can participate and monitor the process from real estate to NFT using DAO."
+        "EL Bridge provides a real asset tokenization function so that users can utilize real assets in the blockchain financial ecosystem."
       ],
       "section_governance": [
         "Governance",
-        "Whole decision making is govened by a global community.",
-        "Anyone can give an opinion in the governance.",
+        "DAO governed by a global community",
+        "ELYSIA is a DAO LLC owned and operated by EL Token stakers.",
         "Users can join the whole decision-making process in the token economy which tokenizing real-world assets and trading these tokens."
       ],
       "section_ecosystem": [
         "Ecosystem",
-        "Decentralized token economy.",
+        "Decentralized token economy",
         "Ecosystem-based on tokenized real estate",
         "Users can participate in various token economies with real estate tokens using third-party Dapps like Defi."
       ],
@@ -44,7 +44,7 @@
       ],
       "section_developers": [
         "Developers",
-        "Give powers for contributing developers.",
+        "Powered by global developers",
         "Decentralized developing system",
         "Developers can give rewards by freely contributing ELYSIA and ELYFI system."
       ],
@@ -84,7 +84,7 @@
     "ecosystem": {
       "top": [
         "ELYSIA Ecosystem",
-        "Various projects are already using asset tokens based on real assets issued through ELYSIA.<br/> Check the projects that have introduced asset tokens."
+        "Users can participate in various token economies with real estate tokens using third-party Dapps like Defi."
       ],
       "project": [
         "PROJECTS",
@@ -115,7 +115,7 @@
     ],
     "developers": [
       "Developers",
-      "Give powers for contributing developers.",
+      "Powered by global developers",
       "Developers can give rewards by freely contributing ELYSIA and ELYFI system.",
       "What is ELYSIA?",
       "DAO for the digital transformation<br /> of real estate assets.",
