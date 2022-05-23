@@ -68,6 +68,11 @@ export const NavigationWrapper = styled.div`
         font-size: 1rem;
         color: #ffffff;
       }
+      > a > span:hover {
+        font-family: Gilroy-ExtraBold !important;
+        font-size: 1rem;
+        color: #ffffff;
+      }
       > a {
         margin-right: 2rem;
         @media (max-width: 1189px) {
