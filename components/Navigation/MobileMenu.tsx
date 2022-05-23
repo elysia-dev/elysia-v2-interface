@@ -18,7 +18,9 @@ const MobileMenu: React.FC<{
             <span
               style={{
                 cursor: 'pointer',
-                fontWeight: router.pathname.length <= 6 ? 'bold' : 'normal',
+                fontFamily: router.pathname.includes('ELBridge')
+                  ? 'Gilroy-ExtraBold'
+                  : 'Gilroy-Light',
               }}>
               EL Bridge
             </span>
@@ -29,9 +31,9 @@ const MobileMenu: React.FC<{
             <span
               style={{
                 cursor: 'pointer',
-                fontWeight: router.pathname.includes('Governance')
-                  ? 'bold'
-                  : 'normal',
+                fontFamily: router.pathname.includes('Governance')
+                  ? 'Gilroy-ExtraBold'
+                  : 'Gilroy-Light',
               }}>
               Governance
             </span>
@@ -42,9 +44,9 @@ const MobileMenu: React.FC<{
             <span
               style={{
                 cursor: 'pointer',
-                fontWeight: router.pathname.includes('Ecosystem')
-                  ? 'bold'
-                  : 'normal',
+                fontFamily: router.pathname.includes('Ecosystem')
+                  ? 'Gilroy-ExtraBold'
+                  : 'Gilroy-Light',
               }}>
               Ecosystem
             </span>
@@ -55,9 +57,9 @@ const MobileMenu: React.FC<{
             <span
               style={{
                 cursor: 'pointer',
-                fontWeight: router.pathname.includes('Community')
-                  ? 'bold'
-                  : 'normal',
+                fontFamily: router.pathname.includes('Community')
+                  ? 'Gilroy-ExtraBold'
+                  : 'Gilroy-Light',
               }}>
               Community
             </span>
@@ -81,9 +83,9 @@ const MobileMenu: React.FC<{
             <span
               style={{
                 cursor: 'pointer',
-                fontWeight: router.pathname.includes('Documents')
-                  ? 'bold'
-                  : 'normal',
+                fontFamily: router.pathname.includes('Documents')
+                  ? 'Gilroy-ExtraBold'
+                  : 'Gilroy-Light',
               }}>
               Documents
             </span>
