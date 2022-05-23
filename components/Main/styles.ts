@@ -169,11 +169,8 @@ export const MainTopWrapper = styled.div`
         backdrop-filter: blur(3px);
       }
       @media (max-width: 960px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between;
-        grid-gap: 15px;
-        gap: 15px;
+        flex-direction: column;
+        justify-content: space-around;
       }
       > div {
         width: 33%;

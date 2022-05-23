@@ -8,6 +8,7 @@ export const GradientCanvas = styled.canvas`
   top: 0;
   left: 0;
   z-index: -1;
+  background-color: #3675b5ac;
 `;
 
 export const NoiseSvg = styled.svg`
