@@ -72,7 +72,8 @@ const Section = () => {
                 contentName={'Kakaotalk'}
                 link={'https://open.kakao.com/o/gUpSOwkb'}
               />
-              <ContentItem
+              <div></div>
+              {/* <ContentItem
                 Icon={
                   <Image
                     src={We_chat}
@@ -83,11 +84,11 @@ const Section = () => {
                 }
                 contentName={'Wechat'}
                 link={''}
-              />
+              /> */}
             </div>
           </div>
         </div>
-        <div>
+        {/* <div>
           <div>
             <div>{t('community.4')}</div>
             <div>
@@ -119,7 +120,7 @@ const Section = () => {
               <div></div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div>
           <div>
             <div>{t('community.5')}</div>
