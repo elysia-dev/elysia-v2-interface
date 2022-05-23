@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import developersImage from 'assets/images/main/developers_image.webp';
 
-const defaultBorder = '1px solid #333333';
+const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
+const $light = 'Gilroy-Light, SpoqaHanSansNeo';
 
 const center = {
   display: 'flex',
@@ -38,7 +39,7 @@ export const DevelopersImage = styled.div`
 export const SectionWrapper = styled.div`
   padding-bottom: 150px;
   color: #ffffff !important;
-  font-family: Gilroy-Light;
+  font-family: ${$light};
   /* height: 100vh; */
 
   > div:nth-child(1) {
@@ -52,7 +53,7 @@ export const SectionWrapper = styled.div`
       }
       > div:first-child {
         color: #ffffff;
-        font-family: Gilroy-ExtraBold;
+        font-family: ${$bold};
         font-size: 2rem;
         margin-bottom: 5px;
         @media (max-width: 460px) {
@@ -99,7 +100,7 @@ export const SectionWrapper = styled.div`
         > div:first-child {
           display: flex;
           align-items: center;
-          font-family: Gilroy-ExtraBold;
+          font-family: ${$bold};
           font-size: 1.25rem;
           > div {
             display: flex;
@@ -143,7 +144,7 @@ export const SectionWrapper = styled.div`
         }
 
         > div {
-          font-family: Gilroy-ExtraBold;
+          font-family: ${$bold};
           font-size: 1.25rem;
           ${glassBox}
           padding: 29px 25px 24px 27px;

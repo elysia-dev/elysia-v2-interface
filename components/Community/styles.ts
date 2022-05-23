@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import communityImage from 'assets/images/main/community_image.webp';
 
+const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
+const $light = 'Gilroy-Light, SpoqaHanSansNeo';
+
 export const center = {
   display: 'flex',
   'align-items': 'center',
@@ -42,7 +45,7 @@ export const CommunityImage = styled.div`
 export const SectionWrapper = styled.div`
   padding: 0px 0px 100px 0px;
   color: #ffffff;
-  font-family: Gilroy-Light;
+  font-family: ${$light};
 
   > div:nth-child(1) {
     padding-top: 60vh;
@@ -55,7 +58,7 @@ export const SectionWrapper = styled.div`
       }
       > div:first-child {
         color: #ffffff;
-        font-family: Gilroy-ExtraBold;
+        font-family: ${$bold};
         font-size: 2rem;
         margin-bottom: 5px;
         @media (max-width: 640px) {

@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
+const $light = 'Gilroy-Light, SpoqaHanSansNeo';
+
 export const FooterWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -8,7 +11,7 @@ export const FooterWrapper = styled.div`
   height: 250px;
   padding: 0px 50px;
   > div {
-    font-family: Gilroy-Light;
+    font-family: ${$light};
     font-size: 1rem;
     color: #cbcbcb;
     height: 100px;
@@ -24,7 +27,7 @@ export const FooterWrapper = styled.div`
     }
     span {
       color: #ffffff;
-      font-family: Gilroy-ExtraBold;
+      font-family: ${$bold};
     }
   }
   > div:last-child {
