@@ -1,9 +1,10 @@
 const COLORS = [
   { r: 0, g: 0, b: 2 },
   { r: 3, g: 41, b: 123 },
-  { r: 54, g: 121, b: 181 },
-  { r: 54, g: 121, b: 181 },
-  { r: 241, g: 251, b: 253 },
+  { r: 3, g: 41, b: 123 },
+  // { r: 54, g: 121, b: 181 },
+  // { r: 54, g: 121, b: 181 },
+  // { r: 241, g: 251, b: 253 },
 ];
 
 const PI2 = Math.PI * 2;
@@ -93,7 +94,7 @@ class Gradient {
 
     this.pixelRatio = window.devicePixelRatio;
 
-    this.totalParticles = 4;
+    this.totalParticles = 3;
     this.particles = [];
     this.maxRadius = 1300;
     this.minRadius = 500;

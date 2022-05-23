@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mainImage from 'assets/images/main/main_image.webp';
+import mainImage from 'assets/images/main/main_bg.webp';
 import elbridge from 'assets/images/main/elbridge_image.webp';
 import ecosystem from 'assets/images/main/ecosystem_image.webp';
 import developers from 'assets/images/main/developers_image.webp';
@@ -51,12 +51,13 @@ export const MainImage = styled.div`
   top: 0;
   right: 0;
   width: 100%;
-  height: 150vh;
+  height: 200vh;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.6;
   background-image: url(${mainImage.src});
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
 `;
 
 export const center = {

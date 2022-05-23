@@ -137,6 +137,13 @@ export const SectionWrapper = styled.div`
             margin: 0;
           }
         }
+        > div:nth-child(4) {
+          width: 310px;
+          padding: 0px 25px 0px 29.5px;
+          @media (max-width: 1024px) {
+            display: none;
+          }
+        }
       }
     }
   }

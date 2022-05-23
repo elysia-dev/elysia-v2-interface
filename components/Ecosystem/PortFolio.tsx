@@ -62,11 +62,7 @@ const PortFolio: React.FC<{
     },
   ];
 
-  const assetList = [
-    ...elysiaArray.slice(0, 3),
-    ...assetBondTokens,
-    ...elysiaArray.slice(2, 6),
-  ];
+  const assetList = [...assetBondTokens, ...elysiaArray];
 
   const totalPrincipal = useMemo(() => {
     let total = 0;

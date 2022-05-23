@@ -8,7 +8,18 @@ export const GradientCanvas = styled.canvas`
   top: 0;
   left: 0;
   z-index: -1;
-  background-color: #3675b5;
+  background-color: hsla(253, 100%, 7%, 1);
+  background-image: radial-gradient(
+      at 40% 20%,
+      hsla(222, 69%, 49%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 80% 0%, hsla(231, 56%, 27%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(229, 63%, 42%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 52%, hsla(215, 94%, 88%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(235, 88%, 7%, 1) 0px, transparent 50%),
+    radial-gradient(at 85% 90%, hsla(225, 58%, 44%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(218, 85%, 67%, 1) 0px, transparent 50%);
 `;
 
 export const NoiseSvg = styled.svg`
