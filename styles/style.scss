@@ -456,6 +456,10 @@ div.background__event__mobile {
   max-width: 514px;
   width: 100%;
   margin: 0 0px;
+  @media (max-width: 514px) {
+    width: 90%;
+    margin: 0 auto;
+  }
   &__content {
     &__header {
       display: flex;
@@ -734,17 +738,23 @@ button.button__contact {
 }
 
 .indicator {
-  border-bottom: 2px solid #f0f0f1;
+  border-bottom: 2px solid #505050;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 50px;
   height: 260px;
   align-items: center;
+  @media (max-width: 514px) {
+    padding: 15px;
+  }
   > p {
     bottom: 15px;
     font-size: 1rem;
     margin-top: 50px;
+    @media (max-width: 514px) {
+      font-size: 0.9rem;
+    }
   }
   .lds-spinner {
     color: #3679b5;

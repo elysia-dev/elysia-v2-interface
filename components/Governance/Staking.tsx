@@ -147,19 +147,15 @@ const Staking = (props: Props) => {
               </div>
             </div>
             <div>
-              <h2>Get sEL tokens by staking EL tokens</h2>
+              <h2>{t('governance.section_third.0')}</h2>
               <p>
-                의사결정 과정에 참여하기 위해서는 투표권(staked EL, sEL)이
-                있어야 합니다. EL 스테이킹 앱에 EL 토큰을 스테이킹함으로써
-                투표권을 얻을 수 있으며, 보유한 수량만큼 투표권을 행사할 수
-                있습니다.
+                {t('governance.section_third.1')}
                 <br />
                 <br />
-                스테이킹 기간은 ELYSIA 2.0 오픈 전까지이며, 언제든지
-                언스테이킹이 가능합니다.
+                {t('governance.section_third.2')}
               </p>
               <div className={styles.governance_button}>
-                스테이킹 가이드
+                {t('governance.section_third.3')}
                 <Image
                   src={ButtonArrow}
                   alt={'Button Arrow'}

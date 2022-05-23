@@ -41,7 +41,7 @@ const GovernanceCenter = () => {
   return (
     <section>
       <div className={styles.center_circle}>
-        <h2>How to join</h2>
+        <h2>{t('governance.section_second.0')}</h2>
       </div>
       <GovernanceLineCounter counter={1}>
         <div className={styles.center_section_01}>
@@ -50,12 +50,8 @@ const GovernanceCenter = () => {
               <Image src={ELtoken} alt={'EL Token'} />
             </section>
             <div>
-              <h2>Get the EL Token</h2>
-              <p>
-                ELYSIA 토큰은 엘리시아 DAO 법인의 ownership을 나타내며,
-                엘리시아에 관심있는 누구나 거버넌스에 참여할 수 있도록 EL 토큰이
-                많은 DEX와 CEX에 상장되어 있습니다.
-              </p>
+              <h2>{t('governance.section_second.1')}</h2>
+              <p>{t('governance.section_second.2')}</p>
               <div>
                 <div
                   className={styles.governance_button}
@@ -64,7 +60,7 @@ const GovernanceCenter = () => {
                       'https://coinmarketcap.com/currencies/elysia/markets/',
                     );
                   }}>
-                  거래소 보기
+                  {t('governance.section_second.3')}
                   <Image
                     src={ButtonArrow}
                     alt={'Button Arrow'}
@@ -79,7 +75,7 @@ const GovernanceCenter = () => {
                       'https://coinmarketcap.com/currencies/elysia/markets/',
                     );
                   }}>
-                  토큰 이코노미
+                  {t('governance.section_second.4')}
                   <Image
                     src={ButtonArrow}
                     alt={'Button Arrow'}

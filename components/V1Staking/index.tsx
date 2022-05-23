@@ -63,7 +63,9 @@ const V1Staking = () => {
       <PrevStakingWrapper>
         <HeaderWrapper>
           <h2>{t('governance.prev_staking.0')}</h2>
-          <p>{t('governance.prev_staking.1')}</p>
+          <p>
+            <Trans>{t('governance.prev_staking.1')}</Trans>
+          </p>
         </HeaderWrapper>
         {userInfo.length > 1 ? (
           stakingRoundDate.map((date, idx) => {

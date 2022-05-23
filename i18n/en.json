@@ -143,12 +143,13 @@
       "wallet": "Connect Wallet"
     },
     "governance": {
+      "title": "ELYSIA Governance",
       "section_first": [
-        "ELYSIA is a DAO LLC owned and operated <br/> by EL Token stakers.",
-        "ELYSIA DAO develops a tokenization protocol so that real assets can be used<br/>in digital asset markets such as DeFi and NFT marketplaces.",
+        "ELYSIA is a DAO LLC owned and operated by EL Token stakers.",
+        "ELYSIA DAO develops a tokenization protocol so that real assets can be used in digital asset markets such as DeFi and NFT marketplaces.",
         "Asia's first DAO LLC.",
-        "The world's second<br/> DAO LLC qualified by<br/>the US government",
-        "DAO LLC established first<br/> among listed projects."
+        "The world's second DAO LLC qualified by the US government",
+        "DAO LLC established first among listed projects."
       ],
       "section_second": [
         "How to join",
@@ -200,8 +201,8 @@
         "Claim rewards"
       ],
       "section_fourth": [
-        "Develop ELYSIA together<br/>by sharing, discussing, and proposing your opinions!",
-        "Anyone who agrees with the ELYSIA Protocol or wants to participate in ELYSIA’s development can participate in governance.<br/>Participants are free to propose improvements in the ELYSIA forum and vote on the decision-making process in the snapshot.",
+        "Develop ELYSIA together by sharing, discussing, and proposing your opinions!",
+        "Anyone who agrees with the ELYSIA Protocol or wants to participate in ELYSIA’s development can participate in governance.\nParticipants are free to propose improvements in the ELYSIA forum and vote on the decision-making process in the snapshot.",
         "Governance FAQ",
         "Forum Guide",
         "Snapshot Guide",

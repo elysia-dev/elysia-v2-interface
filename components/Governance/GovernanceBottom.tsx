@@ -16,21 +16,13 @@ const GovernanceBottom = () => {
         <div className={styles.governance_left_line_counter_wrapper}>
           <div className={styles.governance_left_line_counter}>3</div>
         </div>
-        <h2>
-          Develop ELYSIA together by sharing, discussing, and proposing your
-          opinions!
-        </h2>
+        <h2>{t('governance.section_fourth.0')}</h2>
       </div>
       <div className={styles.governance_bottom_container}>
-        <p>
-          엘리시아 프로토콜에 공감하거나 엘리시아의 발전에 참여하고 싶은 분들은
-          누구나 거버넌스에 참여할 수 있습니다. 참여자들은 ELYSIA Forum에서
-          자유롭게 개선안을 제안하고, Snapshot에서 의사결정 과정에 투표할 수
-          있습니다.
-        </p>
+        <p>{t('governance.section_fourth.1')}</p>
         <div>
           <div className={styles.governance_button}>
-            거버넌스 FAQ
+            {t('governance.section_fourth.2')}
             <Image
               src={ButtonArrow}
               alt={'Button Arrow'}
@@ -39,7 +31,7 @@ const GovernanceBottom = () => {
             />
           </div>
           <div className={styles.governance_button}>
-            Forum 가이드
+            {t('governance.section_fourth.3')}
             <Image
               src={ButtonArrow}
               alt={'Button Arrow'}
@@ -48,7 +40,7 @@ const GovernanceBottom = () => {
             />
           </div>
           <div className={styles.governance_button}>
-            Snapshot 가이드
+            {t('governance.section_fourth.4')}
             <Image
               src={ButtonArrow}
               alt={'Button Arrow'}
@@ -59,7 +51,7 @@ const GovernanceBottom = () => {
         </div>
       </div>
       <div className={styles.governance_bottom_container}>
-        <h2>거버넌스 참여공간</h2>
+        <h2>{t('governance.section_fourth.5')}</h2>
         <div className={styles.governance_bottom_content_box_wrapper}>
           <div className={styles.governance_bottom_content_box}>
             <div className={styles.governance_bottom_content_box_header}>
