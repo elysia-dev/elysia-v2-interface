@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { SectionWrapper } from './styles';
+import { DisabledSection, SectionWrapper } from './styles';
 import Smart from 'assets/images/developers/smart.svg';
 import Bug from 'assets/images/developers/bug.svg';
 import PaperFile from 'assets/images/developers/paperFile.svg';
@@ -35,10 +35,10 @@ const Section = () => {
             />
             <ContentDescription description={t('developers.6')} />
           </div>
-          <div>
+          <DisabledSection>
             <ContentItem Icon={<Bug />} contentName={t('developers.7')} />
             <ContentDescription description={t('developers.8')} />
-          </div>
+          </DisabledSection>
           <div>
             <ContentItem
               Icon={<PaperFile />}
