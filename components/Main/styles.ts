@@ -513,6 +513,10 @@ export const PartnersWrapper = styled.div`
         max-width: 1160px;
         height: 94px;
         ${partnerBorder('0px 30px')}
+        transition: all 1s ease;
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
         > div:nth-child(1) {
           margin-right: 46px;
         }
@@ -574,6 +578,10 @@ export const PartnersWrapper = styled.div`
         max-width: 627px;
         height: 94px;
         ${partnerBorder('0px 30px')}
+        transition: all 1s ease;
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
         > div:nth-child(1) {
           margin-right: 44px;
         }
@@ -595,6 +603,10 @@ export const PartnersWrapper = styled.div`
         width: 25.25rem;
         height: 94px;
         ${partnerBorder('0px 30px')}
+        transition: all 1s ease;
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
       }
     }
   }
@@ -609,6 +621,10 @@ export const PartnersWrapper = styled.div`
       align-content: flex-start;
       width: 100%;
       ${partnerBorder('35px 30px')}
+      transition: all 1s ease;
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
       margin-top: 10px;
       > div {
         ${center};

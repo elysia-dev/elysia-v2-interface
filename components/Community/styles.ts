@@ -48,7 +48,7 @@ export const SectionWrapper = styled.div`
   font-family: ${$light};
 
   > div:nth-child(1) {
-    padding-top: 45vh;
+    padding-top: 60vh;
     margin-bottom: 30px;
     > div:first-child {
       color: #cbcbcb;
@@ -78,6 +78,10 @@ export const SectionWrapper = styled.div`
   }
   > div:nth-child(2) {
     ${glassBox}
+    transition: all 1s ease;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
     @media (max-width: 1024px) {
       padding: 22px 25px 15px;
     }
@@ -149,6 +153,10 @@ export const SectionWrapper = styled.div`
   }
   > div:nth-child(3) {
     ${glassBox}
+    transition: all 1s ease;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
     @media (max-width: 1024px) {
       padding: 22px 25px 15px;
     }
@@ -221,6 +229,10 @@ export const SectionWrapper = styled.div`
   }
   > div:nth-child(4) {
     ${glassBox}
+    transition: all 1s ease;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
     @media (max-width: 1024px) {
       padding: 22px 25px 15px;
     }
@@ -293,6 +305,10 @@ export const SectionWrapper = styled.div`
   }
   > div:nth-child(5) {
     ${glassBox}
+    transition: all 1s ease;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
     @media (max-width: 1024px) {
       padding: 22px 25px 15px;
     }

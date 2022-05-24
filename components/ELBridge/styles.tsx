@@ -53,7 +53,7 @@ export const SectionWrapper = styled.div`
   font-family: ${$light};
 
   > div:nth-child(1) {
-    padding-top: 45vh;
+    padding-top: 60vh;
     margin-bottom: 30px;
     > div:first-child {
       color: #cbcbcb;
@@ -80,11 +80,14 @@ export const SectionWrapper = styled.div`
 
 export const NFTDescription = styled.div<{ active?: boolean }>`
   ${glassBox}
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
   width: 100%;
   /* padding: 33px 71px 0px 90px; */
   margin-bottom: 20px;
   max-height: ${(props) => (props.active ? '75vh' : '100px')};
-  transition: max-height 0.5s ease;
+  transition: all 0.5s ease;
   overflow: hidden;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.active ? '150vh' : '100px')};
@@ -93,8 +96,9 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
     cursor: pointer;
     font-family: ${$bold};
     ${center}
-    padding: 33px 71px 35.5px 71px;
-    border-bottom: 1px solid #acdaff;
+    padding: 33px 0px 35.5px 0px;
+    margin: 0 71px;
+    border-bottom: 1.5px solid #cbcbcb;
     @media (max-width: 640px) {
       padding: 33px 21px 35.5px 21px;
     }
@@ -142,11 +146,14 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
 
 export const AssetNFTDescription = styled.div<{ active?: boolean }>`
   ${glassBox}
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
   width: 100%;
   /* padding: 33px 71px 0px 90px; */
   margin-bottom: 20px;
   max-height: ${(props) => (props.active ? '100vh' : '100px')};
-  transition: max-height 1s ease;
+  transition: all 1s ease;
   overflow: hidden;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.active ? '150vh' : '100px')};
@@ -155,8 +162,9 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
     cursor: pointer;
     font-family: ${$bold};
     ${center}
-    padding: 33px 71px 35.5px 71px;
-    border-bottom: 1px solid #acdaff;
+    padding: 33px 0px 35.5px 0px;
+    margin: 0 71px;
+    border-bottom: 1px solid #cbcbcb;
     @media (max-width: 640px) {
       padding: 33px 21px 35.5px 21px;
     }
@@ -241,7 +249,10 @@ export const StepOne = styled.div<{
   background-color: ${(props) => props.isFinished && '#343F57'};
   width: 100%;
   max-height: ${(props) => (props.selected ? '75vh' : '5rem')};
-  transition: max-height 0.5s ease;
+  transition: all 0.5s ease;
+  &:hover {
+    background: ${(props) => !props.isFinished && 'rgba(255, 255, 255, 0.2)'};
+  }
   padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
@@ -323,7 +334,10 @@ export const StepTwo = styled.div<{
   background-color: ${(props) => props.isFinished && '#343F57'};
   width: 100%;
   max-height: ${(props) => (props.selected ? '75vh' : '5rem')};
-  transition: max-height 0.5s ease;
+  transition: all 0.5s ease;
+  &:hover {
+    background: ${(props) => !props.isFinished && 'rgba(255, 255, 255, 0.2)'};
+  }
   padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
@@ -403,7 +417,10 @@ export const StepThree = styled.div<{
   width: 100%;
   background-color: ${(props) => props.isFinished && '#343F57'};
   max-height: ${(props) => (props.selected ? '75vh' : '5rem')};
-  transition: max-height 0.5s ease;
+  transition: all 0.5s ease;
+  &:hover {
+    background: ${(props) => !props.isFinished && 'rgba(255, 255, 255, 0.2)'};
+  }
   padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
@@ -483,7 +500,10 @@ export const StepFour = styled.div<{
   width: 100%;
   background-color: ${(props) => props.isFinished && '#343F57'};
   max-height: ${(props) => (props.selected ? '75vh' : '5rem')};
-  transition: max-height 0.5s ease;
+  transition: all 0.5s ease;
+  &:hover {
+    background: ${(props) => !props.isFinished && 'rgba(255, 255, 255, 0.2)'};
+  }
   padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
@@ -564,7 +584,10 @@ export const StepFive = styled.div<{
   width: 100%;
   background-color: ${(props) => props.isFinished && '#343F57'};
   max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
-  transition: max-height 0.5s ease;
+  transition: all 0.5s ease;
+  &:hover {
+    background: ${(props) => !props.isFinished && 'rgba(255, 255, 255, 0.2)'};
+  }
   padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.selected ? '200vh' : '5rem')};
@@ -689,6 +712,11 @@ export const StepFive = styled.div<{
 
 export const ElysiaWhitePaper = styled.div`
   ${glassBox}
+  transition: all 0.5s ease;
+  &:hover {
+    transition: all 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+  }
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -68,7 +68,7 @@ export const EcosystemImage = styled.div`
 `;
 
 export const TopWrapper = styled.div`
-  padding-top: 45vh;
+  padding-top: 60vh;
   max-width: 1639px;
   margin: auto;
   color: #ffffff;
@@ -135,6 +135,10 @@ export const ProjectWrapper = styled.div`
     }
     > div:nth-child(1) {
       cursor: pointer;
+      transition: all 1s ease;
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
       > div:first-child {
         background-image: url(${ElyfiProjectImg.src});
         background-repeat: no-repeat;
@@ -309,6 +313,10 @@ export const PortFolioWrapper = styled.div`
       height: 83px;
       padding: 0px 70px;
       margin-bottom: 37px;
+      transition: all 1s ease;
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
       @media (max-width: 640px) {
         height: initial;
         flex-direction: column;
@@ -375,6 +383,10 @@ export const PortFolioWrapper = styled.div`
         ${glassBox}
         padding: 18px 20px 18px 20px;
         margin: 10px 0px;
+        transition: all 1s ease;
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
         @media (max-width: 840px) {
           width: 100%;
           margin: 0;

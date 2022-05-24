@@ -31,7 +31,7 @@ export const SectionWrapper = styled.div`
   /* height: 100vh; */
 
   > div:nth-child(1) {
-    padding-top: 45vh;
+    padding-top: 60vh;
     margin-bottom: 30px;
     > div:first-child {
       color: #cbcbcb;

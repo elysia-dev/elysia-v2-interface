@@ -30,17 +30,17 @@ const Top = () => {
           </div>
         </div>
         <div>
-          <div>
+          <div
+            onClick={() =>
+              window.open(
+                i18n.language === 'ko'
+                  ? 'https://www.elyfi.world/ko'
+                  : 'https://www.elyfi.world/en',
+                '_blank',
+              )
+            }>
             <div />
-            <div
-              onClick={() =>
-                window.open(
-                  i18n.language === 'ko'
-                    ? 'https://www.elyfi.world/ko'
-                    : 'https://www.elyfi.world/en',
-                  '_blank',
-                )
-              }>
+            <div>
               <div>ELYFI</div>
               <div>{!isTablet && <Arrow />}</div>
             </div>
