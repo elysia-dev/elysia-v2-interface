@@ -83,10 +83,10 @@ const Section = () => {
           etc,
       })
       .then(() => {
-        alert(t('contact.success'));
+        alert(t('elbridge.contact.success'));
       })
       .catch(() => {
-        alert(t('contact.fail'));
+        alert(t('elbridge.contact.fail'));
       });
   };
 

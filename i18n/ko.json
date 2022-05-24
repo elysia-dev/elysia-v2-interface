@@ -303,7 +303,9 @@
         "LYSIA PLATFORM PTE. LTD의 개인정보 처리에 동의합니다. 개인 정보 보호 정책 및 쿠키 정책에 명시된 바와 같이 다음과 같은 글로벌 특성을 고려할 때 ELYSIA PLATFORM PTE. LTD의 업무, 이러한 처리는 본국 이외의 지역에서 이루어질 수 있습니다.",
         "제출하기"
       ],
-      "next_button": "다음"
+      "next_button": "다음",
+      "contact": "정상적으로 접수되었습니다.",
+      "fail": "전송에 실패했습니다. 잠시 후 다시 확인해주세요."
     },
     "footer": {
       "logo_label": "ELYSIA PLATFORM PTE. LTD",
