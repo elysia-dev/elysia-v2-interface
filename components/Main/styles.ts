@@ -719,7 +719,7 @@ export const MainTeamWrapper = styled.div`
       margin-top: 48px;
       width: 100%;
 
-      > div {
+      > a {
         width: 33%;
         height: 389px;
         background: rgba(255, 255, 255, 0.1);
@@ -783,7 +783,7 @@ export const MainTeamWrapper = styled.div`
         flex-direction: column;
         justify-content: space-between;
         gap: 35px 15px;
-        > div {
+        > a {
           width: 100%;
           text-align: left;
           height: initial !important;
@@ -803,7 +803,7 @@ export const MainTeamWrapper = styled.div`
         }
       }
       @media (max-width: 460px) {
-        > div {
+        > a {
           > div {
             &:first-child {
               padding: 15px 20px;

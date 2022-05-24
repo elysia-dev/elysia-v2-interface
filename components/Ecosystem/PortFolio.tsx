@@ -136,7 +136,8 @@ const PortFolio: React.FC<{
           </div>
           {assetList.length / (6 * pageNum) >= 1 && (
             <ViewMoreButton onClick={() => setPageNum((prev) => prev + 1)}>
-              {t('ecosystem.portfolio.4')}
+              {t('ecosystem.portfolio.4')} ( {pageNum} /{` `}
+              {(assetList.length / 6).toFixed(0)} )
             </ViewMoreButton>
           )}
         </div>

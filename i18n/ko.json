@@ -7,8 +7,8 @@
         "엘리시아는 부동산과 같은 실물자산을 토큰화하고, <br /> 이를 탈중앙화조직 DAO를 이용해 유동화할 수 있는 서비스를 제공합니다. <br /> 사용자는 이 토큰을 토대로 디파이 등 다양한 블록체인 생태계에서 활동할 수 있습니다."
       ],
       "top_icon": [
-        "Changed Real Estate",
-        "Community Delegates",
+        "Changed real world assets",
+        "Community members",
         "Total Value Locked",
         "Github commit"
       ],
@@ -19,20 +19,20 @@
         "More portfolio"
       ],
       "section_el_bridge": [
-        "EL Bridge (On-boarding)",
-        "Real world asset into digital NFT.",
+        "EL Bridge",
+        "Move Real world asset into the digital world",
         "실제 부동산을 NFT로 만드는 과정.",
-        "사용자들은 DAO를 통해 실제 부동산이 NFT로 만들어지는 과정에 참여하고,<br /> 제대로 변환이 이루어지는지 감시할 수 있습니다."
+        "EL 브릿지는 사용자들이 블록체인 금융 생태계에서도 실물자산을 활용할 수 있도록 실물자산 토큰화 기능을 제공합니다."
       ],
       "section_governance": [
         "Governance",
-        "Whole decision making is govened by a global community.",
-        "누구나 참여 가능한 거버넌스.",
+        "DAO governed by a global community.",
+        "엘리시아는 EL 토큰 스테이커들에 의해 소유되고 운영되는 DAO 법인입니다.",
         "사용자들은 ELYSIA 프로토콜 안에서 실물자산이 토큰화되고, 거래되는 과정뿐만 아니라<br /> 토큰 이코노미의 모든 의사결정 과정에 참여할 수 있습니다."
       ],
       "section_ecosystem": [
         "Ecosystem",
-        "Decentralized token economy.",
+        "Decentralized token economy",
         "토큰화된 부동산을 토대로한 다양한 자산 토큰 생태계.",
         "사용자들은 토큰으로 만들어진 부동산 자산을 토대로, 디파이 등<br /> 다양한 서드파티 Dapp과 함께 토큰 생태계에서 어떻게 쓰이는지 참여할 수 있습니다."
       ],
@@ -44,13 +44,13 @@
       ],
       "section_developers": [
         "Developers",
-        "Give powers for contributing developers.",
+        "Powered by global developers",
         "탈중앙화된 개발 시스템.",
-        "사용자들은 자유롭게 ELYSIA 및 ELYFI 시스템을 구성하는 코드를 확인하고,<br /> 자신만의 방법으로 contribute하고 보상을 획득할 수 있습니다."
+        "사용자들은 자유롭게 ELYSIA 및 ELYFI 시스템을 구성하는 코드를 확인하고,<br /> 자신만의 방법으로 기여하고 보상을 획득할 수 있습니다."
       ],
       "section_documents": [
         "Documents",
-        "Guide for novice & anyone who is curious about the project.",
+        "Guide for novice & anyone who is curious about the project",
         "ELYSIA에 관련된 모든 문서.",
         "초보자, 경험자에 관계없이 모두 ELYSIA의 문서를 통해<br /> ELYSIA protocol이 무엇이고, 어떻게 토큰 이코노미가 돌아가는지 확인할 수 있습니다."
       ],
@@ -84,7 +84,7 @@
     "ecosystem": {
       "top": [
         "ELYSIA Ecosystem",
-        "다양한 프로젝트에서 이미 엘리시아를 통해 발행한 실물자산 기반의 자산토큰을 활용하고 있습니다.<br/> 자산토큰을 도입한 프로젝트들을 확인해보세요."
+        "사용자들은 토큰으로 만들어진 부동산 자산을 토대로, 디파이 등<br /> 다양한 서드파티 Dapp과 함께 토큰 생태계에서 어떻게 쓰이는지 참여할 수 있습니다."
       ],
       "project": [
         "프로젝트",
@@ -115,7 +115,7 @@
     ],
     "developers": [
       "Developers",
-      "Give powers for contributing developers.",
+      "Powered by global developers",
       "사용자들은 자유롭게 ELYSIA 시스템을 구성하는 코드를 확인하고,<br /> 자신만의 방법으로 contribute하고 보상을 획득할 수 있습니다.",
       "엘리시아란?",
       "실물자산의 디지털포메이션을 위한 DAO이다.",
@@ -128,7 +128,7 @@
     ],
     "documents": [
       "Documents",
-      "Guide for novice & anyone who is curious about the project.",
+      "Guide for novice & anyone who is curious about the project",
       "초보자, 경험자에 관계없이 모두 ELYSIA의 문서를 통해<br /> ELYSIA protocol이 무엇이고, 어떻게 토큰 이코노미가 돌아가는지 확인할 수 있습니다.",
       "ELYSIA Whitepaper",
       "Real world asset<br /> tokenization DAO",

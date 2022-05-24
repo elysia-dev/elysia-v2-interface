@@ -156,7 +156,7 @@ const Partners = () => {
               </div>
             </div>
           </div>
-          <div>
+          {/* <div>
             <div>{t('main.partners.6')}</div>
             <div>
               <div>
@@ -196,7 +196,7 @@ const Partners = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div>
           <div>{t('main.partners.7')}</div>
