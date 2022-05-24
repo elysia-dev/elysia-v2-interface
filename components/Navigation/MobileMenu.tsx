@@ -1,5 +1,8 @@
+import LanguageContext from 'contexts/LanguageContext';
+import LanguageType from 'enums/LanguageType';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useContext } from 'react';
 import ConnectWalletButton from './ConnectWalletButton';
 import styles from './Navigation.module.scss';
 
@@ -9,6 +12,9 @@ const MobileMenu: React.FC<{
   onButtonClick: () => void;
 }> = ({ modalVisible, isConnectWalletLoading, onButtonClick }) => {
   const router = useRouter();
+
+  const { setLanguage } = useContext(LanguageContext);
+  const lng = router.asPath.substring(1, 3);
 
   return (
     <article className={styles.navigation__hamburger__menu}>
@@ -92,6 +98,26 @@ const MobileMenu: React.FC<{
           </a>
         </Link>
       </section>
+      <article className={styles.navigation__hamburger__language}>
+        <p
+          onClick={() => {
+            setLanguage(LanguageType.KO);
+          }}
+          style={{
+            fontWeight: lng === LanguageType.KO ? 'bolder' : 400,
+          }}>
+          KOR
+        </p>
+        <p
+          onClick={() => {
+            setLanguage(LanguageType.EN);
+          }}
+          style={{
+            fontWeight: lng === LanguageType.EN ? 'bolder' : 400,
+          }}>
+          ENG
+        </p>
+      </article>
       <ConnectWalletButton
         modalVisible={modalVisible}
         isConnectWalletLoading={isConnectWalletLoading}

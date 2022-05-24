@@ -2,6 +2,7 @@ import LanguageContext from 'contexts/LanguageContext';
 import LanguageType from 'enums/LanguageType';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
+import styles from './Navigation.module.scss';
 
 const LanguageConverter = () => {
   const { setLanguage } = useContext(LanguageContext);
@@ -36,20 +37,22 @@ const LanguageConverter = () => {
   const changeLanguage = () => {
     return (
       <div
-        className="footer__lang__image-handler"
+        className={styles.language_converter__handler}
         style={{ display: visible ? 'flex' : 'none' }}>
         {[LanguageType.EN, LanguageType.KO]
           .filter((languageType) => languageType !== lng)
           .map((languageType, index) => {
             return (
               <div
-                className="footer__lang__image-handler__wrapper"
+                className={styles.language_converter__handler__type__wrapper}
                 key={index}
                 onClick={() => {
                   setLanguage(languageType);
                   handleHover();
                 }}>
-                <p>{languageType}</p>
+                <p className={styles.language_converter__handler__type}>
+                  {languageType}
+                </p>
               </div>
             );
           })}
@@ -57,20 +60,14 @@ const LanguageConverter = () => {
     );
   };
 
-  const showingLanguageIcon = (languageType: LanguageType) => {
-    return (
-      <>
-        <p className="montserrat">{languageType}</p>
-      </>
-    );
-  };
-
   return (
-    <div className="footer__lang" ref={LangRef}>
-      {changeLanguage()}
-      <div className="footer__lang__wrapper" onClick={() => handleHover()}>
-        {showingLanguageIcon(lng as LanguageType)}
+    <div className={styles.language_converter} ref={LangRef}>
+      <div
+        className={styles.language_converter__type__wrapper}
+        onClick={() => handleHover()}>
+        <p className={styles.language_converter__type}>{lng}</p>
       </div>
+      {changeLanguage()}
     </div>
   );
 };

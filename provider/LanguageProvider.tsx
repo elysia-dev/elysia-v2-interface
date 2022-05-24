@@ -12,7 +12,6 @@ const LanguageProvider: React.FC = (props) => {
 
   const setLanguage = (language: LanguageType) => {
     window.localStorage.setItem('@language', language);
-    router.push(`/${language}`);
     const getPath = location.pathname.split('/')[2];
     if (getPath === undefined) {
       return router.push(`/${language}`);
