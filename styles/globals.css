@@ -39,6 +39,10 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body {
+  background-color: hsla(253, 100%, 7%, 1);
+}
+
 a {
   color: inherit;
   text-decoration: none;
