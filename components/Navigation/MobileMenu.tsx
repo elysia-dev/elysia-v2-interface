@@ -84,19 +84,6 @@ const MobileMenu: React.FC<{
             </span>
           </a>
         </Link>
-        <Link href={`/${router.query.lng}/Documents`} passHref>
-          <a onClick={onButtonClick}>
-            <span
-              style={{
-                cursor: 'pointer',
-                fontFamily: router.pathname.includes('Documents')
-                  ? 'Gilroy-ExtraBold'
-                  : 'Gilroy-Light',
-              }}>
-              Documents
-            </span>
-          </a>
-        </Link>
       </section>
       <article className={styles.navigation__hamburger__language}>
         <p

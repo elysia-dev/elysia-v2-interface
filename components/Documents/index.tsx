@@ -4,8 +4,8 @@ import { DocumentsImage } from './styles';
 const Documents = () => {
   return (
     <>
-      <DocumentsImage />
-      <Section />
+      {/* <DocumentsImage />
+      <Section /> */}
     </>
   );
 };

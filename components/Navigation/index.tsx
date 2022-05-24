@@ -222,19 +222,6 @@ const Navigation = () => {
                     </span>
                   </a>
                 </Link>
-                <Link href={`/${router.query.lng}/Documents`} passHref>
-                  <a>
-                    <span
-                      style={{
-                        cursor: 'pointer',
-                        fontFamily: router.pathname.includes('Documents')
-                          ? 'Gilroy-ExtraBold'
-                          : 'Gilroy-Light',
-                      }}>
-                      Documents
-                    </span>
-                  </a>
-                </Link>
               </div>
               <ConnectWalletButton
                 modalVisible={() => setModalVisible(true)}
