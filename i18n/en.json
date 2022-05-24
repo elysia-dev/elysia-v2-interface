@@ -267,15 +267,13 @@
       "nft_description": [
         "Frequently Asked Questions",
         "What is NFT?",
-        "NFT stands for “non-fungible token”.",
-        "In a financial system using blockchain technology, a digital original that matches assets in the real world 1:1 is required,",
-        "digital original is made in the form of an NFT and can be used as a certificate in transactions on the blockchain."
+        "NFT means “non-fungible token”. Since NFTs cannot replace each other, many real assets such as artworks and copyrighted creations have recently been created as NFTs and are being actively traded on the blockchain.\n\nIn addition, NFT can be applied to financial systems based on blockchain. A blockchain-based financial system requires a digital original that matches 1:1 with real-world assets, and this digital original can be made into an NFT and used as a certificate in transactions on the blockchain."
       ],
       "asset_nft_description": [
         "Why Real estate NFT is needed?",
-        "Recently, many real world assets (art works, copyrighted creations, etc.) have been made with NFTs and are being actively traded on the blockchain. These NFTs can be used in various financial systems without fear of forgery because transaction details are securely recorded on the blockchain.",
-        "Despite the convenience of such transactions and the liquidity of the inflow of funds, there has not been a case of converting real world estate into NFT and incorporating it into the existing blockchain financial system. This is because the barriers to entry are high in the real estate market, even in the traditional financial market, where complex documents are required and large amounts of money are exchanged. ELYSIA DAO LLC. intends to create the world's first real estate NFT-based economic system based on its experience of trading multiple real estate and operating a separate blockchain technology team.",
-        "Real world asset-based NFTs may have the following uses.<br/> 1. Real world asset-based NFT collateralized loan on DeFi<br/> 2. Swap between real estate NFT and virtual currency<br/> 3. Raising investment using DAO"
+        "NFT has the advantage of not only being non-fungible, but also that transactions are permanently recorded on the blockchain, eliminating the risk of fraud or counterfeiting.\nBecause of this, the NFT market is expanding into various fields such as games, arts, education, lending, and investment.",
+        "While the scope of NFT application is expanding, there has been no case where real estate was converted to NFT and incorporated into the blockchain financial system.\nDespite the convenience of transactions and liquidity of the inflow of funds, real estate requires complex documents even in the traditional financial market, as there are high barriers to entry into the market where large amounts of money move.\n\nELYSIA intends to create the world's first real estate NFT-based economic system based on existing real estate transaction experience and competence in operating a blockchain technology team.",
+        "Creating an NFT based on real estate, a real asset, has the following advantages.\n1. Real estate NFT collateral loan using existing blockchain financial system (DeFi, etc.)\n2. Attracting and selling more investment using digital currency\n3. Value creation using real estate NFT itself in the virtual world\n4. Possible to raise investment funds using DAO"
       ],
       "inquiry_nft": [
         "Inquiry for real estate NFT",

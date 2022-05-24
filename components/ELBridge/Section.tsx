@@ -130,8 +130,6 @@ const Section = () => {
             </div>
             <div>
               <div>{t('elbridge.nft_description.2')}</div>
-              <div>{t('elbridge.nft_description.3')}</div>
-              <div>{t('elbridge.nft_description.4')}</div>
             </div>
           </NFTDescription>
           <AssetNFTDescription active={activeBox.AssetNFTDescription}>
