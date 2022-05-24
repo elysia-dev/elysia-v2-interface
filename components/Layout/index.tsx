@@ -2,7 +2,7 @@ import Navigation from 'components/Navigation';
 import Head from 'next/head';
 import { useCallback, useEffect, useRef } from 'react';
 import Gradient from 'utils/gradient';
-import { GradientCanvas, LayoutNoise } from './styles';
+import { GradientCanvas, LayoutDiv, LayoutNoise } from './styles';
 import dynamic from 'next/dynamic';
 
 const Footer = dynamic(() => import('components/Footer'));
@@ -58,11 +58,7 @@ const Layout = (props: LayoutProps) => {
       <GradientCanvas ref={canvasRef} />
       <LayoutNoise />
       <Navigation />
-      <div
-        style={{
-          width: '100%',
-          margin: 'auto',
-        }}>
+      <LayoutDiv>
         <div
           style={{
             display: 'flex',
@@ -76,7 +72,7 @@ const Layout = (props: LayoutProps) => {
             {props.children}
           </div>
         </div>
-      </div>
+      </LayoutDiv>
       <Footer />
     </>
   );

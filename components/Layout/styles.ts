@@ -37,3 +37,8 @@ export const LayoutNoise = styled.div`
   background-image: url(${noise.src});
   background-size: auto;
 `;
+
+export const LayoutDiv = styled.div`
+  width: 100%;
+  margin: auto;
+`;
