@@ -20,8 +20,10 @@ const ConnectWalletButton = (props: Props) => {
   const { txStatus } = useContext(TxContext);
   const { t } = useTranslation();
   const { ensName, ensLoading } = useENS(account || '');
-  const shortAddress = `${account?.substring(0, 5)}....
-  ${account?.substring(account.length - 4, account.length)}`;
+  const shortAddress = `${account?.substring(0, 5)}....${account?.substring(
+    account.length - 4,
+    account.length,
+  )}`;
 
   return (
     <>
@@ -40,15 +42,7 @@ const ConnectWalletButton = (props: Props) => {
                 address={account}
                 generatedAvatarType="jazzicon"
               />
-              <div>
-                {
-                  ensLoading ? (
-                    ensName || shortAddress
-                  ) : (
-                    shortAddress
-                  )
-                }
-              </div>
+              <div>{ensLoading ? ensName || shortAddress : shortAddress}</div>
             </div>
           ) : (
             <div className={styles.wrong_network}>
