@@ -12,7 +12,9 @@ const GovernanceTop = () => {
       <div className={styles.governance_top_content_wrapper}>
         <div className={styles.governance_top_content}>
           <h2>Mission</h2>
-          <p>{t('governance.section_first.1')}</p>
+          <div>
+            <p>{t('governance.section_first.1')}</p>
+          </div>
         </div>
         <div className={styles.governance_top_content_right}>
           <h2>Reputation</h2>

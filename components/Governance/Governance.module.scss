@@ -29,7 +29,7 @@ $light: Gilroy-Light, SpoqaHanSansNeo;
 }
 .governance_top {
   // margin-top: calc(50vh - 100px);
-  margin-top: 60vh;
+  padding-top: 45vh;
   padding-bottom: 70px;
   border-bottom: 1px solid $elysia-color;
   @media (max-width: 920px) {
@@ -51,6 +51,57 @@ $light: Gilroy-Light, SpoqaHanSansNeo;
     margin-bottom: 40px;
   }
   &_content {
+    display: flex;
+    flex-direction: row;
+    @media (max-width: 920px) {
+      > h2 {
+        margin-bottom: 20px !important;
+      }
+    }
+    @media (max-width: 460px) {
+      flex-direction: column;
+      > h2 {
+        margin-bottom: 15px !important;
+      }
+    }
+    > div {
+      margin-left: 20px;
+      padding-left: 45px;
+      border-left: 1px solid #33a5ff;
+      @media (max-width: 920px) {
+        margin-left: 22px;
+        padding-left: 40px;
+      }
+      @media (max-width: 460px) {
+        margin-left: 0;
+        padding-left: 0;
+        border: 0;
+      }
+      > p {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 40px;
+        letter-spacing: -0.3px;
+        &::before {
+          margin-right: 10px;
+        }
+        @media (max-width: 920px) {
+          font-size: 1.2rem;
+        }
+        @media (max-width: 640px) {
+          font-size: 1.2rem;
+          line-height: 30px;
+        }
+        @media (max-width: 460px) {
+          font-size: 1rem;
+          line-height: 20px;
+          &::before {
+            content: '-';
+            margin-right: 10px;
+          }
+        }
+      }
+    }
     &_wrapper {
       display: flex;
       flex-direction: row;
@@ -59,6 +110,8 @@ $light: Gilroy-Light, SpoqaHanSansNeo;
         flex-direction: column;
       }
       > div {
+        display: flex;
+        flex-direction: row;
         flex: 1;
         background-color: rgba(255, 255, 255, 0.1);
         border-radius: 20px;
