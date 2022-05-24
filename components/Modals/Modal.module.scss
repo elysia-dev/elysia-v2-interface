@@ -28,7 +28,7 @@ $line-color: #505050;
       margin: 0;
       font-size: 1.2rem;
       color: #fff;
-      font-family: Montserrat-bold;
+      font-family: Inter-Bold;
       letter-spacing: 1.2px;
     }
   }
@@ -37,7 +37,7 @@ $line-color: #505050;
   margin: 0;
   font-size: 1.2rem;
   color: #fff;
-  font-family: Montserrat-bold;
+  font-family: Inter-Bold;
   letter-spacing: 1.2px;
   @content;
 }
@@ -113,7 +113,7 @@ $line-color: #505050;
       .modal_address {
         line-height: 1.5rem;
         div:first-child {
-          font-family: Montserrat;
+          font-family: Inter;
           font-size: 0.9375rem;
           color: #838383;
           letter-spacing: 0.6px;
@@ -160,7 +160,7 @@ $line-color: #505050;
         height: 100%;
         font-size: 0.9375rem;
         color: #fff;
-        font-family: 'Montserrat';
+        font-family: 'Inter';
         display: flex;
         justify-content: center;
         align-items: center;
@@ -178,14 +178,14 @@ $line-color: #505050;
         height: 100%;
         cursor: pointer;
         color: #fff;
-        font-family: 'Montserrat';
+        font-family: 'Inter';
       }
     }
   }
   .recent_tx_wrapper {
     width: 464px;
     margin: 21px auto 28px auto;
-    font-family: 'Montserrat';
+    font-family: 'Inter';
     .recent_header {
       font-size: 0.9375rem;
       color: #fff;
@@ -193,7 +193,7 @@ $line-color: #505050;
     .recent_box {
       color: #888888;
       border: 1px solid $line-color;
-      font-family: 'Montserrat';
+      font-family: 'Inter';
       border-radius: 5px;
       height: 45px;
       display: flex;
@@ -491,7 +491,7 @@ $line-color: #505050;
     }
   }
   .error_inquiry {
-    font-family: 'Montserrat-Medium', 'SpoqaHanSansNeo-Medium';
+    font-family: 'Inter-Medium', 'SpoqaHanSansNeo-Medium';
     text-align: center;
     padding: 40px 70px 30px 70px;
   }
@@ -500,7 +500,7 @@ $line-color: #505050;
     margin: auto;
 
     > div:first-child {
-      font-family: 'SpoqaHanSansNeo-Bold', 'Montserrat-bold';
+      font-family: 'SpoqaHanSansNeo-Bold', 'Inter-Bold';
       margin-bottom: 10px;
     }
     > div:last-child {
