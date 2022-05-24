@@ -4,6 +4,7 @@ const Disclaimer = () => {
       style={{
         maxWidth: 1190,
         margin: '15vh auto',
+        height: '100vh',
         padding: 30,
         color: '#ffffff',
       }}>
