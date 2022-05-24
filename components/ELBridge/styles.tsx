@@ -253,22 +253,30 @@ export const StepOne = styled.div<{
   &:hover {
     background: ${(props) => !props.isFinished && 'rgba(255, 255, 255, 0.2)'};
   }
-  padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
-    padding: 1.625rem 20px 0px 20px;
   }
   margin-bottom: 25px;
   overflow: hidden;
   > div:first-child {
+    padding: 1.625rem 51px 0px 51px;
     cursor: pointer;
     font-size: 1.375rem;
-    margin-bottom: 28px;
+    height: 5rem;
+    @media (max-width: 640px) {
+      padding: 1.625rem 20px 0px 20px;
+    }
   }
   > div:last-child {
     font-size: 1.25rem;
     max-width: 1187px;
     margin: 0px auto 57px auto;
+    @media screen and (min-width: 641px) and (max-width: 1440px) {
+      padding: 1.625rem 51px 0px 51px;
+    }
+    @media screen and (max-width: 640px) {
+      padding: 1.625rem 21px 0px 21px;
+    }
     > div:first-child {
       margin-bottom: 35px;
     }
@@ -338,22 +346,31 @@ export const StepTwo = styled.div<{
   &:hover {
     background: ${(props) => !props.isFinished && 'rgba(255, 255, 255, 0.2)'};
   }
-  padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
-    padding: 1.625rem 20px 0px 20px;
   }
   margin-bottom: 25px;
   overflow: hidden;
   > div:first-child {
+    padding: 1.625rem 51px 0px 51px;
     cursor: pointer;
     font-size: 1.375rem;
     margin-bottom: 28px;
+    height: 5rem;
+    @media screen and (max-width: 640px) {
+      padding: 1.625rem 21px 0px 21px;
+    }
   }
   > div:last-child {
     font-size: 1.25rem;
     max-width: 1187px;
     margin: 0px auto 57px auto;
+    @media screen and (min-width: 641px) and (max-width: 1440px) {
+      padding: 1.625rem 51px 0px 51px;
+    }
+    @media screen and (max-width: 640px) {
+      padding: 1.625rem 21px 0px 21px;
+    }
     > div:first-child {
       margin-bottom: 35px;
     }
@@ -421,22 +438,31 @@ export const StepThree = styled.div<{
   &:hover {
     background: ${(props) => !props.isFinished && 'rgba(255, 255, 255, 0.2)'};
   }
-  padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
-    padding: 1.625rem 20px 0px 20px;
   }
   margin-bottom: 25px;
   overflow: hidden;
   > div:first-child {
+    padding: 1.625rem 51px 0px 51px;
     cursor: pointer;
     font-size: 1.375rem;
     margin-bottom: 28px;
+    height: 5rem;
+    @media screen and (max-width: 640px) {
+      padding: 1.625rem 21px 0px 21px;
+    }
   }
   > div:last-child {
     font-size: 1.25rem;
     max-width: 1187px;
     margin: 0px auto 57px auto;
+    @media screen and (min-width: 641px) and (max-width: 1440px) {
+      padding: 1.625rem 51px 0px 51px;
+    }
+    @media screen and (max-width: 640px) {
+      padding: 1.625rem 21px 0px 21px;
+    }
     > div:first-child {
       margin-bottom: 35px;
     }
@@ -507,22 +533,31 @@ export const StepFour = styled.div<{
   &:hover {
     background: ${(props) => !props.isFinished && 'rgba(255, 255, 255, 0.2)'};
   }
-  padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.selected ? '150vh' : '5rem')};
-    padding: 1.625rem 20px 0px 20px;
   }
   margin-bottom: 25px;
   overflow: hidden;
   > div:first-child {
+    padding: 1.625rem 51px 0px 51px;
     cursor: pointer;
     font-size: 1.375rem;
     margin-bottom: 28px;
+    height: 5rem;
+    @media screen and (max-width: 640px) {
+      padding: 1.625rem 21px 0px 21px;
+    }
   }
   > div:last-child {
     font-size: 1.25rem;
     max-width: 1187px;
     margin: 0px auto 57px auto;
+    @media screen and (min-width: 641px) and (max-width: 1440px) {
+      padding: 1.625rem 51px 0px 51px;
+    }
+    @media screen and (max-width: 640px) {
+      padding: 1.625rem 21px 0px 21px;
+    }
     > div:first-child {
       margin-bottom: 35px;
     }
@@ -594,21 +629,30 @@ export const StepFive = styled.div<{
   &:hover {
     background: ${(props) => !props.isFinished && 'rgba(255, 255, 255, 0.2)'};
   }
-  padding: 1.625rem 51px 0px 51px;
   @media (max-width: 640px) {
     max-height: ${(props) => (props.selected ? '200vh' : '5rem')};
-    padding: 1.625rem 20px 0px 20px;
   }
   overflow: hidden;
   > div:first-child {
+    padding: 1.625rem 51px 0px 51px;
     cursor: pointer;
     font-size: 1.375rem;
     margin-bottom: 28px;
+    height: 5rem;
+    @media screen and (max-width: 640px) {
+      padding: 1.625rem 21px 0px 21px;
+    }
   }
   > div:last-child {
     font-size: 1.25rem;
     max-width: 1187px;
     margin: 0px auto 57px auto;
+    @media screen and (min-width: 641px) and (max-width: 1440px) {
+      padding: 1.625rem 51px 0px 51px;
+    }
+    @media screen and (max-width: 640px) {
+      padding: 1.625rem 21px 0px 21px;
+    }
     > div:first-child {
       margin-bottom: 35px;
     }
