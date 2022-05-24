@@ -601,17 +601,18 @@ export const PartnersWrapper = styled.div`
   > div:nth-child(4) {
     margin-top: 30px;
     > div:last-child {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 30px 15px;
       justify-content: space-between;
       align-items: center;
-      flex: 1;
+      align-content: flex-start;
       width: 100%;
-      ${partnerBorder('35px 0px')}
+      ${partnerBorder('35px 30px')}
       margin-top: 10px;
       > div {
         ${center};
-        margin: 10px 40px;
+        margin: 0;
       }
       @media (max-width: 1190px) {
         width: 100% !important;
