@@ -452,7 +452,7 @@ export const StepThree = styled.div<{
         font-size: 1.75rem;
         &::placeholder {
           color: #bcbcbc;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           @media (max-width: 640px) {
             font-size: 1.1rem;
           }
@@ -538,7 +538,7 @@ export const StepFour = styled.div<{
         font-size: 1.75rem;
         &::placeholder {
           color: #bcbcbc;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           @media (max-width: 640px) {
             font-size: 1.1rem;
           }
@@ -625,7 +625,7 @@ export const StepFive = styled.div<{
         resize: none;
         &::placeholder {
           color: #bcbcbc;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           @media (max-width: 640px) {
             font-size: 1.1rem;
           }
