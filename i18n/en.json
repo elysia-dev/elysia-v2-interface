@@ -282,10 +282,10 @@
       "step1": [
         "1. Real Estate Type",
         "Please select the type of real estate you want to create (to tokenize) with NFT!",
-        "Real Estate<br/>(Real estate Token)",
-        "Loan receivable<br/>(ABToken - a type)",
-        "Principal and interest receivables<br/>(ABToken - b type)",
-        "Project Financing<br/>(PF Token)",
+        "Real Estate",
+        "Loan receivable",
+        "Principal and interest receivables",
+        "Project Financing",
         "* If you do not find the type of real asset you want among the options above, please enter it in '5. Others'."
       ],
       "step2": [
