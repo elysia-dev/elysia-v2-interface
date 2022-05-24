@@ -92,9 +92,16 @@ export const TopWrapper = styled.div`
   }
 `;
 
+export const BorderedMargin = styled.div`
+  height: 170px;
+  margin: 40px 0;
+  border-left: 1px solid #33a5ff;
+`;
+
 export const ProjectWrapper = styled.div`
-  margin-top: 100px;
   color: #ffffff;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #33a5ff;
   > div:first-child {
     margin-bottom: 88px;
     > div:first-child {
@@ -274,7 +281,7 @@ export const ProjectWrapper = styled.div`
 `;
 
 export const PortFolioWrapper = styled.div`
-  padding-top: 100px;
+  padding-top: 50px;
   font-family: ${$light};
   color: #ffffff;
   > div:first-child {

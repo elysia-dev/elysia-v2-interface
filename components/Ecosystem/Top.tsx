@@ -1,5 +1,5 @@
 import { Trans, useTranslation } from 'react-i18next';
-import { ProjectWrapper, TopWrapper } from './styles';
+import { ProjectWrapper, TopWrapper, BorderedMargin } from './styles';
 import Arrow from 'assets/images/developers/arrow.svg';
 import useIsMobile from 'hooks/useIsMobile';
 import Image from 'next/image';
@@ -21,6 +21,7 @@ const Top = () => {
           </div>
         </div>
       </TopWrapper>
+      <BorderedMargin />
       <ProjectWrapper>
         <div>
           <div>{t('ecosystem.project.0')}</div>
