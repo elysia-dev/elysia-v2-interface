@@ -190,6 +190,7 @@ export const MainTopWrapper = styled.div`
           > span {
             font-family: ${$bold};
             font-size: 3.125rem;
+            letter-spacing: 3px;
             @media (max-width: 640px) {
               font-size: 2.7rem;
             }
