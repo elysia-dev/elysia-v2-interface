@@ -100,7 +100,7 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
     margin: 0 71px;
     border-bottom: 1.5px solid #cbcbcb;
     @media (max-width: 640px) {
-      padding: 33px 21px 35.5px 21px;
+      margin: 0 21px;
     }
     > div:first-child {
       font-size: 1.375rem;
@@ -166,7 +166,7 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
     margin: 0 71px;
     border-bottom: 1px solid #cbcbcb;
     @media (max-width: 640px) {
-      padding: 33px 21px 35.5px 21px;
+      margin: 0 21px;
     }
     > div:first-child {
       font-size: 1.375rem;
@@ -453,6 +453,9 @@ export const StepThree = styled.div<{
         &::placeholder {
           color: #bcbcbc;
           font-size: 1.5rem;
+          @media (max-width: 640px) {
+            font-size: 1.1rem;
+          }
         }
         @media (max-width: 640px) {
           padding: 0px 20px;
@@ -536,6 +539,9 @@ export const StepFour = styled.div<{
         &::placeholder {
           color: #bcbcbc;
           font-size: 1.5rem;
+          @media (max-width: 640px) {
+            font-size: 1.1rem;
+          }
         }
         @media (max-width: 640px) {
           padding: 0px 20px;
@@ -620,6 +626,9 @@ export const StepFive = styled.div<{
         &::placeholder {
           color: #bcbcbc;
           font-size: 1.5rem;
+          @media (max-width: 640px) {
+            font-size: 1.1rem;
+          }
         }
 
         &::-webkit-scrollbar {
@@ -638,18 +647,15 @@ export const StepFive = styled.div<{
           background: transparent;
           height: 30%;
         }
-        /* : 스크롤바 전체
-::-webkit-scrollbar-thumb : 스크롤 막대
-::-webkit-scrollbar-track :  */
         @media (max-width: 640px) {
-          padding: 0px 20px;
+          padding: 20px 20px;
           font-size: 1.2rem;
-          height: 60px;
+          height: 300px;
         }
         @media (max-width: 460px) {
-          padding: 0px 10px;
+          padding: 10px 10px;
           font-size: 1.2rem;
-          height: 40px;
+          height: 300px;
           border-radius: 10px;
         }
       }
