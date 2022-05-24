@@ -78,7 +78,7 @@ const Top = () => {
               <span>
                 <CountUp
                   start={0}
-                  end={assetBondTokensBackedByEstate.length}
+                  end={assetBondTokensBackedByEstate.length + 7}
                   duration={1}
                 />
                 +
