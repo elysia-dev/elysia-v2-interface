@@ -369,12 +369,10 @@ const Section = () => {
               </div>
               <div
                 style={{
-                  backgroundColor: realEstateAddress ? '#000000' : '#b6b6b6',
-                  color: realEstateAddress ? '#ffffff' : '#3b3b3b',
+                  backgroundColor: '#000000',
+                  color: '#ffffff',
                 }}
                 onClick={() => {
-                  if (!realEstateAddress) return;
-                  // setCurrentStep(OnBoardingStep.UserEmailAddress);
                   setSelectedStep((prev) => ({
                     ...prev,
                     stepThree: false,
@@ -422,11 +420,10 @@ const Section = () => {
               </div>
               <div
                 style={{
-                  backgroundColor: userEmailAddress ? '#000000' : '#b6b6b6',
-                  color: userEmailAddress ? '#ffffff' : '#3b3b3b',
+                  backgroundColor: '#000000',
+                  color: '#ffffff',
                 }}
                 onClick={() => {
-                  if (!userEmailAddress) return;
                   setSelectedStep((prev) => ({
                     ...prev,
                     stepFour: false,
@@ -495,28 +492,40 @@ const Section = () => {
                   backgroundColor:
                     isChecked &&
                     isRecaptcha &&
-                    userEmailAddress &&
-                    realEstateAddress
-                      ? '#000000'
+                    (userEmailAddress ||
+                      realEstateAddress ||
+                      selectedRealEstateType ||
+                      selectedNFTAppliaction ||
+                      etc)
+                      ? // userEmailAddress &&
+                        // realEstateAddress
+                        '#000000'
                       : '#b6b6b6',
                   color:
                     isChecked &&
                     isRecaptcha &&
-                    userEmailAddress &&
-                    realEstateAddress
-                      ? '#ffffff'
+                    (userEmailAddress ||
+                      realEstateAddress ||
+                      selectedRealEstateType ||
+                      selectedNFTAppliaction ||
+                      etc)
+                      ? // userEmailAddress &&
+                        // realEstateAddress
+                        '#ffffff'
                       : '#3b3b3b',
                 }}
                 onClick={() => {
                   if (
                     !(
-                      isChecked &&
-                      isRecaptcha &&
-                      userEmailAddress &&
-                      realEstateAddress
+                      userEmailAddress ||
+                      realEstateAddress ||
+                      selectedRealEstateType ||
+                      selectedNFTAppliaction ||
+                      etc
                     )
                   )
                     return;
+                  if (!(isChecked && isRecaptcha)) return;
                   sendContact();
                   setSelectedStep((prev) => ({
                     ...prev,
