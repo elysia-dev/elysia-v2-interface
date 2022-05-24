@@ -77,37 +77,93 @@ export const SectionWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
-    @media (max-width: 920px) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 15px;
-      gap: 15px;
-    }
-    @media (max-width: 460px) {
+    @media (max-width: 640px) {
       display: flex;
       flex-direction: column;
+    }
+    > section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25%;
+      @media (max-width: 920px) {
+        width: 40%;
+      }
+      @media (max-width: 640px) {
+        width: 100%;
+      }
+      gap: 10px;
+      > div {
+        padding: 25px;
+        ${glassBox}
+        transition: all 1s ease;
+        margin-left: 25px;
+        @media (max-width: 920px) {
+          margin-top: 25px;
+          padding: 20px 25px;
+        }
+        @media (max-width: 640px) {
+          margin-left: 0px;
+          margin-top: 25px;
+          padding: 20px 25px;
+        }
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+          transition: all 1s ease;
+        }
+        > a {
+          > div:first-child {
+            display: flex;
+            align-items: center;
+            font-family: ${$bold};
+            font-size: 1.25rem;
+            > div {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            > div:first-child {
+              margin-right: 10px;
+            }
+            > div:last-child {
+              margin-left: auto;
+            }
+          }
+        }
+        > div:last-child {
+          font-size: 1rem;
+          color: #cbcbcb;
+          margin-top: 10px;
+          display: flex;
+          > div:first-child {
+            margin-right: auto;
+          }
+        }
+      }
     }
     > div {
       padding: 38.22px 25px 38px 25px;
       cursor: pointer;
       ${glassBox}
       transition: all 1s ease;
+      &:first-child {
+        width: 75%;
+        @media (max-width: 920px) {
+          width: 60%;
+        }
+        @media (max-width: 640px) {
+          width: 100%;
+        }
+      }
+      @media (max-width: 920px) {
+        width: 100%;
+        margin-top: 25px;
+        padding: 20px 25px;
+      }
       &:hover {
         background: rgba(255, 255, 255, 0.3);
         transition: all 1s ease;
       }
-      @media (max-width: 920px) {
-        padding: 20px 25px;
-      }
-    }
-    > div {
-      width: 30%;
-      @media (max-width: 920px) {
-        width: 100%;
-        margin-top: 25px;
-      }
-    }
-    > div {
       > a {
         > div:first-child {
           display: flex;
@@ -138,49 +194,5 @@ export const SectionWrapper = styled.div`
         }
       }
     }
-    /* > div:last-child {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 10px;
-      > div:first-child {
-        margin-bottom: 11px;
-        @media (max-width: 460px) {
-          margin-bottom: 25px;
-        }
-      }
-      > a {
-        @media (max-width: 960px) {
-          &:first-child {
-            margin-bottom: 25px;
-          }
-        }
-
-        > div {
-          font-family: ${$bold};
-          font-size: 1.25rem;
-          ${glassBox}
-          padding: 29px 25px 24px 27px;
-          width: 100%;
-          ${center}
-          &:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transition: all 1s ease;
-          }
-          @media (max-width: 960px) {
-            padding: 20px 25px;
-          }
-          > div {
-            ${center}
-          }
-          > div:first-child {
-            margin-right: 10px;
-          }
-          > div:nth-child(2) {
-            margin-right: auto;
-          }
-        }
-      }
-    } */
   }
 `;

@@ -6,7 +6,8 @@ const ContentItem: React.FC<{
   Icon: any;
   contentName: string;
   link?: string;
-}> = ({ Icon, contentName, link }) => {
+  isComingSoon?: boolean;
+}> = ({ Icon, contentName, link, isComingSoon }) => {
   const { isTablet } = useIsMobile();
 
   return (
@@ -26,7 +27,7 @@ const ContentItem: React.FC<{
           <div>
             <div>{Icon}</div>
             <div>{contentName}</div>
-            <div> {!isTablet && <Arrow />}</div>
+            <div> {!isTablet && !isComingSoon && <Arrow />}</div>
           </div>
         </a>
       )}
