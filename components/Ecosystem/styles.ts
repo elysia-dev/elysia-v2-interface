@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ElyfiProjectImg from 'assets/images/ecosystem/elyfiproject.png';
-import Moblieapp from 'assets/images/ecosystem/moblieapp.png';
+import Moblieapp from 'assets/images/ecosystem/moblieapp.webp';
 import Dao from 'assets/images/ecosystem/dao.png';
 import ecosystemImage from 'assets/images/main/ecosystem_image.webp';
 
