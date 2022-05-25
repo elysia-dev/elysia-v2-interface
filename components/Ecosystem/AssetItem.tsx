@@ -1,8 +1,10 @@
 import Slate, { baseUrl } from 'clients/Slate';
 import { IAssetBond } from 'core/types/reserveSubgraph';
+import { BigNumber } from 'ethers';
+import { parseEther } from 'ethers/lib/utils';
 import Image, { StaticImageData } from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
-import { toCompactForBignumber, toCompact } from 'utils/formatters';
+import { toCompactForBignumber, toCompact, toUsd } from 'utils/formatters';
 import { IReserve } from 'utils/reserves';
 
 type Props = {
@@ -64,13 +66,9 @@ const AssetItem = (props: Props) => {
       <div>
         <div>{'project' in abToken ? 'ELYSIA' : `ELYFI`}</div>
         <div>
-          {'$ ' +
-            ('project' in abToken
-              ? toCompact(abToken.amount)
-              : toCompactForBignumber(
-                  abToken.principal || '0',
-                  tokenInfo?.decimals,
-                ))}
+          {'project' in abToken
+            ? toUsd(parseEther(abToken.amount.toString()))
+            : toUsd(abToken.principal || '0', tokenInfo?.decimals)}
         </div>
       </div>
     </div>

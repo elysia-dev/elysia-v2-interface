@@ -428,7 +428,6 @@ export const PortFolioWrapper = styled.div`
             font-size: 1.25rem;
           }
           > div:last-child {
-            font-family: ${$bold};
             font-size: 1.25rem;
             @media (max-width: 460px) {
               font-size: 1rem;
