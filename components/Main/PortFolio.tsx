@@ -15,8 +15,6 @@ const PortFolio = () => {
     return getAssetBondsByNetwork();
   }, [reserveState]);
 
-  console.log(assetBonds);
-
   const fetchImage = useCallback(async () => {
     const images: any = [];
     Promise.all(
