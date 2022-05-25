@@ -17,7 +17,7 @@ import {
   QuestionWrapper,
   ELbridgeImage,
 } from './styles';
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import RealEstateTypes from 'enums/ RealEstateTypes';
 import NFTApplicationTypes from 'enums/ NFTApplicationTypes';
 import Link from 'next/link';
@@ -89,6 +89,43 @@ const Section = () => {
         alert(t('elbridge.contact.fail'));
       });
   };
+
+  const selectedStepOne = useCallback((assetType: RealEstateTypes) => {
+    setSelectedRealEstateType(assetType);
+    gtag.event({
+      action: assetType,
+      category: 'Asset type',
+      label: '',
+    });
+  }, []);
+  const selectedStepTwo = useCallback((nftUsecase: NFTApplicationTypes) => {
+    setSelectedNFTAppliaction(nftUsecase);
+    gtag.event({
+      action: nftUsecase,
+      category: 'nftUsecase',
+      label: '',
+    });
+  }, []);
+
+  const isSubmit = useMemo(() => {
+    return (
+      isChecked &&
+      isRecaptcha &&
+      (userEmailAddress ||
+        realEstateAddress ||
+        selectedRealEstateType ||
+        selectedNFTAppliaction ||
+        etc)
+    );
+  }, [
+    isChecked,
+    isRecaptcha,
+    userEmailAddress,
+    realEstateAddress,
+    selectedRealEstateType,
+    selectedNFTAppliaction,
+    etc,
+  ]);
 
   return (
     <>
@@ -186,48 +223,52 @@ const Section = () => {
                 <div
                   style={{
                     background:
-                      selectedRealEstateType === RealEstateTypes.RealEstateToken
+                      selectedRealEstateType === RealEstateTypes.RealEstate
                         ? '#343F57'
                         : undefined,
                   }}
                   onClick={() => {
-                    setSelectedRealEstateType(RealEstateTypes.RealEstateToken);
+                    selectedStepOne(RealEstateTypes.RealEstate);
                   }}>
                   <Trans>{t('elbridge.step1.2')}</Trans>
                 </div>
                 <div
                   style={{
                     background:
-                      selectedRealEstateType === RealEstateTypes.ABTokenAType
+                      selectedRealEstateType === RealEstateTypes.LoanReceivables
                         ? '#343F57'
                         : undefined,
                   }}
                   onClick={() => {
-                    setSelectedRealEstateType(RealEstateTypes.ABTokenAType);
+                    selectedStepOne(RealEstateTypes.LoanReceivables);
                   }}>
                   <Trans>{t('elbridge.step1.3')}</Trans>
                 </div>
                 <div
                   style={{
                     background:
-                      selectedRealEstateType === RealEstateTypes.ABTokenBType
+                      selectedRealEstateType ===
+                      RealEstateTypes.PrincipalAndInterestReceivables
                         ? '#343F57'
                         : undefined,
                   }}
                   onClick={() => {
-                    setSelectedRealEstateType(RealEstateTypes.ABTokenBType);
+                    selectedStepOne(
+                      RealEstateTypes.PrincipalAndInterestReceivables,
+                    );
                   }}>
                   <Trans>{t('elbridge.step1.4')}</Trans>
                 </div>
                 <div
                   style={{
                     background:
-                      selectedRealEstateType === RealEstateTypes.PFToken
+                      selectedRealEstateType ===
+                      RealEstateTypes.ProjectFinancing
                         ? '#343F57'
                         : undefined,
                   }}
                   onClick={() => {
-                    setSelectedRealEstateType(RealEstateTypes.PFToken);
+                    selectedStepOne(RealEstateTypes.ProjectFinancing);
                   }}>
                   <Trans>{t('elbridge.step1.5')}</Trans>
                 </div>
@@ -246,11 +287,11 @@ const Section = () => {
                     stepTwo: prev.stepTwo && false,
                   }));
                   gtag.event({
-                    action: 'on-boarding step1',
-                    category: 'step1',
+                    action: 'nextOfStep1',
+                    category: 'Asset Type',
                     label:
                       typeof selectedRealEstateType === 'undefined'
-                        ? 'No selected'
+                        ? 'No selected Asset Type'
                         : selectedRealEstateType,
                   });
                 }}>
@@ -286,7 +327,7 @@ const Section = () => {
                         : undefined,
                   }}
                   onClick={() => {
-                    setSelectedNFTAppliaction(NFTApplicationTypes.Trading);
+                    selectedStepTwo(NFTApplicationTypes.Trading);
                   }}>
                   {t('elbridge.step2.2')}
                 </div>
@@ -298,7 +339,7 @@ const Section = () => {
                         : undefined,
                   }}
                   onClick={() => {
-                    setSelectedNFTAppliaction(NFTApplicationTypes.Investment);
+                    selectedStepTwo(NFTApplicationTypes.Investment);
                   }}>
                   {t('elbridge.step2.3')}
                 </div>
@@ -310,7 +351,7 @@ const Section = () => {
                         : undefined,
                   }}
                   onClick={() => {
-                    setSelectedNFTAppliaction(NFTApplicationTypes.Loan);
+                    selectedStepTwo(NFTApplicationTypes.Loan);
                   }}>
                   {t('elbridge.step2.4')}
                 </div>
@@ -329,11 +370,11 @@ const Section = () => {
                     stepThree: prev.stepThree && false,
                   }));
                   gtag.event({
-                    action: 'on-boarding step2',
-                    category: 'step2',
+                    action: 'nextOfStep2',
+                    category: ' nftUsecase',
                     label:
                       typeof selectedNFTAppliaction === 'undefined'
-                        ? 'No selected'
+                        ? 'No selected nftusecase'
                         : selectedNFTAppliaction,
                   });
                 }}>
@@ -364,7 +405,14 @@ const Section = () => {
                 <input
                   placeholder={t('elbridge.step3.2')}
                   value={realEstateAddress}
-                  onChange={(e) => setRealEstateAddress(e.target.value)}
+                  onChange={(e) => {
+                    setRealEstateAddress(e.target.value);
+                    gtag.event({
+                      action: 'inputAddress',
+                      category: 'realEstateAddress',
+                      label: '',
+                    });
+                  }}
                 />
               </div>
               <div
@@ -383,9 +431,9 @@ const Section = () => {
                     stepThree: true,
                   }));
                   gtag.event({
-                    action: 'on-boarding step3',
-                    category: 'step3',
-                    label: OnBoardingStep.RealEstateAddress,
+                    action: 'nextOfStep3',
+                    category: 'realEstateAddress',
+                    label: '',
                   });
                 }}>
                 {t('elbridge.next_button')}
@@ -415,7 +463,14 @@ const Section = () => {
                 <input
                   placeholder="ex) elysialand@elysia.land"
                   value={userEmailAddress}
-                  onChange={(e) => setUserEmailAddress(e.target.value)}
+                  onChange={(e) => {
+                    setUserEmailAddress(e.target.value);
+                    gtag.event({
+                      action: 'inputEmailAddress',
+                      category: 'emailAddress',
+                      label: '',
+                    });
+                  }}
                 />
               </div>
               <div
@@ -434,9 +489,9 @@ const Section = () => {
                     stepFour: true,
                   }));
                   gtag.event({
-                    action: 'on-boarding step4',
-                    category: 'step4',
-                    label: OnBoardingStep.UserEmailAddress,
+                    action: 'nextOfStep4',
+                    category: 'emailAddress',
+                    label: '',
                   });
                 }}>
                 {t('elbridge.next_button')}
@@ -465,23 +520,53 @@ const Section = () => {
               <div>
                 <textarea
                   value={etc}
-                  onChange={(e) => setEtc(e.target.value)}
+                  onChange={(e) => {
+                    setEtc(e.target.value);
+                    gtag.event({
+                      action: ' inputOthers',
+                      category: 'others',
+                      label: '',
+                    });
+                  }}
                 />
                 <div>
                   <div>
                     <input
                       type="checkbox"
                       id="checkbox"
-                      onChange={(e) => setIsChecked(e.target.checked)}
+                      onChange={(e) => {
+                        setIsChecked(e.target.checked);
+                        if (!e.target.checked) return;
+                        gtag.event({
+                          action: ' agreement',
+                          category: 'others',
+                          label: '',
+                        });
+                      }}
                     />
                     <label htmlFor="checkbox"></label>
                   </div>
-                  <div>{t('elbridge.step5.2')}</div>
+                  <div>
+                    {t('elbridge.step5.2')} ({' '}
+                    <Link href={`/${i18n.language}/Policy`} passHref>
+                      <a>
+                        <span>Privacy Policy</span>
+                      </a>
+                    </Link>{' '}
+                    )
+                  </div>
                 </div>
                 <div>
                   <ReCAPTCHA
                     sitekey={'6LdAI24aAAAAAG0QIW1ZdyfsQMHrW3uwskzlVTH7'}
-                    onChange={() => setIsRecaptcha(true)}
+                    onChange={() => {
+                      setIsRecaptcha(true);
+                      gtag.event({
+                        action: 'checkBot',
+                        category: 'others',
+                        label: '',
+                      });
+                    }}
                     onExpired={() => setIsRecaptcha(false)}
                     hl={i18n.language}
                   />
@@ -489,43 +574,11 @@ const Section = () => {
               </div>
               <div
                 style={{
-                  backgroundColor:
-                    isChecked &&
-                    isRecaptcha &&
-                    (userEmailAddress ||
-                      realEstateAddress ||
-                      selectedRealEstateType ||
-                      selectedNFTAppliaction ||
-                      etc)
-                      ? // userEmailAddress &&
-                        // realEstateAddress
-                        '#000000'
-                      : '#b6b6b6',
-                  color:
-                    isChecked &&
-                    isRecaptcha &&
-                    (userEmailAddress ||
-                      realEstateAddress ||
-                      selectedRealEstateType ||
-                      selectedNFTAppliaction ||
-                      etc)
-                      ? // userEmailAddress &&
-                        // realEstateAddress
-                        '#ffffff'
-                      : '#3b3b3b',
+                  backgroundColor: isSubmit ? '#000000' : '#b6b6b6',
+                  color: isSubmit ? '#ffffff' : '#3b3b3b',
                 }}
                 onClick={() => {
-                  if (
-                    !(
-                      userEmailAddress ||
-                      realEstateAddress ||
-                      selectedRealEstateType ||
-                      selectedNFTAppliaction ||
-                      etc
-                    )
-                  )
-                    return;
-                  if (!(isChecked && isRecaptcha)) return;
+                  if (!isSubmit) return;
                   sendContact();
                   setSelectedStep((prev) => ({
                     ...prev,
@@ -536,9 +589,9 @@ const Section = () => {
                     stepFive: true,
                   }));
                   gtag.event({
-                    action: 'on-boarding step5',
-                    category: 'step5',
-                    label: OnBoardingStep.ETC,
+                    action: 'submit',
+                    category: 'others',
+                    label: '',
                   });
                 }}>
                 {t('elbridge.step5.3')}
