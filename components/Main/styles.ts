@@ -172,6 +172,9 @@ export const MainTopWrapper = styled.div`
       @media (max-width: 960px) {
         flex-direction: column;
         justify-content: space-around;
+        height: initial;
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
       > div {
         width: 33%;
@@ -201,6 +204,9 @@ export const MainTopWrapper = styled.div`
         }
         @media (max-width: 960px) {
           width: 100%;
+          &:not(:last-child) {
+            margin-bottom: 1rem;
+          }
         }
       }
     }
