@@ -54,6 +54,15 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+div,
+a,
+p {
+  font-family: Gilroy-Light, SpoqaHanSansNeo;
+}
+h2 {
+  font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
+}
+
 @media screen and (min-width: 0px) and (max-width: 839px) {
   html {
     font-size: 12px;
