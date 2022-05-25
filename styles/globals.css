@@ -51,6 +51,7 @@ a {
 * {
   box-sizing: border-box;
   white-space: pre-line;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media screen and (min-width: 0px) and (max-width: 839px) {
