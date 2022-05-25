@@ -15,6 +15,8 @@ const PortFolio = () => {
     return getAssetBondsByNetwork();
   }, [reserveState]);
 
+  console.log(assetBonds);
+
   const fetchImage = useCallback(async () => {
     const images: any = [];
     Promise.all(
@@ -23,7 +25,8 @@ const PortFolio = () => {
         .map(async (_, idx) => {
           if (
             assetBonds[idx].id ===
-            '115792089237316195422007842550160057480242544124026915590235438085798243682305'
+              '115792089237316195422007842550160057480242544124026915590235438085798243682305' ||
+            assetBonds[idx].ipfsHash === 'ok'
           ) {
             return images.push(
               'https://elysia-public.s3.ap-northeast-2.amazonaws.com/elyfi/borrow01.png',

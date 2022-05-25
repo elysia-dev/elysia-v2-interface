@@ -81,7 +81,13 @@ export const TopWrapper = styled.div`
       font-size: 1.5rem;
     }
     > div:first-child {
-      margin-bottom: 20px;
+      font-family: ${$bold};
+      margin-bottom: 5px;
+    }
+    > div:nth-child(2) {
+      color: #33a5ff;
+      margin-bottom: 14px;
+      font-size: 1.4rem;
     }
     > div:last-child {
       font-size: 1.375rem;

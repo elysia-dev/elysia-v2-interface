@@ -16,6 +16,7 @@ const Top = () => {
       <TopWrapper>
         <div>
           <div>{t('ecosystem.top.0')}</div>
+          <div>{t('main.section_ecosystem.1')}</div>
           <div>
             <Trans>{t('ecosystem.top.1')}</Trans>
           </div>

@@ -6,6 +6,7 @@ const GovernanceTop = () => {
   return (
     <div className={styles.governance_top}>
       <div className={styles.governance_top_sub}>{t('governance.title')}</div>
+      <div>{t('main.section_governance.1')}</div>
       <div className={styles.governance_top_header}>
         <Trans>{t('governance.section_first.0')}</Trans>
       </div>
