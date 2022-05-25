@@ -340,6 +340,8 @@ export const PortFolioWrapper = styled.div`
       }
       > div:nth-child(1) {
         > div:last-child {
+          font-size: 1.375rem;
+          font-family: ${$bold};
           border-right: 1px solid #33a5ff;
           padding-right: 70.5px;
           @media (max-width: 640px) {
@@ -354,6 +356,11 @@ export const PortFolioWrapper = styled.div`
           @media (max-width: 640px) {
             padding: 0;
           }
+        }
+
+        > div:last-child {
+          font-size: 1.375rem;
+          font-family: ${$bold};
         }
       }
     }

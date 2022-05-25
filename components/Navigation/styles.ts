@@ -63,32 +63,37 @@ export const NavigationWrapper = styled.div`
       cursor: pointer;
     }
     > div:nth-child(2) {
-      > a > span {
-        font-family: 'Gilroy-Light';
-        font-size: 1rem;
-        color: #ffffff;
-      }
-      > a > span:hover {
-        font-family: Gilroy-ExtraBold !important;
-        font-size: 1rem;
-        color: #ffffff;
-      }
-      > a {
+      display: flex;
+      text-align: center;
+      > div {
         margin-right: 2rem;
-        @media (max-width: 1189px) {
-          width: 100%;
-          > span {
-            font-size: 1rem;
+        font-size: 1rem;
+        width: 100px;
+        > a > span {
+          font-family: 'Gilroy-Light';
+          color: #ffffff;
+        }
+        > a > span:hover {
+          font-family: Gilroy-ExtraBold !important;
+          font-size: 1rem;
+          color: #ffffff;
+        }
+        > a {
+          @media (max-width: 1189px) {
+            width: 100%;
+            > span {
+              font-size: 1rem;
+            }
+          }
+          @media (max-width: 1024px) {
+            > span {
+              font-size: 0.8rem;
+            }
           }
         }
-        @media (max-width: 1024px) {
-          > span {
-            font-size: 0.8rem;
-          }
+        > a:last-child {
+          margin-right: 0;
         }
-      }
-      > a:last-child {
-        margin-right: 0;
       }
     }
   }

@@ -120,7 +120,6 @@ const Navigation = () => {
           <div
             onClick={() => {
               const handleRouteChange = () => {
-                console.log('route eventt');
                 gtag.event({
                   action: 'click',
                   category: 'logo',
@@ -158,69 +157,79 @@ const Navigation = () => {
             <>
               <div>
                 <Link href={`/${router.query.lng}/ELBridge`} passHref>
-                  <a>
-                    <span
-                      style={{
-                        cursor: 'pointer',
-                        fontFamily: router.pathname.includes('ELBridge')
-                          ? 'Gilroy-ExtraBold'
-                          : 'Gilroy-Light',
-                      }}>
-                      EL Bridge
-                    </span>
-                  </a>
+                  <div>
+                    <a>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('ELBridge')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        EL Bridge
+                      </span>
+                    </a>
+                  </div>
                 </Link>
                 <Link href={`/${router.query.lng}/Governance`} passHref>
-                  <a>
-                    <span
-                      style={{
-                        cursor: 'pointer',
-                        fontFamily: router.pathname.includes('Governance')
-                          ? 'Gilroy-ExtraBold'
-                          : 'Gilroy-Light',
-                      }}>
-                      Governance
-                    </span>
-                  </a>
+                  <div>
+                    <a>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('Governance')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        Governance
+                      </span>
+                    </a>
+                  </div>
                 </Link>
                 <Link href={`/${router.query.lng}/Ecosystem`} passHref>
-                  <a>
-                    <span
-                      style={{
-                        cursor: 'pointer',
-                        fontFamily: router.pathname.includes('Ecosystem')
-                          ? 'Gilroy-ExtraBold'
-                          : 'Gilroy-Light',
-                      }}>
-                      Ecosystem
-                    </span>
-                  </a>
+                  <div>
+                    <a>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('Ecosystem')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        Ecosystem
+                      </span>
+                    </a>
+                  </div>
                 </Link>
                 <Link href={`/${router.query.lng}/Community`} passHref>
-                  <a>
-                    <span
-                      style={{
-                        cursor: 'pointer',
-                        fontFamily: router.pathname.includes('Community')
-                          ? 'Gilroy-ExtraBold'
-                          : 'Gilroy-Light',
-                      }}>
-                      Community
-                    </span>
-                  </a>
+                  <div>
+                    <a>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('Community')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        Community
+                      </span>
+                    </a>
+                  </div>
                 </Link>
                 <Link href={`/${router.query.lng}/Developers`} passHref>
-                  <a>
-                    <span
-                      style={{
-                        cursor: 'pointer',
-                        fontFamily: router.pathname.includes('Developers')
-                          ? 'Gilroy-ExtraBold'
-                          : 'Gilroy-Light',
-                      }}>
-                      Developers
-                    </span>
-                  </a>
+                  <div>
+                    <a>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('Developers')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        Developers
+                      </span>
+                    </a>
+                  </div>
                 </Link>
               </div>
               <ConnectWalletButton

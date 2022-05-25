@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import Gradient from 'utils/gradient';
 import { GradientCanvas, LayoutDiv, LayoutNoise } from './styles';
 import dynamic from 'next/dynamic';
+import useIsMobile from 'hooks/useIsMobile';
 
 const Footer = dynamic(() => import('components/Footer'));
 
@@ -13,6 +14,7 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { isMobile } = useIsMobile();
 
   const drawCanvas = useCallback(() => {
     const dpr = window.devicePixelRatio;
@@ -33,19 +35,19 @@ const Layout = (props: LayoutProps) => {
   }, []);
 
   useEffect(() => {
+    if (isMobile) return;
     drawCanvas();
-  }, [drawCanvas]);
+  }, [drawCanvas, isMobile]);
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      drawCanvas();
-    });
-
-    return () => {
-      window.removeEventListener('resize', () => {
-        drawCanvas();
-      });
-    };
+    // window.addEventListener('resize', () => {
+    //   // drawCanvas();
+    // });
+    // return () => {
+    //   window.removeEventListener('resize', () => {
+    //     // drawCanvas();
+    //   });
+    // };
   }, []);
 
   return (
