@@ -33,7 +33,7 @@ const AssetItem = (props: Props) => {
       );
     }
     try {
-      const response = await Slate.fetctABTokenIpfs(abToken.ipfsHash || '');
+      const response = await Slate.fetchABTokenIpfs(abToken.ipfsHash || '');
       setImage(`${baseUrl}/${response.data.images[0]?.hash}`);
     } catch (error) {
       console.error(error);
