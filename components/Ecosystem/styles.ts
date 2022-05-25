@@ -317,6 +317,9 @@ export const PortFolioWrapper = styled.div`
       &:hover {
         background: rgba(255, 255, 255, 0.2);
       }
+      @media (max-width: 920px) {
+        padding: 0px 25px;
+      }
       @media (max-width: 640px) {
         height: initial;
         flex-direction: column;
@@ -344,6 +347,9 @@ export const PortFolioWrapper = styled.div`
           font-family: ${$bold};
           border-right: 1px solid #33a5ff;
           padding-right: 70.5px;
+          @media (max-width: 920px) {
+            padding-right: 30px;
+          }
           @media (max-width: 640px) {
             border: none;
             padding: 0;
@@ -353,6 +359,9 @@ export const PortFolioWrapper = styled.div`
       > div:nth-child(2) {
         > div:first-child {
           padding-left: 70.5px;
+          @media (max-width: 920px) {
+            padding-left: 30px;
+          }
           @media (max-width: 640px) {
             padding: 0;
           }
