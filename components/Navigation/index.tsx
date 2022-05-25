@@ -30,7 +30,7 @@ const Navigation = () => {
   const { account, activate, deactivate, library, chainId } = useWeb3React();
   const { txStatus, error } = useContext(TxContext);
   const [isConnectWalletLoading, setIsConnectWalletLoading] = useState(true);
-  const { isMobile } = useIsMobile();
+  const { isMobile, isLoading } = useIsMobile();
   const [isScroll, setIsScroll] = useState(false);
   const [isMobileMenu, setMobileMenu] = useState(false);
 
@@ -139,7 +139,9 @@ const Navigation = () => {
               </a>
             </Link>
           </div>
-          {isMobile ? (
+          {isLoading ? (
+            <></>
+          ) : isMobile ? (
             <div>
               <div
                 className={`${styles.navigation__hamburger__button} ${
@@ -240,12 +242,17 @@ const Navigation = () => {
             </>
           )}
         </div>
-        {isMobile && isMobileMenu && (
-          <MobileMenu
-            modalVisible={() => setModalVisible(true)}
-            isConnectWalletLoading={isConnectWalletLoading}
-            onButtonClick={() => setMobileMenu(false)}
-          />
+        {isLoading ? (
+          <></>
+        ) : (
+          isMobile &&
+          isMobileMenu && (
+            <MobileMenu
+              modalVisible={() => setModalVisible(true)}
+              isConnectWalletLoading={isConnectWalletLoading}
+              onButtonClick={() => setMobileMenu(false)}
+            />
+          )
         )}
       </NavigationWrapper>
     </>

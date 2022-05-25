@@ -69,6 +69,17 @@ export const NavigationWrapper = styled.div`
         margin-right: 2rem;
         font-size: 1rem;
         width: 100px;
+        @media (max-width: 1190px) {
+          width: 90px;
+        }
+        @media (max-width: 1024px) {
+          margin-right: 1rem;
+          font-size: 1rem;
+          width: 80px;
+        }
+        @media (max-width: 840px) {
+          width: 25px;
+        }
         > a > span {
           font-family: 'Gilroy-Light';
           color: #ffffff;

@@ -5,6 +5,7 @@ const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isLoading, setLoading] = useState(true);
   const mobile = useMediaQuery({
     query: '(min-width:0px) and (max-width:840px)',
   });
@@ -19,9 +20,10 @@ const useIsMobile = () => {
     setIsMobile(mobile);
     setIsDesktop(desktop);
     setIsTablet(tablet);
-  }, [mobile, desktop, tablet]);
+    setLoading(false);
+  }, [mobile, desktop, tablet, isLoading]);
 
-  return { isMobile, isDesktop, isTablet };
+  return { isMobile, isDesktop, isTablet, isLoading };
 };
 
 export default useIsMobile;
