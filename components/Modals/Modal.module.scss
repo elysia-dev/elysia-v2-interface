@@ -101,7 +101,7 @@ $line-color: #505050;
   .modal_content {
     border: 1px solid $line-color;
     border-radius: 5px;
-    margin: 25px;
+    margin: 20px 5%;
 
     .modal_user_info {
       display: flex;
@@ -110,6 +110,9 @@ $line-color: #505050;
       padding: 20px;
       height: 90px;
       border-bottom: 1px solid $line-color;
+      @media (max-width: 514px) {
+        padding: 10px;
+      }
       .modal_address {
         line-height: 1.5rem;
         div:first-child {
@@ -122,6 +125,12 @@ $line-color: #505050;
           font-family: 'Inter-Bold';
           font-size: 0.9375rem;
           color: #fff;
+          > div:first-child {
+            @media (max-width: 460px) {
+              width: 15px !important;
+              height: 15px !important;
+            }
+          }
         }
         .modal_davatar {
           display: flex;
@@ -137,6 +146,9 @@ $line-color: #505050;
     .modal_disconnect_button {
       cursor: pointer;
       width: 139px;
+      @media (max-width: 460px) {
+        width: 100px;
+      }
       height: 37px;
       border: 1px solid #888888;
       background-color: #505050;
@@ -183,8 +195,8 @@ $line-color: #505050;
     }
   }
   .recent_tx_wrapper {
-    width: 464px;
-    margin: 21px auto 28px auto;
+    width: 90%;
+    margin: 20px 5%;
     font-family: 'Inter';
     .recent_header {
       font-size: 0.9375rem;
