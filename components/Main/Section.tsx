@@ -59,15 +59,6 @@ const Section = () => {
             isLeftArrow={false}
             link={`${i18n.language}/Developers`}
           />
-          <SectionItem
-            section={[
-              t('main.section_documents.0'),
-              t('main.section_documents.1'),
-              t('main.section_documents.3'),
-            ]}
-            isLeftArrow={true}
-            link={`${i18n.language}/Documents`}
-          />
         </MainSectionWrapper>
       </div>
     </>
