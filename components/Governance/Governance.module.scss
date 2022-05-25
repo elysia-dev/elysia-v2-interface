@@ -32,8 +32,14 @@ $light: Gilroy-Light, SpoqaHanSansNeo;
   padding-top: 60vh;
   padding-bottom: 70px;
   border-bottom: 1px solid $elysia-color;
+  margin-bottom: 5px;
   @media (max-width: 920px) {
     border: none;
+  }
+  > div:nth-child(2) {
+    color: #33a5ff;
+    margin-bottom: 14px;
+    font-size: 1.475rem;
   }
   .governance_top_sub {
     text-align: left;
@@ -41,6 +47,7 @@ $light: Gilroy-Light, SpoqaHanSansNeo;
     font-size: 2rem;
     font-family: Gilroy-ExtraBold;
     font-weight: bold;
+    margin-bottom: 5px;
   }
   .governance_top_header {
     text-align: left;
