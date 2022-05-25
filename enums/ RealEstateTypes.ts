@@ -1,8 +1,8 @@
 enum RealEstateTypes {
-  RealEstateToken = 'RealEstateToken',
-  ABTokenAType = 'ABTokenAType',
-  ABTokenBType = 'ABTokenBType',
-  PFToken = 'PFToken',
+  RealEstate = 'RealEstate',
+  LoanReceivables = 'LoanReceivables',
+  PrincipalAndInterestReceivables = 'PrincipalAndInterestReceivables',
+  ProjectFinancing = 'ProjectFinancing',
 }
 
 export default RealEstateTypes;
