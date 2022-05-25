@@ -30,7 +30,7 @@ const PortFolio = () => {
             );
           }
           try {
-            const response = await Slate.fetctABTokenIpfs(
+            const response = await Slate.fetchABTokenIpfs(
               assetBonds[idx].ipfsHash || '',
             );
             images.push(`${baseUrl}/${response.data.images[0]?.hash}`);
