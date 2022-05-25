@@ -68,7 +68,7 @@ interface EnvironmentVariables {
 }
 
 const vars =
-  process.env.NODE_ENV === 'production' && !process.env.REACT_APP_TEST_MODE
+  process.env.NODE_ENV === 'production' && !process.env.NEXT_PUBLIC_TEST_MODE
     ? (prodVars as unknown as EnvironmentVariables)
     : (testVars as unknown as EnvironmentVariables);
 

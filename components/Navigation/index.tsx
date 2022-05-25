@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 import ConnectWalletButton from './ConnectWalletButton';
 import styles from './Navigation.module.scss';
-import ElysiaLogo from 'assets/images/elysia_logo@2x.png';
+import ElysiaLogo from 'assets/images/Elysia_Logo_White@2x.png';
 import Image from 'next/image';
 import { isMetamask, isWalletConnector } from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
@@ -17,6 +17,10 @@ import SelectWalletModal from 'components/Modals/SelectWalletModal';
 import ErrorModal from 'components/Modals/ErrorModal';
 import TxStatus from 'enums/TxStatus';
 import { isChainId } from 'utils/isChainId';
+import { NavigationWrapper } from './styles';
+import MobileMenu from './MobileMenu';
+import * as gtag from 'lib/gtag';
+import LanguageConverter from './LanguageConverter';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -26,7 +30,9 @@ const Navigation = () => {
   const { account, activate, deactivate, library, chainId } = useWeb3React();
   const { txStatus, error } = useContext(TxContext);
   const [isConnectWalletLoading, setIsConnectWalletLoading] = useState(true);
-  const isMobile = useIsMobile();
+  const { isMobile, isLoading } = useIsMobile();
+  const [isScroll, setIsScroll] = useState(false);
+  const [isMobileMenu, setMobileMenu] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -71,6 +77,24 @@ const Navigation = () => {
       });
   }, [chainId, library]);
 
+  useEffect(() => {
+    if (typeof window === undefined) return;
+    document.addEventListener('scroll', (e: any) => {
+      setIsScroll(5 < window.scrollY);
+    });
+
+    return () => {
+      document.removeEventListener('scroll', (e: any) => {
+        setIsScroll(5 < window.scrollX);
+      });
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflowY =
+      isMobile && isMobileMenu ? 'hidden' : 'initial';
+  }, [isMobile, isMobileMenu]);
+
   return (
     <>
       {modalVisible && (
@@ -88,10 +112,21 @@ const Navigation = () => {
           'MetaMask Tx Signature: User denied transaction signature.' && (
           <ErrorModal error={error} />
         )}
-      <div className={styles.navigation}>
-        <div className={styles.navigation_wrapper}>
-          <div className={styles.navigation_logo}>
-            <Link href={`/${router.query.lng}/Governance`} passHref>
+      <NavigationWrapper
+        theme={isMobile && isMobileMenu ? 'overflow' : isScroll}>
+        <div>
+          <div
+            onClick={() => {
+              const handleRouteChange = () => {
+                gtag.event({
+                  action: 'click',
+                  category: 'logo',
+                  label: 'label',
+                });
+              };
+              handleRouteChange();
+            }}>
+            <Link href={`/${router.query.lng}`} passHref>
               <a>
                 <Image
                   src={ElysiaLogo}
@@ -102,29 +137,122 @@ const Navigation = () => {
               </a>
             </Link>
           </div>
-          {!isMobile && (
+          {isLoading ? (
+            <></>
+          ) : isMobile ? (
             <div>
-              <Link href={`/${router.query.lng}/Governance`} passHref>
-                <a>
-                  <span
-                    style={{
-                      cursor: 'pointer',
-                      fontWeight: router.pathname.includes('Governance')
-                        ? 'bold'
-                        : 'normal',
-                    }}>
-                    Governance
-                  </span>
-                </a>
-              </Link>
+              <div
+                className={`${styles.navigation__hamburger__button} ${
+                  isMobileMenu && styles.active
+                }`}
+                onClick={() => {
+                  setMobileMenu(!isMobileMenu);
+                }}>
+                <i />
+                <i />
+                <i />
+              </div>
             </div>
+          ) : (
+            <>
+              <div>
+                <Link href={`/${router.query.lng}/ELBridge`} passHref>
+                  <div>
+                    <a>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('ELBridge')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        EL Bridge
+                      </span>
+                    </a>
+                  </div>
+                </Link>
+                <Link href={`/${router.query.lng}/Governance`} passHref>
+                  <div>
+                    <a>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('Governance')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        Governance
+                      </span>
+                    </a>
+                  </div>
+                </Link>
+                <Link href={`/${router.query.lng}/Ecosystem`} passHref>
+                  <div>
+                    <a>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('Ecosystem')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        Ecosystem
+                      </span>
+                    </a>
+                  </div>
+                </Link>
+                <Link href={`/${router.query.lng}/Community`} passHref>
+                  <div>
+                    <a>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('Community')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        Community
+                      </span>
+                    </a>
+                  </div>
+                </Link>
+                <Link href={`/${router.query.lng}/Developers`} passHref>
+                  <div>
+                    <a>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('Developers')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        Developers
+                      </span>
+                    </a>
+                  </div>
+                </Link>
+              </div>
+              <ConnectWalletButton
+                modalVisible={() => setModalVisible(true)}
+                isConnectWalletLoading={isConnectWalletLoading}
+              />
+              <LanguageConverter />
+            </>
           )}
-          <ConnectWalletButton
-            modalVisible={() => setModalVisible(true)}
-            isConnectWalletLoading={isConnectWalletLoading}
-          />
         </div>
-      </div>
+        {isLoading ? (
+          <></>
+        ) : (
+          isMobile &&
+          isMobileMenu && (
+            <MobileMenu
+              modalVisible={() => setModalVisible(true)}
+              isConnectWalletLoading={isConnectWalletLoading}
+              onButtonClick={() => setMobileMenu(false)}
+            />
+          )
+        )}
+      </NavigationWrapper>
     </>
   );
 };

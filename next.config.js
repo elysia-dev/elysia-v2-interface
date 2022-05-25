@@ -2,9 +2,32 @@ const path = require('path');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
+  images: {
+    domains: [
+      'localhost',
+      'elysia-public.s3.ap-northeast-2.amazonaws.com',
+      'slate.textile.io',
+    ],
+  },
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
+  },
+  async rewrites() {
+    return [
+      {
+        destination: 'https://forum.elyfi.world/:path*',
+        source: '/proxy/:path*',
+      },
+    ];
   },
 };
 

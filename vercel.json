@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/proxy/:match*",
+      "destination": "https://forum.elyfi.world/:match*"
+    }
+  ]
+}

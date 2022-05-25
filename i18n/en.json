@@ -1,20 +1,160 @@
 {
   "translation": {
+    "main": {
+      "top": [
+        "ELYSIA PROTOCOL",
+        "Real world asset tokenization DAO.",
+        "ELYSIA is a protocol to tokenize real-world asset like real estate,<br />and liquidate it using DAO (Decentralized Autonomous Organization).<br/>Users can play in various blockchain ecosystems like Defi with this token."
+      ],
+      "top_icon": [
+        "Changed real world assets",
+        "Community members",
+        "Total Value Locked",
+        "Github commit"
+      ],
+      "portfolio": [
+        "ELYSIA PORTFOLIO",
+        "Tokenized real world asset.",
+        "A real estate portfolio made by ELYSIA protocol.",
+        "More portfolio"
+      ],
+      "section_el_bridge": [
+        "EL Bridge",
+        "Real world asset into digital NFT.",
+        "How to make NFT based on real estate?",
+        "EL Bridge provides a real asset tokenization function so that users can utilize real assets in the blockchain financial ecosystem."
+      ],
+      "section_governance": [
+        "Governance",
+        "DAO governed by a global community",
+        "ELYSIA is a DAO LLC owned and operated by EL Token stakers.",
+        "Users can join the whole decision-making process in the token economy which tokenizing real-world assets and trading these tokens."
+      ],
+      "section_ecosystem": [
+        "Ecosystem",
+        "Decentralized token economy",
+        "Ecosystem-based on tokenized real estate",
+        "Users can participate in various token economies with real estate tokens using third-party Dapps like Defi."
+      ],
+      "section_community": [
+        "Community",
+        "User-centered community channels.",
+        "Various formats of community channels",
+        "Users can communicate and decide with other people in ELYSIA protocol using numerous community channels."
+      ],
+      "section_developers": [
+        "Developers",
+        "Powered by global developers",
+        "Decentralized developing system",
+        "Developers can give rewards by freely contributing ELYSIA and ELYFI system."
+      ],
+      "section_documents": [
+        "Documents",
+        "Guide for novice & anyone who is curious about the project.",
+        "Every document about ELYSIA protocol",
+        "Anyone can check how ELYSIA token economy is designed by looking ELYSIA documents."
+      ],
+      "partners": [
+        "ELYSIA DAO PARTNERS",
+        "Strong partners who help to fulfill ELYSIA’s vision.",
+        "On-chain & Off-chain partners",
+        "Backed by",
+        "Legal Review",
+        "Audit",
+        "Real Estate Products",
+        "Business"
+      ],
+      "developers": [
+        "ELYSIA DAO LLC. CONTRIBUTERS",
+        "Registered in the state of Wyoming, USA.",
+        "Every decision made by ELYSIA DAO LLC. is decentralized and based on open-source code that anonymous participants can contribute."
+      ],
+      "press": [
+        "PRESS",
+        "News & Updates about ELYSIA Protocol.",
+        "해외 및 국내 ELYSIA 프로토콜 관련 소식.",
+        "ELYSIA to Be the First in Asia That Obtains Approval as a DAO LLC in Wyoming, USA",
+        "SINGAPORE, February 07, 2022--(BUSINESS WIRE)- ELYSIA, a blockchain project specializing in real estate tokenization and securitization, will be the first organization in Asia to be registered as a DAO LLC (Limited Liability Company) in Wyoming, USA",
+        "엘리시아, 美 와이오밍주 탈중앙화자율조직(DAO) 법인으로 등록 ··· 세계에서 두 번째",
+        "엘리시아가 아시아 최초로 미국 와이오밍주 탈중앙화 자율조직(DAO, Decentralized Autonomous Organization) 법인으로 등록됐다고 7일 밝혔다. 와이오밍주 정부가 공인한 세계 두 번째 다오다.",
+        "安居客迎来首家韩国房地产公司爱立厦入驻",
+        "日前,安居客迎来首家韩国房地产公司入驻,爱立厦(Elysia)正式进入中国市场。爱立厦(Elysia)的房地产产品就主要集中于首尔江南区和首尔地铁二号线附近"
+      ]
+    },
+    "ecosystem": {
+      "top": [
+        "ELYSIA Ecosystem",
+        "Users can participate in various token economies with real estate tokens using third-party Dapps like Defi."
+      ],
+      "project": [
+        "PROJECTS",
+        "It is an internal and external project that can utilize asset tokens created through the ELYSIA protocol.<br/> As the demand for asset tokens increases and technology advances, the ELYSIA ecosystem is expanding and becoming more diverse.",
+        "DeFi that lends digital assets with asset tokens as collateral",
+        "To be updated soon",
+        "ELYSIA Mobile APP",
+        "NFT marketplace where users can buy and sell asset tokens",
+        "Investment DAO",
+        "DAOs that can purchase asset tokens created in ELYSIA"
+      ],
+      "portfolio": [
+        "PORTFOLIO",
+        "Asset token information issued through the ELYSIA protocol.",
+        "Total AToken",
+        "Total AToken value",
+        "View more"
+      ]
+    },
+    "community": [
+      "ELYSIA COMMUNITY",
+      "User-centered community channels.",
+      "Users can communicate and decide with other people in ELYSIA protocol using numerous community channels.",
+      "Ask questions and engage with the ELYSIA Community!",
+      "Follow the latest news from ELYSIA!",
+      "Participate in development of ELYSIA!",
+      "Participate in development of ELYSIA!"
+    ],
+    "developers": [
+      "Developers",
+      "Powered by global developers",
+      "Developers can give rewards by freely contributing ELYSIA and ELYFI system.",
+      "What is ELYSIA?",
+      "DAO for the digital transformation<br /> of real estate assets.",
+      "Smart Contract Overview",
+      "How smart contract is made<br /> In real world asset based token",
+      "Bug Bounty",
+      "Coming Soon!",
+      "ELYSIA v1 Documentation",
+      "Github"
+    ],
+    "documents": [
+      "Documents",
+      "Guide for novice & anyone who is curious about the project.",
+      "Anyone can check how ELYSIA token economy is designed by looking ELYSIA documents.",
+      "ELYSIA Whitepaper",
+      "Real world asset<br /> tokenization DAO",
+      "ELYFI Whitepaper",
+      "Adding real estate<br /> to the DEFI concept",
+      "Guide for Novice",
+      "To be continued...<br />We will launch this service soon!",
+      "Github",
+      "Join for developing<br /> ELYSIA protocol"
+    ],
     "navigation": {
       "wallet": "Connect Wallet"
     },
     "governance": {
+      "title": "ELYSIA Governance",
       "section_first": [
-        "ELYSIA is a DAO LLC owned and operated <br/> by EL Token stakers.",
-        "ELYSIA DAO develops a tokenization protocol so that real assets can be used<br/>in digital asset markets such as DeFi and NFT marketplaces.",
+        "ELYSIA is a DAO LLC owned and operated by EL Token stakers.",
+        "ELYSIA DAO develops a tokenization protocol so that real assets can be used in digital asset markets such as DeFi and NFT marketplaces.",
         "Asia's first DAO LLC.",
-        "The world's second<br/> DAO LLC qualified by<br/>the US government",
-        "DAO LLC established first<br/> among listed projects."
+        "The world's second DAO LLC qualified by the US government",
+        "DAO LLC established first among listed projects."
       ],
       "section_second": [
         "How to join",
         "Get the EL Token",
-        "ELYSIA token represents ownership of ELYSIA DAO LLC.<br/>and is listed on DEX and CEX with many EL tokens so that anyone <br/> interested in ELYSIA and the future can participate in governance.",
+        "ELYSIA token represents ownership of ELYSIA DAO LLC. and is listed on DEX and CEX with many EL tokens so that anyone interested in ELYSIA and the future can participate in governance.",
         "Browse exchanges",
         "Tokenomics",
         "EL Info",
@@ -61,8 +201,8 @@
         "Claim rewards"
       ],
       "section_fourth": [
-        "Develop ELYSIA together<br/>by sharing, discussing, and proposing your opinions!",
-        "Anyone who agrees with the ELYSIA Protocol or wants to participate in ELYSIA’s development can participate in governance.<br/>Participants are free to propose improvements in the ELYSIA forum and vote on the decision-making process in the snapshot.",
+        "Develop ELYSIA together by sharing, discussing, and proposing your opinions!",
+        "Anyone who agrees with the ELYSIA Protocol or wants to participate in ELYSIA’s development can participate in governance.\nParticipants are free to propose improvements in the ELYSIA forum and vote on the decision-making process in the snapshot.",
         "Governance FAQ",
         "Forum Guide",
         "Snapshot Guide",
@@ -113,6 +253,64 @@
         "Recent Activity",
         "Recent activity is displayed here"
       ]
+    },
+    "elbridge": {
+      "top": [
+        "EL BRIDGE",
+        "Move Real world asset into the digital world",
+        "EL Bridge provides a real asset tokenization function so that users can utilize real assets in the blockchain financial ecosystem."
+      ],
+      "whitepaper": [
+        "The detailed tokenization process can be found in the ELYSIA whitepaper.",
+        "ELYSIA whitepaper"
+      ],
+      "nft_description": [
+        "Frequently Asked Questions",
+        "What is NFT?",
+        "NFT means “non-fungible token”. Since NFTs cannot replace each other, many real assets such as artworks and copyrighted creations have recently been created as NFTs and are being actively traded on the blockchain.\n\nIn addition, NFT can be applied to financial systems based on blockchain. A blockchain-based financial system requires a digital original that matches 1:1 with real-world assets, and this digital original can be made into an NFT and used as a certificate in transactions on the blockchain."
+      ],
+      "asset_nft_description": [
+        "Why Real estate NFT is needed?",
+        "NFT has the advantage of not only being non-fungible, but also that transactions are permanently recorded on the blockchain, eliminating the risk of fraud or counterfeiting.\nBecause of this, the NFT market is expanding into various fields such as games, arts, education, lending, and investment.",
+        "While the scope of NFT application is expanding, there has been no case where real estate was converted to NFT and incorporated into the blockchain financial system.\nDespite the convenience of transactions and liquidity of the inflow of funds, real estate requires complex documents even in the traditional financial market, as there are high barriers to entry into the market where large amounts of money move.\n\nELYSIA intends to create the world's first real estate NFT-based economic system based on existing real estate transaction experience and competence in operating a blockchain technology team.",
+        "Creating an NFT based on real estate, a real asset, has the following advantages.\n1. Real estate NFT collateral loan using existing blockchain financial system (DeFi, etc.)\n2. Attracting and selling more investment using digital currency\n3. Value creation using real estate NFT itself in the virtual world\n4. Possible to raise investment funds using DAO"
+      ],
+      "inquiry_nft": [
+        "Inquiry for real estate NFT",
+        "Please feel free to contact us regarding real estate NFT issuance through the form below. (*Terminology related to the EL bridge may change later.)"
+      ],
+      "step1": [
+        "1. Real Estate Type",
+        "Please select the type of real estate you want to create (to tokenize) with NFT!",
+        "Real Estate",
+        "Loan receivable",
+        "Principal and interest receivables",
+        "Project Financing",
+        "* If you do not find the type of real asset you want among the options above, please enter it in '5. Others'."
+      ],
+      "step2": [
+        "2. NFT use cases",
+        "Please choose where you would like to use your NFT!",
+        "Trade",
+        "Investment",
+        "Loan",
+        "* If you do not find the NFT application you want among the options above, please enter it in '5. Others'."
+      ],
+      "step3": [
+        "3. Real estate address",
+        "Please enter the address of the real estate you want to make into NFT (to be tokenized).",
+        "ex) 29, Nambusunhwan-ro 200ga-gil, Gwanak-gu, Seoul, Republic of Korea"
+      ],
+      "step4": ["4. Email address", "Please enter the email address."],
+      "step5": [
+        "5. Others",
+        "Please leave any other inquiries.",
+        "I consent to ELYSIA PLATFORM PTE. LTD processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of ELYSIA PLATFORM PTE. LTD's business, such processing may take place outside of my home jurisdiction.",
+        "Submit"
+      ],
+      "next_button": "NEXT",
+      "contact": "Your application has been successfully received.",
+      "fail": "Transmission failed. Please check again later."
     },
     "footer": {
       "logo_label": "ELYSIA PLATFORM PTE. LTD",

@@ -51,16 +51,6 @@ const V1UnstakeModal = (props: Props) => {
             </div>
             <CloseButton onClose={() => onClose()} />
           </div>
-          <div className={styles.staking_type}>
-            <div
-              style={{
-                borderBottom: '2px solid #3679b5',
-                width: '100%',
-                cursor: 'auto',
-              }}>
-              {t('modal.unstaking.0')}
-            </div>
-          </div>
           {transactionWait ? (
             <LoadingIndicator
               isTxActive={transactionWait}

@@ -12,7 +12,6 @@ const LanguageProvider: React.FC = (props) => {
 
   const setLanguage = (language: LanguageType) => {
     window.localStorage.setItem('@language', language);
-    router.push(`/${language}`);
     const getPath = location.pathname.split('/')[2];
     if (getPath === undefined) {
       return router.push(`/${language}`);
@@ -33,7 +32,7 @@ const LanguageProvider: React.FC = (props) => {
       i18n.changeLanguage(lng);
     }
     if (router.pathname === '/') {
-      router.push(`/${getLocalLanguage()}/Governance`);
+      router.push(`/${getLocalLanguage()}`);
     }
   }, [lng]);
 

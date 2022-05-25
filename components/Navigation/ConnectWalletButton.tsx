@@ -4,10 +4,11 @@ import TxContext from 'contexts/TxContext';
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './Navigation.module.scss';
-import Skeleton from 'react-loading-skeleton';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NetworkError from 'assets/images/network_error.png';
 import Image from 'next/image';
 import { isChainId } from 'utils/isChainId';
+import { useENS } from 'hooks/useENS';
 
 type Props = {
   modalVisible: () => void;
@@ -18,6 +19,11 @@ const ConnectWalletButton = (props: Props) => {
   const { account, chainId } = useWeb3React();
   const { txStatus } = useContext(TxContext);
   const { t } = useTranslation();
+  const { ensName, ensLoading } = useENS(account || '');
+  const shortAddress = `${account?.substring(0, 5)}....${account?.substring(
+    account.length - 4,
+    account.length,
+  )}`;
 
   return (
     <>
@@ -27,7 +33,9 @@ const ConnectWalletButton = (props: Props) => {
         } ${txStatus} ${chainId && [1, 1337].includes(chainId) ? '' : 'wrong'}`}
         onClick={() => props.modalVisible()}>
         {props.isConnectWalletLoading ? (
-          <Skeleton width={170} height={48} />
+          <SkeletonTheme baseColor="#202020" highlightColor="#444">
+            <Skeleton width={190} height={48} borderRadius={20} />
+          </SkeletonTheme>
         ) : account ? (
           chainId && isChainId(chainId) ? (
             <div className={styles.wallet_connect}>
@@ -36,10 +44,7 @@ const ConnectWalletButton = (props: Props) => {
                 address={account}
                 generatedAvatarType="jazzicon"
               />
-              <div>
-                {account?.substring(0, 5)}....
-                {account?.substring(account.length - 4, account.length)}
-              </div>
+              <div>{ensLoading ? ensName || shortAddress : shortAddress}</div>
             </div>
           ) : (
             <div className={styles.wrong_network}>

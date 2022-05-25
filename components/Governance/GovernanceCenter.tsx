@@ -15,6 +15,10 @@ import {
 } from 'clients/TokenSupply';
 import { formatCommaSmallZeroDisits } from 'utils/formatters';
 import LanguageType from 'enums/LanguageType';
+import ELtoken from 'assets/images/governance/el.png';
+import ButtonArrow from 'assets/images/governance/button-arrow.png';
+import GovernanceLineCounter from './GovernanceLineCounter';
+import { useRouter } from 'next/router';
 
 const GovernanceCenter = () => {
   const { data } = useSWR(
@@ -34,94 +38,83 @@ const GovernanceCenter = () => {
   );
   const { t, i18n } = useTranslation();
   const [guideType, setGuideType] = useState('');
+  const router = useRouter();
+  const lng = router.asPath.substring(1, 3);
 
   return (
-    <div className={styles.governance_center}>
-      <div>{t('governance.section_second.0')}</div>
-      <div className={styles.governance_center_content_wrapper}>
-        <div className={styles.governance_center_content_description}>
-          <div>01</div>
-          <div>{t('governance.section_second.1')}</div>
-          <div>
-            <Trans>{t('governance.section_second.2')}</Trans>
-          </div>
-          <div className={styles.governance_center_content_wrapper_button}>
-            <div>
-              <a
-                href="https://coinmarketcap.com/currencies/elysia/markets/"
-                rel="noopener noreferrer"
-                target="_blank"
-                style={{
-                  fontSize:
-                    i18n.language === LanguageType.EN ? '0.98rem' : undefined,
-                  width: '100%',
-                  height: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                {t('governance.section_second.3')}
-                <Arrow />
-              </a>
-            </div>
-            {/* <div className={styles.governance_center_content_button}>
-              {t('governance.section_second.4')}
-              <Arrow />
-            </div> */}
-          </div>
-        </div>
-        <div>
-          <Image src={TokenImg} alt={'TokenImg'} width={358} height={358} />
-        </div>
+    <section>
+      <div className={styles.center_circle}>
+        <h2>{t('governance.section_second.0')}</h2>
       </div>
-      <div>
-        <div className={styles.governance_center_info_header}>
-          {t('governance.section_second.5')}
+      <GovernanceLineCounter counter={1}>
+        <div className={styles.center_section_01}>
+          <section className={styles.center_section_01_header}>
+            <section className="token_wrapper">
+              <Image src={ELtoken} alt={'EL Token'} />
+            </section>
+            <div>
+              <h2>{t('governance.section_second.1')}</h2>
+              <p>{t('governance.section_second.2')}</p>
+              <div>
+                <div
+                  className={styles.governance_button}
+                  onClick={() => {
+                    window.open(
+                      'https://coinmarketcap.com/currencies/elysia/markets/',
+                    );
+                  }}>
+                  {t('governance.section_second.3')}
+                  <Image
+                    src={ButtonArrow}
+                    alt={'Button Arrow'}
+                    width={18}
+                    height={12}
+                  />
+                </div>
+                <div
+                  className={styles.governance_button}
+                  onClick={() => {
+                    window.open(
+                      lng === LanguageType.KO
+                        ? 'https://elysia.gitbook.io/elysia-whitepaper-v2-0/v/korean/token-economy/minting-fee'
+                        : 'https://elysia.gitbook.io/elysia-whitepaper-v2-0/token-economy/minting-fee',
+                    );
+                  }}>
+                  {t('governance.section_second.4')}
+                  <Image
+                    src={ButtonArrow}
+                    alt={'Button Arrow'}
+                    width={18}
+                    height={12}
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className={styles.center_section_01_body}>
+            <div className={styles.center_section_01_body_box}>
+              <div>
+                <p>{t('governance.section_second.6')}</p>
+                <h2>$ {data?.elPrice.toFixed(4)}</h2>
+              </div>
+              <div>
+                <p>{t('governance.section_second.7')} </p>
+                <h2>7,000,000,000 EL</h2>
+              </div>
+              <div>
+                <p>{t('governance.section_second.9')}</p>
+                <h2>{formatCommaSmallZeroDisits(totalSupply)} EL</h2>
+              </div>
+              <div>
+                <p>{t('governance.section_second.11')}</p>
+                <h2>{formatCommaSmallZeroDisits(circulatingSupply)} EL</h2>
+              </div>
+            </div>
+            <p>* powered by crypto.com</p>
+          </section>
         </div>
-        <div className={styles.governance_center_info_box}>
-          <div>
-            <div>{t('governance.section_second.6')}</div>
-            <div>$ {data?.elPrice.toFixed(4)}</div>
-          </div>
-          <div>
-            <div>
-              {t('governance.section_second.7')}{' '}
-              <Questionmark
-                guideText={t('governance.section_second.8')}
-                visible={guideType === 'box1'}
-                mouseEnter={() => setGuideType('box1')}
-                mouseLeave={() => setGuideType('')}
-              />
-            </div>
-            <div>7,000,000,000 EL</div>
-          </div>
-          <div>
-            <div>
-              {t('governance.section_second.9')}
-              <Questionmark
-                guideText={t('governance.section_second.10')}
-                visible={guideType === 'box2'}
-                mouseEnter={() => setGuideType('box2')}
-                mouseLeave={() => setGuideType('')}
-              />
-            </div>
-            <div>{formatCommaSmallZeroDisits(totalSupply)} EL</div>
-          </div>
-          <div>
-            <div>
-              {t('governance.section_second.11')}
-              <Questionmark
-                guideText={t('governance.section_second.12')}
-                visible={guideType === 'box3'}
-                mouseEnter={() => setGuideType('box3')}
-                mouseLeave={() => setGuideType('')}
-              />
-            </div>
-            <div>{formatCommaSmallZeroDisits(circulatingSupply)} EL</div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </GovernanceLineCounter>
+    </section>
   );
 };
 
