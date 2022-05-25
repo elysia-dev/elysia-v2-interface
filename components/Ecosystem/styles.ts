@@ -144,11 +144,17 @@ export const ProjectWrapper = styled.div`
         background-repeat: no-repeat;
         background-position-x: center;
         background-position-y: center;
-        background-size: cover;
+        background-size: 130%;
         border-radius: 10px;
         width: 100%;
         height: 233.5px;
         margin-bottom: 20.5px;
+        @media screen and (min-width: 679px) and (max-width: 1440px) {
+          background-size: cover;
+        }
+        @media screen and (min-width: 0px) and (max-width: 440px) {
+          background-size: 200%;
+        }
       }
       > div:nth-child(2) {
         display: flex;
@@ -243,9 +249,15 @@ export const ProjectWrapper = styled.div`
         background-repeat: no-repeat;
         background-position-x: center;
         background-position-y: center;
-        background-size: cover;
+        background-size: 130%;
         border-radius: 10px;
         margin-bottom: 20.5px;
+        @media screen and (min-width: 679px) and (max-width: 1440px) {
+          background-size: cover;
+        }
+        @media screen and (min-width: 0px) and (max-width: 440px) {
+          background-size: 200%;
+        }
         > div:first-child {
           background-color: #505050;
           width: 179px;
