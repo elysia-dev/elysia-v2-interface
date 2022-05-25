@@ -1,5 +1,5 @@
 enum NFTApplicationTypes {
-  Trading = 'Trading',
+  Trading = 'Trade',
   Investment = 'Investment',
   Loan = 'Loan',
 }
