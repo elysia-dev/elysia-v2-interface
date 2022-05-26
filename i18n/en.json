@@ -305,7 +305,7 @@
       "step5": [
         "5. Others",
         "Please leave any other inquiries.",
-        "I consent to ELYSIA PLATFORM PTE. LTD processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of ELYSIA PLATFORM PTE. LTD's business, such processing may take place outside of my home jurisdiction.",
+        "I consent to ELYSIA DAO LLC. processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of ELYSIA DAO LLC.'s business, such processing may take place outside of my home jurisdiction.",
         "Submit"
       ],
       "next_button": "NEXT",
@@ -313,7 +313,7 @@
       "fail": "Transmission failed. Please check again later."
     },
     "footer": {
-      "logo_label": "ELYSIA PLATFORM PTE. LTD",
+      "logo_label": "ELYSIA DAO LLC.",
       "contact": "CONTACT",
       "email": "cs@elysia.land",
       "whitepaper": "WhitePaper (old)",
