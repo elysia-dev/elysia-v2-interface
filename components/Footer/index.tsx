@@ -17,7 +17,7 @@ const Footer = () => {
         <div>
           <Image src={ElysiaLogo} alt={'ElysiaLogo'} width={149} height={31} />
         </div>
-        <div>ELYSIA PLATFORM PTE. LTD</div>
+        <div>ELYSIA DAO LLC.</div>
         <div>
           ELYSIA c 2018·2022. All rights reserved. Media inquires for ELYSIA DAO
           LLC. - Contact <span>cs@elysia.land</span>
