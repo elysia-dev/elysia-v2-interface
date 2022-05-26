@@ -593,6 +593,11 @@ const Section = () => {
                     category: 'others',
                     label: '',
                   });
+                  setSelectedNFTAppliaction('');
+                  setSelectedRealEstateType('');
+                  setUserEmailAddress('');
+                  setRealEstateAddress('');
+                  setEtc('');
                 }}>
                 {t('elbridge.step5.3')}
               </div>
