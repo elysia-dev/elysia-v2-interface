@@ -461,7 +461,7 @@ const Section = () => {
               <div>{t('elbridge.step4.1')}</div>
               <div>
                 <input
-                  placeholder="ex) elysialand@elysia.land"
+                  placeholder="ex) cs@elysia.land"
                   value={userEmailAddress}
                   onChange={(e) => {
                     setUserEmailAddress(e.target.value);
@@ -593,6 +593,11 @@ const Section = () => {
                     category: 'others',
                     label: '',
                   });
+                  setSelectedNFTAppliaction('');
+                  setSelectedRealEstateType('');
+                  setUserEmailAddress('');
+                  setRealEstateAddress('');
+                  setEtc('');
                 }}>
                 {t('elbridge.step5.3')}
               </div>
