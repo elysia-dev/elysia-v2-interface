@@ -1,13 +1,15 @@
 import Arrow from 'assets/images/developers/arrow.svg';
 import useIsMobile from 'hooks/useIsMobile';
 import Link from 'next/link';
+import ContentDescription from './ContentDescription';
 
 const ContentItem: React.FC<{
   Icon: any;
   contentName: string;
   link?: string;
   isComingSoon?: boolean;
-}> = ({ Icon, contentName, link, isComingSoon }) => {
+  description?: string;
+}> = ({ Icon, contentName, link, isComingSoon, description }) => {
   const { isTablet } = useIsMobile();
 
   return (
@@ -15,20 +17,26 @@ const ContentItem: React.FC<{
       {link ? (
         <Link href={link} passHref>
           <a target="_blank" rel="noopener noreferrer">
-            <div>
-              <div>{Icon}</div>
-              <div>{contentName}</div>
-              <div> {!isTablet && <Arrow />}</div>
-            </div>
+            <section>
+              <figure>
+                {Icon}
+                <figcaption>{contentName}</figcaption>
+              </figure>
+              <article>{!isTablet && <Arrow />}</article>
+            </section>
+            <ContentDescription description={description} />
           </a>
         </Link>
       ) : (
         <a target="_blank" rel="noopener noreferrer">
-          <div>
-            <div>{Icon}</div>
-            <div>{contentName}</div>
-            <div> {!isTablet && !isComingSoon && <Arrow />}</div>
-          </div>
+          <section>
+            <figure>
+              {Icon}
+              <figcaption>{contentName}</figcaption>
+            </figure>
+            <article>{!isTablet && !isComingSoon && <Arrow />}</article>
+          </section>
+          <ContentDescription description={description} />
         </a>
       )}
     </>

@@ -56,11 +56,16 @@ a {
 
 div,
 a,
-p {
+p,
+figcaption {
   font-family: Gilroy-Light, SpoqaHanSansNeo;
 }
+h1,
 h2 {
   font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
+}
+figure {
+  margin: 0;
 }
 
 @media screen and (min-width: 0px) and (max-width: 839px) {
