@@ -7,6 +7,9 @@ import Telegram from 'assets/images/main/telegram_white@2x.webp';
 import Twitter from 'assets/images/main/twitter_white@2x.webp';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Footer = () => {
   const { i18n } = useTranslation();
@@ -28,7 +31,15 @@ const Footer = () => {
           <Link
             href={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
             passHref>
-            <a target="_blank" rel="noopener noreferrer">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                googleGAEvent(
+                  GoogleGAAction.FooterWhitePaper,
+                  GoogleGACategory.Footer,
+                );
+              }}>
               <div>White Paper</div>
             </a>
           </Link>
@@ -46,7 +57,15 @@ const Footer = () => {
         <section>
           <div>
             <Link href="https://twitter.com/Elysia_HQ" passHref>
-              <a rel="noopener noreferrer" target="_blank">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                onClick={() => {
+                  googleGAEvent(
+                    GoogleGAAction.FooterTwitter,
+                    GoogleGACategory.Footer,
+                  );
+                }}>
                 <Image
                   src={Twitter}
                   alt={'Twitter'}
@@ -58,7 +77,15 @@ const Footer = () => {
           </div>
           <div>
             <Link href="https://t.me/elysia_official" passHref>
-              <a rel="noopener noreferrer" target="_blank">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                onClick={() => {
+                  googleGAEvent(
+                    GoogleGAAction.FooterTelegram,
+                    GoogleGACategory.Footer,
+                  );
+                }}>
                 <Image
                   src={Telegram}
                   alt={'Telegram'}
@@ -70,7 +97,15 @@ const Footer = () => {
           </div>
           <div>
             <Link href="https://discord.com/invite/JjjYrE5Ww8" passHref>
-              <a rel="noopener noreferrer" target="_blank">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                onClick={() => {
+                  googleGAEvent(
+                    GoogleGAAction.FooterDiscord,
+                    GoogleGACategory.Footer,
+                  );
+                }}>
                 <Image
                   src={Discord}
                   alt={'Discord'}
@@ -82,7 +117,15 @@ const Footer = () => {
           </div>
           <div>
             <Link href="https://github.com/elysia-dev" passHref>
-              <a rel="noopener noreferrer" target="_blank">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                onClick={() => {
+                  googleGAEvent(
+                    GoogleGAAction.FooterGithub,
+                    GoogleGACategory.Footer,
+                  );
+                }}>
                 <Image
                   src={Github}
                   alt={'Github'}

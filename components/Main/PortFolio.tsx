@@ -1,8 +1,11 @@
 import Slate, { baseUrl } from 'clients/Slate';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 import useReserveData from 'hooks/useReserveData';
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { googleGAEvent } from 'utils/gaEvent';
 import AssetItem from './AssetItem';
 import { MainPortFolioWrapper, RightArrowIcon } from './styles';
 
@@ -69,7 +72,13 @@ const PortFolio = () => {
       </div>
       <div>
         <Link href={`${i18n.language}/Ecosystem`} passHref>
-          <span>
+          <span
+            onClick={() => {
+              googleGAEvent(
+                GoogleGAAction.MainMorePortfolio,
+                GoogleGACategory.Main,
+              );
+            }}>
             {t(`main.portfolio.3`)}
             <RightArrowIcon />
           </span>

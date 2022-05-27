@@ -14,6 +14,9 @@ import decenter from 'assets/images/main/decenter@2x.webp';
 import xinhua from 'assets/images/main/xinhua-logo-feature_0@2x.webp';
 import Image from 'next/image';
 import Link from 'next/link';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Team = () => {
   const { t } = useTranslation();
@@ -64,7 +67,15 @@ const Team = () => {
                 'https://finance.yahoo.com/news/elysia-first-asia-obtains-approval-140000251.html?guccounter=2&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAIbW0698fC2KnO771rsi89QhICI2s8b-egkyVs02mzNRM-Bhxnrvux1Tjyz8BcEo5rRruAn_XbdofYeXz9hTIKcDqFCKHmbZe1G5SK9c8eqfEzEKMNz_-tq9P2dadujlBGC8NdrdUe0d99qFtgSKiwbPpQJ34dPkSFneqn5_k1F0'
               }
               passHref>
-              <a target="_blank" rel="noopener noreferrer">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  googleGAEvent(
+                    GoogleGAAction.MainPressEn,
+                    GoogleGACategory.Main,
+                  )
+                }>
                 <div>
                   <div>
                     <Image src={usa} alt={'usa'} width={42} height={42} />
@@ -85,7 +96,15 @@ const Team = () => {
             <Link
               href={'https://decenter.kr/NewsView/2621R4BTIW/GZ03'}
               passHref>
-              <a target="_blank" rel="noopener noreferrer">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  googleGAEvent(
+                    GoogleGAAction.MainPressko,
+                    GoogleGACategory.Main,
+                  )
+                }>
                 <div>
                   <div>
                     <Image src={ko} alt={'ko'} width={42} height={42} />
@@ -111,7 +130,15 @@ const Team = () => {
                 'http://www.xinhuanet.com/money/2020-09/04/c_1126453754.htm'
               }
               passHref>
-              <a target="_blank" rel="noopener noreferrer">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  googleGAEvent(
+                    GoogleGAAction.MainPressCn,
+                    GoogleGACategory.Main,
+                  )
+                }>
                 <div>
                   <div>
                     <Image src={cn} alt={'cn'} width={42} height={42} />

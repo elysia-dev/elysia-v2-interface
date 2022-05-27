@@ -7,14 +7,20 @@ const ContentItem: React.FC<{
   contentName: string;
   link?: string;
   isComingSoon?: boolean;
-}> = ({ Icon, contentName, link, isComingSoon }) => {
+  onClickEvent?: () => void;
+}> = ({ Icon, contentName, link, isComingSoon, onClickEvent }) => {
   const { isTablet } = useIsMobile();
 
   return (
     <>
       {link ? (
         <Link href={link} passHref>
-          <a target="_blank" rel="noopener noreferrer">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              onClickEvent?.();
+            }}>
             <div>
               <div>{Icon}</div>
               <div>{contentName}</div>

@@ -9,6 +9,9 @@ import NetworkError from 'assets/images/network_error.png';
 import Image from 'next/image';
 import { isChainId } from 'utils/isChainId';
 import { useENS } from 'hooks/useENS';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 type Props = {
   modalVisible: () => void;
@@ -31,7 +34,10 @@ const ConnectWalletButton = (props: Props) => {
         className={`wallet_wrapper ${
           account || props.isConnectWalletLoading ? '' : 'disconnect'
         } ${txStatus} ${chainId && [1, 1337].includes(chainId) ? '' : 'wrong'}`}
-        onClick={() => props.modalVisible()}>
+        onClick={() => {
+          props.modalVisible();
+          googleGAEvent(GoogleGAAction.NavConnectWallet, GoogleGACategory.Nav);
+        }}>
         {props.isConnectWalletLoading ? (
           <SkeletonTheme baseColor="#202020" highlightColor="#444">
             <Skeleton width={190} height={48} borderRadius={20} />

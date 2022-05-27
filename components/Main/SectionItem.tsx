@@ -9,13 +9,14 @@ const SectionItem: React.FC<{
   section: string[];
   isLeftArrow: boolean;
   link: string;
-}> = ({ section, isLeftArrow, link }) => {
+  onClickEvent: () => void;
+}> = ({ section, isLeftArrow, link, onClickEvent }) => {
   const router = useRouter();
   const lng = router.asPath.substring(1, 3);
 
   return (
     <Link href={link} passHref>
-      <div>
+      <div onClick={() => onClickEvent()}>
         <div>
           <div>
             {isLeftArrow ? (

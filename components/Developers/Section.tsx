@@ -9,6 +9,9 @@ import ContentItem from '../Common/ContentItem';
 import ContentDescription from 'components/Common/ContentDescription';
 import PageHeader from 'components/Common/PageHeader';
 import { useState } from 'react';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {
   const { t } = useTranslation();
@@ -21,7 +24,17 @@ const Section = () => {
           headers={[t('developers.0'), t('developers.1'), t('developers.2')]}
         />
         <div>
-          <div>
+          <div
+            onClick={() => {
+              window.open(
+                'https://elysia.gitbook.io/elysia-whitepaper-v2-0/',
+                '_blank',
+              );
+              googleGAEvent(
+                GoogleGAAction.DevelopersWhatIsElysia,
+                GoogleGACategory.Developers,
+              );
+            }}>
             <ContentItem
               Icon={<Elysia />}
               contentName={t('developers.3')}
@@ -30,7 +43,17 @@ const Section = () => {
             <ContentDescription description={t('developers.4')} />
           </div>
           <section>
-            <div>
+            <div
+              onClick={() => {
+                window.open(
+                  'https://elysia.gitbook.io/elysia-whitepaper-v2-0/',
+                  '_blank',
+                );
+                googleGAEvent(
+                  GoogleGAAction.DevelopersGithub,
+                  GoogleGACategory.Developers,
+                );
+              }}>
               <ContentItem
                 Icon={<Git />}
                 contentName={t('developers.10')}

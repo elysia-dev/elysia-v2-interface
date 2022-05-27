@@ -1,8 +1,11 @@
 import LanguageContext from 'contexts/LanguageContext';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 import LanguageType from 'enums/LanguageType';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
+import { googleGAEvent } from 'utils/gaEvent';
 import ConnectWalletButton from './ConnectWalletButton';
 import styles from './Navigation.module.scss';
 
@@ -20,7 +23,11 @@ const MobileMenu: React.FC<{
     <article className={styles.navigation__hamburger__menu}>
       <section>
         <Link href={`/${router.query.lng}/ELBridge`} passHref>
-          <a onClick={onButtonClick}>
+          <a
+            onClick={() => {
+              onButtonClick();
+              googleGAEvent(GoogleGAAction.NavElBridge, GoogleGACategory.Nav);
+            }}>
             <span
               style={{
                 cursor: 'pointer',
@@ -33,7 +40,11 @@ const MobileMenu: React.FC<{
           </a>
         </Link>
         <Link href={`/${router.query.lng}/Governance`} passHref>
-          <a onClick={onButtonClick}>
+          <a
+            onClick={() => {
+              onButtonClick();
+              googleGAEvent(GoogleGAAction.NavGovernance, GoogleGACategory.Nav);
+            }}>
             <span
               style={{
                 cursor: 'pointer',
@@ -46,7 +57,11 @@ const MobileMenu: React.FC<{
           </a>
         </Link>
         <Link href={`/${router.query.lng}/Ecosystem`} passHref>
-          <a onClick={onButtonClick}>
+          <a
+            onClick={() => {
+              onButtonClick();
+              googleGAEvent(GoogleGAAction.NavEcosystem, GoogleGACategory.Nav);
+            }}>
             <span
               style={{
                 cursor: 'pointer',
@@ -59,7 +74,11 @@ const MobileMenu: React.FC<{
           </a>
         </Link>
         <Link href={`/${router.query.lng}/Community`} passHref>
-          <a onClick={onButtonClick}>
+          <a
+            onClick={() => {
+              onButtonClick();
+              googleGAEvent(GoogleGAAction.NavCommunity, GoogleGACategory.Nav);
+            }}>
             <span
               style={{
                 cursor: 'pointer',
@@ -72,7 +91,11 @@ const MobileMenu: React.FC<{
           </a>
         </Link>
         <Link href={`/${router.query.lng}/Developers`} passHref>
-          <a onClick={onButtonClick}>
+          <a
+            onClick={() => {
+              onButtonClick();
+              googleGAEvent(GoogleGAAction.NavDevelopers, GoogleGACategory.Nav);
+            }}>
             <span
               style={{
                 cursor: 'pointer',
@@ -88,6 +111,7 @@ const MobileMenu: React.FC<{
       <article className={styles.navigation__hamburger__language}>
         <p
           onClick={() => {
+            googleGAEvent(GoogleGAAction.NavLanguage, GoogleGACategory.Nav);
             setLanguage(LanguageType.KO);
           }}
           style={{
@@ -97,6 +121,7 @@ const MobileMenu: React.FC<{
         </p>
         <p
           onClick={() => {
+            googleGAEvent(GoogleGAAction.NavLanguage, GoogleGACategory.Nav);
             setLanguage(LanguageType.EN);
           }}
           style={{
