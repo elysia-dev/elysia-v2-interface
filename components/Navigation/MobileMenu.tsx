@@ -1,5 +1,5 @@
 import LanguageContext from 'contexts/LanguageContext';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import LanguageType from 'enums/LanguageType';
 import Link from 'next/link';
