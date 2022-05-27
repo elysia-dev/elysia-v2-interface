@@ -52,27 +52,31 @@ export const SectionWrapper = styled.div`
   color: #ffffff;
   font-family: ${$light};
 
-  > div:nth-child(1) {
+  > section:first-child {
     padding-top: 60vh;
     margin-bottom: 30px;
-    > div:first-child {
+    > h1 {
+      color: #ffffff;
+      font-family: ${$bold};
+      font-size: 2rem;
+      margin: 0;
+      margin-bottom: 5px;
+      @media (max-width: 460px) {
+        font-size: 1.5rem;
+      }
+    }
+    > h2 {
+      color: #33a5ff;
+      margin: 0;
+      margin-bottom: 14px;
+      font-family: ${$light};
+    }
+    > p {
       color: #cbcbcb;
+      margin: 0;
       font-size: 1.375rem;
       @media (max-width: 460px) {
         font-size: 1rem;
-      }
-      > div:first-child {
-        color: #ffffff;
-        font-family: ${$bold};
-        font-size: 2rem;
-        margin-bottom: 5px;
-        @media (max-width: 460px) {
-          font-size: 1.5rem;
-        }
-      }
-      > div:nth-child(2) {
-        color: #33a5ff;
-        margin-bottom: 14px;
       }
     }
   }
