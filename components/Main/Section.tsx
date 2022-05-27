@@ -2,6 +2,9 @@ import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { MainSectionWrapper } from './styles';
 import SectionItem from './SectionItem';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {
   const { i18n } = useTranslation();
@@ -22,6 +25,12 @@ const Section = () => {
             ]}
             isLeftArrow={false}
             link={`${i18n.language}/ELBridge`}
+            onClickEvent={() =>
+              googleGAEvent(
+                GoogleGAAction.MainElBridgeCard,
+                GoogleGACategory.Main,
+              )
+            }
           />
           <SectionItem
             section={[
@@ -31,6 +40,12 @@ const Section = () => {
             ]}
             isLeftArrow={true}
             link={`${i18n.language}/Governance`}
+            onClickEvent={() =>
+              googleGAEvent(
+                GoogleGAAction.MainGovernanceCard,
+                GoogleGACategory.Main,
+              )
+            }
           />
           <SectionItem
             section={[
@@ -40,6 +55,12 @@ const Section = () => {
             ]}
             isLeftArrow={false}
             link={`${i18n.language}/Ecosystem`}
+            onClickEvent={() =>
+              googleGAEvent(
+                GoogleGAAction.MainEcosystemCard,
+                GoogleGACategory.Main,
+              )
+            }
           />
           <SectionItem
             section={[
@@ -49,6 +70,12 @@ const Section = () => {
             ]}
             isLeftArrow={true}
             link={`${i18n.language}/Community`}
+            onClickEvent={() =>
+              googleGAEvent(
+                GoogleGAAction.MainCommunityCard,
+                GoogleGACategory.Main,
+              )
+            }
           />
           <SectionItem
             section={[
@@ -58,6 +85,12 @@ const Section = () => {
             ]}
             isLeftArrow={false}
             link={`${i18n.language}/Developers`}
+            onClickEvent={() =>
+              googleGAEvent(
+                GoogleGAAction.MainDevelopersCard,
+                GoogleGACategory.Main,
+              )
+            }
           />
         </MainSectionWrapper>
       </div>

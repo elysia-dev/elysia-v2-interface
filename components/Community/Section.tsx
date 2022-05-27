@@ -6,16 +6,15 @@ import Git from 'assets/images/community/git@2x.webp';
 import Facebook from 'assets/images/community/facebook@2x.webp';
 import Kakao from 'assets/images/community/kakao_white@2x.webp';
 import Medium from 'assets/images/community/medium@2x.webp';
-import Elysia from 'assets/images/community/elysia_icon@2x.webp';
-import Snapshot from 'assets/images/community/snapshot@2x.webp';
-import Tally from 'assets/images/community/tally@2x.webp';
 import Telegram from 'assets/images/community/telegram_white@2x.webp';
 import Twitter from 'assets/images/community/twitter@2x.webp';
-import We_chat from 'assets/images/community/wechat_@2x.webp';
 import Wechat from 'assets/images/community/wechat@2x.webp';
 import useIsMobile from 'hooks/useIsMobile';
 import ContentItem from 'components/Common/ContentItem';
 import useResizeBrowser from 'hooks/useResizeBrowser';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {
   const { t } = useTranslation();
@@ -47,6 +46,12 @@ const Section = () => {
                 }
                 contentName={'Discord'}
                 link={'https://discord.com/invite/JjjYrE5Ww8'}
+                onClickEvent={() =>
+                  googleGAEvent(
+                    GoogleGAAction.CommunityDiscord,
+                    GoogleGACategory.Community,
+                  )
+                }
               />
               <ContentItem
                 Icon={
@@ -59,6 +64,12 @@ const Section = () => {
                 }
                 contentName={'Telegram'}
                 link={'https://t.me/elysia_official'}
+                onClickEvent={() =>
+                  googleGAEvent(
+                    GoogleGAAction.CommunityTelegram,
+                    GoogleGACategory.Community,
+                  )
+                }
               />
               <ContentItem
                 Icon={
@@ -71,6 +82,12 @@ const Section = () => {
                 }
                 contentName={'Kakaotalk'}
                 link={'https://open.kakao.com/o/gUpSOwkb'}
+                onClickEvent={() =>
+                  googleGAEvent(
+                    GoogleGAAction.CommunityKakaotalk,
+                    GoogleGACategory.Community,
+                  )
+                }
               />
               <div></div>
               {/* <ContentItem
@@ -136,6 +153,12 @@ const Section = () => {
                 }
                 contentName={'Github'}
                 link={'https://github.com/elysia-dev'}
+                onClickEvent={() =>
+                  googleGAEvent(
+                    GoogleGAAction.CommunityGithub,
+                    GoogleGACategory.Community,
+                  )
+                }
               />
               <ContentItem
                 Icon={
@@ -148,6 +171,12 @@ const Section = () => {
                 }
                 contentName={'Tech Blog'}
                 link={'https://tech.elysia.land/'}
+                onClickEvent={() =>
+                  googleGAEvent(
+                    GoogleGAAction.CommunityTechBlog,
+                    GoogleGACategory.Community,
+                  )
+                }
               />
               <div></div>
               <div></div>
@@ -169,6 +198,12 @@ const Section = () => {
                 }
                 contentName={'Twitter'}
                 link={'https://twitter.com/Elysia_HQ'}
+                onClickEvent={() =>
+                  googleGAEvent(
+                    GoogleGAAction.CommunityTwitter,
+                    GoogleGACategory.Community,
+                  )
+                }
               />
               <ContentItem
                 Icon={
@@ -181,6 +216,12 @@ const Section = () => {
                 }
                 contentName={'Facebook'}
                 link={'https://www.facebook.com/ElysiaHQ'}
+                onClickEvent={() =>
+                  googleGAEvent(
+                    GoogleGAAction.CommunityFacebook,
+                    GoogleGACategory.Community,
+                  )
+                }
               />
               <ContentItem
                 Icon={
@@ -193,6 +234,12 @@ const Section = () => {
                 }
                 contentName={'Medium'}
                 link={'https://medium.com/elysia-magazine'}
+                onClickEvent={() =>
+                  googleGAEvent(
+                    GoogleGAAction.CommunityMedium,
+                    GoogleGACategory.Community,
+                  )
+                }
               />
               <ContentItem
                 Icon={
@@ -205,6 +252,12 @@ const Section = () => {
                 }
                 contentName={'Weibo'}
                 link={'https://weibo.com/u/7449962304'}
+                onClickEvent={() =>
+                  googleGAEvent(
+                    GoogleGAAction.CommunityWeibo,
+                    GoogleGACategory.Community,
+                  )
+                }
               />
             </div>
           </div>

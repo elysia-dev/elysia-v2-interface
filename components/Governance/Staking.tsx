@@ -30,6 +30,9 @@ import EthOn from 'assets/images/governance/eth-on.png';
 import EthOff from 'assets/images/governance/eth-off.png';
 import BscOn from 'assets/images/governance/bsc-on.png';
 import BscOff from 'assets/images/governance/bsc-off.png';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
@@ -156,9 +159,13 @@ const Staking = (props: Props) => {
               </p>
               <div
                 className={styles.governance_button}
-                onClick={() =>
-                  window.open('https://elysia.gitbook.io/elysia-user-guide/')
-                }>
+                onClick={() => {
+                  googleGAEvent(
+                    GoogleGAAction.GovStakingGuide,
+                    GoogleGACategory.Governance,
+                  );
+                  window.open('https://elysia.gitbook.io/elysia-user-guide/');
+                }}>
                 {t('governance.section_third.3')}
                 <Image
                   src={ButtonArrow}
@@ -195,6 +202,7 @@ const Staking = (props: Props) => {
                   }}>
                   <Image
                     src={currentChain === ChainType.Ethereum ? EthOn : EthOff}
+                    alt={'Eth'}
                   />
                   <p>ETH</p>
                 </div>
@@ -206,6 +214,7 @@ const Staking = (props: Props) => {
                   }}>
                   <Image
                     src={currentChain === ChainType.BSC ? BscOn : BscOff}
+                    alt={'Bsc'}
                   />
                   <p>BSC</p>
                 </div>

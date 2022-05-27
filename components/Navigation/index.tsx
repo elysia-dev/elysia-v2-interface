@@ -1,7 +1,7 @@
 import { useWeb3React } from '@web3-react/core';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import ConnectWalletButton from './ConnectWalletButton';
 import styles from './Navigation.module.scss';
 import ElysiaLogo from 'assets/images/Elysia_Logo_White@2x.png';
@@ -19,8 +19,10 @@ import TxStatus from 'enums/TxStatus';
 import { isChainId } from 'utils/isChainId';
 import { NavigationWrapper } from './styles';
 import MobileMenu from './MobileMenu';
-import * as gtag from 'lib/gtag';
 import LanguageConverter from './LanguageConverter';
+import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
+import { googleGAEvent } from 'utils/gaEvent';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -115,19 +117,12 @@ const Navigation = () => {
       <NavigationWrapper
         theme={isMobile && isMobileMenu ? 'overflow' : isScroll}>
         <div>
-          <div
-            onClick={() => {
-              const handleRouteChange = () => {
-                gtag.event({
-                  action: 'click',
-                  category: 'logo',
-                  label: 'label',
-                });
-              };
-              handleRouteChange();
-            }}>
+          <div>
             <Link href={`/${router.query.lng}`} passHref>
-              <a>
+              <a
+                onClick={() => {
+                  googleGAEvent(GoogleGAAction.NavHome, GoogleGACategory.Nav);
+                }}>
                 <Image
                   src={ElysiaLogo}
                   alt={'ElysiaLogo'}
@@ -158,7 +153,13 @@ const Navigation = () => {
               <div>
                 <Link href={`/${router.query.lng}/ELBridge`} passHref>
                   <div>
-                    <a>
+                    <a
+                      onClick={() => {
+                        googleGAEvent(
+                          GoogleGAAction.NavElBridge,
+                          GoogleGACategory.Nav,
+                        );
+                      }}>
                       <span
                         style={{
                           cursor: 'pointer',
@@ -173,7 +174,13 @@ const Navigation = () => {
                 </Link>
                 <Link href={`/${router.query.lng}/Governance`} passHref>
                   <div>
-                    <a>
+                    <a
+                      onClick={() => {
+                        googleGAEvent(
+                          GoogleGAAction.NavGovernance,
+                          GoogleGACategory.Nav,
+                        );
+                      }}>
                       <span
                         style={{
                           cursor: 'pointer',
@@ -188,7 +195,13 @@ const Navigation = () => {
                 </Link>
                 <Link href={`/${router.query.lng}/Ecosystem`} passHref>
                   <div>
-                    <a>
+                    <a
+                      onClick={() => {
+                        googleGAEvent(
+                          GoogleGAAction.NavEcosystem,
+                          GoogleGACategory.Nav,
+                        );
+                      }}>
                       <span
                         style={{
                           cursor: 'pointer',
@@ -203,7 +216,13 @@ const Navigation = () => {
                 </Link>
                 <Link href={`/${router.query.lng}/Community`} passHref>
                   <div>
-                    <a>
+                    <a
+                      onClick={() => {
+                        googleGAEvent(
+                          GoogleGAAction.NavCommunity,
+                          GoogleGACategory.Nav,
+                        );
+                      }}>
                       <span
                         style={{
                           cursor: 'pointer',
@@ -218,7 +237,13 @@ const Navigation = () => {
                 </Link>
                 <Link href={`/${router.query.lng}/Developers`} passHref>
                   <div>
-                    <a>
+                    <a
+                      onClick={() => {
+                        googleGAEvent(
+                          GoogleGAAction.NavDevelopers,
+                          GoogleGACategory.Nav,
+                        );
+                      }}>
                       <span
                         style={{
                           cursor: 'pointer',

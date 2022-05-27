@@ -1,7 +1,10 @@
 import { useWeb3React } from '@web3-react/core';
+import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 import useV2Staking from 'hooks/useV2Staking';
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { googleGAEvent } from 'utils/gaEvent';
 import styles from './Modal.module.scss';
 
 export enum PermissionType {
@@ -14,7 +17,7 @@ const IncreateAllowanceModal: React.FunctionComponent<{
   // type: PermissionType;
   // txWait?: boolean;
 }> = (props) => {
-  const { library } = useWeb3React();
+  const { account } = useWeb3React();
   const connected = window.sessionStorage.getItem('@connect');
   const txHash = window.localStorage.getItem('@permissionTxHash');
   const { t } = useTranslation();
@@ -60,6 +63,11 @@ const IncreateAllowanceModal: React.FunctionComponent<{
         className={styles.modal_button}
         onClick={() => {
           props.setTransactionWait(true);
+          googleGAEvent(
+            GoogleGAAction.GovApprove,
+            GoogleGACategory.Governance,
+            account || '',
+          );
           approve();
         }}>
         <div>
