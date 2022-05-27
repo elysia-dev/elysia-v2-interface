@@ -15,7 +15,7 @@ import xinhua from 'assets/images/main/xinhua-logo-feature_0@2x.webp';
 import Image from 'next/image';
 import Link from 'next/link';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Team = () => {

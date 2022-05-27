@@ -10,7 +10,7 @@ import ContentDescription from 'components/Common/ContentDescription';
 import PageHeader from 'components/Common/PageHeader';
 import { useState } from 'react';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {

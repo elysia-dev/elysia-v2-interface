@@ -14,7 +14,7 @@ import CloseButton from './CloseButton';
 import Image from 'next/image';
 import useIsMobile from 'hooks/useIsMobile';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 
 type Props = {

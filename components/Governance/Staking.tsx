@@ -31,7 +31,7 @@ import EthOff from 'assets/images/governance/eth-off.png';
 import BscOn from 'assets/images/governance/bsc-on.png';
 import BscOff from 'assets/images/governance/bsc-off.png';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 
 type Props = {

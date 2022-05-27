@@ -1,5 +1,5 @@
 import Slate, { baseUrl } from 'clients/Slate';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import useReserveData from 'hooks/useReserveData';
 import Link from 'next/link';

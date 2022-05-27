@@ -7,7 +7,7 @@ import Telegram from 'assets/images/main/telegram_white@2x.webp';
 import Twitter from 'assets/images/main/twitter_white@2x.webp';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import { googleGAEvent } from 'utils/gaEvent';
 import GoogleGACategory from 'enums/GoogleGACategory';
 

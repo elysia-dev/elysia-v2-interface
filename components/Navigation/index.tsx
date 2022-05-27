@@ -20,7 +20,7 @@ import { isChainId } from 'utils/isChainId';
 import { NavigationWrapper } from './styles';
 import MobileMenu from './MobileMenu';
 import LanguageConverter from './LanguageConverter';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import { googleGAEvent } from 'utils/gaEvent';
 

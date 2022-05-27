@@ -13,7 +13,7 @@ import TxStatus from 'enums/TxStatus';
 import { useTranslation } from 'react-i18next';
 import useV2Staking from 'hooks/useV2Staking';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import { useWeb3React } from '@web3-react/core';
 

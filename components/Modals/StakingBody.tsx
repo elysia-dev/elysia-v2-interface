@@ -1,5 +1,5 @@
 import { useWeb3React } from '@web3-react/core';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import { BigNumber, utils } from 'ethers';
 import { Dispatch, SetStateAction, useEffect, useMemo } from 'react';

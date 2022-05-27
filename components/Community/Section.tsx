@@ -13,8 +13,8 @@ import useIsMobile from 'hooks/useIsMobile';
 import ContentItem from 'components/Common/ContentItem';
 import useResizeBrowser from 'hooks/useResizeBrowser';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
+import GoogleGAAction from 'enums/GoogleGAAction';
 
 const Section = () => {
   const { t } = useTranslation();

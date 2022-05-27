@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { MainSectionWrapper } from './styles';
 import SectionItem from './SectionItem';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {

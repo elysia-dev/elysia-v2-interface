@@ -15,7 +15,7 @@ import { useMemo } from 'react';
 import { parseTokenId } from 'utils/parseTokenId';
 import CollateralCategory from 'enums/CollateralCategory';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Top = () => {

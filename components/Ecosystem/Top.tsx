@@ -7,7 +7,7 @@ import Google from 'assets/images/ecosystem/google.png';
 import Appstore from 'assets/images/ecosystem/appstore.png';
 import Link from 'next/link';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Top = () => {

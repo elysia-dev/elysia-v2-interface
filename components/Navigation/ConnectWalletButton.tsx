@@ -10,7 +10,7 @@ import Image from 'next/image';
 import { isChainId } from 'utils/isChainId';
 import { useENS } from 'hooks/useENS';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 
 type Props = {

@@ -24,7 +24,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import OnBoardingStep from 'enums/OnBoardingStep';
 import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/googleGAAction';
+import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {
