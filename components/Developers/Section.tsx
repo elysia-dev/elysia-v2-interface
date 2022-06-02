@@ -45,10 +45,7 @@ const Section = () => {
           <section>
             <div
               onClick={() => {
-                window.open(
-                  'https://elysia.gitbook.io/elysia-whitepaper-v2-0/',
-                  '_blank',
-                );
+                window.open('https://github.com/elysia-dev', '_blank');
                 googleGAEvent(
                   GoogleGAAction.DevelopersGithub,
                   GoogleGACategory.Developers,
