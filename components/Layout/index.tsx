@@ -54,6 +54,7 @@ const Layout = (props: LayoutProps) => {
     <>
       <Head>
         <title>Elysia</title>
+        <meta name="robots" content="index,follow"></meta>
         <meta
           name="description"
           content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
