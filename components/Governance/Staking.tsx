@@ -106,11 +106,11 @@ const Staking = (props: Props) => {
     setModalVisible,
   ]);
   return (
-    <section>
+    <article>
       <GovernanceLineCounter counter={2}>
         <div className={styles.center_section_02}>
-          <section className={styles.center_section_02_header}>
-            <div className={styles.center_section_02_image_container}>
+          <article className={styles.center_section_02_header}>
+            <section className={styles.center_section_02_image_container}>
               <Image
                 src={RoundWrapper}
                 alt="Token-data"
@@ -118,7 +118,7 @@ const Staking = (props: Props) => {
               />
               <div className={styles.amount}>
                 <p>{t('governance.section_third.4')}</p>
-                <h2>
+                <b>
                   {' '}
                   {currentChain === ChainType.Ethereum ? (
                     isLoading ? (
@@ -129,11 +129,11 @@ const Staking = (props: Props) => {
                   ) : (
                     '-'
                   )}
-                </h2>
+                </b>
               </div>
               <div className={styles.apr}>
                 <p>APR</p>
-                <h2>
+                <b>
                   {currentChain === ChainType.Ethereum ? (
                     isLoading ? (
                       <Skeleton width={130} height={35} />
@@ -143,9 +143,9 @@ const Staking = (props: Props) => {
                   ) : (
                     '-'
                   )}
-                </h2>
+                </b>
               </div>
-            </div>
+            </section>
             <div>
               <h2>{t('governance.section_third.0')}</h2>
               <p>
@@ -154,7 +154,7 @@ const Staking = (props: Props) => {
                 <br />
                 <Trans>{t('governance.section_third.2')}</Trans>
               </p>
-              <div
+              <a
                 className={styles.governance_button}
                 onClick={() =>
                   window.open('https://elysia.gitbook.io/elysia-user-guide/')
@@ -166,20 +166,20 @@ const Staking = (props: Props) => {
                   width={18}
                   height={12}
                 />
-              </div>
+              </a>
             </div>
-          </section>
-          <section className={styles.center_section_02_body}>
-            <div
+          </article>
+          <article className={styles.center_section_02_body}>
+            <a
               className={styles.staking_prev}
               onClick={() =>
                 router.push(`/${getLocalLanguage()}/Governance/V1Staking`)
               }>
               {t('governance.section_third.6')} &gt;
-            </div>
-            <div className={styles.staking_container}>
-              <div className={styles.staking_select_mainnet}>
-                <section
+            </a>
+            <article className={styles.staking_container}>
+              <section className={styles.staking_select_mainnet}>
+                <div
                   className={styles.staking_select_mainnet_current}
                   style={{
                     left: currentChain === ChainType.Ethereum ? 4 : 67,
@@ -209,8 +209,8 @@ const Staking = (props: Props) => {
                   />
                   <p>BSC</p>
                 </div>
-              </div>
-              <div className={styles.staking_content}>
+              </section>
+              <section className={styles.staking_content}>
                 {currentChain === ChainType.Ethereum ? (
                   !chainId || (chainId && [1, 1337].includes(chainId)) ? (
                     stakingInfo.map((info, idx) => (
@@ -220,7 +220,7 @@ const Staking = (props: Props) => {
                         <div className={styles.staking_content_header}>
                           <p>{info.name}</p>
                           <div>
-                            <h2>{info.value}</h2>
+                            <b>{info.value}</b>
                             <span>EL</span>
                           </div>
                         </div>
@@ -262,12 +262,12 @@ const Staking = (props: Props) => {
                     Coming soon!
                   </div>
                 )}
-              </div>
-            </div>
-          </section>
+              </section>
+            </article>
+          </article>
         </div>
       </GovernanceLineCounter>
-    </section>
+    </article>
   );
 };
 

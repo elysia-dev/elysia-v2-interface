@@ -34,7 +34,7 @@ const arrowDownAni = keyframes`
     transform: rotate(0deg);
   }
 `;
-export const ELbridgeImage = styled.div`
+export const ELbridgeImage = styled.article`
   position: absolute;
   top: 0;
   right: 0;
@@ -47,42 +47,13 @@ export const ELbridgeImage = styled.div`
   background-size: 100%;
 `;
 
-export const SectionWrapper = styled.div`
+export const SectionWrapper = styled.article`
   padding-bottom: 200px;
   color: #ffffff;
   font-family: ${$light};
-
-  > section:first-child {
-    padding-top: 60vh;
-    margin-bottom: 30px;
-    > h1 {
-      color: #ffffff;
-      font-family: ${$bold};
-      font-size: 2rem;
-      margin: 0;
-      margin-bottom: 5px;
-      @media (max-width: 460px) {
-        font-size: 1.5rem;
-      }
-    }
-    > h2 {
-      color: #33a5ff;
-      margin: 0;
-      margin-bottom: 14px;
-      font-family: ${$light};
-    }
-    > p {
-      color: #cbcbcb;
-      margin: 0;
-      font-size: 1.375rem;
-      @media (max-width: 460px) {
-        font-size: 1rem;
-      }
-    }
-  }
 `;
 
-export const NFTDescription = styled.div<{ active?: boolean }>`
+export const NFTDescription = styled.section<{ active?: boolean }>`
   ${glassBox}
   &:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -106,7 +77,7 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
     @media (max-width: 640px) {
       margin: 0 21px;
     }
-    > div:first-child {
+    > span {
       font-size: 1.375rem;
       margin-right: 25px;
       width: 33px;
@@ -116,10 +87,10 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
       border-radius: 33px;
       ${center}
     }
-    > div:nth-child(2) {
+    > p {
       font-size: 1.375rem;
     }
-    > div:last-child {
+    > div {
       margin-left: auto;
       border-right: 12px solid transparent;
       border-left: 12px solid transparent;
@@ -138,17 +109,19 @@ export const NFTDescription = styled.div<{ active?: boolean }>`
       }};
     }
   }
-  > div:last-child {
+  > section {
     padding: 44.5px 71px 51px 71px;
     @media (max-width: 640px) {
       padding: 33px 21px 35.5px 21px;
     }
-    font-size: 1.1875rem;
-    line-height: 2rem;
+    > p {
+      font-size: 1.1875rem;
+      line-height: 2rem;
+    }
   }
 `;
 
-export const AssetNFTDescription = styled.div<{ active?: boolean }>`
+export const AssetNFTDescription = styled.article<{ active?: boolean }>`
   ${glassBox}
   &:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -172,7 +145,7 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
     @media (max-width: 640px) {
       margin: 0 21px;
     }
-    > div:first-child {
+    > span {
       font-size: 1.375rem;
       margin-right: 25px;
       width: 33px;
@@ -182,10 +155,10 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
       border-radius: 33px;
       ${center}
     }
-    > div:nth-child(2) {
+    > p {
       font-size: 1.375rem;
     }
-    > div:last-child {
+    > div {
       margin-left: auto;
       border-right: 12px solid transparent;
       border-left: 12px solid transparent;
@@ -204,32 +177,32 @@ export const AssetNFTDescription = styled.div<{ active?: boolean }>`
       }};
     }
   }
-  > div:last-child {
+  > section {
     padding: 44.5px 71px 51px 71px;
-    font-size: 1.1875rem;
     @media (max-width: 640px) {
       padding: 33px 21px 35.5px 21px;
     }
-    > div {
+    > p {
+      font-size: 1.1875rem;
       line-height: 2rem;
-    }
-    > div:not(div:last-child) {
-      margin-bottom: 18px;
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
     }
   }
 `;
 
-export const CreateNFTWrapper = styled.div`
+export const CreateNFTWrapper = styled.article`
   max-width: 1333px;
   margin: 90px auto;
-  font-size: 1.75rem;
-  > div:first-child {
+  > strong {
+    font-size: 1.75rem;
     font-family: ${$bold};
     margin-bottom: 10px;
   }
-  > div:nth-child(2) {
+  > h3 {
     font-size: 1.25rem;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 `;
 
@@ -244,7 +217,7 @@ export const CreatedNFTCount = styled.div`
   }
 `;
 
-export const StepOne = styled.div<{
+export const StepOne = styled.article<{
   active: string;
   isFinished: boolean;
   selected: boolean;
@@ -262,16 +235,19 @@ export const StepOne = styled.div<{
   }
   margin-bottom: 25px;
   overflow: hidden;
-  > div:first-child {
+  > section:first-child {
     padding: 1.625rem 51px 0px 51px;
     cursor: pointer;
-    font-size: 1.375rem;
     height: 5rem;
     @media (max-width: 640px) {
       padding: 1.625rem 20px 0px 20px;
     }
+    > h2 {
+      font-size: 1.375rem;
+      font-family: ${$light};
+    }
   }
-  > div:last-child {
+  > section:last-child {
     font-size: 1.25rem;
     max-width: 1187px;
     margin: 0px auto 57px auto;
@@ -281,17 +257,17 @@ export const StepOne = styled.div<{
     @media screen and (max-width: 640px) {
       padding: 1.625rem 21px 0px 21px;
     }
-    > div:first-child {
+    > p {
       margin-bottom: 35px;
     }
-    > div:nth-child(2) {
+    > section {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       @media (max-width: 640px) {
         flex-direction: column;
       }
-      > div {
+      > button {
         cursor: pointer;
         ${center}
         width: 48%;
@@ -299,30 +275,33 @@ export const StepOne = styled.div<{
         border: 1px solid #acacac;
         border-radius: 20px;
         text-align: center;
+        transition: all 0.7s ease;
         @media (max-width: 640px) {
           width: 100%;
           margin-bottom: 15px;
           height: 50px;
         }
-      }
-      > div:hover {
-        background: rgba(52, 63, 87, 0.3);
-      }
-      > div:first-child {
-        margin-bottom: 15px;
+        &:first-child {
+          margin-bottom: 15px;
+        }
+        &:hover {
+          background: rgba(52, 63, 87, 0.4);
+        }
       }
     }
-    > div:nth-child(3) {
+    > span {
       margin-top: 15px;
       font-size: 1.0625rem;
+      display: block;
     }
-    > div:last-child {
+    > button {
       ${center}
       margin-top: 60px;
       height: 60px;
       background: #000000;
       border-radius: 40px;
       cursor: pointer;
+      width: 100%;
       @media (max-width: 640px) {
         margin-top: 50px;
         height: 40px;
@@ -337,7 +316,7 @@ export const StepOne = styled.div<{
   }
 `;
 
-export const StepTwo = styled.div<{
+export const StepTwo = styled.article<{
   active: string;
   isFinished: boolean;
   selected: boolean;
@@ -355,17 +334,20 @@ export const StepTwo = styled.div<{
   }
   margin-bottom: 25px;
   overflow: hidden;
-  > div:first-child {
+  > section:first-child {
     padding: 1.625rem 51px 0px 51px;
     cursor: pointer;
-    font-size: 1.375rem;
     margin-bottom: 28px;
     height: 5rem;
     @media screen and (max-width: 640px) {
       padding: 1.625rem 21px 0px 21px;
     }
+    > h2 {
+      font-size: 1.375rem;
+      font-family: ${$light};
+    }
   }
-  > div:last-child {
+  > section:last-child {
     font-size: 1.25rem;
     max-width: 1187px;
     margin: 0px auto 57px auto;
@@ -375,16 +357,16 @@ export const StepTwo = styled.div<{
     @media screen and (max-width: 640px) {
       padding: 1.625rem 21px 0px 21px;
     }
-    > div:first-child {
+    > p {
       margin-bottom: 35px;
     }
-    > div:nth-child(2) {
+    > section {
       display: flex;
       justify-content: space-between;
       @media (max-width: 640px) {
         flex-direction: column;
       }
-      > div {
+      > button {
         cursor: pointer;
         ${center}
         width: 32%;
@@ -392,30 +374,33 @@ export const StepTwo = styled.div<{
         border: 1px solid #acacac;
         border-radius: 20px;
         text-align: center;
+        transition: all 0.7s ease;
         @media (max-width: 640px) {
           width: 100%;
           margin-bottom: 15px;
           height: 50px;
         }
-      }
-      > div:hover {
-        background: rgba(52, 63, 87, 0.3);
-      }
-      > div:first-child {
-        margin-bottom: 15px;
+        &:hover {
+          background: rgba(52, 63, 87, 0.3);
+        }
+        &:first-child {
+          margin-bottom: 15px;
+        }
       }
     }
-    > div:nth-child(3) {
+    > span {
       margin-top: 15px;
+      display: block;
       font-size: 1.0625rem;
     }
-    > div:last-child {
+    > button {
       ${center}
       margin-top: 60px;
       height: 60px;
       background: #000000;
       border-radius: 40px;
       cursor: pointer;
+      width: 100%;
       @media (max-width: 640px) {
         margin-top: 50px;
         height: 40px;
@@ -429,7 +414,7 @@ export const StepTwo = styled.div<{
     }
   }
 `;
-export const StepThree = styled.div<{
+export const StepThree = styled.article<{
   active: string;
   isFinished: boolean;
   selected: boolean;
@@ -447,7 +432,7 @@ export const StepThree = styled.div<{
   }
   margin-bottom: 25px;
   overflow: hidden;
-  > div:first-child {
+  > section:first-child {
     padding: 1.625rem 51px 0px 51px;
     cursor: pointer;
     font-size: 1.375rem;
@@ -456,8 +441,13 @@ export const StepThree = styled.div<{
     @media screen and (max-width: 640px) {
       padding: 1.625rem 21px 0px 21px;
     }
+
+    > h2 {
+      font-size: 1.375rem;
+      font-family: ${$light};
+    }
   }
-  > div:last-child {
+  > section:last-child {
     font-size: 1.25rem;
     max-width: 1187px;
     margin: 0px auto 57px auto;
@@ -467,45 +457,44 @@ export const StepThree = styled.div<{
     @media screen and (max-width: 640px) {
       padding: 1.625rem 21px 0px 21px;
     }
-    > div:first-child {
+    > p {
       margin-bottom: 35px;
     }
-    > div:nth-child(2) {
-      > input {
-        color: #ffffff;
-        width: 100%;
-        height: 80px;
-        background: none;
-        border: 1px solid #cbcbcb;
-        border-radius: 20px;
-        padding: 0px 40px;
-        font-size: 1.75rem;
-        &::placeholder {
-          color: #bcbcbc;
-          font-size: 1.25rem;
-          @media (max-width: 640px) {
-            font-size: 1.1rem;
-          }
-        }
+    > input {
+      color: #ffffff;
+      width: 100%;
+      height: 80px;
+      background: none;
+      border: 1px solid #cbcbcb;
+      border-radius: 20px;
+      padding: 0px 40px;
+      font-size: 1.75rem;
+      &::placeholder {
+        color: #bcbcbc;
+        font-size: 1.25rem;
         @media (max-width: 640px) {
-          padding: 0px 20px;
-          font-size: 1.2rem;
-          height: 60px;
-        }
-        @media (max-width: 460px) {
-          padding: 0px 10px;
-          font-size: 1.2rem;
-          height: 40px;
-          border-radius: 10px;
+          font-size: 1.1rem;
         }
       }
-      > input:focus {
+      @media (max-width: 640px) {
+        padding: 0px 20px;
+        font-size: 1.2rem;
+        height: 60px;
+      }
+      @media (max-width: 460px) {
+        padding: 0px 10px;
+        font-size: 1.2rem;
+        height: 40px;
+        border-radius: 10px;
+      }
+      &:focus {
         border: 1px solid #ffffff;
         outline: none;
       }
     }
-    > div:last-child {
+    > button {
       ${center}
+      width: 100%;
       margin-top: 60px;
       height: 60px;
       border-radius: 40px;
@@ -524,7 +513,7 @@ export const StepThree = styled.div<{
   }
 `;
 
-export const StepFour = styled.div<{
+export const StepFour = styled.article<{
   active: string;
   isFinished: boolean;
   selected: boolean;
@@ -542,7 +531,7 @@ export const StepFour = styled.div<{
   }
   margin-bottom: 25px;
   overflow: hidden;
-  > div:first-child {
+  > section:first-child {
     padding: 1.625rem 51px 0px 51px;
     cursor: pointer;
     font-size: 1.375rem;
@@ -551,8 +540,12 @@ export const StepFour = styled.div<{
     @media screen and (max-width: 640px) {
       padding: 1.625rem 21px 0px 21px;
     }
+    > h2 {
+      font-size: 1.375rem;
+      font-family: ${$light};
+    }
   }
-  > div:last-child {
+  > section:last-child {
     font-size: 1.25rem;
     max-width: 1187px;
     margin: 0px auto 57px auto;
@@ -562,45 +555,44 @@ export const StepFour = styled.div<{
     @media screen and (max-width: 640px) {
       padding: 1.625rem 21px 0px 21px;
     }
-    > div:first-child {
+    > p {
       margin-bottom: 35px;
     }
-    > div:nth-child(2) {
-      > input {
-        color: #ffffff;
-        width: 100%;
-        height: 80px;
-        background: none;
-        border: 1px solid #cbcbcb;
-        border-radius: 20px;
-        padding: 0px 40px;
-        font-size: 1.75rem;
-        &::placeholder {
-          color: #bcbcbc;
-          font-size: 1.25rem;
-          @media (max-width: 640px) {
-            font-size: 1.1rem;
-          }
-        }
+    > input {
+      color: #ffffff;
+      width: 100%;
+      height: 80px;
+      background: none;
+      border: 1px solid #cbcbcb;
+      border-radius: 20px;
+      padding: 0px 40px;
+      font-size: 1.75rem;
+      &::placeholder {
+        color: #bcbcbc;
+        font-size: 1.25rem;
         @media (max-width: 640px) {
-          padding: 0px 20px;
-          font-size: 1.2rem;
-          height: 60px;
-        }
-        @media (max-width: 460px) {
-          padding: 0px 10px;
-          font-size: 1.2rem;
-          height: 40px;
-          border-radius: 10px;
+          font-size: 1.1rem;
         }
       }
-      > input:focus {
+      @media (max-width: 640px) {
+        padding: 0px 20px;
+        font-size: 1.2rem;
+        height: 60px;
+      }
+      @media (max-width: 460px) {
+        padding: 0px 10px;
+        font-size: 1.2rem;
+        height: 40px;
+        border-radius: 10px;
+      }
+      &:focus {
         border: 1px solid #ffffff;
         outline: none;
       }
     }
-    > div:last-child {
+    > button {
       ${center}
+      width: 100%;
       margin-top: 60px;
       height: 60px;
       background: #000000;
@@ -620,7 +612,7 @@ export const StepFour = styled.div<{
   }
 `;
 
-export const StepFive = styled.div<{
+export const StepFive = styled.article<{
   active: string;
   isFinished: boolean;
   selected: boolean;
@@ -637,7 +629,7 @@ export const StepFive = styled.div<{
     max-height: ${(props) => (props.selected ? '200vh' : '5rem')};
   }
   overflow: hidden;
-  > div:first-child {
+  > section:first-child {
     padding: 1.625rem 51px 0px 51px;
     cursor: pointer;
     font-size: 1.375rem;
@@ -646,8 +638,12 @@ export const StepFive = styled.div<{
     @media screen and (max-width: 640px) {
       padding: 1.625rem 21px 0px 21px;
     }
+    > h2 {
+      font-size: 1.375rem;
+      font-family: ${$light};
+    }
   }
-  > div:last-child {
+  > section:last-child {
     font-size: 1.25rem;
     max-width: 1187px;
     margin: 0px auto 57px auto;
@@ -657,11 +653,11 @@ export const StepFive = styled.div<{
     @media screen and (max-width: 640px) {
       padding: 1.625rem 21px 0px 21px;
     }
-    > div:first-child {
+    > p {
       margin-bottom: 35px;
     }
-    > div:nth-child(2) {
-      > textarea:nth-child(1) {
+    > section {
+      > textarea {
         color: #ffffff;
         width: 100%;
         height: 500px;
@@ -669,8 +665,9 @@ export const StepFive = styled.div<{
         border: 1px solid #cbcbcb;
         border-radius: 20px;
         padding: 20px 40px;
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         resize: none;
+        font-family: ${$light};
         &::placeholder {
           color: #bcbcbc;
           font-size: 1.25rem;
@@ -678,7 +675,6 @@ export const StepFive = styled.div<{
             font-size: 1.1rem;
           }
         }
-
         &::-webkit-scrollbar {
           background: transparent;
           height: 100%;
@@ -743,8 +739,9 @@ export const StepFive = styled.div<{
         margin-top: 15px;
       }
     }
-    > div:last-child {
+    > button {
       ${center}
+      width: 100%;
       margin-top: 60px;
       height: 60px;
       background: #000000;
@@ -764,7 +761,7 @@ export const StepFive = styled.div<{
   }
 `;
 
-export const ElysiaWhitePaper = styled.div`
+export const ElysiaWhitePaper = styled.article`
   ${glassBox}
   transition: all 0.5s ease;
   &:hover {
@@ -776,11 +773,11 @@ export const ElysiaWhitePaper = styled.div`
   justify-content: space-between;
   padding: 45px 60px 45px 50px;
   margin-bottom: 80px;
-  > div:first-child {
+  > p {
     font-size: 1.25rem;
     line-height: 30px;
   }
-  > a:last-child {
+  > a {
     cursor: pointer;
     font-family: ${$bold};
     font-size: 1.375rem;
@@ -811,16 +808,16 @@ export const ElysiaWhitePaper = styled.div`
   }
 `;
 
-export const Line = styled.div`
+export const Line = styled.section`
   width: 100%;
   height: 1px;
   border-top: 1px solid #33a5ff;
 `;
 
-export const QuestionWrapper = styled.div`
+export const QuestionWrapper = styled.article`
   margin-top: 41px;
   margin-bottom: 50px;
-  > div:first-child {
+  > h2 {
     font-family: ${$bold};
     font-size: 1.75rem;
     margin-bottom: 27px;

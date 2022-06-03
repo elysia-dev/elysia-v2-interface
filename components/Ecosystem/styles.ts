@@ -54,7 +54,7 @@ export const EcosystemWrapper = styled.div`
   }
 `;
 
-export const EcosystemImage = styled.div`
+export const EcosystemImage = styled.article`
   position: absolute;
   top: 0;
   right: 0;
@@ -67,65 +67,44 @@ export const EcosystemImage = styled.div`
   background-size: 100%;
 `;
 
-export const TopWrapper = styled.div`
-  padding-top: 60vh;
+export const TopWrapper = styled.article`
   max-width: 1639px;
   margin: auto;
-  color: #ffffff;
-  font-family: ${$light};
-  > div:first-child {
-    font-family: ${$bold};
-    font-size: 2rem;
-    margin-bottom: 5px;
-    @media (max-width: 460px) {
-      font-size: 1.5rem;
-    }
-    > div:first-child {
-      font-family: ${$bold};
-      margin-bottom: 5px;
-    }
-    > div:nth-child(2) {
-      color: #33a5ff;
-      margin-bottom: 14px;
-      font-size: 1.4rem;
-    }
-    > div:last-child {
-      font-size: 1.375rem;
-      @media (max-width: 460px) {
-        font-size: 1rem;
-      }
-    }
-  }
 `;
 
-export const BorderedMargin = styled.div`
+export const BorderedMargin = styled.section`
   height: 170px;
   margin: 40px 0;
   border-left: 1px solid #33a5ff;
 `;
 
-export const ProjectWrapper = styled.div`
+export const ProjectWrapper = styled.article`
   color: #ffffff;
   padding-bottom: 50px;
   border-bottom: 1px solid #33a5ff;
-  > div:first-child {
-    margin-bottom: 88px;
-    > div:first-child {
-      font-family: ${$bold};
-      font-size: 2rem;
-      margin-bottom: 20px;
-      @media (max-width: 460px) {
-        font-size: 1.5rem;
-      }
+  > h2 {
+    font-family: ${$bold};
+    font-size: 2rem;
+    margin-bottom: 20px;
+    @media (max-width: 460px) {
+      font-size: 1.5rem;
     }
   }
-  > div:last-child {
+  > p {
+    font-size: 1.375rem;
+    color: #cbcbcb;
+    @media (max-width: 460px) {
+      font-size: 1.1rem;
+    }
+    margin-bottom: 88px;
+  }
+  > article {
     display: flex;
     justify-content: space-between;
     @media (max-width: 920px) {
       flex-direction: column;
     }
-    > div {
+    > section {
       width: 30%;
       ${glassBox}
       @media (max-width: 1190px) {
@@ -139,13 +118,13 @@ export const ProjectWrapper = styled.div`
         margin-bottom: 25px;
       }
     }
-    > div:nth-child(1) {
+    > section:nth-child(1) {
       cursor: pointer;
       transition: all 1s ease;
       &:hover {
         background: rgba(255, 255, 255, 0.2);
       }
-      > div:first-child {
+      > figure {
         background-image: url(${ElyfiProjectImg.src});
         background-repeat: no-repeat;
         background-position-x: center;
@@ -162,7 +141,7 @@ export const ProjectWrapper = styled.div`
           background-size: 200%;
         }
       }
-      > div:nth-child(2) {
+      > section {
         display: flex;
         margin-bottom: 20px;
         @media (max-width: 460px) {
@@ -171,7 +150,7 @@ export const ProjectWrapper = styled.div`
         > div {
           ${center}
         }
-        > div:first-child {
+        > h2 {
           font-family: ${$bold};
           margin-right: 10px;
           font-size: 1.5rem;
@@ -180,7 +159,7 @@ export const ProjectWrapper = styled.div`
           }
         }
       }
-      > div:last-child {
+      > p {
         font-size: 1rem;
         color: #cbcbcb;
         @media (max-width: 920px) {
@@ -192,8 +171,8 @@ export const ProjectWrapper = styled.div`
         }
       }
     }
-    > div:nth-child(2) {
-      > div:first-child {
+    > section:nth-child(2) {
+      > figure {
         width: 100%;
         height: 233.5px;
         display: flex;
@@ -205,7 +184,7 @@ export const ProjectWrapper = styled.div`
         background-size: cover;
         border-radius: 10px;
         margin-bottom: 20.5px;
-        > div:first-child {
+        > figcaption {
           background-color: #505050;
           width: 179px;
           height: 36px;
@@ -216,24 +195,24 @@ export const ProjectWrapper = styled.div`
           ${center}
         }
       }
-      > div:nth-child(2) {
+      > section {
         height: 38px;
         font-family: ${$bold};
         display: flex;
         align-items: center;
         margin-bottom: 20px;
-        > div:first-child {
+        > h2 {
           margin-right: auto;
           font-size: 1.5rem;
           @media (max-width: 460px) {
             font-size: 1.475rem;
           }
         }
-        > div:nth-child(2) {
+        > div:not(:last-child) {
           margin-right: 11px;
         }
       }
-      > div:last-child {
+      > p {
         font-size: 1rem;
         color: #cbcbcb;
         @media (max-width: 920px) {
@@ -245,8 +224,8 @@ export const ProjectWrapper = styled.div`
         }
       }
     }
-    > div:nth-child(3) {
-      > div:first-child {
+    > section:nth-child(3) {
+      > figure {
         width: 100%;
         height: 233.5px;
         display: flex;
@@ -264,7 +243,7 @@ export const ProjectWrapper = styled.div`
         @media screen and (min-width: 0px) and (max-width: 440px) {
           background-size: 200%;
         }
-        > div:first-child {
+        > figcaption {
           background-color: #505050;
           width: 179px;
           height: 36px;
@@ -275,18 +254,21 @@ export const ProjectWrapper = styled.div`
           ${center}
         }
       }
-      > div:nth-child(2) {
+      > section {
         height: 38px;
         font-family: ${$bold};
         display: flex;
         align-items: center;
         margin-bottom: 20px;
-        font-size: 1.5rem;
-        @media (max-width: 460px) {
-          font-size: 1.475rem;
+        > h2 {
+          margin-right: auto;
+          font-size: 1.5rem;
+          @media (max-width: 460px) {
+            font-size: 1.475rem;
+          }
         }
       }
-      > div:last-child {
+      > p {
         font-size: 1rem;
         color: #cbcbcb;
         margin-bottom: 20px;
@@ -302,29 +284,28 @@ export const ProjectWrapper = styled.div`
   }
 `;
 
-export const PortFolioWrapper = styled.div`
+export const PortFolioWrapper = styled.article`
   padding-top: 50px;
   font-family: ${$light};
   color: #ffffff;
-  > div:first-child {
-    margin-bottom: 65px;
-    > div:first-child {
-      font-family: ${$bold};
-      font-size: 2rem;
-      margin-bottom: 10px;
-      @media (max-width: 460px) {
-        font-size: 1.5rem;
-      }
-    }
-    > div:last-child {
-      font-size: 1.375rem;
-      @media (max-width: 460px) {
-        font-size: 1rem;
-      }
+  > h2 {
+    font-family: ${$bold};
+    font-size: 2rem;
+    margin-bottom: 10px;
+    @media (max-width: 460px) {
+      font-size: 1.5rem;
     }
   }
-  > div:nth-child(2) {
-    > div:nth-child(1) {
+  > p {
+    font-size: 1.375rem;
+    margin-bottom: 65px;
+    color: #cbcbcb;
+    @media (max-width: 460px) {
+      font-size: 1rem;
+    }
+  }
+  > article {
+    > section:first-child {
       display: flex;
       align-items: center;
       ${glassBox}
@@ -360,7 +341,7 @@ export const PortFolioWrapper = styled.div`
         }
       }
       > div:nth-child(1) {
-        > div:last-child {
+        > b {
           font-size: 1.375rem;
           font-family: ${$bold};
           border-right: 1px solid #33a5ff;
@@ -375,7 +356,7 @@ export const PortFolioWrapper = styled.div`
         }
       }
       > div:nth-child(2) {
-        > div:first-child {
+        > p {
           padding-left: 70.5px;
           @media (max-width: 920px) {
             padding-left: 30px;
@@ -385,79 +366,81 @@ export const PortFolioWrapper = styled.div`
           }
         }
 
-        > div:last-child {
+        > b {
           font-size: 1.375rem;
           font-family: ${$bold};
-        }
-      }
-    }
-    > div:nth-child(2) {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      justify-content: space-between;
-      grid-gap: 25px;
-      gap: 25px;
-      @media (max-width: 840px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between;
-        grid-gap: 25px;
-        gap: 25px;
-      }
-      @media (max-width: 460px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between;
-        grid-gap: 25px;
-        gap: 25px;
-      }
-      > div {
-        cursor: pointer;
-        width: 100%;
-        ${glassBox}
-        padding: 18px 20px 18px 20px;
-        margin: 10px 0px;
-        transition: all 1s ease;
-        &:hover {
-          background: rgba(255, 255, 255, 0.3);
-        }
-        @media (max-width: 840px) {
-          width: 100%;
-          margin: 0;
-          padding: 10px 15px;
-          border-radius: 5px;
-        }
-        > div:first-child {
-          width: 100%;
-          height: inherit;
-          padding-bottom: 100%;
-          margin-bottom: 23.5px;
-          > span > img {
-            border-radius: 5px;
-          }
-        }
-        > div:last-child {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 15px;
-          > div:first-child {
-            color: #cbcbcb;
-            font-size: 1.25rem;
-          }
-          > div:last-child {
-            font-size: 1.25rem;
-            @media (max-width: 460px) {
-              font-size: 1rem;
-            }
-          }
         }
       }
     }
   }
 `;
 
-export const ViewMoreButton = styled.div`
+export const AssetItemsWrapper = styled.section`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  grid-gap: 25px;
+  gap: 25px;
+  @media (max-width: 840px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    grid-gap: 25px;
+    gap: 25px;
+  }
+  @media (max-width: 460px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    grid-gap: 25px;
+    gap: 25px;
+  }
+  > section {
+    cursor: pointer;
+    width: 100%;
+    ${glassBox}
+    padding: 18px 20px 18px 20px;
+    margin: 10px 0px;
+    transition: all 1s ease;
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    @media (max-width: 840px) {
+      width: 100%;
+      margin: 0;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+    > figure {
+      position: relative;
+      width: 100%;
+      height: inherit;
+      padding-bottom: 100%;
+      margin-bottom: 23.5px;
+      > span > img {
+        border-radius: 5px;
+      }
+    }
+    > section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      > p {
+        color: #cbcbcb;
+        font-size: 1.25rem;
+      }
+      > span {
+        font-size: 1.25rem;
+        @media (max-width: 460px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+`;
+
+export const ViewMoreButton = styled.button`
   cursor: pointer;
   background: #000000;
   width: 100%;

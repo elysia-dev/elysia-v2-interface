@@ -6,17 +6,15 @@ type Props = {
 
 const AssetItem: React.FC<Props> = ({ image }) => {
   return (
-    <div>
-      <div>
-        <Image
-          src={image}
-          alt={'assetBonds'}
-          width={410}
-          height={410}
-          unoptimized={true}
-        />
-      </div>
-    </div>
+    <figure>
+      <Image
+        src={image}
+        alt={'assetBonds'}
+        width={410}
+        height={410}
+        unoptimized={true}
+      />
+    </figure>
   );
 };
 

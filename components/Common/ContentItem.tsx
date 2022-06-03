@@ -22,7 +22,11 @@ const ContentItem: React.FC<{
                 {Icon}
                 <figcaption>{contentName}</figcaption>
               </figure>
-              <article>{!isTablet && <Arrow />}</article>
+              {!isTablet && (
+                <article>
+                  <Arrow />
+                </article>
+              )}
             </section>
             <ContentDescription description={description} />
           </a>
@@ -34,7 +38,11 @@ const ContentItem: React.FC<{
               {Icon}
               <figcaption>{contentName}</figcaption>
             </figure>
-            <article>{!isTablet && !isComingSoon && <Arrow />}</article>
+            {!isTablet && !isComingSoon && (
+              <article>
+                <Arrow />
+              </article>
+            )}
           </section>
           <ContentDescription description={description} />
         </a>

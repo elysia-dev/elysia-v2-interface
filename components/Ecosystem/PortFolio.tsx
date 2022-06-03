@@ -5,7 +5,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import Skeleton from 'react-loading-skeleton';
 import reserves from 'utils/reserves';
 import AssetItem from './AssetItem';
-import { PortFolioWrapper, ViewMoreButton } from './styles';
+import { AssetItemsWrapper, PortFolioWrapper, ViewMoreButton } from './styles';
 import ElysiaAsset3 from 'assets/images/ecosystem/elysia-asset-3.webp';
 import ElysiaAsset4 from 'assets/images/ecosystem/elysia-asset-4.webp';
 import ElysiaAsset5 from 'assets/images/ecosystem/elysia-asset-5.webp';
@@ -79,70 +79,66 @@ const PortFolio: React.FC<{
   }, [assetBondTokens]);
 
   return (
-    <div>
-      <PortFolioWrapper>
-        <div>
-          <div>{t('ecosystem.portfolio.0')}</div>
+    <PortFolioWrapper>
+      <h2>{t('ecosystem.portfolio.0')}</h2>
+      <p>
+        <Trans>{t('ecosystem.portfolio.1')}</Trans>
+      </p>
+      <article>
+        <section>
           <div>
-            <Trans>{t('ecosystem.portfolio.1')}</Trans>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              <div>{t('ecosystem.portfolio.2')}</div>
-              <div>
-                {assetBondTokens.length === 0 ? (
-                  <Skeleton width={30} height={20} />
-                ) : (
-                  assetList.length
-                )}
-              </div>
-            </div>
-            <div>
-              <div>{t('ecosystem.portfolio.3')}</div>
-              <div>
-                ${' '}
-                {totalPrincipal === 0 ? (
-                  <Skeleton width={50} height={20} />
-                ) : (
-                  formatCommaSmallZeroDisits(totalPrincipal)
-                )}
-              </div>
-            </div>
+            <p>{t('ecosystem.portfolio.2')}</p>
+            <b>
+              {assetBondTokens.length === 0 ? (
+                <Skeleton width={30} height={20} />
+              ) : (
+                assetList.length
+              )}
+            </b>
           </div>
           <div>
-            {assetBondTokens &&
-              assetList
-                .filter((data) => {
-                  if ('project' in data) return true;
-                  const tokenId = parseTokenId(data.id);
-                  return LoanProduct[tokenId.productNumber] !== 'Others';
-                })
-                .slice(0, 6 * pageNum)
-                .map((abToken, index) => {
-                  const tokenInfo = reserves.find((reserve) => {
-                    if ('project' in abToken) return;
-                    return reserve.address === abToken?.reserve.id;
-                  });
-                  return (
-                    <AssetItem
-                      key={index}
-                      tokenInfo={tokenInfo}
-                      abToken={abToken}
-                    />
-                  );
-                })}
+            <p>{t('ecosystem.portfolio.3')}</p>
+            <b>
+              ${' '}
+              {totalPrincipal === 0 ? (
+                <Skeleton width={50} height={20} />
+              ) : (
+                formatCommaSmallZeroDisits(totalPrincipal)
+              )}
+            </b>
           </div>
-          {assetList.length / (6 * pageNum) >= 1 && (
-            <ViewMoreButton onClick={() => setPageNum((prev) => prev + 1)}>
-              {t('ecosystem.portfolio.4')} ( {pageNum} /{` `}
-              {(assetList.length / 6).toFixed(0)} )
-            </ViewMoreButton>
-          )}
-        </div>
-      </PortFolioWrapper>
-    </div>
+        </section>
+        <AssetItemsWrapper>
+          {assetBondTokens &&
+            assetList
+              .filter((data) => {
+                if ('project' in data) return true;
+                const tokenId = parseTokenId(data.id);
+                return LoanProduct[tokenId.productNumber] !== 'Others';
+              })
+              .slice(0, 6 * pageNum)
+              .map((abToken, index) => {
+                const tokenInfo = reserves.find((reserve) => {
+                  if ('project' in abToken) return;
+                  return reserve.address === abToken?.reserve.id;
+                });
+                return (
+                  <AssetItem
+                    key={index}
+                    tokenInfo={tokenInfo}
+                    abToken={abToken}
+                  />
+                );
+              })}
+        </AssetItemsWrapper>
+        {assetList.length / (6 * pageNum) >= 1 && (
+          <ViewMoreButton onClick={() => setPageNum((prev) => prev + 1)}>
+            {t('ecosystem.portfolio.4')} ( {pageNum} /{` `}
+            {(assetList.length / 6).toFixed(0)} )
+          </ViewMoreButton>
+        )}
+      </article>
+    </PortFolioWrapper>
   );
 };
 

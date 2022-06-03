@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Trans } from 'react-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { MainSectionItems } from './styles';
 
 const SectionItem: React.FC<{
   section: string[];
@@ -15,40 +16,23 @@ const SectionItem: React.FC<{
 
   return (
     <Link href={link} passHref>
-      <div>
+      <MainSectionItems isLeftArrow={isLeftArrow}>
         <div>
-          <div>
-            {isLeftArrow ? (
-              <span>
-                <Image
-                  src={LeftArrow}
-                  alt={'LeftArrow'}
-                  width={35.08}
-                  height={35.08}
-                />
-                <span> {section[0]}</span>
-              </span>
-            ) : (
-              <span>
-                <span> {section[0]}</span>
-                <Image
-                  src={RightArrow}
-                  alt={'RightArrow'}
-                  width={35.08}
-                  height={35.08}
-                />
-              </span>
-            )}
-            <p>{section[1]}</p>
-          </div>
-          <p
-            style={{
-              fontSize: lng === 'ko' ? '1.2rem' : '1.375rem',
-            }}>
+          <figure>
+            <figcaption>{section[0]}</figcaption>
+            <Image
+              src={isLeftArrow ? LeftArrow : RightArrow}
+              alt={'Arrow'}
+              width={35.08}
+              height={35.08}
+            />
+          </figure>
+          <h2>{section[1]}</h2>
+          <p>
             <Trans>{section[2]}</Trans>
           </p>
         </div>
-      </div>
+      </MainSectionItems>
     </Link>
   );
 };

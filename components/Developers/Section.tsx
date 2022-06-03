@@ -19,7 +19,7 @@ const Section = () => {
         <PageHeader
           headers={[t('developers.0'), t('developers.1'), t('developers.2')]}
         />
-        <section>
+        <article>
           <ContentItem
             Icon={<Elysia />}
             contentName={t('developers.3')}
@@ -42,7 +42,7 @@ const Section = () => {
               />
             </DisabledSection>
           </section>
-        </section>
+        </article>
       </SectionWrapper>
     </>
   );

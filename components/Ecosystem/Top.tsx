@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Google from 'assets/images/ecosystem/google.png';
 import Appstore from 'assets/images/ecosystem/appstore.png';
 import Link from 'next/link';
+import PageHeader from 'components/Common/PageHeader';
 
 const Top = () => {
   const { t, i18n } = useTranslation();
@@ -14,24 +15,22 @@ const Top = () => {
   return (
     <>
       <TopWrapper>
-        <div>
-          <div>{t('ecosystem.top.0')}</div>
-          <div>{t('main.section_ecosystem.1')}</div>
-          <div>
-            <Trans>{t('ecosystem.top.1')}</Trans>
-          </div>
-        </div>
+        <PageHeader
+          headers={[
+            t('ecosystem.top.0'),
+            t('main.section_ecosystem.1'),
+            t('ecosystem.top.1'),
+          ]}
+        />
       </TopWrapper>
       <BorderedMargin />
       <ProjectWrapper>
-        <div>
-          <div>{t('ecosystem.project.0')}</div>
-          <div>
-            <Trans>{t('ecosystem.project.1')}</Trans>
-          </div>
-        </div>
-        <div>
-          <div
+        <h2>{t('ecosystem.project.0')}</h2>
+        <p>
+          <Trans>{t('ecosystem.project.1')}</Trans>
+        </p>
+        <article>
+          <section
             onClick={() =>
               window.open(
                 i18n.language === 'ko'
@@ -40,21 +39,22 @@ const Top = () => {
                 '_blank',
               )
             }>
-            <div />
-            <div>
-              <div>ELYFI</div>
+            <figure className="image-containers" />
+            <section>
+              <h2>ELYFI</h2>
               <div>{!isTablet && <Arrow />}</div>
-            </div>
-            <div>
+            </section>
+            <p>
               <Trans>{t('ecosystem.project.2')}</Trans>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div>{t('ecosystem.project.3')}</div>
-            </div>
-            <div>
-              <div>{t('ecosystem.project.4')}</div>
+            </p>
+          </section>
+
+          <section>
+            <figure className="image-containers">
+              <figcaption>{t('ecosystem.project.3')}</figcaption>
+            </figure>
+            <section>
+              <h2>{t('ecosystem.project.4')}</h2>
               <div>
                 <Link
                   href={
@@ -80,23 +80,24 @@ const Top = () => {
                   </a>
                 </Link>
               </div>
-            </div>
-            <div>
+            </section>
+            <p>
               <Trans>{t('ecosystem.project.5')}</Trans>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div>Coming Soon!</div>
-            </div>
-            <div>
-              <div>{t('ecosystem.project.6')}</div>
-            </div>
-            <div>
+            </p>
+          </section>
+
+          <section>
+            <figure className="image-containers">
+              <figcaption>Coming Soon!</figcaption>
+            </figure>
+            <section>
+              <h2>{t('ecosystem.project.6')}</h2>
+            </section>
+            <p>
               <Trans>{t('ecosystem.project.7')}</Trans>
-            </div>
-          </div>
-        </div>
+            </p>
+          </section>
+        </article>
       </ProjectWrapper>
     </>
   );

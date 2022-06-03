@@ -63,21 +63,7 @@ const Layout = (props: LayoutProps) => {
       <GradientCanvas ref={canvasRef} />
       <LayoutNoise />
       <Navigation />
-      <LayoutDiv>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-          }}>
-          <div
-            style={{
-              width: '90%',
-              maxWidth: '1639px',
-            }}>
-            {props.children}
-          </div>
-        </div>
-      </LayoutDiv>
+      <LayoutDiv>{props.children}</LayoutDiv>
       <Footer />
     </>
   );

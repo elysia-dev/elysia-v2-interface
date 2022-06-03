@@ -1,23 +1,21 @@
 import styled, { css, keyframes } from 'styled-components';
 
 const navigationAni = keyframes`
-    0% {
-        height: 0px;
-        background: rgba(255, 255, 255, 0);
-          box-shadow: 0px 0px 6px #00000029;
-          backdrop-filter: blur(0px);
-        
-    }
-
-   100% {
-        background: rgba(255, 255, 255, 0.1);
-          box-shadow: 0px 0px 6px #00000029;
-          backdrop-filter: blur(18px);
+  0% {
+    height: 0px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0px 0px 6px #00000029;
+    backdrop-filter: blur(0px);
+  } 
+  100% {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 6px #00000029;
+    backdrop-filter: blur(18px);
     height: 107px;;
-    }
+  }
 `;
 
-export const NavigationWrapper = styled.div`
+export const NavigationWrapper = styled.header`
   a,
   img {
     cursor: pointer;
@@ -51,18 +49,18 @@ export const NavigationWrapper = styled.div`
       animation: 'none !important',
     }}
 
-  > div {
+  > nav {
     height: 107px;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    > div:first-child {
+    > figure {
       margin-right: auto;
       cursor: pointer;
     }
-    > div:nth-child(2) {
+    > section {
       display: flex;
       text-align: center;
       > div {
@@ -80,30 +78,26 @@ export const NavigationWrapper = styled.div`
         @media (max-width: 840px) {
           width: 25px;
         }
-        > a > span {
-          font-family: 'Gilroy-Light';
-          color: #ffffff;
-        }
-        > a > span:hover {
-          font-family: Gilroy-ExtraBold !important;
-          font-size: 1rem;
-          color: #ffffff;
-        }
         > a {
-          @media (max-width: 1189px) {
-            width: 100%;
-            > span {
+          > span {
+            font-family: 'Gilroy-Light';
+            color: #ffffff;
+            &:hover {
+              font-family: Gilroy-ExtraBold !important;
+            }
+            @media (max-width: 1189px) {
               font-size: 1rem;
             }
-          }
-          @media (max-width: 1024px) {
-            > span {
+            @media (max-width: 1024px) {
               font-size: 0.8rem;
             }
           }
-        }
-        > a:last-child {
-          margin-right: 0;
+          @media (max-width: 1189px) {
+            width: 100%;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
         }
       }
     }

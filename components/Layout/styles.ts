@@ -38,7 +38,8 @@ export const LayoutNoise = styled.div`
   background-size: auto;
 `;
 
-export const LayoutDiv = styled.div`
-  width: 100%;
+export const LayoutDiv = styled.main`
   margin: auto;
+  width: 90%;
+  max-width: 1639px;
 `;

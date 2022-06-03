@@ -59,13 +59,26 @@ a,
 p,
 figcaption {
   font-family: Gilroy-Light, SpoqaHanSansNeo;
+  margin: 0;
 }
 h1,
+strong,
+b,
 h2 {
   font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
+  margin: 0;
 }
 figure {
   margin: 0;
+}
+button {
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+  padding: none;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
 }
 
 @media screen and (min-width: 0px) and (max-width: 839px) {

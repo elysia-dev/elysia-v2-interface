@@ -139,20 +139,20 @@ const Section = () => {
           ]}
         />
         <ElysiaWhitePaper>
-          <div>
+          <p>
             <Trans>{t('elbridge.whitepaper.0')}</Trans>
-          </div>
+          </p>
           <Link
             href={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
             passHref>
             <a target="_blank">
-              <div>{t('elbridge.whitepaper.1')}</div>
+              <b>{t('elbridge.whitepaper.1')}</b>
             </a>
           </Link>
         </ElysiaWhitePaper>
         <Line />
         <QuestionWrapper>
-          <div>{t('elbridge.nft_description.0')}</div>
+          <h2>{t('elbridge.nft_description.0')}</h2>
           <NFTDescription active={activeBox.nftDescription}>
             <div
               onClick={() => {
@@ -161,13 +161,13 @@ const Section = () => {
                   nftDescription: !prev.nftDescription,
                 }));
               }}>
-              <div>Q</div>
-              <div>{t('elbridge.nft_description.1')}</div>
+              <span>Q</span>
+              <p>{t('elbridge.nft_description.1')}</p>
               <div />
             </div>
-            <div>
-              <div>{t('elbridge.nft_description.2')}</div>
-            </div>
+            <section>
+              <p>{t('elbridge.nft_description.2')}</p>
+            </section>
           </NFTDescription>
           <AssetNFTDescription active={activeBox.AssetNFTDescription}>
             <div
@@ -177,34 +177,28 @@ const Section = () => {
                   AssetNFTDescription: !prev.AssetNFTDescription,
                 }));
               }}>
-              <div>Q</div>
-              <div>{t('elbridge.asset_nft_description.0')}</div>
+              <span>Q</span>
+              <p>{t('elbridge.asset_nft_description.0')}</p>
               <div />
             </div>
-            <div>
-              <div>
-                <div>{t('elbridge.asset_nft_description.1')}</div>
-              </div>
-              <div>
-                <div>{t('elbridge.asset_nft_description.2')}</div>
-              </div>
-              <div>
-                <div>
-                  <Trans>{t('elbridge.asset_nft_description.3')}</Trans>
-                </div>
-              </div>
-            </div>
+            <section>
+              <p>{t('elbridge.asset_nft_description.1')}</p>
+              <p>{t('elbridge.asset_nft_description.2')}</p>
+              <p>
+                <Trans>{t('elbridge.asset_nft_description.3')}</Trans>
+              </p>
+            </section>
           </AssetNFTDescription>
         </QuestionWrapper>
         <Line />
         <CreateNFTWrapper>
-          <div>{t('elbridge.inquiry_nft.0')}</div>
-          <div>{t('elbridge.inquiry_nft.1')}</div>
+          <strong>{t('elbridge.inquiry_nft.0')}</strong>
+          <h3>{t('elbridge.inquiry_nft.1')}</h3>
           <StepOne
             active={currentStep}
             isFinished={finishedStep.stepOne}
             selected={selectedStep.stepOne}>
-            <div
+            <section
               onClick={() => {
                 setFinishedStep({
                   ...finishedStep,
@@ -215,12 +209,12 @@ const Section = () => {
                   stepOne: !prev.stepOne,
                 }));
               }}>
-              <div>{t('elbridge.step1.0')}</div>
-            </div>
-            <div>
-              <div>{t('elbridge.step1.1')}</div>
-              <div>
-                <div
+              <h2>{t('elbridge.step1.0')}</h2>
+            </section>
+            <section>
+              <p>{t('elbridge.step1.1')}</p>
+              <section className="button-wrapper">
+                <button
                   style={{
                     background:
                       selectedRealEstateType === RealEstateTypes.RealEstate
@@ -231,8 +225,8 @@ const Section = () => {
                     selectedStepOne(RealEstateTypes.RealEstate);
                   }}>
                   <Trans>{t('elbridge.step1.2')}</Trans>
-                </div>
-                <div
+                </button>
+                <button
                   style={{
                     background:
                       selectedRealEstateType === RealEstateTypes.LoanReceivables
@@ -243,8 +237,8 @@ const Section = () => {
                     selectedStepOne(RealEstateTypes.LoanReceivables);
                   }}>
                   <Trans>{t('elbridge.step1.3')}</Trans>
-                </div>
-                <div
+                </button>
+                <button
                   style={{
                     background:
                       selectedRealEstateType ===
@@ -258,8 +252,8 @@ const Section = () => {
                     );
                   }}>
                   <Trans>{t('elbridge.step1.4')}</Trans>
-                </div>
-                <div
+                </button>
+                <button
                   style={{
                     background:
                       selectedRealEstateType ===
@@ -271,10 +265,10 @@ const Section = () => {
                     selectedStepOne(RealEstateTypes.ProjectFinancing);
                   }}>
                   <Trans>{t('elbridge.step1.5')}</Trans>
-                </div>
-              </div>
-              <div>{t('elbridge.step1.6')}</div>
-              <div
+                </button>
+              </section>
+              <span>{t('elbridge.step1.6')}</span>
+              <button
                 onClick={() => {
                   setSelectedStep((prev) => ({
                     ...prev,
@@ -296,14 +290,14 @@ const Section = () => {
                   });
                 }}>
                 {t('elbridge.next_button')}
-              </div>
-            </div>
+              </button>
+            </section>
           </StepOne>
           <StepTwo
             active={currentStep}
             isFinished={finishedStep.stepTwo}
             selected={selectedStep.stepTwo}>
-            <div
+            <section
               onClick={() => {
                 setFinishedStep({
                   ...finishedStep,
@@ -314,12 +308,12 @@ const Section = () => {
                   stepTwo: !prev.stepTwo,
                 }));
               }}>
-              <div>{t('elbridge.step2.0')}</div>
-            </div>
-            <div>
-              <div>{t('elbridge.step2.1')}</div>
-              <div>
-                <div
+              <h2>{t('elbridge.step2.0')}</h2>
+            </section>
+            <section>
+              <p>{t('elbridge.step2.1')}</p>
+              <section className="button-wrapper">
+                <button
                   style={{
                     background:
                       selectedNFTAppliaction === NFTApplicationTypes.Trading
@@ -330,8 +324,8 @@ const Section = () => {
                     selectedStepTwo(NFTApplicationTypes.Trading);
                   }}>
                   {t('elbridge.step2.2')}
-                </div>
-                <div
+                </button>
+                <button
                   style={{
                     background:
                       selectedNFTAppliaction === NFTApplicationTypes.Investment
@@ -342,8 +336,8 @@ const Section = () => {
                     selectedStepTwo(NFTApplicationTypes.Investment);
                   }}>
                   {t('elbridge.step2.3')}
-                </div>
-                <div
+                </button>
+                <button
                   style={{
                     background:
                       selectedNFTAppliaction === NFTApplicationTypes.Loan
@@ -354,10 +348,10 @@ const Section = () => {
                     selectedStepTwo(NFTApplicationTypes.Loan);
                   }}>
                   {t('elbridge.step2.4')}
-                </div>
-              </div>
-              <div>{t('elbridge.step2.5')}</div>
-              <div
+                </button>
+              </section>
+              <span>{t('elbridge.step2.5')}</span>
+              <button
                 onClick={() => {
                   setSelectedStep((prev) => ({
                     ...prev,
@@ -379,14 +373,14 @@ const Section = () => {
                   });
                 }}>
                 {t('elbridge.next_button')}
-              </div>
-            </div>
+              </button>
+            </section>
           </StepTwo>
           <StepThree
             active={currentStep}
             isFinished={finishedStep.stepThree}
             selected={selectedStep.stepThree}>
-            <div
+            <section
               onClick={() => {
                 setFinishedStep({
                   ...finishedStep,
@@ -397,25 +391,23 @@ const Section = () => {
                   stepThree: !prev.stepThree,
                 }));
               }}>
-              <div>{t('elbridge.step3.0')}</div>
-            </div>
-            <div>
-              <div>{t('elbridge.step3.1')}</div>
-              <div>
-                <input
-                  placeholder={t('elbridge.step3.2')}
-                  value={realEstateAddress}
-                  onChange={(e) => {
-                    setRealEstateAddress(e.target.value);
-                    gtag.event({
-                      action: 'inputAddress',
-                      category: 'realEstateAddress',
-                      label: '',
-                    });
-                  }}
-                />
-              </div>
-              <div
+              <h2>{t('elbridge.step3.0')}</h2>
+            </section>
+            <section>
+              <p>{t('elbridge.step3.1')}</p>
+              <input
+                placeholder={t('elbridge.step3.2')}
+                value={realEstateAddress}
+                onChange={(e) => {
+                  setRealEstateAddress(e.target.value);
+                  gtag.event({
+                    action: 'inputAddress',
+                    category: 'realEstateAddress',
+                    label: '',
+                  });
+                }}
+              />
+              <button
                 style={{
                   backgroundColor: '#000000',
                   color: '#ffffff',
@@ -437,14 +429,14 @@ const Section = () => {
                   });
                 }}>
                 {t('elbridge.next_button')}
-              </div>
-            </div>
+              </button>
+            </section>
           </StepThree>
           <StepFour
             active={currentStep}
             isFinished={finishedStep.stepFour}
             selected={selectedStep.stepFour}>
-            <div
+            <section
               onClick={() => {
                 setFinishedStep({
                   ...finishedStep,
@@ -455,25 +447,23 @@ const Section = () => {
                   stepFour: !prev.stepFour,
                 }));
               }}>
-              <div>{t('elbridge.step4.0')}</div>
-            </div>
-            <div>
-              <div>{t('elbridge.step4.1')}</div>
-              <div>
-                <input
-                  placeholder="ex) cs@elysia.land"
-                  value={userEmailAddress}
-                  onChange={(e) => {
-                    setUserEmailAddress(e.target.value);
-                    gtag.event({
-                      action: 'inputEmailAddress',
-                      category: 'emailAddress',
-                      label: '',
-                    });
-                  }}
-                />
-              </div>
-              <div
+              <h2>{t('elbridge.step4.0')}</h2>
+            </section>
+            <section>
+              <p>{t('elbridge.step4.1')}</p>
+              <input
+                placeholder="ex) cs@elysia.land"
+                value={userEmailAddress}
+                onChange={(e) => {
+                  setUserEmailAddress(e.target.value);
+                  gtag.event({
+                    action: 'inputEmailAddress',
+                    category: 'emailAddress',
+                    label: '',
+                  });
+                }}
+              />
+              <button
                 style={{
                   backgroundColor: '#000000',
                   color: '#ffffff',
@@ -495,14 +485,14 @@ const Section = () => {
                   });
                 }}>
                 {t('elbridge.next_button')}
-              </div>
-            </div>
+              </button>
+            </section>
           </StepFour>
           <StepFive
             active={currentStep}
             isFinished={finishedStep.stepFive}
             selected={selectedStep.stepFive}>
-            <div
+            <section
               onClick={() => {
                 setFinishedStep({
                   ...finishedStep,
@@ -513,11 +503,11 @@ const Section = () => {
                   stepFive: !prev.stepFive,
                 }));
               }}>
-              <div>{t('elbridge.step5.0')}</div>
-            </div>
-            <div>
-              <div>{t('elbridge.step5.1')}</div>
-              <div>
+              <h2>{t('elbridge.step5.0')}</h2>
+            </section>
+            <section>
+              <p>{t('elbridge.step5.1')}</p>
+              <section>
                 <textarea
                   value={etc}
                   onChange={(e) => {
@@ -571,8 +561,8 @@ const Section = () => {
                     hl={i18n.language}
                   />
                 </div>
-              </div>
-              <div
+              </section>
+              <button
                 style={{
                   backgroundColor: isSubmit ? '#000000' : '#b6b6b6',
                   color: isSubmit ? '#ffffff' : '#3b3b3b',
@@ -600,8 +590,8 @@ const Section = () => {
                   setEtc('');
                 }}>
                 {t('elbridge.step5.3')}
-              </div>
-            </div>
+              </button>
+            </section>
           </StepFive>
         </CreateNFTWrapper>
       </SectionWrapper>
