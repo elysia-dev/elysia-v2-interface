@@ -58,7 +58,57 @@ const Layout = (props: LayoutProps) => {
           name="description"
           content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
         />
+        <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="naver-site-verification"
+          content="%REACT_APP_NAVER_SREACH_KEY%"
+        />
+        <meta
+          name="google-site-verification"
+          content="%REACT_APP_GOOGLE_SREACH_KEY%"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+          name="description"
+          content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
+        />
+        <meta
+          name="keyword"
+          content="ELYSIA, ELYFI, Cryptocurrency, Block Chain, DeFi, BTC, ETH, real estate"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="ELYSIA - Real World Asset Tokenization DAO"
+        />
+        <meta
+          property="og:description"
+          content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
+        />
+        <meta
+          property="og:site_name"
+          content="ELYSIA - Real World Asset Tokenization DAO"
+        />
+        <meta property="og:url" content="https://elysia.land/" />
+        <meta
+          property="og:image"
+          content="https://elysia.land/Elysia_img.png"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:description"
+          content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
+        />
+        <meta
+          name="twitter:title"
+          content="ELYSIA - Real World Asset Tokenization DAO"
+        />
+        <meta
+          name="twitter:image"
+          content="https://elysia.land/Elysia_img.png"
+        />
       </Head>
       <GradientCanvas ref={canvasRef} />
       <LayoutNoise />
