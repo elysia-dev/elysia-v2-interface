@@ -3,13 +3,18 @@ const Disclaimer = () => {
     <div
       style={{
         maxWidth: 1190,
-        margin: '15vh auto',
-        height: '100vh',
+        margin: '20vh auto',
+        height: 'calc(60vh - 250px)',
         padding: 30,
         color: '#ffffff',
+        lineHeight: '25px',
+        fontSize: '1.5rem',
       }}>
       <h1>Disclaimer of ELYSIA PTE. LTD.</h1>
-      This site is operated by ELYSIA DAO LLC.. which is not a registered
+      <br />
+      <br />
+      <br />
+      This site is operated by ELYSIA DAO LLC. which is not a registered
       broker-dealer or investment advisor. ELYSIA DAO LLC.. does not give
       investment advice, endorsement, analysis or recommendations with respect
       to any securities. Nothing on this website should be construed as an offer
@@ -22,7 +27,7 @@ const Disclaimer = () => {
       investment advisors for any legal, tax, insurance or investment advice.
       All securities listed here are being offered by, and all information
       included on this site is the responsibility of, the applicable issuer of
-      such securities. ELYSIA DAO LLC.. does not guarantee any investment
+      such securities. ELYSIA DAO LLC. does not guarantee any investment
       performance, outcome or return of capital for any investment opportunity
       posted on this site
       <br />

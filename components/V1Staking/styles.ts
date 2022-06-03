@@ -1,17 +1,17 @@
 import { constants } from 'ethers';
 import styled, { css } from 'styled-components';
 
-export const PrevStakingWrapper = styled.div`
+export const PrevStakingWrapper = styled.article`
   margin-top: calc(50vh - 100px);
   padding: 0px 10px;
   padding-bottom: 100px;
 `;
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.section`
   width: 100%;
   margin-bottom: 67px;
 
-  h2 {
+  h1 {
     font-family: Gilroy-ExtraBold;
     font-size: 1.875rem;
     margin-bottom: 20px;
@@ -41,7 +41,7 @@ export const StakingSection = styled.section`
   } */
 `;
 
-export const ItemWrapper = styled.div`
+export const ItemWrapper = styled.article`
   display: flex;
   flex-direction: row;
   height: 189px;
@@ -60,7 +60,7 @@ export const ItemWrapper = styled.div`
   }
 `;
 
-export const RoundInfoWrapper = styled.div`
+export const RoundInfoWrapper = styled.section`
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: center;

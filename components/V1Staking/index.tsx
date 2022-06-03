@@ -62,7 +62,7 @@ const V1Staking = () => {
       )}
       <PrevStakingWrapper>
         <HeaderWrapper>
-          <h2>{t('governance.prev_staking.0')}</h2>
+          <h1>{t('governance.prev_staking.0')}</h1>
           <p>
             <Trans>{t('governance.prev_staking.1')}</Trans>
           </p>
