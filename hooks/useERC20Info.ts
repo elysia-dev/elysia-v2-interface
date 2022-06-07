@@ -13,6 +13,7 @@ interface IERC20Info {
   error: string | null;
   refetch: () => void;
   contract: ERC20;
+  load: (account: string) => void;
 }
 
 const useERC20Info = (
@@ -89,6 +90,7 @@ const useERC20Info = (
       account && load(account);
     },
     contract,
+    load,
   };
 };
 
