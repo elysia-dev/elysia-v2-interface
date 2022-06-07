@@ -57,6 +57,7 @@ const Section = () => {
             section={data[0] as string[]}
             isLeftArrow={index % 2 ? true : false}
             link={`${i18n.language}/${data[1]}`}
+            key={`section-items-${index}`}
           />
         );
       })}

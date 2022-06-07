@@ -19,7 +19,7 @@ const Team = () => {
       <section>
         {teamArray.map((team, index) => {
           return (
-            <figure>
+            <figure key={`section-items-${index}`}>
               <Image
                 src={team}
                 alt="Members"
