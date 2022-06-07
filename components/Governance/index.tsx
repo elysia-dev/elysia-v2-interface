@@ -11,10 +11,27 @@ import RecentActivityType from 'enums/RecentActivityType';
 import TxStatus from 'enums/TxStatus';
 import useReward from 'hooks/useReward';
 import { useCallback, useContext, useEffect, useState } from 'react';
+import styles from './Governance.module.scss';
 import GovernanceBottom from './GovernanceBottom';
 import GovernanceCenter from './GovernanceCenter';
 import GovernanceTop from './GovernanceTop';
 import Staking from './Staking';
+import { NoiseSvg } from 'components/Layout/styles';
+import styled from 'styled-components';
+import documentImage from 'assets/images/main/document_image.webp';
+
+export const DocumentsImage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.5;
+  /* background: url(${documentImage.src}); */
+  background-repeat: no-repeat;
+  background-size: 100%;
+`;
 
 const Governance = () => {
   const [modal, setModalType] = useState<ModalType>();
@@ -67,21 +84,23 @@ const Governance = () => {
 
   return (
     <>
-      {modalVisible && <ModalLayout>{modalComponent()}</ModalLayout>}
-      <div
-        style={{
-          marginTop: 100,
-        }}>
-        <GovernanceTop />
-        <GovernanceCenter />
-        <Staking
-          setModalType={setModalType}
-          setModalVisible={() => setModalVisible(true)}
-          reward={reward}
-          currentChain={currentChain}
-          setCurrentChain={setCurrentChain}
-        />
-        <GovernanceBottom />
+      <div>
+        {modalVisible && <ModalLayout>{modalComponent()}</ModalLayout>}
+        <DocumentsImage />
+        <div>
+          <GovernanceTop />
+          <section className={styles.governance_left_line_container}>
+            <GovernanceCenter />
+            <Staking
+              setModalType={setModalType}
+              setModalVisible={() => setModalVisible(true)}
+              reward={reward}
+              currentChain={currentChain}
+              setCurrentChain={setCurrentChain}
+            />
+          </section>
+          <GovernanceBottom />
+        </div>
       </div>
     </>
   );

@@ -1,17 +1,18 @@
-import Governance from 'components/Governance';
+import Main from 'components/Main';
+import { configGtag } from 'lib/gtag';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import getLocalLanguage from 'utils/getLocalLanguage';
 
 const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push(`/${getLocalLanguage()}/Governance`);
-  }, [router]);
+    if (typeof window === undefined) return;
+    configGtag();
+  }, []);
 
-  return <Governance />;
+  return <Main />;
 };
 
 export default Home;
