@@ -52,14 +52,6 @@ const Layout = (props: LayoutProps) => {
 
   return (
     <>
-      <Head>
-        <title>Elysia</title>
-        <meta
-          name="description"
-          content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <GradientCanvas ref={canvasRef} />
       <LayoutNoise />
       <Navigation />
