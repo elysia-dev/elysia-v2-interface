@@ -2,6 +2,9 @@ import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { MainSectionWrapper } from './styles';
 import SectionItem from './SectionItem';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {
   const { i18n } = useTranslation();
@@ -14,6 +17,7 @@ const Section = () => {
         t('main.section_el_bridge.3'),
       ],
       'ELBridge',
+      GoogleGAAction.MainElBridgeCard,
     ],
     [
       [
@@ -22,6 +26,7 @@ const Section = () => {
         t('main.section_governance.2'),
       ],
       'Governance',
+      GoogleGAAction.MainGovernanceCard,
     ],
     [
       [
@@ -30,6 +35,7 @@ const Section = () => {
         t('main.section_ecosystem.3'),
       ],
       'Ecosystem',
+      GoogleGAAction.MainEcosystemCard,
     ],
     [
       [
@@ -38,6 +44,7 @@ const Section = () => {
         t('main.section_community.3'),
       ],
       'Community',
+      GoogleGAAction.MainCommunityCard,
     ],
     [
       [
@@ -46,6 +53,7 @@ const Section = () => {
         t('main.section_developers.3'),
       ],
       'Developers',
+      GoogleGAAction.MainDevelopersCard,
     ],
   ];
 
@@ -58,6 +66,9 @@ const Section = () => {
             isLeftArrow={index % 2 ? true : false}
             link={`${i18n.language}/${data[1]}`}
             key={`section-items-${index}`}
+            onClickEvent={() =>
+              googleGAEvent(data[2] as GoogleGAAction, GoogleGACategory.Main)
+            }
           />
         );
       })}

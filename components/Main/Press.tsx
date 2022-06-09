@@ -8,6 +8,9 @@ import decenter from 'assets/images/main/decenter@2x.webp';
 import xinhua from 'assets/images/main/xinhua-logo-feature_0@2x.webp';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 interface IPressArray {
   flag: StaticImageData;
@@ -15,6 +18,7 @@ interface IPressArray {
   header: string;
   content: string;
   link: string;
+  ga: GoogleGAAction;
 }
 
 const Press = () => {
@@ -27,6 +31,7 @@ const Press = () => {
       header: t('main.press.3'),
       content: t('main.press.4'),
       link: 'https://finance.yahoo.com/news/elysia-first-asia-obtains-approval-140000251.html?guccounter=2&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAIbW0698fC2KnO771rsi89QhICI2s8b-egkyVs02mzNRM-Bhxnrvux1Tjyz8BcEo5rRruAn_XbdofYeXz9hTIKcDqFCKHmbZe1G5SK9c8eqfEzEKMNz_-tq9P2dadujlBGC8NdrdUe0d99qFtgSKiwbPpQJ34dPkSFneqn5_k1F0',
+      ga: GoogleGAAction.MainPressEn,
     },
     {
       flag: ko,
@@ -34,6 +39,7 @@ const Press = () => {
       header: t('main.press.5'),
       content: t('main.press.6'),
       link: 'https://decenter.kr/NewsView/2621R4BTIW/GZ03',
+      ga: GoogleGAAction.MainPressko,
     },
     {
       flag: cn,
@@ -41,6 +47,7 @@ const Press = () => {
       header: t('main.press.7'),
       content: t('main.press.8'),
       link: 'http://www.xinhuanet.com/money/2020-09/04/c_1126453754.htm',
+      ga: GoogleGAAction.MainPressCn,
     },
   ];
 
@@ -52,7 +59,12 @@ const Press = () => {
         {pressArray.map((pressData, index) => {
           return (
             <Link href={pressData.link} passHref key={`press_${index}`}>
-              <a target="_blank" rel="noopener noreferrer">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  googleGAEvent(pressData.ga, GoogleGACategory.Main)
+                }>
                 <section>
                   <div>
                     <Image

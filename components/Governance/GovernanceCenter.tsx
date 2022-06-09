@@ -19,6 +19,9 @@ import ELtoken from 'assets/images/governance/el.png';
 import ButtonArrow from 'assets/images/governance/button-arrow.png';
 import GovernanceLineCounter from './GovernanceLineCounter';
 import { useRouter } from 'next/router';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const GovernanceCenter = () => {
   const { data } = useSWR(
@@ -59,6 +62,10 @@ const GovernanceCenter = () => {
                 <button
                   className={styles.governance_button}
                   onClick={() => {
+                    googleGAEvent(
+                      GoogleGAAction.GovExchange,
+                      GoogleGACategory.Governance,
+                    );
                     window.open(
                       'https://coinmarketcap.com/currencies/elysia/markets/',
                     );
@@ -74,6 +81,10 @@ const GovernanceCenter = () => {
                 <button
                   className={styles.governance_button}
                   onClick={() => {
+                    googleGAEvent(
+                      GoogleGAAction.GovTokeneconomy,
+                      GoogleGACategory.Governance,
+                    );
                     window.open(
                       lng === LanguageType.KO
                         ? 'https://elysia.gitbook.io/elysia-whitepaper-v2-0/v/korean/token-economy/minting-fee'

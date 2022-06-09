@@ -1,7 +1,11 @@
+import { useWeb3React } from '@web3-react/core';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 import { BigNumber, utils } from 'ethers';
 import { Dispatch, SetStateAction, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { formatComma } from 'utils/formatters';
+import { googleGAEvent } from 'utils/gaEvent';
 import styles from './Modal.module.scss';
 
 type Props = {
@@ -31,6 +35,7 @@ const StakingBody = (props: Props) => {
     setTransactionWait,
   } = props;
   const { t } = useTranslation();
+  const { account } = useWeb3React();
   const isDisabledBtn = useMemo(() => {
     return parseFloat(utils.formatUnits(amount)) < Number(value);
   }, [value, amount]);
@@ -68,7 +73,17 @@ const StakingBody = (props: Props) => {
             if (isDisabledBtn || Number(value) === 0) {
               return;
             }
-
+            googleGAEvent(
+              type === t('modal.staking.0')
+                ? GoogleGAAction.GovStaking
+                : GoogleGAAction.GovUnstaking,
+              GoogleGACategory.Governance,
+              `WalletAddress = ${account},${
+                type === t('modal.staking.0')
+                  ? ` StakingAmount = ${value}`
+                  : `UnStakingAmount = ${value}`
+              }`,
+            );
             setTransactionWait(true);
             sendTx(utils.parseEther(String(value)), round);
           }}>

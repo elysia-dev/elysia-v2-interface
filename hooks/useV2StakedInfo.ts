@@ -55,7 +55,7 @@ const useV2StakedInfo = () => {
     }
   }, [account, contract, txStatus]);
 
-  return userStakedInfo;
+  return { userStakedInfo, getUserInfo };
 };
 
 export default useV2StakedInfo;

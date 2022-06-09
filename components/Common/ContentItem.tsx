@@ -9,14 +9,20 @@ const ContentItem: React.FC<{
   link?: string;
   isComingSoon?: boolean;
   description?: string;
-}> = ({ Icon, contentName, link, isComingSoon, description }) => {
+  onClickEvent?: () => void;
+}> = ({ Icon, contentName, link, isComingSoon, onClickEvent, description }) => {
   const { isTablet } = useIsMobile();
 
   return (
     <>
       {link ? (
         <Link href={link} passHref>
-          <a target="_blank" rel="noopener noreferrer">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              onClickEvent?.();
+            }}>
             <section>
               <figure>
                 {Icon}

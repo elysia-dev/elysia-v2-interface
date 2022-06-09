@@ -8,6 +8,7 @@ import {
 } from 'utils/formatters';
 import { formatEther } from 'ethers/lib/utils';
 import CountUp from 'react-countup';
+import Image from 'next/image';
 import { BigNumber } from 'ethers';
 import moment from 'moment';
 import 'moment-timezone';
@@ -17,19 +18,18 @@ import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
 import Skeleton from 'react-loading-skeleton';
 import ChainType from 'enums/ChainType';
 import { Trans, useTranslation } from 'react-i18next';
-import LanguageType from 'enums/LanguageType';
 import useV2StakedInfo from 'hooks/useV2StakedInfo';
-import Arrow from './Arrow';
-import getLocalLanguage from 'utils/getLocalLanguage';
-import { isChainId } from 'utils/isChainId';
 import GovernanceLineCounter from './GovernanceLineCounter';
+import getLocalLanguage from 'utils/getLocalLanguage';
 import RoundWrapper from 'assets/images/governance/round-wrapper.png';
-import Image from 'next/image';
 import ButtonArrow from 'assets/images/governance/button-arrow.png';
 import EthOn from 'assets/images/governance/eth-on.png';
 import EthOff from 'assets/images/governance/eth-off.png';
 import BscOn from 'assets/images/governance/bsc-on.png';
 import BscOff from 'assets/images/governance/bsc-off.png';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
@@ -52,7 +52,7 @@ const Staking = (props: Props) => {
   } = props;
   const { account, chainId } = useWeb3React();
   const router = useRouter();
-  const userStakedInfo = useV2StakedInfo();
+  const { userStakedInfo } = useV2StakedInfo();
   const { totalBalance, isLoading, apr } = useTotalStakedBalance();
   const { t, i18n } = useTranslation();
   const startDate = useMemo(() => {
@@ -156,9 +156,13 @@ const Staking = (props: Props) => {
               </p>
               <a
                 className={styles.governance_button}
-                onClick={() =>
-                  window.open('https://elysia.gitbook.io/elysia-user-guide/')
-                }>
+                onClick={() => {
+                  googleGAEvent(
+                    GoogleGAAction.GovStakingGuide,
+                    GoogleGACategory.Governance,
+                  );
+                  window.open('https://elysia.gitbook.io/elysia-user-guide/');
+                }}>
                 {t('governance.section_third.3')}
                 <Image
                   src={ButtonArrow}
@@ -195,6 +199,7 @@ const Staking = (props: Props) => {
                   }}>
                   <Image
                     src={currentChain === ChainType.Ethereum ? EthOn : EthOff}
+                    alt={'Eth'}
                   />
                   <p>ETH</p>
                 </div>
@@ -206,6 +211,7 @@ const Staking = (props: Props) => {
                   }}>
                   <Image
                     src={currentChain === ChainType.BSC ? BscOn : BscOff}
+                    alt={'Bsc'}
                   />
                   <p>BSC</p>
                 </div>

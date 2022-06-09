@@ -26,7 +26,7 @@ const StakingModal = (props: Props) => {
     envs.staking.elStakingV2PoolAddress,
   );
   const { t } = useTranslation();
-  const userStakedInfo = useV2StakedInfo();
+  const { userStakedInfo } = useV2StakedInfo();
   const { txStatus } = useContext(TxContext);
   const { staking, withdraw } = useStaking();
   const transText = t('modal.staking.0');

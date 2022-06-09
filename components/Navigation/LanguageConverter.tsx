@@ -1,7 +1,10 @@
 import LanguageContext from 'contexts/LanguageContext';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 import LanguageType from 'enums/LanguageType';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
+import { googleGAEvent } from 'utils/gaEvent';
 import styles from './Navigation.module.scss';
 
 const LanguageConverter = () => {
@@ -47,6 +50,10 @@ const LanguageConverter = () => {
                 className={styles.language_converter__handler__type__wrapper}
                 key={index}
                 onClick={() => {
+                  googleGAEvent(
+                    GoogleGAAction.NavLanguage,
+                    GoogleGACategory.Nav,
+                  );
                   setLanguage(languageType);
                   handleHover();
                 }}>
@@ -64,7 +71,9 @@ const LanguageConverter = () => {
     <div className={styles.language_converter} ref={LangRef}>
       <div
         className={styles.language_converter__type__wrapper}
-        onClick={() => handleHover()}>
+        onClick={() => {
+          handleHover();
+        }}>
         <p className={styles.language_converter__type}>{lng}</p>
       </div>
       {changeLanguage()}

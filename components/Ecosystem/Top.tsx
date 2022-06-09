@@ -7,6 +7,9 @@ import Google from 'assets/images/ecosystem/google.png';
 import Appstore from 'assets/images/ecosystem/appstore.png';
 import Link from 'next/link';
 import PageHeader from 'components/Common/PageHeader';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Top = () => {
   const { t, i18n } = useTranslation();
@@ -31,14 +34,18 @@ const Top = () => {
         </p>
         <article>
           <section
-            onClick={() =>
+            onClick={() => {
               window.open(
                 i18n.language === 'ko'
                   ? 'https://www.elyfi.world/ko'
                   : 'https://www.elyfi.world/en',
                 '_blank',
-              )
-            }>
+              );
+              googleGAEvent(
+                GoogleGAAction.EcoElyfi,
+                GoogleGACategory.Ecosystem,
+              );
+            }}>
             <figure className="image-containers" />
             <section>
               <h2>ELYFI</h2>

@@ -8,6 +8,9 @@ import Git from 'assets/images/developers/git.svg';
 import ContentItem from '../Common/ContentItem';
 import PageHeader from 'components/Common/PageHeader';
 import { useState } from 'react';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {
   const { t } = useTranslation();
@@ -25,12 +28,24 @@ const Section = () => {
             contentName={t('developers.3')}
             link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
             description={t('developers.4')}
+            onClickEvent={() => {
+              googleGAEvent(
+                GoogleGAAction.DevelopersWhatIsElysia,
+                GoogleGACategory.Developers,
+              );
+            }}
           />
           <section>
             <ContentItem
               Icon={<Git />}
               contentName={t('developers.10')}
               link={'https://github.com/elysia-dev'}
+              onClickEvent={() => {
+                googleGAEvent(
+                  GoogleGAAction.DevelopersGithub,
+                  GoogleGACategory.Developers,
+                );
+              }}
             />
             <DisabledSection
               onMouseEnter={() => setHover(true)}

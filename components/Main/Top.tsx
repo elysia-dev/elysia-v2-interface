@@ -14,6 +14,9 @@ import useReserveData from 'hooks/useReserveData';
 import { useMemo } from 'react';
 import { parseTokenId } from 'utils/parseTokenId';
 import CollateralCategory from 'enums/CollateralCategory';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Top = () => {
   const { t } = useTranslation();
@@ -44,28 +47,57 @@ const Top = () => {
       <MainTopLink>
         <section>
           <Link href="https://twitter.com/Elysia_HQ" passHref>
-            <a rel="noopener noreferrer" target="_blank">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => {
+                googleGAEvent(
+                  GoogleGAAction.MainTwitter,
+                  GoogleGACategory.Main,
+                );
+              }}>
               <Image src={Twitter} alt={'twitter'} />
             </a>
           </Link>
         </section>
         <section>
           <Link href="https://t.me/elysia_official" passHref>
-            <a rel="noopener noreferrer" target="_blank">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => {
+                googleGAEvent(
+                  GoogleGAAction.Maintelegram,
+                  GoogleGACategory.Main,
+                );
+              }}>
               <Image src={Telegram} alt={'Telegram'} />
             </a>
           </Link>
         </section>
         <section>
           <Link href="https://discord.com/invite/JjjYrE5Ww8" passHref>
-            <a rel="noopener noreferrer" target="_blank">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => {
+                googleGAEvent(
+                  GoogleGAAction.MainDiscord,
+                  GoogleGACategory.Main,
+                );
+              }}>
               <Image src={Discord} alt={'Discord'} />
             </a>
           </Link>
         </section>
         <section>
           <Link href="https://github.com/elysia-dev" passHref>
-            <a rel="noopener noreferrer" target="_blank">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => {
+                googleGAEvent(GoogleGAAction.MainGithub, GoogleGACategory.Main);
+              }}>
               <Image src={Github} alt={'Github'} />
             </a>
           </Link>

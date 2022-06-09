@@ -23,6 +23,9 @@ import NFTApplicationTypes from 'enums/ NFTApplicationTypes';
 import Link from 'next/link';
 import axios from 'axios';
 import OnBoardingStep from 'enums/OnBoardingStep';
+import { googleGAEvent } from 'utils/gaEvent';
+import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {
   const { t, i18n } = useTranslation();
@@ -90,22 +93,28 @@ const Section = () => {
       });
   };
 
-  const selectedStepOne = useCallback((assetType: RealEstateTypes) => {
-    setSelectedRealEstateType(assetType);
-    gtag.event({
-      action: assetType,
-      category: 'Asset type',
-      label: '',
-    });
-  }, []);
-  const selectedStepTwo = useCallback((nftUsecase: NFTApplicationTypes) => {
-    setSelectedNFTAppliaction(nftUsecase);
-    gtag.event({
-      action: nftUsecase,
-      category: 'nftUsecase',
-      label: '',
-    });
-  }, []);
+  const selectedStepOne = useCallback(
+    (
+      assetType: RealEstateTypes,
+      action: GoogleGAAction,
+      category: GoogleGACategory,
+    ) => {
+      setSelectedRealEstateType(assetType);
+      googleGAEvent(action, category);
+    },
+    [],
+  );
+  const selectedStepTwo = useCallback(
+    (
+      nftUsecase: NFTApplicationTypes,
+      action: GoogleGAAction,
+      category: GoogleGACategory,
+    ) => {
+      setSelectedNFTAppliaction(nftUsecase);
+      googleGAEvent(action, category);
+    },
+    [],
+  );
 
   const isSubmit = useMemo(() => {
     return (
@@ -145,7 +154,15 @@ const Section = () => {
           <Link
             href={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
             passHref>
-            <a target="_blank">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                googleGAEvent(
+                  GoogleGAAction.ElBridgeWhitepaper,
+                  GoogleGACategory.ELBridge,
+                )
+              }>
               <b>{t('elbridge.whitepaper.1')}</b>
             </a>
           </Link>
@@ -156,6 +173,11 @@ const Section = () => {
           <NFTDescription active={activeBox.nftDescription}>
             <div
               onClick={() => {
+                console.log('asda');
+                googleGAEvent(
+                  GoogleGAAction.ElBridgeFAQNFT,
+                  GoogleGACategory.ELBridge,
+                );
                 setActiveBox((prev) => ({
                   ...prev,
                   nftDescription: !prev.nftDescription,
@@ -172,6 +194,10 @@ const Section = () => {
           <AssetNFTDescription active={activeBox.AssetNFTDescription}>
             <div
               onClick={() => {
+                googleGAEvent(
+                  GoogleGAAction.ElBridgeFAQWhyNFT,
+                  GoogleGACategory.ELBridge,
+                );
                 setActiveBox((prev) => ({
                   ...prev,
                   AssetNFTDescription: !prev.AssetNFTDescription,
@@ -222,7 +248,11 @@ const Section = () => {
                         : undefined,
                   }}
                   onClick={() => {
-                    selectedStepOne(RealEstateTypes.RealEstate);
+                    selectedStepOne(
+                      RealEstateTypes.RealEstate,
+                      GoogleGAAction.ElBridgeInquiryRealEstate,
+                      GoogleGACategory.AssetType,
+                    );
                   }}>
                   <Trans>{t('elbridge.step1.2')}</Trans>
                 </button>
@@ -234,7 +264,11 @@ const Section = () => {
                         : undefined,
                   }}
                   onClick={() => {
-                    selectedStepOne(RealEstateTypes.LoanReceivables);
+                    selectedStepOne(
+                      RealEstateTypes.LoanReceivables,
+                      GoogleGAAction.ElBridgeInquiryLoanReceivables,
+                      GoogleGACategory.AssetType,
+                    );
                   }}>
                   <Trans>{t('elbridge.step1.3')}</Trans>
                 </button>
@@ -249,6 +283,8 @@ const Section = () => {
                   onClick={() => {
                     selectedStepOne(
                       RealEstateTypes.PrincipalAndInterestReceivables,
+                      GoogleGAAction.ElBridgeInquiryPrincipal,
+                      GoogleGACategory.AssetType,
                     );
                   }}>
                   <Trans>{t('elbridge.step1.4')}</Trans>
@@ -262,7 +298,11 @@ const Section = () => {
                         : undefined,
                   }}
                   onClick={() => {
-                    selectedStepOne(RealEstateTypes.ProjectFinancing);
+                    selectedStepOne(
+                      RealEstateTypes.ProjectFinancing,
+                      GoogleGAAction.ElBridgeInquiryProjectFinancing,
+                      GoogleGACategory.AssetType,
+                    );
                   }}>
                   <Trans>{t('elbridge.step1.5')}</Trans>
                 </button>
@@ -280,14 +320,13 @@ const Section = () => {
                     stepOne: true,
                     stepTwo: prev.stepTwo && false,
                   }));
-                  gtag.event({
-                    action: 'nextOfStep1',
-                    category: 'Asset Type',
-                    label:
-                      typeof selectedRealEstateType === 'undefined'
-                        ? 'No selected Asset Type'
-                        : selectedRealEstateType,
-                  });
+                  googleGAEvent(
+                    GoogleGAAction.ElBridgeInquiryNextOfStep1,
+                    GoogleGACategory.AssetType,
+                    typeof selectedRealEstateType === 'undefined'
+                      ? ''
+                      : selectedRealEstateType,
+                  );
                 }}>
                 {t('elbridge.next_button')}
               </button>
@@ -321,7 +360,11 @@ const Section = () => {
                         : undefined,
                   }}
                   onClick={() => {
-                    selectedStepTwo(NFTApplicationTypes.Trading);
+                    selectedStepTwo(
+                      NFTApplicationTypes.Trading,
+                      GoogleGAAction.ElBridgeInquiryTrade,
+                      GoogleGACategory.NftUsecase,
+                    );
                   }}>
                   {t('elbridge.step2.2')}
                 </button>
@@ -333,7 +376,11 @@ const Section = () => {
                         : undefined,
                   }}
                   onClick={() => {
-                    selectedStepTwo(NFTApplicationTypes.Investment);
+                    selectedStepTwo(
+                      NFTApplicationTypes.Investment,
+                      GoogleGAAction.ElBridgeInquiryInvestment,
+                      GoogleGACategory.NftUsecase,
+                    );
                   }}>
                   {t('elbridge.step2.3')}
                 </button>
@@ -345,7 +392,11 @@ const Section = () => {
                         : undefined,
                   }}
                   onClick={() => {
-                    selectedStepTwo(NFTApplicationTypes.Loan);
+                    selectedStepTwo(
+                      NFTApplicationTypes.Loan,
+                      GoogleGAAction.ElBridgeInquiryLoan,
+                      GoogleGACategory.NftUsecase,
+                    );
                   }}>
                   {t('elbridge.step2.4')}
                 </button>
@@ -363,14 +414,13 @@ const Section = () => {
                     stepTwo: true,
                     stepThree: prev.stepThree && false,
                   }));
-                  gtag.event({
-                    action: 'nextOfStep2',
-                    category: ' nftUsecase',
-                    label:
-                      typeof selectedNFTAppliaction === 'undefined'
-                        ? 'No selected nftusecase'
-                        : selectedNFTAppliaction,
-                  });
+                  googleGAEvent(
+                    GoogleGAAction.ElBridgeInquiryNextOfStep2,
+                    GoogleGACategory.NftUsecase,
+                    typeof selectedNFTAppliaction === 'undefined'
+                      ? ''
+                      : selectedNFTAppliaction,
+                  );
                 }}>
                 {t('elbridge.next_button')}
               </button>
@@ -400,11 +450,10 @@ const Section = () => {
                 value={realEstateAddress}
                 onChange={(e) => {
                   setRealEstateAddress(e.target.value);
-                  gtag.event({
-                    action: 'inputAddress',
-                    category: 'realEstateAddress',
-                    label: '',
-                  });
+                  googleGAEvent(
+                    GoogleGAAction.ElBridgeInquiryInputAddress,
+                    GoogleGACategory.RealEstateAddress,
+                  );
                 }}
               />
               <button
@@ -422,11 +471,10 @@ const Section = () => {
                     ...prev,
                     stepThree: true,
                   }));
-                  gtag.event({
-                    action: 'nextOfStep3',
-                    category: 'realEstateAddress',
-                    label: '',
-                  });
+                  googleGAEvent(
+                    GoogleGAAction.ElBridgeInquiryNextOfStep3,
+                    GoogleGACategory.RealEstateAddress,
+                  );
                 }}>
                 {t('elbridge.next_button')}
               </button>
@@ -456,11 +504,10 @@ const Section = () => {
                 value={userEmailAddress}
                 onChange={(e) => {
                   setUserEmailAddress(e.target.value);
-                  gtag.event({
-                    action: 'inputEmailAddress',
-                    category: 'emailAddress',
-                    label: '',
-                  });
+                  googleGAEvent(
+                    GoogleGAAction.ElBridgeInquiryInputEmailAddress,
+                    GoogleGACategory.EmailAddress,
+                  );
                 }}
               />
               <button
@@ -478,11 +525,10 @@ const Section = () => {
                     ...prev,
                     stepFour: true,
                   }));
-                  gtag.event({
-                    action: 'nextOfStep4',
-                    category: 'emailAddress',
-                    label: '',
-                  });
+                  googleGAEvent(
+                    GoogleGAAction.ElBridgeInquiryNextOfStep4,
+                    GoogleGACategory.EmailAddress,
+                  );
                 }}>
                 {t('elbridge.next_button')}
               </button>
@@ -512,11 +558,10 @@ const Section = () => {
                   value={etc}
                   onChange={(e) => {
                     setEtc(e.target.value);
-                    gtag.event({
-                      action: ' inputOthers',
-                      category: 'others',
-                      label: '',
-                    });
+                    googleGAEvent(
+                      GoogleGAAction.ElBridgeInquiryInputOthers,
+                      GoogleGACategory.Others,
+                    );
                   }}
                 />
                 <div>
@@ -527,11 +572,10 @@ const Section = () => {
                       onChange={(e) => {
                         setIsChecked(e.target.checked);
                         if (!e.target.checked) return;
-                        gtag.event({
-                          action: ' agreement',
-                          category: 'others',
-                          label: '',
-                        });
+                        googleGAEvent(
+                          GoogleGAAction.ElBridgeInquiryAgreement,
+                          GoogleGACategory.Others,
+                        );
                       }}
                     />
                     <label htmlFor="checkbox"></label>
@@ -551,11 +595,10 @@ const Section = () => {
                     sitekey={'6LdAI24aAAAAAG0QIW1ZdyfsQMHrW3uwskzlVTH7'}
                     onChange={() => {
                       setIsRecaptcha(true);
-                      gtag.event({
-                        action: 'checkBot',
-                        category: 'others',
-                        label: '',
-                      });
+                      googleGAEvent(
+                        GoogleGAAction.ElBridgeInquiryCheckBot,
+                        GoogleGACategory.Others,
+                      );
                     }}
                     onExpired={() => setIsRecaptcha(false)}
                     hl={i18n.language}
@@ -578,11 +621,10 @@ const Section = () => {
                     ...prev,
                     stepFive: true,
                   }));
-                  gtag.event({
-                    action: 'submit',
-                    category: 'others',
-                    label: '',
-                  });
+                  googleGAEvent(
+                    GoogleGAAction.ElBridgeInquirySubmit,
+                    GoogleGACategory.Others,
+                  );
                   setSelectedNFTAppliaction('');
                   setSelectedRealEstateType('');
                   setUserEmailAddress('');
