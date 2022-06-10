@@ -9,92 +9,70 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 const Section = () => {
   const { i18n } = useTranslation();
 
+  const sectionArrayItems = [
+    [
+      [
+        t('main.section_el_bridge.0'),
+        t('main.section_el_bridge.1'),
+        t('main.section_el_bridge.3'),
+      ],
+      'ELBridge',
+      GoogleGAAction.MainElBridgeCard,
+    ],
+    [
+      [
+        t('main.section_governance.0'),
+        t('main.section_governance.1'),
+        t('main.section_governance.2'),
+      ],
+      'Governance',
+      GoogleGAAction.MainGovernanceCard,
+    ],
+    [
+      [
+        t('main.section_ecosystem.0'),
+        t('main.section_ecosystem.1'),
+        t('main.section_ecosystem.3'),
+      ],
+      'Ecosystem',
+      GoogleGAAction.MainEcosystemCard,
+    ],
+    [
+      [
+        t('main.section_community.0'),
+        t('main.section_community.1'),
+        t('main.section_community.3'),
+      ],
+      'Community',
+      GoogleGAAction.MainCommunityCard,
+    ],
+    [
+      [
+        t('main.section_developers.0'),
+        t('main.section_developers.1'),
+        t('main.section_developers.3'),
+      ],
+      'Developers',
+      GoogleGAAction.MainDevelopersCard,
+    ],
+  ];
+
   return (
-    <>
-      <div
-        style={{
-          position: 'relative',
-          overflow: 'hidden',
-        }}>
-        <MainSectionWrapper>
+    <MainSectionWrapper>
+      {sectionArrayItems.map((data, index) => {
+        return (
           <SectionItem
-            section={[
-              t('main.section_el_bridge.0'),
-              t('main.section_el_bridge.1'),
-              t('main.section_el_bridge.3'),
-            ]}
-            isLeftArrow={false}
-            link={`${i18n.language}/ELBridge`}
+            section={data[0] as string[]}
+            isLeftArrow={index % 2 ? true : false}
+            link={`${i18n.language}/${data[1]}`}
+            key={`section-items-${index}`}
             onClickEvent={() =>
-              googleGAEvent(
-                GoogleGAAction.MainElBridgeCard,
-                GoogleGACategory.Main,
-              )
+              googleGAEvent(data[2] as GoogleGAAction, GoogleGACategory.Main)
             }
           />
-          <SectionItem
-            section={[
-              t('main.section_governance.0'),
-              t('main.section_governance.1'),
-              t('main.section_governance.2'),
-            ]}
-            isLeftArrow={true}
-            link={`${i18n.language}/Governance`}
-            onClickEvent={() =>
-              googleGAEvent(
-                GoogleGAAction.MainGovernanceCard,
-                GoogleGACategory.Main,
-              )
-            }
-          />
-          <SectionItem
-            section={[
-              t('main.section_ecosystem.0'),
-              t('main.section_ecosystem.1'),
-              t('main.section_ecosystem.3'),
-            ]}
-            isLeftArrow={false}
-            link={`${i18n.language}/Ecosystem`}
-            onClickEvent={() =>
-              googleGAEvent(
-                GoogleGAAction.MainEcosystemCard,
-                GoogleGACategory.Main,
-              )
-            }
-          />
-          <SectionItem
-            section={[
-              t('main.section_community.0'),
-              t('main.section_community.1'),
-              t('main.section_community.3'),
-            ]}
-            isLeftArrow={true}
-            link={`${i18n.language}/Community`}
-            onClickEvent={() =>
-              googleGAEvent(
-                GoogleGAAction.MainCommunityCard,
-                GoogleGACategory.Main,
-              )
-            }
-          />
-          <SectionItem
-            section={[
-              t('main.section_developers.0'),
-              t('main.section_developers.1'),
-              t('main.section_developers.3'),
-            ]}
-            isLeftArrow={false}
-            link={`${i18n.language}/Developers`}
-            onClickEvent={() =>
-              googleGAEvent(
-                GoogleGAAction.MainDevelopersCard,
-                GoogleGACategory.Main,
-              )
-            }
-          />
-        </MainSectionWrapper>
-      </div>
-    </>
+        );
+      })}
+    </MainSectionWrapper>
   );
 };
 

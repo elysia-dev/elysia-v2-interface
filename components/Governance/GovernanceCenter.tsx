@@ -45,21 +45,21 @@ const GovernanceCenter = () => {
   const lng = router.asPath.substring(1, 3);
 
   return (
-    <section>
+    <article>
       <div className={styles.center_circle}>
-        <h2>{t('governance.section_second.0')}</h2>
+        <b>{t('governance.section_second.0')}</b>
       </div>
       <GovernanceLineCounter counter={1}>
         <div className={styles.center_section_01}>
-          <section className={styles.center_section_01_header}>
-            <section className="token_wrapper">
+          <article className={styles.center_section_01_header}>
+            <figure className="token_wrapper">
               <Image src={ELtoken} alt={'EL Token'} />
-            </section>
+            </figure>
             <div>
               <h2>{t('governance.section_second.1')}</h2>
               <p>{t('governance.section_second.2')}</p>
               <div>
-                <div
+                <button
                   className={styles.governance_button}
                   onClick={() => {
                     googleGAEvent(
@@ -77,8 +77,8 @@ const GovernanceCenter = () => {
                     width={18}
                     height={12}
                   />
-                </div>
-                <div
+                </button>
+                <button
                   className={styles.governance_button}
                   onClick={() => {
                     googleGAEvent(
@@ -98,12 +98,12 @@ const GovernanceCenter = () => {
                     width={18}
                     height={12}
                   />
-                </div>
+                </button>
               </div>
             </div>
-          </section>
-          <section className={styles.center_section_01_body}>
-            <div className={styles.center_section_01_body_box}>
+          </article>
+          <article className={styles.center_section_01_body}>
+            <section className={styles.center_section_01_body_box}>
               <div>
                 <p>{t('governance.section_second.6')}</p>
                 <h2>$ {data?.elPrice.toFixed(4)}</h2>
@@ -120,12 +120,12 @@ const GovernanceCenter = () => {
                 <p>{t('governance.section_second.11')}</p>
                 <h2>{formatCommaSmallZeroDisits(circulatingSupply)} EL</h2>
               </div>
-            </div>
+            </section>
             <p>* powered by crypto.com</p>
-          </section>
+          </article>
         </div>
       </GovernanceLineCounter>
-    </section>
+    </article>
   );
 };
 

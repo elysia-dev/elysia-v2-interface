@@ -3,17 +3,25 @@ const Policy = () => {
     <div
       style={{
         maxWidth: 1190,
-        margin: '15vh auto',
+        margin: '20vh auto',
         padding: 30,
         color: '#ffffff',
+        lineHeight: '40px',
+        fontSize: '1.5rem',
       }}>
       <h1>Privacy Policy of ELYSIA PTE. LTD.</h1>
+      <br />
+      <br />
       In order to protect the personal information of data subjects and to
       handle complaints related to the personal information swiftly and smoothly
       according to the Article 30 (Establishment and Disclosure of Privacy
       Policy) of [PERSONAL INFORMATION PROTECTION ACT], we hereby establish and
       disclose the Privacy Policy as follows.
+      <br />
+      <br />
+      <br />
       <h2>Article 1 (Purpose of Personal Information Processing)</h2>
+      <br />
       ELYSIA ({' '}
       <a href="http://https://gov.elysia.land/">
         http://https://gov.elysia.land/
@@ -27,9 +35,12 @@ const Policy = () => {
       <br />– Purpose of Processing: Real estate brokerage/sales service and
       marketing activities related to the abovementioned purpose, management of
       real estate ownership
+      <br />
+      <br />
       <h2>
         Article 2 (The Period for Processing and Retaining Personal Information)
       </h2>
+      <br />
       Collected personal information controller shall be destroyed without delay
       when the personal information becomes unnecessary owing to the expiry of
       the retention period, attainment of the purpose of processing the personal
@@ -41,7 +52,10 @@ const Policy = () => {
       <br />– Retention Grounds: Records related to contract or withdrawal of
       subscription
       <br />– Retention period: 3 years
+      <br />
+      <br />
       <h2>Article 3 (Provision of Personal Information to a Third Party)</h2>
+      <br />
       ELYSIA handles personal information of users within the scope specified in
       the Article 1 (Purpose of Personal Information Processing) in principle,
       and shall not process information beyond the original scope or provide to
@@ -55,7 +69,10 @@ const Policy = () => {
       <br />– If the personal information is necessary for the implementation of
       a contract on the provision of services and it is extremely difficult to
       obtain normal consent for economic and technical reasons
+      <br />
+      <br />
       <h2>Article 4 (Outsourcing of Personal Information Processing)</h2>
+      <br />
       ELYSIA may entrust the personal information processing related to the
       business with the consent of a user to process the personal information
       smoothly. In accordance with the Article 26 (Limitation to Personal
@@ -68,10 +85,13 @@ const Policy = () => {
       contracts and supervise whether an outsourcer handles personal information
       safely. ELYSIA shall notify the change of the outsourced work or the
       outsourcee in this Privacy Policy without delay.
+      <br />
+      <br />
       <h2>
         Article 5 (Rights and Obligations of Data Subjects and How to Exercise
         the Rights)
       </h2>
+      <br />
       A user can exercise the following rights as a data subject.
       <br />
       1) Request to access to personal information: A data subject may request
@@ -88,7 +108,10 @@ const Policy = () => {
       [PERSONAL INFORMATION PROTECTION ACT]. Provided, the erasure is not
       permitted where the said personal information shall be collected by other
       statutes.
+      <br />
+      <br />
       <h2>Article 6 (Particulars of Personal Information to be Processed)</h2>
+      <br />
       Personal information that ELYSIA collects/processes are as follows:
       <br />
       1) Mandatory: Name, nationality, date of birth, gender, address, mobile
@@ -102,10 +125,13 @@ const Policy = () => {
       communication between the users and the website in order to provide better
       service to the users. However, in some cases, such information may be
       submitted in accordance with the provisions of the Act.
+      <br />
+      <br />
       <h2>
         Article 7 (Installation, Operation and Rejection of Automatic Personal
         Information Collection Device)
       </h2>
+      <br />
       ELYSIA uses “cookie” which stores and finds user information as often as
       necessary. “Cookie” is a small text file sent to a user’s browser by a
       server used to operate the website and is stored in the hard disk of a
@@ -119,7 +145,10 @@ const Policy = () => {
       notice when cookies are installed, or to refuse all cookies. However, if a
       user refuses to install cookies, the user may have difficulty in using
       services provided by ELYSIA.
+      <br />
+      <br />
       <h2>Article 8 (Destruction of Personal Information)</h2>
+      <br />
       ELYSIA shall destroy personal information upon the expiry of the retention
       period or attainment of the purpose of processing the personal
       information. Provided, this shall not apply where the retention of such
@@ -137,13 +166,19 @@ const Policy = () => {
       destroyed so that records shall not be played, and personal information
       recorded/stored on papers shall be destroyed using a shredder or
       incinerated.
+      <br />
+      <br />
       <h2>Article 9 (Measures to Protect Personal Information)</h2>
+      <br />
       ELYSIA takes the following measures to ensure the security of personal
       information. 1) Managing Measures Establishment and implementation of
       internal management policy 2) Technical Measures Management of system
       access rights 3) Physical Measures Separate storage of personal
       information, control of unauthorized access
+      <br />
+      <br />
       <h2>Article 10 (Privacy Officer)</h2>
+      <br />
       To protect personal information of members and handle complaints regarding
       personal information, ELYSIA designates the chief privacy officer as the
       following according to the Article 31 (Designation of Privacy Officers) of

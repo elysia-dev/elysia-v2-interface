@@ -45,7 +45,7 @@ const AssetItem = (props: Props) => {
   }, [fetchImage]);
 
   return (
-    <div
+    <section
       onClick={() => {
         if ('project' in abToken) return;
         window.open(
@@ -53,25 +53,22 @@ const AssetItem = (props: Props) => {
           '_blank',
         );
       }}>
-      <div
-        style={{
-          position: 'relative',
-        }}>
+      <figure>
         {'project' in abToken ? (
           <Image src={abToken.image} alt={'building'} layout={'fill'} />
         ) : (
           image && <Image src={image} alt={'building'} layout={'fill'} />
         )}
-      </div>
-      <div>
-        <div>{'project' in abToken ? 'ELYSIA' : `ELYFI`}</div>
-        <div>
+      </figure>
+      <section>
+        <p>{'project' in abToken ? 'ELYSIA' : `ELYFI`}</p>
+        <span>
           {'project' in abToken
             ? toUsd(parseEther(abToken.amount.toString()))
             : toUsd(abToken.principal || '0', tokenInfo?.decimals)}
-        </div>
-      </div>
-    </div>
+        </span>
+      </section>
+    </section>
   );
 };
 

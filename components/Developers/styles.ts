@@ -4,12 +4,6 @@ import developersImage from 'assets/images/main/developers_image.webp';
 const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
 const $light = 'Gilroy-Light, SpoqaHanSansNeo';
 
-const center = {
-  display: 'flex',
-  'align-items': 'center',
-  'justify-content': 'center',
-};
-
 const glassBox = {
   background: 'rgba(255, 255, 255, 0.1)',
   'box-shadow': '0px 0px 6px #00000029',
@@ -17,13 +11,7 @@ const glassBox = {
   'backdrop-filter': 'blur(18px)',
 };
 
-export const DevelopersWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 0 0px;
-`;
-
-export const DevelopersImage = styled.div`
+export const DevelopersImage = styled.article`
   position: absolute;
   top: 0;
   right: 0;
@@ -43,37 +31,12 @@ export const DisabledSection = styled.div`
   }
 `;
 
-export const SectionWrapper = styled.div`
+export const SectionWrapper = styled.article`
   padding-bottom: 150px;
   color: #ffffff !important;
   font-family: ${$light};
   /* height: 100vh; */
-
-  > div:nth-child(1) {
-    padding-top: 60vh;
-    margin-bottom: 30px;
-    > div:first-child {
-      color: #cbcbcb;
-      font-size: 1.375rem;
-      @media (max-width: 460px) {
-        font-size: 1rem;
-      }
-      > div:first-child {
-        color: #ffffff;
-        font-family: ${$bold};
-        font-size: 2rem;
-        margin-bottom: 5px;
-        @media (max-width: 460px) {
-          font-size: 1.5rem;
-        }
-      }
-      > div:nth-child(2) {
-        color: #33a5ff;
-        margin-bottom: 14px;
-      }
-    }
-  }
-  > div:nth-child(2) {
+  > article:not(:first-child) {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
@@ -93,13 +56,13 @@ export const SectionWrapper = styled.div`
         width: 100%;
       }
       gap: 10px;
-      > div {
+      > a,
+      div {
         padding: 25px;
         ${glassBox}
         transition: all 1s ease;
         margin-left: 25px;
         @media (max-width: 920px) {
-          margin-top: 25px;
           padding: 20px 25px;
         }
         @media (max-width: 640px) {
@@ -111,41 +74,36 @@ export const SectionWrapper = styled.div`
           background: rgba(255, 255, 255, 0.3);
           transition: all 1s ease;
         }
-        > a {
-          > div:first-child {
+        section {
+          display: flex;
+          flex-direction: row;
+          > figure {
             display: flex;
-            align-items: center;
-            font-family: ${$bold};
-            font-size: 1.25rem;
-            > div {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-            > div:first-child {
+            flex-direction: row;
+            > svg {
               margin-right: 10px;
             }
-            > div:last-child {
-              margin-left: auto;
+            > figcaption {
+              display: flex;
+              align-items: center;
+              font-family: ${$bold};
+              font-size: 1.25rem;
             }
           }
-        }
-        > div:last-child {
-          font-size: 1rem;
-          color: #cbcbcb;
-          margin-top: 10px;
-          display: flex;
-          > div:first-child {
-            margin-right: auto;
+          > article {
+            margin-left: auto;
           }
+        }
+        > p {
+          color: #cbcbcb;
         }
       }
     }
-    > div {
-      padding: 38.22px 25px 38px 25px;
+    > a {
       cursor: pointer;
       ${glassBox}
       transition: all 1s ease;
+      padding: 38.22px 25px 38px 25px;
       &:first-child {
         width: 75%;
         @media (max-width: 920px) {
@@ -157,41 +115,35 @@ export const SectionWrapper = styled.div`
       }
       @media (max-width: 920px) {
         width: 100%;
-        margin-top: 25px;
         padding: 20px 25px;
       }
       &:hover {
         background: rgba(255, 255, 255, 0.3);
         transition: all 1s ease;
       }
-      > a {
-        > div:first-child {
+      > section {
+        display: flex;
+        flex-direction: row;
+        > figure {
           display: flex;
-          align-items: center;
-          font-family: ${$bold};
-          font-size: 1.25rem;
-          > div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          > div:first-child {
+          flex-direction: row;
+          > svg {
             margin-right: 10px;
           }
-          > div:last-child {
-            margin-left: auto;
+          > figcaption {
+            display: flex;
+            align-items: center;
+            font-family: ${$bold};
+            font-size: 1.25rem;
           }
-          margin-bottom: 20px;
         }
+        > article {
+          margin-left: auto;
+        }
+        margin-bottom: 20px;
       }
-      > div:last-child {
-        font-size: 1rem;
+      > p {
         color: #cbcbcb;
-        margin-top: 10px;
-        display: flex;
-        > div:first-child {
-          margin-right: auto;
-        }
       }
     }
   }

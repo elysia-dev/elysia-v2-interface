@@ -34,129 +34,115 @@ import XTcom from 'assets/images/main/xtcom@2x.webp';
 import Haechilabs from 'assets/images/main/haechilabs@2x.webp';
 
 import { PartnersWrapper } from './styles';
-import useIsMobile from 'hooks/useIsMobile';
 import Link from 'next/link';
 
 const Partners = () => {
   const { t } = useTranslation();
-  const { isDesktop } = useIsMobile();
 
   return (
-    <div
-      style={{
-        position: 'relative',
-        overflow: 'hidden',
-      }}>
-      <PartnersWrapper>
+    <PartnersWrapper>
+      <h2>{t('main.partners.0')}</h2>
+      <h3>{t('main.partners.1')}</h3>
+      <section>
         <div>
-          <span>{t('main.partners.0')}</span>
-          <br />
-          <span>{t('main.partners.1')}</span>
+          <p>{t('main.partners.3')}</p>
+          <section id="backed_by">
+            <div>
+              <Link href="http://fbg.capital/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={FBG} alt={'FBG'} width={111} height={28} />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://www.blocore.com/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image
+                    src={Blocore}
+                    alt={'blocore'}
+                    width={103}
+                    height={18}
+                  />
+                </a>
+              </Link>
+            </div>
+          </section>
         </div>
         <div>
-          <div>
-            <div>{t('main.partners.3')}</div>
+          <p>{t('main.partners.4')}</p>
+          <section id="legal_review">
             <div>
-              <div>
-                <Link href="http://fbg.capital/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image src={FBG} alt={'FBG'} width={111} height={28} />
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="https://www.blocore.com/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image
-                      src={Blocore}
-                      alt={'blocore'}
-                      width={103}
-                      height={18}
-                    />
-                  </a>
-                </Link>
-              </div>
+              <Link href="https://www.shinkim.com/eng/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={Shin} alt={'Shin'} width={154} height={35} />
+                </a>
+              </Link>
             </div>
-          </div>
-          <div>
-            <div>{t('main.partners.4')}</div>
             <div>
-              <div>
-                <Link href="https://www.shinkim.com/eng/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image src={Shin} alt={'Shin'} width={154} height={35} />
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="https://www.bkl.co.kr/law" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image src={BKL} alt={'BKL'} width={154} height={36} />
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="https://focuslawasia.com/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image src={FLA} alt={'FLA'} width={154} height={18} />
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="http://hublaw.co.kr/www/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image src={HUB} alt={'HUB'} width={154} height={39} />
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="https://www.howlaws.com/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image src={HOW} alt={'HOW'} width={154} height={37} />
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="https://www.tsmplaw.com/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image src={TSMP} alt={'TSMP'} width={154} height={55} />
-                  </a>
-                </Link>
-              </div>
+              <Link href="https://www.bkl.co.kr/law" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={BKL} alt={'BKL'} width={154} height={36} />
+                </a>
+              </Link>
             </div>
-          </div>
+            <div>
+              <Link href="https://focuslawasia.com/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={FLA} alt={'FLA'} width={154} height={18} />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="http://hublaw.co.kr/www/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={HUB} alt={'HUB'} width={154} height={39} />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://www.howlaws.com/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={HOW} alt={'HOW'} width={154} height={37} />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://www.tsmplaw.com/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={TSMP} alt={'TSMP'} width={154} height={55} />
+                </a>
+              </Link>
+            </div>
+          </section>
         </div>
+      </section>
+
+      <section>
         <div>
-          <div>
-            <div>{t('main.partners.5')}</div>
+          <p>{t('main.partners.5')}</p>
+          <section id="audit">
             <div>
-              <div>
-                <Link href="https://www.certik.com/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image
-                      src={Certik}
-                      alt={'Certik'}
-                      width={125}
-                      height={30}
-                    />
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="https://haechi.io/en" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image
-                      src={Haechilabs}
-                      alt={'Haechilabs'}
-                      width={115}
-                      height={18}
-                    />
-                  </a>
-                </Link>
-              </div>
+              <Link href="https://www.certik.com/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={Certik} alt={'Certik'} width={125} height={30} />
+                </a>
+              </Link>
             </div>
-          </div>
-          {/* <div>
+            <div>
+              <Link href="https://haechi.io/en" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image
+                    src={Haechilabs}
+                    alt={'Haechilabs'}
+                    width={115}
+                    height={18}
+                  />
+                </a>
+              </Link>
+            </div>
+          </section>
+        </div>
+        {/* <div>
             <div>{t('main.partners.6')}</div>
             <div>
               <div>
@@ -197,10 +183,11 @@ const Partners = () => {
               </div>
             </div>
           </div> */}
-        </div>
-        <div>
-          <div>{t('main.partners.7')}</div>
-          <div>
+      </section>
+      <section>
+        <div id="business_wrapper">
+          <p>{t('main.partners.7')}</p>
+          <section id="business">
             <div>
               <Link href="https://www.bithumb.com/" passHref>
                 <a rel="noopener noreferrer" target="_blank">
@@ -362,10 +349,10 @@ const Partners = () => {
                 </a>
               </Link>
             </div>
-          </div>
+          </section>
         </div>
-      </PartnersWrapper>
-    </div>
+      </section>
+    </PartnersWrapper>
   );
 };
 

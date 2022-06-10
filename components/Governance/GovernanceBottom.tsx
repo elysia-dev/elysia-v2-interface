@@ -11,14 +11,14 @@ const GovernanceBottom = () => {
   const { t } = useTranslation();
 
   return (
-    <div className={styles.governance_bottom}>
-      <div className={styles.governance_bottom_header}>
+    <article className={styles.governance_bottom}>
+      <section className={styles.governance_bottom_header}>
         <div className={styles.governance_left_line_counter_wrapper}>
           <div className={styles.governance_left_line_counter}>3</div>
         </div>
         <h2>{t('governance.section_fourth.0')}</h2>
-      </div>
-      <div className={styles.governance_bottom_container}>
+      </section>
+      <section className={styles.governance_bottom_container}>
         <p>{t('governance.section_fourth.1')}</p>
         <div>
           {/* <div className={styles.governance_button}>
@@ -49,41 +49,37 @@ const GovernanceBottom = () => {
             />
           </div> */}
         </div>
-      </div>
-      <div className={styles.governance_bottom_container}>
+      </section>
+      <article className={styles.governance_bottom_container}>
         <h2>{t('governance.section_fourth.5')}</h2>
-        <div className={styles.governance_bottom_content_box_wrapper}>
-          <div className={styles.governance_bottom_content_box}>
-            <div className={styles.governance_bottom_content_box_header}>
+        <article className={styles.governance_bottom_content_box_wrapper}>
+          <section className={styles.governance_bottom_content_box}>
+            <figure className={styles.governance_bottom_content_box_header}>
               <Image src={forum} alt={'forum'} height={65} width={65} />
-              <div>
-                <p>Coming Soon</p>
-              </div>
-            </div>
-            <div className={styles.governance_bottom_content_box_title}>
-              <h2>{t('governance.section_fourth.6')}</h2>
+              <button>Coming Soon</button>
+            </figure>
+            <section className={styles.governance_bottom_content_box_title}>
+              <b>{t('governance.section_fourth.6')}</b>
               {/* <Image src={ArrowImage} /> */}
               <ArrowImage />
-            </div>
+            </section>
             <p>{t('governance.section_fourth.7')}</p>
-          </div>
-          <div className={styles.governance_bottom_content_box}>
-            <div className={styles.governance_bottom_content_box_header}>
+          </section>
+          <section className={styles.governance_bottom_content_box}>
+            <figure className={styles.governance_bottom_content_box_header}>
               <Image src={snapshot} alt={'snapshot'} height={65} width={65} />
-              <div>
-                <p>Coming Soon</p>
-              </div>
-            </div>
-            <div className={styles.governance_bottom_content_box_title}>
-              <h2>{t('governance.section_fourth.8')}</h2>
+              <button>Coming Soon</button>
+            </figure>
+            <section className={styles.governance_bottom_content_box_title}>
+              <b>{t('governance.section_fourth.8')}</b>
               {/* <Image src={ArrowImage} /> */}
               <ArrowImage />
-            </div>
+            </section>
             <p>{t('governance.section_fourth.9')}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+          </section>
+        </article>
+      </article>
+    </article>
   );
 };
 

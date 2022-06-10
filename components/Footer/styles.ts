@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
 const $light = 'Gilroy-Light, SpoqaHanSansNeo';
 
-export const FooterWrapper = styled.div`
+export const FooterWrapper = styled.footer`
   width: 100%;
   display: flex;
   justify-content: center;

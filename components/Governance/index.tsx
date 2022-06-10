@@ -20,7 +20,7 @@ import { NoiseSvg } from 'components/Layout/styles';
 import styled from 'styled-components';
 import documentImage from 'assets/images/main/document_image.webp';
 
-export const DocumentsImage = styled.div`
+export const DocumentsImage = styled.article`
   position: absolute;
   top: 0;
   right: 0;
@@ -84,24 +84,20 @@ const Governance = () => {
 
   return (
     <>
-      <div>
-        {modalVisible && <ModalLayout>{modalComponent()}</ModalLayout>}
-        <DocumentsImage />
-        <div>
-          <GovernanceTop />
-          <section className={styles.governance_left_line_container}>
-            <GovernanceCenter />
-            <Staking
-              setModalType={setModalType}
-              setModalVisible={() => setModalVisible(true)}
-              reward={reward}
-              currentChain={currentChain}
-              setCurrentChain={setCurrentChain}
-            />
-          </section>
-          <GovernanceBottom />
-        </div>
-      </div>
+      {modalVisible && <ModalLayout>{modalComponent()}</ModalLayout>}
+      <DocumentsImage />
+      <GovernanceTop />
+      <section className={styles.governance_left_line_container}>
+        <GovernanceCenter />
+        <Staking
+          setModalType={setModalType}
+          setModalVisible={() => setModalVisible(true)}
+          reward={reward}
+          currentChain={currentChain}
+          setCurrentChain={setCurrentChain}
+        />
+      </section>
+      <GovernanceBottom />
     </>
   );
 };

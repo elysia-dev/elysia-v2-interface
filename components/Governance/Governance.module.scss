@@ -29,33 +29,11 @@ $light: Gilroy-Light, SpoqaHanSansNeo;
 }
 .governance_top {
   // margin-top: calc(50vh - 100px);
-  padding-top: 60vh;
   padding-bottom: 70px;
   border-bottom: 1px solid $elysia-color;
   margin-bottom: 5px;
   @media (max-width: 920px) {
     border: none;
-  }
-  > div:nth-child(2) {
-    color: #33a5ff;
-    margin-bottom: 14px;
-    font-size: 1.475rem;
-  }
-  .governance_top_sub {
-    text-align: left;
-    color: #fff;
-    font-size: 2rem;
-    font-family: Gilroy-ExtraBold;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  .governance_top_header {
-    text-align: left;
-    font-family: Gilroy-Light;
-    color: #fff;
-    font-size: 1.475rem;
-    margin-top: 10px;
-    margin-bottom: 40px;
   }
   &_content {
     display: flex;
@@ -116,7 +94,7 @@ $light: Gilroy-Light, SpoqaHanSansNeo;
       @media (max-width: 920px) {
         flex-direction: column;
       }
-      > div {
+      > section {
         display: flex;
         flex-direction: row;
         flex: 1;
@@ -143,7 +121,7 @@ $light: Gilroy-Light, SpoqaHanSansNeo;
             margin-bottom: 25px;
           }
         }
-        > h2 {
+        > strong {
           color: #00bfff;
           margin: 0;
           font-size: 1.3rem;
@@ -329,7 +307,7 @@ $first-circle-height: 60px;
       position: initial;
       height: initial;
     }
-    > h2 {
+    > b {
       font-size: 1.5rem;
       color: $elysia-color;
       text-align: center;
@@ -340,6 +318,7 @@ $first-circle-height: 60px;
       @media (max-width: 640px) {
         line-height: 50px;
       }
+      display: block;
     }
   }
   &_section {
@@ -540,7 +519,7 @@ $first-circle-height: 60px;
               margin: 0;
               font-family: $light;
             }
-            > h2 {
+            > b {
               font-size: 1.3rem;
               margin: 10px 0 0;
               font-family: $bold;
@@ -567,7 +546,7 @@ $first-circle-height: 60px;
               margin: 0;
               font-family: $light;
             }
-            > h2 {
+            > b {
               font-size: 1.3rem;
               margin: 10px 0 0;
               font-family: $bold;
@@ -697,7 +676,7 @@ $first-circle-height: 60px;
               > div {
                 display: flex;
                 align-items: center;
-                > h2 {
+                > b {
                   font-family: Gilroy-ExtraBold;
                   font-size: 1.8rem;
                   margin: 0;
@@ -760,6 +739,7 @@ $first-circle-height: 60px;
 }
 .governance_bottom {
   color: #fff;
+  margin-bottom: 60px;
   &_header {
     padding-top: 220px;
     display: flex;
@@ -791,6 +771,9 @@ $first-circle-height: 60px;
     @media (max-width: 920px) {
       margin: 0;
     }
+    > h2 {
+      margin-bottom: 25px;
+    }
     > p {
       margin: 60px 0 25px;
       font-size: 1.4rem;
@@ -809,6 +792,10 @@ $first-circle-height: 60px;
   &_content_box {
     &_wrapper {
       display: flex;
+
+      @media (max-width: 640px) {
+        flex-direction: column;
+      }
     }
     flex: 1;
     background-color: rgba(255, 255, 255, 0.1);
@@ -836,34 +823,30 @@ $first-circle-height: 60px;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      > div {
+      > button {
         width: 249px;
         height: 46px;
         background: #505050;
         border-radius: 23px;
         color: #ffffff;
+        font-size: 1.25rem;
+        margin: 0;
+        text-align: center;
+        line-height: 46px;
+        font-family: $light;
         @media (max-width: 920px) {
           width: 160px;
           height: 40px;
+          font-size: 1.1rem;
+          line-height: 40px;
         }
         @media (max-width: 640px) {
           width: 200px;
           height: 40px;
         }
-        > p {
-          font-size: 1.25rem;
-          margin: 0;
-          text-align: center;
-          line-height: 46px;
-          font-family: $light;
-          @media (max-width: 920px) {
-            font-size: 1.1rem;
-            line-height: 40px;
-          }
-          @media (max-width: 460px) {
-            font-size: 1rem;
-            line-height: 40px;
-          }
+        @media (max-width: 460px) {
+          font-size: 1rem;
+          line-height: 40px;
         }
       }
     }
@@ -872,7 +855,7 @@ $first-circle-height: 60px;
       flex-direction: row;
       align-items: center;
       margin: 10px 0 25px;
-      > h2 {
+      > b {
         font-family: Gilroy-ExtraBold;
         font-size: 1.5rem;
         margin: 0;

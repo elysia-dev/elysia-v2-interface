@@ -1,14 +1,16 @@
 import Arrow from 'assets/images/developers/arrow.svg';
 import useIsMobile from 'hooks/useIsMobile';
 import Link from 'next/link';
+import ContentDescription from './ContentDescription';
 
 const ContentItem: React.FC<{
   Icon: any;
   contentName: string;
   link?: string;
   isComingSoon?: boolean;
+  description?: string;
   onClickEvent?: () => void;
-}> = ({ Icon, contentName, link, isComingSoon, onClickEvent }) => {
+}> = ({ Icon, contentName, link, isComingSoon, onClickEvent, description }) => {
   const { isTablet } = useIsMobile();
 
   return (
@@ -21,20 +23,34 @@ const ContentItem: React.FC<{
             onClick={() => {
               onClickEvent?.();
             }}>
-            <div>
-              <div>{Icon}</div>
-              <div>{contentName}</div>
-              <div> {!isTablet && <Arrow />}</div>
-            </div>
+            <section>
+              <figure>
+                {Icon}
+                <figcaption>{contentName}</figcaption>
+              </figure>
+              {!isTablet && (
+                <article>
+                  <Arrow />
+                </article>
+              )}
+            </section>
+            <ContentDescription description={description} />
           </a>
         </Link>
       ) : (
         <a target="_blank" rel="noopener noreferrer">
-          <div>
-            <div>{Icon}</div>
-            <div>{contentName}</div>
-            <div> {!isTablet && !isComingSoon && <Arrow />}</div>
-          </div>
+          <section>
+            <figure>
+              {Icon}
+              <figcaption>{contentName}</figcaption>
+            </figure>
+            {!isTablet && !isComingSoon && (
+              <article>
+                <Arrow />
+              </article>
+            )}
+          </section>
+          <ContentDescription description={description} />
         </a>
       )}
     </>

@@ -4,11 +4,9 @@ import Top from './Top';
 import Section from './Section';
 import Partners from './Partners';
 import Team from './Team';
-import useResizeBrowser from 'hooks/useResizeBrowser';
+import Press from './Press';
 
 const Main = () => {
-  const { browserHeight } = useResizeBrowser();
-
   return (
     <>
       <MainImage />
@@ -17,6 +15,7 @@ const Main = () => {
       <Section />
       <Partners />
       <Team />
+      <Press />
     </>
   );
 };

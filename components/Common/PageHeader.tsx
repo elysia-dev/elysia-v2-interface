@@ -1,14 +1,44 @@
 import { Trans } from 'react-i18next';
+import styled from 'styled-components';
+
+const PageHeaderWrapper = styled.article`
+  padding-top: 60vh;
+  margin-bottom: 30px;
+  > h1 {
+    color: #ffffff;
+    font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 5px;
+    @media (max-width: 460px) {
+      font-size: 1.5rem;
+    }
+  }
+  > h2 {
+    color: #33a5ff;
+    margin: 0;
+    margin-bottom: 14px;
+    font-family: Gilroy-Light, SpoqaHanSansNeo;
+  }
+  > p {
+    color: #cbcbcb;
+    margin: 0;
+    font-size: 1.375rem;
+    @media (max-width: 460px) {
+      font-size: 1rem;
+    }
+  }
+`;
 
 const PageHeader: React.FC<{ headers: string[] }> = ({ headers }) => {
   return (
-    <div>
-      <div>
-        <div>{headers[0]}</div>
-        <div>{headers[1]}</div>
+    <PageHeaderWrapper>
+      <h1>{headers[0]}</h1>
+      <h2>{headers[1]}</h2>
+      <p>
         <Trans>{headers[2]}</Trans>
-      </div>
-    </div>
+      </p>
+    </PageHeaderWrapper>
   );
 };
 

@@ -7,7 +7,12 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { googleGAEvent } from 'utils/gaEvent';
 import AssetItem from './AssetItem';
-import { MainPortFolioWrapper, RightArrowIcon } from './styles';
+import {
+  MainPortFolioWrapper,
+  RightArrowIcon,
+  MainPortfolioItems,
+  MainPortfolioLink,
+} from './styles';
 
 const PortFolio = () => {
   const { reserveState, getAssetBondsByNetwork } = useReserveData();
@@ -54,12 +59,9 @@ const PortFolio = () => {
 
   return (
     <MainPortFolioWrapper>
-      <div>
-        <div>{t(`main.portfolio.0`)}</div>
-        <div>{t(`main.portfolio.1`)}</div>
-        {/* {t(`main.portfolio.2`)} */}
-      </div>
-      <div
+      <h2>{t(`main.portfolio.0`)}</h2>
+      <h3>{t(`main.portfolio.1`)}</h3>
+      <MainPortfolioItems
         style={{
           height: image.length > 0 ? undefined : '410px',
         }}>
@@ -69,8 +71,8 @@ const PortFolio = () => {
             .map((_, idx) => {
               return <AssetItem key={`item_${idx}`} image={image[idx]} />;
             })}
-      </div>
-      <div>
+      </MainPortfolioItems>
+      <MainPortfolioLink>
         <Link href={`${i18n.language}/Ecosystem`} passHref>
           <span
             onClick={() => {
@@ -83,7 +85,7 @@ const PortFolio = () => {
             <RightArrowIcon />
           </span>
         </Link>
-      </div>
+      </MainPortfolioLink>
     </MainPortFolioWrapper>
   );
 };

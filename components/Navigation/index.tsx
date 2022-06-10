@@ -116,8 +116,8 @@ const Navigation = () => {
         )}
       <NavigationWrapper
         theme={isMobile && isMobileMenu ? 'overflow' : isScroll}>
-        <div>
-          <div>
+        <nav>
+          <figure>
             <Link href={`/${router.query.lng}`} passHref>
               <a
                 onClick={() => {
@@ -131,11 +131,11 @@ const Navigation = () => {
                 />
               </a>
             </Link>
-          </div>
+          </figure>
           {isLoading ? (
             <></>
           ) : isMobile ? (
-            <div>
+            <section>
               <div
                 className={`${styles.navigation__hamburger__button} ${
                   isMobileMenu && styles.active
@@ -147,10 +147,10 @@ const Navigation = () => {
                 <i />
                 <i />
               </div>
-            </div>
+            </section>
           ) : (
             <>
-              <div>
+              <section>
                 <Link href={`/${router.query.lng}/ELBridge`} passHref>
                   <div>
                     <a
@@ -256,7 +256,7 @@ const Navigation = () => {
                     </a>
                   </div>
                 </Link>
-              </div>
+              </section>
               <ConnectWalletButton
                 modalVisible={() => setModalVisible(true)}
                 isConnectWalletLoading={isConnectWalletLoading}
@@ -264,7 +264,7 @@ const Navigation = () => {
               <LanguageConverter />
             </>
           )}
-        </div>
+        </nav>
         {isLoading ? (
           <></>
         ) : (

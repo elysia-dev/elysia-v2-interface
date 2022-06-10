@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import CountUp from 'react-countup';
-import { MainTopWrapper } from './styles';
+import { MainTopWrapper, MainTopLink, MainTopPublicRelation } from './styles';
 import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
 import { toCompact } from 'utils/formatters';
 import { formatEther } from 'ethers/lib/utils';
@@ -40,106 +40,101 @@ const Top = () => {
 
   return (
     <MainTopWrapper>
-      <div>
-        <div>
-          <div>{t(`main.top.0`)}</div>
-          <div>{t(`main.top.1`)}</div>
-        </div>
-        <div>
-          <div>
-            <Link href="https://twitter.com/Elysia_HQ" passHref>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.MainTwitter,
-                    GoogleGACategory.Main,
-                  );
-                }}>
-                <Image src={Twitter} alt={'twitter'} />
-              </a>
-            </Link>
-          </div>
-          <div>
-            <Link href="https://t.me/elysia_official" passHref>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.Maintelegram,
-                    GoogleGACategory.Main,
-                  );
-                }}>
-                <Image src={Telegram} alt={'Telegram'} />
-              </a>
-            </Link>
-          </div>
-          <div>
-            <Link href="https://discord.gg/d8zveNum7g" passHref>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.MainDiscord,
-                    GoogleGACategory.Main,
-                  );
-                }}>
-                <Image src={Discord} alt={'Discord'} />
-              </a>
-            </Link>
-          </div>
-          <div>
-            <Link href="https://github.com/elysia-dev" passHref>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.MainGithub,
-                    GoogleGACategory.Main,
-                  );
-                }}>
-                <Image src={Github} alt={'Github'} />
-              </a>
-            </Link>
-          </div>
-        </div>
-        <div>
-          <div>
-            <div>
-              <span>
-                <CountUp
-                  start={0}
-                  end={assetBondTokensBackedByEstate.length + 7}
-                  duration={1}
-                />
-                +
-              </span>
-              <br />
-              {t(`main.top_icon.0`)}
-            </div>
-          </div>
-          <div>
-            <div>
-              <span>
-                <CountUp start={0} end={83385} duration={1} />+
-              </span>
-              <br />
-              {t(`main.top_icon.1`)}
-            </div>
-          </div>
-          <div>
-            <div>
-              <span>${toCompact(parseInt(formatEther(totalBalance)))}+</span>
-              <br />
-              {t(`main.top_icon.2`)}
-            </div>
-          </div>
-        </div>
-      </div>
+      <section>
+        <h1>{t(`main.top.0`)}</h1>
+        <h2>{t(`main.top.1`)}</h2>
+      </section>
+      <MainTopLink>
+        <section>
+          <Link href="https://twitter.com/Elysia_HQ" passHref>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => {
+                googleGAEvent(
+                  GoogleGAAction.MainTwitter,
+                  GoogleGACategory.Main,
+                );
+              }}>
+              <Image src={Twitter} alt={'twitter'} />
+            </a>
+          </Link>
+        </section>
+        <section>
+          <Link href="https://t.me/elysia_official" passHref>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => {
+                googleGAEvent(
+                  GoogleGAAction.Maintelegram,
+                  GoogleGACategory.Main,
+                );
+              }}>
+              <Image src={Telegram} alt={'Telegram'} />
+            </a>
+          </Link>
+        </section>
+        <section>
+          <Link href="https://discord.com/invite/JjjYrE5Ww8" passHref>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => {
+                googleGAEvent(
+                  GoogleGAAction.MainDiscord,
+                  GoogleGACategory.Main,
+                );
+              }}>
+              <Image src={Discord} alt={'Discord'} />
+            </a>
+          </Link>
+        </section>
+        <section>
+          <Link href="https://github.com/elysia-dev" passHref>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() => {
+                googleGAEvent(GoogleGAAction.MainGithub, GoogleGACategory.Main);
+              }}>
+              <Image src={Github} alt={'Github'} />
+            </a>
+          </Link>
+        </section>
+      </MainTopLink>
+      <MainTopPublicRelation>
+        <section>
+          <p>
+            <b>
+              <CountUp
+                start={0}
+                end={assetBondTokensBackedByEstate.length + 7}
+                duration={1}
+              />
+              +
+            </b>
+            <br />
+            {t(`main.top_icon.0`)}
+          </p>
+        </section>
+        <section>
+          <p>
+            <b>
+              <CountUp start={0} end={83385} duration={1} />+
+            </b>
+            <br />
+            {t(`main.top_icon.1`)}
+          </p>
+        </section>
+        <section>
+          <p>
+            <b>${toCompact(parseInt(formatEther(totalBalance)))}+</b>
+            <br />
+            {t(`main.top_icon.2`)}
+          </p>
+        </section>
+      </MainTopPublicRelation>
     </MainTopWrapper>
   );
 };
