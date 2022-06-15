@@ -76,7 +76,7 @@ const Top = () => {
           </Link>
         </section>
         <section>
-          <Link href="https://discord.com/invite/JjjYrE5Ww8" passHref>
+          <Link href="https://discord.gg/d8zveNum7g" passHref>
             <a
               rel="noopener noreferrer"
               target="_blank"
