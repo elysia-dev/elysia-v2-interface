@@ -31,7 +31,7 @@ const SelectWalletModal = (props: Props) => {
   const { activate } = useWeb3React();
   const [global, setGlobal] = useState<WindowWithEthereum>();
   const { t } = useTranslation();
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
 
   const wallets = useMemo(() => {
     if (global?.ethereum) {
