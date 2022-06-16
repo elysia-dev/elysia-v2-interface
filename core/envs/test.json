@@ -30,6 +30,7 @@
     "elAddress": "0x2781246fe707bb15cee3e5ea354e2154a2877b16",
     "daiAddress": "0x6b175474e89094c44da98b954eedeac495271d0f",
     "usdtAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "usdcAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
     "wEthAddress": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
     "bscElfiAddress": "0x9803cd5851b24C8CAE5ebbAD46D69C400553cf4b",
     "busdAddress": "0xc93b97b01455454fba11b806ea645d021212c4c9",
