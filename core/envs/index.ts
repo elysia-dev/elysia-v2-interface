@@ -35,6 +35,7 @@ interface EnvironmentVariables {
     elAddress: string;
     daiAddress: string;
     usdtAddress: string;
+    usdcAddress: string;
     wEthAddress: string;
     bscElfiAddress: string;
     busdAddress: string;
