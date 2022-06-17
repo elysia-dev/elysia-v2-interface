@@ -1,14 +1,28 @@
 @font-face {
   font-family: 'SpoqaHanSansNeo';
   font-display: swap;
+  font-weight: normal;
+  font-style: normal;
   src: url('../assets/fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
   unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF,
     U+0030-0039, U+0020-007E;
   size-adjust: 90%;
 }
 @font-face {
-  font-family: 'SpoqaHanSansNeo-Bold';
+  font-family: 'SpoqaHanSansNeo';
   font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+  src: url('../assets/fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF,
+    U+0030-0039, U+0020-007E;
+  size-adjust: 90%;
+}
+@font-face {
+  font-family: 'SpoqaHanSansNeo';
+  font-display: swap;
+  font-weight: bold;
+  font-style: normal;
   src: url('../assets/fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
   unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF,
     U+0030-0039, U+0020-007E;
@@ -16,17 +30,41 @@
 }
 
 @font-face {
-  font-family: 'Gilroy-Light';
-  font-display: swap;
-  src: url('../assets/fonts/Gilroy-Light.otf') format('opentype');
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
   unicode-range: U+0020-007E, U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3,
     U+D7B0-D7FF;
 }
 
 @font-face {
-  font-family: 'Gilroy-ExtraBold';
-  font-display: swap;
-  src: url('../assets/fonts/Gilroy-ExtraBold.otf') format('opentype');
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-RegularItalic.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  unicode-range: U+0020-007E, U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3,
+    U+D7B0-D7FF;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  unicode-range: U+0020-007E, U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3,
+    U+D7B0-D7FF;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../assets/fonts/Gilroy-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Gilroy-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
   unicode-range: U+0020-007E, U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3,
     U+D7B0-D7FF;
 }
@@ -57,15 +95,12 @@ a {
 div,
 a,
 p,
-figcaption {
-  font-family: Gilroy-Light, SpoqaHanSansNeo;
-  margin: 0;
-}
+figcaption,
 h1,
 strong,
 b,
 h2 {
-  font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
+  font-family: Gilroy, SpoqaHanSansNeo;
   margin: 0;
 }
 figure {
