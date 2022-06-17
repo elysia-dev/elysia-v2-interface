@@ -11,14 +11,12 @@ import RecentActivityType from 'enums/RecentActivityType';
 import TxStatus from 'enums/TxStatus';
 import useReward from 'hooks/useReward';
 import { useCallback, useContext, useEffect, useState } from 'react';
-import styles from './Governance.module.scss';
 import GovernanceBottom from './GovernanceBottom';
 import GovernanceCenter from './GovernanceCenter';
 import GovernanceTop from './GovernanceTop';
 import Staking from './Staking';
-import { NoiseSvg } from 'components/Layout/styles';
 import styled from 'styled-components';
-import documentImage from 'assets/images/main/document_image.webp';
+import { LeftLineContainer } from './style';
 
 export const DocumentsImage = styled.article`
   position: absolute;
@@ -28,7 +26,6 @@ export const DocumentsImage = styled.article`
   height: 100vh;
   z-index: -1;
   opacity: 0.5;
-  /* background: url(${documentImage.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
 `;
@@ -87,7 +84,7 @@ const Governance = () => {
       {modalVisible && <ModalLayout>{modalComponent()}</ModalLayout>}
       <DocumentsImage />
       <GovernanceTop />
-      <section className={styles.governance_left_line_container}>
+      <LeftLineContainer>
         <GovernanceCenter />
         <Staking
           setModalType={setModalType}
@@ -96,7 +93,7 @@ const Governance = () => {
           currentChain={currentChain}
           setCurrentChain={setCurrentChain}
         />
-      </section>
+      </LeftLineContainer>
       <GovernanceBottom />
     </>
   );

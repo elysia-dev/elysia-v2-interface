@@ -1,33 +1,26 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import CloseButton from './CloseButton';
+import { Header, HeaderContent } from './style';
 
 const ModalHeader: React.FunctionComponent<{
-  image?: string;
-  subImage?: string;
-  title: string;
+  image?: StaticImageData;
+  subImage?: StaticImageData;
+  title?: string;
   onClose?: () => void;
 }> = ({ image, subImage, title, onClose }) => {
   return (
-    <div className="modal__header">
-      <div className="modal__header__content">
+    <Header>
+      <HeaderContent>
         {!!image && (
-          <Image
-            className="modal__header__image"
-            src={image}
-            alt="Token image"
-          />
+          <Image src={image} alt="Token image" width={36} height={36} />
         )}
         {!!subImage && !!image && (
-          <Image
-            className="modal__header__image--sub-token"
-            src={subImage}
-            alt="Token image"
-          />
+          <Image src={subImage} alt="Sub token image" />
         )}
-        <h2 className="modal__header__name">{title}</h2>
-      </div>
+        {!!title && <b>{title}</b>}
+      </HeaderContent>
       {!!onClose && <CloseButton onClose={() => onClose()} />}
-    </div>
+    </Header>
   );
 };
 

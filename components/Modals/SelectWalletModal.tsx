@@ -10,12 +10,14 @@ import walletConnectConnector from 'utils/walletConnectProvider';
 import metamask from 'assets/images/metamask@2x.png';
 import walletconnect from 'assets/images/walletconnect@2x.png';
 import browserWallet from 'assets/images/browserWallet@2x.png';
-import CloseButton from './CloseButton';
 import Image from 'next/image';
 import useIsMobile from 'hooks/useIsMobile';
 import { googleGAEvent } from 'utils/gaEvent';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
+import ModalHeader from './ModalHeader';
+import ModalLayout from './ModalLayout';
+import styled from 'styled-components';
 
 type Props = {
   onClose: () => void;
@@ -25,6 +27,46 @@ interface WindowWithEthereum extends Window {
   ethereum?: ethers.providers.Web3Provider;
 }
 const walletConnectProvider = walletConnectConnector();
+
+export const SelectWalletModalContent = styled.section`
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  @supports (gap: 25px) {
+    gap: 25px;
+  }
+  @supports not (gap: 25px) {
+    > button:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+`;
+
+export const SelectWalletModalContentButton = styled.button`
+  cursor: pointer;
+  width: 100%;
+  height: 55px;
+  border-radius: 55px;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  @media (max-width: 460px) {
+    height: 45px;
+  }
+  > b {
+    padding-left: 10px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 55px;
+    font-size: 1.2rem;
+    @media (max-width: 460px) {
+      line-height: 45px;
+    }
+    letter-spacing: 1px;
+  }
+`;
 
 const SelectWalletModal = (props: Props) => {
   const { onClose } = props;
@@ -69,35 +111,27 @@ const SelectWalletModal = (props: Props) => {
 
   return (
     <>
-      <div className="wallet_select_modal">
-        <div className="wallet_select_modal__content">
-          <div className="wallet_select_modal__content__header">
-            <div>{t('modal.select_wallet')}</div>
-            <CloseButton onClose={() => onClose()} />
-          </div>
-          <div className="wallet_select_modal__content__line" />
-          <section className="wallet_select_modal__content__container">
-            {wallets.map((wallet, idx) => {
-              return (
-                <div
-                  className={`wallet_select_modal__content__wallet_btn ${wallet.name}`}
-                  key={idx}
-                  onClick={() => {
-                    connectWallet(wallet.name);
-                  }}>
-                  <Image
-                    src={wallet.image}
-                    alt={wallet.name}
-                    width={28}
-                    height={27}
-                  />
-                  <div>{wallet.name}</div>
-                </div>
-              );
-            })}
-          </section>
-        </div>
-      </div>
+      <ModalLayout title={t('modal.select_wallet')} onClose={() => onClose()}>
+        <SelectWalletModalContent>
+          {wallets.map((wallet, idx) => {
+            return (
+              <SelectWalletModalContentButton
+                key={idx}
+                onClick={() => {
+                  connectWallet(wallet.name);
+                }}>
+                <Image
+                  src={wallet.image}
+                  alt={wallet.name}
+                  width={28}
+                  height={27}
+                />
+                <b>{wallet.name}</b>
+              </SelectWalletModalContentButton>
+            );
+          })}
+        </SelectWalletModalContent>
+      </ModalLayout>
     </>
   );
 };

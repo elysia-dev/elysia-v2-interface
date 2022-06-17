@@ -2,8 +2,10 @@ import Davatar from '@davatar/react';
 import { useWeb3React } from '@web3-react/core';
 import { useTranslation } from 'react-i18next';
 import envs from 'core/envs';
-import CloseButton from './CloseButton';
-import styles from './Modal.module.scss';
+import CopyIcon from 'assets/images/modals/copy.svg';
+import HyperRefIcon from 'assets/images/modals/hyper_ref.svg';
+import ModalLayout from './ModalLayout';
+import styled from 'styled-components';
 
 type Props = {
   onClose: () => void;
@@ -26,147 +28,172 @@ const DisconnectModal = (props: Props) => {
     document.body.removeChild(area);
     alert('Copied!!');
   };
+  const DisconnectModalWrapper = styled.div`
+    margin: 20px 5%;
+  `;
+  const UserContent = styled.section`
+    border: 1px solid #505050;
+    border-radius: 5px;
+  `;
+
+  const UserInfo = styled.section`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 90px;
+    border-bottom: 1px solid #505050;
+    @media (max-width: 514px) {
+      padding: 10px;
+    }
+    > section {
+      line-height: 1.5rem;
+      > b {
+        font-size: 0.9375rem;
+        color: #838383;
+        letter-spacing: 0.6px;
+      }
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        > div {
+          @media (max-width: 460px) {
+            width: 15px !important;
+            height: 15px !important;
+          }
+        }
+        > span {
+          margin-left: 8px;
+          font-weight: bold;
+          font-size: 0.9375rem;
+          color: #fff;
+          @media (max-width: 460px) {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    > button {
+      cursor: pointer;
+      width: 139px;
+      @media (max-width: 460px) {
+        width: 100px;
+      }
+      height: 37px;
+      border: 1px solid #888888;
+      background-color: #505050;
+      border-radius: 37px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9375rem;
+      font-weight: normal;
+      color: #fff;
+      transition: 0.5s all ease;
+      &:hover {
+        background-color: #888888;
+      }
+    }
+  `;
+  const UserBottomButton = styled.section`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    > button,
+    > a {
+      cursor: pointer;
+      width: 50%;
+      height: 100%;
+      font-size: 0.9375rem;
+      color: #fff;
+      font-weight: normal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s all ease;
+      > svg {
+        margin-right: 7px;
+      }
+      &:hover {
+        background-color: #505050;
+      }
+    }
+    > button {
+      border-right: 1px solid #505050;
+    }
+  `;
+  const RecentTx = styled.section`
+    > p {
+      margin-top: 20px;
+      font-size: 0.9375rem;
+      color: #fff;
+    }
+    > section {
+      color: #888888;
+      border: 1px solid #505050;
+      border-radius: 5px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      margin-top: 7px;
+      padding: 0px 10px 0px 20px;
+    }
+  `;
 
   return (
-    <div className={styles.modal_disconnect}>
-      <div className={styles.modal_container}>
-        <div className={styles.modal_header}>
-          <h2>{t('modal.user_info.0')}</h2>
-          <CloseButton onClose={() => onClose()} />
-        </div>
-        <div className="wallet_select_modal__content__line" />
-        <>
-          <div className={styles.modal_content}>
-            <div className={styles.modal_user_info}>
-              <div className={styles.modal_address}>
-                <div>Ethereum</div>
-                <div className={styles.modal_davatar}>
-                  {account && (
-                    <Davatar
-                      size={20}
-                      address={account}
-                      generatedAvatarType="jazzicon"
-                    />
-                  )}
-                  <div>
-                    {account?.substring(0, 8)}....
-                    {account?.substring(account.length - 6, account.length)}
-                  </div>
-                </div>
-              </div>
-              <div
-                className={styles.modal_disconnect_button}
-                onClick={() => {
-                  deactivate();
-                  window.sessionStorage.removeItem('@connect');
-                  onClose();
-                }}>
-                {t('modal.user_info.1')}
-              </div>
-            </div>
-            <div className={styles.modal_function_wrapper}>
-              <div onClick={() => AddressCopy(account || '')}>
-                <svg
-                  id="그룹_6680"
-                  data-name="그룹 6680"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18">
-                  <path
-                    id="패스_2090"
-                    data-name="패스 2090"
-                    d="M0,0H18V18H0Z"
-                    fill="none"
-                  />
-                  <rect
-                    id="사각형_6793"
-                    data-name="사각형 6793"
-                    width="9"
-                    height="9"
-                    rx="2"
-                    transform="translate(6 6)"
-                    fill="none"
-                    stroke="#fff"
-                  />
-                  <path
-                    id="패스_2091"
-                    data-name="패스 2091"
-                    d="M13,7V5.5A1.5,1.5,0,0,0,11.5,4h-6A1.5,1.5,0,0,0,4,5.5v6A1.5,1.5,0,0,0,5.5,13H7"
-                    transform="translate(-1 -1)"
-                    fill="none"
-                    stroke="#fff"
-                  />
-                </svg>
-                {t('modal.user_info.2')}
-              </div>
+    <ModalLayout title={t('modal.user_info.0')} onClose={() => onClose()}>
+      <DisconnectModalWrapper>
+        <UserContent>
+          <UserInfo>
+            <section>
+              <b>Ethereum</b>
               <div>
-                <svg
-                  id="그룹_2391"
-                  data-name="그룹 2391"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18.235"
-                  height="18.235"
-                  viewBox="0 0 18.235 18.235">
-                  <path
-                    id="패스_2086"
-                    data-name="패스 2086"
-                    d="M0,0H18.235V18.235H0Z"
-                    fill="none"
+                {account && (
+                  <Davatar
+                    size={20}
+                    address={account}
+                    generatedAvatarType="jazzicon"
                   />
-                  <circle
-                    id="타원_499"
-                    data-name="타원 499"
-                    cx="7.048"
-                    cy="7.048"
-                    r="7.048"
-                    transform="translate(2.014 2.126)"
-                    fill="none"
-                    stroke="#fff"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1"
-                  />
-                  <path
-                    id="패스_2088"
-                    data-name="패스 2088"
-                    d="M4.033,0-.841,5.127"
-                    transform="translate(7.36 6.717)"
-                    fill="none"
-                    stroke="#fff"
-                    strokeLinecap="round"
-                    strokeWidth="1"
-                  />
-                  <path
-                    id="패스_2087"
-                    data-name="패스 2087"
-                    d="M13.559,13.559V9H9"
-                    transform="translate(-1.844 -2.605)"
-                    fill="none"
-                    stroke="#fff"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1"
-                  />
-                </svg>
-                <a
-                  href={`${envs.externalApiEndpoint.etherscanURI}/address/${account}`}
-                  rel="noopener noreferrer"
-                  target="_blank">
-                  {t('modal.user_info.3')}
-                </a>
+                )}
+                <span>
+                  {account?.substring(0, 8)}....
+                  {account?.substring(account.length - 6, account.length)}
+                </span>
               </div>
-            </div>
-          </div>
-          <div className={styles.recent_tx_wrapper}>
-            <div className={styles.recent_header}>{t('modal.user_info.4')}</div>
-            <div className={styles.recent_box}>
-              <div>{t('modal.user_info.5')}</div>
-            </div>
-          </div>
-        </>
-      </div>
-    </div>
+            </section>
+            <button
+              onClick={() => {
+                deactivate();
+                window.sessionStorage.removeItem('@connect');
+                onClose();
+              }}>
+              {t('modal.user_info.1')}
+            </button>
+          </UserInfo>
+          <UserBottomButton>
+            <button onClick={() => AddressCopy(account || '')}>
+              <CopyIcon />
+              {t('modal.user_info.2')}
+            </button>
+            <a
+              href={`${envs.externalApiEndpoint.etherscanURI}/address/${account}`}
+              rel="noopener noreferrer"
+              target="_blank">
+              <HyperRefIcon />
+              {t('modal.user_info.3')}
+            </a>
+          </UserBottomButton>
+        </UserContent>
+        <RecentTx>
+          <p>{t('modal.user_info.4')}</p>
+          <section>
+            <p>{t('modal.user_info.5')}</p>
+          </section>
+        </RecentTx>
+      </DisconnectModalWrapper>
+    </ModalLayout>
   );
 };
 

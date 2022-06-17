@@ -17,7 +17,7 @@ import SelectWalletModal from 'components/Modals/SelectWalletModal';
 import ErrorModal from 'components/Modals/ErrorModal';
 import TxStatus from 'enums/TxStatus';
 import { isChainId } from 'utils/isChainId';
-import { NavigationWrapper } from './styles';
+import { NavigationWrapper, HamburgerButton } from './styles';
 import MobileMenu from './MobileMenu';
 import LanguageConverter from './LanguageConverter';
 import GoogleGAAction from 'enums/GoogleGAAction';
@@ -136,17 +136,15 @@ const Navigation = () => {
             <></>
           ) : isMobile ? (
             <section>
-              <div
-                className={`${styles.navigation__hamburger__button} ${
-                  isMobileMenu && styles.active
-                }`}
+              <HamburgerButton
+                isActive={isMobileMenu}
                 onClick={() => {
                   setMobileMenu(!isMobileMenu);
                 }}>
                 <i />
                 <i />
                 <i />
-              </div>
+              </HamburgerButton>
             </section>
           ) : (
             <>
@@ -163,9 +161,9 @@ const Navigation = () => {
                       <span
                         style={{
                           cursor: 'pointer',
-                          fontFamily: router.pathname.includes('ELBridge')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
+                          fontWeight: router.pathname.includes('ELBridge')
+                            ? 'bold'
+                            : 'normal',
                         }}>
                         EL Bridge
                       </span>
@@ -184,9 +182,9 @@ const Navigation = () => {
                       <span
                         style={{
                           cursor: 'pointer',
-                          fontFamily: router.pathname.includes('Governance')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
+                          fontWeight: router.pathname.includes('Governance')
+                            ? 'bold'
+                            : 'normal',
                         }}>
                         Governance
                       </span>
@@ -205,9 +203,9 @@ const Navigation = () => {
                       <span
                         style={{
                           cursor: 'pointer',
-                          fontFamily: router.pathname.includes('Ecosystem')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
+                          fontWeight: router.pathname.includes('Ecosystem')
+                            ? 'bold'
+                            : 'normal',
                         }}>
                         Ecosystem
                       </span>
@@ -226,9 +224,9 @@ const Navigation = () => {
                       <span
                         style={{
                           cursor: 'pointer',
-                          fontFamily: router.pathname.includes('Community')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
+                          fontWeight: router.pathname.includes('Community')
+                            ? 'bold'
+                            : 'normal',
                         }}>
                         Community
                       </span>
@@ -247,9 +245,9 @@ const Navigation = () => {
                       <span
                         style={{
                           cursor: 'pointer',
-                          fontFamily: router.pathname.includes('Developers')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
+                          fontWeight: router.pathname.includes('Developers')
+                            ? 'bold'
+                            : 'normal',
                         }}>
                         Developers
                       </span>

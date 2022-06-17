@@ -1,13 +1,9 @@
-import TokenImg from 'assets/images/ELYSIA_DAO_TOKEN3@2x.png';
 import Image from 'next/image';
 import useSWR from 'swr';
 import envs from 'core/envs';
-import styles from './Governance.module.scss';
-import Arrow from './Arrow';
 import { pricesFetcher } from 'clients/Coingecko';
 import priceMiddleware from 'middleware/priceMiddleware';
-import { Trans, useTranslation } from 'react-i18next';
-import Questionmark from './Questionmark';
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import {
   circulatingSupplyFetcher,
@@ -22,6 +18,13 @@ import { useRouter } from 'next/router';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import { googleGAEvent } from 'utils/gaEvent';
 import GoogleGACategory from 'enums/GoogleGACategory';
+import {
+  Button,
+  CenterGetELToken,
+  CenterGetELTokenBody,
+  CenterGetELTokenHeader,
+  CenterHeaderCircle,
+} from './style';
 
 const GovernanceCenter = () => {
   const { data } = useSWR(
@@ -46,12 +49,12 @@ const GovernanceCenter = () => {
 
   return (
     <article>
-      <div className={styles.center_circle}>
+      <CenterHeaderCircle>
         <b>{t('governance.section_second.0')}</b>
-      </div>
+      </CenterHeaderCircle>
       <GovernanceLineCounter counter={1}>
-        <div className={styles.center_section_01}>
-          <article className={styles.center_section_01_header}>
+        <CenterGetELToken>
+          <CenterGetELTokenHeader>
             <figure className="token_wrapper">
               <Image src={ELtoken} alt={'EL Token'} />
             </figure>
@@ -59,8 +62,7 @@ const GovernanceCenter = () => {
               <h2>{t('governance.section_second.1')}</h2>
               <p>{t('governance.section_second.2')}</p>
               <div>
-                <button
-                  className={styles.governance_button}
+                <Button
                   onClick={() => {
                     googleGAEvent(
                       GoogleGAAction.GovExchange,
@@ -77,9 +79,8 @@ const GovernanceCenter = () => {
                     width={18}
                     height={12}
                   />
-                </button>
-                <button
-                  className={styles.governance_button}
+                </Button>
+                <Button
                   onClick={() => {
                     googleGAEvent(
                       GoogleGAAction.GovTokeneconomy,
@@ -98,12 +99,12 @@ const GovernanceCenter = () => {
                     width={18}
                     height={12}
                   />
-                </button>
+                </Button>
               </div>
             </div>
-          </article>
-          <article className={styles.center_section_01_body}>
-            <section className={styles.center_section_01_body_box}>
+          </CenterGetELTokenHeader>
+          <CenterGetELTokenBody>
+            <div>
               <div>
                 <p>{t('governance.section_second.6')}</p>
                 <h2>$ {data?.elPrice.toFixed(4)}</h2>
@@ -120,10 +121,10 @@ const GovernanceCenter = () => {
                 <p>{t('governance.section_second.11')}</p>
                 <h2>{formatCommaSmallZeroDisits(circulatingSupply)} EL</h2>
               </div>
-            </section>
+            </div>
             <p>* powered by crypto.com</p>
-          </article>
-        </div>
+          </CenterGetELTokenBody>
+        </CenterGetELToken>
       </GovernanceLineCounter>
     </article>
   );

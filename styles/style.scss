@@ -450,60 +450,8 @@ div.background__event__mobile {
 }
 
 .wallet_select_modal {
-  background-color: #3e3e3e;
-  border-radius: 10px;
-  border: 1px solid #707070;
-  max-width: 514px;
-  width: 100%;
-  margin: 0 0px;
-  @media (max-width: 514px) {
-    width: 90%;
-    margin: 0 auto;
-  }
   &__content {
-    &__header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 25px;
-      div:first-child {
-        margin: 0;
-        font-size: 1.2rem;
-        color: #fff;
-        font-family: Inter-Bold;
-        letter-spacing: 1.2px;
-      }
-    }
-
-    &__line {
-      width: 100%;
-      height: 1;
-      border-top: 1px solid #505050;
-    }
-
     &__wallet_btn {
-      cursor: pointer;
-      width: 100%;
-      height: 55px;
-      border-radius: 55px;
-      box-sizing: border-box;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      // justify-content: center;
-      background-color: #000;
-      @media (max-width: 460px) {
-        height: 45px;
-      }
-      div:last-child {
-        padding-left: 10px;
-        color: #fff;
-        font-family: Inter;
-        line-height: 55px;
-        @media (max-width: 460px) {
-          line-height: 45px;
-        }
-      }
     }
     &__container {
       padding: 25px;
@@ -517,28 +465,6 @@ div.background__event__mobile {
   }
   .WalletConnect:hover {
     border: 1px solid #3679b5;
-  }
-}
-
-.close-button {
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  cursor: pointer;
-  &--1 {
-    height: 25px;
-    width: 1px;
-    margin-left: 12.5px;
-    background-color: #b7b7b7;
-    transform: rotate(45deg);
-    z-index: 1;
-  }
-  &--2 {
-    height: 25px;
-    width: 1px;
-    background-color: #b7b7b7;
-    transform: rotate(90deg);
-    z-index: 2;
   }
 }
 
@@ -852,14 +778,6 @@ button.button__contact {
   transform: rotate(330deg);
   animation-delay: 0s;
 }
-@keyframes lds-spinner {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
 .wallet_wrapper {
   font-family: 'Gilroy-Light';
@@ -889,21 +807,6 @@ button.button__contact {
       margin-left: 10px;
     }
   }
-  &:hover {
-    border: 2px solid #3679b5;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .wallet_wrapper {
-    width: 150px;
-    height: 38px;
-    margin-left: 10px;
-  }
-}
-
-.disconnect {
-  animation: glow 1.5s linear infinite alternate;
 }
 
 .FAIL {

@@ -1,9 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import elbridge from 'assets/images/main/elbridge_image.webp';
 
-const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
-const $light = 'Gilroy-Light, SpoqaHanSansNeo';
-
 const center = {
   display: 'flex',
   'align-items': 'center',
@@ -50,7 +47,7 @@ export const ELbridgeImage = styled.article`
 export const SectionWrapper = styled.article`
   padding-bottom: 200px;
   color: #ffffff;
-  font-family: ${$light};
+  font-weight: normal;
 `;
 
 export const NFTDescription = styled.section<{ active?: boolean }>`
@@ -69,7 +66,7 @@ export const NFTDescription = styled.section<{ active?: boolean }>`
   }
   > div:first-child {
     cursor: pointer;
-    font-family: ${$bold};
+    font-weight: bold;
     ${center}
     padding: 33px 0px 35.5px 0px;
     margin: 0 71px;
@@ -137,7 +134,7 @@ export const AssetNFTDescription = styled.article<{ active?: boolean }>`
   }
   > div:first-child {
     cursor: pointer;
-    font-family: ${$bold};
+    font-weight: bold;
     ${center}
     padding: 33px 0px 35.5px 0px;
     margin: 0 71px;
@@ -197,19 +194,20 @@ export const CreateNFTWrapper = styled.article`
   margin: 90px auto;
   > strong {
     font-size: 1.75rem;
-    font-family: ${$bold};
+    font-weight: bold;
     margin-bottom: 10px;
   }
   > h3 {
     font-size: 1.25rem;
     margin-bottom: 25px;
+    font-weight: normal;
   }
 `;
 
 export const CreatedNFTCount = styled.div`
   width: 100%;
   height: 70px;
-  font-family: ${$bold};
+  font-weight: bold;
   line-height: 2.5rem;
   margin-bottom: 35px;
   > span {
@@ -244,7 +242,7 @@ export const StepOne = styled.article<{
     }
     > h2 {
       font-size: 1.375rem;
-      font-family: ${$light};
+      font-weight: normal;
     }
   }
   > section:last-child {
@@ -344,7 +342,7 @@ export const StepTwo = styled.article<{
     }
     > h2 {
       font-size: 1.375rem;
-      font-family: ${$light};
+      font-weight: normal;
     }
   }
   > section:last-child {
@@ -444,7 +442,7 @@ export const StepThree = styled.article<{
 
     > h2 {
       font-size: 1.375rem;
-      font-family: ${$light};
+      font-weight: normal;
     }
   }
   > section:last-child {
@@ -542,7 +540,7 @@ export const StepFour = styled.article<{
     }
     > h2 {
       font-size: 1.375rem;
-      font-family: ${$light};
+      font-weight: normal;
     }
   }
   > section:last-child {
@@ -640,7 +638,7 @@ export const StepFive = styled.article<{
     }
     > h2 {
       font-size: 1.375rem;
-      font-family: ${$light};
+      font-weight: normal;
     }
   }
   > section:last-child {
@@ -667,7 +665,7 @@ export const StepFive = styled.article<{
         padding: 20px 40px;
         font-size: 1.5rem;
         resize: none;
-        font-family: ${$light};
+        font-weight: normal;
         &::placeholder {
           color: #bcbcbc;
           font-size: 1.25rem;
@@ -779,7 +777,7 @@ export const ElysiaWhitePaper = styled.article`
   }
   > a {
     cursor: pointer;
-    font-family: ${$bold};
+    font-weight: bold;
     font-size: 1.375rem;
     background-color: #000000;
     box-shadow: 0px 0px 6px #00000029;
@@ -818,7 +816,7 @@ export const QuestionWrapper = styled.article`
   margin-top: 41px;
   margin-bottom: 50px;
   > h2 {
-    font-family: ${$bold};
+    font-weight: bold;
     font-size: 1.75rem;
     margin-bottom: 27px;
   }

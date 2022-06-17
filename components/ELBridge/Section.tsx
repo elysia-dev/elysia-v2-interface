@@ -1,7 +1,6 @@
 import PageHeader from 'components/Common/PageHeader';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Trans, useTranslation } from 'react-i18next';
-import * as gtag from 'lib/gtag';
 import {
   AssetNFTDescription,
   CreateNFTWrapper,
@@ -22,7 +21,6 @@ import RealEstateTypes from 'enums/ RealEstateTypes';
 import NFTApplicationTypes from 'enums/ NFTApplicationTypes';
 import Link from 'next/link';
 import axios from 'axios';
-import OnBoardingStep from 'enums/OnBoardingStep';
 import { googleGAEvent } from 'utils/gaEvent';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';

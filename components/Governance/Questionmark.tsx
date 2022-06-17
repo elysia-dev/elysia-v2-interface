@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import styles from './Governance.module.scss';
 
 type Props = {
   guideText: string;
@@ -13,10 +12,7 @@ const Questionmark = (props: Props) => {
   const { i18n } = useTranslation();
 
   return (
-    <div
-      onMouseEnter={() => mouseEnter()}
-      onMouseLeave={() => mouseLeave()}
-      className={styles.question}>
+    <div onMouseEnter={() => mouseEnter()} onMouseLeave={() => mouseLeave()}>
       ?
       {visible && (
         <div

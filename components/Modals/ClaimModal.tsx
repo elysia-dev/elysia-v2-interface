@@ -3,9 +3,6 @@ import { formatEther } from 'ethers/lib/utils';
 import ElysiaToken from 'assets/images/elysia_token.png';
 import CountUp from 'react-countup';
 import { formatSixFracionDigit } from 'utils/formatters';
-import CloseButton from './CloseButton';
-import styles from './Modal.module.scss';
-import Image from 'next/image';
 import LoadingIndicator from './LoadingIndicator';
 import { useContext, useEffect, useState } from 'react';
 import TxContext from 'contexts/TxContext';
@@ -16,6 +13,9 @@ import { googleGAEvent } from 'utils/gaEvent';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import { useWeb3React } from '@web3-react/core';
+import ModalLayout from './ModalLayout';
+import styled from 'styled-components';
+import ModalButton from './ModalButton';
 
 type Props = {
   onClose: () => void;
@@ -24,6 +24,40 @@ type Props = {
     after: BigNumber;
   };
 };
+
+const Container = styled.section`
+  margin: 10px;
+`;
+const Wrapper = styled.section`
+  border: 1px solid #707070;
+  height: 145px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 30px;
+  font-size: 1.875rem;
+  border-radius: 10px;
+  @media (max-width: 500px) {
+    padding: 0px 15px;
+    height: 110px;
+  }
+`;
+const InnerValue = styled.section`
+  font-family: SpoqaHanSansNeo;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > span {
+    margin-right: 7px;
+    font-size: 3rem;
+    color: #fff;
+  }
+  > b {
+    font-size: 2.5rem;
+    color: #fff;
+  }
+`;
 
 const ClaimModal = (props: Props) => {
   const { onClose, reward } = props;
@@ -44,72 +78,51 @@ const ClaimModal = (props: Props) => {
   }, [txStatus]);
 
   return (
-    <>
-      <div className={styles.modal_claim}>
-        <div className={styles.modal_container}>
-          <div className={styles.modal_header}>
-            <div className={styles.modal_header_img}>
-              <Image
-                src={ElysiaToken}
-                alt={'ElysiaToken'}
-                width={36}
-                height={36}
+    <ModalLayout image={ElysiaToken} title="EL" onClose={() => onClose()}>
+      {transactionWait ? (
+        <>
+          <LoadingIndicator
+            isTxActive={transactionWait}
+            isApproveLoading={false}
+            button={t('modal.reward.0')}
+          />
+        </>
+      ) : (
+        <Container>
+          <Wrapper>
+            <InnerValue>
+              <CountUp
+                start={parseFloat(
+                  formatEther(reward?.before || constants.Zero),
+                )}
+                end={parseFloat(formatEther(reward?.after || constants.Zero))}
+                formattingFn={(number: any) => {
+                  return formatSixFracionDigit(number);
+                }}
+                decimals={6}
+                duration={1}
               />
-              <h2>EL</h2>
-            </div>
-            <CloseButton onClose={() => onClose()} />
-          </div>
-        </div>
-        {transactionWait ? (
-          <>
-            <div className="wallet_select_modal__content__line" />
-            <LoadingIndicator
-              isTxActive={transactionWait}
-              isApproveLoading={false}
-              button={t('modal.reward.0')}
-            />
-          </>
-        ) : (
-          <>
-            <div className={styles.modal_content_wrapper}>
-              <div className={styles.modal_content}>
-                <CountUp
-                  className={styles.reward}
-                  start={parseFloat(
-                    formatEther(reward?.before || constants.Zero),
-                  )}
-                  end={parseFloat(formatEther(reward?.after || constants.Zero))}
-                  formattingFn={(number: any) => {
-                    return formatSixFracionDigit(number);
-                  }}
-                  decimals={6}
-                  duration={1}
-                />
-                <div>EL</div>
-              </div>
-            </div>
-            <div
-              className={styles.modal_button}
-              onClick={() => {
-                setTransactionWait(true);
-                googleGAEvent(
-                  GoogleGAAction.GovStakingIncentive,
-                  GoogleGACategory.Governance,
-                  `WalletAddress = ${account},IncentiveAmount = ${parseFloat(
-                    formatEther(reward?.after || constants.Zero),
-                  )}
+              <b>EL</b>
+            </InnerValue>
+          </Wrapper>
+          <ModalButton
+            title={t('modal.reward.0')}
+            onClick={() => {
+              setTransactionWait(true);
+              googleGAEvent(
+                GoogleGAAction.GovStakingIncentive,
+                GoogleGACategory.Governance,
+                `WalletAddress = ${account},IncentiveAmount = ${parseFloat(
+                  formatEther(reward?.after || constants.Zero),
+                )}
                   }`,
-                );
-                claim();
-              }}>
-              <div>
-                <p>{t('modal.reward.0')}</p>
-              </div>
-            </div>
-          </>
-        )}
-      </div>
-    </>
+              );
+              claim();
+            }}
+          />
+        </Container>
+      )}
+    </ModalLayout>
   );
 };
 
