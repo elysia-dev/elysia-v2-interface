@@ -1,33 +1,5 @@
 import styled from 'styled-components';
 import mainImage from 'assets/images/main/main_bg.webp';
-import elbridge from 'assets/images/main/elbridge_image.webp';
-import ecosystem from 'assets/images/main/ecosystem_image.webp';
-import developers from 'assets/images/main/developers_image.webp';
-import governance from 'assets/images/main/governance_image.webp';
-import community from 'assets/images/main/community_image.webp';
-import document from 'assets/images/main/document_image.webp';
-
-const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
-const $light = 'Gilroy-Light, SpoqaHanSansNeo';
-
-const setRightBackground = (image: string) => {
-  return {
-    background: `url(${image}), rgba(255, 255, 255, 0.1)`,
-    'background-repeat': 'no-repeat',
-    'background-position-x': 'right',
-    'background-position-y': '-50px',
-    'background-size': '800px',
-  };
-};
-const setLeftBackground = (image: string) => {
-  return {
-    background: `url(${image}), rgba(255, 255, 255, 0.1)`,
-    'background-repeat': 'no-repeat',
-    'background-position-x': 'left',
-    'background-position-y': '-50px',
-    'background-size': '800px',
-  };
-};
 
 const sectionBorder = (padding: string) => ({
   background: 'rgba(255, 255, 255, 0.1)',
@@ -83,7 +55,7 @@ export const MainTopWrapper = styled.section`
       }
     }
     > h2 {
-      font-family: ${$light};
+      font-weight: normal;
       font-size: 1.875rem;
       color: #33a5ff;
       @media (max-width: 640px) {
@@ -203,7 +175,7 @@ export const MainPortFolioWrapper = styled.article`
     color: #ffffff;
   }
   > h3 {
-    font-family: ${$light};
+    font-weight: normal;
     color: #33a5ff;
     font-size: 1.375rem;
     margin-top: 5px;
@@ -300,7 +272,7 @@ export const MainSectionItems = styled.a<{ isLeftArrow?: boolean }>`
       flex-direction: ${(props) => (props.isLeftArrow ? 'row-reverse' : 'row')};
       > figcaption {
         margin: ${(props) => (props.isLeftArrow ? '0 0 0 10px' : '0 10px 0 0')};
-        font-family: ${$bold};
+        font-weight: bold;
         font-size: 2rem;
         color: #ffffff;
         display: flex;
@@ -308,7 +280,7 @@ export const MainSectionItems = styled.a<{ isLeftArrow?: boolean }>`
       }
     }
     > h2 {
-      font-family: ${$light};
+      font-weight: normal;
       font-size: 1.375rem;
       color: #ffffff;
       margin-top: 10px;
@@ -346,7 +318,7 @@ export const MainSectionWrapper = styled.article`
   padding: 25vh 0px;
   max-width: 1639px;
   margin: auto;
-  font-family: ${$light};
+  font-weight: normal;
   position: relative;
   overflow: hidden;
 `;
@@ -367,7 +339,7 @@ export const PartnersWrapper = styled.article`
     color: #ffffff;
   }
   > h3 {
-    font-family: ${$light};
+    font-weight: normal;
     color: #33a5ff;
     font-size: 1.375rem;
     margin-top: 5px;
@@ -471,7 +443,7 @@ export const MainTeamWrapper = styled.article`
     color: #ffffff;
   }
   > h3 {
-    font-family: ${$light};
+    font-weight: normal;
     color: #33a5ff;
     font-size: 1.375rem;
     margin-top: 5px;
@@ -507,7 +479,7 @@ export const MainPressWrapper = styled.article`
     color: #ffffff;
   }
   > h3 {
-    font-family: ${$light};
+    font-weight: normal;
     color: #33a5ff;
     font-size: 1.375rem;
     margin-top: 5px;

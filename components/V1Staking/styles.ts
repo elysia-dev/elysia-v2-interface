@@ -12,13 +12,13 @@ export const HeaderWrapper = styled.section`
   margin-bottom: 67px;
 
   h1 {
-    font-family: Gilroy-ExtraBold;
+    font-weight: bold;
     font-size: 1.875rem;
     margin-bottom: 20px;
     color: #fff;
   }
   p {
-    font-family: Gilroy-Light;
+    font-weight: normal;
     font-size: 1.25rem;
     line-height: 1.8rem;
     color: #fff;
@@ -95,7 +95,7 @@ export const RoundInfoWrapper = styled.section`
       margin-bottom: 20px;
     }
     > h2 {
-      font-family: Gilroy-ExtraBold;
+      font-weight: bold;
       font-size: 1.0625rem;
       margin-bottom: 23px;
       color: #fff;
@@ -106,7 +106,7 @@ export const RoundInfoWrapper = styled.section`
     }
 
     > p {
-      font-family: Gilroy-Light;
+      font-weight: normal;
       text-align: center;
       font-size: 0.8125rem;
       color: #fff;
@@ -181,7 +181,7 @@ export const StakingInfoByRound = styled.div`
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
   > h2 {
-    font-family: Gilroy-ExtraBold;
+    font-weight: bold;
     font-size: 1.4rem;
     margin: 0;
     color: #fff;
@@ -191,13 +191,13 @@ export const StakingInfoByRound = styled.div`
     display: flex;
     align-items: center;
     > h2 {
-      font-family: Gilroy-ExtraBold;
+      font-weight: bold;
       font-size: 1.8rem;
       margin: 0;
       color: #fff;
     }
     > span {
-      font-family: Gilroy-ExtraBold;
+      font-weight: bold;
       font-size: 1.7rem;
       margin: 0;
       color: #838383;
@@ -238,7 +238,7 @@ export const StakingInfoByRound = styled.div`
               cursor: pointer;
             `}
       margin: 0;
-      font-family: Gilroy-Light;
+      font-weight: normal;
     }
   }
 `;
@@ -246,7 +246,7 @@ export const StakingInfoByRound = styled.div`
 export const WalletText = styled.div`
   font-size: 1.25rem;
   text-align: center;
-  font-family: Gilroy-ExtraBold;
+  font-weight: bold;
   color: #fff;
   letter-spacing: 1.4px;
 `;

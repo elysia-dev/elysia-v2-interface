@@ -6,7 +6,7 @@ const PageHeaderWrapper = styled.article`
   margin-bottom: 30px;
   > h1 {
     color: #ffffff;
-    font-family: Gilroy-ExtraBold, SpoqaHanSansNeo-Bold;
+    font-weight: bold;
     font-size: 2rem;
     margin: 0;
     margin-bottom: 5px;
@@ -18,7 +18,7 @@ const PageHeaderWrapper = styled.article`
     color: #33a5ff;
     margin: 0;
     margin-bottom: 14px;
-    font-family: Gilroy-Light, SpoqaHanSansNeo;
+    font-weight: normal;
   }
   > p {
     color: #cbcbcb;

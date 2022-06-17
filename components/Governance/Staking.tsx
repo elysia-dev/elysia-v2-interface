@@ -1,6 +1,5 @@
 import ModalType from 'enums/ModalType';
 import { Dispatch, SetStateAction, useMemo } from 'react';
-import styles from './Governance.module.scss';
 import {
   formatComma,
   formatSixFracionDigit,
@@ -30,6 +29,22 @@ import BscOff from 'assets/images/governance/bsc-off.png';
 import { googleGAEvent } from 'utils/gaEvent';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
+import {
+  AnchorButton,
+  PrevLinkButton,
+  StakingArticle,
+  StakingBody,
+  StakingButton,
+  StakingContent,
+  StakingContentBox,
+  StakingContentHeader,
+  StakingDisableContent,
+  StakingHeader,
+  StakingImageContainer,
+  StakingInterface,
+  StakingSelectMainnet,
+  StakingSelectMainnetCurrent,
+} from './style';
 
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
@@ -54,7 +69,7 @@ const Staking = (props: Props) => {
   const router = useRouter();
   const { userStakedInfo } = useV2StakedInfo();
   const { totalBalance, isLoading, apr } = useTotalStakedBalance();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const startDate = useMemo(() => {
     return moment('2022.04.18 19:00:00 +9:00', 'YYYY.MM.DD hh:mm:ss Z').tz(
       'Asia/Seoul',
@@ -108,15 +123,11 @@ const Staking = (props: Props) => {
   return (
     <article>
       <GovernanceLineCounter counter={2}>
-        <div className={styles.center_section_02}>
-          <article className={styles.center_section_02_header}>
-            <section className={styles.center_section_02_image_container}>
-              <Image
-                src={RoundWrapper}
-                alt="Token-data"
-                className={styles.center_section_02_image}
-              />
-              <div className={styles.amount}>
+        <StakingArticle>
+          <StakingHeader>
+            <StakingImageContainer>
+              <Image src={RoundWrapper} alt="Token data" />
+              <div className="amount">
                 <p>{t('governance.section_third.4')}</p>
                 <b>
                   {' '}
@@ -131,7 +142,7 @@ const Staking = (props: Props) => {
                   )}
                 </b>
               </div>
-              <div className={styles.apr}>
+              <div className="apr">
                 <p>APR</p>
                 <b>
                   {currentChain === ChainType.Ethereum ? (
@@ -145,7 +156,7 @@ const Staking = (props: Props) => {
                   )}
                 </b>
               </div>
-            </section>
+            </StakingImageContainer>
             <div>
               <h2>{t('governance.section_third.0')}</h2>
               <p>
@@ -154,8 +165,7 @@ const Staking = (props: Props) => {
                 <br />
                 <Trans>{t('governance.section_third.2')}</Trans>
               </p>
-              <a
-                className={styles.governance_button}
+              <AnchorButton
                 onClick={() => {
                   googleGAEvent(
                     GoogleGAAction.GovStakingGuide,
@@ -170,21 +180,19 @@ const Staking = (props: Props) => {
                   width={18}
                   height={12}
                 />
-              </a>
+              </AnchorButton>
             </div>
-          </article>
-          <article className={styles.center_section_02_body}>
-            <a
-              className={styles.staking_prev}
+          </StakingHeader>
+          <StakingBody>
+            <PrevLinkButton
               onClick={() =>
                 router.push(`/${getLocalLanguage()}/Governance/V1Staking`)
               }>
               {t('governance.section_third.6')} &gt;
-            </a>
-            <article className={styles.staking_container}>
-              <section className={styles.staking_select_mainnet}>
-                <div
-                  className={styles.staking_select_mainnet_current}
+            </PrevLinkButton>
+            <StakingInterface>
+              <StakingSelectMainnet>
+                <StakingSelectMainnetCurrent
                   style={{
                     left: currentChain === ChainType.Ethereum ? 4 : 67,
                   }}
@@ -215,63 +223,41 @@ const Staking = (props: Props) => {
                   />
                   <p>BSC</p>
                 </div>
-              </section>
-              <section className={styles.staking_content}>
+              </StakingSelectMainnet>
+              <StakingContent>
                 {currentChain === ChainType.Ethereum ? (
                   !chainId || (chainId && [1, 1337].includes(chainId)) ? (
                     stakingInfo.map((info, idx) => (
-                      <section
-                        key={`info_${idx}`}
-                        className={styles.staking_content_box}>
-                        <div className={styles.staking_content_header}>
+                      <StakingContentBox key={`info_${idx}`}>
+                        <StakingContentHeader>
                           <p>{info.name}</p>
                           <div>
                             <b>{info.value}</b>
                             <span>EL</span>
                           </div>
-                        </div>
-                        <div
-                          className={
-                            moment().diff(startDate) >= 0
-                              ? styles.staking_active
-                              : styles.staking_deactive
-                          }
+                        </StakingContentHeader>
+                        <StakingButton
+                          active={moment().diff(startDate) >= 0}
                           onClick={() => {
                             if (moment().diff(startDate) < 0) return;
                             info.onClick();
-                          }}
-                          style={{
-                            backgroundColor:
-                              moment().diff(startDate) >= 0
-                                ? undefined
-                                : 'rgb(240, 240, 241)',
                           }}>
-                          <p
-                            style={{
-                              color:
-                                moment().diff(startDate) >= 0
-                                  ? undefined
-                                  : '#888888',
-                            }}>
-                            {info.btnType}
-                          </p>
-                        </div>
-                      </section>
+                          <p>{info.btnType}</p>
+                        </StakingButton>
+                      </StakingContentBox>
                     ))
                   ) : (
-                    <div className={styles.staking_network}>
+                    <StakingDisableContent>
                       {t('governance.section_third.11')}
-                    </div>
+                    </StakingDisableContent>
                   )
                 ) : (
-                  <div className={styles.staking_comming_soon}>
-                    Coming soon!
-                  </div>
+                  <StakingDisableContent>Coming soon!</StakingDisableContent>
                 )}
-              </section>
-            </article>
-          </article>
-        </div>
+              </StakingContent>
+            </StakingInterface>
+          </StakingBody>
+        </StakingArticle>
       </GovernanceLineCounter>
     </article>
   );

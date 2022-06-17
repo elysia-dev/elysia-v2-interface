@@ -1,11 +1,11 @@
 import PageHeader from 'components/Common/PageHeader';
-import { Trans, useTranslation } from 'react-i18next';
-import styles from './Governance.module.scss';
+import { useTranslation } from 'react-i18next';
+import { TopArticle, TopContent, TopRightWrapper, TopWrapper } from './style';
 
 const GovernanceTop = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <article className={styles.governance_top}>
+    <TopArticle>
       <PageHeader
         headers={[
           t('governance.title'),
@@ -13,23 +13,23 @@ const GovernanceTop = () => {
           t('governance.section_first.0'),
         ]}
       />
-      <div className={styles.governance_top_content_wrapper}>
-        <section className={styles.governance_top_content}>
+      <TopWrapper>
+        <TopContent>
           <strong>Mission</strong>
           <div>
             <p>{t('governance.section_first.1')}</p>
           </div>
-        </section>
-        <section className={styles.governance_top_content_right}>
+        </TopContent>
+        <TopRightWrapper>
           <strong>Reputation</strong>
           <div>
             <p>{t('governance.section_first.2')}</p>
             <p>{t('governance.section_first.3')}</p>
             <p>{t('governance.section_first.4')}</p>
           </div>
-        </section>
-      </div>
-    </article>
+        </TopRightWrapper>
+      </TopWrapper>
+    </TopArticle>
   );
 };
 

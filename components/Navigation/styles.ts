@@ -15,6 +15,70 @@ const navigationAni = keyframes`
   }
 `;
 
+const inM = keyframes`
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+`;
+const outM = keyframes`
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+  }
+`;
+
+const inT = keyframes`
+0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(2px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(2px) rotate(135deg);
+  }
+`;
+
+const outT = keyframes`
+0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateY(2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(2px) rotate(135deg);
+  }
+`;
+const inBtm = keyframes`
+0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-2px) rotate(135deg);
+  }
+`;
+
+const outBtm = keyframes`
+0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translateY(-2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(-2px) rotate(135deg);
+  }
+`;
+
 export const NavigationWrapper = styled.header`
   a,
   img {
@@ -80,10 +144,9 @@ export const NavigationWrapper = styled.header`
         }
         > a {
           > span {
-            font-family: 'Gilroy-Light';
             color: #ffffff;
             &:hover {
-              font-family: Gilroy-ExtraBold !important;
+              font-weight: bold;
             }
             @media (max-width: 1189px) {
               font-size: 1rem;
@@ -102,4 +165,50 @@ export const NavigationWrapper = styled.header`
       }
     }
   }
+`;
+
+export const HamburgerButton = styled.div<{ isActive: boolean }>`
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  i {
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+  }
+
+  ${(props) =>
+    props.isActive
+      ? css`
+          i:nth-child(1) {
+            animation: ${inT} 0.8s forwards;
+          }
+          i:nth-child(2) {
+            animation: ${inM} 0.8s forwards;
+          }
+          i:nth-child(3) {
+            animation: ${inBtm} 0.8s forwards;
+          }
+        `
+      : css`
+          i:nth-child(1) {
+            animation: ${outT} 0.8s backwards;
+            animation-direction: reverse;
+          }
+          i:nth-child(2) {
+            margin: 5px 0;
+            animation: ${outM} 0.8s backwards;
+            animation-direction: reverse;
+          }
+          i:nth-child(3) {
+            animation: ${outBtm} 0.8s backwards;
+            animation-direction: reverse;
+          }
+        `}
 `;

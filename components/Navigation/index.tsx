@@ -17,7 +17,7 @@ import SelectWalletModal from 'components/Modals/SelectWalletModal';
 import ErrorModal from 'components/Modals/ErrorModal';
 import TxStatus from 'enums/TxStatus';
 import { isChainId } from 'utils/isChainId';
-import { NavigationWrapper } from './styles';
+import { NavigationWrapper, HamburgerButton } from './styles';
 import MobileMenu from './MobileMenu';
 import LanguageConverter from './LanguageConverter';
 import GoogleGAAction from 'enums/GoogleGAAction';
@@ -136,17 +136,15 @@ const Navigation = () => {
             <></>
           ) : isMobile ? (
             <section>
-              <div
-                className={`${styles.navigation__hamburger__button} ${
-                  isMobileMenu && styles.active
-                }`}
+              <HamburgerButton
+                isActive={isMobileMenu}
                 onClick={() => {
                   setMobileMenu(!isMobileMenu);
                 }}>
                 <i />
                 <i />
                 <i />
-              </div>
+              </HamburgerButton>
             </section>
           ) : (
             <>
