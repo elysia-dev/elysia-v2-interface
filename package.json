@@ -28,7 +28,7 @@
     "moment-timezone": "^0.5.34",
     "next": "12.1.4",
     "path": "^0.12.7",
-    "react": "17.0.0",
+    "react": "18.0.0",
     "react-countup": "^6.2.0",
     "react-dom": "18.0.0",
     "react-frame-component": "^5.2.1",
