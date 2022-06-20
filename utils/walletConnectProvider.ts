@@ -15,16 +15,16 @@ const walletConnectConnector = (): WalletConnectConnector => {
     pollingInterval: 1200,
     preferredNetworkId: 1337,
     infuraId: process.env.NEXT_PUBLIC_INFURA_ADDRESS,
-    qrcodeModalOptions: {
-      mobileLinks: [
-        'rainbow',
-        'metamask',
-        'argent',
-        'trust',
-        'imtoken',
-        'pillar',
-      ],
-    },
+    // qrcodeModalOptions: {
+    //   mobileLinks: [
+    //     'rainbow',
+    //     'metamask',
+    //     'argent',
+    //     'trust',
+    //     'imtoken',
+    //     'pillar',
+    //   ],
+    // },
   });
 };
 
