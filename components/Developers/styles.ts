@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import developersImage from 'assets/images/main/developers_image.webp';
 
 const glassBox = {
   background: 'rgba(255, 255, 255, 0.1)',
@@ -16,7 +15,6 @@ export const DevelopersImage = styled.article`
   height: 100vh;
   z-index: -1;
   opacity: 0.5;
-  /* background: url(${developersImage.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
 `;

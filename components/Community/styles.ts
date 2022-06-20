@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import communityImage from 'assets/images/main/community_image.webp';
 
 export const center = {
   display: 'flex',
@@ -32,7 +31,6 @@ export const CommunityImage = styled.article`
   height: 100vh;
   z-index: -1;
   opacity: 0.5;
-  /* background: url(${communityImage.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
   background-position-y: -120px;

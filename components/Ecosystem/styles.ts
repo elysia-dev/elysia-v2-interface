@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import ElyfiProjectImg from 'assets/images/ecosystem/elyfiproject.png';
 import Moblieapp from 'assets/images/ecosystem/moblieapp.webp';
 import Dao from 'assets/images/ecosystem/dao.png';
-import ecosystemImage from 'assets/images/main/ecosystem_image.webp';
 
 const glassBox = {
   background: 'rgba(255, 255, 255, 0.1)',
@@ -59,7 +58,6 @@ export const EcosystemImage = styled.article`
   height: 150vh;
   z-index: -1;
   opacity: 0.5;
-  /* background: url(${ecosystemImage.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
 `;
