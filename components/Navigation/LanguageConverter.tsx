@@ -1,9 +1,8 @@
-import LanguageContext from 'contexts/LanguageContext';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import LanguageType from 'enums/LanguageType';
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { googleGAEvent } from 'utils/gaEvent';
 import setLanguage from 'utils/setLanguage';
