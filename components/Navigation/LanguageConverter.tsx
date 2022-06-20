@@ -4,11 +4,11 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 import LanguageType from 'enums/LanguageType';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { googleGAEvent } from 'utils/gaEvent';
-import styles from './Navigation.module.scss';
+import setLanguage from 'utils/setLanguage';
 
 const LanguageConverter = () => {
-  const { setLanguage } = useContext(LanguageContext);
   const router = useRouter();
   const lng = router.asPath.substring(1, 3);
   const [visible, setVisible] = useState(false);
@@ -37,17 +37,14 @@ const LanguageConverter = () => {
 
   HandleClickOutside(LangRef);
 
-  const changeLanguage = () => {
+  const ChangeLanguage = () => {
     return (
-      <div
-        className={styles.language_converter__handler}
-        style={{ display: visible ? 'flex' : 'none' }}>
+      <ChangeLanguageContainer style={{ display: visible ? 'flex' : 'none' }}>
         {[LanguageType.EN, LanguageType.KO]
           .filter((languageType) => languageType !== lng)
           .map((languageType, index) => {
             return (
-              <div
-                className={styles.language_converter__handler__type__wrapper}
+              <ChangeLanguageType
                 key={index}
                 onClick={() => {
                   googleGAEvent(
@@ -57,28 +54,66 @@ const LanguageConverter = () => {
                   setLanguage(languageType);
                   handleHover();
                 }}>
-                <p className={styles.language_converter__handler__type}>
-                  {languageType}
-                </p>
-              </div>
+                <p>{languageType}</p>
+              </ChangeLanguageType>
             );
           })}
-      </div>
+      </ChangeLanguageContainer>
     );
   };
 
   return (
-    <div className={styles.language_converter} ref={LangRef}>
-      <div
-        className={styles.language_converter__type__wrapper}
+    <Container ref={LangRef}>
+      <ConverterType
         onClick={() => {
           handleHover();
         }}>
-        <p className={styles.language_converter__type}>{lng}</p>
-      </div>
-      {changeLanguage()}
-    </div>
+        <p>{lng}</p>
+      </ConverterType>
+      <ChangeLanguage />
+    </Container>
   );
 };
+
+const Container = styled.article`
+  width: 46px;
+  height: 46px;
+  background-color: #000;
+  border-radius: 100%;
+  margin-left: 20px;
+  position: relative;
+  cursor: pointer;
+`;
+const ConverterType = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  > p {
+    color: #fff;
+    font-weight: bold;
+  }
+`;
+
+const ChangeLanguageContainer = styled.article`
+  width: 46px;
+  height: 46px;
+  background-color: #000;
+  border-radius: 100%;
+  position: absolute;
+  top: calc(46px + 10px);
+  cursor: pointer;
+`;
+const ChangeLanguageType = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  > p {
+    color: #fff;
+  }
+`;
 
 export default LanguageConverter;
