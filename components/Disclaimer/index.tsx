@@ -10,12 +10,12 @@ const Disclaimer = () => {
         lineHeight: '25px',
         fontSize: '1.5rem',
       }}>
-      <h1>Disclaimer of ELYSIA PTE. LTD.</h1>
+      <h1>Disclaimer of ELYSIA DAO LLC.</h1>
       <br />
       <br />
       <br />
       This site is operated by ELYSIA DAO LLC. which is not a registered
-      broker-dealer or investment advisor. ELYSIA DAO LLC.. does not give
+      broker-dealer or investment advisor. ELYSIA DAO LLC. does not give
       investment advice, endorsement, analysis or recommendations with respect
       to any securities. Nothing on this website should be construed as an offer
       to sell, solicitation of an offer to buy or a recommendation for any

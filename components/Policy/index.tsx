@@ -9,7 +9,7 @@ const Policy = () => {
         lineHeight: '40px',
         fontSize: '1.5rem',
       }}>
-      <h1>Privacy Policy of ELYSIA PTE. LTD.</h1>
+      <h1>Privacy Policy of ELYSIA DAO LLC.</h1>
       <br />
       <br />
       In order to protect the personal information of data subjects and to
