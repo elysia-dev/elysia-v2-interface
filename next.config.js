@@ -15,7 +15,7 @@ const nextConfig = {
       'localhost',
       'elysia.land',
       'elysia-public.s3.ap-northeast-2.amazonaws.com',
-      'slate.textile.io',
+      'ipfs.io',
     ],
   },
   reactStrictMode: true,
