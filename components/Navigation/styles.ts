@@ -49,10 +49,10 @@ const outT = keyframes`
     -webkit-transform: translateY(0px) rotate(0deg);
   }
   50% {
-    -webkit-transform: translateY(2px) rotate(0deg);
+    -webkit-transform: translateY(7px) rotate(0deg);
   }
   100% {
-    -webkit-transform: translateY(2px) rotate(135deg);
+    -webkit-transform: translateY(7px) rotate(135deg);
   }
 `;
 const inBtm = keyframes`
@@ -72,10 +72,10 @@ const outBtm = keyframes`
     -webkit-transform: translateY(0px) rotate(0deg);
   }
   50% {
-    -webkit-transform: translateY(-2px) rotate(0deg);
+    -webkit-transform: translateY(-7px) rotate(0deg);
   }
   100% {
-    -webkit-transform: translateY(-2px) rotate(135deg);
+    -webkit-transform: translateY(-7px) rotate(135deg);
   }
 `;
 
