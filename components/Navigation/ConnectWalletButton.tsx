@@ -44,14 +44,14 @@ const ConnectWalletButton = (props: Props) => {
         status={
           !account && !props.isConnectWalletLoading
             ? WalletStatus.Disconnect
-            : !chainId || ![1, 1337].includes(chainId)
-            ? WalletStatus.WrongMainnet
             : txStatus === TxStatus.FAIL
             ? WalletStatus.FAIL
             : txStatus === TxStatus.CONFIRM
             ? WalletStatus.CONFIRM
             : txStatus === TxStatus.PENDING
             ? WalletStatus.PENDING
+            : chainId && ![1, 1337].includes(chainId)
+            ? WalletStatus.WrongMainnet
             : WalletStatus.Connected
         }
         onClick={() => {
@@ -60,7 +60,12 @@ const ConnectWalletButton = (props: Props) => {
         }}>
         {props.isConnectWalletLoading ? (
           <SkeletonTheme baseColor="#202020" highlightColor="#444">
-            <Skeleton width={171} height={48} borderRadius={20} />
+            <Skeleton
+              width={170}
+              height={48}
+              borderRadius={20}
+              style={{ position: 'relative', left: -4 }}
+            />
           </SkeletonTheme>
         ) : account ? (
           chainId && isChainId(chainId) ? (
