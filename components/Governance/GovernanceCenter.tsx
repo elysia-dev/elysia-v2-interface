@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import useSWR from 'swr';
-import envs from 'core/envs';
+import envs from 'envs';
 import { pricesFetcher } from 'clients/Coingecko';
 import priceMiddleware from 'middleware/priceMiddleware';
 import { useTranslation } from 'react-i18next';

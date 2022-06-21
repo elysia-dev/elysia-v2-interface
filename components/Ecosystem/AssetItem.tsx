@@ -1,5 +1,5 @@
 import Slate, { baseUrl } from 'clients/Slate';
-import { IAssetBond } from 'core/types/reserveSubgraph';
+import { IAssetBond } from 'types/reserveSubgraph';
 import { parseEther } from 'ethers/lib/utils';
 import Image, { StaticImageData } from 'next/image';
 import { useCallback, useEffect, useState } from 'react';

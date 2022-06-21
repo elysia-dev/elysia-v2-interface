@@ -1,4 +1,4 @@
-import { IAssetBond } from 'core/types/reserveSubgraph';
+import { IAssetBond } from 'types/reserveSubgraph';
 import { formatUnits } from 'ethers/lib/utils';
 import { Dispatch, SetStateAction, useMemo } from 'react';
 import { Trans, useTranslation } from 'react-i18next';

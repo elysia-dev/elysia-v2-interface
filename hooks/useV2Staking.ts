@@ -1,6 +1,6 @@
 import { BigNumber, constants } from 'ethers';
 import { useCallback, useContext, useState } from 'react';
-import envs from 'core/envs';
+import envs from 'envs';
 import useERC20 from './useERC20';
 import TxContext from 'contexts/TxContext';
 import buildEventEmitter from 'utils/buildEventEmitter';

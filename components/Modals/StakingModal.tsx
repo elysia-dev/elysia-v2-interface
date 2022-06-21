@@ -1,6 +1,6 @@
 import useERC20Info from 'hooks/useERC20Info';
 import { useCallback, useContext, useEffect, useState } from 'react';
-import envs from 'core/envs';
+import envs from 'envs';
 import { utils } from 'ethers';
 import useStaking from 'hooks/useV2Staking';
 import ElysiaToken from 'assets/images/elysia_token.png';

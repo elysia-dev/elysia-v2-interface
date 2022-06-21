@@ -2,7 +2,7 @@ import { ERC20Factory } from '@elysia-dev/elyfi-v1-sdk';
 import { renderHook } from '@testing-library/react-hooks';
 import { providers } from 'ethers';
 import useV2StakingPool from 'hooks/useV2StakingPool';
-import envs from 'core/envs';
+import envs from 'envs';
 import React from 'react';
 
 describe('useV2StakingPool', () => {

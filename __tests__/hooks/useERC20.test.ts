@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import useERC20 from 'hooks/useERC20';
 import { ERC20Factory } from '@elysia-dev/elyfi-v1-sdk';
 import { providers } from 'ethers';
-import envs from 'core/envs';
+import envs from 'envs';
 
 describe('useERC20', () => {
   it('contract address test and check network', async () => {

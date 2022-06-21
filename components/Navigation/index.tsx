@@ -7,7 +7,7 @@ import ElysiaLogo from 'assets/images/Elysia_Logo_White@2x.png';
 import Image from 'next/image';
 import { isMetamask, isWalletConnector } from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
-import injectedConnector from 'core/connectors/injectedConnector';
+import injectedConnector from 'connectors/injectedConnector';
 import useIsMobile from 'hooks/useIsMobile';
 import TxContext from 'contexts/TxContext';
 import DisconnectModal from 'components/Modals/DisconnectModal';

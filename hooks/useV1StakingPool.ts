@@ -1,6 +1,6 @@
 import { useWeb3React } from '@web3-react/core';
 import { useMemo } from 'react';
-import envs from 'core/envs';
+import envs from 'envs';
 import { StakingPoolFactory } from '@elysia-dev/elyfi-v1-sdk';
 import { StakingPool } from '@elysia-dev/elyfi-v1-sdk/dist/types/StakingPool';
 

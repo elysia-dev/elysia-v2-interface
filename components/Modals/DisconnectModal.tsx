@@ -1,7 +1,7 @@
 import Davatar from '@davatar/react';
 import { useWeb3React } from '@web3-react/core';
 import { useTranslation } from 'react-i18next';
-import envs from 'core/envs';
+import envs from 'envs';
 import CopyIcon from 'assets/images/modals/copy.svg';
 import HyperRefIcon from 'assets/images/modals/hyper_ref.svg';
 import ModalLayout from './ModalLayout';
