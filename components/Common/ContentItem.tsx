@@ -1,5 +1,5 @@
 import Arrow from 'assets/images/developers/arrow.svg';
-import useIsMobile from 'hooks/useIsMobile';
+import useIsMobile, { MediaQueryState } from 'hooks/useIsMobile';
 import Link from 'next/link';
 import ContentDescription from './ContentDescription';
 
@@ -11,7 +11,7 @@ const ContentItem: React.FC<{
   description?: string;
   onClickEvent?: () => void;
 }> = ({ Icon, contentName, link, isComingSoon, onClickEvent, description }) => {
-  const { isTablet } = useIsMobile();
+  const { mediaQueryState } = useIsMobile();
 
   return (
     <>
@@ -28,7 +28,7 @@ const ContentItem: React.FC<{
                 {Icon}
                 <figcaption>{contentName}</figcaption>
               </figure>
-              {!isTablet && (
+              {mediaQueryState !== MediaQueryState.Tablet && (
                 <article>
                   <Arrow />
                 </article>
@@ -44,7 +44,7 @@ const ContentItem: React.FC<{
               {Icon}
               <figcaption>{contentName}</figcaption>
             </figure>
-            {!isTablet && !isComingSoon && (
+            {mediaQueryState !== MediaQueryState.Tablet && !isComingSoon && (
               <article>
                 <Arrow />
               </article>
