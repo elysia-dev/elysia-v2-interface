@@ -1,63 +1,25 @@
 {
-  "moneyPool": {
-    "bscMoneyPoolAddress": "0xBdbCC95abF4172a54e24Dc9A9e5E7f966cB6C9fC",
-    "moneyPoolAddress": "0xa93008fD32EB24E488DDAA6C0aA152559fDa9E8c"
-  },
-  "incentivePool": {
-    "prevDaiIncentivePool": "0xe58158FFea021a5883dd1256f2AFf0b1f07d79b3",
-    "prevUSDTIncentivePool": "0x6A93E28A5d3148DcD8b5ca1419C4c9D34fd302eb",
-    "currentDaiIncentivePool": "0x3Fed75D8f58A0Ca57ecaB7446580266AC846De06",
-    "currentUSDTIncentivePool": "0x94aa0e263f7fCae5648A1062877FE66788402f71",
-    "busdIncentivePoolAddress": "0xcE9cEcd4c320C1F244e95269109E46275390A482"
-  },
   "staking": {
     "elStakingPoolAddress": "0xd804e198d25a1920522ca0094a670184a9c972d7",
-    "elStakingV2PoolAddress": "0x2776a888F6eC5513d84cb0e1aA3396B8750170A8",
-    "elfyStakingPoolAddress": "0xb41bcd480fbd986331eeed516c52e447b50dacb4",
-    "elfyV2StakingPoolAddress": "0xCD668B44C7Cf3B63722D5cE5F655De68dD8f2750",
-    "elfyV2StakingPoolRewardAddress": "0xc3e45e479078ce78aba08beafd0f57460a96f494",
-    "elfyBscStakingPoolAddress": "0xF648b06B275675E767bB98Da98adF180c39A29Cb"
-  },
-  "lpStaking": {
-    "daiElfiPoolAddress": "0xbde484db131bd2ae80e44a57f865c1dfebb7e31f",
-    "ethElfiPoolAddress": "0xc311faebe8802f9cfc91284016d1de9537ec66b7",
-    "stakerAddress": "0x1f98407aaB862CdDeF78Ed252D6f557aA5b0f00d",
-    "nonFungiblePositionAddress": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88",
-    "refundedAddress": "0x23b062F33ed93EE8C8e658e609dbd80797DFdA89"
+    "elStakingV2PoolAddress": "0x2776a888F6eC5513d84cb0e1aA3396B8750170A8"
   },
   "token": {
-    "governanceAddress": "0x4da34f8264cb33a5c9f17081b9ef5ff6091116f4",
     "elAddress": "0x2781246fe707bb15cee3e5ea354e2154a2877b16",
     "daiAddress": "0x6b175474e89094c44da98b954eedeac495271d0f",
     "usdtAddress": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-    "wEthAddress": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-    "bscElfiAddress": "0x9803cd5851b24C8CAE5ebbAD46D69C400553cf4b",
-    "busdAddress": "0xc93b97b01455454fba11b806ea645d021212c4c9",
-    "testBscElfiAddress": "0xA1Dd9cDb09871e7dC0E050E7aE18BA385D192C75"
-  },
-  "network": {
-    "requiredNetwork": "ganache",
-    "requiredChainId": 1337,
-    "bscMainnetChainId": 97
+    "busdAddress": "0xc93b97b01455454fba11b806ea645d021212c4c9"
   },
   "subgraphApiEndpoint": {
     "subgraphURI": "https://gateway.thegraph.com/api/96f993b15274d04d4c1be0cb5fb79ff6/subgraphs/id/56zkjAwQ8Kq1MjmYm4Zxwe7bv8fGSwUCNBT7jcXi8nFn",
-    "stakerSubgraphURL": "https://api.studio.thegraph.com/query/862/lp-staking-elyfi/v0.0.8",
-    "lpTokenPoolSubgraphURL": "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3",
     "bscSubgraphURI": "https://api.thegraph.com/subgraphs/name/donguks/elyfi-bsc-subgraph"
   },
   "externalApiEndpoint": {
     "etherscanURI": "https://etherscan.io",
-    "bscscanURI": "https://testnet.bscscan.com",
-    "cachedUniswapV3URL": "https://external-api-responses.s3.amazonaws.com/prod/uniswap-v3-subgraph.json",
     "coingackoURL": "https://api.coingecko.com/api/v3/simple/price?ids=elysia,elyfi,dai,ethereum,tether&vs_currencies=usd"
   },
   "tokenizer": {
     "daiTokenizerAddress": "0xc6701e7be98A79485364419961838EB141141aAf",
     "usdtTokenizerAddress": "0x68f69Ab21242e194ebd7534B598e26180dD92616",
     "busdTokenizerAddress": "0x0d768c1507B5099CB37e5D28B1959B831B5EbF9e"
-  },
-  "jsonRpcUrl": {
-    "bsc": "https://data-seed-prebsc-1-s1.binance.org:8545/"
   }
 }
