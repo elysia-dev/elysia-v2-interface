@@ -13,9 +13,9 @@ import browserWallet from 'assets/images/browserWallet@2x.png';
 import CloseButton from './CloseButton';
 import Image from 'next/image';
 import useIsMobile from 'hooks/useIsMobile';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 type Props = {
   onClose: () => void;
@@ -49,10 +49,16 @@ const SelectWalletModal = (props: Props) => {
   const connectWallet = (wallet: string) => {
     let connector;
     if (wallet === (isMobile ? Wallet.BrowserWallet : Wallet.Metamask)) {
-      googleGAEvent(GoogleGAAction.Metamask, GoogleGACategory.Wallet);
+      GoogleAnalyticsEvent(
+        GoogleAnalyticsAction.Metamask,
+        GoogleAnalyticsCategory.Wallet,
+      );
       connector = injectedConnector;
     } else {
-      googleGAEvent(GoogleGAAction.WalletConnect, GoogleGACategory.Wallet);
+      GoogleAnalyticsEvent(
+        GoogleAnalyticsAction.WalletConnect,
+        GoogleAnalyticsCategory.Wallet,
+      );
       connector = walletConnectProvider;
     }
     activate(connector).then(() => {

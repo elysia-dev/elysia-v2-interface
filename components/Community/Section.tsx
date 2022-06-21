@@ -13,9 +13,9 @@ import useIsMobile from 'hooks/useIsMobile';
 import ContentItem from 'components/Common/ContentItem';
 import useResizeBrowser from 'hooks/useResizeBrowser';
 import PageHeader from 'components/Common/PageHeader';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGACategory from 'enums/GoogleGACategory';
-import GoogleGAAction from 'enums/GoogleGAAction';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 
 const Section = () => {
   const { t } = useTranslation();
@@ -43,9 +43,9 @@ const Section = () => {
               contentName={'Discord'}
               link={'https://discord.gg/d8zveNum7gg'}
               onClickEvent={() =>
-                googleGAEvent(
-                  GoogleGAAction.CommunityDiscord,
-                  GoogleGACategory.Community,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.CommunityDiscord,
+                  GoogleAnalyticsCategory.Community,
                 )
               }
             />
@@ -61,9 +61,9 @@ const Section = () => {
               contentName={'Telegram'}
               link={'https://t.me/elysia_official'}
               onClickEvent={() =>
-                googleGAEvent(
-                  GoogleGAAction.CommunityTelegram,
-                  GoogleGACategory.Community,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.CommunityTelegram,
+                  GoogleAnalyticsCategory.Community,
                 )
               }
             />
@@ -79,9 +79,9 @@ const Section = () => {
               contentName={'Kakaotalk'}
               link={'https://open.kakao.com/o/gUpSOwkb'}
               onClickEvent={() =>
-                googleGAEvent(
-                  GoogleGAAction.CommunityKakaotalk,
-                  GoogleGACategory.Community,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.CommunityKakaotalk,
+                  GoogleAnalyticsCategory.Community,
                 )
               }
             />
@@ -103,9 +103,9 @@ const Section = () => {
               contentName={'Github'}
               link={'https://github.com/elysia-dev'}
               onClickEvent={() =>
-                googleGAEvent(
-                  GoogleGAAction.CommunityGithub,
-                  GoogleGACategory.Community,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.CommunityGithub,
+                  GoogleAnalyticsCategory.Community,
                 )
               }
             />
@@ -121,9 +121,9 @@ const Section = () => {
               contentName={'Tech Blog'}
               link={'https://tech.elysia.land/'}
               onClickEvent={() =>
-                googleGAEvent(
-                  GoogleGAAction.CommunityTechBlog,
-                  GoogleGACategory.Community,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.CommunityTechBlog,
+                  GoogleAnalyticsCategory.Community,
                 )
               }
             />
@@ -146,9 +146,9 @@ const Section = () => {
               contentName={'Twitter'}
               link={'https://twitter.com/Elysia_HQ'}
               onClickEvent={() =>
-                googleGAEvent(
-                  GoogleGAAction.CommunityTwitter,
-                  GoogleGACategory.Community,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.CommunityTwitter,
+                  GoogleAnalyticsCategory.Community,
                 )
               }
             />
@@ -164,9 +164,9 @@ const Section = () => {
               contentName={'Facebook'}
               link={'https://www.facebook.com/ElysiaHQ'}
               onClickEvent={() =>
-                googleGAEvent(
-                  GoogleGAAction.CommunityFacebook,
-                  GoogleGACategory.Community,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.CommunityFacebook,
+                  GoogleAnalyticsCategory.Community,
                 )
               }
             />
@@ -182,9 +182,9 @@ const Section = () => {
               contentName={'Medium'}
               link={'https://medium.com/elysia-magazine'}
               onClickEvent={() =>
-                googleGAEvent(
-                  GoogleGAAction.CommunityMedium,
-                  GoogleGACategory.Community,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.CommunityMedium,
+                  GoogleAnalyticsCategory.Community,
                 )
               }
             />
@@ -200,9 +200,9 @@ const Section = () => {
               contentName={'Weibo'}
               link={'https://weibo.com/u/7449962304'}
               onClickEvent={() =>
-                googleGAEvent(
-                  GoogleGAAction.CommunityWeibo,
-                  GoogleGACategory.Community,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.CommunityWeibo,
+                  GoogleAnalyticsCategory.Community,
                 )
               }
             />

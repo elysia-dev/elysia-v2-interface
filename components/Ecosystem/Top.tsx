@@ -7,9 +7,9 @@ import Google from 'assets/images/ecosystem/google.png';
 import Appstore from 'assets/images/ecosystem/appstore.png';
 import Link from 'next/link';
 import PageHeader from 'components/Common/PageHeader';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 const Top = () => {
   const { t, i18n } = useTranslation();
@@ -41,9 +41,9 @@ const Top = () => {
                   : 'https://www.elyfi.world/en',
                 '_blank',
               );
-              googleGAEvent(
-                GoogleGAAction.EcoElyfi,
-                GoogleGACategory.Ecosystem,
+              GoogleAnalyticsEvent(
+                GoogleAnalyticsAction.EcoElyfi,
+                GoogleAnalyticsCategory.Ecosystem,
               );
             }}>
             <figure className="image-containers" />

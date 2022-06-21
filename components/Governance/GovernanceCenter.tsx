@@ -19,9 +19,9 @@ import ELtoken from 'assets/images/governance/el.png';
 import ButtonArrow from 'assets/images/governance/button-arrow.png';
 import GovernanceLineCounter from './GovernanceLineCounter';
 import { useRouter } from 'next/router';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 const GovernanceCenter = () => {
   const { data } = useSWR(
@@ -62,9 +62,9 @@ const GovernanceCenter = () => {
                 <button
                   className={styles.governance_button}
                   onClick={() => {
-                    googleGAEvent(
-                      GoogleGAAction.GovExchange,
-                      GoogleGACategory.Governance,
+                    GoogleAnalyticsEvent(
+                      GoogleAnalyticsAction.GovExchange,
+                      GoogleAnalyticsCategory.Governance,
                     );
                     window.open(
                       'https://coinmarketcap.com/currencies/elysia/markets/',
@@ -81,9 +81,9 @@ const GovernanceCenter = () => {
                 <button
                   className={styles.governance_button}
                   onClick={() => {
-                    googleGAEvent(
-                      GoogleGAAction.GovTokenEconomy,
-                      GoogleGACategory.Governance,
+                    GoogleAnalyticsEvent(
+                      GoogleAnalyticsAction.GovTokenEconomy,
+                      GoogleAnalyticsCategory.Governance,
                     );
                     window.open(
                       lng === LanguageType.KO

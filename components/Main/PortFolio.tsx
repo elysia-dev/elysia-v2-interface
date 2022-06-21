@@ -1,11 +1,11 @@
 import Slate, { baseUrl } from 'clients/Slate';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import useReserveData from 'hooks/useReserveData';
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { googleGAEvent } from 'utils/gaEvent';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
 import AssetItem from './AssetItem';
 import {
   MainPortFolioWrapper,
@@ -76,9 +76,9 @@ const PortFolio = () => {
         <Link href={`${i18n.language}/Ecosystem`} passHref>
           <span
             onClick={() => {
-              googleGAEvent(
-                GoogleGAAction.MainMorePortfolio,
-                GoogleGACategory.Main,
+              GoogleAnalyticsEvent(
+                GoogleAnalyticsAction.MainMorePortfolio,
+                GoogleAnalyticsCategory.Main,
               );
             }}>
             {t(`main.portfolio.3`)}

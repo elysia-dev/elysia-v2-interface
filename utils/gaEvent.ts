@@ -1,6 +1,6 @@
 import * as gtag from 'lib/gtag';
 
-export const googleGAEvent = (
+export const GoogleAnalyticsEvent = (
   action: string,
   category: string,
   label?: string,

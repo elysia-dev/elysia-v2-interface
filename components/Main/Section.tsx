@@ -2,9 +2,9 @@ import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { MainSectionWrapper } from './styles';
 import SectionItem from './SectionItem';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 const Section = () => {
   const { i18n } = useTranslation();
@@ -17,7 +17,7 @@ const Section = () => {
         t('main.section_governance.2'),
       ],
       'Governance',
-      GoogleGAAction.MainGovernanceCard,
+      GoogleAnalyticsAction.MainGovernanceCard,
     ],
     [
       [
@@ -26,7 +26,7 @@ const Section = () => {
         t('main.section_ecosystem.3'),
       ],
       'Ecosystem',
-      GoogleGAAction.MainEcosystemCard,
+      GoogleAnalyticsAction.MainEcosystemCard,
     ],
     [
       [
@@ -35,7 +35,7 @@ const Section = () => {
         t('main.section_community.3'),
       ],
       'Community',
-      GoogleGAAction.MainCommunityCard,
+      GoogleAnalyticsAction.MainCommunityCard,
     ],
     [
       [
@@ -44,12 +44,12 @@ const Section = () => {
         t('main.section_developers.3'),
       ],
       'Developers',
-      GoogleGAAction.MainDevelopersCard,
+      GoogleAnalyticsAction.MainDevelopersCard,
     ],
     [
       [t('FAQ.top.0'), t('FAQ.top.1'), t('FAQ.top.2')],
       'FAQ',
-      GoogleGAAction.MainFAQCard,
+      GoogleAnalyticsAction.MainFAQCard,
     ],
   ];
 
@@ -63,7 +63,10 @@ const Section = () => {
             link={`${i18n.language}/${data[1]}`}
             key={`section-items-${index}`}
             onClickEvent={() =>
-              googleGAEvent(data[2] as GoogleGAAction, GoogleGACategory.Main)
+              GoogleAnalyticsEvent(
+                data[2] as GoogleAnalyticsAction,
+                GoogleAnalyticsCategory.Main,
+              )
             }
           />
         );
