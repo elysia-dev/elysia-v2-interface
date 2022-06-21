@@ -63,7 +63,10 @@ const SelectWalletModal = (props: Props) => {
       );
       connector = injectedConnector;
     } else {
-      googleGAEvent(GoogleGAAction.WalletConnect, GoogleGACategory.Wallet);
+      GoogleAnalyticsEvent(
+        GoogleAnalyticsAction.WalletConnect,
+        GoogleAnalyticsCategory.Wallet,
+      );
       connector = walletConnectProvider;
     }
     activate(connector).then(() => {
