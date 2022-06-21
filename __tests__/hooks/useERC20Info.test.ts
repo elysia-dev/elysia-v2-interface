@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import '@testing-library/jest-dom';
-import envs from 'core/envs';
+import envs from 'envs';
 import useERC20Info from 'hooks/useERC20Info';
 
 const account = '0xB0B02B984083dFF47A6CFD86Bc7E6DbeA2005dab';

@@ -1,6 +1,6 @@
 import { BigNumber } from 'ethers';
 import { useCallback, useContext } from 'react';
-import envs from 'core/envs';
+import envs from 'envs';
 import TxContext from 'contexts/TxContext';
 import buildEventEmitter from 'utils/buildEventEmitter';
 import TransactionType from 'enums/TransactionType';

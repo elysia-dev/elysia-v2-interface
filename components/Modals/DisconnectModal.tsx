@@ -1,9 +1,9 @@
 import Davatar from '@davatar/react';
 import { useWeb3React } from '@web3-react/core';
 import { useTranslation } from 'react-i18next';
-import envs from 'core/envs';
 import CloseButton from './CloseButton';
 import styles from './Modal.module.scss';
+import envs from 'envs';
 
 type Props = {
   onClose: () => void;

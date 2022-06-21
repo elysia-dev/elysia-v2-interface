@@ -1,4 +1,4 @@
-import WalletConnectConnector from 'core/connectors/WalletConnector';
+import WalletConnectConnector from 'connectors/WalletConnector';
 
 const walletConnectConnector = (): WalletConnectConnector => {
   return new WalletConnectConnector({

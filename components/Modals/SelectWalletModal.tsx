@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useWeb3React } from '@web3-react/core';
-import injectedConnector from 'core/connectors/injectedConnector';
+import injectedConnector from 'connectors/injectedConnector';
 import Wallet from 'enums/Wallet';
 import { ethers } from 'ethers';
 import { useEffect, useMemo, useState } from 'react';

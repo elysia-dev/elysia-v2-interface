@@ -1,7 +1,7 @@
 import TokenImg from 'assets/images/ELYSIA_DAO_TOKEN3@2x.png';
 import Image from 'next/image';
 import useSWR from 'swr';
-import envs from 'core/envs';
+import envs from 'envs';
 import styles from './Governance.module.scss';
 import Arrow from './Arrow';
 import { pricesFetcher } from 'clients/Coingecko';

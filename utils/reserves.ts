@@ -1,4 +1,4 @@
-import envs from 'core/envs';
+import envs from 'envs';
 
 export interface IReserve {
   name: string;
