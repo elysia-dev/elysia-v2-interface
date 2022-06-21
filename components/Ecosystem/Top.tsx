@@ -1,7 +1,7 @@
 import { Trans, useTranslation } from 'react-i18next';
 import { ProjectWrapper, TopWrapper, BorderedMargin } from './styles';
 import Arrow from 'assets/images/developers/arrow.svg';
-import useIsMobile from 'hooks/useIsMobile';
+import useIsMobile, { MediaQueryState } from 'hooks/useIsMobile';
 import Image from 'next/image';
 import Google from 'assets/images/ecosystem/google.png';
 import Appstore from 'assets/images/ecosystem/appstore.png';
@@ -13,7 +13,7 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Top = () => {
   const { t, i18n } = useTranslation();
-  const { isTablet } = useIsMobile();
+  const { mediaQueryState } = useIsMobile();
 
   return (
     <>
@@ -49,7 +49,9 @@ const Top = () => {
             <figure className="image-containers" />
             <section>
               <h2>ELYFI</h2>
-              <div>{!isTablet && <Arrow />}</div>
+              <div>
+                {mediaQueryState !== MediaQueryState.Tablet && <Arrow />}
+              </div>
             </section>
             <p>
               <Trans>{t('ecosystem.project.2')}</Trans>

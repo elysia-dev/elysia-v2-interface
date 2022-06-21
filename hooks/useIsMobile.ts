@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
+export enum MediaQueryState {
+  Mobile,
+  Tablet,
+  Desktop,
+}
+
 const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [currentState, setCurrentState] = useState<MediaQueryState>(
+    MediaQueryState.Desktop,
+  );
   const [isLoading, setLoading] = useState(true);
   const mobile = useMediaQuery({
     query: '(min-width:0px) and (max-width:840px)',
@@ -17,13 +23,17 @@ const useIsMobile = () => {
   });
 
   useEffect(() => {
-    setIsMobile(mobile);
-    setIsDesktop(desktop);
-    setIsTablet(tablet);
+    setCurrentState(
+      desktop
+        ? MediaQueryState.Desktop
+        : tablet
+        ? MediaQueryState.Tablet
+        : MediaQueryState.Mobile,
+    );
     setLoading(false);
   }, [mobile, desktop, tablet, isLoading]);
 
-  return { isMobile, isDesktop, isTablet, isLoading };
+  return { mediaQueryState: currentState, isLoading };
 };
 
 export default useIsMobile;
