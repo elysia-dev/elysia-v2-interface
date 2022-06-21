@@ -1,7 +1,7 @@
-import envs from 'core/envs';
+import envs from 'envs';
 import moment from 'moment';
 import { request } from 'graphql-request';
-import { IReserveSubgraphData } from 'core/types/reserveSubgraph';
+import { IReserveSubgraphData } from 'types/reserveSubgraph';
 
 const minimumTimestamp = moment().subtract(35, 'days').unix();
 

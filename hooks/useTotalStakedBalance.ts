@@ -1,7 +1,7 @@
 import { useWeb3React } from '@web3-react/core';
 import { pricesFetcher } from 'clients/Coingecko';
 import TxContext from 'contexts/TxContext';
-import envs from 'core/envs';
+import envs from 'envs';
 import { constants, utils } from 'ethers';
 import priceMiddleware from 'middleware/priceMiddleware';
 import { useContext, useEffect, useState } from 'react';

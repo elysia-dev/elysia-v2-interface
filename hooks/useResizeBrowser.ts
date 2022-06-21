@@ -1,4 +1,4 @@
-import { IAssetBond } from 'core/types/reserveSubgraph';
+import { IAssetBond } from 'types/reserveSubgraph';
 import { useCallback, useEffect, useState } from 'react';
 
 const useResizeBrowser = () => {

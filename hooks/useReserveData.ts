@@ -9,7 +9,7 @@ import {
   IAssetBond,
   initialReserveSubgraph,
   IReserveSubgraph,
-} from 'core/types/reserveSubgraph';
+} from 'types/reserveSubgraph';
 import {
   bscReserveMiddleware,
   ethReserveMiddleware,
