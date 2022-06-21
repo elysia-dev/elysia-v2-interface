@@ -7,9 +7,9 @@ import Telegram from 'assets/images/main/telegram_white@2x.webp';
 import Twitter from 'assets/images/main/twitter_white@2x.webp';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 const Footer = () => {
   const { i18n } = useTranslation();
@@ -35,9 +35,9 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                googleGAEvent(
-                  GoogleGAAction.FooterWhitePaper,
-                  GoogleGACategory.Footer,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.FooterWhitePaper,
+                  GoogleAnalyticsCategory.Footer,
                 );
               }}>
               <div>White Paper</div>
@@ -61,9 +61,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.FooterTwitter,
-                    GoogleGACategory.Footer,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.FooterTwitter,
+                    GoogleAnalyticsCategory.Footer,
                   );
                 }}>
                 <Image
@@ -81,9 +81,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.FooterTelegram,
-                    GoogleGACategory.Footer,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.FooterTelegram,
+                    GoogleAnalyticsCategory.Footer,
                   );
                 }}>
                 <Image
@@ -101,9 +101,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.FooterDiscord,
-                    GoogleGACategory.Footer,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.FooterDiscord,
+                    GoogleAnalyticsCategory.Footer,
                   );
                 }}>
                 <Image
@@ -121,9 +121,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.FooterGithub,
-                    GoogleGACategory.Footer,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.FooterGithub,
+                    GoogleAnalyticsCategory.Footer,
                   );
                 }}>
                 <Image

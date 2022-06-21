@@ -21,9 +21,9 @@ import RealEstateTypes from 'enums/ RealEstateTypes';
 import NFTApplicationTypes from 'enums/ NFTApplicationTypes';
 import Link from 'next/link';
 import axios from 'axios';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 const Section = () => {
   const { t, i18n } = useTranslation();
@@ -94,22 +94,22 @@ const Section = () => {
   const selectedStepOne = useCallback(
     (
       assetType: RealEstateTypes,
-      action: GoogleGAAction,
-      category: GoogleGACategory,
+      action: GoogleAnalyticsAction,
+      category: GoogleAnalyticsCategory,
     ) => {
       setSelectedRealEstateType(assetType);
-      googleGAEvent(action, category);
+      GoogleAnalyticsEvent(action, category);
     },
     [],
   );
   const selectedStepTwo = useCallback(
     (
       nftUsecase: NFTApplicationTypes,
-      action: GoogleGAAction,
-      category: GoogleGACategory,
+      action: GoogleAnalyticsAction,
+      category: GoogleAnalyticsCategory,
     ) => {
       setSelectedNFTAppliaction(nftUsecase);
-      googleGAEvent(action, category);
+      GoogleAnalyticsEvent(action, category);
     },
     [],
   );
@@ -156,9 +156,9 @@ const Section = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
-                googleGAEvent(
-                  GoogleGAAction.ElBridgeWhitepaper,
-                  GoogleGACategory.ELBridge,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.ElBridgeWhitepaper,
+                  GoogleAnalyticsCategory.ELBridge,
                 )
               }>
               <b>{t('elbridge.whitepaper.1')}</b>
@@ -172,9 +172,9 @@ const Section = () => {
             <div
               onClick={() => {
                 console.log('asda');
-                googleGAEvent(
-                  GoogleGAAction.ElBridgeFAQNFT,
-                  GoogleGACategory.ELBridge,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.ElBridgeFAQNFT,
+                  GoogleAnalyticsCategory.ELBridge,
                 );
                 setActiveBox((prev) => ({
                   ...prev,
@@ -192,9 +192,9 @@ const Section = () => {
           <AssetNFTDescription active={activeBox.AssetNFTDescription}>
             <div
               onClick={() => {
-                googleGAEvent(
-                  GoogleGAAction.ElBridgeFAQWhyNFT,
-                  GoogleGACategory.ELBridge,
+                GoogleAnalyticsEvent(
+                  GoogleAnalyticsAction.ElBridgeFAQWhyNFT,
+                  GoogleAnalyticsCategory.ELBridge,
                 );
                 setActiveBox((prev) => ({
                   ...prev,
@@ -248,8 +248,8 @@ const Section = () => {
                   onClick={() => {
                     selectedStepOne(
                       RealEstateTypes.RealEstate,
-                      GoogleGAAction.ElBridgeInquiryRealEstate,
-                      GoogleGACategory.AssetType,
+                      GoogleAnalyticsAction.ElBridgeInquiryRealEstate,
+                      GoogleAnalyticsCategory.AssetType,
                     );
                   }}>
                   <Trans>{t('elbridge.step1.2')}</Trans>
@@ -264,8 +264,8 @@ const Section = () => {
                   onClick={() => {
                     selectedStepOne(
                       RealEstateTypes.LoanReceivables,
-                      GoogleGAAction.ElBridgeInquiryLoanReceivables,
-                      GoogleGACategory.AssetType,
+                      GoogleAnalyticsAction.ElBridgeInquiryLoanReceivables,
+                      GoogleAnalyticsCategory.AssetType,
                     );
                   }}>
                   <Trans>{t('elbridge.step1.3')}</Trans>
@@ -281,8 +281,8 @@ const Section = () => {
                   onClick={() => {
                     selectedStepOne(
                       RealEstateTypes.PrincipalAndInterestReceivables,
-                      GoogleGAAction.ElBridgeInquiryPrincipal,
-                      GoogleGACategory.AssetType,
+                      GoogleAnalyticsAction.ElBridgeInquiryPrincipal,
+                      GoogleAnalyticsCategory.AssetType,
                     );
                   }}>
                   <Trans>{t('elbridge.step1.4')}</Trans>
@@ -298,8 +298,8 @@ const Section = () => {
                   onClick={() => {
                     selectedStepOne(
                       RealEstateTypes.ProjectFinancing,
-                      GoogleGAAction.ElBridgeInquiryProjectFinancing,
-                      GoogleGACategory.AssetType,
+                      GoogleAnalyticsAction.ElBridgeInquiryProjectFinancing,
+                      GoogleAnalyticsCategory.AssetType,
                     );
                   }}>
                   <Trans>{t('elbridge.step1.5')}</Trans>
@@ -318,9 +318,9 @@ const Section = () => {
                     stepOne: true,
                     stepTwo: prev.stepTwo && false,
                   }));
-                  googleGAEvent(
-                    GoogleGAAction.ElBridgeInquiryNextOfStep1,
-                    GoogleGACategory.AssetType,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.ElBridgeInquiryNextOfStep1,
+                    GoogleAnalyticsCategory.AssetType,
                     typeof selectedRealEstateType === 'undefined'
                       ? ''
                       : selectedRealEstateType,
@@ -360,8 +360,8 @@ const Section = () => {
                   onClick={() => {
                     selectedStepTwo(
                       NFTApplicationTypes.Trading,
-                      GoogleGAAction.ElBridgeInquiryTrade,
-                      GoogleGACategory.NftUsecase,
+                      GoogleAnalyticsAction.ElBridgeInquiryTrade,
+                      GoogleAnalyticsCategory.NftUsecase,
                     );
                   }}>
                   {t('elbridge.step2.2')}
@@ -376,8 +376,8 @@ const Section = () => {
                   onClick={() => {
                     selectedStepTwo(
                       NFTApplicationTypes.Investment,
-                      GoogleGAAction.ElBridgeInquiryInvestment,
-                      GoogleGACategory.NftUsecase,
+                      GoogleAnalyticsAction.ElBridgeInquiryInvestment,
+                      GoogleAnalyticsCategory.NftUsecase,
                     );
                   }}>
                   {t('elbridge.step2.3')}
@@ -392,8 +392,8 @@ const Section = () => {
                   onClick={() => {
                     selectedStepTwo(
                       NFTApplicationTypes.Loan,
-                      GoogleGAAction.ElBridgeInquiryLoan,
-                      GoogleGACategory.NftUsecase,
+                      GoogleAnalyticsAction.ElBridgeInquiryLoan,
+                      GoogleAnalyticsCategory.NftUsecase,
                     );
                   }}>
                   {t('elbridge.step2.4')}
@@ -412,9 +412,9 @@ const Section = () => {
                     stepTwo: true,
                     stepThree: prev.stepThree && false,
                   }));
-                  googleGAEvent(
-                    GoogleGAAction.ElBridgeInquiryNextOfStep2,
-                    GoogleGACategory.NftUsecase,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.ElBridgeInquiryNextOfStep2,
+                    GoogleAnalyticsCategory.NftUsecase,
                     typeof selectedNFTAppliaction === 'undefined'
                       ? ''
                       : selectedNFTAppliaction,
@@ -448,9 +448,9 @@ const Section = () => {
                 value={realEstateAddress}
                 onChange={(e) => {
                   setRealEstateAddress(e.target.value);
-                  googleGAEvent(
-                    GoogleGAAction.ElBridgeInquiryInputAddress,
-                    GoogleGACategory.RealEstateAddress,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.ElBridgeInquiryInputAddress,
+                    GoogleAnalyticsCategory.RealEstateAddress,
                   );
                 }}
               />
@@ -469,9 +469,9 @@ const Section = () => {
                     ...prev,
                     stepThree: true,
                   }));
-                  googleGAEvent(
-                    GoogleGAAction.ElBridgeInquiryNextOfStep3,
-                    GoogleGACategory.RealEstateAddress,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.ElBridgeInquiryNextOfStep3,
+                    GoogleAnalyticsCategory.RealEstateAddress,
                   );
                 }}>
                 {t('elbridge.next_button')}
@@ -502,9 +502,9 @@ const Section = () => {
                 value={userEmailAddress}
                 onChange={(e) => {
                   setUserEmailAddress(e.target.value);
-                  googleGAEvent(
-                    GoogleGAAction.ElBridgeInquiryInputEmailAddress,
-                    GoogleGACategory.EmailAddress,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.ElBridgeInquiryInputEmailAddress,
+                    GoogleAnalyticsCategory.EmailAddress,
                   );
                 }}
               />
@@ -523,9 +523,9 @@ const Section = () => {
                     ...prev,
                     stepFour: true,
                   }));
-                  googleGAEvent(
-                    GoogleGAAction.ElBridgeInquiryNextOfStep4,
-                    GoogleGACategory.EmailAddress,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.ElBridgeInquiryNextOfStep4,
+                    GoogleAnalyticsCategory.EmailAddress,
                   );
                 }}>
                 {t('elbridge.next_button')}
@@ -556,9 +556,9 @@ const Section = () => {
                   value={etc}
                   onChange={(e) => {
                     setEtc(e.target.value);
-                    googleGAEvent(
-                      GoogleGAAction.ElBridgeInquiryInputOthers,
-                      GoogleGACategory.Others,
+                    GoogleAnalyticsEvent(
+                      GoogleAnalyticsAction.ElBridgeInquiryInputOthers,
+                      GoogleAnalyticsCategory.Others,
                     );
                   }}
                 />
@@ -570,9 +570,9 @@ const Section = () => {
                       onChange={(e) => {
                         setIsChecked(e.target.checked);
                         if (!e.target.checked) return;
-                        googleGAEvent(
-                          GoogleGAAction.ElBridgeInquiryAgreement,
-                          GoogleGACategory.Others,
+                        GoogleAnalyticsEvent(
+                          GoogleAnalyticsAction.ElBridgeInquiryAgreement,
+                          GoogleAnalyticsCategory.Others,
                         );
                       }}
                     />
@@ -593,9 +593,9 @@ const Section = () => {
                     sitekey={'6LdAI24aAAAAAG0QIW1ZdyfsQMHrW3uwskzlVTH7'}
                     onChange={() => {
                       setIsRecaptcha(true);
-                      googleGAEvent(
-                        GoogleGAAction.ElBridgeInquiryCheckBot,
-                        GoogleGACategory.Others,
+                      GoogleAnalyticsEvent(
+                        GoogleAnalyticsAction.ElBridgeInquiryCheckBot,
+                        GoogleAnalyticsCategory.Others,
                       );
                     }}
                     onExpired={() => setIsRecaptcha(false)}
@@ -619,9 +619,9 @@ const Section = () => {
                     ...prev,
                     stepFive: true,
                   }));
-                  googleGAEvent(
-                    GoogleGAAction.ElBridgeInquirySubmit,
-                    GoogleGACategory.Others,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.ElBridgeInquirySubmit,
+                    GoogleAnalyticsCategory.Others,
                   );
                   setSelectedNFTAppliaction('');
                   setSelectedRealEstateType('');

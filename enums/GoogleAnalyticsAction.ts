@@ -1,4 +1,4 @@
-enum GoogleGAAction {
+enum GoogleAnalyticsAction {
   NavHome = 'Nav_home',
   NavElBridge = 'Nav_elBridge',
   NavGovernance = 'Nav_governance',
@@ -68,4 +68,4 @@ enum GoogleGAAction {
   WalletConnect = 'WalletConnect',
 }
 
-export default GoogleGAAction;
+export default GoogleAnalyticsAction;

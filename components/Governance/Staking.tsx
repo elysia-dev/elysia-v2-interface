@@ -26,9 +26,9 @@ import EthOn from 'assets/images/governance/eth-on.png';
 import EthOff from 'assets/images/governance/eth-off.png';
 import BscOn from 'assets/images/governance/bsc-on.png';
 import BscOff from 'assets/images/governance/bsc-off.png';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import {
   AnchorButton,
   PrevLinkButton,
@@ -167,9 +167,9 @@ const Staking = (props: Props) => {
               </p>
               <AnchorButton
                 onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.GovStakingGuide,
-                    GoogleGACategory.Governance,
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.GovStakingGuide,
+                    GoogleAnalyticsCategory.Governance,
                   );
                   window.open('https://elysia.gitbook.io/elysia-user-guide/');
                 }}>

@@ -1,10 +1,10 @@
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import LanguageType from 'enums/LanguageType';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { googleGAEvent } from 'utils/gaEvent';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
 import ConnectWalletButton from './ConnectWalletButton';
 import setLanguage from 'utils/setLanguage';
 
@@ -74,7 +74,10 @@ const MobileMenu: React.FC<{
           <a
             onClick={() => {
               onButtonClick();
-              googleGAEvent(GoogleGAAction.NavElBridge, GoogleGACategory.Nav);
+              GoogleAnalyticsEvent(
+                GoogleAnalyticsAction.NavElBridge,
+                GoogleAnalyticsCategory.Nav,
+              );
             }}>
             <span
               style={{
@@ -91,7 +94,10 @@ const MobileMenu: React.FC<{
           <a
             onClick={() => {
               onButtonClick();
-              googleGAEvent(GoogleGAAction.NavGovernance, GoogleGACategory.Nav);
+              GoogleAnalyticsEvent(
+                GoogleAnalyticsAction.NavGovernance,
+                GoogleAnalyticsCategory.Nav,
+              );
             }}>
             <span
               style={{
@@ -108,7 +114,10 @@ const MobileMenu: React.FC<{
           <a
             onClick={() => {
               onButtonClick();
-              googleGAEvent(GoogleGAAction.NavEcosystem, GoogleGACategory.Nav);
+              GoogleAnalyticsEvent(
+                GoogleAnalyticsAction.NavEcosystem,
+                GoogleAnalyticsCategory.Nav,
+              );
             }}>
             <span
               style={{
@@ -125,7 +134,10 @@ const MobileMenu: React.FC<{
           <a
             onClick={() => {
               onButtonClick();
-              googleGAEvent(GoogleGAAction.NavCommunity, GoogleGACategory.Nav);
+              GoogleAnalyticsEvent(
+                GoogleAnalyticsAction.NavCommunity,
+                GoogleAnalyticsCategory.Nav,
+              );
             }}>
             <span
               style={{
@@ -142,7 +154,10 @@ const MobileMenu: React.FC<{
           <a
             onClick={() => {
               onButtonClick();
-              googleGAEvent(GoogleGAAction.NavDevelopers, GoogleGACategory.Nav);
+              GoogleAnalyticsEvent(
+                GoogleAnalyticsAction.NavDevelopers,
+                GoogleAnalyticsCategory.Nav,
+              );
             }}>
             <span
               style={{
@@ -159,7 +174,10 @@ const MobileMenu: React.FC<{
       <LanguageContainer>
         <p
           onClick={() => {
-            googleGAEvent(GoogleGAAction.NavLanguage, GoogleGACategory.Nav);
+            GoogleAnalyticsEvent(
+              GoogleAnalyticsAction.NavLanguage,
+              GoogleAnalyticsCategory.Nav,
+            );
             setLanguage(LanguageType.KO);
           }}
           style={{
@@ -169,7 +187,10 @@ const MobileMenu: React.FC<{
         </p>
         <p
           onClick={() => {
-            googleGAEvent(GoogleGAAction.NavLanguage, GoogleGACategory.Nav);
+            GoogleAnalyticsEvent(
+              GoogleAnalyticsAction.NavLanguage,
+              GoogleAnalyticsCategory.Nav,
+            );
             setLanguage(LanguageType.EN);
           }}
           style={{

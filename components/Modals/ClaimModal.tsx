@@ -9,9 +9,9 @@ import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
 import { useTranslation } from 'react-i18next';
 import useV2Staking from 'hooks/useV2Staking';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import { useWeb3React } from '@web3-react/core';
 import ModalLayout from './ModalLayout';
 import styled from 'styled-components';
@@ -109,9 +109,9 @@ const ClaimModal = (props: Props) => {
             title={t('modal.reward.0')}
             onClick={() => {
               setTransactionWait(true);
-              googleGAEvent(
-                GoogleGAAction.GovStakingIncentive,
-                GoogleGACategory.Governance,
+              GoogleAnalyticsEvent(
+                GoogleAnalyticsAction.GovStakingIncentive,
+                GoogleAnalyticsCategory.Governance,
                 `WalletAddress = ${account},IncentiveAmount = ${parseFloat(
                   formatEther(reward?.after || constants.Zero),
                 )}

@@ -19,9 +19,9 @@ import { isChainId } from 'utils/isChainId';
 import { NavigationWrapper, HamburgerButton } from './styles';
 import MobileMenu from './MobileMenu';
 import LanguageConverter from './LanguageConverter';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
-import { googleGAEvent } from 'utils/gaEvent';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -120,7 +120,10 @@ const Navigation = () => {
             <Link href={`/${router.query.lng}`} passHref>
               <a
                 onClick={() => {
-                  googleGAEvent(GoogleGAAction.NavHome, GoogleGACategory.Nav);
+                  GoogleAnalyticsEvent(
+                    GoogleAnalyticsAction.NavHome,
+                    GoogleAnalyticsCategory.Nav,
+                  );
                 }}>
                 <Image
                   src={ElysiaLogo}
@@ -152,9 +155,9 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavElBridge,
-                          GoogleGACategory.Nav,
+                        GoogleAnalyticsEvent(
+                          GoogleAnalyticsAction.NavElBridge,
+                          GoogleAnalyticsCategory.Nav,
                         );
                       }}>
                       <span
@@ -173,9 +176,9 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavGovernance,
-                          GoogleGACategory.Nav,
+                        GoogleAnalyticsEvent(
+                          GoogleAnalyticsAction.NavGovernance,
+                          GoogleAnalyticsCategory.Nav,
                         );
                       }}>
                       <span
@@ -194,9 +197,9 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavEcosystem,
-                          GoogleGACategory.Nav,
+                        GoogleAnalyticsEvent(
+                          GoogleAnalyticsAction.NavEcosystem,
+                          GoogleAnalyticsCategory.Nav,
                         );
                       }}>
                       <span
@@ -215,9 +218,9 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavCommunity,
-                          GoogleGACategory.Nav,
+                        GoogleAnalyticsEvent(
+                          GoogleAnalyticsAction.NavCommunity,
+                          GoogleAnalyticsCategory.Nav,
                         );
                       }}>
                       <span
@@ -236,9 +239,9 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavDevelopers,
-                          GoogleGACategory.Nav,
+                        GoogleAnalyticsEvent(
+                          GoogleAnalyticsAction.NavDevelopers,
+                          GoogleAnalyticsCategory.Nav,
                         );
                       }}>
                       <span

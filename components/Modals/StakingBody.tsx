@@ -1,12 +1,12 @@
 import { useWeb3React } from '@web3-react/core';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import { BigNumber, utils } from 'ethers';
 import { Dispatch, SetStateAction, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { formatComma } from 'utils/formatters';
-import { googleGAEvent } from 'utils/gaEvent';
+import { GoogleAnalyticsEvent } from 'utils/gaEvent';
 import ModalButton from './ModalButton';
 
 type Props = {
@@ -142,11 +142,11 @@ const StakingBody = (props: Props) => {
             if (isDisabledBtn || Number(value) === 0) {
               return;
             }
-            googleGAEvent(
+            GoogleAnalyticsEvent(
               type === t('modal.staking.0')
-                ? GoogleGAAction.GovStaking
-                : GoogleGAAction.GovUnstaking,
-              GoogleGACategory.Governance,
+                ? GoogleAnalyticsAction.GovStaking
+                : GoogleAnalyticsAction.GovUnstaking,
+              GoogleAnalyticsCategory.Governance,
               `WalletAddress = ${account},${
                 type === t('modal.staking.0')
                   ? ` StakingAmount = ${value}`
