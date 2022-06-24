@@ -72,7 +72,7 @@ const SelectWalletModal = (props: Props) => {
       <div className="wallet_select_modal">
         <div className="wallet_select_modal__content">
           <div className="wallet_select_modal__content__header">
-            <div>{t('modal.select_wallet')}</div>
+            <div>{t('modal.selectWallet')}</div>
             <CloseButton onClose={() => onClose()} />
           </div>
           <div className="wallet_select_modal__content__line" />

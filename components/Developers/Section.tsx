@@ -14,7 +14,7 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {
   const { t } = useTranslation();
-  const [ishover, setHover] = useState(false);
+  const [isHover, setHover] = useState(false);
 
   return (
     <>
@@ -38,7 +38,7 @@ const Section = () => {
           <section>
             <ContentItem
               Icon={<Git />}
-              contentName={t('developers.10')}
+              contentName={t('developers.7')}
               link={'https://github.com/elysia-dev'}
               onClickEvent={() => {
                 googleGAEvent(
@@ -52,7 +52,7 @@ const Section = () => {
               onMouseLeave={() => setHover(false)}>
               <ContentItem
                 Icon={<Bug />}
-                contentName={ishover ? 'Coming Soon!' : t('developers.7')}
+                contentName={isHover ? t('developers.6') : t('developers.5')}
                 isComingSoon={true}
               />
             </DisabledSection>

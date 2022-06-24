@@ -9,70 +9,53 @@
       "top_icon": [
         "Changed real world assets",
         "Community members",
-        "Total Value Locked",
-        "Github commit"
+        "Total Value Locked"
       ],
       "portfolio": [
         "ELYSIA PORTFOLIO",
         "Tokenized real world asset.",
-        "엘리시아가 현재까지 진행한 부동산 포트폴리오.",
         "More portfolio"
       ],
-      "section_el_bridge": [
+      "sectionElBridge": [
         "EL Bridge",
         "Move Real world asset into the digital world",
-        "실제 부동산을 NFT로 만드는 과정.",
         "EL 브릿지는 사용자들이 블록체인 금융 생태계에서도 실물자산을 활용할 수 있도록 실물자산 토큰화 기능을 제공합니다."
       ],
-      "section_governance": [
+      "sectionGovernance": [
         "Governance",
         "DAO governed by a global community",
-        "엘리시아는 EL 토큰 스테이커들에 의해 소유되고 운영되는 DAO 법인입니다.",
-        "사용자들은 ELYSIA 프로토콜 안에서 실물자산이 토큰화되고, 거래되는 과정뿐만 아니라<br /> 토큰 이코노미의 모든 의사결정 과정에 참여할 수 있습니다."
+        "엘리시아는 EL 토큰 스테이커들에 의해 소유되고 운영되는 DAO 법인입니다."
       ],
-      "section_ecosystem": [
+      "sectionEcosystem": [
         "Ecosystem",
         "Decentralized token economy",
-        "토큰화된 부동산을 토대로한 다양한 자산 토큰 생태계.",
         "사용자들은 토큰으로 만들어진 부동산 자산을 토대로, 디파이 등<br /> 다양한 서드파티 Dapp과 함께 토큰 생태계에서 어떻게 쓰이는지 참여할 수 있습니다."
       ],
-      "section_community": [
+      "sectionCommunity": [
         "Community",
         "User-centered community channels",
-        "다양한 형태의 커뮤니티 채널.",
         "사용자들은 여러 커뮤니티 채널을 통해 ELYSIA protocol에 참여하는 다른 사람들과<br /> 서로 의견을 나누고, 의사결정을 할 수 있습니다."
       ],
-      "section_developers": [
+      "sectionDevelopers": [
         "Developers",
         "Powered by global developers",
-        "탈중앙화된 개발 시스템.",
         "사용자들은 자유롭게 ELYSIA 및 ELYFI 시스템을 구성하는 코드를 확인하고,<br /> 자신만의 방법으로 기여하고 보상을 획득할 수 있습니다."
-      ],
-      "section_documents": [
-        "Documents",
-        "Guide for novice & anyone who is curious about the project",
-        "ELYSIA에 관련된 모든 문서.",
-        "초보자, 경험자에 관계없이 모두 ELYSIA의 문서를 통해<br /> ELYSIA protocol이 무엇이고, 어떻게 토큰 이코노미가 돌아가는지 확인할 수 있습니다."
       ],
       "partners": [
         "ELYSIA DAO PARTNERS",
         "Strong partners who help to fulfill ELYSIA’s vision.",
-        "블록체인, 법률, 부동산 관련 파트너.",
         "Backed by",
         "Legal Review",
         "Audit",
-        "Real Estate Products",
         "Business"
       ],
       "developers": [
         "ELYSIA DAO LLC. CONTRIBUTERS",
-        "Registered in the state of Wyoming, USA.",
-        "ELYSIA DAO LLC.의 모든 결정은 자동화되고 분산되며 오픈 소스 코드를 기반으로 합니다."
+        "Registered in the state of Wyoming, USA."
       ],
       "press": [
         "PRESS",
         "News & Updates about ELYSIA Protocol.",
-        "해외 및 국내 ELYSIA 프로토콜 관련 소식.",
         "ELYSIA to Be the First in Asia That Obtains Approval as a DAO LLC in Wyoming, USA",
         "SINGAPORE, February 07, 2022--(BUSINESS WIRE)- ELYSIA, a blockchain project specializing in real estate tokenization and securitization, will be the first organization in Asia to be registered as a DAO LLC (Limited Liability Company) in Wyoming, USA",
         "엘리시아, 美 와이오밍주 탈중앙화자율조직(DAO) 법인으로 등록 ··· 세계에서 두 번째",
@@ -84,15 +67,15 @@
     "ecosystem": {
       "top": [
         "ELYSIA Ecosystem",
-        "사용자들은 토큰으로 만들어진 부동산 자산을 토대로, 디파이 등<br /> 다양한 서드파티 Dapp과 함께 토큰 생태계에서 어떻게 쓰이는지 참여할 수 있습니다."
+        "사용자들은 토큰으로 만들어진 부동산 자산을 토대로, 디파이 등 다양한 서드파티 Dapp과 함께 토큰 생태계에서 어떻게 쓰이는지 참여할 수 있습니다."
       ],
       "project": [
         "프로젝트",
-        "ELYSIA 프로토콜을 통해 만들어진 자산 토큰을 활용할 수 있는 내외부 프로젝트입니다. 자산 토큰의 수요가 증가하고,<br /> 기술이 고도화됨에 따라 ELYSIA 생태계는 더욱 확대되고 다양해지고 있습니다.",
-        "자산 토큰을 담보로 디지털 자산을<br /> 대출해주는 프로토콜입니다.",
+        "ELYSIA 프로토콜을 통해 만들어진 자산 토큰을 활용할 수 있는 내외부 프로젝트입니다. 자산 토큰의 수요가 증가하고,\n기술이 고도화됨에 따라 ELYSIA 생태계는 더욱 확대되고 다양해지고 있습니다.",
+        "자산 토큰을 담보로 디지털 자산을 대출해주는 프로토콜입니다.",
         "곧 업데이트 예정",
         "엘리시아 모바일 앱",
-        "자산 토큰을 사고 팔 수 있는 NFT <br /> 마켓플레이스입니다.",
+        "자산 토큰을 사고 팔 수 있는 NFT 마켓플레이스입니다.",
         "투자 DAO",
         "엘리시아에서 만들어진 자산토큰을 구매할 수 있는 DAO"
       ],
@@ -107,7 +90,7 @@
     "community": [
       "ELYSIA COMMUNITY",
       "User-centered community channels",
-      "사용자들은 여러 커뮤니티 채널을 통해 ELYSIA protocol에 참여하는 다른 사람들과<br /> 서로 의견을 나누고, 의사결정을 할 수 있습니다.",
+      "사용자들은 여러 커뮤니티 채널을 통해 ELYSIA protocol에 참여하는 다른 사람들과 서로 의견을 나누고, 의사결정을 할 수 있습니다.",
       "궁금한 내용을 질문하고 ELYSIA 커뮤니티에 참여하세요!",
       "아이디어를 공유하고 ELYSIA 거버넌스에 참여하세요!",
       "ELYSIA Protocol 개발에 참여하세요!",
@@ -116,63 +99,42 @@
     "developers": [
       "Developers",
       "Powered by global developers",
-      "사용자들은 자유롭게 ELYSIA 시스템을 구성하는 코드를 확인하고,<br /> 자신만의 방법으로 contribute하고 보상을 획득할 수 있습니다.",
+      "사용자들은 자유롭게 ELYSIA 시스템을 구성하는 코드를 확인하고, 자신만의 방법으로 contribute하고 보상을 획득할 수 있습니다.",
       "엘리시아란?",
       "실물자산의 디지털포메이션을 위한 DAO이다.",
-      "Smart Contract Overview",
-      "How smart contract is made<br /> In real world asset based token",
       "Bug Bounty",
       "Coming Soon!",
-      "ELYSIA v1 Documentation",
       "Github"
-    ],
-    "documents": [
-      "Documents",
-      "Guide for novice & anyone who is curious about the project",
-      "초보자, 경험자에 관계없이 모두 ELYSIA의 문서를 통해<br /> ELYSIA protocol이 무엇이고, 어떻게 토큰 이코노미가 돌아가는지 확인할 수 있습니다.",
-      "ELYSIA Whitepaper",
-      "Real world asset<br /> tokenization DAO",
-      "ELYFI Whitepaper",
-      "Adding real estate<br /> to the DEFI concept",
-      "Guide for Novice",
-      "To be continued...<br />We will launch this service soon!",
-      "Github",
-      "Join for developing<br /> ELYSIA protocol"
     ],
     "navigation": {
       "wallet": "지갑 연결하기"
     },
     "governance": {
       "title": "ELYSIA Governance",
-      "section_first": [
+      "sectionFirst": [
         "엘리시아는 EL 토큰 스테이커들에 의해 소유되고 운영되는 DAO 법인입니다.",
         "엘리시아 DAO는 현실에 존재하는 실물자산이 디파이나 NFT 마켓플레이스 등 디지털자산 시장에서 활용될 수 있도록 토큰화 프로토콜을 개발합니다.",
         "아시아 최초 DAO 법인",
         "미국 정부가 인정한 세계 두 번째 DAO 법인",
         "상장 회사 중 최초로 설립된 DAO 법인"
       ],
-      "section_second": [
+      "sectionSecond": [
         "거버넌스 참여 방법",
         "EL 토큰을 획득해보세요!",
         "ELYSIA 토큰은 엘리시아 DAO 법인의 ownership 을 나타내며, 엘리시아와 그 미래에 관심있는 누구나 거버넌스에 참여할 수 있도록 EL 토큰이 많은 DEX 와 CEX에 상장되어 있습니다.",
         "거래소 보기",
         "토큰 이코노미",
-        "EL 토큰 정보",
         "실시간 가격",
         "총 발행량",
-        "발행된 EL 토큰의 총 수량을 나타냅니다.",
         "총 공급량",
-        "총 발행량에서 소각된 수량을 뺀 수량을 나타냅니다.",
-        "유통 공급량",
-        "총 공급량 중에서 시중에 유통되고 있거나 개인 지갑에 보유하고 있어서 시장에서 바로 거래가 가능한 수량을 나타냅니다."
+        "유통 공급량"
       ],
-      "section_third": [
+      "sectionThird": [
         "스테이킹을 통해 투표권(sEL) 획득해 보세요!",
         "의사결정 과정에 참여하기 위해서는 투표권 (staked EL, sEL)이 있어야 합니다. EL 스테이킹 앱에 EL 토큰을 스테이킹함으로써 투표권을 얻을 수 있으며, 보유한 수량만큼 투표권을 행사할 수 있습니다.",
         "스테이킹 기간은 <strong>ELYSIA 2.0</strong> 오픈 전까지이며, 언제든지 언스테이킹이 가능합니다.",
         "스테이킹 가이드",
         "총 스테이킹 수량",
-        "EL 스테이킹",
         "이전 스테이킹 프로그램",
         "스테이킹 수량",
         "보상 수량",
@@ -180,9 +142,9 @@
         "수령하기",
         "EL 스테이킹을 하기 위해서 연결된 지갑의 네트워크를 ‘Ethereum Mainnet’으로 변경해주세요."
       ],
-      "prev_staking": [
+      "prevStaking": [
         "이전 스테이킹 프로그램",
-        "이전 EL 스테이킹 프로그램은 <strong>2021.07.27 ~ 2022.04.17 KST</strong> 까지 7회차 동안 진행했습니다.<br/>이 기간동안 스테이킹한 물량이 남아있는 사용자만 확인할 수 있습니다.<br/>언스테이킹 및 보상 수령을 원하는 사용자는 지갑 연결을 해주세요.",
+        "이전 EL 스테이킹 프로그램은 <strong>2021.07.27 ~ 2022.04.17 KST</strong> 까지 7회차 동안 진행했습니다.\n이 기간동안 스테이킹한 물량이 남아있는 사용자만 확인할 수 있습니다.\n언스테이킹 및 보상 수령을 원하는 사용자는 지갑 연결을 해주세요.",
         "1차 ~ 7차",
         "지갑 연결이 필요합니다.",
         "스테이킹한 EL 토큰 수량이 없습니다.",
@@ -192,12 +154,9 @@
         "언스테이킹",
         "수령하기"
       ],
-      "section_fourth": [
+      "sectionFourth": [
         "의견을 공유하고, 토론하고, 제안하면서 함께 ELYSIA를 개발해요!",
         "엘리시아 프로토콜에 공감하거나 엘리시아의 발전에 참여하고 싶은 분들은 누구나 거버넌스에 참여할 수 있습니다.\n참여자들은 ELYSIA 포럼에서 자유롭게 개선안을 제안하고, 스냅샷에서 의사결정 과정에 투표할 수 있습니다.",
-        "거버넌스 FAQ",
-        "포럼 가이드",
-        "스냅샷 가이드",
         "거버넌스 참여 공간",
         "ELYSIA 포럼",
         "엘리시아 포럼은 엘리시아 거버넌스 시스템의 중요한 부분이며, 엘리시아의 생태계를 육성하기 위한 것입니다. '오프체인 사이클'의 일환으로, 포럼은 참가자들이 자유롭게 이니셔티브를 제안하고 토론하며, 자원과 정보를 공유하는 곳입니다.",
@@ -206,18 +165,18 @@
       ]
     },
     "modal": {
-      "connect_wallet": [
+      "connectWallet": [
         "엘리시아 시작하기",
         "스테이킹을 하기 위해서는 지갑 연결이 필요합니다.<br/> 연결하시겠습니까?",
         "연결하기"
       ],
-      "amount_max": "최대",
-      "select_wallet": "지갑 연결하기",
+      "amountMax": "최대",
+      "selectWallet": "지갑 연결하기",
       "staking": ["스테이킹", "지갑잔액", "스테이킹 가능한 수량"],
       "unstaking": ["언스테이킹", "스테이킹 수량", "언스테이킹 가능한 수량"],
       "button": ["잔액이 부족합니다"],
       "reward": ["수령하기"],
-      "prev_unstaking": "{{round}}차 스테이킹 수량",
+      "prevUnstaking": "{{round}}차 스테이킹 수량",
       "indicator": [
         "접근 권한 승인 트랜잭션이 처리중입니다.",
         "지갑에서 해당 트랜잭션을 확인해주세요"
@@ -229,11 +188,11 @@
       "approve": [
         "해당 머니풀에 예치하기 위해서는 연결된 지갑에 해당 앱이 접근할 수 있도록 접근 권한을 승인해야 합니다.",
         "최초 예치 시에만 승인이 필요하며, 승인이 성공적으로 완료될 경우, 이후에는 권한 승인 없이 예치할 수 있습니다.",
-        "<strong>*</strong> 접근 권한 승인 또한 네트워크를 이용한 트랜잭션이기 때문에 가스비가 발생합니다",
+        "* 접근 권한 승인 또한 네트워크를 이용한 트랜잭션이기 때문에 가스비가 발생합니다",
         "승인하기",
         "접근 권한 확인 중.."
       ],
-      "user_info": [
+      "userInfo": [
         "계정",
         "연결 끊기",
         "주소 복사",
@@ -250,21 +209,11 @@
       ]
     },
     "footer": {
-      "logo_label": "ELYSIA DAO LLC.",
-      "contact": "CONTACT",
-      "email": "cs@elysia.land",
-      "whitepaper": "WhitePaper (old)",
-      "community": "COMMUNITY",
-      "copyright": "ELYSIA ⓒ 2018·2022. All rights reserved.",
-      "privacy_policy": "Privacy Policy",
-      "terms_service": "Terms of Service",
-      "language": "LANGUAGE",
-      "language_en": "English",
-      "language_ko": "한국어",
-      "language_zh·hans": "简体中文",
-      "contract": "CONTRACT",
-      "el": "Elysia (EL)",
-      "elfi": "Elyfi (ELFI)"
+      "logoLabel": "ELYSIA DAO LLC.",
+      "content": "ELYSIA c 2018·2022. All rights reserved. Media inquires for ELYSIA DAO LLC. - Contact <strong>cs@elysia.land</strong>",
+      "whitepaper": "White Paper",
+      "privacyPolicy": "Privacy Policy",
+      "disclaimer": "Disclaimer"
     },
     "FAQ": {
       "top": [

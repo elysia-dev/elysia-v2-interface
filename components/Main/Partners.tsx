@@ -45,7 +45,7 @@ const Partners = () => {
       <h3>{t('main.partners.1')}</h3>
       <section>
         <div>
-          <p>{t('main.partners.3')}</p>
+          <p>{t('main.partners.2')}</p>
           <section id="backed_by">
             <div>
               <Link href="http://fbg.capital/" passHref>
@@ -69,7 +69,7 @@ const Partners = () => {
           </section>
         </div>
         <div>
-          <p>{t('main.partners.4')}</p>
+          <p>{t('main.partners.3')}</p>
           <section id="legal_review">
             <div>
               <Link href="https://www.shinkim.com/eng/" passHref>
@@ -119,7 +119,7 @@ const Partners = () => {
 
       <section>
         <div>
-          <p>{t('main.partners.5')}</p>
+          <p>{t('main.partners.4')}</p>
           <section id="audit">
             <div>
               <Link href="https://www.certik.com/" passHref>
@@ -142,51 +142,10 @@ const Partners = () => {
             </div>
           </section>
         </div>
-        {/* <div>
-            <div>{t('main.partners.6')}</div>
-            <div>
-              <div>
-                <Link href="https://www.peoplefund.co.kr/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image
-                      src={People}
-                      alt={'People'}
-                      width={156}
-                      height={38}
-                    />
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="https://www.8percent.kr/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image
-                      src={Percent}
-                      alt={'Percent'}
-                      width={150}
-                      height={45}
-                    />
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="https://buildblock.io/" passHref>
-                  <a rel="noopener noreferrer" target="_blank">
-                    <Image
-                      src={BuildBlock}
-                      alt={'BuildBlock'}
-                      width={111}
-                      height={23}
-                    />
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div> */}
       </section>
       <section>
         <div id="business_wrapper">
-          <p>{t('main.partners.7')}</p>
+          <p>{t('main.partners.5')}</p>
           <section id="business">
             <div>
               <Link href="https://www.bithumb.com/" passHref>

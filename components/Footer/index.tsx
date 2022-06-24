@@ -1,33 +1,38 @@
 import ElysiaLogo from 'assets/images/Elysia_Logo_White@2x.png';
 import Image from 'next/image';
-import { FooterWrapper } from './styles';
+import {
+  AnchorLink,
+  Container,
+  IconLink,
+  LeftWrapper,
+  RightWrapper,
+} from './styles';
 import Discord from 'assets/images/main/discord_white@2x.webp';
 import Github from 'assets/images/main/github_white@2x.webp';
 import Telegram from 'assets/images/main/telegram_white@2x.webp';
 import Twitter from 'assets/images/main/twitter_white@2x.webp';
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import { googleGAEvent } from 'utils/gaEvent';
 import GoogleGACategory from 'enums/GoogleGACategory';
+import { Trans, useTranslation } from 'react-i18next';
 
 const Footer = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
-    <FooterWrapper>
-      <div>
-        <div>
+    <Container>
+      <LeftWrapper>
+        <figure>
           <Image src={ElysiaLogo} alt={'ElysiaLogo'} width={149} height={31} />
-        </div>
-        <div>ELYSIA DAO LLC.</div>
-        <div>
-          ELYSIA c 2018·2022. All rights reserved. Media inquires for ELYSIA DAO
-          LLC. - Contact <span>cs@elysia.land</span>
-        </div>
-      </div>
-      <div>
-        <section>
+        </figure>
+        <strong>{t('footer.logoLabel')}</strong>
+        <p>
+          <Trans>{t('footer.content')}</Trans>
+        </p>
+      </LeftWrapper>
+      <RightWrapper>
+        <AnchorLink>
           <Link
             href={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
             passHref>
@@ -40,21 +45,21 @@ const Footer = () => {
                   GoogleGACategory.Footer,
                 );
               }}>
-              <div>White Paper</div>
+              <p>{t('footer.whitepaper')}</p>
             </a>
           </Link>
           <Link href={`/${i18n.language}/Policy`} passHref>
             <a>
-              <div>Privacy Policy</div>
+              <p>{t('footer.privacyPolicy')}</p>
             </a>
           </Link>
           <Link href={`/${i18n.language}/Disclaimer`} passHref>
             <a>
-              <div>Disclaimer</div>
+              <p>{t('footer.disclaimer')}</p>
             </a>
           </Link>
-        </section>
-        <section>
+        </AnchorLink>
+        <IconLink>
           <div>
             <Link href="https://twitter.com/Elysia_HQ" passHref>
               <a
@@ -135,9 +140,9 @@ const Footer = () => {
               </a>
             </Link>
           </div>
-        </section>
-      </div>
-    </FooterWrapper>
+        </IconLink>
+      </RightWrapper>
+    </Container>
   );
 };
 

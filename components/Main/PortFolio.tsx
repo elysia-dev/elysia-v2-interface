@@ -81,7 +81,7 @@ const PortFolio = () => {
                 GoogleGACategory.Main,
               );
             }}>
-            {t(`main.portfolio.3`)}
+            {t(`main.portfolio.2`)}
             <RightArrowIcon />
           </span>
         </Link>

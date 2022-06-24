@@ -31,7 +31,7 @@ const DisconnectModal = (props: Props) => {
     <div className={styles.modal_disconnect}>
       <div className={styles.modal_container}>
         <div className={styles.modal_header}>
-          <h2>{t('modal.user_info.0')}</h2>
+          <h2>{t('modal.userInfo.0')}</h2>
           <CloseButton onClose={() => onClose()} />
         </div>
         <div className="wallet_select_modal__content__line" />
@@ -61,7 +61,7 @@ const DisconnectModal = (props: Props) => {
                   window.sessionStorage.removeItem('@connect');
                   onClose();
                 }}>
-                {t('modal.user_info.1')}
+                {t('modal.userInfo.1')}
               </div>
             </div>
             <div className={styles.modal_function_wrapper}>
@@ -98,7 +98,7 @@ const DisconnectModal = (props: Props) => {
                     stroke="#fff"
                   />
                 </svg>
-                {t('modal.user_info.2')}
+                {t('modal.userInfo.2')}
               </div>
               <div>
                 <svg
@@ -159,9 +159,9 @@ const DisconnectModal = (props: Props) => {
             </div>
           </div>
           <div className={styles.recent_tx_wrapper}>
-            <div className={styles.recent_header}>{t('modal.user_info.4')}</div>
+            <div className={styles.recent_header}>{t('modal.userInfo.4')}</div>
             <div className={styles.recent_box}>
-              <div>{t('modal.user_info.5')}</div>
+              <div>{t('modal.userInfo.5')}</div>
             </div>
           </div>
         </>

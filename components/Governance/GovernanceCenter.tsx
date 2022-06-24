@@ -56,8 +56,8 @@ const GovernanceCenter = () => {
               <Image src={ELtoken} alt={'EL Token'} />
             </figure>
             <div>
-              <h2>{t('governance.section_second.1')}</h2>
-              <p>{t('governance.section_second.2')}</p>
+              <h2>{t('governance.sectionSecond.1')}</h2>
+              <p>{t('governance.sectionSecond.2')}</p>
               <div>
                 <button
                   className={styles.governance_button}
@@ -70,7 +70,7 @@ const GovernanceCenter = () => {
                       'https://coinmarketcap.com/currencies/elysia/markets/',
                     );
                   }}>
-                  {t('governance.section_second.3')}
+                  {t('governance.sectionSecond.3')}
                   <Image
                     src={ButtonArrow}
                     alt={'Button Arrow'}
@@ -91,7 +91,7 @@ const GovernanceCenter = () => {
                         : 'https://elysia.gitbook.io/elysia-whitepaper-v2-0/token-economy/minting-fee',
                     );
                   }}>
-                  {t('governance.section_second.4')}
+                  {t('governance.sectionSecond.4')}
                   <Image
                     src={ButtonArrow}
                     alt={'Button Arrow'}
@@ -105,19 +105,19 @@ const GovernanceCenter = () => {
           <article className={styles.center_section_01_body}>
             <section className={styles.center_section_01_body_box}>
               <div>
-                <p>{t('governance.section_second.6')}</p>
+                <p>{t('governance.sectionSecond.5')}</p>
                 <h2>$ {data?.elPrice.toFixed(4)}</h2>
               </div>
               <div>
-                <p>{t('governance.section_second.7')} </p>
+                <p>{t('governance.sectionSecond.6')} </p>
                 <h2>7,000,000,000 EL</h2>
               </div>
               <div>
-                <p>{t('governance.section_second.9')}</p>
+                <p>{t('governance.sectionSecond.7')}</p>
                 <h2>{formatCommaSmallZeroDisits(totalSupply)} EL</h2>
               </div>
               <div>
-                <p>{t('governance.section_second.11')}</p>
+                <p>{t('governance.sectionSecond.8')}</p>
                 <h2>{formatCommaSmallZeroDisits(circulatingSupply)} EL</h2>
               </div>
             </section>

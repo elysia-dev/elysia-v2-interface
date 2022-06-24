@@ -15,14 +15,14 @@ const ConnectWalletGuide = (props: Props) => {
     <div className={styles.modal_connect}>
       <div className={styles.modal_container}>
         <div className={styles.modal_header}>
-          <h2>{t('modal.connect_wallet.0')}</h2>
+          <h2>{t('modal.connectWallet.0')}</h2>
           <CloseButton onClose={() => onClose()} />
         </div>
         <div className="wallet_select_modal__content__line" />
         <>
           <div className={styles.modal_content}>
             <p>
-              <Trans>{t('modal.connect_wallet.1')}</Trans>
+              <Trans>{t('modal.connectWallet.1')}</Trans>
             </p>
           </div>
           <div className="wallet_select_modal__content__line" />
@@ -32,7 +32,7 @@ const ConnectWalletGuide = (props: Props) => {
               setModalType();
             }}>
             <div>
-              <p>{t('modal.connect_wallet.2')}</p>
+              <p>{t('modal.connectWallet.2')}</p>
             </div>
           </div>
         </>

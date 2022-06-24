@@ -44,7 +44,7 @@ const StakingBody = (props: Props) => {
     <>
       <>
         <div className={styles.amount_input}>
-          <div onClick={() => max()}>{t('modal.amount_max')}</div>
+          <div onClick={() => max()}>{t('modal.amountMax')}</div>
           <input
             className="amount"
             type="number"

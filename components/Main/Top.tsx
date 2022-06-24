@@ -115,7 +115,7 @@ const Top = () => {
               +
             </b>
             <br />
-            {t(`main.top_icon.0`)}
+            {t(`main.topIcon.0`)}
           </p>
         </section>
         <section>
@@ -124,14 +124,14 @@ const Top = () => {
               <CountUp start={0} end={83385} duration={1} />+
             </b>
             <br />
-            {t(`main.top_icon.1`)}
+            {t(`main.topIcon.1`)}
           </p>
         </section>
         <section>
           <p>
             <b>${toCompact(parseInt(formatEther(totalBalance)))}+</b>
             <br />
-            {t(`main.top_icon.2`)}
+            {t(`main.topIcon.2`)}
           </p>
         </section>
       </MainTopPublicRelation>

@@ -12,36 +12,36 @@ const Section = () => {
   const sectionArrayItems = [
     [
       [
-        t('main.section_governance.0'),
-        t('main.section_governance.1'),
-        t('main.section_governance.2'),
+        t('main.sectionGovernance.0'),
+        t('main.sectionGovernance.1'),
+        t('main.sectionGovernance.2'),
       ],
       'Governance',
       GoogleGAAction.MainGovernanceCard,
     ],
     [
       [
-        t('main.section_ecosystem.0'),
-        t('main.section_ecosystem.1'),
-        t('main.section_ecosystem.3'),
+        t('main.sectionEcosystem.0'),
+        t('main.sectionEcosystem.1'),
+        t('main.sectionEcosystem.2'),
       ],
       'Ecosystem',
       GoogleGAAction.MainEcosystemCard,
     ],
     [
       [
-        t('main.section_community.0'),
-        t('main.section_community.1'),
-        t('main.section_community.3'),
+        t('main.sectionCommunity.0'),
+        t('main.sectionCommunity.1'),
+        t('main.sectionCommunity.2'),
       ],
       'Community',
       GoogleGAAction.MainCommunityCard,
     ],
     [
       [
-        t('main.section_developers.0'),
-        t('main.section_developers.1'),
-        t('main.section_developers.3'),
+        t('main.sectionDevelopers.0'),
+        t('main.sectionDevelopers.1'),
+        t('main.sectionDevelopers.2'),
       ],
       'Developers',
       GoogleGAAction.MainDevelopersCard,

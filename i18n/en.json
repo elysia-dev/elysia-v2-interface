@@ -1,78 +1,57 @@
 {
   "translation": {
     "main": {
-      "top": [
-        "ELYSIA PROTOCOL",
-        "Real world asset tokenization DAO.",
-        "ELYSIA is a protocol to tokenize real-world asset like real estate,<br />and liquidate it using DAO (Decentralized Autonomous Organization).<br/>Users can play in various blockchain ecosystems like Defi with this token."
-      ],
-      "top_icon": [
+      "top": ["ELYSIA PROTOCOL", "Real world asset tokenization DAO."],
+      "topIcon": [
         "Changed real world assets",
         "Community members",
-        "Total Value Locked",
-        "Github commit"
+        "Total Value Locked"
       ],
       "portfolio": [
         "ELYSIA PORTFOLIO",
         "Tokenized real world asset.",
-        "A real estate portfolio made by ELYSIA protocol.",
         "More portfolio"
       ],
-      "section_el_bridge": [
+      "sectionElBridge": [
         "EL Bridge",
         "Real world asset into digital NFT.",
-        "How to make NFT based on real estate?",
         "EL Bridge provides a real asset tokenization function so that users can utilize real assets in the blockchain financial ecosystem."
       ],
-      "section_governance": [
+      "sectionGovernance": [
         "Governance",
         "DAO governed by a global community",
-        "ELYSIA is a DAO LLC owned and operated by EL Token stakers.",
-        "Users can join the whole decision-making process in the token economy which tokenizing real-world assets and trading these tokens."
+        "ELYSIA is a DAO LLC owned and operated by EL Token stakers."
       ],
-      "section_ecosystem": [
+      "sectionEcosystem": [
         "Ecosystem",
         "Decentralized token economy",
-        "Ecosystem-based on tokenized real estate",
         "Users can participate in various token economies with real estate tokens using third-party Dapps like Defi."
       ],
-      "section_community": [
+      "sectionCommunity": [
         "Community",
         "User-centered community channels",
-        "Various formats of community channels",
         "Users can communicate and decide with other people in ELYSIA protocol using numerous community channels."
       ],
-      "section_developers": [
+      "sectionDevelopers": [
         "Developers",
         "Powered by global developers",
-        "Decentralized developing system",
         "Developers can give rewards by freely contributing ELYSIA and ELYFI system."
-      ],
-      "section_documents": [
-        "Documents",
-        "Guide for novice & anyone who is curious about the project.",
-        "Every document about ELYSIA protocol",
-        "Anyone can check how ELYSIA token economy is designed by looking ELYSIA documents."
       ],
       "partners": [
         "ELYSIA DAO PARTNERS",
         "Strong partners who help to fulfill ELYSIA’s vision.",
-        "On-chain & Off-chain partners",
         "Backed by",
         "Legal Review",
         "Audit",
-        "Real Estate Products",
         "Business"
       ],
       "developers": [
-        "ELYSIA DAO LLC. CONTRIBUTERS",
-        "Registered in the state of Wyoming, USA.",
-        "Every decision made by ELYSIA DAO LLC. is decentralized and based on open-source code that anonymous participants can contribute."
+        "ELYSIA DAO LLC. CONTRIBUTORS",
+        "Registered in the state of Wyoming, USA."
       ],
       "press": [
         "PRESS",
         "News & Updates about ELYSIA Protocol.",
-        "해외 및 국내 ELYSIA 프로토콜 관련 소식.",
         "ELYSIA to Be the First in Asia That Obtains Approval as a DAO LLC in Wyoming, USA",
         "SINGAPORE, February 07, 2022--(BUSINESS WIRE)- ELYSIA, a blockchain project specializing in real estate tokenization and securitization, will be the first organization in Asia to be registered as a DAO LLC (Limited Liability Company) in Wyoming, USA",
         "엘리시아, 美 와이오밍주 탈중앙화자율조직(DAO) 법인으로 등록 ··· 세계에서 두 번째",
@@ -88,7 +67,7 @@
       ],
       "project": [
         "PROJECTS",
-        "It is an internal and external project that can utilize asset tokens created through the ELYSIA protocol.<br/> As the demand for asset tokens increases and technology advances, the ELYSIA ecosystem is expanding and becoming more diverse.",
+        "It is an internal and external project that can utilize asset tokens created through the ELYSIA protocol.\nAs the demand for asset tokens increases and technology advances, the ELYSIA ecosystem is expanding and becoming more diverse.",
         "DeFi that lends digital assets with asset tokens as collateral",
         "To be updated soon",
         "ELYSIA Mobile APP",
@@ -119,60 +98,39 @@
       "Developers can give rewards by freely contributing ELYSIA and ELYFI system.",
       "What is ELYSIA?",
       "DAO for the digital transformation of real estate assets.",
-      "Smart Contract Overview",
-      "How smart contract is made<br /> In real world asset based token",
       "Bug Bounty",
       "Coming Soon!",
-      "ELYSIA v1 Documentation",
       "Github"
-    ],
-    "documents": [
-      "Documents",
-      "Guide for novice & anyone who is curious about the project.",
-      "Anyone can check how ELYSIA token economy is designed by looking ELYSIA documents.",
-      "ELYSIA Whitepaper",
-      "Real world asset<br /> tokenization DAO",
-      "ELYFI Whitepaper",
-      "Adding real estate<br /> to the DEFI concept",
-      "Guide for Novice",
-      "To be continued...<br />We will launch this service soon!",
-      "Github",
-      "Join for developing<br /> ELYSIA protocol"
     ],
     "navigation": {
       "wallet": "Connect Wallet"
     },
     "governance": {
       "title": "ELYSIA Governance",
-      "section_first": [
+      "sectionFirst": [
         "ELYSIA is a DAO LLC owned and operated by EL Token stakers.",
         "ELYSIA DAO develops a tokenization protocol so that real assets can be used in digital asset markets such as DeFi and NFT marketplaces.",
         "Asia's first DAO LLC.",
         "The world's second DAO LLC qualified by the US government",
         "DAO LLC established first among listed projects."
       ],
-      "section_second": [
+      "sectionSecond": [
         "How to join",
         "Get the EL Token",
         "ELYSIA token represents ownership of ELYSIA DAO LLC. and is listed on DEX and CEX with many EL tokens so that anyone interested in ELYSIA and the future can participate in governance.",
         "Browse exchanges",
         "Tokenomics",
-        "EL Info",
         "Real-time price",
         "Total created",
-        "It represents the total quantity of created EL tokens.",
         "Total Supply",
-        "It represents the quantity minus the burned quantity from the total created.",
-        "Circulating Supply",
-        "Out of the total supply, it represents the quantity that is circulating in the market or held in a personal wallet so that it can be traded directly on the market."
+        "Circulating Supply"
       ],
-      "section_third": [
+      "sectionThird": [
         "Get voting rights(sEL) through staking!",
         "To participate in the decision-making process, users must have the right to vote (staked EL, sEL). Users can get the right to vote by staking EL tokens on the EL staking, and they can cast their votes as much as they have.",
         "The staking period is until <strong>ELYSIA 2.0</strong> opens, and users can unstake at any time.",
         "Guide for EL Staking",
         "Total staked amount ",
-        "EL Staking",
         "Previous Staking Program",
         "Staked amount",
         "Amount of rewards",
@@ -180,9 +138,9 @@
         "Claim rewards",
         "For EL staking, change the network of the connected wallet to ‘Ethereum Mainnet’."
       ],
-      "prev_staking": [
+      "prevStaking": [
         "Previous Staking Program",
-        "The previous EL staking program was held for 7 rounds from <strong>2021.07.27 to 2022.04.17 KST</strong>.<br/> Only users who have remaining staked during this period can see. Users who want to unstake and receive rewards,<br/> please connect your wallet.",
+        "The previous EL staking program was held for 7 rounds from <strong>2021.07.27 to 2022.04.17 KST</strong>.\nOnly users who have remaining staked during this period can see. Users who want to unstake and receive rewards,\nplease connect your wallet.",
         "1st ~ 7th",
         "A wallet connection is required.",
         "There is no amount of EL tokens staked.",
@@ -200,12 +158,9 @@
         "Unstaked",
         "Claim rewards"
       ],
-      "section_fourth": [
+      "sectionFourth": [
         "Develop ELYSIA together by sharing, discussing, and proposing your opinions!",
         "Anyone who agrees with the ELYSIA Protocol or wants to participate in ELYSIA’s development can participate in governance.\nParticipants are free to propose improvements in the ELYSIA forum and vote on the decision-making process in the snapshot.",
-        "Governance FAQ",
-        "Forum Guide",
-        "Snapshot Guide",
         "Governance spaces",
         "ELYSIA Forum",
         "The ELYSIA forum is an important part of the ELYSIA governance system and is intended to nurture ELYSIA's ecosystem. As part of the ‘off-chain cycle’, Forum is a place where participants are free to propose and discuss initiatives, and to share resources and information.",
@@ -214,13 +169,13 @@
       ]
     },
     "modal": {
-      "connect_wallet": [
+      "connectWallet": [
         "Start ELYFI",
         "A wallet connection is required for staking. <br/> Do you want to connect?",
         "Connect Wallet"
       ],
-      "amount_max": "MAX",
-      "select_wallet": "Connect Wallet",
+      "amountMax": "MAX",
+      "selectWallet": "Connect Wallet",
       "staking": ["Staking", "Wallet Balance", "Available amount for staking"],
       "unstaking": [
         "Unstaking",
@@ -229,7 +184,7 @@
       ],
       "button": ["INSUFFICIENT BALANCE"],
       "reward": ["Claim rewards"],
-      "prev_unstaking": "Staked Amount on the {{round}} round",
+      "prevUnstaking": "Staked Amount on the {{round}} round",
       "indicator": [
         "An approvement transaction is being processed.",
         "Confirm this transaction in your wallet"
@@ -241,11 +196,11 @@
       "approve": [
         "In order to deposit to the money pool, you need to approve access so that the app can access the connected wallet.",
         "Approval is required only at the time of initial deposit, and upon successful completion of the approvement, deposits can be made without subsequent approval process.",
-        "<strong>*</strong> Approval of access rights is also a transaction using the network, so gas charges occur.",
+        "* Approval of access rights is also a transaction using the network, so gas charges occur.",
         "Approve",
         "Checking permission to your token.."
       ],
-      "user_info": [
+      "userInfo": [
         "Account",
         "Disconnect",
         "Copy address",
@@ -255,21 +210,11 @@
       ]
     },
     "footer": {
-      "logo_label": "ELYSIA DAO LLC.",
-      "contact": "CONTACT",
-      "email": "cs@elysia.land",
-      "whitepaper": "WhitePaper (old)",
-      "community": "COMMUNITY",
-      "copyright": "ELYSIA ⓒ 2018·2022. All rights reserved.",
-      "privacy_policy": "Privacy Policy",
-      "terms_service": "Terms of Service",
-      "language": "LANGUAGE",
-      "language_en": "English",
-      "language_ko": "한국어",
-      "language_zh·hans": "简体中文",
-      "contract": "CONTRACT",
-      "el": "Elysia (EL)",
-      "elfi": "Elyfi (ELFI)"
+      "logoLabel": "ELYSIA DAO LLC.",
+      "content": "ELYSIA c 2018·2022. All rights reserved. Media inquires for ELYSIA DAO LLC. - Contact <strong>cs@elysia.land</strong>",
+      "whitepaper": "White Paper",
+      "privacyPolicy": "Privacy Policy",
+      "disclaimer": "Disclaimer"
     },
     "FAQ": {
       "top": [

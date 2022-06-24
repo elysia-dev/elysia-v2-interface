@@ -65,16 +65,16 @@ const Staking = (props: Props) => {
   const stakingInfo = useMemo(() => {
     return [
       {
-        name: t('governance.section_third.7'),
+        name: t('governance.sectionThird.6'),
         value: `${account ? formatComma(userStakedInfo.userPrincipal) : 0}`,
-        btnType: t('governance.section_third.9'),
+        btnType: t('governance.sectionThird.8'),
         onClick: () => {
           setModalType(account ? ModalType.Staking : ModalType.NoAccount);
           setModalVisible();
         },
       },
       {
-        name: t('governance.section_third.8'),
+        name: t('governance.sectionThird.7'),
         value: (
           <>
             <CountUp
@@ -89,7 +89,7 @@ const Staking = (props: Props) => {
             />
           </>
         ),
-        btnType: t('governance.section_third.10'),
+        btnType: t('governance.sectionThird.9'),
         onClick: () => {
           setModalType(account ? ModalType.Claim : ModalType.NoAccount);
           setModalVisible();
@@ -147,12 +147,12 @@ const Staking = (props: Props) => {
               </div>
             </section>
             <div>
-              <h2>{t('governance.section_third.0')}</h2>
+              <h2>{t('governance.sectionThird.0')}</h2>
               <p>
-                {t('governance.section_third.1')}
+                {t('governance.sectionThird.1')}
                 <br />
                 <br />
-                <Trans>{t('governance.section_third.2')}</Trans>
+                <Trans>{t('governance.sectionThird.2')}</Trans>
               </p>
               <a
                 className={styles.governance_button}
@@ -163,7 +163,7 @@ const Staking = (props: Props) => {
                   );
                   window.open('https://elysia.gitbook.io/elysia-user-guide/');
                 }}>
-                {t('governance.section_third.3')}
+                {t('governance.sectionThird.3')}
                 <Image
                   src={ButtonArrow}
                   alt={'Button Arrow'}
@@ -179,7 +179,7 @@ const Staking = (props: Props) => {
               onClick={() =>
                 router.push(`/${getLocalLanguage()}/Governance/V1Staking`)
               }>
-              {t('governance.section_third.6')} &gt;
+              {t('governance.sectionThird.5')} &gt;
             </a>
             <article className={styles.staking_container}>
               <section className={styles.staking_select_mainnet}>
@@ -260,7 +260,7 @@ const Staking = (props: Props) => {
                     ))
                   ) : (
                     <div className={styles.staking_network}>
-                      {t('governance.section_third.11')}
+                      {t('governance.sectionThird.10')}
                     </div>
                   )
                 ) : (
