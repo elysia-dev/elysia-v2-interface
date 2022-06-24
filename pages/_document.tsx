@@ -39,7 +39,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>ELYSIA</title>
           <style />
           <script
             async
