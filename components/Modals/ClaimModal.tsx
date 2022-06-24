@@ -2,10 +2,10 @@ import { BigNumber, constants } from 'ethers';
 import { formatEther } from 'ethers/lib/utils';
 import ElysiaToken from 'assets/images/elysia_token.png';
 import CountUp from 'react-countup';
-import { formatSixFracionDigit } from 'utils/formatters';
 import CloseButton from './CloseButton';
 import styles from './Modal.module.scss';
 import Image from 'next/image';
+import { formatSixDigit } from 'utils/formatters';
 import LoadingIndicator from './LoadingIndicator';
 import { useContext, useEffect, useState } from 'react';
 import TxContext from 'contexts/TxContext';
@@ -80,7 +80,7 @@ const ClaimModal = (props: Props) => {
                   )}
                   end={parseFloat(formatEther(reward?.after || constants.Zero))}
                   formattingFn={(number: any) => {
-                    return formatSixFracionDigit(number);
+                    return formatSixDigit(number);
                   }}
                   decimals={6}
                   duration={1}

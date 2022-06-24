@@ -1,9 +1,9 @@
 import { BigNumber, constants, utils } from 'ethers';
 import ElysiaToken from 'assets/images/elysia_token.png';
-import { formatSixFracionDigit } from 'utils/formatters';
 import CloseButton from './CloseButton';
 import styles from './Modal.module.scss';
 import Image from 'next/image';
+import { formatSixDigit } from 'utils/formatters';
 import LoadingIndicator from './LoadingIndicator';
 import { useContext, useEffect, useState } from 'react';
 import TxContext from 'contexts/TxContext';
@@ -66,7 +66,7 @@ const V1ClaimModal = (props: Props) => {
             <div className={styles.modal_content_wrapper}>
               <div className={styles.modal_content}>
                 <span className={styles.reward}>
-                  {formatSixFracionDigit(
+                  {formatSixDigit(
                     parseFloat(utils.formatEther(reward ?? constants.Zero)),
                   )}
                 </span>

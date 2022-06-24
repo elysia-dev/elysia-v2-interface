@@ -3,8 +3,8 @@ import { Dispatch, SetStateAction, useMemo } from 'react';
 import styles from './Governance.module.scss';
 import {
   formatComma,
-  formatSixFracionDigit,
-  toCompactForBignumber,
+  formatSixDigit,
+  toCompactBignumber,
 } from 'utils/formatters';
 import { formatEther } from 'ethers/lib/utils';
 import CountUp from 'react-countup';
@@ -82,7 +82,7 @@ const Staking = (props: Props) => {
               start={account ? parseFloat(formatEther(reward.before)) : 0}
               end={account ? parseFloat(formatEther(reward.after)) : 0}
               formattingFn={(number: any) => {
-                return formatSixFracionDigit(number);
+                return formatSixDigit(number);
               }}
               decimals={6}
               duration={1}
@@ -124,7 +124,7 @@ const Staking = (props: Props) => {
                     isLoading ? (
                       <Skeleton width={130} height={35} />
                     ) : (
-                      toCompactForBignumber(totalBalance)
+                      toCompactBignumber(totalBalance)
                     )
                   ) : (
                     '-'

@@ -16,7 +16,7 @@ const Layout = (props: LayoutProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { isMobile } = useIsMobile();
 
-  const drawCanvas = useCallback(() => {
+  const drawCanvas = () => {
     const dpr = window.devicePixelRatio;
     const canvas: HTMLCanvasElement | null = canvasRef.current;
 
@@ -32,7 +32,7 @@ const Layout = (props: LayoutProps) => {
     if (!ctx) return;
     ctx.scale(2, 2);
     new Gradient(ctx, canvas.width, canvas.height);
-  }, []);
+  };
 
   useEffect(() => {
     if (isMobile) return;
