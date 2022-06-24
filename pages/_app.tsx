@@ -36,7 +36,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Layout>
             <Head>
               <meta charSet="utf-8" />
-              <link rel="icon" href="https://www.elysia.land/favicon.ico" />
+              <meta name="robots" content="index,follow"></meta>
+              <link rel="canonical" href="https://www.elysia.land"></link>
+              <link rel="icon" href="/favicon.ico" />
               <title>ELYSIA - Real World Asset Tokenization DAO</title>
               <meta
                 name="viewport"
@@ -46,6 +48,10 @@ function MyApp({ Component, pageProps }: AppProps) {
               <meta
                 name="description"
                 content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
+              />
+              <meta
+                name="keyword"
+                content="ELYSIA, ELYFI, Cryptocurrency, Block Chain, DeFi, BTC, ETH, real estate"
               />
               <noscript>You should use javascript</noscript>
               <meta property="og:type" content="website" />
