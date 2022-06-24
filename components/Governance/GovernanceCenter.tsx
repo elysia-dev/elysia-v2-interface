@@ -9,7 +9,7 @@ import {
   circulatingSupplyFetcher,
   totalSupplyFetcher,
 } from 'clients/TokenSupply';
-import { formatCommaSmallZeroDisits } from 'utils/formatters';
+import { roundNumber } from 'utils/formatters';
 import LanguageType from 'enums/LanguageType';
 import ELtoken from 'assets/images/governance/el.png';
 import ButtonArrow from 'assets/images/governance/button-arrow.png';
@@ -46,6 +46,8 @@ const GovernanceCenter = () => {
   const [guideType, setGuideType] = useState('');
   const router = useRouter();
   const lng = router.asPath.substring(1, 3);
+
+  console.log(roundNumber(totalSupply));
 
   return (
     <article>
@@ -117,11 +119,11 @@ const GovernanceCenter = () => {
               </div>
               <div>
                 <p>{t('governance.sectionSecond.7')}</p>
-                <h2>{formatCommaSmallZeroDisits(totalSupply)} EL</h2>
+                <h2>{roundNumber(totalSupply)} EL</h2>
               </div>
               <div>
                 <p>{t('governance.sectionSecond.8')}</p>
-                <h2>{formatCommaSmallZeroDisits(circulatingSupply)} EL</h2>
+                <h2>{roundNumber(circulatingSupply)} EL</h2>
               </div>
             </div>
             <p>* powered by crypto.com</p>

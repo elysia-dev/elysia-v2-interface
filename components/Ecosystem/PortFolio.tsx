@@ -13,7 +13,7 @@ import ElysiaAsset6 from 'assets/images/ecosystem/elysia-asset-6.webp';
 import ElysiaAsset7 from 'assets/images/ecosystem/elysia-asset-7.webp';
 import ElysiaAssetRed1 from 'assets/images/ecosystem/elysia-asset-red-1.webp';
 import ElysiaAssetBlue1 from 'assets/images/ecosystem/elysia-asset-blue-1.webp';
-import { formatCommaSmallZeroDisits } from 'utils/formatters';
+import { roundNumber } from 'utils/formatters';
 import { parseTokenId } from 'utils/parseTokenId';
 import LoanProduct from 'enums/LoanProduct';
 
@@ -103,7 +103,7 @@ const PortFolio: React.FC<{
               {totalPrincipal === 0 ? (
                 <Skeleton width={50} height={20} />
               ) : (
-                formatCommaSmallZeroDisits(totalPrincipal)
+                roundNumber(totalPrincipal)
               )}
             </b>
           </div>
