@@ -40,6 +40,7 @@ type Props = {
   };
   currentChain: ChainType;
   setCurrentChain: Dispatch<SetStateAction<ChainType>>;
+  startDate: moment.Moment;
 };
 
 const Staking = (props: Props) => {
@@ -54,13 +55,7 @@ const Staking = (props: Props) => {
   const router = useRouter();
   const { userStakedInfo } = useV2StakedInfo();
   const { totalBalance, isLoading, apr } = useTotalStakedBalance();
-  const { t, i18n } = useTranslation();
-  const startDate = useMemo(() => {
-    return moment('2022.04.18 19:00:00 +9:00', 'YYYY.MM.DD hh:mm:ss Z').tz(
-      'Asia/Seoul',
-      true,
-    );
-  }, []);
+  const { t } = useTranslation();
 
   const stakingInfo = useMemo(() => {
     return [
@@ -232,24 +227,24 @@ const Staking = (props: Props) => {
                         </div>
                         <div
                           className={
-                            moment().diff(startDate) >= 0
+                            moment().diff(props.startDate) >= 0
                               ? styles.staking_active
                               : styles.staking_deactive
                           }
                           onClick={() => {
-                            if (moment().diff(startDate) < 0) return;
+                            if (moment().diff(props.startDate) < 0) return;
                             info.onClick();
                           }}
                           style={{
                             backgroundColor:
-                              moment().diff(startDate) >= 0
+                              moment().diff(props.startDate) >= 0
                                 ? undefined
                                 : 'rgb(240, 240, 241)',
                           }}>
                           <p
                             style={{
                               color:
-                                moment().diff(startDate) >= 0
+                                moment().diff(props.startDate) >= 0
                                   ? undefined
                                   : '#888888',
                             }}>
