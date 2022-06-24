@@ -9,17 +9,11 @@ import NetworkError from 'assets/images/network_error.png';
 import Image from 'next/image';
 import { isChainId } from 'utils/isChainId';
 import { useENS } from 'hooks/useENS';
-<<<<<<< HEAD
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
-=======
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import styled, { css, keyframes } from 'styled-components';
 import TxStatus from 'enums/TxStatus';
->>>>>>> 8869838 (fix google ga names)
 
 type Props = {
   modalVisible: () => void;
@@ -44,10 +38,11 @@ const ConnectWalletButton = (props: Props) => {
         } ${txStatus} ${chainId && [1, 1337].includes(chainId) ? '' : 'wrong'}`}
         onClick={() => {
           props.modalVisible();
-          GoogleAnalyticsEvent(
-            GoogleAnalyticsAction.NavConnectWallet,
-            GoogleAnalyticsCategory.Nav,
-          );
+          gtag.event({
+            action: GoogleAnalyticsAction.NavConnectWallet,
+            category: GoogleAnalyticsCategory.Nav,
+            label: '',
+          });
         }}>
         {props.isConnectWalletLoading ? (
           <SkeletonTheme baseColor="#202020" highlightColor="#444">

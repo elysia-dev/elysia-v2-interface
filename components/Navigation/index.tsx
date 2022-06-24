@@ -22,7 +22,7 @@ import MobileMenu from './MobileMenu';
 import LanguageConverter from './LanguageConverter';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -127,10 +127,11 @@ const Navigation = () => {
             <Link href={`/${router.query.lng}`} passHref>
               <a
                 onClick={() => {
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.NavHome,
-                    GoogleAnalyticsCategory.Nav,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.NavHome,
+                    category: GoogleAnalyticsCategory.Nav,
+                    label: '',
+                  });
                 }}>
                 <Image
                   src={ElysiaLogo}
@@ -164,16 +165,11 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-<<<<<<< HEAD
-                        googleGAEvent(
-                          GoogleGAAction.NavGovernance,
-                          GoogleGACategory.Nav,
-=======
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.NavElBridge,
-                          GoogleAnalyticsCategory.Nav,
->>>>>>> 8869838 (fix google ga names)
-                        );
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavElBridge,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
                       }}>
                       <span
                         style={{
@@ -191,16 +187,11 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-<<<<<<< HEAD
-                        googleGAEvent(
-                          GoogleGAAction.NavEcosystem,
-                          GoogleGACategory.Nav,
-=======
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.NavGovernance,
-                          GoogleAnalyticsCategory.Nav,
->>>>>>> 8869838 (fix google ga names)
-                        );
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavGovernance,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
                       }}>
                       <span
                         style={{
@@ -218,16 +209,11 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-<<<<<<< HEAD
-                        googleGAEvent(
-                          GoogleGAAction.NavCommunity,
-                          GoogleGACategory.Nav,
-=======
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.NavEcosystem,
-                          GoogleAnalyticsCategory.Nav,
->>>>>>> 8869838 (fix google ga names)
-                        );
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavEcosystem,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
                       }}>
                       <span
                         style={{
@@ -245,16 +231,11 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-<<<<<<< HEAD
-                        googleGAEvent(
-                          GoogleGAAction.NavDevelopers,
-                          GoogleGACategory.Nav,
-=======
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.NavCommunity,
-                          GoogleAnalyticsCategory.Nav,
->>>>>>> 8869838 (fix google ga names)
-                        );
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavCommunity,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
                       }}>
                       <span
                         style={{
@@ -272,16 +253,11 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-<<<<<<< HEAD
-                        googleGAEvent(
-                          GoogleGAAction.NavFAQ,
-                          GoogleGACategory.Nav,
-=======
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.NavDevelopers,
-                          GoogleAnalyticsCategory.Nav,
->>>>>>> 8869838 (fix google ga names)
-                        );
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavDevelopers,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
                       }}>
                       <span
                         style={{

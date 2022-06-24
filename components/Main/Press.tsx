@@ -8,7 +8,7 @@ import decenter from 'assets/images/main/decenter@2x.webp';
 import xinhua from 'assets/images/main/xinhua-logo-feature_0@2x.webp';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
@@ -39,11 +39,7 @@ const Press = () => {
       header: t('main.press.5'),
       content: t('main.press.6'),
       link: 'https://decenter.kr/NewsView/2621R4BTIW/GZ03',
-<<<<<<< HEAD
-      ga: GoogleGAAction.MainPressKo,
-=======
-      ga: GoogleAnalyticsAction.MainPressko,
->>>>>>> 8869838 (fix google ga names)
+      ga: GoogleAnalyticsAction.MainPressKo,
     },
     {
       flag: cn,
@@ -67,10 +63,11 @@ const Press = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  GoogleAnalyticsEvent(
-                    pressData.ga,
-                    GoogleAnalyticsCategory.Main,
-                  )
+                  gtag.event({
+                    action: pressData.ga,
+                    category: GoogleAnalyticsCategory.Main,
+                    label: '',
+                  })
                 }>
                 <section>
                   <div>

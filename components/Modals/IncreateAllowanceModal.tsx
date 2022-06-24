@@ -5,7 +5,7 @@ import useV2Staking from 'hooks/useV2Staking';
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import styled from 'styled-components';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import ModalButton from './ModalButton';
 
 export enum PermissionType {
@@ -64,11 +64,11 @@ const IncreateAllowanceModal: React.FunctionComponent<{
         className={styles.modal_button}
         onClick={() => {
           props.setTransactionWait(true);
-          GoogleAnalyticsEvent(
-            GoogleAnalyticsAction.GovApprove,
-            GoogleAnalyticsCategory.Governance,
-            account || '',
-          );
+          gtag.event({
+            action: GoogleAnalyticsAction.GovApprove,
+            category: GoogleAnalyticsCategory.Governance,
+            label: account || '',
+          });
           approve();
         }}>
         <div>
