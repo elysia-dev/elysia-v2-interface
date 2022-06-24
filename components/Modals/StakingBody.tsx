@@ -6,7 +6,7 @@ import { Dispatch, SetStateAction, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { formatComma } from 'utils/formatters';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import ModalButton from './ModalButton';
 
 type Props = {
@@ -142,17 +142,18 @@ const StakingBody = (props: Props) => {
             if (isDisabledBtn || Number(value) === 0) {
               return;
             }
-            GoogleAnalyticsEvent(
-              type === t('modal.staking.0')
-                ? GoogleAnalyticsAction.GovStaking
-                : GoogleAnalyticsAction.GovUnstaking,
-              GoogleAnalyticsCategory.Governance,
-              `WalletAddress = ${account},${
+            gtag.event({
+              action:
+                type === t('modal.staking.0')
+                  ? GoogleAnalyticsAction.GovStaking
+                  : GoogleAnalyticsAction.GovUnstaking,
+              category: GoogleAnalyticsCategory.Governance,
+              label: `WalletAddress = ${account},${
                 type === t('modal.staking.0')
                   ? ` StakingAmount = ${value}`
                   : `UnStakingAmount = ${value}`
               }`,
-            );
+            });
             setTransactionWait(true);
             sendTx(utils.parseEther(String(value)), round);
           }}

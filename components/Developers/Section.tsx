@@ -6,7 +6,7 @@ import Git from 'assets/images/developers/git.svg';
 import ContentItem from '../Common/ContentItem';
 import PageHeader from 'components/Common/PageHeader';
 import { useState } from 'react';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
@@ -27,10 +27,11 @@ const Section = () => {
             link={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
             description={t('developers.4')}
             onClickEvent={() => {
-              GoogleAnalyticsEvent(
-                GoogleAnalyticsAction.DevelopersWhatIsElysia,
-                GoogleAnalyticsCategory.Developers,
-              );
+              gtag.event({
+                action: GoogleAnalyticsAction.DevelopersWhatIsElysia,
+                category: GoogleAnalyticsCategory.Developers,
+                label: '',
+              });
             }}
           />
           <section>
@@ -39,10 +40,11 @@ const Section = () => {
               contentName={t('developers.10')}
               link={'https://github.com/elysia-dev'}
               onClickEvent={() => {
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.DevelopersGithub,
-                  GoogleAnalyticsCategory.Developers,
-                );
+                gtag.event({
+                  action: GoogleAnalyticsAction.DevelopersGithub,
+                  category: GoogleAnalyticsCategory.Developers,
+                  label: '',
+                });
               }}
             />
             <DisabledSection

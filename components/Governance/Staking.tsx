@@ -26,7 +26,7 @@ import EthOn from 'assets/images/governance/eth-on.png';
 import EthOff from 'assets/images/governance/eth-off.png';
 import BscOn from 'assets/images/governance/bsc-on.png';
 import BscOff from 'assets/images/governance/bsc-off.png';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import {
@@ -167,10 +167,11 @@ const Staking = (props: Props) => {
               </p>
               <AnchorButton
                 onClick={() => {
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.GovStakingGuide,
-                    GoogleAnalyticsCategory.Governance,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.GovStakingGuide,
+                    category: GoogleAnalyticsCategory.Governance,
+                    label: '',
+                  });
                   window.open('https://elysia.gitbook.io/elysia-user-guide/');
                 }}>
                 {t('governance.section_third.3')}

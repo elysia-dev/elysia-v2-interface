@@ -16,7 +16,7 @@ import ButtonArrow from 'assets/images/governance/button-arrow.png';
 import GovernanceLineCounter from './GovernanceLineCounter';
 import { useRouter } from 'next/router';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import {
   Button,
@@ -64,10 +64,11 @@ const GovernanceCenter = () => {
               <div>
                 <Button
                   onClick={() => {
-                    GoogleAnalyticsEvent(
-                      GoogleAnalyticsAction.GovExchange,
-                      GoogleAnalyticsCategory.Governance,
-                    );
+                    gtag.event({
+                      action: GoogleAnalyticsAction.GovExchange,
+                      category: GoogleAnalyticsCategory.Governance,
+                      label: '',
+                    });
                     window.open(
                       'https://coinmarketcap.com/currencies/elysia/markets/',
                     );
@@ -82,10 +83,11 @@ const GovernanceCenter = () => {
                 </Button>
                 <Button
                   onClick={() => {
-                    GoogleAnalyticsEvent(
-                      GoogleAnalyticsAction.GovTokeneconomy,
-                      GoogleAnalyticsCategory.Governance,
-                    );
+                    gtag.event({
+                      action: GoogleAnalyticsAction.GovTokeneconomy,
+                      category: GoogleAnalyticsCategory.Governance,
+                      label: '',
+                    });
                     window.open(
                       lng === LanguageType.KO
                         ? 'https://elysia.gitbook.io/elysia-whitepaper-v2-0/v/korean/token-economy/minting-fee'

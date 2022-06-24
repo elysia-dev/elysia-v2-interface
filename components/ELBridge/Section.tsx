@@ -21,7 +21,7 @@ import RealEstateTypes from 'enums/ RealEstateTypes';
 import NFTApplicationTypes from 'enums/ NFTApplicationTypes';
 import Link from 'next/link';
 import axios from 'axios';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
@@ -98,7 +98,11 @@ const Section = () => {
       category: GoogleAnalyticsCategory,
     ) => {
       setSelectedRealEstateType(assetType);
-      GoogleAnalyticsEvent(action, category);
+      gtag.event({
+        action: action,
+        category: category,
+        label: '',
+      });
     },
     [],
   );
@@ -109,7 +113,11 @@ const Section = () => {
       category: GoogleAnalyticsCategory,
     ) => {
       setSelectedNFTAppliaction(nftUsecase);
-      GoogleAnalyticsEvent(action, category);
+      gtag.event({
+        action: action,
+        category: category,
+        label: '',
+      });
     },
     [],
   );
@@ -156,10 +164,11 @@ const Section = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.ElBridgeWhitepaper,
-                  GoogleAnalyticsCategory.ELBridge,
-                )
+                gtag.event({
+                  action: GoogleAnalyticsAction.ElBridgeWhitepaper,
+                  category: GoogleAnalyticsCategory.ELBridge,
+                  label: '',
+                })
               }>
               <b>{t('elbridge.whitepaper.1')}</b>
             </a>
@@ -171,11 +180,11 @@ const Section = () => {
           <NFTDescription active={activeBox.nftDescription}>
             <div
               onClick={() => {
-                console.log('asda');
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.ElBridgeFAQNFT,
-                  GoogleAnalyticsCategory.ELBridge,
-                );
+                gtag.event({
+                  action: GoogleAnalyticsAction.ElBridgeFAQNFT,
+                  category: GoogleAnalyticsCategory.ELBridge,
+                  label: '',
+                });
                 setActiveBox((prev) => ({
                   ...prev,
                   nftDescription: !prev.nftDescription,
@@ -192,10 +201,11 @@ const Section = () => {
           <AssetNFTDescription active={activeBox.AssetNFTDescription}>
             <div
               onClick={() => {
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.ElBridgeFAQWhyNFT,
-                  GoogleAnalyticsCategory.ELBridge,
-                );
+                gtag.event({
+                  action: GoogleAnalyticsAction.ElBridgeFAQWhyNFT,
+                  category: GoogleAnalyticsCategory.ELBridge,
+                  label: '',
+                });
                 setActiveBox((prev) => ({
                   ...prev,
                   AssetNFTDescription: !prev.AssetNFTDescription,
@@ -318,13 +328,14 @@ const Section = () => {
                     stepOne: true,
                     stepTwo: prev.stepTwo && false,
                   }));
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.ElBridgeInquiryNextOfStep1,
-                    GoogleAnalyticsCategory.AssetType,
-                    typeof selectedRealEstateType === 'undefined'
-                      ? ''
-                      : selectedRealEstateType,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.ElBridgeInquiryNextOfStep1,
+                    category: GoogleAnalyticsCategory.AssetType,
+                    label:
+                      typeof selectedRealEstateType === 'undefined'
+                        ? ''
+                        : selectedRealEstateType,
+                  });
                 }}>
                 {t('elbridge.next_button')}
               </button>
@@ -412,13 +423,14 @@ const Section = () => {
                     stepTwo: true,
                     stepThree: prev.stepThree && false,
                   }));
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.ElBridgeInquiryNextOfStep2,
-                    GoogleAnalyticsCategory.NftUsecase,
-                    typeof selectedNFTAppliaction === 'undefined'
-                      ? ''
-                      : selectedNFTAppliaction,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.ElBridgeInquiryNextOfStep2,
+                    category: GoogleAnalyticsCategory.NftUsecase,
+                    label:
+                      typeof selectedNFTAppliaction === 'undefined'
+                        ? ''
+                        : selectedNFTAppliaction,
+                  });
                 }}>
                 {t('elbridge.next_button')}
               </button>
@@ -448,10 +460,11 @@ const Section = () => {
                 value={realEstateAddress}
                 onChange={(e) => {
                   setRealEstateAddress(e.target.value);
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.ElBridgeInquiryInputAddress,
-                    GoogleAnalyticsCategory.RealEstateAddress,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.ElBridgeInquiryInputAddress,
+                    category: GoogleAnalyticsCategory.RealEstateAddress,
+                    label: '',
+                  });
                 }}
               />
               <button
@@ -469,10 +482,11 @@ const Section = () => {
                     ...prev,
                     stepThree: true,
                   }));
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.ElBridgeInquiryNextOfStep3,
-                    GoogleAnalyticsCategory.RealEstateAddress,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.ElBridgeInquiryNextOfStep3,
+                    category: GoogleAnalyticsCategory.RealEstateAddress,
+                    label: '',
+                  });
                 }}>
                 {t('elbridge.next_button')}
               </button>
@@ -502,10 +516,12 @@ const Section = () => {
                 value={userEmailAddress}
                 onChange={(e) => {
                   setUserEmailAddress(e.target.value);
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.ElBridgeInquiryInputEmailAddress,
-                    GoogleAnalyticsCategory.EmailAddress,
-                  );
+                  gtag.event({
+                    action:
+                      GoogleAnalyticsAction.ElBridgeInquiryInputEmailAddress,
+                    category: GoogleAnalyticsCategory.EmailAddress,
+                    label: '',
+                  });
                 }}
               />
               <button
@@ -523,10 +539,11 @@ const Section = () => {
                     ...prev,
                     stepFour: true,
                   }));
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.ElBridgeInquiryNextOfStep4,
-                    GoogleAnalyticsCategory.EmailAddress,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.ElBridgeInquiryNextOfStep4,
+                    category: GoogleAnalyticsCategory.EmailAddress,
+                    label: '',
+                  });
                 }}>
                 {t('elbridge.next_button')}
               </button>
@@ -556,10 +573,11 @@ const Section = () => {
                   value={etc}
                   onChange={(e) => {
                     setEtc(e.target.value);
-                    GoogleAnalyticsEvent(
-                      GoogleAnalyticsAction.ElBridgeInquiryInputOthers,
-                      GoogleAnalyticsCategory.Others,
-                    );
+                    gtag.event({
+                      action: GoogleAnalyticsAction.ElBridgeInquiryInputOthers,
+                      category: GoogleAnalyticsCategory.Others,
+                      label: '',
+                    });
                   }}
                 />
                 <div>
@@ -570,10 +588,12 @@ const Section = () => {
                       onChange={(e) => {
                         setIsChecked(e.target.checked);
                         if (!e.target.checked) return;
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.ElBridgeInquiryAgreement,
-                          GoogleAnalyticsCategory.Others,
-                        );
+                        gtag.event({
+                          action:
+                            GoogleAnalyticsAction.ElBridgeInquiryAgreement,
+                          category: GoogleAnalyticsCategory.Others,
+                          label: '',
+                        });
                       }}
                     />
                     <label htmlFor="checkbox"></label>
@@ -593,10 +613,11 @@ const Section = () => {
                     sitekey={'6LdAI24aAAAAAG0QIW1ZdyfsQMHrW3uwskzlVTH7'}
                     onChange={() => {
                       setIsRecaptcha(true);
-                      GoogleAnalyticsEvent(
-                        GoogleAnalyticsAction.ElBridgeInquiryCheckBot,
-                        GoogleAnalyticsCategory.Others,
-                      );
+                      gtag.event({
+                        action: GoogleAnalyticsAction.ElBridgeInquiryCheckBot,
+                        category: GoogleAnalyticsCategory.Others,
+                        label: '',
+                      });
                     }}
                     onExpired={() => setIsRecaptcha(false)}
                     hl={i18n.language}
@@ -619,10 +640,11 @@ const Section = () => {
                     ...prev,
                     stepFive: true,
                   }));
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.ElBridgeInquirySubmit,
-                    GoogleAnalyticsCategory.Others,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.ElBridgeInquirySubmit,
+                    category: GoogleAnalyticsCategory.Others,
+                    label: '',
+                  });
                   setSelectedNFTAppliaction('');
                   setSelectedRealEstateType('');
                   setUserEmailAddress('');

@@ -13,7 +13,7 @@ import useIsMobile, { MediaQueryState } from 'hooks/useIsMobile';
 import ContentItem from 'components/Common/ContentItem';
 import useResizeBrowser from 'hooks/useResizeBrowser';
 import PageHeader from 'components/Common/PageHeader';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 
@@ -43,10 +43,11 @@ const Section = () => {
               contentName={'Discord'}
               link={'https://discord.com/invite/JjjYrE5Ww8'}
               onClickEvent={() =>
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.CommunityDiscord,
-                  GoogleAnalyticsCategory.Community,
-                )
+                gtag.event({
+                  action: GoogleAnalyticsAction.CommunityDiscord,
+                  category: GoogleAnalyticsCategory.Community,
+                  label: '',
+                })
               }
             />
             <ContentItem
@@ -61,10 +62,11 @@ const Section = () => {
               contentName={'Telegram'}
               link={'https://t.me/elysia_official'}
               onClickEvent={() =>
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.CommunityTelegram,
-                  GoogleAnalyticsCategory.Community,
-                )
+                gtag.event({
+                  action: GoogleAnalyticsAction.CommunityTelegram,
+                  category: GoogleAnalyticsCategory.Community,
+                  label: '',
+                })
               }
             />
             <ContentItem
@@ -79,10 +81,11 @@ const Section = () => {
               contentName={'Kakaotalk'}
               link={'https://open.kakao.com/o/gUpSOwkb'}
               onClickEvent={() =>
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.CommunityKakaotalk,
-                  GoogleAnalyticsCategory.Community,
-                )
+                gtag.event({
+                  action: GoogleAnalyticsAction.CommunityKakaotalk,
+                  category: GoogleAnalyticsCategory.Community,
+                  label: '',
+                })
               }
             />
             <div></div>
@@ -107,10 +110,11 @@ const Section = () => {
               contentName={'Github'}
               link={'https://github.com/elysia-dev'}
               onClickEvent={() =>
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.CommunityGithub,
-                  GoogleAnalyticsCategory.Community,
-                )
+                gtag.event({
+                  action: GoogleAnalyticsAction.CommunityGithub,
+                  category: GoogleAnalyticsCategory.Community,
+                  label: '',
+                })
               }
             />
             <ContentItem
@@ -125,10 +129,11 @@ const Section = () => {
               contentName={'Tech Blog'}
               link={'https://tech.elysia.land/'}
               onClickEvent={() =>
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.CommunityTechBlog,
-                  GoogleAnalyticsCategory.Community,
-                )
+                gtag.event({
+                  action: GoogleAnalyticsAction.CommunityTechBlog,
+                  category: GoogleAnalyticsCategory.Community,
+                  label: '',
+                })
               }
             />
             <div></div>
@@ -150,10 +155,11 @@ const Section = () => {
               contentName={'Twitter'}
               link={'https://twitter.com/Elysia_HQ'}
               onClickEvent={() =>
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.CommunityTwitter,
-                  GoogleAnalyticsCategory.Community,
-                )
+                gtag.event({
+                  action: GoogleAnalyticsAction.CommunityTwitter,
+                  category: GoogleAnalyticsCategory.Community,
+                  label: '',
+                })
               }
             />
             <ContentItem
@@ -172,10 +178,11 @@ const Section = () => {
               contentName={'Facebook'}
               link={'https://www.facebook.com/ElysiaHQ'}
               onClickEvent={() =>
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.CommunityFacebook,
-                  GoogleAnalyticsCategory.Community,
-                )
+                gtag.event({
+                  action: GoogleAnalyticsAction.CommunityFacebook,
+                  category: GoogleAnalyticsCategory.Community,
+                  label: '',
+                })
               }
             />
             <ContentItem
@@ -190,10 +197,11 @@ const Section = () => {
               contentName={'Medium'}
               link={'https://medium.com/elysia-magazine'}
               onClickEvent={() =>
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.CommunityMedium,
-                  GoogleAnalyticsCategory.Community,
-                )
+                gtag.event({
+                  action: GoogleAnalyticsAction.CommunityMedium,
+                  category: GoogleAnalyticsCategory.Community,
+                  label: '',
+                })
               }
             />
             <ContentItem
@@ -208,10 +216,11 @@ const Section = () => {
               contentName={'Weibo'}
               link={'https://weibo.com/u/7449962304'}
               onClickEvent={() =>
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.CommunityWeibo,
-                  GoogleAnalyticsCategory.Community,
-                )
+                gtag.event({
+                  action: GoogleAnalyticsAction.CommunityWeibo,
+                  category: GoogleAnalyticsCategory.Community,
+                  label: '',
+                })
               }
             />
           </div>

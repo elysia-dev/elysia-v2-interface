@@ -2,7 +2,7 @@ import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { MainSectionWrapper } from './styles';
 import SectionItem from './SectionItem';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
@@ -67,10 +67,11 @@ const Section = () => {
             link={`${i18n.language}/${data[1]}`}
             key={`section-items-${index}`}
             onClickEvent={() =>
-              GoogleAnalyticsEvent(
-                data[2] as GoogleAnalyticsAction,
-                GoogleAnalyticsCategory.Main,
-              )
+              gtag.event({
+                action: data[2] as GoogleAnalyticsAction,
+                category: GoogleAnalyticsCategory.Main,
+                label: '',
+              })
             }
           />
         );
