@@ -17,6 +17,7 @@ import GovernanceTop from './GovernanceTop';
 import Staking from './Staking';
 import styled from 'styled-components';
 import { LeftLineContainer } from './style';
+import moment from 'moment';
 
 export const DocumentsImage = styled.article`
   position: absolute;
@@ -36,6 +37,11 @@ const Governance = () => {
   const [currentChain, setCurrentChain] = useState(ChainType.Ethereum);
   const { txType, txStatus } = useContext(TxContext);
   const reward = useReward();
+
+  const startDate = moment(
+    '2022.04.18 19:00:00 +9:00',
+    'YYYY.MM.DD hh:mm:ss Z',
+  ).tz('Asia/Seoul', true);
 
   useEffect(() => {
     if (
@@ -92,6 +98,7 @@ const Governance = () => {
           reward={reward}
           currentChain={currentChain}
           setCurrentChain={setCurrentChain}
+          startDate={startDate}
         />
       </LeftLineContainer>
       <GovernanceBottom />

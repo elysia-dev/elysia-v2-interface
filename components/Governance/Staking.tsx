@@ -55,6 +55,7 @@ type Props = {
   };
   currentChain: ChainType;
   setCurrentChain: Dispatch<SetStateAction<ChainType>>;
+  startDate: moment.Moment;
 };
 
 const Staking = (props: Props) => {
@@ -70,12 +71,6 @@ const Staking = (props: Props) => {
   const { userStakedInfo } = useV2StakedInfo();
   const { totalBalance, isLoading, apr } = useTotalStakedBalance();
   const { t } = useTranslation();
-  const startDate = useMemo(() => {
-    return moment('2022.04.18 19:00:00 +9:00', 'YYYY.MM.DD hh:mm:ss Z').tz(
-      'Asia/Seoul',
-      true,
-    );
-  }, []);
 
   const stakingInfo = useMemo(() => {
     return [
@@ -238,9 +233,9 @@ const Staking = (props: Props) => {
                           </div>
                         </StakingContentHeader>
                         <StakingButton
-                          active={moment().diff(startDate) >= 0}
+                          active={moment().diff(props.startDate) >= 0}
                           onClick={() => {
-                            if (moment().diff(startDate) < 0) return;
+                            if (moment().diff(props.startDate) < 0) return;
                             info.onClick();
                           }}>
                           <p>{info.btnType}</p>
