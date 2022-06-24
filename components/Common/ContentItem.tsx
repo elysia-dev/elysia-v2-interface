@@ -1,7 +1,7 @@
 import Arrow from 'assets/images/developers/arrow.svg';
 import useIsMobile from 'hooks/useIsMobile';
 import Link from 'next/link';
-import ContentDescription from './ContentDescription';
+import { Trans } from 'react-i18next';
 
 const ContentItem: React.FC<{
   Icon: any;
@@ -34,7 +34,9 @@ const ContentItem: React.FC<{
                 </article>
               )}
             </section>
-            <ContentDescription description={description} />
+            <p>
+              <Trans>{description}</Trans>
+            </p>
           </a>
         </Link>
       ) : (
@@ -50,7 +52,9 @@ const ContentItem: React.FC<{
               </article>
             )}
           </section>
-          <ContentDescription description={description} />
+          <p>
+            <Trans>{description}</Trans>
+          </p>
         </a>
       )}
     </>
