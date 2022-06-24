@@ -12,7 +12,7 @@ import TxContext from 'contexts/TxContext';
 import TxStatus from 'enums/TxStatus';
 import { useTranslation } from 'react-i18next';
 import useV2Staking from 'hooks/useV2Staking';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import { useWeb3React } from '@web3-react/core';
@@ -92,14 +92,14 @@ const ClaimModal = (props: Props) => {
               className={styles.modal_button}
               onClick={() => {
                 setTransactionWait(true);
-                GoogleAnalyticsEvent(
-                  GoogleAnalyticsAction.GovStakingIncentive,
-                  GoogleAnalyticsCategory.Governance,
-                  `WalletAddress = ${account},IncentiveAmount = ${parseFloat(
+                gtag.event({
+                  action: GoogleAnalyticsAction.GovStakingIncentive,
+                  category: GoogleAnalyticsCategory.Governance,
+                  label: `WalletAddress = ${account},IncentiveAmount = ${parseFloat(
                     formatEther(reward?.after || constants.Zero),
                   )}
-                  }`,
-                );
+                    }`,
+                });
                 claim();
               }}>
               <div>

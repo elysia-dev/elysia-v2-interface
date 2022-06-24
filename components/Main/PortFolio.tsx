@@ -5,7 +5,7 @@ import useReserveData from 'hooks/useReserveData';
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import AssetItem from './AssetItem';
 import {
   MainPortFolioWrapper,
@@ -76,10 +76,11 @@ const PortFolio = () => {
         <Link href={`${i18n.language}/Ecosystem`} passHref>
           <span
             onClick={() => {
-              GoogleAnalyticsEvent(
-                GoogleAnalyticsAction.MainMorePortfolio,
-                GoogleAnalyticsCategory.Main,
-              );
+              gtag.event({
+                action: GoogleAnalyticsAction.MainMorePortfolio,
+                category: GoogleAnalyticsCategory.Main,
+                label: '',
+              });
             }}>
             {t(`main.portfolio.3`)}
             <RightArrowIcon />

@@ -7,7 +7,7 @@ import Google from 'assets/images/ecosystem/google.png';
 import Appstore from 'assets/images/ecosystem/appstore.png';
 import Link from 'next/link';
 import PageHeader from 'components/Common/PageHeader';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
@@ -41,10 +41,11 @@ const Top = () => {
                   : 'https://www.elyfi.world/en',
                 '_blank',
               );
-              GoogleAnalyticsEvent(
-                GoogleAnalyticsAction.EcoElyfi,
-                GoogleAnalyticsCategory.Ecosystem,
-              );
+              gtag.event({
+                action: GoogleAnalyticsAction.EcoElyfi,
+                category: GoogleAnalyticsCategory.Ecosystem,
+                label: '',
+              });
             }}>
             <figure className="image-containers" />
             <section>

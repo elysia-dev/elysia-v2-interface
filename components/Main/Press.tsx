@@ -8,7 +8,7 @@ import decenter from 'assets/images/main/decenter@2x.webp';
 import xinhua from 'assets/images/main/xinhua-logo-feature_0@2x.webp';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
@@ -63,10 +63,11 @@ const Press = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  GoogleAnalyticsEvent(
-                    pressData.ga,
-                    GoogleAnalyticsCategory.Main,
-                  )
+                  gtag.event({
+                    action: pressData.ga,
+                    category: GoogleAnalyticsCategory.Main,
+                    label: '',
+                  })
                 }>
                 <section>
                   <div>

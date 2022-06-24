@@ -4,7 +4,7 @@ import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import LanguageType from 'enums/LanguageType';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import styles from './Navigation.module.scss';
 
 const LanguageConverter = () => {
@@ -50,10 +50,11 @@ const LanguageConverter = () => {
                 className={styles.language_converter__handler__type__wrapper}
                 key={index}
                 onClick={() => {
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.NavLanguage,
-                    GoogleAnalyticsCategory.Nav,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.NavLanguage,
+                    category: GoogleAnalyticsCategory.Nav,
+                    label: '',
+                  });
                   setLanguage(languageType);
                   handleHover();
                 }}>

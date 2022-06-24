@@ -4,7 +4,7 @@ import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import useV2Staking from 'hooks/useV2Staking';
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import styles from './Modal.module.scss';
 
 export enum PermissionType {
@@ -63,11 +63,11 @@ const IncreateAllowanceModal: React.FunctionComponent<{
         className={styles.modal_button}
         onClick={() => {
           props.setTransactionWait(true);
-          GoogleAnalyticsEvent(
-            GoogleAnalyticsAction.GovApprove,
-            GoogleAnalyticsCategory.Governance,
-            account || '',
-          );
+          gtag.event({
+            action: GoogleAnalyticsAction.GovApprove,
+            category: GoogleAnalyticsCategory.Governance,
+            label: account || '',
+          });
           approve();
         }}>
         <div>

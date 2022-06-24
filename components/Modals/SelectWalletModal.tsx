@@ -13,7 +13,7 @@ import browserWallet from 'assets/images/browserWallet@2x.png';
 import CloseButton from './CloseButton';
 import Image from 'next/image';
 import useIsMobile from 'hooks/useIsMobile';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
@@ -49,16 +49,18 @@ const SelectWalletModal = (props: Props) => {
   const connectWallet = (wallet: string) => {
     let connector;
     if (wallet === (isMobile ? Wallet.BrowserWallet : Wallet.Metamask)) {
-      GoogleAnalyticsEvent(
-        GoogleAnalyticsAction.Metamask,
-        GoogleAnalyticsCategory.Wallet,
-      );
+      gtag.event({
+        action: GoogleAnalyticsAction.Metamask,
+        category: GoogleAnalyticsCategory.Wallet,
+        label: '',
+      });
       connector = injectedConnector;
     } else {
-      GoogleAnalyticsEvent(
-        GoogleAnalyticsAction.WalletConnect,
-        GoogleAnalyticsCategory.Wallet,
-      );
+      gtag.event({
+        action: GoogleAnalyticsAction.WalletConnect,
+        category: GoogleAnalyticsCategory.Wallet,
+        label: '',
+      });
       connector = walletConnectProvider;
     }
     activate(connector).then(() => {

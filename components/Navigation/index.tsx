@@ -22,7 +22,7 @@ import MobileMenu from './MobileMenu';
 import LanguageConverter from './LanguageConverter';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
-import { GoogleAnalyticsEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -121,10 +121,11 @@ const Navigation = () => {
             <Link href={`/${router.query.lng}`} passHref>
               <a
                 onClick={() => {
-                  GoogleAnalyticsEvent(
-                    GoogleAnalyticsAction.NavHome,
-                    GoogleAnalyticsCategory.Nav,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.NavHome,
+                    category: GoogleAnalyticsCategory.Nav,
+                    label: '',
+                  });
                 }}>
                 <Image
                   src={ElysiaLogo}
@@ -158,10 +159,11 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.NavGovernance,
-                          GoogleAnalyticsCategory.Nav,
-                        );
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavGovernance,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
                       }}>
                       <span
                         style={{
@@ -179,10 +181,11 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.NavEcosystem,
-                          GoogleAnalyticsCategory.Nav,
-                        );
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavEcosystem,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
                       }}>
                       <span
                         style={{
@@ -200,10 +203,11 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.NavCommunity,
-                          GoogleAnalyticsCategory.Nav,
-                        );
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavCommunity,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
                       }}>
                       <span
                         style={{
@@ -221,10 +225,11 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.NavDevelopers,
-                          GoogleAnalyticsCategory.Nav,
-                        );
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavDevelopers,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
                       }}>
                       <span
                         style={{
@@ -242,10 +247,11 @@ const Navigation = () => {
                   <div>
                     <a
                       onClick={() => {
-                        GoogleAnalyticsEvent(
-                          GoogleAnalyticsAction.NavFAQ,
-                          GoogleAnalyticsCategory.Nav,
-                        );
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavFAQ,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
                       }}>
                       <span
                         style={{
