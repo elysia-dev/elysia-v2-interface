@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Layout>
             <Head>
               <meta charSet="utf-8" />
-              <meta name="robots" content="index,follow"></meta>
+              <meta name="robots" content="index,nofollow"></meta>
               <link rel="canonical" href="https://www.elysia.land"></link>
               <link rel="icon" href="/favicon.ico" />
               <title>ELYSIA - Real World Asset Tokenization DAO</title>
