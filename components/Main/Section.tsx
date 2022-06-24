@@ -12,45 +12,45 @@ const Section = () => {
   const sectionArrayItems = [
     [
       [
-        t('main.section_el_bridge.0'),
-        t('main.section_el_bridge.1'),
-        t('main.section_el_bridge.3'),
+        t('main.sectionElBridge.0'),
+        t('main.sectionElBridge.1'),
+        t('main.sectionElBridge.2'),
       ],
       'ELBridge',
       GoogleAnalyticsAction.MainElBridgeCard,
     ],
     [
       [
-        t('main.section_governance.0'),
-        t('main.section_governance.1'),
-        t('main.section_governance.2'),
+        t('main.sectionGovernance.0'),
+        t('main.sectionGovernance.1'),
+        t('main.sectionGovernance.2'),
       ],
       'Governance',
       GoogleAnalyticsAction.MainGovernanceCard,
     ],
     [
       [
-        t('main.section_ecosystem.0'),
-        t('main.section_ecosystem.1'),
-        t('main.section_ecosystem.3'),
+        t('main.sectionEcosystem.0'),
+        t('main.sectionEcosystem.1'),
+        t('main.sectionEcosystem.2'),
       ],
       'Ecosystem',
       GoogleAnalyticsAction.MainEcosystemCard,
     ],
     [
       [
-        t('main.section_community.0'),
-        t('main.section_community.1'),
-        t('main.section_community.3'),
+        t('main.sectionCommunity.0'),
+        t('main.sectionCommunity.1'),
+        t('main.sectionCommunity.2'),
       ],
       'Community',
       GoogleAnalyticsAction.MainCommunityCard,
     ],
     [
       [
-        t('main.section_developers.0'),
-        t('main.section_developers.1'),
-        t('main.section_developers.3'),
+        t('main.sectionDevelopers.0'),
+        t('main.sectionDevelopers.1'),
+        t('main.sectionDevelopers.2'),
       ],
       'Developers',
       GoogleAnalyticsAction.MainDevelopersCard,

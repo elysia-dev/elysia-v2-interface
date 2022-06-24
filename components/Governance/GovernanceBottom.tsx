@@ -24,14 +24,14 @@ const GovernanceBottom = () => {
         <LeftLineCounter>
           <p>3</p>
         </LeftLineCounter>
-        <h2>{t('governance.section_fourth.0')}</h2>
+        <h2>{t('governance.sectionFourth.0')}</h2>
       </BottomHeader>
       <BottomContainer>
-        <p>{t('governance.section_fourth.1')}</p>
+        <p>{t('governance.sectionFourth.1')}</p>
         <div />
       </BottomContainer>
       <BottomContainer>
-        <h2>{t('governance.section_fourth.5')}</h2>
+        <h2>{t('governance.sectionFourth.2')}</h2>
         <BottomContentBoxContainer>
           <BottomContentBox>
             <ContentBoxFigure>
@@ -39,11 +39,11 @@ const GovernanceBottom = () => {
               <button>Coming Soon</button>
             </ContentBoxFigure>
             <ContentBoxTitle>
-              <b>{t('governance.section_fourth.6')}</b>
+              <b>{t('governance.sectionFourth.3')}</b>
               <ArrowImage />
             </ContentBoxTitle>
             <ContentBoxParagraph>
-              {t('governance.section_fourth.7')}
+              {t('governance.sectionFourth.4')}
             </ContentBoxParagraph>
           </BottomContentBox>
           <BottomContentBox>
@@ -52,11 +52,11 @@ const GovernanceBottom = () => {
               <button>Coming Soon</button>
             </ContentBoxFigure>
             <ContentBoxTitle>
-              <b>{t('governance.section_fourth.8')}</b>
+              <b>{t('governance.sectionFourth.5')}</b>
               <ArrowImage />
             </ContentBoxTitle>
             <ContentBoxParagraph>
-              {t('governance.section_fourth.9')}
+              {t('governance.sectionFourth.6')}
             </ContentBoxParagraph>
           </BottomContentBox>
         </BottomContentBoxContainer>

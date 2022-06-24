@@ -143,7 +143,7 @@ const DisconnectModal = (props: Props) => {
   `;
 
   return (
-    <ModalLayout title={t('modal.user_info.0')} onClose={() => onClose()}>
+    <ModalLayout title={t('modal.userInfo.0')} onClose={() => onClose()}>
       <DisconnectModalWrapper>
         <UserContent>
           <UserInfo>
@@ -169,27 +169,27 @@ const DisconnectModal = (props: Props) => {
                 window.sessionStorage.removeItem('@connect');
                 onClose();
               }}>
-              {t('modal.user_info.1')}
+              {t('modal.userInfo.1')}
             </button>
           </UserInfo>
           <UserBottomButton>
             <button onClick={() => AddressCopy(account || '')}>
               <CopyIcon />
-              {t('modal.user_info.2')}
+              {t('modal.userInfo.2')}
             </button>
             <a
               href={`${envs.externalApiEndpoint.etherscanURI}/address/${account}`}
               rel="noopener noreferrer"
               target="_blank">
               <HyperRefIcon />
-              {t('modal.user_info.3')}
+              {t('modal.userInfo.3')}
             </a>
           </UserBottomButton>
         </UserContent>
         <RecentTx>
-          <p>{t('modal.user_info.4')}</p>
+          <p>{t('modal.userInfo.4')}</p>
           <section>
-            <p>{t('modal.user_info.5')}</p>
+            <p>{t('modal.userInfo.5')}</p>
           </section>
         </RecentTx>
       </DisconnectModalWrapper>

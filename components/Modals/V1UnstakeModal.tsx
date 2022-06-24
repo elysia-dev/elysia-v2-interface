@@ -50,7 +50,7 @@ const V1UnstakeModal = (props: Props) => {
         ) : (
           <StakingBody
             header={t('modal.unstaking.2')}
-            walletAmount={t('modal.prev_unstaking', { round })}
+            walletAmount={t('modal.prevUnstaking', { round })}
             max={() => {
               setValue(utils.formatEther(prevAmount ?? constants.Zero));
             }}

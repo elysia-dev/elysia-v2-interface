@@ -113,7 +113,7 @@ const StakingBody = (props: Props) => {
   return (
     <Container>
       <AmountInputWrapper>
-        <MaxButton onClick={() => max()}>{t('modal.amount_max')}</MaxButton>
+        <MaxButton onClick={() => max()}>{t('modal.amountMax')}</MaxButton>
         <AmountInput
           className="amount"
           type="number"

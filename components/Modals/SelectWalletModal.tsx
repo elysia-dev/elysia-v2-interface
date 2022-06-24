@@ -124,7 +124,7 @@ const SelectWalletModal = (props: Props) => {
 
   return (
     <>
-      <ModalLayout title={t('modal.select_wallet')} onClose={() => onClose()}>
+      <ModalLayout title={t('modal.selectWallet')} onClose={() => onClose()}>
         <SelectWalletModalContent>
           {wallets.map((wallet, idx) => {
             return (

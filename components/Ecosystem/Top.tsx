@@ -21,7 +21,7 @@ const Top = () => {
         <PageHeader
           headers={[
             t('ecosystem.top.0'),
-            t('main.section_ecosystem.1'),
+            t('main.sectionEcosystem.1'),
             t('ecosystem.top.1'),
           ]}
         />

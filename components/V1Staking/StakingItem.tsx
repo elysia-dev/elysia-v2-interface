@@ -65,9 +65,9 @@ const StakingItem = (props: Props) => {
               <h2>
                 {round
                   ? i18n.language === LanguageType.EN
-                    ? t(`governance.prev_staking.5.${round}`)
-                    : t('governance.prev_staking.5', { round })
-                  : t('governance.prev_staking.2')}
+                    ? t(`governance.prevStaking.5.${round}`)
+                    : t('governance.prevStaking.5', { round })
+                  : t('governance.prevStaking.2')}
               </h2>
               <p>
                 {moment(date?.startedAt || '2021.07.27').format('YYYY.MM.DD')} ~{' '}
@@ -83,7 +83,7 @@ const StakingItem = (props: Props) => {
       </RoundInfoWrapper>
       <StakingInfoWrapper>
         <StakingInfoByRound theme={userInfo.userPrincipal}>
-          <h2>{t('governance.prev_staking.6')}</h2>
+          <h2>{t('governance.prevStaking.6')}</h2>
           <section>
             <h2>{formatComma(userInfo.userPrincipal)}</h2>&nbsp;<span>EL</span>
           </section>
@@ -103,14 +103,14 @@ const StakingItem = (props: Props) => {
                   ? '#838383'
                   : '#000000',
               }}>
-              <p>{t('governance.prev_staking.8')}</p>
+              <p>{t('governance.prevStaking.8')}</p>
             </div>
           ) : (
             <></>
           )}
         </StakingInfoByRound>
         <StakingInfoByRound theme={userInfo.userReward}>
-          <h2>{t('governance.prev_staking.7')}</h2>
+          <h2>{t('governance.prevStaking.7')}</h2>
           <section>
             <h2>{formatComma(userInfo.userReward)}</h2>&nbsp;<span>ELFI</span>
           </section>
@@ -130,7 +130,7 @@ const StakingItem = (props: Props) => {
                   ? '#838383'
                   : '#000000',
               }}>
-              <p>{t('governance.prev_staking.9')}</p>
+              <p>{t('governance.prevStaking.9')}</p>
             </div>
           ) : (
             <></>
@@ -155,7 +155,7 @@ const StakingItem = (props: Props) => {
                   ? '#838383'
                   : '#000000',
               }}>
-              <p>{t('governance.prev_staking.8')}</p>
+              <p>{t('governance.prevStaking.8')}</p>
             </div>
           </StakingInfoByRound>
           <StakingInfoByRound theme={userInfo.userReward}>
@@ -174,7 +174,7 @@ const StakingItem = (props: Props) => {
                   ? '#838383'
                   : '#000000',
               }}>
-              <p>{t('governance.prev_staking.9')}</p>
+              <p>{t('governance.prevStaking.9')}</p>
             </div>
           </StakingInfoByRound>
         </section>
@@ -191,8 +191,8 @@ const StakingItem = (props: Props) => {
       <StakingInfoWrapper>
         <WalletText>
           {account
-            ? t('governance.prev_staking.4')
-            : t('governance.prev_staking.3')}
+            ? t('governance.prevStaking.4')
+            : t('governance.prevStaking.3')}
         </WalletText>
       </StakingInfoWrapper>
     </ItemWrapper>

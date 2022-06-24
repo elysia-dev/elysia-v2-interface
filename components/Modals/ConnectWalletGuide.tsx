@@ -26,18 +26,18 @@ const ConnectWalletGuide = (props: Props) => {
   const { t } = useTranslation();
 
   return (
-    <ModalLayout title={t('modal.connect_wallet.0')} onClose={() => onClose()}>
+    <ModalLayout title={t('modal.connectWallet.0')} onClose={() => onClose()}>
       <Container>
         <Content>
           <p>
-            <Trans>{t('modal.connect_wallet.1')}</Trans>
+            <Trans>{t('modal.connectWallet.1')}</Trans>
           </p>
         </Content>
         <ModalButton
           onClick={() => {
             setModalType();
           }}
-          title={t('modal.connect_wallet.2')}
+          title={t('modal.connectWallet.2')}
         />
       </Container>
     </ModalLayout>

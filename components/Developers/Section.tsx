@@ -37,7 +37,7 @@ const Section = () => {
           <section>
             <ContentItem
               Icon={<Git />}
-              contentName={t('developers.10')}
+              contentName={t('developers.7')}
               link={'https://github.com/elysia-dev'}
               onClickEvent={() => {
                 gtag.event({
@@ -52,7 +52,7 @@ const Section = () => {
               onMouseLeave={() => setHover(false)}>
               <ContentItem
                 Icon={<Bug />}
-                contentName={isHover ? 'Coming Soon!' : t('developers.7')}
+                contentName={isHover ? t('developers.6') : t('developers.5')}
                 isComingSoon={true}
               />
             </DisabledSection>

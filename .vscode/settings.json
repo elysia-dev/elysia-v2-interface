@@ -4,5 +4,6 @@
   "prettier.jsxBracketSameLine": true,
   "prettier.printWidth": 800,
   "prettier.singleQuote": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "cSpell.words": ["ELYSIA"]
 }
