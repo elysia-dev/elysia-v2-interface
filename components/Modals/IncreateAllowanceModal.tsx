@@ -17,7 +17,8 @@ const Container = styled.section`
   margin: 25px 25px 10px 25px;
 `;
 const ApproveContent = styled.div`
-  border: 1px solid #505050;
+  border: 1px solid #707070;
+  word-break: keep-all;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -26,7 +27,7 @@ const ApproveContent = styled.div`
   padding: 25px;
   > p {
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
     &:first-child {
       margin-bottom: 30px;
@@ -38,11 +39,10 @@ const ApproveFee = styled.p`
   @media (max-width: 500px) {
     width: 90%;
   }
-  margin: auto;
+  margin: 20px auto 25px;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: center;
-  margin-bottom: 25px;
 `;
 
 const IncreateAllowanceModal: React.FunctionComponent<{
