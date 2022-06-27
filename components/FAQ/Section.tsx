@@ -30,6 +30,7 @@ const Section = () => {
           {currentQuestionLength.map((GA, index) => {
             return (
               <QuestionBox
+                key={index}
                 isActive={activeBox === index + 1}
                 setActiveBox={() =>
                   setActiveBox(activeBox === index + 1 ? 0 : index + 1)
