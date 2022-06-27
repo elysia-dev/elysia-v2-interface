@@ -67,7 +67,7 @@ const Top = () => {
               target="_blank"
               onClick={() => {
                 googleGAEvent(
-                  GoogleGAAction.Maintelegram,
+                  GoogleGAAction.MainTelegram,
                   GoogleGACategory.Main,
                 );
               }}>

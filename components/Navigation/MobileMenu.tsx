@@ -22,23 +22,6 @@ const MobileMenu: React.FC<{
   return (
     <article className={styles.navigation__hamburger__menu}>
       <section>
-        <Link href={`/${router.query.lng}/ELBridge`} passHref>
-          <a
-            onClick={() => {
-              onButtonClick();
-              googleGAEvent(GoogleGAAction.NavElBridge, GoogleGACategory.Nav);
-            }}>
-            <span
-              style={{
-                cursor: 'pointer',
-                fontFamily: router.pathname.includes('ELBridge')
-                  ? 'Gilroy-ExtraBold'
-                  : 'Gilroy-Light',
-              }}>
-              EL Bridge
-            </span>
-          </a>
-        </Link>
         <Link href={`/${router.query.lng}/Governance`} passHref>
           <a
             onClick={() => {
@@ -104,6 +87,23 @@ const MobileMenu: React.FC<{
                   : 'normal',
               }}>
               Developers
+            </span>
+          </a>
+        </Link>
+        <Link href={`/${router.query.lng}/FAQ`} passHref>
+          <a
+            onClick={() => {
+              onButtonClick();
+              googleGAEvent(GoogleGAAction.NavFAQ, GoogleGACategory.Nav);
+            }}>
+            <span
+              style={{
+                cursor: 'pointer',
+                fontFamily: router.pathname.includes('FAQ')
+                  ? 'Gilroy-ExtraBold'
+                  : 'Gilroy-Light',
+              }}>
+              FAQ
             </span>
           </a>
         </Link>

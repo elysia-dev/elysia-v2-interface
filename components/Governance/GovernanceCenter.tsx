@@ -82,7 +82,7 @@ const GovernanceCenter = () => {
                   className={styles.governance_button}
                   onClick={() => {
                     googleGAEvent(
-                      GoogleGAAction.GovTokeneconomy,
+                      GoogleGAAction.GovTokenEconomy,
                       GoogleGACategory.Governance,
                     );
                     window.open(

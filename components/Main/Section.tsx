@@ -12,15 +12,6 @@ const Section = () => {
   const sectionArrayItems = [
     [
       [
-        t('main.section_el_bridge.0'),
-        t('main.section_el_bridge.1'),
-        t('main.section_el_bridge.3'),
-      ],
-      'ELBridge',
-      GoogleGAAction.MainElBridgeCard,
-    ],
-    [
-      [
         t('main.section_governance.0'),
         t('main.section_governance.1'),
         t('main.section_governance.2'),
@@ -54,6 +45,11 @@ const Section = () => {
       ],
       'Developers',
       GoogleGAAction.MainDevelopersCard,
+    ],
+    [
+      [t('FAQ.top.0'), t('FAQ.top.1'), t('FAQ.top.2')],
+      'FAQ',
+      GoogleGAAction.MainFAQCard,
     ],
   ];
 

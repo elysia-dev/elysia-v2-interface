@@ -254,64 +254,6 @@
         "Recent activity is displayed here"
       ]
     },
-    "elbridge": {
-      "top": [
-        "EL BRIDGE",
-        "Move Real world asset into the digital world",
-        "EL Bridge provides a real asset tokenization function so that users can utilize real assets in the blockchain financial ecosystem."
-      ],
-      "whitepaper": [
-        "The detailed tokenization process can be found in the ELYSIA whitepaper.",
-        "ELYSIA whitepaper"
-      ],
-      "nft_description": [
-        "Frequently Asked Questions",
-        "What is NFT?",
-        "NFT means “non-fungible token”. Since NFTs cannot replace each other, many real assets such as artworks and copyrighted creations have recently been created as NFTs and are being actively traded on the blockchain.\n\nIn addition, NFT can be applied to financial systems based on blockchain. A blockchain-based financial system requires a digital original that matches 1:1 with real-world assets, and this digital original can be made into an NFT and used as a certificate in transactions on the blockchain."
-      ],
-      "asset_nft_description": [
-        "Why Real estate NFT is needed?",
-        "NFT has the advantage of not only being non-fungible, but also that transactions are permanently recorded on the blockchain, eliminating the risk of fraud or counterfeiting.\nBecause of this, the NFT market is expanding into various fields such as games, arts, education, lending, and investment.",
-        "While the scope of NFT application is expanding, there has been no case where real estate was converted to NFT and incorporated into the blockchain financial system.\nDespite the convenience of transactions and liquidity of the inflow of funds, real estate requires complex documents even in the traditional financial market, as there are high barriers to entry into the market where large amounts of money move.\n\nELYSIA intends to create the world's first real estate NFT-based economic system based on existing real estate transaction experience and competence in operating a blockchain technology team.",
-        "Creating an NFT based on real estate, a real asset, has the following advantages.\n1. Real estate NFT collateral loan using existing blockchain financial system (DeFi, etc.)\n2. Attracting and selling more investment using digital currency\n3. Value creation using real estate NFT itself in the virtual world\n4. Possible to raise investment funds using DAO"
-      ],
-      "inquiry_nft": [
-        "Inquiry for real estate NFT",
-        "Please feel free to contact us regarding real estate NFT issuance through the form below. (*Terminology related to the EL bridge may change later.)"
-      ],
-      "step1": [
-        "1. Real Estate Type",
-        "Please select the type of real estate you want to create (to tokenize) with NFT!",
-        "Real Estate",
-        "Loan receivable",
-        "Principal and interest receivables",
-        "Project Financing",
-        "* If you do not find the type of real asset you want among the options above, please enter it in '5. Others'."
-      ],
-      "step2": [
-        "2. NFT use cases",
-        "Please choose where you would like to use your NFT!",
-        "Trade",
-        "Investment",
-        "Loan",
-        "* If you do not find the NFT application you want among the options above, please enter it in '5. Others'."
-      ],
-      "step3": [
-        "3. Real estate address",
-        "Please enter the address of the real estate you want to make into NFT (to be tokenized).",
-        "ex) 161 Sajik-ro, Jongno-gu, Seoul, Republic of Korea"
-      ],
-      "step4": ["4. Email address", "Please enter the email address."],
-      "step5": [
-        "5. Others",
-        "Please leave any other inquiries.",
-        "I consent to ELYSIA DAO LLC. processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of ELYSIA DAO LLC.'s business, such processing may take place outside of my home jurisdiction.",
-        "Submit"
-      ],
-      "next_button": "NEXT",
-      "contact": "Your application has been successfully received.",
-      "fail": "Transmission failed. Please check again later."
-    },
     "footer": {
       "logo_label": "ELYSIA DAO LLC.",
       "contact": "CONTACT",
@@ -328,6 +270,29 @@
       "contract": "CONTRACT",
       "el": "Elysia (EL)",
       "elfi": "Elyfi (ELFI)"
+    },
+    "FAQ": {
+      "top": [
+        "FAQ",
+        "About ELYSIA protocol, ELYSIA DAO, and EL Bridge",
+        "Learn more about ELYSIA with frequently asked questions and the answers."
+      ],
+      "question": [
+        "What is the ELYSIA Protocol?",
+        "What is EL Bridge?",
+        "What can be tokenized?",
+        "What is an asset token?",
+        "Why EL Bridge?",
+        "What are EL tokens and sEL tokens?"
+      ],
+      "answer": [
+        "In order for a real asset to be used on a blockchain, it must first be registered as a token. The ELYSIA Protocol is the tokenization standard used for this. When users want to use real assets in the crypto financial market, they should make them into tokens. At this time, the overall rules such as tokenization method, each participant's role, and participant compensation are collectively called the ELYSIA Protocol.",
+        "EL Bridge is a real world asset tokenizer developed based on the ELYSIA protocol. Users can tokenize the assets owned by participants using EL Bridge. In terms of development, EL Bridge is a smart contract that issues tokens based on input real asset information, and is currently deployed on Ethereum Mainnet and Binance Smart Chain.\n\nAs of June 16, 2022 KST, 50+ real assets were created as tokens through EL Bridge, and their value reached $6.4 million.",
+        "Currently, ‘Loan receivables’ and ‘Principal receivables’ can be tokenized through EL Bridge. ELYSIA DAO is developing various asset tokenization standards related to real estate, and ultimately aims to tokenize all real world assets.",
+        "In the ELYSIA ecosystem, real world asset-based tokens created through EL Bridge are defined as Asset Tokens(ATokens). In addition, there may be various types of asset tokens depending on the type of real world asset. For example, a loan bond-based token was defined as an AssetBond Token (ABToken).",
+        "EL Bridge is the only real world asset tokenizer that follows the ELYSIA protocol. In order to use real world assets in the crypto market, asset owners must issue asset tokens through the EL Bridge.\n\nWhen asset tokens are issued, asset owners can use ATokens as real assets in crypto financial markets such as DeFi and NFT marketplaces. For example, they can borrow stablecoins using ABToken as collateral in ELYFI, a real world asset-backed DeFi.",
+        "EL tokens are going to be used as fees when users issue AToken through EL Bridge.\n\nThe sEL token is a governance token that serves as a voting right in the ELYSIA DAO. You can acquire the tokens by staking EL tokens in the EL Staking. Also, you can exercise your voting rights on proposals related to the ELYSIA Protocol by being given the right to vote according to the amount of the sEL tokens you have."
+      ]
     }
   }
 }
