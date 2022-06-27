@@ -1,6 +1,6 @@
 enum GoogleGAAction {
   NavHome = 'NavHome',
-  NavElBridge = 'NavElBridge',
+  NavFAQ = 'NavFAQ',
   NavGovernance = 'NavGovernance',
   NavEcosystem = 'NavEcosystem',
   NavCommunity = 'NavCommunity',
@@ -12,7 +12,7 @@ enum GoogleGAAction {
   MainDiscord = 'MainDiscord',
   MainGithub = 'MainGithub',
   MainMorePortfolio = 'MainMorePortfolio',
-  MainElBridgeCard = 'MainElBridgeCard',
+  MainFAQCard = 'MainFAQCard',
   MainGovernanceCard = 'MainGovernanceCard',
   MainEcosystemCard = 'MainEcosystemCard',
   MainCommunityCard = 'MainCommunityCard',

@@ -1,15 +1,12 @@
 import PageHeader from 'components/Common/PageHeader';
-import { Trans, useTranslation } from 'react-i18next';
-import * as gtag from 'lib/gtag';
+import { useTranslation } from 'react-i18next';
 import { SectionWrapper, Line, QuestionWrapper, ELbridgeImage } from './styles';
-import { useCallback, useMemo, useState } from 'react';
-import { googleGAEvent } from 'utils/gaEvent';
+import { useState } from 'react';
 import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
 import QuestionBox from './QuestionBox';
 
 const Section = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [activeBox, setActiveBox] = useState(0);
   const currentQuestionLength = [
     GoogleGAAction.ElBridgeFAQ01,
@@ -25,16 +22,11 @@ const Section = () => {
       <ELbridgeImage />
       <SectionWrapper>
         <PageHeader
-          headers={[
-            t('elbridge.top.0'),
-            t('elbridge.top.1'),
-            t('elbridge.top.2'),
-          ]}
+          headers={[t('FAQ.top.0'), t('FAQ.top.1'), t('FAQ.top.2')]}
         />
 
         <Line />
         <QuestionWrapper>
-          <h2>{t('elbridge.nft_description.0')}</h2>
           {currentQuestionLength.map((GA, index) => {
             return (
               <QuestionBox

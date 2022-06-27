@@ -240,7 +240,7 @@ const Navigation = () => {
                     <a
                       onClick={() => {
                         googleGAEvent(
-                          GoogleGAAction.NavElBridge,
+                          GoogleGAAction.NavFAQ,
                           GoogleGACategory.Nav,
                         );
                       }}>

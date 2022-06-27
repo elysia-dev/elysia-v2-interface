@@ -94,7 +94,7 @@ const MobileMenu: React.FC<{
           <a
             onClick={() => {
               onButtonClick();
-              googleGAEvent(GoogleGAAction.NavElBridge, GoogleGACategory.Nav);
+              googleGAEvent(GoogleGAAction.NavFAQ, GoogleGACategory.Nav);
             }}>
             <span
               style={{

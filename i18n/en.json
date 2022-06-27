@@ -254,64 +254,6 @@
         "Recent activity is displayed here"
       ]
     },
-    "elbridge": {
-      "top": [
-        "EL BRIDGE",
-        "Move Real world asset into the digital world",
-        "EL Bridge provides a real asset tokenization function so that users can utilize real assets in the blockchain financial ecosystem."
-      ],
-      "whitepaper": [
-        "The detailed tokenization process can be found in the ELYSIA whitepaper.",
-        "ELYSIA whitepaper"
-      ],
-      "nft_description": [
-        "Frequently Asked Questions",
-        "What is NFT?",
-        "NFT means “non-fungible token”. Since NFTs cannot replace each other, many real assets such as artworks and copyrighted creations have recently been created as NFTs and are being actively traded on the blockchain.\n\nIn addition, NFT can be applied to financial systems based on blockchain. A blockchain-based financial system requires a digital original that matches 1:1 with real-world assets, and this digital original can be made into an NFT and used as a certificate in transactions on the blockchain."
-      ],
-      "asset_nft_description": [
-        "Why Real estate NFT is needed?",
-        "NFT has the advantage of not only being non-fungible, but also that transactions are permanently recorded on the blockchain, eliminating the risk of fraud or counterfeiting.\nBecause of this, the NFT market is expanding into various fields such as games, arts, education, lending, and investment.",
-        "While the scope of NFT application is expanding, there has been no case where real estate was converted to NFT and incorporated into the blockchain financial system.\nDespite the convenience of transactions and liquidity of the inflow of funds, real estate requires complex documents even in the traditional financial market, as there are high barriers to entry into the market where large amounts of money move.\n\nELYSIA intends to create the world's first real estate NFT-based economic system based on existing real estate transaction experience and competence in operating a blockchain technology team.",
-        "Creating an NFT based on real estate, a real asset, has the following advantages.\n1. Real estate NFT collateral loan using existing blockchain financial system (DeFi, etc.)\n2. Attracting and selling more investment using digital currency\n3. Value creation using real estate NFT itself in the virtual world\n4. Possible to raise investment funds using DAO"
-      ],
-      "inquiry_nft": [
-        "Inquiry for real estate NFT",
-        "Please feel free to contact us regarding real estate NFT issuance through the form below. (*Terminology related to the EL bridge may change later.)"
-      ],
-      "step1": [
-        "1. Real Estate Type",
-        "Please select the type of real estate you want to create (to tokenize) with NFT!",
-        "Real Estate",
-        "Loan receivable",
-        "Principal and interest receivables",
-        "Project Financing",
-        "* If you do not find the type of real asset you want among the options above, please enter it in '5. Others'."
-      ],
-      "step2": [
-        "2. NFT use cases",
-        "Please choose where you would like to use your NFT!",
-        "Trade",
-        "Investment",
-        "Loan",
-        "* If you do not find the NFT application you want among the options above, please enter it in '5. Others'."
-      ],
-      "step3": [
-        "3. Real estate address",
-        "Please enter the address of the real estate you want to make into NFT (to be tokenized).",
-        "ex) 161 Sajik-ro, Jongno-gu, Seoul, Republic of Korea"
-      ],
-      "step4": ["4. Email address", "Please enter the email address."],
-      "step5": [
-        "5. Others",
-        "Please leave any other inquiries.",
-        "I consent to ELYSIA DAO LLC. processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of ELYSIA DAO LLC.'s business, such processing may take place outside of my home jurisdiction.",
-        "Submit"
-      ],
-      "next_button": "NEXT",
-      "contact": "Your application has been successfully received.",
-      "fail": "Transmission failed. Please check again later."
-    },
     "footer": {
       "logo_label": "ELYSIA DAO LLC.",
       "contact": "CONTACT",
@@ -330,6 +272,11 @@
       "elfi": "Elyfi (ELFI)"
     },
     "FAQ": {
+      "top": [
+        "FAQ",
+        "About ELYSIA protocol, ELYSIA DAO, and EL Bridge",
+        "Learn more about ELYSIA with frequently asked questions and the answers."
+      ],
       "question": [
         "What is the ELYSIA Protocol?",
         "What is EL Bridge?",
