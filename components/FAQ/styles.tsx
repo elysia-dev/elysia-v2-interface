@@ -89,6 +89,7 @@ export const QuestionBoxWrapper = styled.article<{ active?: boolean }>`
     }
     > p {
       font-size: 1.375rem;
+      flex: 1;
     }
     > div {
       margin-left: auto;
