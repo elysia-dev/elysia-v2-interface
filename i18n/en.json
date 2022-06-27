@@ -328,6 +328,24 @@
       "contract": "CONTRACT",
       "el": "Elysia (EL)",
       "elfi": "Elyfi (ELFI)"
+    },
+    "FAQ": {
+      "question": [
+        "What is the ELYSIA Protocol?",
+        "What is EL Bridge?",
+        "What can be tokenized?",
+        "What is an asset token?",
+        "Why EL Bridge?",
+        "What are EL tokens and sEL tokens?"
+      ],
+      "answer": [
+        "In order for a real asset to be used on a blockchain, it must first be registered as a token. The ELYSIA Protocol is the tokenization standard used for this. When users want to use real assets in the crypto financial market, they should make them into tokens. At this time, the overall rules such as tokenization method, each participant's role, and participant compensation are collectively called the ELYSIA Protocol.",
+        "EL Bridge is a real world asset tokenizer developed based on the ELYSIA protocol. Users can tokenize the assets owned by participants using EL Bridge. In terms of development, EL Bridge is a smart contract that issues tokens based on input real asset information, and is currently deployed on Ethereum Mainnet and Binance Smart Chain.\n\nAs of June 16, 2022 KST, 50+ real assets were created as tokens through EL Bridge, and their value reached $6.4 million.",
+        "Currently, ‘Loan receivables’ and ‘Principal receivables’ can be tokenized through EL Bridge. ELYSIA DAO is developing various asset tokenization standards related to real estate, and ultimately aims to tokenize all real world assets.",
+        "In the ELYSIA ecosystem, real world asset-based tokens created through EL Bridge are defined as Asset Tokens(ATokens). In addition, there may be various types of asset tokens depending on the type of real world asset. For example, a loan bond-based token was defined as an AssetBond Token (ABToken).",
+        "EL Bridge is the only real world asset tokenizer that follows the ELYSIA protocol. In order to use real world assets in the crypto market, asset owners must issue asset tokens through the EL Bridge.\n\nWhen asset tokens are issued, asset owners can use ATokens as real assets in crypto financial markets such as DeFi and NFT marketplaces. For example, they can borrow stablecoins using ABToken as collateral in ELYFI, a real world asset-backed DeFi.",
+        "EL tokens are going to be used as fees when users issue AToken through EL Bridge.\n\nThe sEL token is a governance token that serves as a voting right in the ELYSIA DAO. You can acquire the tokens by staking EL tokens in the EL Staking. Also, you can exercise your voting rights on proposals related to the ELYSIA Protocol by being given the right to vote according to the amount of the sEL tokens you have."
+      ]
     }
   }
 }

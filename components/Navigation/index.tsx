@@ -151,27 +151,6 @@ const Navigation = () => {
           ) : (
             <>
               <section>
-                <Link href={`/${router.query.lng}/ELBridge`} passHref>
-                  <div>
-                    <a
-                      onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavElBridge,
-                          GoogleGACategory.Nav,
-                        );
-                      }}>
-                      <span
-                        style={{
-                          cursor: 'pointer',
-                          fontFamily: router.pathname.includes('ELBridge')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
-                        }}>
-                        EL Bridge
-                      </span>
-                    </a>
-                  </div>
-                </Link>
                 <Link href={`/${router.query.lng}/Governance`} passHref>
                   <div>
                     <a
@@ -252,6 +231,27 @@ const Navigation = () => {
                             : 'Gilroy-Light',
                         }}>
                         Developers
+                      </span>
+                    </a>
+                  </div>
+                </Link>
+                <Link href={`/${router.query.lng}/FAQ`} passHref>
+                  <div>
+                    <a
+                      onClick={() => {
+                        googleGAEvent(
+                          GoogleGAAction.NavElBridge,
+                          GoogleGACategory.Nav,
+                        );
+                      }}>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontFamily: router.pathname.includes('FAQ')
+                            ? 'Gilroy-ExtraBold'
+                            : 'Gilroy-Light',
+                        }}>
+                        FAQ
                       </span>
                     </a>
                   </div>
