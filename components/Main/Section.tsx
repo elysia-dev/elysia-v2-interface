@@ -12,18 +12,9 @@ const Section = () => {
   const sectionArrayItems = [
     [
       [
-        t('main.sectionElBridge.0'),
-        t('main.sectionElBridge.1'),
-        t('main.sectionElBridge.2'),
-      ],
-      'ELBridge',
-      GoogleAnalyticsAction.MainElBridgeCard,
-    ],
-    [
-      [
-        t('main.sectionGovernance.0'),
-        t('main.sectionGovernance.1'),
-        t('main.sectionGovernance.2'),
+        t('main.section_governance.0'),
+        t('main.section_governance.1'),
+        t('main.section_governance.2'),
       ],
       'Governance',
       GoogleAnalyticsAction.MainGovernanceCard,
@@ -54,6 +45,11 @@ const Section = () => {
       ],
       'Developers',
       GoogleAnalyticsAction.MainDevelopersCard,
+    ],
+    [
+      [t('FAQ.top.0'), t('FAQ.top.1'), t('FAQ.top.2')],
+      'FAQ',
+      GoogleAnalyticsAction.MainFAQCard,
     ],
   ];
 

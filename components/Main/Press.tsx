@@ -39,7 +39,7 @@ const Press = () => {
       header: t('main.press.4'),
       content: t('main.press.5'),
       link: 'https://decenter.kr/NewsView/2621R4BTIW/GZ03',
-      ga: GoogleAnalyticsAction.MainPressko,
+      ga: GoogleAnalyticsAction.MainPressKo,
     },
     {
       flag: cn,

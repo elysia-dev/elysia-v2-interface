@@ -158,28 +158,6 @@ const Navigation = () => {
           ) : (
             <>
               <section>
-                <Link href={`/${router.query.lng}/ELBridge`} passHref>
-                  <div>
-                    <a
-                      onClick={() => {
-                        gtag.event({
-                          action: GoogleAnalyticsAction.NavElBridge,
-                          category: GoogleAnalyticsCategory.Nav,
-                          label: '',
-                        });
-                      }}>
-                      <span
-                        style={{
-                          cursor: 'pointer',
-                          fontWeight: router.pathname.includes('ELBridge')
-                            ? 'bold'
-                            : 'normal',
-                        }}>
-                        EL Bridge
-                      </span>
-                    </a>
-                  </div>
-                </Link>
                 <Link href={`/${router.query.lng}/Governance`} passHref>
                   <div>
                     <a
@@ -264,6 +242,28 @@ const Navigation = () => {
                             : 'normal',
                         }}>
                         Developers
+                      </span>
+                    </a>
+                  </div>
+                </Link>
+                <Link href={`/${router.query.lng}/FAQ`} passHref>
+                  <div>
+                    <a
+                      onClick={() => {
+                        gtag.event({
+                          action: GoogleAnalyticsAction.NavFAQ,
+                          category: GoogleAnalyticsCategory.Nav,
+                          label: '',
+                        });
+                      }}>
+                      <span
+                        style={{
+                          cursor: 'pointer',
+                          fontWeight: router.pathname.includes('FAQ')
+                            ? 'bold'
+                            : 'normal',
+                        }}>
+                        FAQ
                       </span>
                     </a>
                   </div>

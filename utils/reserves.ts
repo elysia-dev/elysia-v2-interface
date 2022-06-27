@@ -33,7 +33,7 @@ const reserves: IReserve[] = [
   {
     name: 'USDC',
     decimals: 6,
-    address: '0x',
+    address: envs.token.usdcAddress,
   },
   {
     name: 'BUSD',

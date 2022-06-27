@@ -70,27 +70,6 @@ const MobileMenu: React.FC<{
   return (
     <Container>
       <section>
-        <Link href={`/${router.query.lng}/ELBridge`} passHref>
-          <a
-            onClick={() => {
-              onButtonClick();
-              gtag.event({
-                action: GoogleAnalyticsAction.NavElBridge,
-                category: GoogleAnalyticsCategory.Nav,
-                label: '',
-              });
-            }}>
-            <span
-              style={{
-                cursor: 'pointer',
-                fontWeight: router.pathname.includes('ELBridge')
-                  ? 'bold'
-                  : 'normal',
-              }}>
-              EL Bridge
-            </span>
-          </a>
-        </Link>
         <Link href={`/${router.query.lng}/Governance`} passHref>
           <a
             onClick={() => {
@@ -172,6 +151,27 @@ const MobileMenu: React.FC<{
                   : 'normal',
               }}>
               Developers
+            </span>
+          </a>
+        </Link>
+        <Link href={`/${router.query.lng}/FAQ`} passHref>
+          <a
+            onClick={() => {
+              onButtonClick();
+              gtag.event({
+                action: GoogleAnalyticsAction.NavFAQ,
+                category: GoogleAnalyticsCategory.Nav,
+                label: '',
+              });
+            }}>
+            <span
+              style={{
+                cursor: 'pointer',
+                fontFamily: router.pathname.includes('FAQ')
+                  ? 'Gilroy-ExtraBold'
+                  : 'Gilroy-Light',
+              }}>
+              FAQ
             </span>
           </a>
         </Link>

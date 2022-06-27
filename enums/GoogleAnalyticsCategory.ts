@@ -1,7 +1,7 @@
 enum GoogleAnalyticsCategory {
   Nav = 'Navigation',
   Main = 'Main',
-  ELBridge = 'ELBridge',
+  FAQ = 'FAQ',
   AssetType = 'AssetType',
   NftUsecase = 'NftUsecase',
   RealEstateAddress = 'RealEstateAddress',
