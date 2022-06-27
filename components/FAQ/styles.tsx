@@ -61,7 +61,7 @@ export const QuestionBoxWrapper = styled.article<{ active?: boolean }>`
   width: 100%;
   /* padding: 33px 71px 0px 90px; */
   margin-bottom: 20px;
-  max-height: ${(props) => (props.active ? '40vh' : '100px')};
+  max-height: ${(props) => (props.active ? '60vh' : '100px')};
   transition: all 0.7s ease;
   overflow: hidden;
   @media (max-width: 640px) {
