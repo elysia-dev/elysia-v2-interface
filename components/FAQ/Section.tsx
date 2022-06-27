@@ -11,7 +11,14 @@ import QuestionBox from './QuestionBox';
 const Section = () => {
   const { t, i18n } = useTranslation();
   const [activeBox, setActiveBox] = useState(0);
-  const currentQuestionLength = 6;
+  const currentQuestionLength = [
+    GoogleGAAction.ElBridgeFAQ01,
+    GoogleGAAction.ElBridgeFAQ02,
+    GoogleGAAction.ElBridgeFAQ03,
+    GoogleGAAction.ElBridgeFAQ04,
+    GoogleGAAction.ElBridgeFAQ05,
+    GoogleGAAction.ElBridgeFAQ06,
+  ];
 
   return (
     <>
@@ -28,20 +35,19 @@ const Section = () => {
         <Line />
         <QuestionWrapper>
           <h2>{t('elbridge.nft_description.0')}</h2>
-          {Array(currentQuestionLength)
-            .fill(0)
-            .map((_x, index) => {
-              return (
-                <QuestionBox
-                  isActive={activeBox === index + 1}
-                  setActiveBox={() =>
-                    setActiveBox(activeBox === index + 1 ? 0 : index + 1)
-                  }
-                  question={t(`FAQ.question.${index}`)}
-                  answer={t(`FAQ.answer.${index}`)}
-                />
-              );
-            })}
+          {currentQuestionLength.map((GA, index) => {
+            return (
+              <QuestionBox
+                isActive={activeBox === index + 1}
+                setActiveBox={() =>
+                  setActiveBox(activeBox === index + 1 ? 0 : index + 1)
+                }
+                question={t(`FAQ.question.${index}`)}
+                answer={t(`FAQ.answer.${index}`)}
+                GA={GA}
+              />
+            );
+          })}
         </QuestionWrapper>
       </SectionWrapper>
     </>

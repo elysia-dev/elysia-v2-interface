@@ -8,6 +8,7 @@ interface Props {
   setActiveBox: () => void;
   question: string;
   answer: string;
+  GA: GoogleGAAction;
 }
 
 const QuestionBox: React.FC<Props> = (props) => {
@@ -17,7 +18,7 @@ const QuestionBox: React.FC<Props> = (props) => {
         onClick={() => {
           !props.isActive &&
             gtag.event({
-              action: GoogleGAAction.ElBridgeInquiryNextOfStep1,
+              action: props.GA,
               category: GoogleGACategory.FAQ,
               label: '',
             });
