@@ -72,7 +72,7 @@ const Top = () => {
               target="_blank"
               onClick={() => {
                 gtag.event({
-                  action: GoogleAnalyticsAction.Maintelegram,
+                  action: GoogleAnalyticsAction.MainTelegram,
                   category: GoogleAnalyticsCategory.Main,
                   label: '',
                 });

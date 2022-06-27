@@ -86,7 +86,7 @@ const GovernanceCenter = () => {
                 <Button
                   onClick={() => {
                     gtag.event({
-                      action: GoogleAnalyticsAction.GovTokeneconomy,
+                      action: GoogleAnalyticsAction.GovTokenEconomy,
                       category: GoogleAnalyticsCategory.Governance,
                       label: '',
                     });
