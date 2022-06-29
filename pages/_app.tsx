@@ -39,6 +39,21 @@ function MyApp({ Component, pageProps }: AppProps) {
               <meta name="robots" content="index,follow"></meta>
               <link rel="canonical" href="https://www.elysia.land"></link>
               <link rel="icon" href="/favicon.ico" />
+              <link
+                rel="alternate"
+                hrefLang="en"
+                href="https://www.elysia.land/en"
+              />
+              <link
+                rel="alternate"
+                href="https://www.elysia.land/ko"
+                hrefLang="ko-KR"
+              />
+              <link
+                rel="alternate"
+                href="https://www.elysia.land/ko"
+                hrefLang="x-default"
+              />
               <title>ELYSIA - Real World Asset Tokenization DAO</title>
               <meta
                 name="viewport"
