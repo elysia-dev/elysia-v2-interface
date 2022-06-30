@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               <meta charSet="utf-8" />
               <meta name="robots" content="index,follow"></meta>
               <link rel="canonical" href="https://www.elysia.land"></link>
-              <link rel="icon" href="/favicon.ico" />
+              <link rel="icon" href="https://www.elysia.land/favicon.ico" />
               <link
                 rel="alternate"
                 hrefLang="en"
@@ -54,6 +54,14 @@ function MyApp({ Component, pageProps }: AppProps) {
                 href="https://www.elysia.land/ko"
                 hrefLang="x-default"
               />
+              <meta
+                name="title"
+                content="ELYSIA | 엘리시아 : Real World Asset Tokenization DAO"
+              />
+              <link
+                rel="shortcut icon"
+                type="image/x-icon"
+                href="https://www.elysia.land/favicon.ico"></link>
               <title>ELYSIA - Real World Asset Tokenization DAO</title>
               <meta
                 name="viewport"
@@ -66,13 +74,17 @@ function MyApp({ Component, pageProps }: AppProps) {
               />
               <meta
                 name="keyword"
-                content="ELYSIA, ELYFI, Cryptocurrency, Block Chain, DeFi, BTC, ETH, real estate"
+                content="ELYSIA, 엘리시아, ELYFI, Cryptocurrency, Block Chain, DeFi, BTC, ETH, real estate"
               />
               <noscript>You should use javascript</noscript>
               <meta property="og:type" content="website" />
               <meta
                 property="og:title"
-                content="ELYSIA - Real World Asset Tokenization DAO"
+                content="ELYSIA | 엘리시아 : Real World Asset Tokenization DAO"
+              />
+              <meta
+                property="og:keyword"
+                content="ELYSIA, 엘리시아, ELYFI, Cryptocurrency, Block Chain, DeFi, BTC, ETH, real estate"
               />
               <meta
                 property="og:description"
@@ -93,8 +105,12 @@ function MyApp({ Component, pageProps }: AppProps) {
                 content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
               />
               <meta
+                property="twitter:keyword"
+                content="ELYSIA, 엘리시아, ELYFI, Cryptocurrency, Block Chain, DeFi, BTC, ETH, real estate"
+              />
+              <meta
                 name="twitter:title"
-                content="ELYSIA - Real World Asset Tokenization DAO"
+                content="ELYSIA | 엘리시아 : Real World Asset Tokenization DAO"
               />
               <meta
                 name="twitter:image"
