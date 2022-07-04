@@ -6,9 +6,7 @@ import ConnectWalletButton from './ConnectWalletButton';
 import styles from './Navigation.module.scss';
 import ElysiaLogo from 'assets/images/Elysia_Logo_White@2x.png';
 import Image from 'next/image';
-import { isMetamask, isWalletConnector } from 'utils/connectWallet';
-import walletConnectConnector from 'utils/walletConnectProvider';
-import injectedConnector from 'core/connectors/injectedConnector';
+import { setWalletConnect } from 'utils/connectWallet';
 import useIsMobile from 'hooks/useIsMobile';
 import TxContext from 'contexts/TxContext';
 import DisconnectModal from 'components/Modals/DisconnectModal';
@@ -23,38 +21,78 @@ import LanguageConverter from './LanguageConverter';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import { googleGAEvent } from 'utils/gaEvent';
-
-const walletConnectProvider = walletConnectConnector();
+import Wallet from 'enums/Wallet';
+import {
+  walletConnect,
+  hooks as walletConnectHooks,
+} from 'connector/walletConnect';
+import { metaMask, hooks as metaMaskHooks } from 'connector/metaMask';
 
 const Navigation = () => {
   const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false);
-  const { account, activate, deactivate, library, chainId } = useWeb3React();
   const { txStatus, error } = useContext(TxContext);
-  const [isConnectWalletLoading, setIsConnectWalletLoading] = useState(true);
+  const [isConnectWalletLoading, setIsConnectWalletLoading] = useState(false);
   const { isMobile, isLoading } = useIsMobile();
   const [isScroll, setIsScroll] = useState(false);
   const [isMobileMenu, setMobileMenu] = useState(false);
+  const {
+    useAccount: useMetamaskAccount,
+    useChainId: useMetamaskChainId,
+    useENSName: useMetamaskENSName,
+    useIsActive: useMeatamaskIsActive,
+  } = metaMaskHooks;
+  const {
+    useAccount: useWalletConnectAccount,
+    useChainId: useWalletConnectChainId,
+    useENSName: useWalletConnectENSName,
+    useIsActive: useWalletConnectIsActive,
+  } = walletConnectHooks;
+
+  const metamaskAccount = useMetamaskAccount();
+  const metamaskChainId = useMetamaskChainId();
+  const metamaskENSName = useMetamaskENSName();
+  const metamaskIsAcive = useMeatamaskIsActive();
+
+  const walletConnectAccount = useWalletConnectAccount();
+  const walletConnectChainId = useWalletConnectChainId();
+  const walletConnectENSName = useWalletConnectENSName();
+  const walletConnectIsAcive = useWalletConnectIsActive();
+
+  const connectWallet = useCallback((walletName: Wallet) => {
+    if (walletName === Wallet.Metamask || walletName === Wallet.BrowserWallet) {
+      metaMask
+        .activate()
+        .then(() => {
+          setWalletConnect(Wallet.Metamask);
+        })
+        .catch((e: Error) => {
+          console.error(e);
+        });
+      return;
+    }
+    if (walletName === Wallet.WalletConnect) {
+      walletConnect
+        .activate()
+        .then(() => {
+          setWalletConnect(Wallet.WalletConnect);
+        })
+        .catch((e: Error) => {
+          console.error(e);
+        });
+      return;
+    }
+  }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (isWalletConnector()) {
-        activate(walletConnectProvider).then(() => {
-          setIsConnectWalletLoading(false);
-        });
-        return;
-      }
-      if (isMetamask()) {
-        activate(injectedConnector).then(() => {
-          setIsConnectWalletLoading(false);
-        });
-      } else {
-        deactivate();
-        window.sessionStorage.removeItem('@network');
-        setIsConnectWalletLoading(false);
-      }
-    }, 500);
-  }, []);
+    if (typeof window === 'undefined') return;
+    if (sessionStorage.getItem('@connect') === 'Metamask') {
+      connectWallet(Wallet.Metamask);
+    }
+    if (sessionStorage.getItem('@connect') === 'WalletConnect') {
+      connectWallet(Wallet.WalletConnect);
+    }
+  }, [connectWallet]);
 
   useEffect(() => {
     if (txStatus === TxStatus.FAIL) {
@@ -63,30 +101,13 @@ const Navigation = () => {
   }, [txStatus]);
 
   useEffect(() => {
-    if (!library || (chainId && isChainId(chainId))) return;
-    library.provider
-      .request({
-        method: 'wallet_switchEthereumChain',
-        params: [
-          {
-            chainId: '0x1',
-          },
-        ],
-      })
-      .then((v: any) => {})
-      .catch((error: any) => {
-        console.error(error);
-      });
-  }, [chainId, library]);
-
-  useEffect(() => {
     if (typeof window === undefined) return;
-    document.addEventListener('scroll', (e: any) => {
+    document.addEventListener('scroll', (_e: any) => {
       setIsScroll(5 < window.scrollY);
     });
 
     return () => {
-      document.removeEventListener('scroll', (e: any) => {
+      document.removeEventListener('scroll', (_e: any) => {
         setIsScroll(5 < window.scrollX);
       });
     };
@@ -101,10 +122,24 @@ const Navigation = () => {
     <>
       {modalVisible && (
         <ModalLayout>
-          {account ? (
-            <DisconnectModal onClose={() => setModalVisible(false)} />
+          {metamaskAccount || walletConnectAccount ? (
+            <DisconnectModal
+              onClose={() => setModalVisible(false)}
+              account={metamaskAccount || walletConnectAccount}
+              disconnectWallet={() => {
+                if (metamaskIsAcive) {
+                  metaMask.resetState();
+                }
+                if (walletConnectIsAcive) {
+                  walletConnect.deactivate();
+                }
+              }}
+            />
           ) : (
-            <SelectWalletModal onClose={() => setModalVisible(false)} />
+            <SelectWalletModal
+              onClose={() => setModalVisible(false)}
+              connectWallet={(wallet: Wallet) => connectWallet(wallet)}
+            />
           )}
         </ModalLayout>
       )}
@@ -260,6 +295,9 @@ const Navigation = () => {
               <ConnectWalletButton
                 modalVisible={() => setModalVisible(true)}
                 isConnectWalletLoading={isConnectWalletLoading}
+                account={metamaskAccount || walletConnectAccount}
+                chainId={metamaskChainId || walletConnectChainId}
+                ensName={metamaskENSName || walletConnectENSName}
               />
               <LanguageConverter />
             </>
