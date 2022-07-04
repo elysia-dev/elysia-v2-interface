@@ -1,5 +1,14 @@
 {
   "translation": {
+    "meta": {
+      "titleTemplate": "%s | ELYSIA",
+      "defaultTitle": "ELYSIA - Real World Asset Tokenization DAO",
+      "governance": "Governance",
+      "ecosystem": "Ecosystem",
+      "development": "Development",
+      "community": "Community",
+      "faq": "FAQ"
+    },
     "main": {
       "top": [
         "ELYSIA PROTOCOL",

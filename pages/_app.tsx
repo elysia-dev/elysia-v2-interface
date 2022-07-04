@@ -13,11 +13,69 @@ import { useEffect } from 'react';
 import * as gtag from '../lib/gtag';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import { DefaultSeo, DefaultSeoProps } from 'next-seo';
+import { useTranslation } from 'react-i18next';
 
 const Layout = dynamic(() => import('components/Layout'));
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const { t } = useTranslation();
+
+  const DEFAULT_SEO: DefaultSeoProps = {
+    title: undefined,
+    titleTemplate: t('meta.titleTemplate'),
+    defaultTitle: t('meta.defaultTitle'),
+    description:
+      'The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system',
+    canonical: 'https://elysia.land',
+    openGraph: {
+      url: 'https://elysia.land/',
+      title: 'ELYSIA - Real World Asset Tokenization DAO',
+      description:
+        'The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system',
+      site_name: 'ELYSIA - 엘리시아',
+      type: 'website',
+      images: [
+        {
+          url: 'https://elysia.land/Thumbnail.png',
+          width: 800,
+          height: 600,
+          alt: 'Elysia Open Graph Thumbnail',
+          type: 'image/png',
+        },
+      ],
+    },
+    twitter: {
+      cardType: 'summary',
+    },
+    languageAlternates: [
+      {
+        hrefLang: 'en',
+        href: 'https://elysia.land/en',
+      },
+      {
+        hrefLang: 'ko-KR',
+        href: 'https://elysia.land/ko',
+      },
+      {
+        hrefLang: 'x-default',
+        href: 'https://elysia.land/ko',
+      },
+    ],
+    additionalLinkTags: [
+      {
+        rel: 'icon',
+        href: 'https://elysia.land/favicon.ico',
+      },
+    ],
+    additionalMetaTags: [
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+    ],
+  };
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -34,89 +92,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <TxProvider>
         <LanguageProvider>
           <Layout>
-            <Head>
-              <meta charSet="utf-8" />
-              <meta name="robots" content="index,follow"></meta>
-              <link rel="canonical" href="https://www.elysia.land"></link>
-              <link rel="icon" href="https://www.elysia.land/favicon.ico" />
-              <link
-                rel="alternate"
-                hrefLang="en"
-                href="https://www.elysia.land/en"
-              />
-              <link
-                rel="alternate"
-                href="https://www.elysia.land/ko"
-                hrefLang="ko-KR"
-              />
-              <link
-                rel="alternate"
-                href="https://www.elysia.land/ko"
-                hrefLang="x-default"
-              />
-              <meta
-                name="title"
-                content="ELYSIA | 엘리시아 : Real World Asset Tokenization DAO"
-              />
-              <link
-                rel="shortcut icon"
-                type="image/x-icon"
-                href="https://www.elysia.land/favicon.ico"></link>
-              <title>ELYSIA - Real World Asset Tokenization DAO</title>
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-              />
-              <meta name="theme-color" content="#3679b5" />
-              <meta
-                name="description"
-                content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
-              />
-              <meta
-                name="keyword"
-                content="ELYSIA, 엘리시아, ELYFI, Cryptocurrency, Block Chain, DeFi, BTC, ETH, real estate"
-              />
-              <noscript>You should use javascript</noscript>
-              <meta property="og:type" content="website" />
-              <meta
-                property="og:title"
-                content="ELYSIA | 엘리시아 : Real World Asset Tokenization DAO"
-              />
-              <meta
-                property="og:keyword"
-                content="ELYSIA, 엘리시아, ELYFI, Cryptocurrency, Block Chain, DeFi, BTC, ETH, real estate"
-              />
-              <meta
-                property="og:description"
-                content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
-              />
-              <meta
-                property="og:site_name"
-                content="ELYSIA - Real World Asset Tokenization DAO"
-              />
-              <meta property="og:url" content="https://elysia.land/" />
-              <meta
-                property="og:image"
-                content="https://elysia.land/Thumbnail.png"
-              />
-              <meta name="twitter:card" content="summary" />
-              <meta
-                name="twitter:description"
-                content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
-              />
-              <meta
-                property="twitter:keyword"
-                content="ELYSIA, 엘리시아, ELYFI, Cryptocurrency, Block Chain, DeFi, BTC, ETH, real estate"
-              />
-              <meta
-                name="twitter:title"
-                content="ELYSIA | 엘리시아 : Real World Asset Tokenization DAO"
-              />
-              <meta
-                name="twitter:image"
-                content="https://elysia.land/Thumbnail.png"
-              />
-            </Head>
+            <DefaultSeo {...DEFAULT_SEO} />
+
             <Component {...pageProps} />
           </Layout>
         </LanguageProvider>
