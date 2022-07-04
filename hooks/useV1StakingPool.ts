@@ -7,14 +7,14 @@ import { StakingPool } from '@elysia-dev/elyfi-v1-sdk/dist/types/StakingPool';
 const useV1StakingPool = (): {
   contract: StakingPool | undefined;
 } => {
-  const { library } = useWeb3React();
+  const { provider } = useWeb3React();
   const contract = useMemo(() => {
-    if (!library) return;
+    if (!provider) return;
     return StakingPoolFactory.connect(
       envs.staking.elStakingPoolAddress,
-      library.getSigner(),
+      provider.getSigner(),
     );
-  }, [library]);
+  }, [provider]);
 
   return { contract };
 };
