@@ -19,53 +19,22 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 
 type Props = {
   onClose: () => void;
+  connectWallet?: (walletName: Wallet) => void;
 };
 
-interface WindowWithEthereum extends Window {
-  ethereum?: ethers.providers.Web3Provider;
-}
-const walletConnectProvider = walletConnectConnector();
-
 const SelectWalletModal = (props: Props) => {
-  const { onClose } = props;
-  const { activate } = useWeb3React();
-  const [global, setGlobal] = useState<WindowWithEthereum>();
+  const { onClose, connectWallet } = props;
   const { t } = useTranslation();
   const { isMobile } = useIsMobile();
 
   const wallets = useMemo(() => {
-    if (global?.ethereum) {
-      return [
-        isMobile
-          ? { name: 'Browser Wallet', image: browserWallet }
-          : { name: 'Metamask', image: metamask },
-        { name: 'WalletConnect', image: walletconnect },
-      ];
-    } else {
-      return [{ name: 'WalletConnect', image: walletconnect }];
-    }
-  }, [global]);
-
-  const connectWallet = (wallet: string) => {
-    let connector;
-    if (wallet === (isMobile ? Wallet.BrowserWallet : Wallet.Metamask)) {
-      googleGAEvent(GoogleGAAction.Metamask, GoogleGACategory.Wallet);
-      connector = injectedConnector;
-    } else {
-      googleGAEvent(GoogleGAAction.WalletConnect, GoogleGACategory.Wallet);
-      connector = walletConnectProvider;
-    }
-    activate(connector).then(() => {
-      onClose();
-      wallet === Wallet.Metamask && setWalletConnect(Wallet.Metamask);
-    });
-  };
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setGlobal(window as WindowWithEthereum);
-    }
-  }, [typeof window]);
+    return [
+      isMobile
+        ? { name: 'Browser Wallet', image: browserWallet }
+        : { name: 'Metamask', image: metamask },
+      { name: 'WalletConnect', image: walletconnect },
+    ];
+  }, []);
 
   return (
     <>
@@ -83,7 +52,25 @@ const SelectWalletModal = (props: Props) => {
                   className={`wallet_select_modal__content__wallet_btn ${wallet.name}`}
                   key={idx}
                   onClick={() => {
-                    connectWallet(wallet.name);
+                    if (
+                      wallet.name ===
+                      (isMobile ? Wallet.BrowserWallet : Wallet.Metamask)
+                    ) {
+                      googleGAEvent(
+                        GoogleGAAction.Metamask,
+                        GoogleGACategory.Wallet,
+                      );
+
+                      connectWallet && connectWallet(wallet.name);
+                    }
+                    if (wallet.name === Wallet.WalletConnect) {
+                      googleGAEvent(
+                        GoogleGAAction.WalletConnect,
+                        GoogleGACategory.Wallet,
+                      );
+                      connectWallet && connectWallet(wallet.name);
+                    }
+                    onClose();
                   }}>
                   <Image
                     src={wallet.image}
