@@ -13,7 +13,7 @@ const MATIC: AddEthereumChainParameter['nativeCurrency'] = {
 };
 
 interface BasicChainInformation {
-  urls: string[];
+  urls: any[];
   name: string;
 }
 
