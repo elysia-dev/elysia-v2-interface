@@ -1,5 +1,4 @@
 import Davatar from '@davatar/react';
-import { useWeb3React } from '@web3-react/core';
 import { useTranslation } from 'react-i18next';
 import envs from 'core/envs';
 import CloseButton from './CloseButton';
@@ -7,11 +6,12 @@ import styles from './Modal.module.scss';
 
 type Props = {
   onClose: () => void;
+  disconnectWallet: () => void;
+  account?: string;
 };
 
 const DisconnectModal = (props: Props) => {
-  const { onClose } = props;
-  const { deactivate, account } = useWeb3React();
+  const { onClose, account, disconnectWallet } = props;
   const { t } = useTranslation();
 
   const AddressCopy = (data: string) => {
@@ -57,7 +57,7 @@ const DisconnectModal = (props: Props) => {
               <div
                 className={styles.modal_disconnect_button}
                 onClick={() => {
-                  deactivate();
+                  disconnectWallet();
                   window.sessionStorage.removeItem('@connect');
                   onClose();
                 }}>
