@@ -16,13 +16,15 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 type Props = {
   modalVisible: () => void;
   isConnectWalletLoading: boolean;
+  account?: string;
+  chainId?: number;
+  ensName?: string | null;
 };
 
 const ConnectWalletButton = (props: Props) => {
-  const { account, chainId } = useWeb3React();
+  const { chainId, ensName, account, isConnectWalletLoading } = props;
   const { txStatus } = useContext(TxContext);
   const { t } = useTranslation();
-  const { ensName, ensLoading } = useENS(account || '');
   const shortAddress = `${account?.substring(0, 5)}....${account?.substring(
     account.length - 4,
     account.length,
@@ -32,7 +34,7 @@ const ConnectWalletButton = (props: Props) => {
     <>
       <div
         className={`wallet_wrapper ${
-          account || props.isConnectWalletLoading ? '' : 'disconnect'
+          account || isConnectWalletLoading ? '' : 'disconnect'
         } ${txStatus} ${chainId && [1, 1337].includes(chainId) ? '' : 'wrong'}`}
         onClick={() => {
           props.modalVisible();
@@ -50,7 +52,7 @@ const ConnectWalletButton = (props: Props) => {
                 address={account}
                 generatedAvatarType="jazzicon"
               />
-              <div>{ensLoading ? ensName || shortAddress : shortAddress}</div>
+              <div>{ensName ? ensName || shortAddress : shortAddress}</div>
             </div>
           ) : (
             <div className={styles.wrong_network}>
