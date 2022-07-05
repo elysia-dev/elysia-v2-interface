@@ -74,6 +74,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
+      {
+        name: 'facebook-domain-verification',
+        content: 'rolwiofcma4wy5zuhf6ew8ki93kfek',
+      },
     ],
   };
 
