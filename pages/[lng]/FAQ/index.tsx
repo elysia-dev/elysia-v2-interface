@@ -1,3 +1,5 @@
+import { t } from 'i18next';
+import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 
 const FAQ = dynamic(() => import('components/FAQ'), {
@@ -10,7 +12,12 @@ const FAQ = dynamic(() => import('components/FAQ'), {
 });
 
 const FAQPage = () => {
-  return <FAQ />;
+  return (
+    <>
+      <NextSeo title={t('meta.faq')} />
+      <FAQ />
+    </>
+  );
 };
 
 export default FAQPage;

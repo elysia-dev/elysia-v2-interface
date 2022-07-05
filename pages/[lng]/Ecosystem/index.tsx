@@ -1,4 +1,6 @@
 import dynamic from 'next/dynamic';
+import { t } from 'i18next';
+import { NextSeo } from 'next-seo';
 
 const Ecosystem = dynamic(() => import('components/Ecosystem'), {
   loading: () => (
@@ -10,7 +12,12 @@ const Ecosystem = dynamic(() => import('components/Ecosystem'), {
 });
 
 const EcosystemPage = () => {
-  return <Ecosystem />;
+  return (
+    <>
+      <NextSeo title={t('meta.ecosystem')} />
+      <Ecosystem />
+    </>
+  );
 };
 
 export default EcosystemPage;

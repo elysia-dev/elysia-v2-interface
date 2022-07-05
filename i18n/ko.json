@@ -1,5 +1,14 @@
 {
   "translation": {
+    "meta": {
+      "titleTemplate": "%s | 엘리시아",
+      "defaultTitle": "엘리시아",
+      "governance": "거버넌스",
+      "ecosystem": "에코시스템",
+      "development": "디벨로퍼",
+      "community": "커뮤니티",
+      "faq": "FAQ"
+    },
     "main": {
       "top": [
         "엘리시아 프로토콜",

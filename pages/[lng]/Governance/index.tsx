@@ -1,3 +1,5 @@
+import { t } from 'i18next';
+import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 
 const Governance = dynamic(() => import('components/Governance'), {
@@ -10,7 +12,12 @@ const Governance = dynamic(() => import('components/Governance'), {
 });
 
 const ELStaking = () => {
-  return <Governance />;
+  return (
+    <>
+      <NextSeo title={t('meta.governance')} />
+      <Governance />
+    </>
+  );
 };
 
 export default ELStaking;
