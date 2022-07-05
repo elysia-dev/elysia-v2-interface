@@ -15,6 +15,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { DefaultSeo, DefaultSeoProps } from 'next-seo';
 import { useTranslation } from 'react-i18next';
+import Script from 'next/script';
 
 const Layout = dynamic(() => import('components/Layout'));
 
@@ -92,17 +93,36 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <TxProvider>
-        <LanguageProvider>
-          <Layout>
-            <DefaultSeo {...DEFAULT_SEO} />
-
-            <Component {...pageProps} />
-          </Layout>
-        </LanguageProvider>
-      </TxProvider>
-    </Web3ReactProvider>
+    <>
+      <Script
+        id="fb-pixel"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1809333066008668');
+          fbq('track', 'PageView');
+          `,
+        }}
+      />
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <TxProvider>
+          <LanguageProvider>
+            <Layout>
+              <DefaultSeo {...DEFAULT_SEO} />
+              <Component {...pageProps} />
+            </Layout>
+          </LanguageProvider>
+        </TxProvider>
+      </Web3ReactProvider>
+    </>
   );
 }
 
