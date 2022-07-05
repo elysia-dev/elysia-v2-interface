@@ -67,6 +67,10 @@ export const NavigationWrapper = styled.header`
         margin-right: 2rem;
         font-size: 1rem;
         width: 100px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         @media (max-width: 1190px) {
           width: 90px;
         }
