@@ -39,6 +39,10 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta
+            name="facebook-domain-verification"
+            content="rolwiofcma4wy5zuhf6ew8ki93kfek"
+          />
           <style />
           <script
             async
