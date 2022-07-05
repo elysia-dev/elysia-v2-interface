@@ -1,12 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useWeb3React } from '@web3-react/core';
-import injectedConnector from 'core/connectors/injectedConnector';
 import Wallet from 'enums/Wallet';
-import { ethers } from 'ethers';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { setWalletConnect } from 'utils/connectWallet';
-import walletConnectConnector from 'utils/walletConnectProvider';
 import metamask from 'assets/images/metamask@2x.png';
 import walletconnect from 'assets/images/walletconnect@2x.png';
 import browserWallet from 'assets/images/browserWallet@2x.png';
