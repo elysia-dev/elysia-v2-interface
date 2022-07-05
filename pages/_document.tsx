@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import Document, {
   Html,
@@ -43,6 +45,14 @@ export default class MyDocument extends Document {
             name="facebook-domain-verification"
             content="rolwiofcma4wy5zuhf6ew8ki93kfek"
           />
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: 'none' }}
+              src="https://www.facebook.com/tr?id=1809333066008668&ev=PageView&noscript=1"
+            />
+          </noscript>
           <style />
           <script
             async
