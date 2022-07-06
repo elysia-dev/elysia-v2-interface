@@ -4,28 +4,28 @@
       "titleTemplate": "%s | 엘리시아",
       "defaultTitle": "엘리시아",
       "governance": "거버넌스",
-      "ecosystem": "에코시스템",
-      "development": "디벨로퍼",
+      "ecosystem": "생태계",
+      "development": "개발",
       "community": "커뮤니티",
       "faq": "FAQ"
     },
     "main": {
       "top": [
         "엘리시아 프로토콜",
-        "Real world asset tokenization DAO.",
+        "탈중앙 토큰화 프로토콜에서 실물자산을 토큰화하고 이용해보세요",
         "엘리시아는 부동산과 같은 실물자산을 토큰화하고, <br /> 이를 탈중앙화조직 DAO를 이용해 유동화할 수 있는 서비스를 제공합니다. <br /> 사용자는 이 토큰을 토대로 디파이 등 다양한 블록체인 생태계에서 활동할 수 있습니다."
       ],
       "top_icon": [
-        "Changed real world assets",
-        "Community members",
-        "Total Value Locked",
+        "실물자산 토큰",
+        "커뮤니티 회원",
+        "총 자산 규모(TVL)",
         "Github commit"
       ],
       "portfolio": [
-        "ELYSIA PORTFOLIO",
-        "Tokenized real world asset.",
+        "엘리시아 자산토큰",
+        "엘리시아를 통해 토큰화한 실물자산",
         "엘리시아가 현재까지 진행한 부동산 포트폴리오.",
-        "More portfolio"
+        "더 보기"
       ],
       "section_el_bridge": [
         "EL Bridge",
@@ -34,26 +34,26 @@
         "EL 브릿지는 사용자들이 블록체인 금융 생태계에서도 실물자산을 활용할 수 있도록 실물자산 토큰화 기능을 제공합니다."
       ],
       "section_governance": [
-        "Governance",
-        "DAO governed by a global community",
+        "거버넌스",
+        "EL 토큰 홀더들에 의해 운영되는 다오(DAO) 법인",
         "엘리시아는 EL 토큰 스테이커들에 의해 소유되고 운영되는 DAO 법인입니다.",
         "사용자들은 ELYSIA 프로토콜 안에서 실물자산이 토큰화되고, 거래되는 과정뿐만 아니라<br /> 토큰 이코노미의 모든 의사결정 과정에 참여할 수 있습니다."
       ],
       "section_ecosystem": [
-        "Ecosystem",
-        "Decentralized token economy",
+        "생태계",
+        "디파이, 마켓플레이스 등 다양한 댑(Dapp)으로 구성된 네트워크",
         "토큰화된 부동산을 토대로한 다양한 자산 토큰 생태계.",
         "사용자들은 토큰으로 만들어진 부동산 자산을 토대로, 디파이 등<br /> 다양한 서드파티 Dapp과 함께 토큰 생태계에서 어떻게 쓰이는지 참여할 수 있습니다."
       ],
       "section_community": [
-        "Community",
-        "User-centered community channels",
+        "커뮤니티",
+        "자유롭게 의견을 나눌 수 있는 공식 커뮤니티 채널",
         "다양한 형태의 커뮤니티 채널.",
         "사용자들은 여러 커뮤니티 채널을 통해 ELYSIA protocol에 참여하는 다른 사람들과<br /> 서로 의견을 나누고, 의사결정을 할 수 있습니다."
       ],
       "section_developers": [
-        "Developers",
-        "Powered by global developers",
+        "개발",
+        "누구나 참여할 수 있는 탈중앙 개발 환경",
         "탈중앙화된 개발 시스템.",
         "사용자들은 자유롭게 ELYSIA 및 ELYFI 시스템을 구성하는 코드를 확인하고,<br /> 자신만의 방법으로 기여하고 보상을 획득할 수 있습니다."
       ],
@@ -64,23 +64,23 @@
         "초보자, 경험자에 관계없이 모두 ELYSIA의 문서를 통해<br /> ELYSIA protocol이 무엇이고, 어떻게 토큰 이코노미가 돌아가는지 확인할 수 있습니다."
       ],
       "partners": [
-        "ELYSIA DAO PARTNERS",
-        "Strong partners who help to fulfill ELYSIA’s vision.",
+        "엘리시아 다오(DAO) 파트너",
+        "엘리시아 생태계 발전에 도움을 주는 파트너",
         "블록체인, 법률, 부동산 관련 파트너.",
-        "Backed by",
-        "Legal Review",
-        "Audit",
+        "기관 투자자",
+        "법률 지원",
+        "감사 업체",
         "Real Estate Products",
-        "Business"
+        "사업 협력"
       ],
       "developers": [
-        "ELYSIA DAO LLC. CONTRIBUTERS",
-        "Registered in the state of Wyoming, USA.",
+        "엘리시아 DAO LLC 참여자",
+        "엘리시아 프로토콜 성장에 기여한 엘리시아 팀",
         "ELYSIA DAO LLC.의 모든 결정은 자동화되고 분산되며 오픈 소스 코드를 기반으로 합니다."
       ],
       "press": [
-        "PRESS",
-        "News & Updates about ELYSIA Protocol.",
+        "보도자료",
+        "엘리시아의 최신 소식",
         "해외 및 국내 ELYSIA 프로토콜 관련 소식.",
         "ELYSIA to Be the First in Asia That Obtains Approval as a DAO LLC in Wyoming, USA",
         "SINGAPORE, February 07, 2022--(BUSINESS WIRE)- ELYSIA, a blockchain project specializing in real estate tokenization and securitization, will be the first organization in Asia to be registered as a DAO LLC (Limited Liability Company) in Wyoming, USA",
@@ -92,7 +92,7 @@
     },
     "ecosystem": {
       "top": [
-        "ELYSIA Ecosystem",
+        "엘리시아 생태계",
         "사용자들은 토큰으로 만들어진 부동산 자산을 토대로, 디파이 등<br /> 다양한 서드파티 Dapp과 함께 토큰 생태계에서 어떻게 쓰이는지 참여할 수 있습니다."
       ],
       "project": [
@@ -114,8 +114,8 @@
       ]
     },
     "community": [
-      "ELYSIA COMMUNITY",
-      "User-centered community channels",
+      "커뮤니티",
+      "자유롭게 의견을 나눌 수 있는 공식 커뮤니티 채널",
       "사용자들은 여러 커뮤니티 채널을 통해 ELYSIA protocol에 참여하는 다른 사람들과<br /> 서로 의견을 나누고, 의사결정을 할 수 있습니다.",
       "궁금한 내용을 질문하고 ELYSIA 커뮤니티에 참여하세요!",
       "아이디어를 공유하고 ELYSIA 거버넌스에 참여하세요!",
@@ -123,8 +123,8 @@
       "ELYSIA의 최신 소식을 확인하세요!"
     ],
     "developers": [
-      "Developers",
-      "Powered by global developers",
+      "개발",
+      "누구나 참여할 수 있는 탈중앙 개발 환경",
       "사용자들은 자유롭게 ELYSIA 시스템을 구성하는 코드를 확인하고,<br /> 자신만의 방법으로 contribute하고 보상을 획득할 수 있습니다.",
       "엘리시아란?",
       "실물자산의 디지털포메이션을 위한 DAO이다.",
@@ -152,7 +152,7 @@
       "wallet": "지갑 연결하기"
     },
     "governance": {
-      "title": "ELYSIA Governance",
+      "title": "엘리시아 거버넌스",
       "section_first": [
         "엘리시아는 EL 토큰 스테이커들에 의해 소유되고 운영되는 DAO 법인입니다.",
         "엘리시아 DAO는 현실에 존재하는 실물자산이 디파이나 NFT 마켓플레이스 등 디지털자산 시장에서 활용될 수 있도록 토큰화 프로토콜을 개발합니다.",
@@ -278,7 +278,7 @@
     "FAQ": {
       "top": [
         "FAQ",
-        "About ELYSIA protocol, ELYSIA DAO, and EL Bridge",
+        "엘리시아에 대해 자주 묻는 질문",
         "자주 묻는 질문과 답변을 통해 엘리시아에 대해 자세히 알아볼 수 있습니다."
       ],
       "question": [

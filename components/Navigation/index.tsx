@@ -23,6 +23,7 @@ import LanguageConverter from './LanguageConverter';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import { googleGAEvent } from 'utils/gaEvent';
+import { t } from 'i18next';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -167,7 +168,7 @@ const Navigation = () => {
                             ? 'Gilroy-ExtraBold'
                             : 'Gilroy-Light',
                         }}>
-                        Governance
+                        {t('meta.governance')}
                       </span>
                     </a>
                   </div>
@@ -188,7 +189,7 @@ const Navigation = () => {
                             ? 'Gilroy-ExtraBold'
                             : 'Gilroy-Light',
                         }}>
-                        Ecosystem
+                        {t('meta.ecosystem')}
                       </span>
                     </a>
                   </div>
@@ -209,7 +210,7 @@ const Navigation = () => {
                             ? 'Gilroy-ExtraBold'
                             : 'Gilroy-Light',
                         }}>
-                        Community
+                        {t('meta.community')}
                       </span>
                     </a>
                   </div>
@@ -230,7 +231,7 @@ const Navigation = () => {
                             ? 'Gilroy-ExtraBold'
                             : 'Gilroy-Light',
                         }}>
-                        Developers
+                        {t('meta.development')}
                       </span>
                     </a>
                   </div>
@@ -251,7 +252,7 @@ const Navigation = () => {
                             ? 'Gilroy-ExtraBold'
                             : 'Gilroy-Light',
                         }}>
-                        FAQ
+                        {t('meta.faq')}
                       </span>
                     </a>
                   </div>
