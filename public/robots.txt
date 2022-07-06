@@ -1,3 +1,4 @@
 User-agent: *
 Allow:/
 Sitemap: https://www.elysia.land/sitemap.xml
+Sitemap: https://elysia.land/sitemap.xml
