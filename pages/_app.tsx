@@ -29,9 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     defaultTitle: t('meta.defaultTitle'),
     description:
       'The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system',
-    canonical: 'https://elysia.land',
+    canonical: 'https://www.elysia.land',
     openGraph: {
-      url: 'https://elysia.land/',
+      url: 'https://www.elysia.land/',
       title: 'ELYSIA - Real World Asset Tokenization DAO',
       description:
         'The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system',
@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       type: 'website',
       images: [
         {
-          url: 'https://elysia.land/Thumbnail.png',
+          url: 'https://www.elysia.land/Thumbnail.png',
           width: 800,
           height: 600,
           alt: 'Elysia Open Graph Thumbnail',
@@ -53,21 +53,21 @@ function MyApp({ Component, pageProps }: AppProps) {
     languageAlternates: [
       {
         hrefLang: 'en',
-        href: 'https://elysia.land/en',
+        href: 'https://www.elysia.land/en',
       },
       {
         hrefLang: 'ko-KR',
-        href: 'https://elysia.land/ko',
+        href: 'https://www.elysia.land/ko',
       },
       {
         hrefLang: 'x-default',
-        href: 'https://elysia.land/ko',
+        href: 'https://www.elysia.land/ko',
       },
     ],
     additionalLinkTags: [
       {
         rel: 'icon',
-        href: 'https://elysia.land/favicon.ico',
+        href: 'https://www.elysia.land/favicon.ico',
       },
     ],
     additionalMetaTags: [
