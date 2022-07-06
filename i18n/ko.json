@@ -92,7 +92,7 @@
     },
     "ecosystem": {
       "top": [
-        "ELYSIA Ecosystem",
+        "엘리시아 생태계",
         "사용자들은 토큰으로 만들어진 부동산 자산을 토대로, 디파이 등<br /> 다양한 서드파티 Dapp과 함께 토큰 생태계에서 어떻게 쓰이는지 참여할 수 있습니다."
       ],
       "project": [
@@ -114,8 +114,8 @@
       ]
     },
     "community": [
-      "ELYSIA COMMUNITY",
-      "User-centered community channels",
+      "커뮤니티",
+      "자유롭게 의견을 나눌 수 있는 공식 커뮤니티 채널",
       "사용자들은 여러 커뮤니티 채널을 통해 ELYSIA protocol에 참여하는 다른 사람들과<br /> 서로 의견을 나누고, 의사결정을 할 수 있습니다.",
       "궁금한 내용을 질문하고 ELYSIA 커뮤니티에 참여하세요!",
       "아이디어를 공유하고 ELYSIA 거버넌스에 참여하세요!",
@@ -123,8 +123,8 @@
       "ELYSIA의 최신 소식을 확인하세요!"
     ],
     "developers": [
-      "Developers",
-      "Powered by global developers",
+      "개발",
+      "누구나 참여할 수 있는 탈중앙 개발 환경",
       "사용자들은 자유롭게 ELYSIA 시스템을 구성하는 코드를 확인하고,<br /> 자신만의 방법으로 contribute하고 보상을 획득할 수 있습니다.",
       "엘리시아란?",
       "실물자산의 디지털포메이션을 위한 DAO이다.",
@@ -152,7 +152,7 @@
       "wallet": "지갑 연결하기"
     },
     "governance": {
-      "title": "ELYSIA Governance",
+      "title": "엘리시아 거버넌스",
       "section_first": [
         "엘리시아는 EL 토큰 스테이커들에 의해 소유되고 운영되는 DAO 법인입니다.",
         "엘리시아 DAO는 현실에 존재하는 실물자산이 디파이나 NFT 마켓플레이스 등 디지털자산 시장에서 활용될 수 있도록 토큰화 프로토콜을 개발합니다.",
