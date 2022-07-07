@@ -39,8 +39,14 @@ const Top = () => {
   }, [assetBonds]);
 
   const dataLoading = useMemo(() => {
-    return isLoading && assetBondTokensBackedByEstate.length === 0;
-  }, [isLoading, assetBondTokensBackedByEstate, totalBalance]);
+    return isLoading || assetBondTokensBackedByEstate.length === 0;
+  }, [isLoading, assetBondTokensBackedByEstate]);
+
+  const renderTvl = useMemo(() => {
+    return (
+      <CountUp start={0} end={parseInt(formatEther(totalBalance))} duration={1} formattingFn={(number) => `$${toCompact(number)}+`} />
+    )
+  }, [totalBalance])
 
   return (
     <MainTopWrapper>
@@ -144,7 +150,9 @@ const Top = () => {
             {dataLoading ? (
               <b>-</b>
             ) : (
-              <b>${toCompact(parseInt(formatEther(totalBalance)))}+</b>
+              <b>
+                {renderTvl}
+              </b>
             )}
             <br />
             {t(`main.top_icon.2`)}
