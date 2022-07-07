@@ -14,7 +14,7 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 
 interface IPressArray {
   flag: StaticImageData;
-  press: StaticImageData;
+  press: StaticImageData | string;
   header: string;
   content: string;
   link: string;
@@ -27,26 +27,26 @@ const Press = () => {
   const pressArray: IPressArray[] = [
     {
       flag: usa,
-      press: yahoo,
+      press: 'Bloomberg',
       header: t('main.press.3'),
       content: t('main.press.4'),
-      link: 'https://finance.yahoo.com/news/elysia-first-asia-obtains-approval-140000251.html?guccounter=2&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAIbW0698fC2KnO771rsi89QhICI2s8b-egkyVs02mzNRM-Bhxnrvux1Tjyz8BcEo5rRruAn_XbdofYeXz9hTIKcDqFCKHmbZe1G5SK9c8eqfEzEKMNz_-tq9P2dadujlBGC8NdrdUe0d99qFtgSKiwbPpQJ34dPkSFneqn5_k1F0',
+      link: 'https://www.bloomberg.com/press-releases/2022-07-06/elyfi-launches-us-real-estate-investment-product',
       ga: GoogleGAAction.MainPressEn,
     },
     {
-      flag: ko,
-      press: decenter,
+      flag: usa,
+      press: yahoo,
       header: t('main.press.5'),
       content: t('main.press.6'),
-      link: 'https://decenter.kr/NewsView/2621R4BTIW/GZ03',
+      link: 'https://finance.yahoo.com/news/elyfi-launches-us-real-estate-120000334.html',
       ga: GoogleGAAction.MainPressKo,
     },
     {
-      flag: cn,
-      press: xinhua,
+      flag: usa,
+      press: yahoo,
       header: t('main.press.7'),
       content: t('main.press.8'),
-      link: 'http://www.xinhuanet.com/money/2020-09/04/c_1126453754.htm',
+      link: 'https://finance.yahoo.com/news/elysia-first-asia-obtains-approval-140000251.html?guccounter=2&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAIbW0698fC2KnO771rsi89QhICI2s8b-egkyVs02mzNRM-Bhxnrvux1Tjyz8BcEo5rRruAn_XbdofYeXz9hTIKcDqFCKHmbZe1G5SK9c8eqfEzEKMNz_-tq9P2dadujlBGC8NdrdUe0d99qFtgSKiwbPpQJ34dPkSFneqn5_k1F0',
       ga: GoogleGAAction.MainPressCn,
     },
   ];
@@ -75,12 +75,26 @@ const Press = () => {
                     />
                   </div>
                   <div>
-                    <Image
-                      src={pressData.press}
-                      alt="Press"
-                      width={118}
-                      height={43}
-                    />
+                    {pressData.press === 'Bloomberg' ? (
+                      <h1
+                        style={{
+                          height: '100%',
+                          fontSize: '25px',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          color: '#ffffff',
+                        }}>
+                        {pressData.press}
+                      </h1>
+                    ) : (
+                      <Image
+                        src={pressData.press}
+                        alt="Press"
+                        width={118}
+                        height={43}
+                      />
+                    )}
                   </div>
                 </section>
                 <section>
