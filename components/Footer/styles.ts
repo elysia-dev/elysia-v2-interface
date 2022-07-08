@@ -3,22 +3,14 @@ import styled from 'styled-components';
 const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
 const $light = 'Gilroy-Light, SpoqaHanSansNeo';
 
-export const FooterWrapper = styled.footer`
+export const Container = styled.footer`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 250px;
   padding: 0px 50px;
-  > div {
-    font-family: ${$light};
-    font-size: 1rem;
-    color: #cbcbcb;
-    height: 100px;
-  }
-  > div:first-child {
-    margin-right: auto;
-    display: flex;
+  @media (max-width: 1190px) {
     flex-direction: column;
     padding: 0 5vw;
   }
@@ -36,9 +28,14 @@ export const LeftWrapper = styled.section`
     > section {
       width: 100%;
     }
-    span {
+  }
+  > strong {
+    font-weight: normal;
+  }
+  > p {
+    > strong {
+      font-weight: bold;
       color: #ffffff;
-      font-family: ${$bold};
     }
   }
 `;
