@@ -2,6 +2,7 @@ import LanguageContext from 'contexts/LanguageContext';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import LanguageType from 'enums/LanguageType';
+import { t } from 'i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
@@ -35,7 +36,7 @@ const MobileMenu: React.FC<{
                   ? 'Gilroy-ExtraBold'
                   : 'Gilroy-Light',
               }}>
-              Governance
+              {t('meta.governance')}
             </span>
           </a>
         </Link>
@@ -52,7 +53,7 @@ const MobileMenu: React.FC<{
                   ? 'Gilroy-ExtraBold'
                   : 'Gilroy-Light',
               }}>
-              Ecosystem
+              {t('meta.ecosystem')}
             </span>
           </a>
         </Link>
@@ -69,7 +70,7 @@ const MobileMenu: React.FC<{
                   ? 'Gilroy-ExtraBold'
                   : 'Gilroy-Light',
               }}>
-              Community
+              {t('meta.community')}
             </span>
           </a>
         </Link>
@@ -86,7 +87,7 @@ const MobileMenu: React.FC<{
                   ? 'bold'
                   : 'normal',
               }}>
-              Developers
+              {t('meta.development')}
             </span>
           </a>
         </Link>
@@ -103,7 +104,7 @@ const MobileMenu: React.FC<{
                   ? 'Gilroy-ExtraBold'
                   : 'Gilroy-Light',
               }}>
-              FAQ
+              {t('meta.faq')}
             </span>
           </a>
         </Link>
