@@ -6,13 +6,15 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { googleGAEvent } from 'utils/gaEvent';
 import ConnectWalletButton from './ConnectWalletButton';
-import setLanguage from 'utils/setLanguage';
+import LanguageContext from 'contexts/LanguageContext';
+import { useContext } from 'react';
 
 const MobileMenu: React.FC<{
   modalVisible: () => void;
   isConnectWalletLoading: boolean;
   onButtonClick: () => void;
 }> = ({ modalVisible, isConnectWalletLoading, onButtonClick }) => {
+  const { setLanguage } = useContext(LanguageContext);
   const router = useRouter();
 
   const lng = router.asPath.substring(1, 3);
