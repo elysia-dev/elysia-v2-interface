@@ -13,11 +13,74 @@ import { useEffect } from 'react';
 import * as gtag from '../lib/gtag';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import { DefaultSeo, DefaultSeoProps } from 'next-seo';
+import { useTranslation } from 'react-i18next';
+import Script from 'next/script';
 
 const Layout = dynamic(() => import('components/Layout'));
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const { t } = useTranslation();
+
+  const DEFAULT_SEO: DefaultSeoProps = {
+    title: undefined,
+    titleTemplate: t('meta.titleTemplate'),
+    defaultTitle: t('meta.defaultTitle'),
+    description:
+      'The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system',
+    canonical: 'https://www.elysia.land',
+    openGraph: {
+      url: 'https://www.elysia.land/',
+      title: 'ELYSIA - Real World Asset Tokenization DAO',
+      description:
+        'The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system',
+      site_name: 'ELYSIA - 엘리시아',
+      type: 'website',
+      images: [
+        {
+          url: 'https://www.elysia.land/Thumbnail.png',
+          width: 800,
+          height: 600,
+          alt: 'Elysia Open Graph Thumbnail',
+          type: 'image/png',
+        },
+      ],
+    },
+    twitter: {
+      cardType: 'summary',
+    },
+    languageAlternates: [
+      {
+        hrefLang: 'en',
+        href: 'https://www.elysia.land/en',
+      },
+      {
+        hrefLang: 'ko-KR',
+        href: 'https://www.elysia.land/ko',
+      },
+      {
+        hrefLang: 'x-default',
+        href: 'https://www.elysia.land/ko',
+      },
+    ],
+    additionalLinkTags: [
+      {
+        rel: 'icon',
+        href: 'https://www.elysia.land/favicon.ico',
+      },
+    ],
+    additionalMetaTags: [
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        name: 'facebook-domain-verification',
+        content: 'rolwiofcma4wy5zuhf6ew8ki93kfek',
+      },
+    ],
+  };
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -30,67 +93,36 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <TxProvider>
-        <LanguageProvider>
-          <Layout>
-            <Head>
-              <meta charSet="utf-8" />
-              <meta name="robots" content="index,follow"></meta>
-              <link rel="canonical" href="https://www.elysia.land"></link>
-              <link rel="icon" href="/favicon.ico" />
-              <title>ELYSIA - Real World Asset Tokenization DAO</title>
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-              />
-              <meta name="theme-color" content="#3679b5" />
-              <meta
-                name="description"
-                content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
-              />
-              <meta
-                name="keyword"
-                content="ELYSIA, ELYFI, Cryptocurrency, Block Chain, DeFi, BTC, ETH, real estate"
-              />
-              <noscript>You should use javascript</noscript>
-              <meta property="og:type" content="website" />
-              <meta
-                property="og:title"
-                content="ELYSIA - Real World Asset Tokenization DAO"
-              />
-              <meta
-                property="og:description"
-                content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
-              />
-              <meta
-                property="og:site_name"
-                content="ELYSIA - Real World Asset Tokenization DAO"
-              />
-              <meta property="og:url" content="https://elysia.land/" />
-              <meta
-                property="og:image"
-                content="https://elysia.land/Thumbnail.png"
-              />
-              <meta name="twitter:card" content="summary" />
-              <meta
-                name="twitter:description"
-                content="The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system"
-              />
-              <meta
-                name="twitter:title"
-                content="ELYSIA - Real World Asset Tokenization DAO"
-              />
-              <meta
-                name="twitter:image"
-                content="https://elysia.land/Thumbnail.png"
-              />
-            </Head>
-            <Component {...pageProps} />
-          </Layout>
-        </LanguageProvider>
-      </TxProvider>
-    </Web3ReactProvider>
+    <>
+      <Script
+        id="fb-pixel"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1809333066008668');
+          fbq('track', 'PageView');
+          `,
+        }}
+      />
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <TxProvider>
+          <LanguageProvider>
+            <Layout>
+              <DefaultSeo {...DEFAULT_SEO} />
+              <Component {...pageProps} />
+            </Layout>
+          </LanguageProvider>
+        </TxProvider>
+      </Web3ReactProvider>
+    </>
   );
 }
 

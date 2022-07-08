@@ -1,4 +1,6 @@
 import dynamic from 'next/dynamic';
+import { t } from 'i18next';
+import { NextSeo } from 'next-seo';
 
 const Developers = dynamic(() => import('components/Developers'), {
   loading: () => (
@@ -10,7 +12,12 @@ const Developers = dynamic(() => import('components/Developers'), {
 });
 
 const DevelopersPage = () => {
-  return <Developers />;
+  return (
+    <>
+      <NextSeo title={t('meta.development')} />
+      <Developers />
+    </>
+  );
 };
 
 export default DevelopersPage;

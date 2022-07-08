@@ -20,7 +20,7 @@ import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 const Top = () => {
   const { t } = useTranslation();
-  const { totalBalance } = useTotalStakedBalance();
+  const { totalBalance, isLoading } = useTotalStakedBalance();
   const { reserveState, getAssetBondsByNetwork } = useReserveData();
 
   const assetBonds = useMemo(() => {
@@ -37,6 +37,16 @@ const Top = () => {
         return b.loanStartTimestamp! - a.loanStartTimestamp! >= 0 ? 1 : -1;
       });
   }, [assetBonds]);
+
+  const dataLoading = useMemo(() => {
+    return isLoading || assetBondTokensBackedByEstate.length === 0;
+  }, [isLoading, assetBondTokensBackedByEstate]);
+
+  const renderTvl = useMemo(() => {
+    return (
+      <CountUp start={0} end={parseInt(formatEther(totalBalance))} duration={1} formattingFn={(number) => `$${toCompact(number)}+`} />
+    )
+  }, [totalBalance])
 
   return (
     <MainTopWrapper>
@@ -113,30 +123,44 @@ const Top = () => {
       <MainTopPublicRelation>
         <section>
           <p>
-            <b>
-              <CountUp
-                start={0}
-                end={assetBondTokensBackedByEstate.length + 7}
-                duration={1}
-              />
-              +
-            </b>
+            {dataLoading ? (
+              <b>-</b>
+            ) : (
+              <b>
+                <CountUp
+                  start={0}
+                  end={assetBondTokensBackedByEstate.length + 7}
+                  duration={1}
+                />
+                +
+              </b>
+            )}
             <br />
             {t(`main.top_icon.0`)}
           </p>
         </section>
         <section>
           <p>
-            <b>
-              <CountUp start={0} end={83385} duration={1} />+
-            </b>
+            {dataLoading ? (
+              <b>-</b>
+            ) : (
+              <b>
+                <CountUp start={0} end={83385} duration={1} />+
+              </b>
+            )}
             <br />
             {t(`main.top_icon.1`)}
           </p>
         </section>
         <section>
           <p>
-            <b>${toCompact(parseInt(formatEther(totalBalance)))}+</b>
+            {dataLoading ? (
+              <b>-</b>
+            ) : (
+              <b>
+                {renderTvl}
+              </b>
+            )}
             <br />
             {t(`main.top_icon.2`)}
           </p>
