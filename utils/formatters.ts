@@ -1,8 +1,10 @@
 import { BigNumber, utils } from 'ethers';
 
+/* big number to string with comma */
 export const formatComma = (value: BigNumber): string =>
   new Intl.NumberFormat('en').format(parseFloat(utils.formatEther(value)));
 
+/* number to string with six digits and comma (e.g., 10,123.456789)  */
 export const formatSixDigit = (value: number): string => {
   if (value <= 0.0000001) {
     return '0';
@@ -13,12 +15,14 @@ export const formatSixDigit = (value: number): string => {
   }).format(value);
 };
 
+/* number to string to returns an integer without decimal points. decimal points are rounded off */
 export const roundNumber = (value: number): string =>
   new Intl.NumberFormat('en', {
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(value);
 
+/* number to string with K M B */
 export const toCompact = (value: number): string =>
   new Intl.NumberFormat('en-US', {
     maximumFractionDigits: 2,
@@ -29,6 +33,7 @@ export const toCompact = (value: number): string =>
 export const toPercent = (value: BigNumber): string =>
   `${toCompact(parseFloat(utils.formatUnits(value, 25)))}%`;
 
+/* bigNumber to string with K M B */
 export const toCompactBignumber = (
   value: BigNumber | number,
   decimals?: number,
@@ -39,6 +44,7 @@ export const toCompactBignumber = (
     compactDisplay: 'short',
   }).format(parseFloat(utils.formatUnits(value, decimals || 18)));
 
+/* bigNumber and decimals to string with $ */
 export const toUsd = (value: BigNumber, decimals?: number): string =>
   new Intl.NumberFormat('en', { style: 'currency', currency: 'USD' }).format(
     parseFloat(utils.formatUnits(value, decimals || 18)),
