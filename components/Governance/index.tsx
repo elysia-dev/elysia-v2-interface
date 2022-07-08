@@ -41,11 +41,6 @@ const Governance = () => {
   const { txType, txStatus } = useContext(TxContext);
   const reward = useReward();
 
-  const startDate = moment(
-    '2022.04.18 19:00:00 +9:00',
-    'YYYY.MM.DD hh:mm:ss Z',
-  ).tz('Asia/Seoul', true);
-
   useEffect(() => {
     if (
       txType === RecentActivityType.ELStake ||
@@ -101,7 +96,10 @@ const Governance = () => {
           reward={reward}
           currentChain={currentChain}
           setCurrentChain={setCurrentChain}
-          startDate={startDate}
+          startDate={moment(
+            '2022.04.18 19:00:00 +9:00',
+            'YYYY.MM.DD hh:mm:ss Z',
+          ).tz('Asia/Seoul', true)}
         />
       </section>
       <GovernanceBottom />
