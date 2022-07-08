@@ -44,8 +44,6 @@ const GovernanceCenter = () => {
   const router = useRouter();
   const lng = router.asPath.substring(1, 3);
 
-  console.log(roundNumber(totalSupply));
-
   return (
     <article>
       <div className={styles.center_circle}>
