@@ -8,7 +8,7 @@ import Kakao from 'assets/images/community/kakao_white@2x.webp';
 import Medium from 'assets/images/community/medium@2x.webp';
 import Telegram from 'assets/images/community/telegram_white@2x.webp';
 import Twitter from 'assets/images/community/twitter@2x.webp';
-import Wechat from 'assets/images/community/wechat@2x.webp';
+import Weibo from 'assets/images/community/weibo@2x.webp';
 import useIsMobile from 'hooks/useIsMobile';
 import ContentItem from 'components/Common/ContentItem';
 import useResizeBrowser from 'hooks/useResizeBrowser';
@@ -191,7 +191,7 @@ const Section = () => {
             <ContentItem
               Icon={
                 <Image
-                  src={Wechat}
+                  src={Weibo}
                   alt={'Weibo'}
                   width={isDesktop ? 22 : 32}
                   height={isDesktop ? 16 : 26}

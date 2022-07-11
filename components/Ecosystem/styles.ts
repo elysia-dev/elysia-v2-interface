@@ -2,10 +2,6 @@ import styled from 'styled-components';
 import ElyfiProjectImg from 'assets/images/ecosystem/elyfiproject.png';
 import Moblieapp from 'assets/images/ecosystem/moblieapp.webp';
 import Dao from 'assets/images/ecosystem/dao.png';
-import ecosystemImage from 'assets/images/main/ecosystem_image.webp';
-
-const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
-const $light = 'Gilroy-Light, SpoqaHanSansNeo';
 
 const glassBox = {
   background: 'rgba(255, 255, 255, 0.1)',
@@ -62,7 +58,6 @@ export const EcosystemImage = styled.article`
   height: 150vh;
   z-index: -1;
   opacity: 0.5;
-  /* background: url(${ecosystemImage.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
 `;
@@ -83,7 +78,7 @@ export const ProjectWrapper = styled.article`
   padding-bottom: 50px;
   border-bottom: 1px solid #33a5ff;
   > h2 {
-    font-family: ${$bold};
+    font-weight: bold;
     font-size: 2rem;
     margin-bottom: 20px;
     @media (max-width: 460px) {
@@ -151,7 +146,7 @@ export const ProjectWrapper = styled.article`
           ${center}
         }
         > h2 {
-          font-family: ${$bold};
+          font-weight: bold;
           margin-right: 10px;
           font-size: 1.5rem;
           @media (max-width: 460px) {
@@ -197,13 +192,13 @@ export const ProjectWrapper = styled.article`
       }
       > section {
         height: 38px;
-        font-family: ${$bold};
         display: flex;
         align-items: center;
         margin-bottom: 20px;
         > h2 {
           margin-right: auto;
           font-size: 1.5rem;
+          font-weight: bold;
           @media (max-width: 460px) {
             font-size: 1.475rem;
           }
@@ -256,13 +251,13 @@ export const ProjectWrapper = styled.article`
       }
       > section {
         height: 38px;
-        font-family: ${$bold};
         display: flex;
         align-items: center;
         margin-bottom: 20px;
         > h2 {
           margin-right: auto;
           font-size: 1.5rem;
+          font-weight: bold;
           @media (max-width: 460px) {
             font-size: 1.475rem;
           }
@@ -286,10 +281,10 @@ export const ProjectWrapper = styled.article`
 
 export const PortFolioWrapper = styled.article`
   padding-top: 50px;
-  font-family: ${$light};
+  font-weight: normal;
   color: #ffffff;
   > h2 {
-    font-family: ${$bold};
+    font-weight: bold;
     font-size: 2rem;
     margin-bottom: 10px;
     @media (max-width: 460px) {
@@ -343,7 +338,7 @@ export const PortFolioWrapper = styled.article`
       > div:nth-child(1) {
         > b {
           font-size: 1.375rem;
-          font-family: ${$bold};
+          font-weight: bold;
           border-right: 1px solid #33a5ff;
           padding-right: 70.5px;
           @media (max-width: 920px) {
@@ -368,7 +363,7 @@ export const PortFolioWrapper = styled.article`
 
         > b {
           font-size: 1.375rem;
-          font-family: ${$bold};
+          font-weight: bold;
         }
       }
     }

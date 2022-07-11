@@ -4,13 +4,46 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 import useV2Staking from 'hooks/useV2Staking';
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import styled from 'styled-components';
 import { googleGAEvent } from 'utils/gaEvent';
-import styles from './Modal.module.scss';
+import ModalButton from './ModalButton';
 
 export enum PermissionType {
   Deposit = 'Deposit',
   Staking = 'Staking',
 }
+
+const Container = styled.section`
+  margin: 25px 25px 10px 25px;
+`;
+const ApproveContent = styled.div`
+  border: 1px solid #707070;
+  word-break: keep-all;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  > p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-align: center;
+    &:first-child {
+      margin-bottom: 30px;
+    }
+  }
+`;
+const ApproveFee = styled.p`
+  width: 465px;
+  @media (max-width: 500px) {
+    width: 90%;
+  }
+  margin: 20px auto 25px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-align: center;
+`;
 
 const IncreateAllowanceModal: React.FunctionComponent<{
   setTransactionWait: Dispatch<SetStateAction<boolean>>;
@@ -50,17 +83,16 @@ const IncreateAllowanceModal: React.FunctionComponent<{
   // }, [library]);
 
   return (
-    <>
-      <div className={styles.approve_wrapper}>
-        <div>{t('modal.approve.0')}</div>
-        <div>{t('modal.approve.1')}</div>
-      </div>
-      <div className={styles.approve_fee}>
+    <Container>
+      <ApproveContent>
+        <p>{t('modal.approve.0')}</p>
+        <p>{t('modal.approve.1')}</p>
+      </ApproveContent>
+      <ApproveFee>
         <Trans>{t('modal.approve.2')}</Trans>
-      </div>
-      <div className="wallet_select_modal__content__line" />
-      <div
-        className={styles.modal_button}
+      </ApproveFee>
+      <ModalButton
+        title={t('modal.approve.3')}
         onClick={() => {
           props.setTransactionWait(true);
           googleGAEvent(
@@ -69,12 +101,9 @@ const IncreateAllowanceModal: React.FunctionComponent<{
             account || '',
           );
           approve();
-        }}>
-        <div>
-          <p>{t('modal.approve.3')}</p>
-        </div>
-      </div>
-    </>
+        }}
+      />
+    </Container>
   );
 };
 

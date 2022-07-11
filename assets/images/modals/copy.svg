@@ -1,0 +1,32 @@
+<svg
+                id="그룹_6680"
+                data-name="그룹 6680"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18">
+                <path
+                  id="패스_2090"
+                  data-name="패스 2090"
+                  d="M0,0H18V18H0Z"
+                  fill="none"
+                />
+                <rect
+                  id="사각형_6793"
+                  data-name="사각형 6793"
+                  width="9"
+                  height="9"
+                  rx="2"
+                  transform="translate(6 6)"
+                  fill="none"
+                  stroke="#fff"
+                />
+                <path
+                  id="패스_2091"
+                  data-name="패스 2091"
+                  d="M13,7V5.5A1.5,1.5,0,0,0,11.5,4h-6A1.5,1.5,0,0,0,4,5.5v6A1.5,1.5,0,0,0,5.5,13H7"
+                  transform="translate(-1 -1)"
+                  fill="none"
+                  stroke="#fff"
+                />
+              </svg>

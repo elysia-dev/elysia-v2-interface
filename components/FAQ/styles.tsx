@@ -1,5 +1,4 @@
 import styled, { css, keyframes } from 'styled-components';
-import elbridge from 'assets/images/main/elbridge_image.webp';
 
 const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
 const $light = 'Gilroy-Light, SpoqaHanSansNeo';
@@ -42,7 +41,6 @@ export const ELbridgeImage = styled.article`
   height: 150vh;
   z-index: -1;
   opacity: 0.5;
-  /* background-image: url(${elbridge.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
 `;

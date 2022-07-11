@@ -1,27 +1,77 @@
-import LanguageContext from 'contexts/LanguageContext';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
 import LanguageType from 'enums/LanguageType';
 import { t } from 'i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useContext } from 'react';
+import styled from 'styled-components';
 import { googleGAEvent } from 'utils/gaEvent';
 import ConnectWalletButton from './ConnectWalletButton';
-import styles from './Navigation.module.scss';
+import LanguageContext from 'contexts/LanguageContext';
+import { useContext } from 'react';
 
 const MobileMenu: React.FC<{
   modalVisible: () => void;
   isConnectWalletLoading: boolean;
   onButtonClick: () => void;
 }> = ({ modalVisible, isConnectWalletLoading, onButtonClick }) => {
+  const { setLanguage } = useContext(LanguageContext);
   const router = useRouter();
 
-  const { setLanguage } = useContext(LanguageContext);
   const lng = router.asPath.substring(1, 3);
 
+  const Container = styled.article`
+    display: flex;
+    flex-direction: column;
+    > section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding-top: 5vh;
+      border-top: 1px solid #ffffff66;
+      margin-bottom: 4vh;
+      > a {
+        height: 5.5vh;
+        line-height: 5.5vh;
+        font-size: 1.5rem;
+        margin: 10px 0;
+        color: #fff;
+      }
+    }
+    > button {
+      width: 100%;
+      height: 50px;
+      justify-content: space-around;
+      @media (max-width: 460px) {
+        height: 35px;
+        margin: 0;
+      }
+      > div {
+        font-size: 20px;
+        letter-spacing: 0.8px;
+        color: #fff;
+      }
+    }
+  `;
+  const LanguageContainer = styled.article`
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4vh;
+    cursor: pointer;
+    > p {
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 0;
+      padding: 0 20px;
+      &:first-child {
+        padding-left: 0;
+        border-right: 1px solid #fff;
+      }
+    }
+  `;
+
   return (
-    <article className={styles.navigation__hamburger__menu}>
+    <Container>
       <section>
         <Link href={`/${router.query.lng}/Governance`} passHref>
           <a
@@ -32,9 +82,9 @@ const MobileMenu: React.FC<{
             <span
               style={{
                 cursor: 'pointer',
-                fontFamily: router.pathname.includes('Governance')
-                  ? 'Gilroy-ExtraBold'
-                  : 'Gilroy-Light',
+                fontWeight: router.pathname.includes('Governance')
+                  ? 'bold'
+                  : 'normal',
               }}>
               {t('meta.governance')}
             </span>
@@ -49,9 +99,9 @@ const MobileMenu: React.FC<{
             <span
               style={{
                 cursor: 'pointer',
-                fontFamily: router.pathname.includes('Ecosystem')
-                  ? 'Gilroy-ExtraBold'
-                  : 'Gilroy-Light',
+                fontWeight: router.pathname.includes('Ecosystem')
+                  ? 'bold'
+                  : 'normal',
               }}>
               {t('meta.ecosystem')}
             </span>
@@ -66,9 +116,9 @@ const MobileMenu: React.FC<{
             <span
               style={{
                 cursor: 'pointer',
-                fontFamily: router.pathname.includes('Community')
-                  ? 'Gilroy-ExtraBold'
-                  : 'Gilroy-Light',
+                fontWeight: router.pathname.includes('Community')
+                  ? 'bold'
+                  : 'normal',
               }}>
               {t('meta.community')}
             </span>
@@ -109,14 +159,14 @@ const MobileMenu: React.FC<{
           </a>
         </Link>
       </section>
-      <article className={styles.navigation__hamburger__language}>
+      <LanguageContainer>
         <p
           onClick={() => {
             googleGAEvent(GoogleGAAction.NavLanguage, GoogleGACategory.Nav);
             setLanguage(LanguageType.KO);
           }}
           style={{
-            fontWeight: lng === LanguageType.KO ? 'bolder' : 400,
+            fontWeight: lng === LanguageType.KO ? 'bold' : 'normal',
           }}>
           KOR
         </p>
@@ -126,16 +176,16 @@ const MobileMenu: React.FC<{
             setLanguage(LanguageType.EN);
           }}
           style={{
-            fontWeight: lng === LanguageType.EN ? 'bolder' : 400,
+            fontWeight: lng === LanguageType.EN ? 'bold' : 'normal',
           }}>
           ENG
         </p>
-      </article>
+      </LanguageContainer>
       <ConnectWalletButton
         modalVisible={modalVisible}
         isConnectWalletLoading={isConnectWalletLoading}
       />
-    </article>
+    </Container>
   );
 };
 

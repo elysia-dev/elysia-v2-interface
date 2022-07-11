@@ -1,12 +1,16 @@
+import { CSSProperties } from 'styled-components';
+import { Button } from './style';
+
 const ModalButton: React.FunctionComponent<{
-  className?: string;
   onClick: () => void;
-  content: string;
-}> = ({ className, onClick, content }) => {
+  title: string;
+  buttonStyle?: CSSProperties;
+  textStyle?: CSSProperties;
+}> = ({ onClick, title, buttonStyle, textStyle }) => {
   return (
-    <div className={className || 'modal__button'} onClick={onClick}>
-      <p>{content}</p>
-    </div>
+    <Button onClick={onClick} style={buttonStyle}>
+      <p style={textStyle}>{title}</p>
+    </Button>
   );
 };
 

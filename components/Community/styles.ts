@@ -1,8 +1,4 @@
 import styled from 'styled-components';
-import communityImage from 'assets/images/main/community_image.webp';
-
-const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
-const $light = 'Gilroy-Light, SpoqaHanSansNeo';
 
 export const center = {
   display: 'flex',
@@ -35,7 +31,6 @@ export const CommunityImage = styled.article`
   height: 100vh;
   z-index: -1;
   opacity: 0.5;
-  /* background: url(${communityImage.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
   background-position-y: -120px;
@@ -44,7 +39,7 @@ export const CommunityImage = styled.article`
 export const SectionWrapper = styled.article`
   padding: 0px 0px 100px 0px;
   color: #ffffff;
-  font-family: ${$light};
+  font-weight: normal;
 
   > article:not(:first-child) {
     ${glassBox}
@@ -66,7 +61,7 @@ export const SectionWrapper = styled.article`
     > h2 {
       font-size: 1.25rem;
       margin-bottom: 25px;
-      font-family: ${$light};
+      font-weight: normal;
     }
     > div {
       margin-top: 13px;

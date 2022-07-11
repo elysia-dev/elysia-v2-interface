@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import ConnectWalletButton from './ConnectWalletButton';
-import styles from './Navigation.module.scss';
 import ElysiaLogo from 'assets/images/Elysia_Logo_White@2x.png';
 import Image from 'next/image';
 import { isMetamask, isWalletConnector } from 'utils/connectWallet';
@@ -17,7 +16,7 @@ import SelectWalletModal from 'components/Modals/SelectWalletModal';
 import ErrorModal from 'components/Modals/ErrorModal';
 import TxStatus from 'enums/TxStatus';
 import { isChainId } from 'utils/isChainId';
-import { NavigationWrapper } from './styles';
+import { NavigationWrapper, HamburgerButton } from './styles';
 import MobileMenu from './MobileMenu';
 import LanguageConverter from './LanguageConverter';
 import GoogleGAAction from 'enums/GoogleGAAction';
@@ -137,17 +136,15 @@ const Navigation = () => {
             <></>
           ) : isMobile ? (
             <section>
-              <div
-                className={`${styles.navigation__hamburger__button} ${
-                  isMobileMenu && styles.active
-                }`}
+              <HamburgerButton
+                isActive={isMobileMenu}
                 onClick={() => {
                   setMobileMenu(!isMobileMenu);
                 }}>
                 <i />
                 <i />
                 <i />
-              </div>
+              </HamburgerButton>
             </section>
           ) : (
             <>

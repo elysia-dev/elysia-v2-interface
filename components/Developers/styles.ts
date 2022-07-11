@@ -1,8 +1,4 @@
 import styled from 'styled-components';
-import developersImage from 'assets/images/main/developers_image.webp';
-
-const $bold = 'Gilroy-ExtraBold, SpoqaHanSansNeo-Bold';
-const $light = 'Gilroy-Light, SpoqaHanSansNeo';
 
 const glassBox = {
   background: 'rgba(255, 255, 255, 0.1)',
@@ -19,7 +15,6 @@ export const DevelopersImage = styled.article`
   height: 100vh;
   z-index: -1;
   opacity: 0.5;
-  /* background: url(${developersImage.src}); */
   background-repeat: no-repeat;
   background-size: 100%;
 `;
@@ -34,7 +29,7 @@ export const DisabledSection = styled.div`
 export const SectionWrapper = styled.article`
   padding-bottom: 150px;
   color: #ffffff !important;
-  font-family: ${$light};
+  font-weight: normal;
   /* height: 100vh; */
   > article:not(:first-child) {
     display: flex;
@@ -86,7 +81,7 @@ export const SectionWrapper = styled.article`
             > figcaption {
               display: flex;
               align-items: center;
-              font-family: ${$bold};
+              font-weight: bold;
               font-size: 1.25rem;
             }
           }
@@ -103,7 +98,7 @@ export const SectionWrapper = styled.article`
       cursor: pointer;
       ${glassBox}
       transition: all 1s ease;
-      padding: 38.22px 25px 38px 25px;
+      padding: 25px;
       &:first-child {
         width: 75%;
         @media (max-width: 920px) {
@@ -133,7 +128,7 @@ export const SectionWrapper = styled.article`
           > figcaption {
             display: flex;
             align-items: center;
-            font-family: ${$bold};
+            font-weight: bold;
             font-size: 1.25rem;
           }
         }

@@ -1,10 +1,9 @@
 import Slate, { baseUrl } from 'clients/Slate';
 import { IAssetBond } from 'core/types/reserveSubgraph';
-import { BigNumber } from 'ethers';
 import { parseEther } from 'ethers/lib/utils';
 import Image, { StaticImageData } from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
-import { toCompactForBignumber, toCompact, toUsd } from 'utils/formatters';
+import { toUsd } from 'utils/formatters';
 import { IReserve } from 'utils/reserves';
 
 type Props = {

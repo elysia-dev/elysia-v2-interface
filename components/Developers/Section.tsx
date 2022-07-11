@@ -1,8 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { DisabledSection, SectionWrapper } from './styles';
-import Smart from 'assets/images/developers/smart.svg';
 import Bug from 'assets/images/developers/bug.svg';
-import PaperFile from 'assets/images/developers/paperFile.svg';
 import Elysia from 'assets/images/developers/elysia.svg';
 import Git from 'assets/images/developers/git.svg';
 import ContentItem from '../Common/ContentItem';
@@ -14,7 +12,7 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Section = () => {
   const { t } = useTranslation();
-  const [ishover, setHover] = useState(false);
+  const [isHover, setHover] = useState(false);
 
   return (
     <>
@@ -52,7 +50,7 @@ const Section = () => {
               onMouseLeave={() => setHover(false)}>
               <ContentItem
                 Icon={<Bug />}
-                contentName={ishover ? 'Coming Soon!' : t('developers.7')}
+                contentName={isHover ? 'Coming Soon!' : t('developers.7')}
                 isComingSoon={true}
               />
             </DisabledSection>
