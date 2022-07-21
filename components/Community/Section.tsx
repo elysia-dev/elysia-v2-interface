@@ -41,7 +41,7 @@ const Section = () => {
                 />
               }
               contentName={'Discord'}
-              link={'https://discord.gg/d8zveNum7gg'}
+              link={'https://discord.gg/d8zveNum7g'}
               onClickEvent={() =>
                 googleGAEvent(
                   GoogleGAAction.CommunityDiscord,
