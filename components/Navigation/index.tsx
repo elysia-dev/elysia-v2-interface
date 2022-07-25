@@ -118,12 +118,15 @@ const Navigation = () => {
         theme={isMobile && isMobileMenu ? 'overflow' : isScroll}>
         <nav>
           <figure>
-            <Link href={`/${router.query.lng}`} passHref>
+            <Link href={`/${router.query.lng}`}>
               <a
                 onClick={() => {
                   googleGAEvent(GoogleGAAction.NavHome, GoogleGACategory.Nav);
                 }}>
                 <Image
+                  onClick={() => {
+                    googleGAEvent(GoogleGAAction.NavHome, GoogleGACategory.Nav);
+                  }}
                   src={ElysiaLogo}
                   alt={'ElysiaLogo'}
                   width={isMobile ? 100 : 139}
@@ -135,123 +138,109 @@ const Navigation = () => {
           {isLoading ? (
             <></>
           ) : isMobile ? (
-            <section>
-              <HamburgerButton
-                isActive={isMobileMenu}
-                onClick={() => {
-                  setMobileMenu(!isMobileMenu);
-                }}>
-                <i />
-                <i />
-                <i />
-              </HamburgerButton>
-            </section>
+            <HamburgerButton
+              isActive={isMobileMenu}
+              onClick={() => {
+                setMobileMenu(!isMobileMenu);
+              }}>
+              <i />
+              <i />
+              <i />
+            </HamburgerButton>
           ) : (
             <>
               <section>
                 <Link href={`/${router.query.lng}/Governance`} passHref>
-                  <div>
-                    <a
-                      onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavGovernance,
-                          GoogleGACategory.Nav,
-                        );
+                  <div
+                    onClick={() => {
+                      googleGAEvent(
+                        GoogleGAAction.NavGovernance,
+                        GoogleGACategory.Nav,
+                      );
+                    }}>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        color: router.pathname.includes('Governance')
+                          ? '#ffffff'
+                          : '',
                       }}>
-                      <span
-                        style={{
-                          cursor: 'pointer',
-                          fontFamily: router.pathname.includes('Governance')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
-                        }}>
-                        {t('meta.governance')}
-                      </span>
-                    </a>
+                      {t('meta.governance')}
+                    </span>
                   </div>
                 </Link>
                 <Link href={`/${router.query.lng}/Ecosystem`} passHref>
-                  <div>
-                    <a
-                      onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavEcosystem,
-                          GoogleGACategory.Nav,
-                        );
+                  <div
+                    onClick={() => {
+                      googleGAEvent(
+                        GoogleGAAction.NavEcosystem,
+                        GoogleGACategory.Nav,
+                      );
+                    }}>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        color: router.pathname.includes('Ecosystem')
+                          ? '#ffffff'
+                          : '',
                       }}>
-                      <span
-                        style={{
-                          cursor: 'pointer',
-                          fontFamily: router.pathname.includes('Ecosystem')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
-                        }}>
-                        {t('meta.ecosystem')}
-                      </span>
-                    </a>
+                      {t('meta.ecosystem')}
+                    </span>
                   </div>
                 </Link>
                 <Link href={`/${router.query.lng}/Community`} passHref>
-                  <div>
-                    <a
-                      onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavCommunity,
-                          GoogleGACategory.Nav,
-                        );
+                  <div
+                    onClick={() => {
+                      googleGAEvent(
+                        GoogleGAAction.NavCommunity,
+                        GoogleGACategory.Nav,
+                      );
+                    }}>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        color: router.pathname.includes('Community')
+                          ? '#ffffff'
+                          : '',
                       }}>
-                      <span
-                        style={{
-                          cursor: 'pointer',
-                          fontFamily: router.pathname.includes('Community')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
-                        }}>
-                        {t('meta.community')}
-                      </span>
-                    </a>
+                      {t('meta.community')}
+                    </span>
                   </div>
                 </Link>
                 <Link href={`/${router.query.lng}/Developers`} passHref>
-                  <div>
-                    <a
-                      onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavDevelopers,
-                          GoogleGACategory.Nav,
-                        );
+                  <div
+                    onClick={() => {
+                      googleGAEvent(
+                        GoogleGAAction.NavDevelopers,
+                        GoogleGACategory.Nav,
+                      );
+                    }}>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        color: router.pathname.includes('Developers')
+                          ? '#ffffff'
+                          : '',
                       }}>
-                      <span
-                        style={{
-                          cursor: 'pointer',
-                          fontFamily: router.pathname.includes('Developers')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
-                        }}>
-                        {t('meta.development')}
-                      </span>
-                    </a>
+                      {t('meta.development')}
+                    </span>
                   </div>
                 </Link>
                 <Link href={`/${router.query.lng}/FAQ`} passHref>
-                  <div>
-                    <a
-                      onClick={() => {
-                        googleGAEvent(
-                          GoogleGAAction.NavFAQ,
-                          GoogleGACategory.Nav,
-                        );
+                  <div
+                    onClick={() => {
+                      googleGAEvent(
+                        GoogleGAAction.NavFAQ,
+                        GoogleGACategory.Nav,
+                      );
+                    }}>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        color: router.pathname.includes('FAQ') ? '#ffffff' : '',
                       }}>
-                      <span
-                        style={{
-                          cursor: 'pointer',
-                          fontFamily: router.pathname.includes('FAQ')
-                            ? 'Gilroy-ExtraBold'
-                            : 'Gilroy-Light',
-                        }}>
-                        {t('meta.faq')}
-                      </span>
-                    </a>
+                      {t('meta.faq')}
+                    </span>
                   </div>
                 </Link>
               </section>
