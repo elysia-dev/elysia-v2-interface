@@ -128,9 +128,10 @@ export const NavigationWrapper = styled.header`
       display: flex;
       text-align: center;
       > div {
-        margin-right: 2rem;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
         font-size: 1rem;
-        width: 100px;
+        /* width: 100px; */
         @media (max-width: 1190px) {
           width: 90px;
         }
@@ -142,25 +143,24 @@ export const NavigationWrapper = styled.header`
         @media (max-width: 840px) {
           width: 25px;
         }
-        > a {
-          > span {
+        > span {
+          color: #dedede;
+          font-weight: 600;
+          &:hover {
             color: #ffffff;
-            &:hover {
-              font-weight: bold;
-            }
-            @media (max-width: 1189px) {
-              font-size: 1rem;
-            }
-            @media (max-width: 1024px) {
-              font-size: 0.8rem;
-            }
           }
           @media (max-width: 1189px) {
-            width: 100%;
+            font-size: 1rem;
           }
-          &:last-child {
-            margin-right: 0;
+          @media (max-width: 1024px) {
+            font-size: 0.8rem;
           }
+        }
+        @media (max-width: 1189px) {
+          width: 100%;
+        }
+        &:last-child {
+          margin-right: 0;
         }
       }
     }
