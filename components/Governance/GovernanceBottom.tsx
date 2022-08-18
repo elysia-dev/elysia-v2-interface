@@ -36,11 +36,15 @@ const GovernanceBottom = () => {
           <BottomContentBox>
             <ContentBoxFigure>
               <Image src={forum} alt={'forum'} height={65} width={65} />
-              <button>Coming Soon</button>
             </ContentBoxFigure>
             <ContentBoxTitle>
               <b>{t('governance.section_fourth.6')}</b>
-              <ArrowImage />
+              <a
+                href={'https://forum.elyfi.world'}
+                target="_blank"
+                rel="noopener noreferrer">
+                <ArrowImage />
+              </a>
             </ContentBoxTitle>
             <ContentBoxParagraph>
               {t('governance.section_fourth.7')}
@@ -49,11 +53,15 @@ const GovernanceBottom = () => {
           <BottomContentBox>
             <ContentBoxFigure>
               <Image src={snapshot} alt={'snapshot'} height={65} width={65} />
-              <button>Coming Soon</button>
             </ContentBoxFigure>
             <ContentBoxTitle>
               <b>{t('governance.section_fourth.8')}</b>
-              <ArrowImage />
+              <a
+                href={'https://vote.elyfi.world/#/'}
+                target="_blank"
+                rel="noopener noreferrer">
+                <ArrowImage />
+              </a>
             </ContentBoxTitle>
             <ContentBoxParagraph>
               {t('governance.section_fourth.9')}
