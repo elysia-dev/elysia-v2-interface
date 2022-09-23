@@ -67,7 +67,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     additionalLinkTags: [
       {
         rel: 'icon',
-        href: 'https://www.elysia.land/favicon.ico',
+        href: 'https://www.elysia.land/favicon.png',
       },
     ],
     additionalMetaTags: [
