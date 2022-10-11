@@ -32,6 +32,7 @@ import World from 'assets/images/main/world@2x.webp';
 import Xangle from 'assets/images/main/xangle@2x.webp';
 import XTcom from 'assets/images/main/xtcom@2x.webp';
 import Haechilabs from 'assets/images/main/haechilabs@2x.webp';
+import MetaGalaxia from 'assets/images/main/meta_galaxia.png';
 
 import { PartnersWrapper } from './styles';
 import Link from 'next/link';
@@ -343,9 +344,14 @@ const Partners = () => {
               </Link>
             </div>
             <div>
-              <Link href="https://www.argoskyc.com/" passHref>
+              <Link href="https://metagalaxia.com/" passHref>
                 <a rel="noopener noreferrer" target="_blank">
-                  <Image src={Argos} alt={'Argos'} width={131} height={24} />
+                  <Image
+                    src={MetaGalaxia}
+                    alt={'MetaGalaxia'}
+                    width={131}
+                    height={24}
+                  />
                 </a>
               </Link>
             </div>
