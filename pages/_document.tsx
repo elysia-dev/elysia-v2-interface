@@ -68,16 +68,6 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-          <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                Weglot.initialize({
-                  api_key: 'wg_a636abe11ca6c82f34fe22d8082092ff6'
-                });
-              `
-            }}
-          />
         </Head>
         <body>
           <Main />
