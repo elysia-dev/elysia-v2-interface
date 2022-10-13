@@ -1,4 +1,5 @@
 import { MainImage } from './styles';
+import ElyfiLink from './ElyfiLink';
 import PortFolio from './PortFolio';
 import Top from './Top';
 import Section from './Section';
@@ -10,6 +11,7 @@ const Main = () => {
   return (
     <>
       <MainImage />
+      <ElyfiLink />
       <Top />
       <PortFolio />
       <Section />
