@@ -73,7 +73,7 @@ export default class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `
                 Weglot.initialize({
-                  api_key: 'wg_7ece01bdba9c3cf8314df89cb5a2b3618'
+                  api_key: 'wg_a636abe11ca6c82f34fe22d8082092ff6'
                 });
               `
             }}
