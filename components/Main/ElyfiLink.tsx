@@ -1,5 +1,5 @@
 import React from 'react';
-import Arrow from 'assets/images/developers/arrow.svg';
+import ArrowWhite from 'assets/images/developers/arrow_white.svg';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import ElysiaToken2 from 'assets/images/elysia_token2.png';
@@ -91,7 +91,7 @@ const ElyfiLink = () => {
               />
               <h2>{t('main.CTAButton.0')}</h2>
             </span>
-            {<div className="arrow">{<Arrow />}</div>}
+            {<div className="arrow">{<ArrowWhite />}</div>}
           </section>
         </article>
       </div>
