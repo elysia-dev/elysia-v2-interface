@@ -10,6 +10,7 @@
       "faq": "FAQ"
     },
     "main": {
+      "CTAButton": ["Invest to ELYFI"],
       "top": [
         "ELYSIA PROTOCOL",
         "Real world asset tokenization DAO.",
