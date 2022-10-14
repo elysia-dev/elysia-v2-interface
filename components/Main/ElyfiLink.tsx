@@ -9,7 +9,7 @@ export const LinkWrapper = styled.article`
   width: 100%;
   position: fixed;
   left: 0;
-  bottom: 10vw;
+  bottom: 8vw;
   display: flex;
   justify-content: center;
   z-index: 2;
@@ -22,7 +22,7 @@ export const LinkWrapper = styled.article`
 
     > article {
       width: 370px;
-      box-shadow: 0px 0px 6px #00000029;
+      box-shadow: 0px 0px 6px #0e2149;
       border-radius: 20px;
       opacity: 1;
       backdrop-filter: blur(18px);
@@ -46,6 +46,10 @@ export const LinkWrapper = styled.article`
           background: rgba(255, 255, 255, 0.2);
         }
         @media (max-width: 768px) {
+          display: flex;
+          justify-content: center;
+        }
+        div.arrow {
           display: flex;
           justify-content: center;
         }
