@@ -2,7 +2,7 @@ import React from 'react';
 import ArrowWhite from 'assets/images/developers/arrow_white.svg';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import ElysiaToken2 from 'assets/images/elysia_token2.png';
+import ElysiaToken2 from 'assets/images/elysia_token2.svg';
 import Image from 'next/image';
 
 export const LinkWrapper = styled.article`
@@ -13,6 +13,7 @@ export const LinkWrapper = styled.article`
   display: flex;
   justify-content: center;
   z-index: 2;
+  height: 58px;
 
   > div {
     width: 90%;
@@ -64,6 +65,7 @@ export const LinkWrapper = styled.article`
           }
         }
         h2 {
+          line-height: 26px;
           color: #ffffff;
         }
       }
@@ -87,12 +89,13 @@ const ElyfiLink = () => {
               );
             }}>
             <span>
-              <Image
+              <ElysiaToken2 />
+              {/* <Image
                 src={ElysiaToken2}
                 alt={'elysia-token'}
                 width={26}
                 height={26}
-              />
+              /> */}
               <h2>{t('main.CTAButton.0')}</h2>
             </span>
             {<div className="arrow">{<ArrowWhite />}</div>}
