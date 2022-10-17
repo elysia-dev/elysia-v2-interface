@@ -16,6 +16,7 @@ import Head from 'next/head';
 import { DefaultSeo, DefaultSeoProps } from 'next-seo';
 import { useTranslation } from 'react-i18next';
 import Script from 'next/script';
+import Favicon from 'public/favicon.png';
 
 const Layout = dynamic(() => import('components/Layout'));
 
@@ -24,17 +25,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { t } = useTranslation();
 
   const DEFAULT_SEO: DefaultSeoProps = {
-    title: undefined,
+    title: t('meta.defaultTitle'),
     titleTemplate: t('meta.titleTemplate'),
     defaultTitle: t('meta.defaultTitle'),
-    description:
-      'The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system',
+    description: t('meta.description'),
     canonical: 'https://www.elysia.land',
     openGraph: {
       url: 'https://www.elysia.land/',
-      title: 'ELYSIA - Real World Asset Tokenization DAO',
-      description:
-        'The ELYSIA Protocol is a DAO project that connects the real world asset financial system and the virtual asset financial system',
+      title: t('meta.defaultTitle'),
+      description: t('meta.description'),
       site_name: 'ELYSIA - 엘리시아',
       type: 'website',
       images: [

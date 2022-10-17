@@ -7,7 +7,8 @@
       "ecosystem": "Ecosystem",
       "development": "Development",
       "community": "Community",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "description": "ELYSIA is a project that makes real-world assets into tokens and connects them with the blockchain."
     },
     "main": {
       "CTAButton": ["Invest to ELYFI"],
