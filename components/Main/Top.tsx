@@ -20,7 +20,7 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Top = () => {
   const { t } = useTranslation();
-  const { totalBalance, isLoading } = useTotalStakedBalance();
+  const { tvl, isLoading } = useTotalStakedBalance();
   const { reserveState, getAssetBondsByNetwork } = useReserveData();
 
   const assetBonds = useMemo(() => {
@@ -44,9 +44,14 @@ const Top = () => {
 
   const renderTvl = useMemo(() => {
     return (
-      <CountUp start={0} end={parseInt(formatEther(totalBalance))} duration={1} formattingFn={(number) => `$${toCompact(number)}+`} />
-    )
-  }, [totalBalance])
+      <CountUp
+        start={0}
+        end={tvl}
+        duration={1}
+        formattingFn={(number) => `$${toCompact(number)}+`}
+      />
+    );
+  }, [tvl]);
 
   return (
     <MainTopWrapper>
@@ -147,13 +152,7 @@ const Top = () => {
         </section>
         <section>
           <p>
-            {dataLoading ? (
-              <b>-</b>
-            ) : (
-              <b>
-                {renderTvl}
-              </b>
-            )}
+            {dataLoading ? <b>-</b> : <b>{renderTvl}</b>}
             <br />
             {t(`main.top_icon.2`)}
           </p>
