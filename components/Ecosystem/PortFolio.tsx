@@ -24,6 +24,8 @@ const PortFolio: React.FC<{
 }> = ({ assetBondTokens, pageNum, setPageNum }) => {
   const { t } = useTranslation();
 
+  const ELYSIA_MOBILE_USD_VALUE = 5509914;
+
   const elysiaArray = [
     {
       project: 'ELYSIA',
@@ -75,7 +77,7 @@ const PortFolio: React.FC<{
     elysiaArray.map((elysia) => {
       total += elysia.amount;
     });
-    return total;
+    return total + ELYSIA_MOBILE_USD_VALUE;
   }, [assetBondTokens]);
 
   return (
