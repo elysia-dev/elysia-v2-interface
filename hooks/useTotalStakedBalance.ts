@@ -37,6 +37,7 @@ const useTotalStakedBalance = () => {
       use: [priceMiddleware],
     },
   );
+  const ELYSIA_MOBILE_USD_VALUE = 5509914;
 
   useEffect(() => {
     if (!contract || !v2Contract || !data || !tvlData) return;
@@ -57,7 +58,9 @@ const useTotalStakedBalance = () => {
             ? '-'
             : toPercent(calculatorAPR),
         );
-        setTvl(tvlData.elTvl + tvlData.tvlExceptElTvl);
+        setTvl(
+          tvlData.elTvl + tvlData.tvlExceptElTvl + ELYSIA_MOBILE_USD_VALUE,
+        );
         setTotalBalance(v2Balance.totalPrincipal.add(v1Balance));
         setIsLoading(false);
       } catch (error) {
