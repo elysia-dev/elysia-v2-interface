@@ -16,6 +16,9 @@ import ElysiaAssetBlue1 from 'assets/images/ecosystem/elysia-asset-blue-1.webp';
 import { formatCommaSmallZeroDisits } from 'utils/formatters';
 import { parseTokenId } from 'utils/parseTokenId';
 import LoanProduct from 'enums/LoanProduct';
+import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
+import useReserveData from 'hooks/useReserveData';
+import CollateralCategory from 'enums/CollateralCategory';
 
 const PortFolio: React.FC<{
   assetBondTokens: IAssetBond[];
@@ -23,8 +26,27 @@ const PortFolio: React.FC<{
   setPageNum: Dispatch<SetStateAction<number>>;
 }> = ({ assetBondTokens, pageNum, setPageNum }) => {
   const { t } = useTranslation();
+  const { tvl, isLoading } = useTotalStakedBalance();
+  const { reserveState, getAssetBondsByNetwork } = useReserveData();
 
-  const ELYSIA_MOBILE_USD_VALUE = 5509914;
+  const assetBonds = useMemo(() => {
+    return getAssetBondsByNetwork();
+  }, [reserveState]);
+
+  const assetBondTokensBackedByEstate = useMemo(() => {
+    return assetBonds
+      .filter((product) => {
+        const parsedId = parseTokenId(product.id);
+        return CollateralCategory.Others !== parsedId.collateralCategory;
+      })
+      .sort((a, b) => {
+        return b.loanStartTimestamp! - a.loanStartTimestamp! >= 0 ? 1 : -1;
+      });
+  }, [assetBonds]);
+
+  const dataLoading = useMemo(() => {
+    return isLoading || assetBondTokensBackedByEstate.length === 0;
+  }, [isLoading, assetBondTokensBackedByEstate]);
 
   const elysiaArray = [
     {
@@ -66,19 +88,19 @@ const PortFolio: React.FC<{
 
   const assetList = [...assetBondTokens, ...elysiaArray];
 
-  const totalPrincipal = useMemo(() => {
-    let total = 0;
-    assetBondTokens.map((abToken) => {
-      const tokenInfo = reserves.find(
-        (reserve) => reserve.address === abToken?.reserve.id,
-      );
-      total += parseFloat(formatUnits(abToken.principal, tokenInfo?.decimals));
-    }, []);
-    elysiaArray.map((elysia) => {
-      total += elysia.amount;
-    });
-    return total + ELYSIA_MOBILE_USD_VALUE;
-  }, [assetBondTokens]);
+  // const totalPrincipal = useMemo(() => {
+  //   let total = 0;
+  //   assetBondTokens.map((abToken) => {
+  //     const tokenInfo = reserves.find(
+  //       (reserve) => reserve.address === abToken?.reserve.id,
+  //     );
+  //     total += parseFloat(formatUnits(abToken.principal, tokenInfo?.decimals));
+  //   }, []);
+  //   elysiaArray.map((elysia) => {
+  //     total += elysia.amount;
+  //   });
+  //   return total + ELYSIA_MOBILE_USD_VALUE;
+  // }, [assetBondTokens]);
 
   return (
     <PortFolioWrapper>
@@ -100,14 +122,19 @@ const PortFolio: React.FC<{
           </div>
           <div>
             <p>{t('ecosystem.portfolio.3')}</p>
-            <b>
+            {/* <b>
               ${' '}
               {totalPrincipal === 0 ? (
                 <Skeleton width={50} height={20} />
               ) : (
                 formatCommaSmallZeroDisits(totalPrincipal)
               )}
-            </b>
+            </b> */}
+            {dataLoading ? (
+              <b>-</b>
+            ) : (
+              <b>$ {formatCommaSmallZeroDisits(tvl)}</b>
+            )}
           </div>
         </section>
         <AssetItemsWrapper>
