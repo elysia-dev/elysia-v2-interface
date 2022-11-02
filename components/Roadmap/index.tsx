@@ -32,29 +32,6 @@ export const CardWrapper = styled.div`
   @media (max-width: 576px) {
     grid-template-columns: repeat(1, 1fr);
   }
-
-  > section {
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: all 1s ease;
-    &:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-    border-radius: 20px;
-    box-shadow: 0px 0px 6px #00000029;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    padding: 30px;
-    strong {
-      margin: 0;
-      font-size: 1.3rem;
-      line-height: 30px;
-    }
-    p {
-      margin: 20px 0 0;
-      font-size: 1.375rem;
-      line-height: 30px;
-    }
-  }
 `;
 
 const colors = {
@@ -71,19 +48,24 @@ export const Card = styled.section<{
   flex-direction: column;
   justify-content: space-between;
   min-height: 300px;
-
-  @media (max-width: 920px) {
-    > h2 {
-      margin-bottom: 20px !important;
-    }
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 1s ease;
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
   }
-  @media (max-width: 460px) {
-    flex-direction: column;
-    > h2 {
-      margin-bottom: 15px !important;
-    }
+  border-radius: 20px;
+  box-shadow: 0px 0px 6px #00000029;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 30px;
+
+  @media (max-width: 768px) {
+    min-height: auto;
   }
   strong {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 30px;
     color: ${({ kind }) => colors[kind]};
   }
   div {
@@ -98,18 +80,7 @@ export const Card = styled.section<{
       font-size: 1.2rem;
       line-height: 30px;
       letter-spacing: -0.3px;
-
-      @media (max-width: 920px) {
-        font-size: 1.2rem;
-      }
-      @media (max-width: 640px) {
-        font-size: 1.2rem;
-        line-height: 30px;
-      }
-      @media (max-width: 460px) {
-        font-size: 1rem;
-        line-height: 20px;
-      }
+      font-size: 1.2rem;
     }
   }
   div.due-date {
