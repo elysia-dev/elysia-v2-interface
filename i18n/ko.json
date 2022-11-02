@@ -93,6 +93,7 @@
         "SINGAPORE, February 07, 2022--(BUSINESS WIRE)- ELYSIA, a blockchain project specializing in real estate tokenization and securitization, will be the first organization in Asia to be registered as a DAO LLC (Limited Liability Company) in Wyoming, USA"
       ]
     },
+
     "ecosystem": {
       "top": [
         "엘리시아 생태계",
@@ -138,6 +139,13 @@
       "ELYSIA v1 Documentation",
       "Github"
     ],
+    "roadmap": {
+      "top": [
+        "로드맵",
+        "엘리시아의 로드맵과 아카이브",
+        "거버넌스에서 설정한 로드맵과 지난 아카이브를 확인할 수 있습니다."
+      ]
+    },
     "documents": [
       "Documents",
       "Guide for novice & anyone who is curious about the project",

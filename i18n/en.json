@@ -138,6 +138,13 @@
       "ELYSIA v1 Documentation",
       "Github"
     ],
+    "roadmap": {
+      "top": [
+        "Roadmap",
+        "ELYSIA's Roadmap and Archives",
+        "You can check the roadmap and past archives set by our governance."
+      ]
+    },
     "documents": [
       "Documents",
       "Guide for novice & anyone who is curious about the project.",
