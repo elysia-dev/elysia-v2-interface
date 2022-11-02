@@ -1,9 +1,10 @@
 import PageHeader from 'components/Common/PageHeader';
 import map from 'lodash.map';
+import { useRouter } from 'next/router';
 import React, { useReducer, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { totalRoadmap, RoadmapKey, Roadmap } from './data';
+import { totalRoadmapKR, totalRoadmapEN, RoadmapKey, Roadmap } from './data';
 import Tabs from './Tabs';
 
 export const Wrapper = styled.div`
@@ -118,6 +119,9 @@ export const Card = styled.section<{
 
 const RoadmapComponent = (props: any) => {
   const { t } = useTranslation();
+  const router = useRouter();
+  const { lng } = router.query;
+  const totalRoadmap = lng === 'en' ? totalRoadmapEN : totalRoadmapKR;
   const [currentTab, setCurrentTab] = useState<
     typeof RoadmapKey[keyof typeof RoadmapKey]
   >(RoadmapKey.PAST);
