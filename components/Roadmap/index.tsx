@@ -3,7 +3,7 @@ import map from 'lodash.map';
 import React, { useReducer, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { totalRoadmap, RoadmapKeyType, RoadmapType } from './data';
+import { totalRoadmap, RoadmapKey, Roadmap } from './data';
 import Tabs from './Tabs';
 
 export const Wrapper = styled.div`
@@ -64,7 +64,7 @@ const colors = {
 };
 
 export const Card = styled.section<{
-  currentTab: typeof RoadmapKeyType[keyof typeof RoadmapKeyType];
+  currentTab: typeof RoadmapKey[keyof typeof RoadmapKey];
 }>`
   display: flex;
   flex-direction: column;
@@ -116,11 +116,11 @@ export const Card = styled.section<{
   }
 `;
 
-const Roadmap = (props: any) => {
+const RoadmapComponent = (props: any) => {
   const { t } = useTranslation();
   const [currentTab, setCurrentTab] = useState<
-    typeof RoadmapKeyType[keyof typeof RoadmapKeyType]
-  >(RoadmapKeyType.PAST);
+    typeof RoadmapKey[keyof typeof RoadmapKey]
+  >(RoadmapKey.PAST);
   const roadmaps = totalRoadmap[currentTab];
 
   return (
@@ -132,17 +132,19 @@ const Roadmap = (props: any) => {
       <Tabs currentTab={currentTab} setCurrentTab={setCurrentTab} />
       <Wrapper>
         <CardWrapper>
-          {map(roadmaps, (roadmap: RoadmapType) => {
+          {map(roadmaps, (roadmap: Roadmap) => {
             const { title, contents, dueDate } = roadmap;
             return (
-              <Card currentTab={currentTab}>
+              <Card currentTab={currentTab} key={title}>
                 <div>
                   <strong>{title}</strong>
                   <p>{contents}</p>
                 </div>
-                <div className="due-date">
-                  <p>{dueDate}</p>
-                </div>
+                {dueDate && (
+                  <div className="due-date">
+                    <p>{dueDate}</p>
+                  </div>
+                )}
               </Card>
             );
           })}
@@ -151,4 +153,4 @@ const Roadmap = (props: any) => {
     </>
   );
 };
-export default Roadmap;
+export default RoadmapComponent;

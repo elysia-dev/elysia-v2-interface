@@ -1,21 +1,21 @@
-export const RoadmapKeyType = {
+export const RoadmapKey = {
   PAST: 'PAST',
   NOW: 'NOW',
   FUTURE: 'FUTURE',
 } as const;
 
-export type RoadmapType = {
+export type Roadmap = {
   title: string;
   contents: string;
-  dueDate: string;
+  dueDate?: string;
 };
 
 type TotalRoadmap = {
-  [key in keyof typeof RoadmapKeyType]: RoadmapType[];
+  [key in keyof typeof RoadmapKey]: Roadmap[];
 };
 
 export const totalRoadmap: TotalRoadmap = {
-  [RoadmapKeyType.PAST]: [
+  [RoadmapKey.PAST]: [
     {
       title: '빗썸 거래소 상장',
       contents:
@@ -77,67 +77,63 @@ export const totalRoadmap: TotalRoadmap = {
       dueDate: '2022.09.17',
     },
   ],
-  [RoadmapKeyType.NOW]: [
+  [RoadmapKey.NOW]: [
     {
       title: 'EL 토큰 이코노미 개선',
       contents:
         '엘리시아의 탈중앙성 강화 및 토큰 가치 상승을 위해 토큰 이코노미를 개선하고 있습니다.',
-      dueDate: '2022년 4분기',
+      dueDate: '2022년 4분기 완료예정',
     },
     {
       title: 'ELFI 토큰 이코노미 개선',
       contents:
         '엘리시아의 탈중앙성 강화 및 토큰 가치 상승을 위해 토큰 이코노미를 개선하고 있습니다.',
-      dueDate: '2022년 4분기',
+      dueDate: '2022년 4분기 완료예정',
     },
     {
       title: '다양한 부동산 자산 토큰화 로직 설계 및 테스트',
       contents:
         '주거용 부동산, 상업용 부동산, 부동산 PF 등 다양한 부동산 자산의 상품화를 위해 로직 설계 및 테스트를 진행하고 있습니다.',
-      dueDate: '2022년 4분기',
+      dueDate: '2022년 4분기 완료예정',
     },
     {
       title: '엘리시아 DAO 법인 정관 업그레이드',
       contents:
         '엘리시아 DAO 법인을 활용한 실물자산 토큰화의 탈중앙성 강화를 위해 DAO 법인의 정관 업그레이드 작업을 진행하고 있습니다.',
-      dueDate: '2023년 1분기',
+      dueDate: '2023년 1분기 완료예정',
     },
     {
       title: '엘리파이v2 출시',
       contents:
         '엘리파이의 컨트랙트를 보완하기 위해 엘리파이v2를 개발하고 있습니다.',
-      dueDate: '2023년 1분기',
+      dueDate: '2023년 1분기 완료예정',
     },
 
     {
       title: '대형 글로벌 거래소 상장',
       contents:
         'EL 토큰의 유동성 확대를 위해 대형 글로벌 거래소 상장을 추진하고 있습니다.',
-      dueDate: '2023년 1분기',
+      dueDate: '2023년 1분기 완료예정',
     },
   ],
-  [RoadmapKeyType.FUTURE]: [
+  [RoadmapKey.FUTURE]: [
     {
       title: '실물자산 토큰화 온보딩 페이지 출시',
       contents:
         '실물자산 소유주가 직접 토큰화 신청을 할 수 있는 온보딩 페이지를 출시할 계획입니다.',
-      dueDate: '???',
     },
     {
       title: 'RWA 토큰 마켓플레이스 도입',
       contents:
         '실물자산을 기반으로 한 RWA 토큰이 거래될 수 있는 마켓플레이스를 출시할 계획입니다.',
-      dueDate: ' ???',
     },
     {
       title: '엘리시아 사이트 리뉴얼',
       contents: '사용자 편의성을 위해 엘리시아 사이트를 리뉴얼할 계획입니다.',
-      dueDate: '기간: ???',
     },
     {
       title: '엘리파이 사이트 리뉴얼',
       contents: '사용자 편의성을 위해 엘리파이 사이트를 리뉴얼할 계획입니다.',
-      dueDate: '기간: ???',
     },
   ],
 };

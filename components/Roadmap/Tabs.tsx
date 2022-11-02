@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { RoadmapKeyType } from './data';
+import { RoadmapKey } from './data';
 
 const typedKeys = Object.keys as <T extends object>(obj: T) => Array<keyof T>;
 
@@ -46,24 +46,24 @@ const TabButton = styled.button<{ isSelected: boolean }>`
 `;
 
 type Props = {
-  currentTab: typeof RoadmapKeyType[keyof typeof RoadmapKeyType];
+  currentTab: typeof RoadmapKey[keyof typeof RoadmapKey];
   setCurrentTab: React.Dispatch<
-    React.SetStateAction<typeof RoadmapKeyType[keyof typeof RoadmapKeyType]>
+    React.SetStateAction<typeof RoadmapKey[keyof typeof RoadmapKey]>
   >;
 };
 
 const Tabs = ({ currentTab, setCurrentTab }: Props) => {
   return (
     <TabWrapper>
-      {typedKeys(RoadmapKeyType).map((key: keyof typeof RoadmapKeyType) => {
-        const roadmapType = RoadmapKeyType[key];
-        const isCurrentTab = currentTab === roadmapType;
+      {typedKeys(RoadmapKey).map((key: keyof typeof RoadmapKey) => {
+        const roadmapKey = RoadmapKey[key];
+        const isCurrentTab = currentTab === roadmapKey;
         return (
           <TabButton
             isSelected={isCurrentTab}
             key={key}
-            onClick={() => setCurrentTab(roadmapType)}>
-            {roadmapType}
+            onClick={() => setCurrentTab(roadmapKey)}>
+            {roadmapKey}
           </TabButton>
         );
       })}
