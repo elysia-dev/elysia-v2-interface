@@ -2,7 +2,6 @@ export const RoadmapKeyType = {
   PAST: 'PAST',
   NOW: 'NOW',
   FUTURE: 'FUTURE',
-  TEST: 'TEST',
 } as const;
 
 export type RoadmapType = {
@@ -139,45 +138,6 @@ export const totalRoadmap: TotalRoadmap = {
       title: '엘리파이 사이트 리뉴얼',
       contents: '사용자 편의성을 위해 엘리파이 사이트를 리뉴얼할 계획입니다.',
       dueDate: '기간: ???',
-    },
-  ],
-  [RoadmapKeyType.TEST]: [
-    {
-      title: 'EL 토큰 이코노미 개선',
-      contents:
-        '엘리시아의 탈중앙성 강화 및 토큰 가치 상승을 위해 토큰 이코노미를 개선하고 있습니다.',
-      dueDate: '2022년 4분기',
-    },
-    {
-      title: 'ELFI 토큰 이코노미 개선',
-      contents:
-        '엘리시아의 탈중앙성 강화 및 토큰 가치 상승을 위해 토큰 이코노미를 개선하고 있습니다.',
-      dueDate: '2022년 4분기',
-    },
-    {
-      title: '다양한 부동산 자산 토큰화 로직 설계 및 테스트',
-      contents:
-        '주거용 부동산, 상업용 부동산, 부동산 PF 등 다양한 부동산 자산의 상품화를 위해 로직 설계 및 테스트를 진행하고 있습니다.',
-      dueDate: '2022년 4분기',
-    },
-    {
-      title: '엘리시아 DAO 법인 정관 업그레이드',
-      contents:
-        '엘리시아 DAO 법인을 활용한 실물자산 토큰화의 탈중앙성 강화를 위해 DAO 법인의 정관 업그레이드 작업을 진행하고 있습니다.',
-      dueDate: '2023년 1분기',
-    },
-    {
-      title: '엘리파이v2 출시',
-      contents:
-        '엘리파이의 컨트랙트를 보완하기 위해 엘리파이v2를 개발하고 있습니다.',
-      dueDate: '2023년 1분기',
-    },
-
-    {
-      title: '대형 글로벌 거래소 상장',
-      contents:
-        'EL 토큰의 유동성 확대를 위해 대형 글로벌 거래소 상장을 추진하고 있습니다.',
-      dueDate: '2023년 1분기',
     },
   ],
 };
