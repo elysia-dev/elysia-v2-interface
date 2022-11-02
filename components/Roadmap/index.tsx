@@ -57,14 +57,14 @@ export const CardWrapper = styled.div`
 `;
 
 const colors = {
-  PAST: '#F3B5B3', // 분홍
-  NOW: '#FEFCC6', // 노랑
-  FUTURE: '#AAE3B7', // 초록
-  TEST: '#33A5FF', // 파랑
+  DEV: '#33A5FF', // 개발: 파랑
+  PLANNING: '#FEFCC6', // 기획: 노랑
+  MARKETING: '#F3B5B3', // 마케팅: 분홍
+  NEVER: '#AAE3B7', // 초록
 };
 
 export const Card = styled.section<{
-  currentTab: typeof RoadmapKey[keyof typeof RoadmapKey];
+  kind: 'DEV' | 'PLANNING' | 'MARKETING';
 }>`
   display: flex;
   flex-direction: column;
@@ -83,7 +83,7 @@ export const Card = styled.section<{
     }
   }
   strong {
-    color: ${({ currentTab }) => colors[currentTab]};
+    color: ${({ kind }) => colors[kind]};
   }
   div {
     @media (max-width: 640px) {
@@ -133,9 +133,9 @@ const RoadmapComponent = (props: any) => {
       <Wrapper>
         <CardWrapper>
           {map(roadmaps, (roadmap: Roadmap) => {
-            const { title, contents, dueDate } = roadmap;
+            const { title, contents, kind, dueDate } = roadmap;
             return (
-              <Card currentTab={currentTab} key={title}>
+              <Card kind={kind} key={title}>
                 <div>
                   <strong>{title}</strong>
                   <p>{contents}</p>
