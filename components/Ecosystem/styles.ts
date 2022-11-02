@@ -50,18 +50,6 @@ export const EcosystemWrapper = styled.div`
   }
 `;
 
-export const EcosystemImage = styled.article`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 150vh;
-  z-index: -1;
-  opacity: 0.5;
-  background-repeat: no-repeat;
-  background-size: 100%;
-`;
-
 export const TopWrapper = styled.article`
   max-width: 1639px;
   margin: auto;
