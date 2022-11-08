@@ -55,8 +55,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         href: 'https://www.elysia.land/en',
       },
       {
-        hrefLang: 'ko-KR',
-        href: 'https://www.elysia.land/ko',
+        hrefLang: 'ko',
+        href: 'https://www.elysia.land',
+      },
+      {
+        hrefLang: 'zh',
+        href: 'https://zh.elysia.land',
       },
       {
         hrefLang: 'x-default',
