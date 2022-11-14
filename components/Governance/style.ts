@@ -420,37 +420,7 @@ export const StakingImageContainer = styled.section`
     justify-content: center;
     display: flex;
     flex-direction: column;
-    @media (max-width: 640px) {
-      width: 190px;
-      height: 190px;
-    }
-    > p {
-      font-size: 1.2rem;
-      margin: 0;
-      font-weight: normal;
-    }
-    > b {
-      font-size: 1.3rem;
-      margin: 10px 0 0;
-      font-weight: bold;
-    }
-  }
-  .apr {
-    bottom: 0px;
-    left: 200px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 225px;
-    height: 225px;
-    position: absolute;
-    @media (max-width: 640px) {
-      width: 158px;
-      height: 158px;
-      left: 140px;
-      bottom: 110px;
-    }
+
     > p {
       font-size: 1.2rem;
       margin: 0;
