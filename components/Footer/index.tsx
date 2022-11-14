@@ -13,7 +13,10 @@ import GoogleGACategory from 'enums/GoogleGACategory';
 
 const Footer = () => {
   const { i18n } = useTranslation();
-
+  const whitepaperLink =
+    i18n.language === 'ko'
+      ? 'https://elysia.gitbook.io/elysia-whitepaper-v2.1/'
+      : 'https://elysia.gitbook.io/elysia-whitepaper-v2.1/v/english-3/';
   return (
     <FooterWrapper>
       <div>
@@ -28,9 +31,7 @@ const Footer = () => {
       </div>
       <div>
         <section>
-          <Link
-            href={'https://elysia.gitbook.io/elysia-whitepaper-v2-0/'}
-            passHref>
+          <Link href={whitepaperLink} passHref>
             <a
               target="_blank"
               rel="noopener noreferrer"
