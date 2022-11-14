@@ -20,7 +20,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import useV2StakedInfo from 'hooks/useV2StakedInfo';
 import GovernanceLineCounter from './GovernanceLineCounter';
 import getLocalLanguage from 'utils/getLocalLanguage';
-import RoundWrapper from 'assets/images/governance/round-wrapper.png';
+import WhiteRoundWrapper from 'assets/images/governance/white-round-wrapper.png';
 import ButtonArrow from 'assets/images/governance/button-arrow.png';
 import EthOn from 'assets/images/governance/eth-on.png';
 import EthOff from 'assets/images/governance/eth-off.png';
@@ -126,7 +126,12 @@ const Staking = (props: Props) => {
         <StakingArticle>
           <StakingHeader>
             <StakingImageContainer>
-              <Image src={RoundWrapper} alt="Token data" />
+              <Image
+                src={WhiteRoundWrapper}
+                width={273}
+                height={273}
+                alt="Token data"
+              />
               <div className="amount">
                 <p>{t('governance.section_third.4')}</p>
                 <b>
@@ -136,20 +141,6 @@ const Staking = (props: Props) => {
                       <Skeleton width={130} height={35} />
                     ) : (
                       toCompactForBignumber(totalBalance)
-                    )
-                  ) : (
-                    '-'
-                  )}
-                </b>
-              </div>
-              <div className="apr">
-                <p>APR</p>
-                <b>
-                  {currentChain === ChainType.Ethereum ? (
-                    isLoading ? (
-                      <Skeleton width={130} height={35} />
-                    ) : (
-                      apr
                     )
                   ) : (
                     '-'
