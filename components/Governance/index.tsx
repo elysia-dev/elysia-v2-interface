@@ -9,7 +9,7 @@ import ChainType from 'enums/ChainType';
 import ModalType from 'enums/ModalType';
 import RecentActivityType from 'enums/RecentActivityType';
 import TxStatus from 'enums/TxStatus';
-import useReward from 'hooks/useReward';
+import useV2StakedInfo from 'hooks/useV2StakedInfo';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import GovernanceBottom from './GovernanceBottom';
 import GovernanceCenter from './GovernanceCenter';
@@ -35,7 +35,8 @@ const Governance = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [currentChain, setCurrentChain] = useState(ChainType.Ethereum);
   const { txType, txStatus } = useContext(TxContext);
-  const reward = useReward();
+  const { userStakedInfo } = useV2StakedInfo();
+  const reward = userStakedInfo.userReward;
 
   useEffect(() => {
     if (
