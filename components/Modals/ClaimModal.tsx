@@ -1,7 +1,6 @@
 import { BigNumber, constants } from 'ethers';
 import { formatEther } from 'ethers/lib/utils';
 import ElysiaToken from 'assets/images/elysia_token.png';
-import CountUp from 'react-countup';
 import { formatSixFracionDigit } from 'utils/formatters';
 import LoadingIndicator from './LoadingIndicator';
 import { useContext, useEffect, useState } from 'react';
@@ -19,10 +18,7 @@ import ModalButton from './ModalButton';
 
 type Props = {
   onClose: () => void;
-  reward: {
-    before: BigNumber;
-    after: BigNumber;
-  };
+  reward: BigNumber;
 };
 
 const Container = styled.section`
@@ -91,17 +87,13 @@ const ClaimModal = (props: Props) => {
         <Container>
           <Wrapper>
             <InnerValue>
-              <CountUp
-                start={parseFloat(
-                  formatEther(reward?.before || constants.Zero),
+              <span>
+                {formatSixFracionDigit(
+                  account
+                    ? parseFloat(formatEther(reward || constants.Zero))
+                    : 0,
                 )}
-                end={parseFloat(formatEther(reward?.after || constants.Zero))}
-                formattingFn={(number: any) => {
-                  return formatSixFracionDigit(number);
-                }}
-                decimals={6}
-                duration={1}
-              />
+              </span>
               <b>EL</b>
             </InnerValue>
           </Wrapper>
@@ -113,7 +105,7 @@ const ClaimModal = (props: Props) => {
                 GoogleGAAction.GovStakingIncentive,
                 GoogleGACategory.Governance,
                 `WalletAddress = ${account},IncentiveAmount = ${parseFloat(
-                  formatEther(reward?.after || constants.Zero),
+                  formatEther(reward || constants.Zero),
                 )}
                   }`,
               );

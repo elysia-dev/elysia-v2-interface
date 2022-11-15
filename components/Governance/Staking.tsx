@@ -6,9 +6,8 @@ import {
   toCompactForBignumber,
 } from 'utils/formatters';
 import { formatEther } from 'ethers/lib/utils';
-import CountUp from 'react-countup';
 import Image from 'next/image';
-import { BigNumber } from 'ethers';
+import { BigNumber, constants } from 'ethers';
 import moment from 'moment';
 import 'moment-timezone';
 import { useWeb3React } from '@web3-react/core';
@@ -49,10 +48,7 @@ import {
 type Props = {
   setModalType: Dispatch<SetStateAction<ModalType | undefined>>;
   setModalVisible: () => void;
-  reward: {
-    before: BigNumber;
-    after: BigNumber;
-  };
+  reward: BigNumber;
   currentChain: ChainType;
   setCurrentChain: Dispatch<SetStateAction<ChainType>>;
 };
@@ -92,16 +88,9 @@ const Staking = (props: Props) => {
         name: t('governance.section_third.8'),
         value: (
           <>
-            <CountUp
-              className="bold amounts"
-              start={account ? parseFloat(formatEther(reward.before)) : 0}
-              end={account ? parseFloat(formatEther(reward.after)) : 0}
-              formattingFn={(number: any) => {
-                return formatSixFracionDigit(number);
-              }}
-              decimals={6}
-              duration={1}
-            />
+            {formatSixFracionDigit(
+              account ? parseFloat(formatEther(reward || constants.Zero)) : 0,
+            )}
           </>
         ),
         btnType: t('governance.section_third.10'),
@@ -115,8 +104,7 @@ const Staking = (props: Props) => {
     t,
     account,
     userStakedInfo.userPrincipal,
-    reward.before,
-    reward.after,
+    reward,
     setModalType,
     setModalVisible,
   ]);
