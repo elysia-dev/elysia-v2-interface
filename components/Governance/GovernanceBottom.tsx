@@ -40,7 +40,7 @@ const GovernanceBottom = () => {
             <ContentBoxTitle>
               <b>{t('governance.section_fourth.6')}</b>
               <a
-                href={'https://forum.elyfi.world'}
+                href={'https://forum.elysia.land'}
                 target="_blank"
                 rel="noopener noreferrer">
                 <ArrowImage />
@@ -50,6 +50,7 @@ const GovernanceBottom = () => {
               {t('governance.section_fourth.7')}
             </ContentBoxParagraph>
           </BottomContentBox>
+
           <BottomContentBox>
             <ContentBoxFigure>
               <Image src={snapshot} alt={'snapshot'} height={65} width={65} />
@@ -57,7 +58,7 @@ const GovernanceBottom = () => {
             <ContentBoxTitle>
               <b>{t('governance.section_fourth.8')}</b>
               <a
-                href={'https://vote.elyfi.world/#/'}
+                href={'https://snapshot.org/#/elysia.eth/'}
                 target="_blank"
                 rel="noopener noreferrer">
                 <ArrowImage />
