@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react';
 import { parseTokenId } from 'utils/parseTokenId';
 import PortFolio from './PortFolio';
 import Top from './Top';
-import { EcosystemImage } from './styles';
 
 const Ecosystem = () => {
   const { reserveState, getAssetBondsByNetwork } = useReserveData();
@@ -27,7 +26,6 @@ const Ecosystem = () => {
 
   return (
     <>
-      <EcosystemImage />
       <Top />
       <PortFolio
         assetBondTokens={assetBondTokensBackedByEstate}

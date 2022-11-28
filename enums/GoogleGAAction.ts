@@ -52,6 +52,7 @@ enum GoogleGAAction {
   FooterGithub = 'FooterGithub',
   Metamask = 'Metamask',
   WalletConnect = 'WalletConnect',
+  Roadmap = 'Roadmap',
 }
 
 export default GoogleGAAction;

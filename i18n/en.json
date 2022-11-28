@@ -7,6 +7,7 @@
       "ecosystem": "Ecosystem",
       "development": "Development",
       "community": "Community",
+      "roadmap": "Roadmap",
       "faq": "FAQ",
       "description": "ELYSIA is a project that makes real-world assets into tokens and connects them with the blockchain."
     },
@@ -137,6 +138,13 @@
       "ELYSIA v1 Documentation",
       "Github"
     ],
+    "roadmap": {
+      "top": [
+        "Roadmap",
+        "ELYSIA's Roadmap and Archives",
+        "You can check the roadmap and past archives set by our governance."
+      ]
+    },
     "documents": [
       "Documents",
       "Guide for novice & anyone who is curious about the project.",

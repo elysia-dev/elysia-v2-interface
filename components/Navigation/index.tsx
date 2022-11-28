@@ -226,6 +226,27 @@ const Navigation = () => {
                     </span>
                   </div>
                 </Link>
+
+                <Link href={`/${router.query.lng}/Roadmap`} passHref>
+                  <div
+                    onClick={() => {
+                      googleGAEvent(
+                        GoogleGAAction.Roadmap,
+                        GoogleGACategory.Nav,
+                      );
+                    }}>
+                    <span
+                      style={{
+                        cursor: 'pointer',
+                        color: router.pathname.includes('Roadmap')
+                          ? '#ffffff'
+                          : '',
+                      }}>
+                      {t('meta.roadmap')}
+                    </span>
+                  </div>
+                </Link>
+
                 <Link href={`/${router.query.lng}/FAQ`} passHref>
                   <div
                     onClick={() => {
