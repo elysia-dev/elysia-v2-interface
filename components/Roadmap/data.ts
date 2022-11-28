@@ -88,15 +88,15 @@ export const totalRoadmapKR: TotalRoadmap = {
       dueDate: '2022.09.17',
       kind: 'MARKETING',
     },
-  ],
-  [RoadmapKey.NOW]: [
     {
       title: 'EL 토큰 이코노미 개선',
       contents:
         '엘리시아의 탈중앙성 강화 및 토큰 가치 상승을 위해 토큰 이코노미를 개선하고 있습니다.',
-      dueDate: '2022년 4분기 목표',
+      dueDate: '2022.11.14',
       kind: 'PLANNING',
     },
+  ],
+  [RoadmapKey.NOW]: [
     {
       title: 'ELFI 토큰 이코노미 개선',
       contents:
