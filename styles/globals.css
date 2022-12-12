@@ -127,3 +127,7 @@ button {
     font-size: 14px;
   }
 }
+
+.weglot-container {
+  display: none !important;
+}
