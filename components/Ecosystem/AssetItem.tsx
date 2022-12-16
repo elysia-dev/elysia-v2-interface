@@ -34,10 +34,10 @@ const AssetItem = (props: Props) => {
     }
     try {
       const response = await Slate.fetchABTokenIpfs(abToken.ipfsHash || '');
-      // setImage(`${baseUrl}/${response.data.images[0]?.hash}`);
-      setImage(
-        `${process.env.NEXT_PUBLIC_ASSET_IMAGE_URL}/${response.data.images[0]?.hash}`,
-      );
+      setImage(`${baseUrl}/${response.data.images[0]?.hash}`);
+      // setImage(
+      //   `${process.env.NEXT_PUBLIC_ASSET_IMAGE_URL}/${response.data.images[0]?.hash}`,
+      // );
     } catch (error) {
       console.error(error);
     }
