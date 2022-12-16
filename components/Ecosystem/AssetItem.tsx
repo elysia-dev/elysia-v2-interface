@@ -14,6 +14,7 @@ type Props = {
         project: string;
         image: StaticImageData;
         amount: number;
+        id?: number;
       };
 };
 
@@ -34,6 +35,9 @@ const AssetItem = (props: Props) => {
     try {
       const response = await Slate.fetchABTokenIpfs(abToken.ipfsHash || '');
       setImage(`${baseUrl}/${response.data.images[0]?.hash}`);
+      // setImage(
+      //   `${process.env.NEXT_PUBLIC_ASSET_IMAGE_URL}/${response.data.images[0]?.hash}`,
+      // );
     } catch (error) {
       console.error(error);
     }
@@ -46,7 +50,14 @@ const AssetItem = (props: Props) => {
   return (
     <section
       onClick={() => {
-        if ('project' in abToken) return;
+        if ('project' in abToken) {
+          abToken.project === 'ELYFI' &&
+            window.open(
+              `https://www.elyfi.world/en/market/bondnft/${abToken.id}`,
+              '_blank',
+            );
+          return;
+        }
         window.open(
           `https://www.elyfi.world/en/portfolio/${abToken.id}`,
           '_blank',
@@ -60,7 +71,13 @@ const AssetItem = (props: Props) => {
         )}
       </figure>
       <section>
-        <p>{'project' in abToken ? 'ELYSIA' : `ELYFI`}</p>
+        <p>
+          {'project' in abToken
+            ? abToken.project === 'ELYSIA'
+              ? 'ELYSIA'
+              : 'ELYFI'
+            : `ELYFI`}
+        </p>
         <span>
           {'project' in abToken
             ? toUsd(parseEther(abToken.amount.toString()))
