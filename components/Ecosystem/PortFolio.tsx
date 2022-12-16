@@ -13,6 +13,8 @@ import ElysiaAsset6 from 'assets/images/ecosystem/elysia-asset-6.webp';
 import ElysiaAsset7 from 'assets/images/ecosystem/elysia-asset-7.webp';
 import ElysiaAssetRed1 from 'assets/images/ecosystem/elysia-asset-red-1.webp';
 import ElysiaAssetBlue1 from 'assets/images/ecosystem/elysia-asset-blue-1.webp';
+import usRealEstate from 'assets/images/ecosystem/usRealEstate.png';
+import koRealEstate from 'assets/images/ecosystem/koRealEstate.png';
 import { formatCommaSmallZeroDisits } from 'utils/formatters';
 import { parseTokenId } from 'utils/parseTokenId';
 import LoanProduct from 'enums/LoanProduct';
@@ -48,6 +50,20 @@ const PortFolio: React.FC<{
     return isLoading || assetBondTokensBackedByEstate.length === 0;
   }, [isLoading, assetBondTokensBackedByEstate]);
 
+  const maketArray = [
+    {
+      project: 'ELYFI',
+      image: usRealEstate,
+      amount: 540000,
+      id: 0,
+    },
+    {
+      project: 'ELYFI',
+      image: koRealEstate,
+      amount: 200000,
+      id: 1,
+    },
+  ];
   const elysiaArray = [
     {
       project: 'ELYSIA',
@@ -86,7 +102,7 @@ const PortFolio: React.FC<{
     },
   ];
 
-  const assetList = [...assetBondTokens, ...elysiaArray];
+  const assetList = [...assetBondTokens, ...maketArray, ...elysiaArray];
 
   // const totalPrincipal = useMemo(() => {
   //   let total = 0;
