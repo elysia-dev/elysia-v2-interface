@@ -1,5 +1,4 @@
 import PageHeader from 'components/Common/PageHeader';
-import map from 'lodash.map';
 import { useRouter } from 'next/router';
 import React, { useReducer, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -107,7 +106,7 @@ const RoadmapComponent = (props: any) => {
       <Tabs currentTab={currentTab} setCurrentTab={setCurrentTab} />
       <Wrapper>
         <CardWrapper>
-          {map(roadmaps, (roadmap: Roadmap) => {
+          {roadmaps.map((roadmap: Roadmap) => {
             const { title, contents, kind, dueDate } = roadmap;
             return (
               <Card kind={kind} key={title}>
