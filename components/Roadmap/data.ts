@@ -101,7 +101,7 @@ export const totalRoadmapKR: TotalRoadmap = {
       title: 'ELFI 토큰 이코노미 개선',
       contents:
         '엘리시아의 탈중앙성 강화 및 토큰 가치 상승을 위해 토큰 이코노미를 개선하고 있습니다.',
-      dueDate: '2022년 4분기 목표',
+      dueDate: '2023년 1분기 목표',
       kind: 'PLANNING',
     },
 
@@ -241,7 +241,7 @@ export const totalRoadmapEN: TotalRoadmap = {
       title: 'EL Token Economy Improvement',
       contents:
         'We are improving ELYSIA’s token economy to strengthen decentralization and increase token value.',
-      dueDate: 'Expected by Q4 2022',
+      dueDate: 'Expected by Q1 2023',
       kind: 'PLANNING',
     },
     {
