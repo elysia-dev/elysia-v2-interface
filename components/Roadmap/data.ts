@@ -235,20 +235,20 @@ export const totalRoadmapEN: TotalRoadmap = {
       dueDate: '2022.09.17',
       kind: 'MARKETING',
     },
-  ],
-  [RoadmapKey.NOW]: [
     {
       title: 'EL Token Economy Improvement',
       contents:
         'We are improving ELYSIA’s token economy to strengthen decentralization and increase token value.',
-      dueDate: 'Expected by Q1 2023',
+      dueDate: '2022.11.14',
       kind: 'PLANNING',
     },
+  ],
+  [RoadmapKey.NOW]: [
     {
       title: 'ELFI Token Economy Improvement',
       contents:
         'We are improving ELYFI’s token economy to strengthen decentralization and increase token value.',
-      dueDate: 'Expected by Q4 2022',
+      dueDate: 'Expected by Q1 2023',
       kind: 'PLANNING',
     },
     {
