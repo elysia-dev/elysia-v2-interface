@@ -51,6 +51,7 @@ type Props = {
   reward: BigNumber;
   currentChain: ChainType;
   setCurrentChain: Dispatch<SetStateAction<ChainType>>;
+  startDate: moment.Moment;
 };
 
 const Staking = (props: Props) => {
@@ -60,18 +61,13 @@ const Staking = (props: Props) => {
     reward,
     currentChain,
     setCurrentChain,
+    startDate,
   } = props;
   const { account, chainId } = useWeb3React();
   const router = useRouter();
   const { userStakedInfo } = useV2StakedInfo();
   const { totalBalance, isLoading, apr } = useTotalStakedBalance();
   const { t } = useTranslation();
-  const startDate = useMemo(() => {
-    return moment('2022.04.18 19:00:00 +9:00', 'YYYY.MM.DD hh:mm:ss Z').tz(
-      'Asia/Seoul',
-      true,
-    );
-  }, []);
 
   const stakingInfo = useMemo(() => {
     return [
