@@ -1,11 +1,11 @@
 import { useWeb3React } from '@web3-react/core';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import useV2Staking from 'hooks/useV2Staking';
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import styled from 'styled-components';
-import { googleGAEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
 import ModalButton from './ModalButton';
 
 export enum PermissionType {
@@ -95,11 +95,11 @@ const IncreateAllowanceModal: React.FunctionComponent<{
         title={t('modal.approve.3')}
         onClick={() => {
           props.setTransactionWait(true);
-          googleGAEvent(
-            GoogleGAAction.GovApprove,
-            GoogleGACategory.Governance,
-            account || '',
-          );
+          gtag.event({
+            action: GoogleAnalyticsAction.GovApprove,
+            category: GoogleAnalyticsCategory.Governance,
+            label: account || '',
+          });
           approve();
         }}
       />

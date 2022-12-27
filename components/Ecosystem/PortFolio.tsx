@@ -15,7 +15,7 @@ import ElysiaAssetRed1 from 'assets/images/ecosystem/elysia-asset-red-1.webp';
 import ElysiaAssetBlue1 from 'assets/images/ecosystem/elysia-asset-blue-1.webp';
 import usRealEstate from 'assets/images/ecosystem/usRealEstate.png';
 import koRealEstate from 'assets/images/ecosystem/koRealEstate.png';
-import { formatCommaSmallZeroDisits } from 'utils/formatters';
+import { roundNumber } from 'utils/formatters';
 import { parseTokenId } from 'utils/parseTokenId';
 import LoanProduct from 'enums/LoanProduct';
 import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
@@ -143,14 +143,10 @@ const PortFolio: React.FC<{
               {totalPrincipal === 0 ? (
                 <Skeleton width={50} height={20} />
               ) : (
-                formatCommaSmallZeroDisits(totalPrincipal)
+                roundNumber(totalPrincipal)
               )}
             </b> */}
-            {dataLoading ? (
-              <b>-</b>
-            ) : (
-              <b>$ {formatCommaSmallZeroDisits(tvl)}</b>
-            )}
+            {dataLoading ? <b>-</b> : <b>$ {roundNumber(tvl)}</b>}
           </div>
         </section>
         <AssetItemsWrapper>

@@ -9,15 +9,15 @@ import {
   circulatingSupplyFetcher,
   totalSupplyFetcher,
 } from 'clients/TokenSupply';
-import { formatCommaSmallZeroDisits } from 'utils/formatters';
+import { roundNumber } from 'utils/formatters';
 import LanguageType from 'enums/LanguageType';
 import ELtoken from 'assets/images/governance/el.png';
 import ButtonArrow from 'assets/images/governance/button-arrow.png';
 import GovernanceLineCounter from './GovernanceLineCounter';
 import { useRouter } from 'next/router';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import * as gtag from 'lib/gtag';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import {
   Button,
   CenterGetELToken,
@@ -64,10 +64,11 @@ const GovernanceCenter = () => {
               <div>
                 <Button
                   onClick={() => {
-                    googleGAEvent(
-                      GoogleGAAction.GovExchange,
-                      GoogleGACategory.Governance,
-                    );
+                    gtag.event({
+                      action: GoogleAnalyticsAction.GovExchange,
+                      category: GoogleAnalyticsCategory.Governance,
+                      label: '',
+                    });
                     window.open(
                       'https://coinmarketcap.com/currencies/elysia/markets/',
                     );
@@ -82,10 +83,11 @@ const GovernanceCenter = () => {
                 </Button>
                 <Button
                   onClick={() => {
-                    googleGAEvent(
-                      GoogleGAAction.GovTokenEconomy,
-                      GoogleGACategory.Governance,
-                    );
+                    gtag.event({
+                      action: GoogleAnalyticsAction.GovTokenEconomy,
+                      category: GoogleAnalyticsCategory.Governance,
+                      label: '',
+                    });
                     window.open(
                       lng === LanguageType.KO
                         ? 'https://elysia.gitbook.io/elysia-whitepaper-v2-0/v/korean/token-economy/minting-fee'
@@ -115,11 +117,11 @@ const GovernanceCenter = () => {
               </div>
               <div>
                 <p>{t('governance.section_second.9')}</p>
-                <h2>{formatCommaSmallZeroDisits(totalSupply)} EL</h2>
+                <h2>{roundNumber(totalSupply)} EL</h2>
               </div>
               <div>
                 <p>{t('governance.section_second.11')}</p>
-                <h2>{formatCommaSmallZeroDisits(circulatingSupply)} EL</h2>
+                <h2>{roundNumber(circulatingSupply)} EL</h2>
               </div>
             </div>
             <p>* powered by crypto.com</p>

@@ -7,9 +7,9 @@ import Telegram from 'assets/images/main/telegram_white@2x.webp';
 import Twitter from 'assets/images/main/twitter_white@2x.webp';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import * as gtag from 'lib/gtag';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 const Footer = () => {
   const { i18n } = useTranslation();
@@ -36,10 +36,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                googleGAEvent(
-                  GoogleGAAction.FooterWhitePaper,
-                  GoogleGACategory.Footer,
-                );
+                gtag.event({
+                  action: GoogleAnalyticsAction.FooterWhitePaper,
+                  category: GoogleAnalyticsCategory.Footer,
+                  label: '',
+                });
               }}>
               <div>White Paper</div>
             </a>
@@ -62,10 +63,11 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.FooterTwitter,
-                    GoogleGACategory.Footer,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.FooterTwitter,
+                    category: GoogleAnalyticsCategory.Footer,
+                    label: '',
+                  });
                 }}>
                 <Image
                   src={Twitter}
@@ -82,10 +84,11 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.FooterTelegram,
-                    GoogleGACategory.Footer,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.FooterTelegram,
+                    category: GoogleAnalyticsCategory.Footer,
+                    label: '',
+                  });
                 }}>
                 <Image
                   src={Telegram}
@@ -102,10 +105,11 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.FooterDiscord,
-                    GoogleGACategory.Footer,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.FooterDiscord,
+                    category: GoogleAnalyticsCategory.Footer,
+                    label: '',
+                  });
                 }}>
                 <Image
                   src={Discord}
@@ -122,10 +126,11 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.FooterGithub,
-                    GoogleGACategory.Footer,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.FooterGithub,
+                    category: GoogleAnalyticsCategory.Footer,
+                    label: '',
+                  });
                 }}>
                 <Image
                   src={Github}

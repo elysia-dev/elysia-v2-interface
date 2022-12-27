@@ -8,9 +8,9 @@ import NetworkError from 'assets/images/network_error.png';
 import Image from 'next/image';
 import { isChainId } from 'utils/isChainId';
 import { useENS } from 'hooks/useENS';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import * as gtag from 'lib/gtag';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import styled, { css, keyframes } from 'styled-components';
 import TxStatus from 'enums/TxStatus';
 
@@ -56,7 +56,11 @@ const ConnectWalletButton = (props: Props) => {
         }
         onClick={() => {
           props.modalVisible();
-          googleGAEvent(GoogleGAAction.NavConnectWallet, GoogleGACategory.Nav);
+          gtag.event({
+            action: GoogleAnalyticsAction.NavConnectWallet,
+            category: GoogleAnalyticsCategory.Nav,
+            label: '',
+          });
         }}>
         {props.isConnectWalletLoading ? (
           <SkeletonTheme baseColor="#202020" highlightColor="#444">

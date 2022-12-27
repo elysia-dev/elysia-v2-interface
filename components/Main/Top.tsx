@@ -14,9 +14,9 @@ import useReserveData from 'hooks/useReserveData';
 import { useMemo } from 'react';
 import { parseTokenId } from 'utils/parseTokenId';
 import CollateralCategory from 'enums/CollateralCategory';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import * as gtag from 'lib/gtag';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 const Top = () => {
   const { t } = useTranslation();
@@ -66,10 +66,11 @@ const Top = () => {
               rel="noopener noreferrer"
               target="_blank"
               onClick={() => {
-                googleGAEvent(
-                  GoogleGAAction.MainTwitter,
-                  GoogleGACategory.Main,
-                );
+                gtag.event({
+                  action: GoogleAnalyticsAction.MainTwitter,
+                  category: GoogleAnalyticsCategory.Main,
+                  label: '',
+                });
               }}>
               <Image src={Twitter} alt={'twitter'} />
             </a>
@@ -81,10 +82,11 @@ const Top = () => {
               rel="noopener noreferrer"
               target="_blank"
               onClick={() => {
-                googleGAEvent(
-                  GoogleGAAction.MainTelegram,
-                  GoogleGACategory.Main,
-                );
+                gtag.event({
+                  action: GoogleAnalyticsAction.MainTelegram,
+                  category: GoogleAnalyticsCategory.Main,
+                  label: '',
+                });
               }}>
               <Image src={Telegram} alt={'Telegram'} />
             </a>
@@ -96,10 +98,11 @@ const Top = () => {
               rel="noopener noreferrer"
               target="_blank"
               onClick={() => {
-                googleGAEvent(
-                  GoogleGAAction.MainDiscord,
-                  GoogleGACategory.Main,
-                );
+                gtag.event({
+                  action: GoogleAnalyticsAction.MainDiscord,
+                  category: GoogleAnalyticsCategory.Main,
+                  label: '',
+                });
               }}>
               <Image src={Discord} alt={'Discord'} />
             </a>
@@ -111,7 +114,11 @@ const Top = () => {
               rel="noopener noreferrer"
               target="_blank"
               onClick={() => {
-                googleGAEvent(GoogleGAAction.MainGithub, GoogleGACategory.Main);
+                gtag.event({
+                  action: GoogleAnalyticsAction.MainGithub,
+                  category: GoogleAnalyticsCategory.Main,
+                  label: '',
+                });
               }}>
               <Image src={Github} alt={'Github'} />
             </a>

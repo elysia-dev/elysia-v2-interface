@@ -1,4 +1,4 @@
-enum GoogleGAAction {
+enum GoogleAnalyticsAction {
   NavHome = 'NavHome',
   NavFAQ = 'NavFAQ',
   NavGovernance = 'NavGovernance',
@@ -55,4 +55,4 @@ enum GoogleGAAction {
   Roadmap = 'Roadmap',
 }
 
-export default GoogleGAAction;
+export default GoogleAnalyticsAction;

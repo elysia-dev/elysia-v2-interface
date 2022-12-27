@@ -8,9 +8,9 @@ import decenter from 'assets/images/main/decenter@2x.webp';
 import xinhua from 'assets/images/main/xinhua-logo-feature_0@2x.webp';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import * as gtag from 'lib/gtag';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 interface IPressArray {
   flag: StaticImageData;
@@ -18,7 +18,7 @@ interface IPressArray {
   header: string;
   content: string;
   link: string;
-  ga: GoogleGAAction;
+  ga: GoogleAnalyticsAction;
 }
 
 const Press = () => {
@@ -31,7 +31,7 @@ const Press = () => {
       header: t('main.press.3'),
       content: t('main.press.4'),
       link: 'https://www.bloomberg.com/press-releases/2022-07-06/elyfi-launches-us-real-estate-investment-product',
-      ga: GoogleGAAction.MainPressEn,
+      ga: GoogleAnalyticsAction.MainPressEn,
     },
     {
       flag: usa,
@@ -39,7 +39,7 @@ const Press = () => {
       header: t('main.press.5'),
       content: t('main.press.6'),
       link: 'https://finance.yahoo.com/news/elyfi-launches-us-real-estate-120000334.html',
-      ga: GoogleGAAction.MainPressKo,
+      ga: GoogleAnalyticsAction.MainPressKo,
     },
     {
       flag: usa,
@@ -47,7 +47,7 @@ const Press = () => {
       header: t('main.press.7'),
       content: t('main.press.8'),
       link: 'https://finance.yahoo.com/news/elysia-first-asia-obtains-approval-140000251.html?guccounter=2&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAIbW0698fC2KnO771rsi89QhICI2s8b-egkyVs02mzNRM-Bhxnrvux1Tjyz8BcEo5rRruAn_XbdofYeXz9hTIKcDqFCKHmbZe1G5SK9c8eqfEzEKMNz_-tq9P2dadujlBGC8NdrdUe0d99qFtgSKiwbPpQJ34dPkSFneqn5_k1F0',
-      ga: GoogleGAAction.MainPressCn,
+      ga: GoogleAnalyticsAction.MainPressCn,
     },
   ];
 
@@ -63,7 +63,11 @@ const Press = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  googleGAEvent(pressData.ga, GoogleGACategory.Main)
+                  gtag.event({
+                    action: pressData.ga,
+                    category: GoogleAnalyticsCategory.Main,
+                    label: '',
+                  })
                 }>
                 <section>
                   <div>

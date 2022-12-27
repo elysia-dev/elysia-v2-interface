@@ -1,4 +1,4 @@
-enum GoogleGACategory {
+enum GoogleAnalyticsCategory {
   Nav = 'Navigation',
   Main = 'Main',
   FAQ = 'FAQ',
@@ -15,4 +15,4 @@ enum GoogleGACategory {
   Wallet = 'Wallet',
 }
 
-export default GoogleGACategory;
+export default GoogleAnalyticsCategory;

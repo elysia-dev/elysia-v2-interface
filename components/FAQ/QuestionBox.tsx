@@ -1,14 +1,14 @@
 import { QuestionBoxWrapper } from './styles';
 import * as gtag from 'lib/gtag';
-import GoogleGACategory from 'enums/GoogleGACategory';
-import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 
 interface Props {
   isActive: boolean;
   setActiveBox: () => void;
   question: string;
   answer: string;
-  GA: GoogleGAAction;
+  GA: GoogleAnalyticsAction;
 }
 
 const QuestionBox: React.FC<Props> = (props) => {
@@ -19,7 +19,7 @@ const QuestionBox: React.FC<Props> = (props) => {
           !props.isActive &&
             gtag.event({
               action: props.GA,
-              category: GoogleGACategory.FAQ,
+              category: GoogleAnalyticsCategory.FAQ,
               label: '',
             });
           props.setActiveBox();

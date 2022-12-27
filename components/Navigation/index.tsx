@@ -19,9 +19,9 @@ import { isChainId } from 'utils/isChainId';
 import { NavigationWrapper, HamburgerButton } from './styles';
 import MobileMenu from './MobileMenu';
 import LanguageConverter from './LanguageConverter';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
-import { googleGAEvent } from 'utils/gaEvent';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
+import * as gtag from 'lib/gtag';
 import { t } from 'i18next';
 
 const walletConnectProvider = walletConnectConnector();
@@ -121,12 +121,13 @@ const Navigation = () => {
             <Link href={`/${router.query.lng}`}>
               <a
                 onClick={() => {
-                  googleGAEvent(GoogleGAAction.NavHome, GoogleGACategory.Nav);
+                  gtag.event({
+                    action: GoogleAnalyticsAction.NavHome,
+                    category: GoogleAnalyticsCategory.Nav,
+                    label: '',
+                  });
                 }}>
                 <Image
-                  onClick={() => {
-                    googleGAEvent(GoogleGAAction.NavHome, GoogleGACategory.Nav);
-                  }}
                   src={ElysiaLogo}
                   alt={'ElysiaLogo'}
                   width={mediaQueryState.mobile ? 100 : 139}
@@ -151,10 +152,11 @@ const Navigation = () => {
                 <Link href={`/${router.query.lng}/Governance`} passHref>
                   <div
                     onClick={() => {
-                      googleGAEvent(
-                        GoogleGAAction.NavGovernance,
-                        GoogleGACategory.Nav,
-                      );
+                      gtag.event({
+                        action: GoogleAnalyticsAction.NavGovernance,
+                        category: GoogleAnalyticsCategory.Nav,
+                        label: '',
+                      });
                     }}>
                     <span
                       style={{
@@ -170,10 +172,11 @@ const Navigation = () => {
                 <Link href={`/${router.query.lng}/Ecosystem`} passHref>
                   <div
                     onClick={() => {
-                      googleGAEvent(
-                        GoogleGAAction.NavEcosystem,
-                        GoogleGACategory.Nav,
-                      );
+                      gtag.event({
+                        action: GoogleAnalyticsAction.NavEcosystem,
+                        category: GoogleAnalyticsCategory.Nav,
+                        label: '',
+                      });
                     }}>
                     <span
                       style={{
@@ -189,10 +192,11 @@ const Navigation = () => {
                 <Link href={`/${router.query.lng}/Community`} passHref>
                   <div
                     onClick={() => {
-                      googleGAEvent(
-                        GoogleGAAction.NavCommunity,
-                        GoogleGACategory.Nav,
-                      );
+                      gtag.event({
+                        action: GoogleAnalyticsAction.NavCommunity,
+                        category: GoogleAnalyticsCategory.Nav,
+                        label: '',
+                      });
                     }}>
                     <span
                       style={{
@@ -208,10 +212,11 @@ const Navigation = () => {
                 <Link href={`/${router.query.lng}/Developers`} passHref>
                   <div
                     onClick={() => {
-                      googleGAEvent(
-                        GoogleGAAction.NavDevelopers,
-                        GoogleGACategory.Nav,
-                      );
+                      gtag.event({
+                        action: GoogleAnalyticsAction.NavDevelopers,
+                        category: GoogleAnalyticsCategory.Nav,
+                        label: '',
+                      });
                     }}>
                     <span
                       style={{
@@ -228,10 +233,11 @@ const Navigation = () => {
                 <Link href={`/${router.query.lng}/Roadmap`} passHref>
                   <div
                     onClick={() => {
-                      googleGAEvent(
-                        GoogleGAAction.Roadmap,
-                        GoogleGACategory.Nav,
-                      );
+                      gtag.event({
+                        action: GoogleAnalyticsAction.Roadmap,
+                        category: GoogleAnalyticsCategory.Nav,
+                        label: '',
+                      });
                     }}>
                     <span
                       style={{
@@ -248,10 +254,11 @@ const Navigation = () => {
                 <Link href={`/${router.query.lng}/FAQ`} passHref>
                   <div
                     onClick={() => {
-                      googleGAEvent(
-                        GoogleGAAction.NavFAQ,
-                        GoogleGACategory.Nav,
-                      );
+                      gtag.event({
+                        action: GoogleAnalyticsAction.NavFAQ,
+                        category: GoogleAnalyticsCategory.Nav,
+                        label: '',
+                      });
                     }}>
                     <span
                       style={{

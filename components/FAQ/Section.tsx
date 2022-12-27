@@ -2,19 +2,19 @@ import PageHeader from 'components/Common/PageHeader';
 import { useTranslation } from 'react-i18next';
 import { SectionWrapper, Line, QuestionWrapper, ELbridgeImage } from './styles';
 import { useState } from 'react';
-import GoogleGAAction from 'enums/GoogleGAAction';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import QuestionBox from './QuestionBox';
 
 const Section = () => {
   const { t } = useTranslation();
   const [activeBox, setActiveBox] = useState(0);
   const currentQuestionLength = [
-    GoogleGAAction.ElBridgeFAQ01,
-    GoogleGAAction.ElBridgeFAQ02,
-    GoogleGAAction.ElBridgeFAQ03,
-    GoogleGAAction.ElBridgeFAQ04,
-    GoogleGAAction.ElBridgeFAQ05,
-    GoogleGAAction.ElBridgeFAQ06,
+    GoogleAnalyticsAction.ElBridgeFAQ01,
+    GoogleAnalyticsAction.ElBridgeFAQ02,
+    GoogleAnalyticsAction.ElBridgeFAQ03,
+    GoogleAnalyticsAction.ElBridgeFAQ04,
+    GoogleAnalyticsAction.ElBridgeFAQ05,
+    GoogleAnalyticsAction.ElBridgeFAQ06,
   ];
 
   return (
