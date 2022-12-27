@@ -1,11 +1,11 @@
 import LanguageContext from 'contexts/LanguageContext';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
 import LanguageType from 'enums/LanguageType';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { googleGAEvent } from 'utils/gaEvent';
+import * as gtag from 'lib/gtag';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 
 const LanguageConverter = () => {
   const { setLanguage } = useContext(LanguageContext);
@@ -47,10 +47,11 @@ const LanguageConverter = () => {
               <ChangeLanguageType
                 key={index}
                 onClick={() => {
-                  googleGAEvent(
-                    GoogleGAAction.NavLanguage,
-                    GoogleGACategory.Nav,
-                  );
+                  gtag.event({
+                    action: GoogleAnalyticsAction.NavLanguage,
+                    category: GoogleAnalyticsCategory.Nav,
+                    label: '',
+                  });
                   setLanguage(languageType);
                   handleHover();
                 }}>

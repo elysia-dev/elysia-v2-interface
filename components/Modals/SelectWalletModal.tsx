@@ -12,9 +12,9 @@ import walletconnect from 'assets/images/walletconnect@2x.png';
 import browserWallet from 'assets/images/browserWallet@2x.png';
 import Image from 'next/image';
 import useIsMobile from 'hooks/useIsMobile';
-import { googleGAEvent } from 'utils/gaEvent';
-import GoogleGAAction from 'enums/GoogleGAAction';
-import GoogleGACategory from 'enums/GoogleGACategory';
+import * as gtag from 'lib/gtag';
+import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
+import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import ModalHeader from './ModalHeader';
 import ModalLayout from './ModalLayout';
 import styled from 'styled-components';
@@ -91,10 +91,18 @@ const SelectWalletModal = (props: Props) => {
   const connectWallet = (wallet: string) => {
     let connector;
     if (wallet === (isMobile ? Wallet.BrowserWallet : Wallet.Metamask)) {
-      googleGAEvent(GoogleGAAction.Metamask, GoogleGACategory.Wallet);
+      gtag.event({
+        action: GoogleAnalyticsAction.Metamask,
+        category: GoogleAnalyticsCategory.Wallet,
+        label: '',
+      });
       connector = injectedConnector;
     } else {
-      googleGAEvent(GoogleGAAction.WalletConnect, GoogleGACategory.Wallet);
+      gtag.event({
+        action: GoogleAnalyticsAction.WalletConnect,
+        category: GoogleAnalyticsCategory.Wallet,
+        label: '',
+      });
       connector = walletConnectProvider;
     }
     activate(connector).then(() => {
