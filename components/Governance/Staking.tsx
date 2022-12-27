@@ -2,7 +2,7 @@ import ModalType from 'enums/ModalType';
 import { Dispatch, SetStateAction, useMemo } from 'react';
 import {
   formatComma,
-  formatSixFracionDigit,
+  formatSixDigit,
   toCompactForBignumber,
 } from 'utils/formatters';
 import { formatEther } from 'ethers/lib/utils';
@@ -84,7 +84,7 @@ const Staking = (props: Props) => {
         name: t('governance.section_third.8'),
         value: (
           <>
-            {formatSixFracionDigit(
+            {formatSixDigit(
               account ? parseFloat(formatEther(reward || constants.Zero)) : 0,
             )}
           </>

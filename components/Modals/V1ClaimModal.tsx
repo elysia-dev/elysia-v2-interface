@@ -1,6 +1,6 @@
 import { BigNumber, constants, utils } from 'ethers';
 import ElysiaToken from 'assets/images/elysia_token.png';
-import { formatSixFracionDigit } from 'utils/formatters';
+import { formatSixDigit } from 'utils/formatters';
 import LoadingIndicator from './LoadingIndicator';
 import { useContext, useEffect, useState } from 'react';
 import TxContext from 'contexts/TxContext';
@@ -81,7 +81,7 @@ const V1ClaimModal = (props: Props) => {
           <Wrapper>
             <InnerValue>
               <span>
-                {formatSixFracionDigit(
+                {formatSixDigit(
                   parseFloat(utils.formatEther(reward ?? constants.Zero)),
                 )}
               </span>
