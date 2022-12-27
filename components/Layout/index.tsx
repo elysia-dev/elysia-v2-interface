@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import Gradient from 'utils/gradient';
 import { GradientCanvas, LayoutDiv, LayoutNoise } from './styles';
 import dynamic from 'next/dynamic';
-import useIsMobile from 'hooks/useIsMobile';
+import useMediaQueryState from 'hooks/useMediaQueryState';
 
 const Footer = dynamic(() => import('components/Footer'));
 
@@ -14,7 +14,7 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { isMobile } = useIsMobile();
+  const mediaQueryState = useMediaQueryState();
 
   const drawCanvas = useCallback(() => {
     const dpr = window.devicePixelRatio;
@@ -35,9 +35,9 @@ const Layout = (props: LayoutProps) => {
   }, []);
 
   useEffect(() => {
-    if (isMobile) return;
+    if (mediaQueryState.mobile) return;
     drawCanvas();
-  }, [drawCanvas, isMobile]);
+  }, [drawCanvas, mediaQueryState]);
 
   useEffect(() => {
     // window.addEventListener('resize', () => {

@@ -11,7 +11,7 @@ import metamask from 'assets/images/metamask@2x.png';
 import walletconnect from 'assets/images/walletconnect@2x.png';
 import browserWallet from 'assets/images/browserWallet@2x.png';
 import Image from 'next/image';
-import useIsMobile from 'hooks/useIsMobile';
+import useMediaQueryState from 'hooks/useMediaQueryState';
 import { googleGAEvent } from 'utils/gaEvent';
 import GoogleGAAction from 'enums/GoogleGAAction';
 import GoogleGACategory from 'enums/GoogleGACategory';
@@ -73,12 +73,12 @@ const SelectWalletModal = (props: Props) => {
   const { activate } = useWeb3React();
   const [global, setGlobal] = useState<WindowWithEthereum>();
   const { t } = useTranslation();
-  const { isMobile } = useIsMobile();
+  const mediaQueryState = useMediaQueryState();
 
   const wallets = useMemo(() => {
     if (global?.ethereum) {
       return [
-        isMobile
+        mediaQueryState.mobile
           ? { name: 'Browser Wallet', image: browserWallet }
           : { name: 'Metamask', image: metamask },
         { name: 'WalletConnect', image: walletconnect },
@@ -90,7 +90,10 @@ const SelectWalletModal = (props: Props) => {
 
   const connectWallet = (wallet: string) => {
     let connector;
-    if (wallet === (isMobile ? Wallet.BrowserWallet : Wallet.Metamask)) {
+    if (
+      wallet ===
+      (mediaQueryState.mobile ? Wallet.BrowserWallet : Wallet.Metamask)
+    ) {
       googleGAEvent(GoogleGAAction.Metamask, GoogleGACategory.Wallet);
       connector = injectedConnector;
     } else {
