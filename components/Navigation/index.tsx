@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { isMetamask, isWalletConnector } from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
 import injectedConnector from 'core/connectors/injectedConnector';
-import useIsMobile from 'hooks/useIsMobile';
+import useMediaQueryState from 'hooks/useMediaQueryState';
 import TxContext from 'contexts/TxContext';
 import DisconnectModal from 'components/Modals/DisconnectModal';
 import ModalLayout from 'components/Modals/ModalLayout';
@@ -32,7 +32,7 @@ const Navigation = () => {
   const { account, activate, deactivate, library, chainId } = useWeb3React();
   const { txStatus, error } = useContext(TxContext);
   const [isConnectWalletLoading, setIsConnectWalletLoading] = useState(true);
-  const { isMobile, isLoading } = useIsMobile();
+  const mediaQueryState = useMediaQueryState();
   const [isScroll, setIsScroll] = useState(false);
   const [isMobileMenu, setMobileMenu] = useState(false);
 
@@ -94,8 +94,8 @@ const Navigation = () => {
 
   useEffect(() => {
     document.body.style.overflowY =
-      isMobile && isMobileMenu ? 'hidden' : 'initial';
-  }, [isMobile, isMobileMenu]);
+      mediaQueryState.mobile && isMobileMenu ? 'hidden' : 'initial';
+  }, [mediaQueryState, isMobileMenu]);
 
   return (
     <>
@@ -115,7 +115,7 @@ const Navigation = () => {
           <ErrorModal error={error} />
         )}
       <NavigationWrapper
-        theme={isMobile && isMobileMenu ? 'overflow' : isScroll}>
+        theme={mediaQueryState.mobile && isMobileMenu ? 'overflow' : isScroll}>
         <nav>
           <figure>
             <Link href={`/${router.query.lng}`}>
@@ -130,15 +130,13 @@ const Navigation = () => {
                 <Image
                   src={ElysiaLogo}
                   alt={'ElysiaLogo'}
-                  width={isMobile ? 100 : 139}
-                  height={isMobile ? 21 : 31}
+                  width={mediaQueryState.mobile ? 100 : 139}
+                  height={mediaQueryState.mobile ? 21 : 31}
                 />
               </a>
             </Link>
           </figure>
-          {isLoading ? (
-            <></>
-          ) : isMobile ? (
+          {mediaQueryState.mobile ? (
             <HamburgerButton
               isActive={isMobileMenu}
               onClick={() => {
@@ -280,17 +278,12 @@ const Navigation = () => {
             </>
           )}
         </nav>
-        {isLoading ? (
-          <></>
-        ) : (
-          isMobile &&
-          isMobileMenu && (
-            <MobileMenu
-              modalVisible={() => setModalVisible(true)}
-              isConnectWalletLoading={isConnectWalletLoading}
-              onButtonClick={() => setMobileMenu(false)}
-            />
-          )
+        {mediaQueryState.mobile && isMobileMenu && (
+          <MobileMenu
+            modalVisible={() => setModalVisible(true)}
+            isConnectWalletLoading={isConnectWalletLoading}
+            onButtonClick={() => setMobileMenu(false)}
+          />
         )}
       </NavigationWrapper>
     </>

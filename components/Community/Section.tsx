@@ -9,7 +9,7 @@ import Medium from 'assets/images/community/medium@2x.webp';
 import Telegram from 'assets/images/community/telegram_white@2x.webp';
 import Twitter from 'assets/images/community/twitter@2x.webp';
 import Weibo from 'assets/images/community/weibo@2x.webp';
-import useIsMobile from 'hooks/useIsMobile';
+import useMediaQueryState from 'hooks/useMediaQueryState';
 import ContentItem from 'components/Common/ContentItem';
 import useResizeBrowser from 'hooks/useResizeBrowser';
 import PageHeader from 'components/Common/PageHeader';
@@ -19,7 +19,7 @@ import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 
 const Section = () => {
   const { t } = useTranslation();
-  const { isDesktop } = useIsMobile();
+  const mediaQueryState = useMediaQueryState();
   const { browserHeight } = useResizeBrowser();
 
   return (
@@ -36,8 +36,8 @@ const Section = () => {
                 <Image
                   src={Discord}
                   alt={'Discord'}
-                  width={isDesktop ? 20 : 30}
-                  height={isDesktop ? 20 : 30}
+                  width={mediaQueryState.desktop ? 20 : 30}
+                  height={mediaQueryState.desktop ? 20 : 30}
                 />
               }
               contentName={'Discord'}
@@ -55,8 +55,8 @@ const Section = () => {
                 <Image
                   src={Telegram}
                   alt={'Telegram'}
-                  width={isDesktop ? 21 : 31}
-                  height={isDesktop ? 21 : 31}
+                  width={mediaQueryState.desktop ? 21 : 31}
+                  height={mediaQueryState.desktop ? 21 : 31}
                 />
               }
               contentName={'Telegram'}
@@ -74,8 +74,8 @@ const Section = () => {
                 <Image
                   src={Kakao}
                   alt={'Kakao'}
-                  width={isDesktop ? 19 : 29}
-                  height={isDesktop ? 19 : 29}
+                  width={mediaQueryState.desktop ? 19 : 29}
+                  height={mediaQueryState.desktop ? 19 : 29}
                 />
               }
               contentName={'Kakaotalk'}
@@ -99,8 +99,8 @@ const Section = () => {
                 <Image
                   src={Git}
                   alt={'Git'}
-                  width={isDesktop ? 24.42 : 34.42}
-                  height={isDesktop ? 24.42 : 34.42}
+                  width={mediaQueryState.desktop ? 24.42 : 34.42}
+                  height={mediaQueryState.desktop ? 24.42 : 34.42}
                 />
               }
               contentName={'Github'}
@@ -118,8 +118,8 @@ const Section = () => {
                 <Image
                   src={Medium}
                   alt={'Tech Blog'}
-                  width={isDesktop ? 28 : 38}
-                  height={isDesktop ? 11 : 21}
+                  width={mediaQueryState.desktop ? 28 : 38}
+                  height={mediaQueryState.desktop ? 11 : 21}
                 />
               }
               contentName={'Tech Blog'}
@@ -144,8 +144,8 @@ const Section = () => {
                 <Image
                   src={Twitter}
                   alt={'Twitter'}
-                  width={isDesktop ? 21 : 31}
-                  height={isDesktop ? 21 : 31}
+                  width={mediaQueryState.desktop ? 21 : 31}
+                  height={mediaQueryState.desktop ? 21 : 31}
                 />
               }
               contentName={'Twitter'}
@@ -163,8 +163,8 @@ const Section = () => {
                 <Image
                   src={Facebook}
                   alt={'Facebook'}
-                  width={isDesktop ? 23.52 : 33.52}
-                  height={isDesktop ? 23.52 : 33.52}
+                  width={mediaQueryState.desktop ? 23.52 : 33.52}
+                  height={mediaQueryState.desktop ? 23.52 : 33.52}
                 />
               }
               contentName={'Facebook'}
@@ -182,8 +182,8 @@ const Section = () => {
                 <Image
                   src={Medium}
                   alt={'Medium'}
-                  width={isDesktop ? 28 : 38}
-                  height={isDesktop ? 11 : 21}
+                  width={mediaQueryState.desktop ? 28 : 38}
+                  height={mediaQueryState.desktop ? 11 : 21}
                 />
               }
               contentName={'Medium'}
@@ -201,8 +201,8 @@ const Section = () => {
                 <Image
                   src={Weibo}
                   alt={'Weibo'}
-                  width={isDesktop ? 22 : 32}
-                  height={isDesktop ? 16 : 26}
+                  width={mediaQueryState.desktop ? 22 : 32}
+                  height={mediaQueryState.desktop ? 16 : 26}
                 />
               }
               contentName={'Weibo'}
