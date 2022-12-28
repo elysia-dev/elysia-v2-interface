@@ -6,7 +6,7 @@ const Policy = () => {
         margin: '20vh auto',
         padding: 30,
         color: '#ffffff',
-        lineHeight: '40px',
+        lineHeight: '1.5',
         fontSize: '1.5rem',
       }}>
       <h1>Privacy Policy of ELYSIA PTE. LTD.</h1>
