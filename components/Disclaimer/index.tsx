@@ -4,10 +4,10 @@ const Disclaimer = () => {
       style={{
         maxWidth: 1190,
         margin: '20vh auto',
-        height: 'calc(60vh - 250px)',
+        minHeight: 'calc(60vh - 250px)',
         padding: 30,
         color: '#ffffff',
-        lineHeight: '25px',
+        lineHeight: '1.5',
         fontSize: '1.5rem',
       }}>
       <h1>Disclaimer of ELYSIA PTE. LTD.</h1>
