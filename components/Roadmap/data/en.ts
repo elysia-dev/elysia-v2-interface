@@ -113,12 +113,6 @@ const roadmap: TotalRoadmap = {
 
   [RoadmapKey.FUTURE]: [
     {
-      title: 'Real-World Asset Tokenization Onboarding Page Release',
-      contents:
-        'We plan to launch an onboarding page where real-world asset owners can directly apply for tokenization.',
-      kind: 'DEV',
-    },
-    {
       title: 'RWA Token Marketplace Introduction',
       contents:
         'We plan to launch a marketplace where RWA tokens based on real-world assets can be traded.',
@@ -138,11 +132,32 @@ const roadmap: TotalRoadmap = {
   ],
   [RoadmapKey.TEST]: [
     {
-      title: 'Various Real Estate Asset Tokenization Logic Designs and Test',
+      title: 'MakerDAO onboarding',
       contents:
-        'We are designing and testing logic for the commercialization of various real estates assets such as residential real estate, commercial real estate, and real estate PF.',
-      dueDate: 'Expected by Q4 2022',
-      kind: 'MARKETING',
+        "We proceed onboarding process to secure MakerDAO liquidity using ELYSIA's RWA tokens as collateral.",
+      dueDate: 'Expected by Q1 2023',
+      kind: 'PLANNING',
+    },
+    {
+      title: 'Released RWA explorer platform',
+      contents:
+        'We develop an integrated explorer platform that allows you to easily and conveniently check RWA token information. (ex. Xangle, CoinMarketCap)',
+      dueDate: 'Expected by Q1 2023',
+      kind: 'DEV',
+    },
+    {
+      title: 'RWA Saas(Software as a Service) design and testing',
+      contents:
+        'We develop a solution that can easily convert real-world assets into RWA tokens through the ELYSIA Protocol.',
+      dueDate: 'Expected by Q1 2023',
+      kind: 'DEV',
+    },
+    {
+      title: 'Prediction market platform design and testing',
+      contents:
+        'We develop a trading platform that predicts indices related to real-world assets.',
+      dueDate: 'Expected by Q1 2023',
+      kind: 'DEV',
     },
   ],
 };

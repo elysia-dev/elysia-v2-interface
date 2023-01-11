@@ -114,12 +114,6 @@ const roadmap: TotalRoadmap = {
   ],
   [RoadmapKey.FUTURE]: [
     {
-      title: '실물자산 토큰화 온보딩 페이지 출시',
-      contents:
-        '실물자산 소유주가 직접 토큰화 신청을 할 수 있는 온보딩 페이지를 출시할 계획입니다.',
-      kind: 'DEV',
-    },
-    {
       title: 'RWA 토큰 마켓플레이스 도입',
       contents:
         '실물자산을 기반으로 한 RWA 토큰이 거래될 수 있는 마켓플레이스를 출시할 계획입니다.',
@@ -138,10 +132,30 @@ const roadmap: TotalRoadmap = {
   ],
   [RoadmapKey.TEST]: [
     {
-      title: '다양한 부동산 자산 토큰화 로직 설계 및 테스트',
+      title: ' 메이커다오 온보딩',
       contents:
-        '주거용 부동산, 상업용 부동산, 부동산 PF 등 다양한 부동산 자산의 상품화를 위해 로직 설계 및 테스트를 진행하고 있습니다.',
-      dueDate: '2022년 4분기 목표',
+        '엘리시아의 RWA 토큰을 담보로 메이커다오의 유동성을 확보하기 위해 온보딩 절차를 진행합니다.',
+      dueDate: '2023년 1분기 목표',
+      kind: 'PLANNING',
+    },
+    {
+      title: 'RWA 익스플로러 플랫폼 출시',
+      contents:
+        'RWA 토큰의 정보를 쉽고 간편하게 확인할 수 있는 통합 익스플로러 플랫폼을 개발합니다. (ex. 쟁글, 코인마켓캡)',
+      dueDate: '2023년 1분기 목표',
+      kind: 'DEV',
+    },
+    {
+      title: ' RWA Saas(Software as a Service) 설계 및 테스트',
+      contents:
+        '엘리시아 프로토콜을 통해 실물자산을 RWA 토큰으로 쉽게 만들 수 있는 솔루션을 개발합니다.',
+      dueDate: '2023년 1분기 목표',
+      kind: 'DEV',
+    },
+    {
+      title: ' 예측 시장 플랫폼 설계 및 테스트',
+      contents: '실물자산과 관련된 지수들을 예측하는 거래 플랫폼을 개발합니다.',
+      dueDate: '2023년 1분기 목표',
       kind: 'DEV',
     },
   ],
