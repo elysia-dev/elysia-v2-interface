@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { RoadmapKey } from './data';
+import { RoadmapKey } from './data/types';
 
 const typedKeys = Object.keys as <T extends object>(obj: T) => Array<keyof T>;
 

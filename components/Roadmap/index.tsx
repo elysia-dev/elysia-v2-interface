@@ -3,7 +3,9 @@ import { useRouter } from 'next/router';
 import React, { useReducer, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { totalRoadmapKR, totalRoadmapEN, RoadmapKey, Roadmap } from './data';
+import { RoadmapKey, Roadmap } from './data/types';
+import en from './data/en';
+import kr from './data/kr';
 import Tabs from './Tabs';
 
 export const Wrapper = styled.div`
@@ -91,7 +93,7 @@ const RoadmapComponent = (props: any) => {
   const { t } = useTranslation();
   const router = useRouter();
   const { lng } = router.query;
-  const totalRoadmap = lng === 'en' ? totalRoadmapEN : totalRoadmapKR;
+  const totalRoadmap = lng === 'en' ? en : kr;
   const [currentTab, setCurrentTab] = useState<
     typeof RoadmapKey[keyof typeof RoadmapKey]
   >(RoadmapKey.PAST);
