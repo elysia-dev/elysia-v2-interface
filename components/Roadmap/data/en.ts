@@ -97,15 +97,14 @@ const roadmap: TotalRoadmap = {
     },
     {
       title: 'ELYFI v2 Release',
-      contents:
-        "Description: We are developing ELYFI v2 to complement ELYFI's contract.",
+      contents: "We are developing ELYFI v2 to complement ELYFI's contract.",
       dueDate: 'Expected by Q1 2023',
       kind: 'DEV',
     },
     {
       title: 'Large Global Exchanges Listing',
       contents:
-        'Description: To expand the liquidity of EL tokens, we are promoting listing on large global exchanges.',
+        'To expand the liquidity of EL tokens, we are promoting listing on large global exchanges.',
       dueDate: 'Expected by Q1 2023',
       kind: 'MARKETING',
     },
@@ -120,8 +119,7 @@ const roadmap: TotalRoadmap = {
     },
     {
       title: 'ELYSIA Site Renewal',
-      contents:
-        'Description: We plan to renew the ELYSIA site for user convenience.',
+      contents: 'We plan to renew the ELYSIA site for user convenience.',
       kind: 'DEV',
     },
     {
