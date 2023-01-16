@@ -59,6 +59,12 @@ const Top = () => {
         <h1>{t(`main.top.0`)}</h1>
         <h2>{t(`main.top.1`)}</h2>
       </section>
+      <div className="dao_description">
+        <h3>{t(`main.dao_description.0`)}</h3>
+        <h3>{t(`main.dao_description.1`)}</h3>
+        <h3>{t(`main.dao_description.2`)}</h3>
+        <h3>{t(`main.dao_description.3`)}</h3>
+      </div>
       <MainTopLink>
         <section>
           <Link href="https://twitter.com/Elysia_HQ" passHref>

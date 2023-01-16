@@ -4,5 +4,6 @@
   "prettier.jsxBracketSameLine": true,
   "prettier.printWidth": 800,
   "prettier.singleQuote": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "i18next.i18nPaths": "/Users/ky/KY/elysia/elysia-v2-interface/i18n"
 }
