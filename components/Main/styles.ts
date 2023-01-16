@@ -40,29 +40,48 @@ export const center = {
 
 export const MainTopWrapper = styled.section`
   z-index: 1;
-  padding: 60vh 0px 0px;
+  padding-top: 30vh;
   > section {
     color: #ffffff;
     display: inline-block;
-    > h1 {
-      font-size: 3.75rem;
-      letter-spacing: 0.3rem;
-      @media (max-width: 640px) {
-        font-size: 3rem;
-      }
-      @media (max-width: 460px) {
-        font-size: 2.2rem;
-      }
+  }
+
+  h1 {
+    font-size: 3.75rem;
+    letter-spacing: 0.3rem;
+    @media (max-width: 640px) {
+      font-size: 3rem;
     }
-    > h2 {
-      font-weight: normal;
-      font-size: 1.875rem;
-      color: #33a5ff;
+    @media (max-width: 460px) {
+      font-size: 2.2rem;
+    }
+  }
+  h2 {
+    font-weight: normal;
+    font-size: 1.875rem;
+    color: #33a5ff;
+    @media (max-width: 640px) {
+      font-size: 1.5rem;
+    }
+    @media (max-width: 460px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .dao_description {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    color: white;
+    h3 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin: 0;
+
       @media (max-width: 640px) {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
       }
       @media (max-width: 460px) {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
     }
   }
