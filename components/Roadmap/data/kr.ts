@@ -156,7 +156,6 @@ const roadmap: TotalRoadmap = {
       title: 'RWA 익스플로러 플랫폼 출시',
       contents:
         'RWA 토큰의 정보를 쉽고 간편하게 확인할 수 있는 통합 익스플로러 플랫폼을 개발합니다. (ex. 쟁글, 코인마켓캡)',
-      dueDate: '2023년 1분기 목표',
       kind: 'DEV',
     },
     {
