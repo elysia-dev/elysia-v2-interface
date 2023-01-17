@@ -25,7 +25,7 @@ const Top = () => {
 
   const assetBonds = useMemo(() => {
     return getAssetBondsByNetwork();
-  }, [reserveState]);
+  }, []);
 
   const assetBondTokensBackedByEstate = useMemo(() => {
     return assetBonds

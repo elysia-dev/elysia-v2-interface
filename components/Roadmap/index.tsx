@@ -58,7 +58,7 @@ export const Card = styled.section<{
   box-shadow: 0px 0px 6px #00000029;
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  padding: 30px;
+  padding: 38px 30px;
 
   @media (max-width: 768px) {
     min-height: auto;
@@ -76,6 +76,8 @@ export const Card = styled.section<{
       border: 0;
     }
     > p {
+      font-family: 'Gilroy-Light';
+      color: #cbcbcbcb;
       margin: 0;
       margin-top: 0.5rem;
       font-size: 1.2rem;
@@ -86,7 +88,27 @@ export const Card = styled.section<{
   }
   div.due-date {
     text-align: right;
+    p {
+      color: #ffffff;
+    }
   }
+`;
+
+const TestBadge = styled.span`
+  font-family: 'Gilroy-Bold';
+  font-weight: 700;
+
+  background-color: #ffa500;
+  border-radius: 7px;
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  width: 50px;
+  height: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const RoadmapComponent = (props: any) => {
@@ -109,9 +131,10 @@ const RoadmapComponent = (props: any) => {
       <Wrapper>
         <CardWrapper>
           {roadmaps.map((roadmap: Roadmap) => {
-            const { title, contents, kind, dueDate } = roadmap;
+            const { title, contents, kind, dueDate, isTest } = roadmap;
             return (
               <Card kind={kind} key={title}>
+                {isTest ? <TestBadge>TEST</TestBadge> : null}
                 <div>
                   <strong>{title}</strong>
                   <p>{contents}</p>
