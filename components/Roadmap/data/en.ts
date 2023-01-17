@@ -108,6 +108,31 @@ const roadmap: TotalRoadmap = {
       dueDate: 'Expected by Q1 2023',
       kind: 'MARKETING',
     },
+    {
+      title: 'MakerDAO onboarding',
+      contents:
+        "We proceed onboarding process to secure MakerDAO liquidity using ELYSIA's RWA tokens as collateral.",
+      dueDate: 'Expected by Q1 2023',
+      kind: 'PLANNING',
+      isTest: true,
+    },
+
+    {
+      title: 'RWA Saas(Software as a Service) design and testing',
+      contents:
+        'We develop a solution that can easily convert real-world assets into RWA tokens through the ELYSIA Protocol.',
+      dueDate: 'Expected by Q1 2023',
+      kind: 'DEV',
+      isTest: true,
+    },
+    {
+      title: 'Prediction market platform design and testing',
+      contents:
+        'We develop a trading platform that predicts indices related to real-world assets.',
+      dueDate: 'Expected by Q1 2023',
+      kind: 'DEV',
+      isTest: true,
+    },
   ],
 
   [RoadmapKey.FUTURE]: [
@@ -127,35 +152,17 @@ const roadmap: TotalRoadmap = {
       contents: 'We plan to renew the ELYFI site for user convenience.',
       kind: 'DEV',
     },
-  ],
-  [RoadmapKey.TEST]: [
-    {
-      title: 'MakerDAO onboarding',
-      contents:
-        "We proceed onboarding process to secure MakerDAO liquidity using ELYSIA's RWA tokens as collateral.",
-      dueDate: 'Expected by Q1 2023',
-      kind: 'PLANNING',
-    },
     {
       title: 'Released RWA explorer platform',
       contents:
         'We develop an integrated explorer platform that allows you to easily and conveniently check RWA token information. (ex. Xangle, CoinMarketCap)',
-      dueDate: 'Expected by Q1 2023',
       kind: 'DEV',
     },
     {
-      title: 'RWA Saas(Software as a Service) design and testing',
+      title: 'STO technology research',
       contents:
-        'We develop a solution that can easily convert real-world assets into RWA tokens through the ELYSIA Protocol.',
-      dueDate: 'Expected by Q1 2023',
-      kind: 'DEV',
-    },
-    {
-      title: 'Prediction market platform design and testing',
-      contents:
-        'We develop a trading platform that predicts indices related to real-world assets.',
-      dueDate: 'Expected by Q1 2023',
-      kind: 'DEV',
+        'Research and develop technology solutions(STO Market, Security Token Technical Standards, etc.) that ELYSIA can offer in preparation for the upcoming STO.',
+      kind: 'MARKETING',
     },
   ],
 };

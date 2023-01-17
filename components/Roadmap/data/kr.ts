@@ -111,6 +111,28 @@ const roadmap: TotalRoadmap = {
       dueDate: '2023년 1분기 목표',
       kind: 'MARKETING',
     },
+    {
+      title: ' 메이커다오 온보딩',
+      contents:
+        '엘리시아의 RWA 토큰을 담보로 메이커다오의 유동성을 확보하기 위해 온보딩 절차를 진행합니다.',
+      dueDate: '2023년 1분기 목표',
+      kind: 'PLANNING',
+      isTest: true,
+    },
+    {
+      title: ' RWA Saas(Software as a Service) 설계 및 테스트',
+      contents:
+        '엘리시아 프로토콜을 통해 실물자산을 RWA 토큰으로 쉽게 만들 수 있는 솔루션을 개발합니다.',
+      kind: 'DEV',
+      isTest: true,
+    },
+    {
+      title: ' 예측 시장 플랫폼 설계 및 테스트',
+      contents: '실물자산과 관련된 지수들을 예측하는 거래 플랫폼을 개발합니다.',
+      dueDate: '2023년 1분기 목표',
+      kind: 'DEV',
+      isTest: true,
+    },
   ],
   [RoadmapKey.FUTURE]: [
     {
@@ -129,15 +151,7 @@ const roadmap: TotalRoadmap = {
       contents: '사용자 편의성을 위해 엘리파이 사이트를 리뉴얼할 계획입니다.',
       kind: 'DEV',
     },
-  ],
-  [RoadmapKey.TEST]: [
-    {
-      title: ' 메이커다오 온보딩',
-      contents:
-        '엘리시아의 RWA 토큰을 담보로 메이커다오의 유동성을 확보하기 위해 온보딩 절차를 진행합니다.',
-      dueDate: '2023년 1분기 목표',
-      kind: 'PLANNING',
-    },
+
     {
       title: 'RWA 익스플로러 플랫폼 출시',
       contents:
@@ -146,17 +160,10 @@ const roadmap: TotalRoadmap = {
       kind: 'DEV',
     },
     {
-      title: ' RWA Saas(Software as a Service) 설계 및 테스트',
+      title: 'STO 기술 연구',
       contents:
-        '엘리시아 프로토콜을 통해 실물자산을 RWA 토큰으로 쉽게 만들 수 있는 솔루션을 개발합니다.',
-      dueDate: '2023년 1분기 목표',
-      kind: 'DEV',
-    },
-    {
-      title: ' 예측 시장 플랫폼 설계 및 테스트',
-      contents: '실물자산과 관련된 지수들을 예측하는 거래 플랫폼을 개발합니다.',
-      dueDate: '2023년 1분기 목표',
-      kind: 'DEV',
+        '다가올 STO 시대를 대비하여, 엘리시아가 제공할 수 있는 기술 솔루션(STO Market, Security Token 기술 표준 등)을 연구, 개발합니다.',
+      kind: 'MARKETING',
     },
   ],
 };
