@@ -2,7 +2,6 @@ export const RoadmapKey = {
   PAST: 'PAST',
   NOW: 'NOW',
   FUTURE: 'FUTURE',
-  TEST: 'TEST',
 } as const;
 
 export type Roadmap = {
