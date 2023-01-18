@@ -123,6 +123,7 @@ const roadmap: TotalRoadmap = {
       title: ' RWA Saas(Software as a Service) 설계 및 테스트',
       contents:
         '엘리시아 프로토콜을 통해 실물자산을 RWA 토큰으로 쉽게 만들 수 있는 솔루션을 개발합니다.',
+      dueDate: '2023년 1분기 목표',
       kind: 'DEV',
       isTest: true,
     },
