@@ -1,3 +1,8 @@
+export type AllRoadmaps = {
+  kr: TotalRoadmap;
+  en: TotalRoadmap;
+};
+
 export const RoadmapKey = {
   PAST: 'PAST',
   NOW: 'NOW',
