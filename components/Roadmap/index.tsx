@@ -8,6 +8,7 @@ import { RoadmapKey, Roadmap, AllRoadmaps } from './data/types';
 import en from './data/en';
 import kr from './data/kr';
 import Tabs from './Tabs';
+import LoadingIndicator from 'components/Common/LoadingIndicator';
 
 const ROADMAP_API_ENDPOINT = 'https://elysia-roadmap-admin.vercel.app';
 
@@ -156,11 +157,13 @@ const RoadmapComponent = (props: any) => {
 
       <Tabs currentTab={currentTab} setCurrentTab={setCurrentTab} />
       <Wrapper>
-        <CardWrapper>
-          {loading ? (
-            <>loading...</>
-          ) : (
-            roadmaps?.map((roadmap: Roadmap) => {
+        {loading ? (
+          <>
+            <LoadingIndicator />
+          </>
+        ) : (
+          <CardWrapper>
+            {roadmaps?.map((roadmap: Roadmap) => {
               const { title, contents, kind, dueDate, isTest } = roadmap;
               return (
                 <Card kind={kind} key={title}>
@@ -176,9 +179,9 @@ const RoadmapComponent = (props: any) => {
                   )}
                 </Card>
               );
-            })
-          )}
-        </CardWrapper>
+            })}
+          </CardWrapper>
+        )}
       </Wrapper>
     </>
   );
