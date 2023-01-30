@@ -1,12 +1,16 @@
 import PageHeader from 'components/Common/PageHeader';
 import { useRouter } from 'next/router';
-import React, { useReducer, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { RoadmapKey, Roadmap } from './data/types';
+import axios from 'axios';
+import { RoadmapKey, Roadmap, AllRoadmaps } from './data/types';
 import en from './data/en';
 import kr from './data/kr';
 import Tabs from './Tabs';
+import LoadingIndicator from 'components/Common/LoadingIndicator';
+
+const ROADMAP_API_ENDPOINT = 'https://elysia-roadmap-admin.vercel.app';
 
 export const Wrapper = styled.div`
   min-height: 1300px;
@@ -115,11 +119,35 @@ const RoadmapComponent = (props: any) => {
   const { t } = useTranslation();
   const router = useRouter();
   const { lng } = router.query;
-  const totalRoadmap = lng === 'en' ? en : kr;
+  const safeLng = lng === 'en' ? 'en' : 'kr';
+  const [fetchedRoadmaps, setFetchedRoadmaps] = useState<AllRoadmaps>();
+
   const [currentTab, setCurrentTab] = useState<
     typeof RoadmapKey[keyof typeof RoadmapKey]
   >(RoadmapKey.PAST);
-  const roadmaps = totalRoadmap[currentTab];
+
+  // TODO: 안정화 된 다음에 kr, en static 데이터 삭제
+  // const totalRoadmap = lng === 'en' ? en : kr;
+  const roadmaps = fetchedRoadmaps?.[safeLng]?.[currentTab];
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  async function fetchData() {
+    setLoading(true);
+    try {
+      const response = await axios.get(ROADMAP_API_ENDPOINT + '/api/roadmaps');
+      const fetchedRoadmap = response?.data;
+      setFetchedRoadmaps(fetchedRoadmap);
+    } catch (err: any) {
+      setError(err);
+    }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -129,25 +157,31 @@ const RoadmapComponent = (props: any) => {
 
       <Tabs currentTab={currentTab} setCurrentTab={setCurrentTab} />
       <Wrapper>
-        <CardWrapper>
-          {roadmaps.map((roadmap: Roadmap) => {
-            const { title, contents, kind, dueDate, isTest } = roadmap;
-            return (
-              <Card kind={kind} key={title}>
-                {isTest ? <TestBadge>TEST</TestBadge> : null}
-                <div>
-                  <strong>{title}</strong>
-                  <p>{contents}</p>
-                </div>
-                {dueDate && (
-                  <div className="due-date">
-                    <p>{dueDate}</p>
+        {loading ? (
+          <>
+            <LoadingIndicator />
+          </>
+        ) : (
+          <CardWrapper>
+            {roadmaps?.map((roadmap: Roadmap) => {
+              const { title, contents, kind, dueDate, isTest } = roadmap;
+              return (
+                <Card kind={kind} key={title}>
+                  {isTest ? <TestBadge>TEST</TestBadge> : null}
+                  <div>
+                    <strong>{title}</strong>
+                    <p>{contents}</p>
                   </div>
-                )}
-              </Card>
-            );
-          })}
-        </CardWrapper>
+                  {dueDate && (
+                    <div className="due-date">
+                      <p>{dueDate}</p>
+                    </div>
+                  )}
+                </Card>
+              );
+            })}
+          </CardWrapper>
+        )}
       </Wrapper>
     </>
   );
