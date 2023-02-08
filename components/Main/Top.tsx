@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import CountUp from 'react-countup';
 import { MainTopWrapper, MainTopLink, MainTopPublicRelation } from './styles';
 import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
@@ -61,9 +61,17 @@ const Top = () => {
       </section>
       <div className="dao_description">
         <h3>{t(`main.dao_description.0`)}</h3>
-        <h3>{t(`main.dao_description.1`)}</h3>
-        <h3>{t(`main.dao_description.2`)}</h3>
-        <h3>{t(`main.dao_description.3`)}</h3>
+        <div>
+          <h3>
+            <Trans>{t(`main.dao_description.1`)}</Trans>
+          </h3>
+          <h3>
+            <Trans>{t(`main.dao_description.2`)}</Trans>
+          </h3>
+          <h3>
+            <Trans>{t(`main.dao_description.3`)}</Trans>
+          </h3>
+        </div>
       </div>
       <MainTopLink>
         <section>

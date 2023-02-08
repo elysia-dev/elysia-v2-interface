@@ -72,13 +72,35 @@ export const MainTopWrapper = styled.section`
     margin-top: 5vh;
     margin-bottom: 5vh;
     color: white;
-    h3 {
-      font-weight: 400;
-      font-size: 1.5rem;
-      margin: 0;
-
+    > h3 {
+      margin-bottom: 10px;
+    }
+    > div {
+      display: inline-block;
+      border: 1px solid #33a5ff;
+      border-radius: 10px;
+      width: 550px;
       @media (max-width: 640px) {
-        font-size: 1.3rem;
+        width: 300px;
+      }
+      padding: 15px 0px 15px 25px;
+      > h3:not(h3:last-child) {
+        margin-bottom: 13px;
+      }
+      > h3:last-child {
+        margin-bottom: 0px;
+      }
+      > h3 > strong {
+        color: #33a5ff;
+        margin-right: 5px;
+      }
+    }
+    h3 {
+      font-weight: 300;
+      font-size: 1.5rem;
+      margin-top: 0px;
+      @media (max-width: 640px) {
+        font-size: 1.1rem;
       }
       @media (max-width: 460px) {
         font-size: 1.1rem;
