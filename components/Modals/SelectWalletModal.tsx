@@ -23,7 +23,7 @@ type Props = {
   onClose: () => void;
 };
 
-interface WindowWithEthereum extends Window {
+interface WindowWithInjectedWallet extends Window {
   ethereum?: ethers.providers.Web3Provider;
 }
 const walletConnectProvider = walletConnectConnector();
@@ -71,14 +71,15 @@ export const SelectWalletModalContentButton = styled.button`
 const SelectWalletModal = (props: Props) => {
   const { onClose } = props;
   const { activate } = useWeb3React();
-  const [global, setGlobal] = useState<WindowWithEthereum>();
+  const [global, setGlobal] = useState<WindowWithInjectedWallet>();
   const { t } = useTranslation();
   const mediaQueryState = useMediaQueryState();
+  const isMobile = mediaQueryState.mobile;
 
   const wallets = useMemo(() => {
     if (global?.ethereum) {
       return [
-        mediaQueryState.mobile
+        isMobile
           ? { name: 'Browser Wallet', image: browserWallet }
           : { name: 'Metamask', image: metamask },
         { name: 'WalletConnect', image: walletconnect },
@@ -116,7 +117,7 @@ const SelectWalletModal = (props: Props) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setGlobal(window as WindowWithEthereum);
+      setGlobal(window as WindowWithInjectedWallet);
     }
   }, [typeof window]);
 
