@@ -18,5 +18,17 @@ interface Window {
     ) => void;
   };
 
+  okxwallet?: {
+    isMetaMask?: boolean;
+    request?: any;
+    send: unknown;
+    enable: () => Promise<string[]>;
+    on?: (method: string, listener: (...args: any[]) => void) => void;
+    removeListener?: (
+      method: string,
+      listener: (...args: any[]) => void,
+    ) => void;
+  };
+
   web3?: {};
 }

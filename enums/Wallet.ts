@@ -3,6 +3,7 @@ enum Wallet {
   Metamask = 'Metamask',
   CoinbaseWallet = 'CoinbaseWallet',
   WalletConnect = 'WalletConnect',
+  Okx = 'Okx',
 }
 
 export default Wallet;
