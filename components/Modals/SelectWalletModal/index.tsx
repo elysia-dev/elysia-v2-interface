@@ -55,6 +55,8 @@ export const SelectWalletModalContentButton = styled.button`
 const SelectWalletModal = (props: Props) => {
   const { onClose } = props;
   const { t } = useTranslation();
+  const mediaQueryState = useMediaQueryState();
+  const isMobile = mediaQueryState.mobile;
 
   return (
     <>
@@ -62,7 +64,7 @@ const SelectWalletModal = (props: Props) => {
         <SelectWalletModalContent>
           <InjectedWalletButton closeModal={onClose} />
           <WalletConnectButton closeModal={onClose} />
-          <OkxButton closeModal={onClose} />
+          {!isMobile && <OkxButton closeModal={onClose} />}
         </SelectWalletModalContent>
       </ModalLayout>
     </>
