@@ -1,5 +1,5 @@
-import MetamaskButton from './MetamaskButton';
 import CoinbaseWalletButton from './CoinbaseWalletButton';
+import MetamaskButton from './MetamaskButton';
 
 type Props = {
   closeModal: () => void;

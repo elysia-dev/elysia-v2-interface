@@ -6,6 +6,7 @@ import ModalLayout from '../ModalLayout';
 import styled from 'styled-components';
 import WalletConnectButton from './WalletConnectButton';
 import InjectedWalletButton from './InjectedWalletButton';
+import OkxButton from './OkxButton';
 
 type Props = {
   onClose: () => void;
@@ -61,6 +62,7 @@ const SelectWalletModal = (props: Props) => {
         <SelectWalletModalContent>
           <InjectedWalletButton closeModal={onClose} />
           <WalletConnectButton closeModal={onClose} />
+          <OkxButton closeModal={onClose} />
         </SelectWalletModalContent>
       </ModalLayout>
     </>
