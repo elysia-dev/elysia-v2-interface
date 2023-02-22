@@ -2,11 +2,11 @@ import { useWeb3React } from '@web3-react/core';
 import injectedConnector from 'core/connectors/injectedConnector';
 import Wallet from 'enums/Wallet';
 import { setWalletConnect } from 'utils/connectWallet';
+import { sendGAMetamask } from 'utils/ga';
 import metamask from 'assets/images/metamask@2x.png';
 import Image from 'next/image';
 import { SelectWalletModalContentButton } from '../';
 import { activateInjectedProvider } from '.';
-import { sendGAMetamask } from 'utils/ga';
 
 type Props = {
   closeModal: () => void;
