@@ -4,6 +4,7 @@ enum Wallet {
   CoinbaseWallet = 'CoinbaseWallet',
   WalletConnect = 'WalletConnect',
   Okx = 'Okx',
+  None = '',
 }
 
 export default Wallet;

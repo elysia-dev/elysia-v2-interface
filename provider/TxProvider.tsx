@@ -7,6 +7,8 @@ import ethersJsErrors from 'utils/ethersJsErrors';
 import { useWeb3React } from '@web3-react/core';
 import buildEventEmitter from 'utils/buildEventEmitter';
 import TransactionType from 'enums/TransactionType';
+import Wallet from 'enums/Wallet';
+import { setWalletConnect } from 'utils/connectWallet';
 // import ElyfiVersions from 'src/enums/ElyfiVersions';
 
 const clearLocalStorage = () => {
@@ -22,7 +24,7 @@ const TxProvider: React.FunctionComponent = (props) => {
 
   const reset = () => {
     setState(initialTxContext);
-    window.sessionStorage.setItem('@connect', 'false');
+    setWalletConnect(Wallet.None);
     clearLocalStorage();
   };
 
