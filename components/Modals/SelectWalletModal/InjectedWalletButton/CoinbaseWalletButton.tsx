@@ -5,7 +5,6 @@ import injectedConnector, {
 import Wallet from 'enums/Wallet';
 import { setWalletConnect } from 'utils/connectWallet';
 import CoinbaseSVG from 'assets/images/coinbase.svg';
-import Image from 'next/image';
 import { SelectWalletModalContentButton } from '../';
 
 type Props = {

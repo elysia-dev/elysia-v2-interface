@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useWeb3React } from '@web3-react/core';
 import { useTranslation } from 'react-i18next';
 import useMediaQueryState from 'hooks/useMediaQueryState';
 import ModalLayout from '../ModalLayout';
