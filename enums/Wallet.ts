@@ -1,7 +1,7 @@
 enum Wallet {
+  // browser wallet
   Metamask = 'Metamask',
   WalletConnect = 'WalletConnect',
-  BrowserWallet = 'Browser Wallet',
 }
 
 export default Wallet;
