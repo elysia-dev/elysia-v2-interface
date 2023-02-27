@@ -14,8 +14,8 @@ const InjectedWalletButton: React.FC<Props> = ({ closeModal }) => {
 
   return (
     <>
-      <CoinbaseWalletButton closeModal={closeModal} />
       <MetamaskButton closeModal={closeModal} />
+      <CoinbaseWalletButton closeModal={closeModal} />
     </>
   );
 };
