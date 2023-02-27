@@ -10,8 +10,7 @@ type Props = {
   closeModal: () => void;
 };
 
-const installOkxLink =
-  'https://chrome.google.com/webstore/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge';
+const installOkxLink = 'https://www.okx.com/download';
 
 const OkxButton: React.FC<Props> = ({ closeModal }) => {
   const { activate } = useWeb3React();
