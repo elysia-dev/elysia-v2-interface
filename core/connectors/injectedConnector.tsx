@@ -5,7 +5,7 @@ import Wallet from 'enums/Wallet';
 // Injected wallet이 여러개인 경우 명시적으로 하나를 선택해야 한다.
 export const activateInjectedProvider = (
   providerName: Wallet.Metamask | Wallet.CoinbaseWallet,
-) => {
+): void => {
   const { ethereum } = window;
 
   if (!ethereum?.providers) {
@@ -25,6 +25,8 @@ export const activateInjectedProvider = (
         ({ isMetaMask }: { isMetaMask: boolean }) => isMetaMask,
       );
       break;
+    default:
+      provider = null;
   }
 
   if (provider) {

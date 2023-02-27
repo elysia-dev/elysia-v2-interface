@@ -46,6 +46,7 @@ const Navigation = () => {
   const [isScroll, setIsScroll] = useState(false);
   const [isMobileMenu, setMobileMenu] = useState(false);
 
+  // 새로고침시 지갑연결 유지
   useEffect(() => {
     setTimeout(() => {
       if (isWalletConnector()) {
