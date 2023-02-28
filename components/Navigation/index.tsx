@@ -5,9 +5,17 @@ import { useCallback, useContext, useEffect, useState } from 'react';
 import ConnectWalletButton from './ConnectWalletButton';
 import ElysiaLogo from 'assets/images/Elysia_Logo_White@2x.png';
 import Image from 'next/image';
-import { isMetamask, isWalletConnector } from 'utils/connectWallet';
+import {
+  isMetamask,
+  isCoinbaseWallet,
+  isWalletConnector,
+  clearWallet,
+  isOkx,
+} from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
-import injectedConnector from 'core/connectors/injectedConnector';
+import injectedConnector, {
+  activateInjectedProvider,
+} from 'core/connectors/injectedConnector';
 import useMediaQueryState from 'hooks/useMediaQueryState';
 import TxContext from 'contexts/TxContext';
 import DisconnectModal from 'components/Modals/DisconnectModal';
@@ -23,6 +31,8 @@ import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import * as gtag from 'lib/gtag';
 import { t } from 'i18next';
+import Wallet from 'enums/Wallet';
+import okxConnector from 'core/connectors/okxConnector';
 
 const walletConnectProvider = walletConnectConnector();
 
@@ -36,6 +46,7 @@ const Navigation = () => {
   const [isScroll, setIsScroll] = useState(false);
   const [isMobileMenu, setMobileMenu] = useState(false);
 
+  // 새로고침시 지갑연결 유지
   useEffect(() => {
     setTimeout(() => {
       if (isWalletConnector()) {
@@ -45,12 +56,22 @@ const Navigation = () => {
         return;
       }
       if (isMetamask()) {
+        activateInjectedProvider(Wallet.Metamask);
         activate(injectedConnector).then(() => {
+          setIsConnectWalletLoading(false);
+        });
+      } else if (isCoinbaseWallet()) {
+        activateInjectedProvider(Wallet.CoinbaseWallet);
+        activate(injectedConnector).then(() => {
+          setIsConnectWalletLoading(false);
+        });
+      } else if (isOkx()) {
+        activate(okxConnector).then(() => {
           setIsConnectWalletLoading(false);
         });
       } else {
         deactivate();
-        window.sessionStorage.removeItem('@network');
+        clearWallet();
         setIsConnectWalletLoading(false);
       }
     }, 500);

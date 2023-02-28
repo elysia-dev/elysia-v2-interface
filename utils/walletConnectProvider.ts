@@ -23,6 +23,7 @@ const walletConnectConnector = (): WalletConnectConnector => {
         'trust',
         'imtoken',
         'pillar',
+        'okx',
       ],
     },
   });

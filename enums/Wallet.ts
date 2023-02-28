@@ -1,7 +1,10 @@
 enum Wallet {
+  // browser wallet
   Metamask = 'Metamask',
+  CoinbaseWallet = 'CoinbaseWallet',
   WalletConnect = 'WalletConnect',
-  BrowserWallet = 'Browser Wallet',
+  Okx = 'Okx',
+  None = '',
 }
 
 export default Wallet;

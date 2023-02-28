@@ -449,25 +449,6 @@ div.background__event__mobile {
   );
 }
 
-.wallet_select_modal {
-  &__content {
-    &__wallet_btn {
-    }
-    &__container {
-      padding: 25px;
-      > div:first-child {
-        margin-bottom: 25px;
-      }
-    }
-  }
-  .Metamask:hover {
-    border: 1px solid #3679b5;
-  }
-  .WalletConnect:hover {
-    border: 1px solid #3679b5;
-  }
-}
-
 .privacy-policy {
   font-family: 'Inter', 'NotoSansKr';
   font-size: 15px;
