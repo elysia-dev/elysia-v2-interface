@@ -15,7 +15,7 @@ const CoinbaseWalletButton: React.FC<Props> = ({ closeModal }) => {
 
   const isCoinbasewalletInstalled =
     window.ethereum?.isCoinbaseWallet ||
-    window.ethereum?.providers.find(
+    window.ethereum?.providers?.find(
       ({ isCoinbaseWallet }: { isCoinbaseWallet: boolean }) => isCoinbaseWallet,
     );
 
