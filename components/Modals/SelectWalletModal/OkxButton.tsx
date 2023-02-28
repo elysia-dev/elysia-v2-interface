@@ -10,7 +10,7 @@ type Props = {
   closeModal: () => void;
 };
 
-const installOkxLink = 'https://www.okx.com/download';
+const installOkxLink = 'https://www.okx.com/web3';
 
 const OkxButton: React.FC<Props> = ({ closeModal }) => {
   const { activate } = useWeb3React();
