@@ -58,8 +58,8 @@ const SelectWalletModal = (props: Props) => {
       <ModalLayout title={t('modal.select_wallet')} onClose={() => onClose()}>
         <SelectWalletModalContent>
           <InjectedWalletButton closeModal={onClose} />
+          <OkxButton closeModal={onClose} />
           <WalletConnectButton closeModal={onClose} />
-          {<OkxButton closeModal={onClose} />}
         </SelectWalletModalContent>
       </ModalLayout>
     </>
