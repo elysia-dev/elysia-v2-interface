@@ -83,7 +83,7 @@ export const MainTopWrapper = styled.section`
       @media (max-width: 640px) {
         width: 300px;
       }
-      padding: 15px 0px 15px 25px;
+      padding: 15px 25px;
       > h3:not(h3:last-child) {
         margin-bottom: 13px;
       }
