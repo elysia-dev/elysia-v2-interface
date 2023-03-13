@@ -240,7 +240,7 @@
     },
     "modal": {
       "connect_wallet": [
-        "Start ELYFI",
+        "Start ELYSIA",
         "A wallet connection is required for staking. <br/> Do you want to connect?",
         "Connect Wallet"
       ],
