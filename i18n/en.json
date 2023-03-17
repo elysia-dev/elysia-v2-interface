@@ -12,7 +12,7 @@
       "description": "ELYSIA is a project that makes real-world assets into tokens and connects them with the blockchain."
     },
     "main": {
-      "CTAButton": ["Invest to ELYFI"],
+      "CTAButton": ["Invest in ELYFI"],
       "top": [
         "ELYSIA PROTOCOL",
         "Real world asset tokenization DAO.",
