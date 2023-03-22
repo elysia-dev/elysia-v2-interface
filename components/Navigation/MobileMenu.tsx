@@ -157,6 +157,27 @@ const MobileMenu: React.FC<{
             </span>
           </a>
         </Link>
+        <Link href={`/${router.query.lng}/Roadmap`} passHref>
+          <a
+            onClick={() => {
+              onButtonClick();
+              gtag.event({
+                action: GoogleAnalyticsAction.Roadmap,
+                category: GoogleAnalyticsCategory.Nav,
+                label: '',
+              });
+            }}>
+            <span
+              style={{
+                cursor: 'pointer',
+                fontFamily: router.pathname.includes('FAQ')
+                  ? 'Gilroy-ExtraBold'
+                  : 'Gilroy-Light',
+              }}>
+              {t('meta.roadmap')}
+            </span>
+          </a>
+        </Link>
         <Link href={`/${router.query.lng}/FAQ`} passHref>
           <a
             onClick={() => {
