@@ -1,8 +1,10 @@
 import Slate, { baseUrl } from 'clients/Slate';
+import { ELYFI_LINK_EN, ELYFI_LINK_KO } from 'constant';
 import { IAssetBond } from 'core/types/reserveSubgraph';
 import { parseEther } from 'ethers/lib/utils';
 import Image, { StaticImageData } from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { toUsd } from 'utils/formatters';
 import { IReserve } from 'utils/reserves';
 
@@ -19,6 +21,7 @@ type Props = {
 };
 
 const AssetItem = (props: Props) => {
+  const { i18n } = useTranslation();
   const { abToken, tokenInfo } = props;
   const [image, setImage] = useState('');
 
@@ -53,13 +56,17 @@ const AssetItem = (props: Props) => {
         if ('project' in abToken) {
           abToken.project === 'ELYFI' &&
             window.open(
-              `https://www.elyfi.world/en/market/bondnft/${abToken.id}`,
+              i18n.language === 'ko'
+                ? `${ELYFI_LINK_KO}/market/bondnft/${abToken.id}}`
+                : `${ELYFI_LINK_EN}/market/bondnft/${abToken.id}}`,
               '_blank',
             );
           return;
         }
         window.open(
-          `https://www.elyfi.world/en/portfolio/${abToken.id}`,
+          i18n.language === 'ko'
+            ? `${ELYFI_LINK_KO}/portfolio/${abToken.id}}`
+            : `${ELYFI_LINK_EN}/portfolio/${abToken.id}}`,
           '_blank',
         );
       }}>

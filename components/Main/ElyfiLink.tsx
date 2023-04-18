@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import ElysiaToken2 from 'assets/images/elysia_token2.svg';
 import Image from 'next/image';
+import { ELYFI_LINK_EN, ELYFI_LINK_KO } from 'constant';
 
 export const LinkWrapper = styled.article`
   width: 100%;
@@ -82,9 +83,7 @@ const ElyfiLink = () => {
           <section
             onClick={() => {
               window.open(
-                i18n.language === 'ko'
-                  ? 'https://www.elyfi.world/ko'
-                  : 'https://www.elyfi.world/en',
+                i18n.language === 'ko' ? ELYFI_LINK_KO : ELYFI_LINK_EN,
                 '_blank',
               );
             }}>

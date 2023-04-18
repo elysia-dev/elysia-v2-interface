@@ -10,6 +10,7 @@ import PageHeader from 'components/Common/PageHeader';
 import * as gtag from 'lib/gtag';
 import GoogleAnalyticsAction from 'enums/GoogleAnalyticsAction';
 import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
+import { ELYFI_LINK_EN, ELYFI_LINK_KO } from 'constant';
 
 const Top = () => {
   const { t, i18n } = useTranslation();
@@ -36,9 +37,7 @@ const Top = () => {
           <section
             onClick={() => {
               window.open(
-                i18n.language === 'ko'
-                  ? 'https://www.elyfi.world/ko'
-                  : 'https://www.elyfi.world/en',
+                i18n.language === 'ko' ? ELYFI_LINK_KO : ELYFI_LINK_EN,
                 '_blank',
               );
               gtag.event({
