@@ -26,8 +26,8 @@ export const LinkWrapper = styled.article`
       width: 370px;
       box-shadow: 0px 0px 6px #0e2149;
       border-radius: 20px;
-      opacity: 1;
       backdrop-filter: blur(18px);
+      background-color: rgba(256, 256, 256, 0.3);
       -webkit-backdrop-filter: blur(18px);
 
       @media (max-width: 768px) {
@@ -42,10 +42,10 @@ export const LinkWrapper = styled.article`
         width: 100%;
         border-radius: 20px;
         cursor: pointer;
-        transition: all 1s ease;
+        transition: all 0.3s ease;
         &:hover {
           border: none;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.3);
         }
         @media (max-width: 768px) {
           display: flex;
@@ -67,7 +67,7 @@ export const LinkWrapper = styled.article`
         }
         h2 {
           line-height: 26px;
-          color: #ffffff;
+          color: #020407;
         }
       }
     }
@@ -82,10 +82,7 @@ const ElyfiLink = () => {
         <article>
           <section
             onClick={() => {
-              window.open(
-                i18n.language === 'ko' ? ELYFI_LINK_KO : ELYFI_LINK_EN,
-                '_blank',
-              );
+              window.open('https://app.elyfi.world', '_blank');
             }}>
             <span>
               <ElysiaToken2 />
