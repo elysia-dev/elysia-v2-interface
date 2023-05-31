@@ -1,5 +1,4 @@
 import { IAssetBond } from 'core/types/reserveSubgraph';
-import { formatUnits } from 'ethers/lib/utils';
 import { Dispatch, SetStateAction, useMemo } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import Skeleton from 'react-loading-skeleton';
@@ -21,6 +20,7 @@ import LoanProduct from 'enums/LoanProduct';
 import useTotalStakedBalance from 'hooks/useTotalStakedBalance';
 import useReserveData from 'hooks/useReserveData';
 import CollateralCategory from 'enums/CollateralCategory';
+import useElyfiV2Loans from 'hooks/useElyfiV2Loans';
 
 const PortFolio: React.FC<{
   assetBondTokens: IAssetBond[];
@@ -30,6 +30,7 @@ const PortFolio: React.FC<{
   const { t } = useTranslation();
   const { tvl, isLoading } = useTotalStakedBalance();
   const { reserveState, getAssetBondsByNetwork } = useReserveData();
+  const { loans } = useElyfiV2Loans();
 
   const assetBonds = useMemo(() => {
     return getAssetBondsByNetwork();
@@ -132,7 +133,7 @@ const PortFolio: React.FC<{
               {assetBondTokens.length === 0 ? (
                 <Skeleton width={30} height={20} />
               ) : (
-                assetList.length
+                assetList.length + loans.totalLoans
               )}
             </b>
           </div>
@@ -146,7 +147,11 @@ const PortFolio: React.FC<{
                 roundNumber(totalPrincipal)
               )}
             </b> */}
-            {dataLoading ? <b>-</b> : <b>$ {roundNumber(tvl)}</b>}
+            {dataLoading ? (
+              <b>-</b>
+            ) : (
+              <b>$ {roundNumber(tvl + loans.totalPrincipal)}</b>
+            )}
           </div>
         </section>
         <AssetItemsWrapper>
