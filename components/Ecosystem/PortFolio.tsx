@@ -30,7 +30,7 @@ const PortFolio: React.FC<{
   const { t } = useTranslation();
   const { tvl, isLoading } = useTotalStakedBalance();
   const { reserveState, getAssetBondsByNetwork } = useReserveData();
-  const { loans } = useElyfiV2Loans();
+  const { loans, isLoading: isLoansLoading } = useElyfiV2Loans();
 
   const assetBonds = useMemo(() => {
     return getAssetBondsByNetwork();
@@ -130,7 +130,7 @@ const PortFolio: React.FC<{
           <div>
             <p>{t('ecosystem.portfolio.2')}</p>
             <b>
-              {assetBondTokens.length === 0 ? (
+              {assetBondTokens.length === 0 || isLoansLoading ? (
                 <Skeleton width={30} height={20} />
               ) : (
                 assetList.length + loans.totalLoans
@@ -147,7 +147,7 @@ const PortFolio: React.FC<{
                 roundNumber(totalPrincipal)
               )}
             </b> */}
-            {dataLoading ? (
+            {dataLoading || isLoansLoading ? (
               <b>-</b>
             ) : (
               <b>$ {roundNumber(tvl + loans.totalPrincipal)}</b>
