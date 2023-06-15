@@ -404,9 +404,11 @@ export const PartnersWrapper = styled.article`
             margin-right: 30px;
           }
         }
-        &#backed_by,
-        &#audit {
+        &#backed_by {
           width: 25.25rem;
+        }
+        &#audit {
+          width: calc(25.25rem * 1.5);
         }
         &#legal_review {
           width: 100%;

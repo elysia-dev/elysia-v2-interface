@@ -33,6 +33,17 @@ import Xangle from 'assets/images/main/xangle@2x.webp';
 import XTcom from 'assets/images/main/xtcom@2x.webp';
 import Haechilabs from 'assets/images/main/haechilabs@2x.webp';
 import MetaGalaxia from 'assets/images/main/meta_galaxia.png';
+import SlowMist from 'assets/images/main/SLOWMIST.png';
+
+import Okx from 'assets/images/main/OKX.png';
+import CoinbaseCustody from 'assets/images/main/coinbase_custody.png';
+import Neopin from 'assets/images/main/neopin.png';
+import Ozys from 'assets/images/main/ozys.png';
+import megaton from 'assets/images/main/megaton_finance.png';
+import Ceffu from 'assets/images/main/ceffu.png';
+import Bkex from 'assets/images/main/BKEX.png';
+import Btcex from 'assets/images/main/BTCEX.png';
+import Havah from 'assets/images/main/HAVAH.png';
 
 import { PartnersWrapper } from './styles';
 import Link from 'next/link';
@@ -137,6 +148,18 @@ const Partners = () => {
                     alt={'Haechilabs'}
                     width={115}
                     height={18}
+                  />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://www.slowmist.com/#home" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image
+                    src={SlowMist}
+                    alt={'SlowMist'}
+                    width={115}
+                    height={21}
                   />
                 </a>
               </Link>
@@ -352,6 +375,80 @@ const Partners = () => {
                     width={131}
                     height={24}
                   />
+                </a>
+              </Link>
+            </div>
+
+            <div>
+              <Link href="https://www.okx.com/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={Okx} alt={'Okx'} width={131} height={24} />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://www.coinbase.com/prime/custody" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image
+                    src={CoinbaseCustody}
+                    alt={'CoinbaseCustody'}
+                    width={150}
+                    height={28}
+                  />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://neopin.io/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={Neopin} alt={'Neopin'} width={131} height={24} />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://ozys.io/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={Ozys} alt={'Ozys'} width={150} height={30} />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://megaton.fi/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image
+                    src={megaton}
+                    alt={'megaton'}
+                    width={140}
+                    height={30}
+                  />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://www.ceffu.com/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={Ceffu} alt={'Ceffu'} width={131} height={24} />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://www.bkex.com/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={Bkex} alt={'Bkex'} width={131} height={24} />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://www.btcex.com/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={Btcex} alt={'Btcex'} width={131} height={26} />
+                </a>
+              </Link>
+            </div>
+            <div>
+              <Link href="https://havah.io/" passHref>
+                <a rel="noopener noreferrer" target="_blank">
+                  <Image src={Havah} alt={'Havah'} width={131} height={50} />
                 </a>
               </Link>
             </div>
