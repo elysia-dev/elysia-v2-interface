@@ -3,7 +3,6 @@ import walletconnect from 'assets/images/walletconnect@2x.png';
 import { setWalletConnect } from 'utils/connectWallet';
 import Image from 'next/image';
 import { SelectWalletModalContentButton } from '.';
-import walletConnectConnector from 'utils/walletConnectProvider';
 import { sendGAWalletConnect } from 'utils/ga';
 import { walletConnect } from 'core/connectors/walletConnectConnectorFactory';
 

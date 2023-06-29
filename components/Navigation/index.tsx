@@ -11,7 +11,6 @@ import {
   clearWallet,
   isOkx,
 } from 'utils/connectWallet';
-import walletConnectConnector from 'utils/walletConnectProvider';
 import { activateInjectedProvider } from 'core/connectors/injectedConnector';
 import useMediaQueryState from 'hooks/useMediaQueryState';
 import TxContext from 'contexts/TxContext';
