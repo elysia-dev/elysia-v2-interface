@@ -30,7 +30,7 @@ export const Background = styled.aside`
   align-items: center;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 60;
   backdrop-filter: blur(4px);
 `;
 

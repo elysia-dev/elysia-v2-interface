@@ -1,19 +1,17 @@
 import { useWeb3React } from '@web3-react/core';
-import injectedConnector, {
-  activateInjectedProvider,
-} from 'core/connectors/injectedConnector';
+import { activateInjectedProvider } from 'core/connectors/injectedConnector';
 import Wallet from 'enums/Wallet';
 import { setWalletConnect } from 'utils/connectWallet';
 import { sendGAMetamask } from 'utils/ga';
 import metamask from 'assets/images/metamask@2x.png';
 import Image from 'next/image';
 import { SelectWalletModalContentButton } from '../';
+import { metaMask } from 'core/connectors/metaMask';
 
 type Props = {
   closeModal: () => void;
 };
 const MetamaskButton: React.FC<Props> = ({ closeModal }) => {
-  const { activate } = useWeb3React();
   const walletImg = metamask;
 
   // coinbasewallet 과 다르게 isMetamask 체크만으로 providers 중 metamask provider가 존재하는지 알 수 있음
@@ -26,7 +24,8 @@ const MetamaskButton: React.FC<Props> = ({ closeModal }) => {
       return;
     }
     activateInjectedProvider(Wallet.Metamask);
-    activate(injectedConnector)
+    metaMask
+      .activate()
       .then(() => {
         setWalletConnect(Wallet.Metamask);
         closeModal();

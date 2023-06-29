@@ -1,25 +1,22 @@
-import { useWeb3React } from '@web3-react/core';
 import Wallet from 'enums/Wallet';
 import walletconnect from 'assets/images/walletconnect@2x.png';
 import { setWalletConnect } from 'utils/connectWallet';
 import Image from 'next/image';
 import { SelectWalletModalContentButton } from '.';
-import walletConnectConnector from 'utils/walletConnectProvider';
 import { sendGAWalletConnect } from 'utils/ga';
+import { walletConnect } from 'core/connectors/walletConnectConnectorFactory';
 
 type Props = {
   closeModal: () => void;
 };
 const WalletConnectButton: React.FC<Props> = ({ closeModal }) => {
-  const walletConnectProvider = walletConnectConnector();
-
-  const { activate } = useWeb3React();
   const walletImg = walletconnect;
 
   const description = 'WalletConnect';
 
   const handleClickButton = async () => {
-    activate(walletConnectProvider)
+    walletConnect
+      .activate()
       .then(() => {
         setWalletConnect(Wallet.WalletConnect);
         closeModal();

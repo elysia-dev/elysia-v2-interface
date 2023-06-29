@@ -1,18 +1,14 @@
-import { useWeb3React } from '@web3-react/core';
-import injectedConnector, {
-  activateInjectedProvider,
-} from 'core/connectors/injectedConnector';
+import { activateInjectedProvider } from 'core/connectors/injectedConnector';
 import Wallet from 'enums/Wallet';
 import { setWalletConnect } from 'utils/connectWallet';
 import CoinbaseSVG from 'assets/images/coinbase.svg';
 import { SelectWalletModalContentButton } from '../';
+import { coinbaseWallet } from 'core/connectors/coinbaseConnector';
 
 type Props = {
   closeModal: () => void;
 };
 const CoinbaseWalletButton: React.FC<Props> = ({ closeModal }) => {
-  const { activate } = useWeb3React();
-
   const isCoinbasewalletInstalled =
     window.ethereum?.isCoinbaseWallet ||
     window.ethereum?.providers?.find(
@@ -29,7 +25,8 @@ const CoinbaseWalletButton: React.FC<Props> = ({ closeModal }) => {
       return;
     }
     activateInjectedProvider(Wallet.CoinbaseWallet);
-    activate(injectedConnector)
+    coinbaseWallet
+      .activate()
       .then(() => {
         setWalletConnect(Wallet.CoinbaseWallet);
         closeModal();
