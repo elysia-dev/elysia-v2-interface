@@ -1,10 +1,9 @@
-import { useWeb3React } from '@web3-react/core';
 import Wallet from 'enums/Wallet';
 import { setWalletConnect } from 'utils/connectWallet';
 import Image from 'next/image';
 import { SelectWalletModalContentButton } from '.';
 import okxButton from 'assets/images/okx.webp';
-import okxConnector from 'core/connectors/okxConnector';
+import { okxWallet } from 'core/connectors/okxConnector';
 
 type Props = {
   closeModal: () => void;
@@ -13,7 +12,6 @@ type Props = {
 const installOkxLink = 'https://www.okx.com/web3';
 
 const OkxButton: React.FC<Props> = ({ closeModal }) => {
-  const { activate } = useWeb3React();
   const walletImg = okxButton;
 
   const isOkxInstalled =
@@ -26,7 +24,8 @@ const OkxButton: React.FC<Props> = ({ closeModal }) => {
       return;
     }
 
-    activate(okxConnector)
+    okxWallet
+      .activate()
       .then(() => {
         setWalletConnect(Wallet.Okx);
         closeModal();

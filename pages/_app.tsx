@@ -5,7 +5,8 @@ import '../styles/style.scss';
 import 'react-loading-skeleton/dist/skeleton.css';
 import type { AppProps } from 'next/app';
 import LanguageProvider from 'provider/LanguageProvider';
-import { Web3ReactProvider } from '@web3-react/core';
+import { Web3ReactHooks, Web3ReactProvider } from '@web3-react/core';
+import { WalletConnect as WalletConnectV2 } from '@web3-react/walletconnect-v2';
 import getLibrary from 'utils/getLibrary';
 import TxProvider from 'provider/TxProvider';
 import { useRouter } from 'next/router';
@@ -17,8 +18,32 @@ import { DefaultSeo, DefaultSeoProps } from 'next-seo';
 import { useTranslation } from 'react-i18next';
 import Script from 'next/script';
 import Favicon from 'public/favicon.png';
+import { MetaMask } from '@web3-react/metamask';
+import { Connector } from '@web3-react/types';
+import { CoinbaseWallet } from '@web3-react/coinbase-wallet';
+import { OkxWallet } from 'core/connectors/okx-connector/okxConnector';
+import { metaMask, hooks as metaMaskHooks } from 'core/connectors/metaMask';
+import { hooks, okxWallet } from 'core/connectors/okxConnector';
+import {
+  walletConnect,
+  hooks as walletConnectHooks,
+} from 'core/connectors/walletConnectConnectorFactory';
+import {
+  coinbaseWallet,
+  hooks as coinbaseHooks,
+} from 'core/connectors/coinbaseConnector';
 
 const Layout = dynamic(() => import('components/Layout'));
+
+const connectors: [
+  MetaMask | OkxWallet | Connector | WalletConnectV2 | CoinbaseWallet,
+  Web3ReactHooks,
+][] = [
+  [okxWallet, hooks],
+  [metaMask, metaMaskHooks],
+  [walletConnect, walletConnectHooks],
+  [coinbaseWallet, coinbaseHooks],
+];
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -115,7 +140,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           `,
         }}
       />
-      <Web3ReactProvider getLibrary={getLibrary}>
+      <Web3ReactProvider connectors={connectors}>
         <TxProvider>
           <LanguageProvider>
             <Layout>

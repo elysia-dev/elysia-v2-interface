@@ -13,7 +13,7 @@ type Props = {
 
 const DisconnectModal = (props: Props) => {
   const { onClose } = props;
-  const { deactivate, account } = useWeb3React();
+  const { connector, account } = useWeb3React();
   const { t } = useTranslation();
 
   const AddressCopy = (data: string) => {
@@ -165,7 +165,7 @@ const DisconnectModal = (props: Props) => {
             </section>
             <button
               onClick={() => {
-                deactivate();
+                connector.resetState();
                 window.sessionStorage.removeItem('@connect');
                 onClose();
               }}>

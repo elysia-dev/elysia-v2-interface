@@ -4,11 +4,11 @@ import TxStatus from 'enums/TxStatus';
 import TxContext, { initialTxContext, ITxContext } from 'contexts/TxContext';
 import RecentActivityType from 'enums/RecentActivityType';
 import ethersJsErrors from 'utils/ethersJsErrors';
-import { useWeb3React } from '@web3-react/core';
 import buildEventEmitter from 'utils/buildEventEmitter';
 import TransactionType from 'enums/TransactionType';
 import Wallet from 'enums/Wallet';
 import { setWalletConnect } from 'utils/connectWallet';
+import { useWeb3React } from '@web3-react/core';
 // import ElyfiVersions from 'src/enums/ElyfiVersions';
 
 const clearLocalStorage = () => {
@@ -19,7 +19,7 @@ const clearLocalStorage = () => {
 };
 
 const TxProvider: React.FunctionComponent = (props) => {
-  const { library, chainId, account } = useWeb3React();
+  const { provider, chainId, account } = useWeb3React();
   const [state, setState] = useState<ITxContext>(initialTxContext);
 
   const reset = () => {
@@ -152,7 +152,7 @@ const TxProvider: React.FunctionComponent = (props) => {
     );
     const txType = window.localStorage.getItem('@txType') as RecentActivityType;
 
-    if (library && connected && txHash) {
+    if (provider && connected && txHash) {
       setState({
         ...state,
         txHash,
@@ -162,7 +162,7 @@ const TxProvider: React.FunctionComponent = (props) => {
         txType,
       });
 
-      library
+      provider
         .waitForTransaction(txHash)
         .then((res: any) => {
           if (res && res.status === 1) {
@@ -198,7 +198,7 @@ const TxProvider: React.FunctionComponent = (props) => {
           }, 5000);
         });
     }
-  }, [library]);
+  }, [provider]);
 
   return (
     <TxContext.Provider

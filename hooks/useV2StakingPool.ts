@@ -8,9 +8,9 @@ import { providers } from 'ethers';
 const useV2StakingPool = (): {
   contract: StakingPoolV2 | undefined;
 } => {
-  const { library } = useWeb3React();
+  const { provider } = useWeb3React();
   const contract = useMemo(() => {
-    if (!library) {
+    if (!provider) {
       return StakingPoolV2factory.connect(
         envs.staking.elStakingV2PoolAddress,
         new providers.JsonRpcProvider(process.env.NEXT_PUBLIC_JSON_RPC),
@@ -18,9 +18,9 @@ const useV2StakingPool = (): {
     }
     return StakingPoolV2factory.connect(
       envs.staking.elStakingV2PoolAddress,
-      library.getSigner(),
+      provider.getSigner(),
     );
-  }, [library]);
+  }, [provider]);
 
   return { contract };
 };

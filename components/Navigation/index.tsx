@@ -1,4 +1,3 @@
-import { useWeb3React } from '@web3-react/core';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCallback, useContext, useEffect, useState } from 'react';
@@ -13,9 +12,7 @@ import {
   isOkx,
 } from 'utils/connectWallet';
 import walletConnectConnector from 'utils/walletConnectProvider';
-import injectedConnector, {
-  activateInjectedProvider,
-} from 'core/connectors/injectedConnector';
+import { activateInjectedProvider } from 'core/connectors/injectedConnector';
 import useMediaQueryState from 'hooks/useMediaQueryState';
 import TxContext from 'contexts/TxContext';
 import DisconnectModal from 'components/Modals/DisconnectModal';
@@ -32,14 +29,16 @@ import GoogleAnalyticsCategory from 'enums/GoogleAnalyticsCategory';
 import * as gtag from 'lib/gtag';
 import { t } from 'i18next';
 import Wallet from 'enums/Wallet';
-import okxConnector from 'core/connectors/okxConnector';
-
-const walletConnectProvider = walletConnectConnector();
+import okxConnector, { okxWallet } from 'core/connectors/okxConnector';
+import { useWeb3React } from '@web3-react/core';
+import { metaMask } from 'core/connectors/metaMask';
+import { walletConnect } from 'core/connectors/walletConnectConnectorFactory';
+import { coinbaseWallet } from 'core/connectors/coinbaseConnector';
 
 const Navigation = () => {
   const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false);
-  const { account, activate, deactivate, library, chainId } = useWeb3React();
+  const { account, connector, provider, chainId } = useWeb3React();
   const { txStatus, error } = useContext(TxContext);
   const [isConnectWalletLoading, setIsConnectWalletLoading] = useState(true);
   const mediaQueryState = useMediaQueryState();
@@ -50,27 +49,27 @@ const Navigation = () => {
   useEffect(() => {
     setTimeout(() => {
       if (isWalletConnector()) {
-        activate(walletConnectProvider).then(() => {
+        walletConnect.activate().then(() => {
           setIsConnectWalletLoading(false);
         });
         return;
       }
       if (isMetamask()) {
         activateInjectedProvider(Wallet.Metamask);
-        activate(injectedConnector).then(() => {
+        metaMask.activate().then(() => {
           setIsConnectWalletLoading(false);
         });
       } else if (isCoinbaseWallet()) {
         activateInjectedProvider(Wallet.CoinbaseWallet);
-        activate(injectedConnector).then(() => {
+        coinbaseWallet.activate().then(() => {
           setIsConnectWalletLoading(false);
         });
       } else if (isOkx()) {
-        activate(okxConnector).then(() => {
+        okxWallet.activate().then(() => {
           setIsConnectWalletLoading(false);
         });
       } else {
-        deactivate();
+        connector.resetState();
         clearWallet();
         setIsConnectWalletLoading(false);
       }
@@ -84,9 +83,9 @@ const Navigation = () => {
   }, [txStatus]);
 
   useEffect(() => {
-    if (!library || (chainId && isChainId(chainId))) return;
-    library.provider
-      .request({
+    if (!provider || (chainId && isChainId(chainId))) return;
+    provider.provider
+      .request?.({
         method: 'wallet_switchEthereumChain',
         params: [
           {
@@ -98,7 +97,7 @@ const Navigation = () => {
       .catch((error: any) => {
         console.error(error);
       });
-  }, [chainId, library]);
+  }, [chainId, provider]);
 
   useEffect(() => {
     if (typeof window === undefined) return;

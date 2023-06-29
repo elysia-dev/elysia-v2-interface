@@ -1,4 +1,4 @@
-import { InjectedConnector } from '@web3-react/injected-connector';
+// import { InjectedConnector } from '@web3-react/injected-connector';
 import Wallet from 'enums/Wallet';
 
 // https://github.com/Uniswap/web3-react/issues/300#issuecomment-995170556
@@ -34,8 +34,8 @@ export const activateInjectedProvider = (
   }
 };
 
-const injectedConnector = new InjectedConnector({
-  // supportedChainIds: [1, 3, 4, 5],
-});
+// const injectedConnector = new InjectedConnector({
+//   // supportedChainIds: [1, 3, 4, 5],
+// });
 
-export default injectedConnector;
+// export default injectedConnector;
