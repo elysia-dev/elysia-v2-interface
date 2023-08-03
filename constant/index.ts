@@ -1,2 +1,2 @@
-export const ELYFI_LINK_KO = 'https://v1.elyfi.world/ko';
-export const ELYFI_LINK_EN = 'https://v1.elyfi.world/en';
+export const ELYFI_LINK_KO = 'https://elyfi.world/';
+export const ELYFI_LINK_EN = 'https://elyfi.world/';
