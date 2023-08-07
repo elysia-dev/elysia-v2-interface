@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Elyland from 'assets/images/developers/elylab_elyland.png';
+import Link from 'next/link';
 
 export const Wrapper = styled.div`
   min-height: 1300px;
@@ -126,16 +127,19 @@ const Labs = (props: any) => {
 
       <Wrapper>
         <CardWrapper>
-          <Card isOpen={true}>
-            {/* <div>
-              <Image src={Elyland} alt="Elyland" />
-            </div>
-            <div>
-              <strong>ELYLAND</strong>
-              <p>{t('laboratory.3')}</p>
-            </div> */}
-            <div className="coming_soon">Coming Soon</div>
-          </Card>
+          <Link href={'https://virtual.elysia.land/'} passHref>
+            <a target="_blank">
+              <Card isOpen={true}>
+                <div>
+                  <Image src={Elyland} alt="Elyland" />
+                </div>
+                <div>
+                  <strong>ELYLAND</strong>
+                  <p>{t('laboratory.3')}</p>
+                </div>
+              </Card>
+            </a>
+          </Link>
           <Card isOpen={false}>
             <div className="coming_soon">Coming Soon</div>
           </Card>
