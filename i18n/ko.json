@@ -5,14 +5,14 @@
       "defaultTitle": "엘리시아",
       "governance": "거버넌스",
       "ecosystem": "생태계",
-      "development": "개발",
+      "development": "실험실",
       "community": "커뮤니티",
       "roadmap": "로드맵",
       "faq": "FAQ",
       "description": "엘리시아는 실물자산을 토큰으로 만들어 블록체인과 연결하는 프로젝트입니다."
     },
     "main": {
-      "CTAButton": ["엘리파이 투자하기"],
+      "CTAButton": ["Go to ELYFI App"],
       "top": [
         "엘리시아 프로토콜",
         "탈중앙 토큰화 프로토콜에서 실물자산을 토큰화하고 이용해보세요",
@@ -132,11 +132,11 @@
       "ELYSIA Protocol 개발에 참여하세요!",
       "ELYSIA의 최신 소식을 확인하세요!"
     ],
-    "developers": [
-      "개발",
-      "누구나 참여할 수 있는 탈중앙 개발 환경",
-      "사용자들은 자유롭게 ELYSIA 시스템을 구성하는 코드를 확인하고,<br /> 자신만의 방법으로 contribute하고 보상을 획득할 수 있습니다.",
-      "엘리시아란?",
+    "laboratory": [
+      "실험실",
+      "엘리시아 실험실",
+      "엘리시아의 생태계 확장을 위해 다양한 프로젝트를 설계 및 테스트합니다.<br/>이전에 테스트를 했거나 테스트 중인 프로젝트를 확인할 수 있습니다.",
+      "엘리시아의 가상 부동산 프로젝트",
       "실물자산의 디지털포메이션을 위한 DAO이다.",
       "Smart Contract Overview",
       "How smart contract is made<br /> In real world asset based token",

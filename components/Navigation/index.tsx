@@ -228,7 +228,7 @@ const Navigation = () => {
                     </span>
                   </div>
                 </Link>
-                <Link href={`/${router.query.lng}/Developers`} passHref>
+                <Link href={`/${router.query.lng}/Labs`} passHref>
                   <div
                     onClick={() => {
                       gtag.event({

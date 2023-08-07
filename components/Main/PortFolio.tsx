@@ -65,12 +65,12 @@ const PortFolio = () => {
         style={{
           height: image.length > 0 ? undefined : '410px',
         }}>
-        {image.length > 0 &&
+        {/* {image.length > 0 &&
           Array(4)
             .fill(0)
             .map((_, idx) => {
               return <AssetItem key={`item_${idx}`} image={image[idx]} />;
-            })}
+            })} */}
       </MainPortfolioItems>
       <MainPortfolioLink>
         <Link href={`${i18n.language}/Ecosystem`} passHref>

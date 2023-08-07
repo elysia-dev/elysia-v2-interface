@@ -5,14 +5,14 @@
       "defaultTitle": "ELYSIA - Real World Asset Tokenization DAO",
       "governance": "Governance",
       "ecosystem": "Ecosystem",
-      "development": "Development",
+      "development": "Labs",
       "community": "Community",
       "roadmap": "Roadmap",
       "faq": "FAQ",
       "description": "ELYSIA is a project that makes real-world assets into tokens and connects them with the blockchain."
     },
     "main": {
-      "CTAButton": ["Invest in ELYFI"],
+      "CTAButton": ["Go to ELYFI App"],
       "top": [
         "ELYSIA PROTOCOL",
         "Real world asset tokenization DAO.",
@@ -131,11 +131,11 @@
       "Participate in development of ELYSIA!",
       "Check out the latest news from ELYSIA!"
     ],
-    "developers": [
-      "Developers",
-      "Powered by global developers",
-      "Developers can give rewards by freely contributing ELYSIA and ELYFI system.",
-      "What is ELYSIA?",
+    "laboratory": [
+      "Labs",
+      "ELYSIA Labs",
+      "We design and test various projects to expand ELYSIA's ecosystem.<br/>You can check which projects we have tested or are testing.",
+      "ELYSIA's virtual property project",
       "DAO for the digital transformation of real estate assets.",
       "Smart Contract Overview",
       "How smart contract is made<br /> In real world asset based token",
