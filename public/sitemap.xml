@@ -35,7 +35,12 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.elysia.land/en/Developers</loc>
+    <loc>https://www.elysia.land/en/Labs</loc>
+    <lastmod>2022-07-06T03:15:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.elysia.land/en/Roadmap</loc>
     <lastmod>2022-07-06T03:15:00+00:00</lastmod>
     <priority>0.80</priority>
   </url>
@@ -70,7 +75,12 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.elysia.land/ko/Developers</loc>
+    <loc>https://www.elysia.land/ko/Labs</loc>
+    <lastmod>2022-07-06T03:15:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.elysia.land/ko/Roadmap</loc>
     <lastmod>2022-07-06T03:15:00+00:00</lastmod>
     <priority>0.80</priority>
   </url>
