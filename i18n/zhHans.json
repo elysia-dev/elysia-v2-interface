@@ -1,0 +1,308 @@
+{
+  "translation": {
+    "meta": {
+      "titleTemplate": "%s | ELYSIA",
+      "defaultTitle": "ELYSIA - 现实世界资产代币化DAO",
+      "governance": "治理",
+      "ecosystem": "生态系统",
+      "development": "发展",
+      "community": "社区",
+      "roadmap": "路线图",
+      "faq": "常见问题",
+      "description": "ELYSIA是一个将真实资产转换为代币并与区块链相连接的项目"
+    },
+    "main": {
+      "CTAButton": ["投资于ELYFI"],
+      "top": [
+        "ELYSIA协议",
+        "现实世界资产代币化DAO。",
+        "ELYSIA是一种将房地产等现实世界资产代币化,<br />并使用DAO(去中心化自治组织) 对其进行清算的协议.<br/>Users can play in various blockchain ecosystems like Defi with this token."
+      ],
+      "dao_description": [
+        "ELYSIA是一个DAO专业团队，支持ELYSIA DAO",
+        " <strong>01</strong> 美国政府认可的全球第二家DAO有限责任公司（LLC）",
+        " <strong>02</strong> 在上市项目中首家成立的DAO有限责任公司（LLC）",
+        " <strong>03</strong> 亚洲首家DAO有限责任公司（LLC）"
+      ],
+      "top_icon": ["现实世界的资产", "社区成员", "总价值锁定", "GitHub提交"],
+      "portfolio": [
+        "ELYSIA资产代币",
+        "ELYSIA上的代币化现实世界资产",
+        "ELYSIA协议制作的房地产投资组合。",
+        "查看更多"
+      ],
+      "section_el_bridge": [
+        "EL桥",
+        "现实世界资产转换为数字NFT.",
+        "如何基于房地产做NFT？",
+        "EL Bridge 提供实物资产通证化功能，让用户可以在区块链金融生态系统中使用实物资产。"
+      ],
+      "section_governance": [
+        "治理",
+        "由全球社区管理的DAO",
+        "ELYSIA是一家DAO有限责任公司，由EL代币质押者拥有和运营。",
+        "用户可以参与代币经济中的整个决策过程，将现实世界的资产代币化并进行交易。"
+      ],
+      "section_ecosystem": [
+        "生态系统",
+        "去中心化代币经济",
+        "基于代币化房地产的生态系统",
+        "用户可以使用Defi等第三方Dapp以房地产代币参与各种代币经济。"
+      ],
+      "section_community": [
+        "社区",
+        "以用户为中心的社区渠道",
+        "多种形式的社区渠道",
+        "用户可以使用众多社区渠道与ELYSIA协议中的其他人进行交流和决策。"
+      ],
+      "section_developers": [
+        "开发者",
+        "由全球开发者提供支持",
+        "去中心化开发系统",
+        "开发者可以通过免费为ELYSIA和ELYFI系统做出贡献来给予奖励。"
+      ],
+      "section_documents": [
+        "文档",
+        "新手和对项目感兴趣的人的指南。",
+        "每个关于ELYSIA协议的文档",
+        "任何人都可以通过查看ELYSIA文档来检查ELYSIA代币经济是如何设计的。"
+      ],
+      "partners": [
+        "ELYSIA DAO合作伙伴",
+        "强大的合作伙伴们，帮助实现ELYSIA的愿景。",
+        "链上 & 链下合作伙伴们",
+        "受支持",
+        "法律审查",
+        "审计",
+        "房地产产品",
+        "商业"
+      ],
+      "developers": [
+        "ELYSIA DAO有限责任公司贡献者",
+        "在美国怀俄明州注册",
+        "ELYSIA DAO有限责任公司做出的每一个决定都是去中心化的，并且基于开源代码，因此匿名参与者可以做出贡献。"
+      ],
+      "press": [
+        "新闻界",
+        "ELYSIA协议的新闻和更新。",
+        "国内外ELYSIA协议相关新闻。",
+        "ELYFI推出美国房产投资产品。",
+        "韩国首尔，2022 年 7 月 6 日——(BUSINESS WIRE)——连接实体和虚拟资产的DeFi协议ELYFI宣布推出一款新的美国房地产投资产品。",
+        "ELYFI推出美国房产投资产品。",
+        "韩国首尔，2022 年 7 月 6 日——(BUSINESS WIRE)——连接实体和虚拟资产的DeFi协议ELYFI宣布推出一款新的美国房地产投资产品。",
+        "ELYSIA将成为亚洲第一家在美国怀俄明州获得 DAO LLC批准的公司",
+        "新加坡，2022 年 2 月 7 日——(BUSINESS WIRE)——专注于房地产代币化和证券化的区块链项目ELYSIA将成为亚洲第一家在美国怀俄明州注册为DAO LLC（有限责任公司）的组织"
+      ]
+    },
+    "ecosystem": {
+      "top": [
+        "ELYSIA生态系统",
+        "用户可以使用Defi等第三方Dapps使用房地产代币参与各种代币经济。"
+      ],
+      "project": [
+        "项目",
+        "它是一个内部和外部项目，可以利用通过ELYSIA协议创建的资产代币。<br/> 随着对资产代币的需求增加和技术进步，ELYSIA 生态系统正在扩展并变得更加多样化。",
+        "以资产代币为抵押品借出数字资产的DeFi",
+        "即将更新",
+        "ELYSIA 手机应用程式",
+        "用户可以买卖资产代币的NFT市场",
+        "投资DAO",
+        "可以购买在ELYSIA中创建的资产代币的DAOs"
+      ],
+      "portfolio": [
+        "文件夹",
+        "通过ELYSIA协议发行的资产代币信息。",
+        "总AToken",
+        "AToken总价值",
+        "查看更多"
+      ]
+    },
+    "community": [
+      "ELYSIA 社区",
+      "以用户为中心的社区渠道",
+      "用户可以使用众多社区渠道与ELYSIA协议中的其他人进行交流和决策。",
+      "提出问题并参与ELYSIA社区！",
+      "关注ELYSIA的最新消息!",
+      "参与ELYSIA的开发！",
+      "查看ELYSIA的最新消息！"
+    ],
+    "laboratory": [
+      "实验室",
+      "ELYSIA实验室",
+      "我们设计和测试各种项目，以扩展ELYSIA的生态系统。<br/>您可以查看我们已经测试或正在测试的项目。",
+      "ELYSIA虚拟房地产项目",
+      "실물자산의 디지털포메이션을 위한 DAO이다.",
+      "Smart Contract Overview",
+      "How smart contract is made<br /> In real world asset based token",
+      "Bug Bounty",
+      "Coming Soon!",
+      "ELYSIA v1 Documentation",
+      "Github"
+    ],
+    "roadmap": {
+      "top": [
+        "路线图",
+        "ELYSIA的路线图和档案",
+        "您可以查看我们治理设置的路线图和过去的档案"
+      ]
+    },
+    "documents": [
+      "文件",
+      "新手指南及任何对该项目感兴趣的人指南。",
+      "任何人都可以通过查看ELYSIA文档来了解ELYSIA代币经济模型的设计。",
+      "ELYSIA白皮书",
+      "实物资产<br /> 通证化DAO",
+      "ELYFI白皮书",
+      "添加房地产<br /> 到DeFi概念中",
+      "新手指南",
+      "敬请期待...<br />我们很快将推出这项服务！",
+      "Github",
+      "加入开发<br /> ELYSIA协议"
+    ],
+    "navigation": {
+      "wallet": "连接钱包"
+    },
+    "governance": {
+      "title": "ELYSIA治理",
+      "section_first": [
+        "ELYSIA是一个DAO LLC，由EL Token持有者拥有和运营。",
+        "ELYSIA DAO正在开发一个令实物资产能够在数字资产市场，如DeFi和NFT市场等得到应用的代币化协议。",
+        "亚洲首个DAO LLC。",
+        "全球第二个获得美国政府认可的DAO LLC",
+        "DAO LLC是上市项目中第一个成立的。"
+      ],
+      "section_second": [
+        "如何加入",
+        "购买EL代币",
+        "ELYSIA代币代表着ELYSIA DAO LLC的所有权，并在DEX和CEX上列出许多EL代币，以便任何对ELYSIA和未来感兴趣的人可以参与治理。",
+        "浏览交易所",
+        "代币经济学",
+        "EL信息",
+        "实时价格",
+        "总创建量",
+        "它代表着创建的EL代币的总数量。",
+        "总供应量",
+        "它代表着从总创建量中减去已销毁的数量。",
+        "流通供应量",
+        "它代表着从总供应量中流通在市场上或存储在个人钱包中的数量，以便可以直接在市场上进行交易。"
+      ],
+      "section_third": [
+        "通过质押获得投票权(sEL)！",
+        "为了参与决策过程，用户必须拥有投票权利（质押的EL，sEL）。 用户可以通过在EL质押上质押EL代币来获得投票权，他们可以投票的数量与他们质押的数量相等。",
+        "质押期限为<strong>ELYSIA 2.0</strong>开放前，用户可以随时解除质押。",
+        "EL质押指南",
+        "总质押量",
+        "EL质押",
+        "先前的质押计划",
+        "质押数量",
+        "奖励金额",
+        "质押|未质押",
+        "领取奖励",
+        "对于EL质押，请将连接的钱包网络更改为“以太坊主网”。"
+      ],
+      "prev_staking": [
+        "之前的质押计划",
+        "上一个EL抵押计划进行了7轮，从 <strong>2021年7月27日到2022年4月17日KST。</strong>.<br/> 只有在此期间保留抵押的用户才能看到。想要撤销抵押并领取奖励的用户,<br/> 请连接您的钱包。",
+        "第1至7轮",
+        "需要连接钱包。",
+        "没有质押的EL代币数量。",
+        {
+          "1": "第1轮",
+          "2": "第2轮",
+          "3": "第3轮",
+          "4": "第4轮",
+          "5": "第5轮",
+          "6": "第6轮",
+          "7": "第7轮"
+        },
+        "质押数量",
+        "奖励数量",
+        "解除质押",
+        "领取奖励"
+      ],
+      "section_fourth": [
+        "分享、讨论和提出您的意见，共同发展ELYSIA！",
+        "任何认同ELYSIA Protocol或希望参与ELYSIA发展的人都可以参与治理。\n参与者可以在 ELYSIA 论坛中自由提出改进意见，并在快照中对决策过程进行投票",
+        "治理常见问题",
+        "论坛指南",
+        "快照指南",
+        "治理空间",
+        "论坛（ELYSIA + ELYFI）",
+        "ELYSIA论坛是ELYSIA治理系统的重要组成部分，旨在培育ELYSIA的生态系统。作为“离链周期”的一部分，论坛是一个参与者可以自由提出和讨论倡议、共享资源和信息的场所。",
+        "快照（ELYSIA + ELYFI）",
+        "快照是一个完成离链治理并决定是否通过需要最终决策的议程的空间。通过抵押EL获得的sEL代币作为投票权，参与者可以根据持有的sEL行使他们的权利。"
+      ]
+    },
+    "modal": {
+      "connect_wallet": [
+        "启动ELYFI",
+        "需要连接钱包才能进行质押。 <br/> 是否要连接钱包？",
+        "连接钱包"
+      ],
+      "amount_max": "最大",
+      "select_wallet": "连接钱包",
+      "staking": ["质押", "钱包余额", "可用于质押的数量"],
+      "unstaking": ["Unstaking", "已质押金额", "可解锁金额"],
+      "button": ["不足的余额"],
+      "reward": ["领取奖励"],
+      "prev_unstaking": "在第 {{round}} 轮中投入的金额",
+      "indicator": ["一个批准交易正在处理中。", "请在您的钱包中确认此交易。"],
+      "transaction": ["您可以在右上角查看交易进度。", "3秒后关闭"],
+      "approve": [
+        "为了向资金池存款，您需要批准访问权限，以便应用程序可以访问连接的钱包。",
+        "仅在初始存款时需要批准，批准成功后，之后可以无需再次批准即可进行存款。",
+        "<strong>*</strong> 访问权限的批准也是使用网络的交易，因此会产生燃气费。",
+        "批准",
+        "检查您的代币权限..."
+      ],
+      "user_info": [
+        "账户",
+        "断开连接",
+        "复制地址",
+        "在Etherscan上查看",
+        "最近活动",
+        "最近的活动将显示在这里"
+      ]
+    },
+    "footer": {
+      "logo_label": "ELYSIA DAO有限责任公司。",
+      "contact": "联系",
+      "email": "cs@elysia.land",
+      "whitepaper": "白皮书（旧版）",
+      "community": "社区",
+      "copyright": "ELYSIA ⓒ 2018·2022。版权所有。",
+      "privacy_policy": "隐私政策",
+      "terms_service": "服务条款",
+      "language": "语言",
+      "language_en": "English",
+      "language_ko": "한국어",
+      "language_zh·hans": "简体中文",
+      "contract": "合约",
+      "el": "Elysia (EL)",
+      "elfi": "Elyfi (ELFI)"
+    },
+    "FAQ": {
+      "top": [
+        "常见问题解答",
+        "关于ELYSIA协议、ELYISA DAO和EL Bridge",
+        "了解更多关于 ELYSIA 的信息，包括常见问题及答案。"
+      ],
+      "question": [
+        "什么是 ELYSIA 协议？",
+        "什么是 EL Bridge？",
+        "哪些资产可以进行代币化？",
+        "什么是资产代币？",
+        "为什么选择 EL Bridge？",
+        "什么是EL代币和sEL代币？"
+      ],
+      "answer": [
+        "如果要在区块链上使用真实资产，必须首先将其注册为代币。 ELYSIA 协议是用于此的代币化标准。当用户想在加密金融市场中使用真实资产时，他们应该将其转化为代币。此时，代币化方法、每个参与者的角色和参与者的补偿等总体规则被称为ELYSIA协议。",
+        "EL Bridge是基于ELYSIA协议开发的现实世界资产代币化工具。用户可以使用EL Bridge将参与者拥有的资产代币化。在开发方面，EL Bridge是一个智能合约，根据输入的真实资产信息发行代币，并且目前已经部署在以太坊主网和币安智能链上。截至 2022 年 6 月 16 日 KST，通过 EL Bridge 创建了 50 多种真实资产代币，其价值达到了 640 万美元。",
+        "目前，“贷款应收账款”和“本金应收账款”可以通过EL Bridge进行代币化。ELYISIA DAO正在开发与房地产相关的各种资产代币化标准，并最终旨在将所有现实世界资产代币化。",
+        "在ELYSIA生态系统中，通过EL Bridge创建的基于真实世界资产的代币被定义为资产代币（AToken）。此外，根据不同的真实世界资产类型，可能存在各种类型的资产代币。例如，基于贷款债券的代币被定义为资产债券代币（ABToken）。",
+        "EL Bridge是唯一遵循ELYSIA协议的现实世界资产通证化平台。为了在加密货币市场中使用现实世界资产，资产所有者必须通过EL Bridge发行资产代币。\n\n当资产代币发行后，资产所有者可以将ATokens作为现实资产在加密货币金融市场（例如 DeFi 和 NFT 市场）中使用。例如，他们可以使用ABToken作为抵押品，在ELYFI中借出稳定币，这是一个真实世界资产支持的 DeFi。",
+        "当用户通过EL Bridge发行AToken时，EL token将被用作手续费。\n\nsEL token是ELYSIA DAO中的治理代币，作为投票权。您可以通过在EL Staking中质押EL token来获取这些代币。此外，您可以根据持有的sEL token数量获得投票权，对与ELYSIA协议相关的提案行使投票权。"
+      ]
+    }
+  }
+}

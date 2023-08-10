@@ -119,7 +119,7 @@ const RoadmapComponent = (props: any) => {
   const { t } = useTranslation();
   const router = useRouter();
   const { lng } = router.query;
-  const safeLng = lng === 'en' ? 'en' : 'kr';
+  const safeLng = lng === 'ko' ? 'kr' : 'en';
   const [fetchedRoadmaps, setFetchedRoadmaps] = useState<AllRoadmaps>();
 
   const [currentTab, setCurrentTab] = useState<

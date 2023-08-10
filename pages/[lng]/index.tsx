@@ -16,7 +16,11 @@ const MainPage = () => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [{ params: { lng: 'en' } }, { params: { lng: 'ko' } }],
+    paths: [
+      { params: { lng: 'en' } },
+      { params: { lng: 'ko' } },
+      { params: { lng: 'zhHans' } },
+    ],
     fallback: false,
   };
 };

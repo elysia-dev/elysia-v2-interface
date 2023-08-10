@@ -58,6 +58,9 @@ const MobileMenu: React.FC<{
     flex-direction: row;
     margin-bottom: 4vh;
     cursor: pointer;
+    > * + * {
+      border-left: 1px solid #fff;
+    }
     > p {
       color: #fff;
       font-size: 1.5rem;
@@ -65,7 +68,6 @@ const MobileMenu: React.FC<{
       padding: 0 20px;
       &:first-child {
         padding-left: 0;
-        border-right: 1px solid #fff;
       }
     }
   `;
@@ -228,6 +230,20 @@ const MobileMenu: React.FC<{
             fontWeight: lng === LanguageType.EN ? 'bold' : 'normal',
           }}>
           ENG
+        </p>
+        <p
+          onClick={() => {
+            gtag.event({
+              action: GoogleAnalyticsAction.NavLanguage,
+              category: GoogleAnalyticsCategory.Nav,
+              label: '',
+            });
+            setLanguage(LanguageType.ZHHANS);
+          }}
+          style={{
+            fontWeight: lng === LanguageType.ZHHANS ? 'bold' : 'normal',
+          }}>
+          CHN
         </p>
       </LanguageContainer>
       <ConnectWalletButton

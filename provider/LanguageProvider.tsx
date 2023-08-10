@@ -8,7 +8,7 @@ import getLocalLanguage from 'utils/getLocalLanguage';
 const LanguageProvider: React.FC = (props) => {
   const { i18n } = useTranslation();
   const router = useRouter();
-  const lng = router.asPath.substring(1, 3);
+  const lng = router.asPath.substring(1);
 
   const setLanguage = (language: LanguageType) => {
     window.localStorage.setItem('@language', language);
@@ -27,7 +27,11 @@ const LanguageProvider: React.FC = (props) => {
   }, []);
 
   useEffect(() => {
-    if ([LanguageType.EN, LanguageType.KO].includes(lng as LanguageType)) {
+    if (
+      [LanguageType.EN, LanguageType.KO, LanguageType.ZHHANS].includes(
+        lng as LanguageType,
+      )
+    ) {
       window.localStorage.setItem('@language', lng);
       i18n.changeLanguage(lng);
     }
