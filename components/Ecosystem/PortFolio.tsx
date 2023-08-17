@@ -26,7 +26,9 @@ const PortFolio: React.FC<{
   assetBondTokens: IAssetBond[];
   pageNum: number;
   setPageNum: Dispatch<SetStateAction<number>>;
-}> = ({ assetBondTokens, pageNum, setPageNum }) => {
+  totalLoan: number;
+  totalLoanLength: number;
+}> = ({ assetBondTokens, pageNum, setPageNum, totalLoan, totalLoanLength }) => {
   const { t } = useTranslation();
   const { tvl, isLoading } = useTotalStakedBalance();
   const { reserveState, getAssetBondsByNetwork } = useReserveData();
@@ -133,7 +135,7 @@ const PortFolio: React.FC<{
               {assetBondTokens.length === 0 || isLoansLoading ? (
                 <Skeleton width={30} height={20} />
               ) : (
-                assetList.length + loans.totalLoans
+                assetList.length + loans.totalLoans + totalLoanLength
               )}
             </b>
           </div>
@@ -150,7 +152,7 @@ const PortFolio: React.FC<{
             {dataLoading || isLoansLoading ? (
               <b>-</b>
             ) : (
-              <b>$ {roundNumber(tvl + loans.totalPrincipal)}</b>
+              <b>$ {roundNumber(tvl + loans.totalPrincipal + totalLoan)}</b>
             )}
           </div>
         </section>

@@ -2,10 +2,14 @@ import CollateralCategory from 'enums/CollateralCategory';
 import useReserveData from 'hooks/useReserveData';
 import { useMemo, useState } from 'react';
 import { parseTokenId } from 'utils/parseTokenId';
+
 import PortFolio from './PortFolio';
 import Top from './Top';
 
-const Ecosystem = () => {
+const Ecosystem: React.FC<{ totalLoan: number; totalLoanLength: number }> = ({
+  totalLoan,
+  totalLoanLength,
+}) => {
   const { reserveState, getAssetBondsByNetwork } = useReserveData();
   const [pageNum, setPageNum] = useState(1);
 
@@ -31,6 +35,8 @@ const Ecosystem = () => {
         assetBondTokens={assetBondTokensBackedByEstate}
         pageNum={pageNum}
         setPageNum={setPageNum}
+        totalLoan={totalLoan}
+        totalLoanLength={totalLoanLength}
       />
     </>
   );
