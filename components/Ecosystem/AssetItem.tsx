@@ -57,16 +57,16 @@ const AssetItem = (props: Props) => {
           abToken.project === 'ELYFI' &&
             window.open(
               i18n.language === 'ko'
-                ? `${ELYFI_LINK_KO}/market/bondnft/${abToken.id}}`
-                : `${ELYFI_LINK_EN}/market/bondnft/${abToken.id}}`,
+                ? `${ELYFI_LINK_KO}/market/bondnft/${abToken.id}`
+                : `${ELYFI_LINK_EN}/market/bondnft/${abToken.id}`,
               '_blank',
             );
           return;
         }
         window.open(
           i18n.language === 'ko'
-            ? `${ELYFI_LINK_KO}/portfolio/${abToken.id}}`
-            : `${ELYFI_LINK_EN}/portfolio/${abToken.id}}`,
+            ? `${ELYFI_LINK_KO}/portfolio/${abToken.id}`
+            : `${ELYFI_LINK_EN}/portfolio/${abToken.id}`,
           '_blank',
         );
       }}>
