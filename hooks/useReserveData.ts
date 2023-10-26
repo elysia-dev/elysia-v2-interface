@@ -14,6 +14,7 @@ import {
   bscReserveMiddleware,
   ethReserveMiddleware,
 } from 'middleware/reservesMiddleware';
+import ethData from 'utils/ethReserveData.json';
 
 const useReserveData = (): {
   reserveState: IReserveSubgraph;
@@ -41,9 +42,17 @@ const useReserveData = (): {
   );
 
   const fetchSubgraph = async () => {
-    if (!ethReserveData || !bscReserveData) return;
+    const tempData = ethData.data.reserves.map((reserve: any) => {
+      return {
+        ...reserve,
+        assetBondTokens: ethData.data.assetBondTokens.filter(
+          (ab: any) => ab.reserve.id === reserve.id,
+        ),
+      };
+    });
+    if (!bscReserveData) return;
     setReserveState({
-      reserves: [...bscReserveData, ...ethReserveData],
+      reserves: [...bscReserveData, ...(ethReserveData || tempData)],
     });
     setLoading(ethLoading || bscLoading);
   };
@@ -52,7 +61,6 @@ const useReserveData = (): {
     // const supportedTokens =
     //   MainnetData[network === MainnetType.BSCTest ? MainnetType.BSC : network]
     //     .supportedTokens;
-
     return reserveState.reserves.reduce((arr, reserve) => {
       return [...arr, ...reserve.assetBondTokens];
     }, [] as IAssetBond[]);
