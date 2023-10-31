@@ -2,14 +2,14 @@
   "translation": {
     "meta": {
       "titleTemplate": "%s | ELYSIA",
-      "defaultTitle": "ELYSIA - Real World Asset Tokenization DAO",
+      "defaultTitle": "ELYSIA - Real-World Asset Tokenization DAO",
       "governance": "Governance",
       "ecosystem": "Ecosystem",
       "development": "Labs",
       "community": "Community",
       "roadmap": "Roadmap",
       "faq": "FAQ",
-      "description": "ELYSIA is a project that makes real-world assets into tokens and connects them with the blockchain."
+      "description": "ELYSIA is a multichain real-world asset tokenization and exchange protocol."
     },
     "main": {
       "CTAButton": ["Go to ELYFI App"],
