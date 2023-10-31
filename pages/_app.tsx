@@ -50,7 +50,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { t } = useTranslation();
 
   const DEFAULT_SEO: DefaultSeoProps = {
-    title: t('meta.defaultTitle'),
     titleTemplate: t('meta.titleTemplate'),
     defaultTitle: t('meta.defaultTitle'),
     description: t('meta.description'),
