@@ -189,7 +189,8 @@
         "Total Supply",
         "It represents the quantity minus the burned quantity from the total created.",
         "Circulating Supply",
-        "Out of the total supply, it represents the quantity that is circulating in the market or held in a personal wallet so that it can be traded directly on the market."
+        "Out of the total supply, it represents the quantity that is circulating in the market or held in a personal wallet so that it can be traded directly on the market.",
+        "Insurance Coverage"
       ],
       "section_third": [
         "Get voting rights(sEL) through staking!",

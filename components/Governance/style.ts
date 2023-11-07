@@ -311,7 +311,7 @@ export const CenterGetELTokenBody = styled.section`
       height: initial;
       padding: 20px 25px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       justify-content: space-between;
       grid-gap: 25px;
       gap: 25px;
@@ -328,6 +328,11 @@ export const CenterGetELTokenBody = styled.section`
           border: none;
         }
       }
+      @media (max-width: 920px) {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items:center;
+      }
       > p {
         font-size: 1.275rem;
         margin: 0;
@@ -340,6 +345,9 @@ export const CenterGetELTokenBody = styled.section`
         font-size: 1.625rem;
         margin: 15px 0 0;
         font-weight: bold;
+        @media (max-width: 920px) {
+          margin: 0;
+        }
         @media (max-width: 460px) {
           font-size: 1.4rem;
         }

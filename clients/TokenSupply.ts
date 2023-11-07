@@ -5,3 +5,6 @@ export const totalSupplyFetcher = (url: string): Promise<any> =>
 
 export const circulatingSupplyFetcher = (url: string): Promise<any> =>
   axios.get(url).then((res) => res.data);
+
+export const totalInsuranceFetcher = (url: string): Promise<any> =>
+  axios.get(url).then((res) => res.data);

@@ -8,6 +8,7 @@ import { useState } from 'react';
 import {
   circulatingSupplyFetcher,
   totalSupplyFetcher,
+  totalInsuranceFetcher,
 } from 'clients/TokenSupply';
 import { roundNumber } from 'utils/formatters';
 import LanguageType from 'enums/LanguageType';
@@ -42,6 +43,10 @@ const GovernanceCenter = () => {
     'https://token.elysia.land/api/el/totalCoins',
     totalSupplyFetcher,
   );
+  const { data: totalInsurance } = useSWR(
+    'https://token.elysia.land/api/el/totalInsurance',
+    totalInsuranceFetcher
+  )
   const { t, i18n } = useTranslation();
   const [guideType, setGuideType] = useState('');
   const router = useRouter();
@@ -122,6 +127,10 @@ const GovernanceCenter = () => {
               <div>
                 <p>{t('governance.section_second.11')}</p>
                 <h2>{roundNumber(circulatingSupply)} EL</h2>
+              </div>
+              <div>
+                <p>{t('governance.section_second.13')}</p>
+                <h2>{roundNumber(totalInsurance)} EL</h2>
               </div>
             </div>
             <p>* powered by crypto.com</p>
