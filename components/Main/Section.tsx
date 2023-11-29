@@ -38,15 +38,6 @@ const Section = () => {
       GoogleAnalyticsAction.MainCommunityCard,
     ],
     [
-      [
-        t('main.section_developers.0'),
-        t('main.section_developers.1'),
-        t('main.section_developers.3'),
-      ],
-      'Developers',
-      GoogleAnalyticsAction.MainDevelopersCard,
-    ],
-    [
       [t('FAQ.top.0'), t('FAQ.top.1'), t('FAQ.top.2')],
       'FAQ',
       GoogleAnalyticsAction.MainFAQCard,
