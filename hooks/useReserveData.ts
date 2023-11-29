@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import useSWR from 'swr';
 
 import {
@@ -57,14 +57,14 @@ const useReserveData = (): {
     setLoading(ethLoading || bscLoading);
   };
 
-  const getAssetBondsByNetwork = (): IAssetBond[] => {
+  const getAssetBondsByNetwork = useCallback((): IAssetBond[] => {
     // const supportedTokens =
     //   MainnetData[network === MainnetType.BSCTest ? MainnetType.BSC : network]
     //     .supportedTokens;
     return reserveState.reserves.reduce((arr, reserve) => {
       return [...arr, ...reserve.assetBondTokens];
     }, [] as IAssetBond[]);
-  };
+  }, [reserveState.reserves]);
 
   useEffect(() => {
     fetchSubgraph();

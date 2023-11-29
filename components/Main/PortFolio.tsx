@@ -21,29 +21,31 @@ const PortFolio = () => {
 
   const assetBonds = useMemo(() => {
     return getAssetBondsByNetwork();
-  }, [reserveState]);
+  }, [getAssetBondsByNetwork]);
 
   const fetchImage = useCallback(async () => {
+    if (assetBonds.length === 0) return;
     const images: any = [];
+    const bonds = assetBonds.filter((v, index) => {
+      return v.ipfsHash !== 'empty';
+    });
     Promise.all(
       Array(4)
         .fill(0)
         .map(async (_, idx) => {
-          if (
-            assetBonds[idx].id ===
-              '115792089237316195422007842550160057480242544124026915590235438085798243682305' ||
-            assetBonds[idx].ipfsHash === 'ok'
-          ) {
-            return images.push(
+          try {
+            if (bonds[idx].ipfsHash === 'empty') {
+              return;
+            } else {
+              const response = await Slate.fetchABTokenIpfs(
+                bonds[idx].ipfsHash || '',
+              );
+              images.push(`${baseUrl}/${response.data.images[0]?.hash}`);
+            }
+          } catch (error) {
+            images.push(
               'https://elysia-public.s3.ap-northeast-2.amazonaws.com/elyfi/borrow01.png',
             );
-          }
-          try {
-            const response = await Slate.fetchABTokenIpfs(
-              assetBonds[idx].ipfsHash || '',
-            );
-            images.push(`${baseUrl}/${response.data.images[0]?.hash}`);
-          } catch (error) {
             console.error(error);
           }
         }),
@@ -53,9 +55,8 @@ const PortFolio = () => {
   }, [assetBonds]);
 
   useEffect(() => {
-    if (assetBonds.length === 0) return;
     fetchImage();
-  }, [assetBonds]);
+  }, [fetchImage]);
 
   return (
     <MainPortFolioWrapper>
@@ -65,12 +66,12 @@ const PortFolio = () => {
         style={{
           height: image.length > 0 ? undefined : '410px',
         }}>
-        {/* {image.length > 0 &&
+        {image.length > 0 &&
           Array(4)
             .fill(0)
             .map((_, idx) => {
               return <AssetItem key={`item_${idx}`} image={image[idx]} />;
-            })} */}
+            })}
       </MainPortfolioItems>
       <MainPortfolioLink>
         <Link href={`${i18n.language}/Ecosystem`} passHref>

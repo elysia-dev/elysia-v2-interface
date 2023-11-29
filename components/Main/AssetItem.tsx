@@ -5,6 +5,7 @@ type Props = {
 };
 
 const AssetItem: React.FC<Props> = ({ image }) => {
+  if (!image) return <></>;
   return (
     <figure>
       <Image
