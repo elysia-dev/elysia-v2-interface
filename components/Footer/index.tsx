@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
         <div>ELYSIA DAO LLC.</div>
         <div>
-          ELYSIA c 2018·2023. All rights reserved. Media inquires for ELYSIA DAO
+          ELYSIA c 2018·2024. All rights reserved. Media inquires for ELYSIA DAO
           LLC. - Contact <span>cs@elysia.land</span>
         </div>
       </div>
